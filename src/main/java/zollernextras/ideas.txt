@@ -1,0 +1,13 @@
+* Make horse armor craftable.
+    * Add new horse armor: Emerald & Amaranth. (?)
+* Hell Ducks.
+    * Have them make a "Quack" sound, similar to how Hellcows make a "moo" sound.
+    * Spawn in the Nether.
+    * Regular ducks turn into Hellducks when killed at night, or when struck with lightning.
+    * Immune to fire and lava.
+* Blaze Rods craftable using Blaze Powder and Black Cave Marble Sticks.
+* More crops and food.
+* Add in food and items from Sweet Tooth mod.
+* Sharks.
+    * Should drop their teeth and shagreen (leather).
+* Make different-colored fish to match the new fish items. (?)

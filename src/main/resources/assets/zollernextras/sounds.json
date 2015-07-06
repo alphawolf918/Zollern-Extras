@@ -1,0 +1,69 @@
+{
+  "alarms.ironsiren": {
+    "category": "master",
+    "sounds": [
+      "alarms/ironsiren"
+    ]
+  },
+  "alarms.goldsiren": {
+    "category": "master",
+    "sounds": [
+      "alarms/goldsiren"
+    ]
+  },
+  "alarms.diamondsiren": {
+    "category": "master",
+    "sounds": [
+      "alarms/diamondsiren"
+    ]
+  },
+  "alarms.emeraldsiren": {
+    "category": "master",
+    "sounds": [
+      "alarms/emeraldsiren"
+    ]
+  },
+  "duck.say": {
+	"category": "master",
+	"sounds": [
+		"duck/say1",
+		"duck/say2",
+		"duck/say3",
+		"duck/say4"
+	]
+  },
+  "duck.hurt": {
+	"category": "master",
+	"sounds": [
+		"duck/hurt1",
+		"duck/hurt2"
+	]
+  },
+  "duck.die": {
+	"category": "master",
+	"sounds": [
+		"duck/die"
+	]
+  },
+  "mummy.say": {
+	"category": "master",
+	"sounds": [
+		"mummy/say1",
+		"mummy/say2",
+		"mummy/say3",
+		"mummy/say4"
+	]
+  },
+  "mummy.hurt": {
+	"category": "master",
+	"sounds": [
+		"mummy/hurt"
+	]
+  },
+  "mummy.die": {
+	"category": "master",
+	"sounds": [
+		"mummy/die"
+	]
+  }
+}

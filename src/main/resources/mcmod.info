@@ -1,0 +1,16 @@
+[
+{
+  "modid": "zollernextras",
+  "name": "Example Mod",
+  "description": "An extras mod that changes the world and adds new things to it.",
+  "version": "2.6.2-1.7.10",
+  "mcversion": "1.7.10",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["ZollernWolf"],
+  "credits": "Myself and those that helped me.",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

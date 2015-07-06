@@ -1,0 +1,267 @@
+[2.6.2 - The Sweet Tooth & Marine Update]
+
+* Zombies now have a 50% chance of dropping flour upon death.
+    * 1 piece of flour can be cooked into 2 slices of bread.
+* Blazes will now always drop a Blaze Rod upon death.
+* Endermen will now always drop an Ender Pearl upon death.
+* Skeletons will now always drop Bows upon death.
+    * Will not drop an enchanted bow if they were holding one before death (bow will still be regular).
+* Silverfish will now always drop a Silver Nugget upon death.
+    * Silver Nuggets can be crafted into Silver Ingots.
+        * This is the only way to obtain Silver in this mod.
+* Ghasts will now always drop Ghast Tears upon death.
+* Added mutton.
+    * Both raw and cooked.
+* Sheep will now always drop 1-2 mutton upon death.
+    * If the sheep is on fire, it will drop cooked mutton instead of raw mutton.
+* Addded in multi-colored Candy Cube blocks and a Candy Land biome.
+    * Inspired by Trove's "Candoria" biome.
+    * Comprised of pink on top and white on the bottom.
+        * Layers beneath are primarily brown, with multi-colored "sprinkle blocks" scattered thoughout, all the way down to bedrock.
+        * Meant to resemble Neopolitan ice cream with multi-colored sprinkles.
+* Improved the Ore Dictionary a bit.
+* Improved some of the block and item textures.
+* Villagers will now turn into witches when struck with lightning.
+* Added Sugar Cube blocks.
+    * Generate in Candy Land biomes, sometimes replacing white Candy Cubes.
+    * Also generates the same way that the multi-colored Candy Cubes do.
+    * Drops 1-9 sugar when broken.
+    * Can be crafted into 9 pieces of sugar and vice-versa.
+* Decreased weight of world generation to improve spawn rate.
+* Obsidian can now be pulverized in this mod.
+    * One block of obsidian produces 8 pieces of pulverized obsidian.
+    * Obsidian dust can be cooked into obsidian ingots.
+    * 8 Obsidian Ingots can be crafted into 1 Obsidian Block.
+    * 1 Obsidian Block can be crafted into 8 Obsidian Ingots.
+* Added 1.8 cave generation blocks.
+    * Can be found in caves or crafted.
+* Added polished versions of cave generation blocks.
+    * Can be crafted with four of their non-polished counterparts, similar to the way bricks are crafted.
+* All new cave generation blocks can be used in place of stone.
+* Added 1.8 Prismarine block and its variants.
+* Added 1.8 Prismarine shards and crystals.
+* New "Crystal Ocean" biome.
+    * Extends the Ocean biome.
+    * All stone is replaced with Prismarine blocks.
+    * Root height/depth is that of a Deep Ocean biome.
+    * Prismarine Ore and Sea Lanterns generate here.
+* Added in Sea Lantern blocks.
+    * Spawns only in Crystal Ocean biomes, similar to how Sea Lamps spawn in vanilla Ocean biomes.
+    * Very high spawn rate.
+    * Can also be crafted using Prismarine Shards and Prismarine Crystals.
+    * Is also a light source, similar to Sea Lamps.
+    * Drops 2-3 Prismarine Crystals when mined with a pickaxe that does not have silk touch.
+* Added in Prismarine Ore.
+    * Drops 1-2 Prismarine Crystals when mined with a pickaxe.
+    * Only generates in Crystal Oceans.
+* Added in Polished Shinestone Crystal blocks.
+    * Craftable.
+    * Does not generate naturally.
+* Added Sweet Tooth food items and blocks.
+    * Raw chocolate.
+    * Chocolate bar. [X]
+    * Brownie. [X]
+    * Candy Apple. [X]
+    * Ice Cream. [X]
+    * Ice Cream Sandwich. [X]
+    * Cream Ball.
+    * All Sweet Tooth food items with a [X] beside them give a different potion effect when consumed.
+    * All ST items are always consumable, even when the Player's hunger bar is full.
+* Added Sharks.
+    * Spawns in all Ocean biomes.
+    * Large, hostile mobs that deal heavy damage to the Player.
+    * When killed by a Shark, a custom death message displays.
+        * "[Player] got ate by a shark. Yum."
+    * Drops include Shark Teeth and Shagreen (Shark leather).
+    * Hostile towards fish as well.
+* Fish will now avoid Sharks.
+
+[2.6.1]
+
+* Added Shinium.
+    * Can serve as a replacement for platinum.
+* Added four kinds of sticks.
+    * White Cave Marble, Black Cave Marble, Lapis and Power
+* Swords and gems are now craftable.
+* Added mobs:
+    * Baby Dragon
+        * Currently unfinished.
+        * Planned to be tameable.
+        * Can be mounted and somewhat controlled with an ender pearl.
+* Super Charged Coal items can now be crafted into Super Charged Coal blocks.
+    * Blocks cannot be used as fuel at this time.
+* Swamp Clay can now be crafted back and forth, from block form to item form.
+* Registered some ores, ingots, blocks and dusts with the OreDictionary.
+* Raw duck and shrimp can now be cooked into their respective, cooked counterparts.
+* Chicken and duck eggs can now be cooked into boiled eggs.
+* Readded mobs:
+    * Shadow Skeleton
+        * Does not burn in sunlight.
+    * Mummy
+        * Only spawns in desert-like biomes
+        * Always spawns with either a diamond or amaranth sword
+* Treasure chests now have a 10 in 20 (50%) chance of generating in oceans at layers 32 and below.
+    * Almost always contain a full stack of gold ingots.
+* Began work on quivers.
+    * Not obtainable in Survival.
+    * GUI currently glitchy and nonfunctional.
+    * Accepts arrows, but "eats" them and does not give them back.
+    * Glitchy rendering.
+* Upped the spawn rate of most mobs.
+* Baby Dragon is no longer glitchy.
+* Began work on golden anvils.
+    * In-game, but do not open GUIs yet, and therefore they are unobtainable in Survival.
+* Added crops and food:
+    * Blueberry
+    * Blackberry
+    * Grapes
+    * Strawberries
+* Quiver works except for minor GUI glitch and crashing when stacks are out of sync with each other.
+    * Now has extra information when you hover over the item.
+    * Still unobtainable in Survival due to the crash.
+* Config file has been created.
+    * Biome IDs are now changeable.
+    * OreDictionary rules are now changeable.
+    * Mob spawn rates can now be controlled.
+    * Ore generation spawn rates can now be controlled.
+* Welcome message now displays upon joining world.
+    * Can be turned on and off via config.
+* Baby Dragon Egg has been added.
+    * Has an azurite block texture.
+    * Baby Dragons can hatch from it.
+* Changed some default spawn rates of certain ores and blocks.
+* Lilypads can now be cooked into a green dye.
+    * Green dye can be used in place of Cactus Green Dye.
+* Baby Ender Dragon egg can now be crafted.
+* Added ingot stack blocks.
+    * Specially shaped blocks using .OBJ models.
+    * Iron, Gold, Fueltonium, Amaranth, Zollernium, Shinestone, Shinium and Zinc have been added as ingot stacks.
+    * Can be crafted using six of their respective ingots.
+    * The first blocks in the mod to have a shape other than that of normal blocks.
+* Berry farms now generate throughout the world in certain biomes.
+* Modified the Mushroom Forest a bit.
+* Added in the Miner's Land biome.
+    * Rare biome.
+    * All types of vanilla and ZE ores found here at almost any level (from layer 1 to layer 256), can also have obsidian and azurite.
+    * No mobs spawn here whatsoever.
+    * Has a rare, mutated version of itself.
+    * No rain in this biome.
+* Tweaked Metallurgy integration a bit, hopefully it works now.
+* Added Hogs.
+    * Drops raw bacon upon death.
+        * Can be cooked and consumed.
+    * Turn into Hog Zombies when struck with lightning.
+* Added Hog Zombie mob.
+    * Exactly like a Zombie Pigman, but are bigger and hit harder.
+    * Has a chance to drop iron ingots upon death.
+    * Texture resembles hogs, but with a cyborg-like appearance.
+        * One of the eyes is red, referencing one of the mod author's favorite Marvel characters, Deathlok.
+    * Spawns with a diamond sword.
+    * Has more health than a Zombie Pigman.
+* Quivers are no longer glitchy - there should be no crash. However, there is a minor visual issue, and it is currently impossible to shift-click to move items TO the quiver, however it is possible to shift-click them FROM it.
+    * Crash still happens when not in development environment.
+* Added 4 new flowers.
+    * Cosmos
+    * Aster
+    * Lilac
+    * Crocosmia
+* Added the crafting recipe for Shinium.
+
+---- FIXES ----
+* Fixed Sea Lamp crafting problem.
+    * Four lapis ingots surrounding a shinestone block.
+* Fixed issue with pulverizing Nether and Ender Super Charged Coal Ores yielding acacia wood stairs as secondary item.
+    * Now yields regular coal as a secondary item instead.
+* Fixed shapeless recipe using ender pearl giving 9 ender shards instead of 8.
+* Fixed issue where smelting fueltonium ore yielded no results, but fueltonium blocks did - this has been switched.
+
+[2.5.2]
+
+* Added Healing Heart and Health Upgrade items.
+    * Healing Heart completely heals the Player for 5 uses.
+    * Health Upgrade upgrades the Player's health by 1 heart (buggy, currently resets on death).
+* Added ores and gems:
+    * Amber
+    * Azurite
+    * Aquamarine
+    * Garnet
+    * Topaz
+    * Opal
+    * Enderite
+* Special gems can be crafted using combinations of gems, items, blocks, materials and ingots:
+    * Static Amber
+    * Icy Aqua
+    * Fire Garnet
+    * Ender Opal
+* Made Healing Heart and Health Upgrade craftable.
+* Added the Triumph Swords:
+    * Thor
+        * Right-clicking spawns several lightning bolts wherever the Player is looking.
+    * Ender
+        * Right-clicking teleports the Player to wherever they're looking.
+    * Diablo
+        * Right-clicking shoots two Ghast-like fireballs at a time.
+        * Left-clicking sets the targeted entity on fire for 60 seconds.
+    * Glacies
+        * Places ice blocks in a path.
+* Readded mobs:
+    * Fish
+    * Mega Creepers
+    * Scorpions
+    * Jellyfish
+    * Shrimp
+    * Duck
+        * Lays duck eggs and drops duck feathers upon death.
+        * Duck eggs can be cooked.
+    * Pigshroom
+* Nether Quartz Blocks can now be turned back into Nether Quartz Items.
+* Sea Lamps will now also spawn in Deep Oceans as well.
+* Chicken eggs can now be cooked into edible boiled eggs.
+* Removed all APIs for now.
+* Lapis Lazuli can now be smelted into Lapis Ingots.
+* Four Lapis Ingots surrounding a block of Shinestone crafts a Sea Lamp block.
+
+[2.5.1]
+
+* Added APIs:
+    * Metallurgy
+    * MineFactoryReloaded
+    * CoFH/Redstone Flux
+* Fixed issue with Icy Sand having same texture as Regular Sand.
+* Began work on mobs.
+* Added IMCs:
+    * Mekanism / Metallurgy
+    * Applied Energistics
+* ZE ores should now generate in Twilight Forest.  
+* Fixed recipe glitch with sirens taking fire instead of obsidian.
+* Shinestone blocks can now be pulverized into dust.
+* Shinestone ingots can now be pulverized into dust.  
+* Added Nether ores:
+    * Fueltonium
+    * Super Charged Coal
+    * Zinc
+    * Amaranth
+    * Ender Shard
+* All Nether ores are able to be pulverized and smelted.
+* Better Glass should now function properly.
+* Re-added some of the old world-gen blocks (sea lamps, swamp clay, etc.).
+* Added black and white Cave Marble.
+* Added Brimstone and Nether Dirt.
+* Added Ender ores:
+    * Fueltonium
+    * Super Charged Coal
+    * Zinc
+    * Amaranth
+* All Ender ores are able to be pulverized and smelted.
+================================
+
+[2.5]
+
+* Fixed issue with ZE ores; can now be pulverized.
+* Fixed issue with name not displaying properly on certain armor pieces.
+* Fixed issue with armor crafting - helmet and leggings no longer have the same recipe.
+* Added iron, gold, diamond, and emerald sirens.
+* Shinedust can now be cooked into shinestone ingots.
+* Shinestone ingots can now be crafted into shinestone crystals.
+* Shinestone crystals can now be turned into shinestone bricks.
+* All shinestone blocks give off the same amount of light.

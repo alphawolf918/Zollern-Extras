@@ -12,7 +12,7 @@ import zollernextras.network.client.SyncPlayerPropsMessage;
 import zollernextras.proxies.CommonProxy;
 
 public class ExtendedPlayer implements IExtendedEntityProperties {
-	public final static String EXT_PROP_NAME = "ExtendedPlayer_zollernextras";
+	public final static String EXT_PROP_NAME = "ExtendedPlayer";
 	
 	/**
 	 * The Player.
@@ -20,7 +20,7 @@ public class ExtendedPlayer implements IExtendedEntityProperties {
 	private final EntityPlayer player;
 	
 	/**
-	 * The Player's max health
+	 * The Player's max health.
 	 */
 	private static float maxHealth = 20F;
 	
@@ -178,7 +178,6 @@ public class ExtendedPlayer implements IExtendedEntityProperties {
 		properties.setDouble("maxFortune", this.maxFortune);
 		properties.setDouble("maxIntelligence", this.maxIntelligence);
 		compound.setTag(EXT_PROP_NAME, properties);
-		M.Log("Saved NBT data for " + EXT_PROP_NAME + ".");
 	}
 	
 	@Override
@@ -204,8 +203,6 @@ public class ExtendedPlayer implements IExtendedEntityProperties {
 		NBTTagCompound savedData = new NBTTagCompound();
 		
 		playerData.saveNBTData(savedData);
-		// Note that we made the CommonProxy method storeEntityData static,
-		// so now we don't need an instance of CommonProxy to use it! Great!
 		CommonProxy.storeEntityData(getSaveKey(player), savedData);
 	}
 	
@@ -222,6 +219,7 @@ public class ExtendedPlayer implements IExtendedEntityProperties {
 	
 	@Override
 	public void init(Entity entity, World world) {
+		
 	}
 	
 	public static final void register(EntityPlayer player) {

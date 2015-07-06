@@ -64,9 +64,11 @@ public class Events {
 					.getEntityData(((EntityPlayer) event.entity)
 							.getCommandSenderName()
 							+ ExtendedPlayer.EXT_PROP_NAME);
-			((ExtendedPlayer) event.entity
-					.getExtendedProperties(ExtendedPlayer.EXT_PROP_NAME))
-					.saveNBTData(playerData);
+			if (playerData != null) {
+				((ExtendedPlayer) event.entity
+						.getExtendedProperties(ExtendedPlayer.EXT_PROP_NAME))
+						.saveNBTData(playerData);
+			}
 			CommonProxy.storeEntityData(
 					((EntityPlayer) event.entity).getCommandSenderName(),
 					playerData);
@@ -104,7 +106,7 @@ public class Events {
 					ExtendedPlayer props = ExtendedPlayer.get(player);
 					if (!player.capabilities.isCreativeMode) {
 						// Max Health
-						float maxHealth = props.getMaxHealth();
+						double maxHealth = props.getMaxHealth();
 						IAttributeInstance attrMaxHealth = player
 								.getEntityAttribute(SharedMonsterAttributes.maxHealth);
 						player.getEntityAttribute(

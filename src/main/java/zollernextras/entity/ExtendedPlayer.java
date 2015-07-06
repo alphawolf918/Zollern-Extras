@@ -22,7 +22,7 @@ public class ExtendedPlayer implements IExtendedEntityProperties {
 	/**
 	 * The Player's max health.
 	 */
-	private static float maxHealth = 20F;
+	private static double maxHealth = 20F;
 	
 	/**
 	 * The Player's max jump height.
@@ -56,7 +56,7 @@ public class ExtendedPlayer implements IExtendedEntityProperties {
 	 * 
 	 * @param health
 	 */
-	public void setMaxHealth(float health) {
+	public void setMaxHealth(double health) {
 		this.maxHealth = health;
 	}
 	
@@ -112,7 +112,7 @@ public class ExtendedPlayer implements IExtendedEntityProperties {
 	 * 
 	 * @return maxHealth
 	 */
-	public float getMaxHealth() {
+	public double getMaxHealth() {
 		return this.maxHealth;
 	}
 	

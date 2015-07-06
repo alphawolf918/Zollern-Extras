@@ -75,6 +75,11 @@
     * Drops include Shark Teeth and Shagreen (Shark leather).
     * Hostile towards fish as well.
 * Fish will now avoid Sharks.
+* Added in ExtendedPlayer properties:
+    * Health, jump height, defense, damage dealt, fortune, intelligence, current XP, level, and XP needed to reach next level
+    * Max Health is upgradeable using the Health Upgrade item.
+        * No longer resets on death!
+        * The Player can have up to 4 rows of hearts.
 
 [2.6.1]
 

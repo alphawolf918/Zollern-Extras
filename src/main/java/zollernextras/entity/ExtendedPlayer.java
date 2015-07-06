@@ -30,6 +30,11 @@ public class ExtendedPlayer implements IExtendedEntityProperties {
 	private static double maxJump = 0.0D;
 	
 	/**
+	 * The Player's fall resistance.
+	 */
+	private static double fallResistance = 0.0D;
+	
+	/**
 	 * The Player's max defense.
 	 */
 	private static double maxDefense = 0D;
@@ -50,6 +55,21 @@ public class ExtendedPlayer implements IExtendedEntityProperties {
 	 * levels produce more output.
 	 */
 	private static double maxIntelligence = 0D;
+	
+	/**
+	 * The Player's current XP.
+	 */
+	private static double currentXP = 0.0D;
+	
+	/**
+	 * How much XP the Player needs to reach the next stat level.
+	 */
+	private static double xpToNextLevel = 0.0D;
+	
+	/**
+	 * The Player's current stat level.
+	 */
+	private static int currentLevel = 0;
 	
 	/**
 	 * Set the max health for the Player.
@@ -99,12 +119,30 @@ public class ExtendedPlayer implements IExtendedEntityProperties {
 	
 	/**
 	 * Set the max intelligence for the Player. This determines crafting
-	 * proficiency - higher intelligence yields more results.
+	 * proficiency - higher intelligence yields more product at a time.
 	 * 
 	 * @param intelligence
 	 */
 	public void setMaxIntelligence(double intelligence) {
 		this.maxIntelligence = intelligence;
+	}
+	
+	/**
+	 * Set the Player's current level.
+	 * 
+	 * @param level
+	 */
+	public void setCurrentLevel(int level) {
+		this.currentLevel = level;
+	}
+	
+	/**
+	 * Return the Player's current level.
+	 * 
+	 * @return currentLevel
+	 */
+	public int getCurrentLevel() {
+		return this.currentLevel;
 	}
 	
 	/**
@@ -159,6 +197,7 @@ public class ExtendedPlayer implements IExtendedEntityProperties {
 		this.setMaxDamage(maxDamage);
 		this.setMaxFortune(maxFortune);
 		this.setMaxIntelligence(maxIntelligence);
+		this.setCurrentLevel(currentLevel);
 	}
 	
 	private static final String getSaveKey(EntityPlayer player) {
@@ -177,6 +216,7 @@ public class ExtendedPlayer implements IExtendedEntityProperties {
 		properties.setDouble("maxDamage", this.maxDamage);
 		properties.setDouble("maxFortune", this.maxFortune);
 		properties.setDouble("maxIntelligence", this.maxIntelligence);
+		properties.setInteger("currentLevel", this.currentLevel);
 		compound.setTag(EXT_PROP_NAME, properties);
 	}
 	
@@ -190,14 +230,10 @@ public class ExtendedPlayer implements IExtendedEntityProperties {
 		this.maxDamage = properties.getDouble("maxDamage");
 		this.maxFortune = properties.getDouble("maxFortune");
 		this.maxIntelligence = properties.getDouble("maxIntelligence");
+		this.currentLevel = properties.getInteger("currentLevel");
 		M.Log("Loaded NBT data for " + EXT_PROP_NAME + ".");
 	}
 	
-	/**
-	 * Does everything I did in onLivingDeathEvent and it's static, so you now
-	 * only need to use the following in the above event:
-	 * ExtendedPlayer.saveProxyData((EntityPlayer) event.entity));
-	 */
 	public static void saveProxyData(EntityPlayer player) {
 		ExtendedPlayer playerData = ExtendedPlayer.get(player);
 		NBTTagCompound savedData = new NBTTagCompound();

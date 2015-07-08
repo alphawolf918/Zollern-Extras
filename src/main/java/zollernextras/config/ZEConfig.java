@@ -14,7 +14,6 @@ public class ZEConfig {
 	public static String CATEGORY_MOBS = "Mobs";
 	public static String CATEGORY_ORES = "Ores";
 	
-	public static boolean welcomeMessageEnabled;
 	public static boolean fueltoniumIsYellorite;
 	public static boolean shiniumIsPlatinum;
 	public static boolean betterGlassIsGlass;
@@ -80,14 +79,6 @@ public class ZEConfig {
 				"Spawn rates of ZE mobs.");
 		
 		// category, key, default value, comment
-		
-		// General
-		welcomeMessageEnabled = config
-				.get(config.CATEGORY_GENERAL,
-						"welcomeMessage",
-						true,
-						"Whether or not to generate a welcome message upon joining the world. Remove this if you're prone to lag.")
-						.getBoolean();
 		
 		fueltoniumIsYellorite = config
 				.get(config.CATEGORY_GENERAL,

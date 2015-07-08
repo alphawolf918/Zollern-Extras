@@ -14,7 +14,7 @@
     * Both raw and cooked.
 * Sheep will now always drop 1-2 mutton upon death.
     * If the sheep is on fire, it will drop cooked mutton instead of raw mutton.
-* Addded in multi-colored Candy Cube blocks and a Candy Land biome.
+* Added in multi-colored Candy Cube blocks and a Candy Land biome.
     * Inspired by Trove's "Candoria" biome.
     * Comprised of pink on top and white on the bottom.
         * Layers beneath are primarily brown, with multi-colored "sprinkle blocks" scattered thoughout, all the way down to bedrock.
@@ -76,10 +76,21 @@
     * Hostile towards fish as well.
 * Fish will now avoid Sharks.
 * Added in ExtendedPlayer properties:
-    * Health, jump height, defense, damage dealt, fortune, intelligence, current XP, level, and XP needed to reach next level
+    * Health, jump height, fall resistance, defense, damage dealt, fortune, intelligence, current XP, level, and XP til next level.
     * Max Health is upgradeable using the Health Upgrade item.
-        * No longer resets on death!
+        * No longer resets on death.
         * The Player can have up to 4 rows of hearts.
+    * Fall resistance upgrades passively, randomly going up by 0.0 to 0.3 per fall.
+        * The higher the resistance, the more distance subtracted from the fall, resulting in less damage.
+        * Must fall from a height of 1.5F or greater for it to increase.
+    * Fortune upgrades passively when mining ZE ores.
+        * The higher the fortune stat, the higher the chance for more drops from ZE ores.
+            * Note that there is only a chance (5 out of 10 or 50%) of extra drops, it's not always guaranteed.
+        * Fortune must be at least 1.0 or higher to receive extra drops.
+            * 1.0 means 1 extra drop, 2.0 means 2 extra, etc.
+        * Vanilla ores do not currently affect and are not affected by fortune.
+        * Fortune levels are not the same thing as the "Fortune" enchantment on pickaxes.
+* Removed message that sent upon joining the world / respawning.
 
 [2.6.1]
 

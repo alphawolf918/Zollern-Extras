@@ -1,16 +1,20 @@
 package zollernextras.items;
 
+import java.util.List;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.ChatComponentText;
+import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.world.World;
 import zollernextras.creativetabs.ModTabs;
 import zollernextras.entity.ExtendedPlayer;
+import zollernextras.lib.M;
 import zollernextras.lib.Reference;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemHeartForce extends Item {
 	
@@ -46,24 +50,26 @@ public class ItemHeartForce extends Item {
 				player.setHealth(maxHealth);
 				props.setMaxHealth(maxHealth);
 				par1ItemStack.damageItem(2, par2EntityPlayer);
-				player.addChatMessage(new ChatComponentText(
-						"Your max health has been increased by "
-								+ this.healthIncreaseAmount + "!"));
+				M.addChatMessage(player, EnumChatFormatting.GOLD + "+"
+						+ this.healthIncreaseAmount + " Max Health! Total: "
+						+ props.getMaxHealth());
 			} else {
-				ChatComponentText txt = new ChatComponentText(
-						"Your max health cannot exceed " + intMaxHealthLimit
-						+ ".");
-				if (numTimes == 0) {
-					player.addChatMessage(txt);
-					numTimes++;
-				}
+				M.addChatMessage(player, "Max health cannot exceed "
+						+ intMaxHealthLimit + ".");
 			}
 		}
 		return true;
 	}
 	
 	@Override
+	@SideOnly(Side.CLIENT)
+	public void addInformation(ItemStack p_77624_1_, EntityPlayer p_77624_2_,
+			List list, boolean p_77624_4_) {
+		list.add(EnumChatFormatting.ITALIC + "A great and healing power.");
+	}
+	
+	@Override
 	public EnumRarity getRarity(ItemStack par1ItemStack) {
-		return EnumRarity.epic;
+		return EnumRarity.rare;
 	}
 }

@@ -254,8 +254,8 @@ death.attack.fueltonium.item=%1$s was submerged in fueltonium by %2$s using %3$s
 death.attack.jellyfishsting=%1$s was stung by a jellyfish.
 death.attack.jellyfishsting.player=%1$s was stung by a jellyfish thanks to %2$s.
 death.attack.jellyfishsting.item=%1$s was stung by a jellyfish thanks to %2$s using %3$s.
-death.attack.sharkattack=%1$s got ate by a shark. Yum.
-death.attack.sharkattack.player=%1$s got ate by a shark because of %2$s. Tasty.
+death.attack.sharkattack=%1$s got ate by a shark. Yummy.
+death.attack.sharkattack.player=%1$s got ate by a shark because of %2$s. Mmmm, betrayal.
 death.attack.sharkattack.item=%1$s got ate by a shark because of %2$s using %3$s. Nom.
 
 itemGroup.Zollern Extras=Zollern Extras

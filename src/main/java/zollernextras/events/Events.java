@@ -22,6 +22,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.storage.ExtendedBlockStorage;
@@ -30,13 +31,17 @@ import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.EntityStruckByLightningEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
+import net.minecraftforge.event.entity.living.LivingFallEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.entity.player.UseHoeEvent;
 import net.minecraftforge.event.terraingen.PopulateChunkEvent;
+import net.minecraftforge.event.world.BlockEvent;
 import zollernextras.biomes.BiomeList;
 import zollernextras.blocks.BlockList;
+import zollernextras.blocks.ores.IOre;
 import zollernextras.entity.ExtendedPlayer;
 import zollernextras.items.ItemList;
+import zollernextras.lib.M;
 import zollernextras.network.PacketDispatcher;
 import zollernextras.network.client.SyncPlayerPropsMessage;
 import zollernextras.proxies.CommonProxy;
@@ -82,20 +87,10 @@ public class Events {
 				&& !event.entity.worldObj.isRemote) {
 			if (!event.entity.worldObj.isRemote
 					&& event.entity instanceof EntityPlayer) {
-				// NOTE: See step 6 for a way to do this all in one line!!!
-				// before syncing the properties, we must first check if the
-				// player
-				// has some saved in the proxy
-				// recall that 'getEntityData' also removes it from the map, so
-				// be
-				// sure to store it locally
 				NBTTagCompound playerData = CommonProxy
 						.getEntityData(((EntityPlayer) event.entity)
 								.getCommandSenderName());
-				// make sure the compound isn't null
 				if (playerData != null) {
-					// then load the data back into the player's
-					// IExtendedEntityProperties
 					((ExtendedPlayer) event.entity
 							.getExtendedProperties(ExtendedPlayer.EXT_PROP_NAME))
 							.loadNBTData(playerData);
@@ -105,29 +100,90 @@ public class Events {
 					EntityPlayer player = (EntityPlayer) event.entity;
 					ExtendedPlayer props = ExtendedPlayer.get(player);
 					if (!player.capabilities.isCreativeMode) {
-						// Max Health
 						double maxHealth = props.getMaxHealth();
 						IAttributeInstance attrMaxHealth = player
 								.getEntityAttribute(SharedMonsterAttributes.maxHealth);
 						player.getEntityAttribute(
 								SharedMonsterAttributes.maxHealth)
 								.setBaseValue(maxHealth);
-						
-						// Max Jump
-						// TODO
-						
-						// Max Defense
-						// TODO
-						
-						// Max Damage
-						// TODO
-						
-						// Max Fortune
-						// TODO
 					}
 					PacketDispatcher.sendTo(new SyncPlayerPropsMessage(
 							(EntityPlayer) event.entity),
 							(EntityPlayerMP) event.entity);
+				}
+			}
+		}
+	}
+	
+	@SubscribeEvent
+	public void onEntityFalling(LivingFallEvent event) {
+		if (event.entity instanceof EntityPlayer) {
+			EntityPlayer player = (EntityPlayer) event.entity;
+			if (!player.capabilities.isCreativeMode) {
+				ExtendedPlayer props = ExtendedPlayer.get(player);
+				float fallDistance = event.distance;
+				if (fallDistance >= 1.5F) {
+					double resist = props.getFallResistance();
+					double totalResistance = fallDistance - resist;
+					if (totalResistance > 0.0D) {
+						event.distance -= (float) resist;
+					}
+					
+					if (new Random().nextInt(20) == 1) {
+						double incrAmnt = new Random().nextDouble();
+						if (incrAmnt > 0.3D) {
+							incrAmnt = 0.3D;
+						}
+						if (incrAmnt < 0.1D) {
+							incrAmnt = 0.1D;
+						}
+						if (incrAmnt > 0.0D) {
+							String strFallResist = ""
+									+ props.getFallResistance();
+							String strIncrAmnt = "" + incrAmnt;
+							M.addChatMessage(player, EnumChatFormatting.GOLD
+									+ "+" + strIncrAmnt.substring(0, 3)
+									+ " Fall Resistance! Total: "
+									+ strFallResist.substring(0, 3));
+							props.setMaxFallResistance(resist + incrAmnt);
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	@SubscribeEvent
+	public void onHarvestOre(BlockEvent.HarvestDropsEvent event) {
+		if (event.harvester instanceof EntityPlayer) {
+			EntityPlayer player = event.harvester;
+			if (!player.capabilities.isCreativeMode) {
+				if (event.block instanceof IOre) {
+					Random rand = new Random();
+					IOre oreBlock = (IOre) event.block;
+					ExtendedPlayer props = ExtendedPlayer.get(player);
+					double fortune = props.getMaxFortune();
+					if (new Random().nextInt(50) == 1) {
+						double blockFortune = oreBlock.getFortune();
+						props.setMaxFortune(fortune + blockFortune);
+						String strFortuneLevel = "" + props.getMaxFortune();
+						M.addChatMessage(player, EnumChatFormatting.GOLD + "+"
+								+ blockFortune + " Fortune! Total: "
+								+ strFortuneLevel.substring(0, 3));
+					}
+					if (new Random().nextInt(5) == 1) {
+						int numDropped = 0;
+						if (fortune >= 1.0D) {
+							int r = new Random().nextInt((int) fortune);
+							numDropped = r == 0 ? 1 : r;
+						}
+						if (numDropped > oreBlock.getMaxDropIncrease()) {
+							numDropped = oreBlock.getMaxDropIncrease();
+						}
+						Item droppedItem = oreBlock.getDroppedItemStack()
+								.getItem();
+						event.drops.add(new ItemStack(droppedItem, numDropped));
+					}
 				}
 			}
 		}

@@ -28,6 +28,10 @@ public class CommonProxy implements IGuiHandler {
 		
 	}
 	
+	public void initGUI() {
+		
+	}
+	
 	@Override
 	public Object getServerGuiElement(int guiId, EntityPlayer player,
 			World world, int x, int y, int z) {

@@ -1,5 +1,6 @@
 package zollernextras.items.swords;
 
+import java.util.List;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -9,11 +10,14 @@ import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
 import zollernextras.creativetabs.ModTabs;
 import zollernextras.items.tools.ToolMaterials;
 import zollernextras.lib.M;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class NetherSword extends ItemSword {
 	
@@ -67,5 +71,13 @@ public class NetherSword extends ItemSword {
 		entity.attackEntityFrom(par1DamageSource,
 				ToolMaterials.POWER.getDamageVsEntity());
 		return true;
+	}
+	
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void addInformation(ItemStack p_77624_1_, EntityPlayer p_77624_2_,
+			List list, boolean p_77624_4_) {
+		list.add(EnumChatFormatting.ITALIC
+				+ "A powerful, firey sword, said to match the power of the Nether itself.");
 	}
 }

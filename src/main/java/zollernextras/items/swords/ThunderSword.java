@@ -1,5 +1,6 @@
 package zollernextras.items.swords;
 
+import java.util.List;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.effect.EntityLightningBolt;
@@ -9,6 +10,7 @@ import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.Vec3;
@@ -16,6 +18,8 @@ import net.minecraft.world.World;
 import zollernextras.creativetabs.ModTabs;
 import zollernextras.items.tools.ToolMaterials;
 import zollernextras.lib.M;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class ThunderSword extends ItemSword {
 	
@@ -42,11 +46,10 @@ public class ThunderSword extends ItemSword {
 		double d = entityplayer.prevPosX
 				+ (entityplayer.posX - entityplayer.prevPosX) * f;
 		
-		double d1 = (entityplayer.prevPosY
+		double d1 = entityplayer.prevPosY
 				+ (entityplayer.posY - entityplayer.prevPosY) * f +
-		
-		1.6200000000000001D)
-				- entityplayer.yOffset;
+				
+				1.6200000000000001D - entityplayer.yOffset;
 		
 		double d2 = entityplayer.prevPosZ
 				+ (entityplayer.posZ - entityplayer.prevPosZ) * f;
@@ -89,8 +92,7 @@ public class ThunderSword extends ItemSword {
 		int k = movingobjectposition.blockZ;
 		
 		for (int l = 0; l < 16; l += 4) {
-			world.spawnEntityInWorld(new EntityLightningBolt(world, i, j,
-					(k + l)));
+			world.spawnEntityInWorld(new EntityLightningBolt(world, i, j, k + l));
 		}
 		return itemstack;
 	}
@@ -122,5 +124,13 @@ public class ThunderSword extends ItemSword {
 		entity.attackEntityFrom(par1DamageSource,
 				ToolMaterials.POWER.getDamageVsEntity());
 		return true;
+	}
+	
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void addInformation(ItemStack p_77624_1_, EntityPlayer p_77624_2_,
+			List list, boolean p_77624_4_) {
+		list.add(EnumChatFormatting.ITALIC
+				+ "A sword worthy of the power of Mjolnir, created by the Allfather himself.");
 	}
 }

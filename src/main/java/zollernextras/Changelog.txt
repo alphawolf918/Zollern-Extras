@@ -23,7 +23,7 @@
 * Improved some of the block and item textures.
 * Villagers will now turn into witches when struck with lightning.
 * Added Sugar Cube blocks.
-    * Generate in Candy Land biomes, sometimes replacing white Candy Cubes.
+    * Generate only in Candy Land biomes, sometimes replacing white Candy Cubes.
     * Also generates the same way that the multi-colored Candy Cubes do.
     * Drops 1-9 sugar when broken.
     * Can be crafted into 9 pieces of sugar and vice-versa.
@@ -66,9 +66,9 @@
     * Ice Cream Sandwich. [X]
     * Cream Ball.
     * All Sweet Tooth food items with a [X] beside them give a different potion effect when consumed.
-    * All ST items are always consumable, even when the Player's hunger bar is full.
+        * All ST food items are always consumable, even when the Player's hunger bar is full.
 * Added Sharks.
-    * Spawns in all Ocean biomes.
+    * Spawns in all Ocean biomes, as well as some others.
     * Large, hostile mobs that deal heavy damage to the Player.
     * When killed by a Shark, a custom death message displays.
         * "[Player] got ate by a shark. Yum."
@@ -82,7 +82,7 @@
         * The Player can have up to 4 rows of hearts.
     * Fall resistance upgrades passively, randomly going up by 0.0 to 0.3 per fall.
         * The higher the resistance, the more distance subtracted from the fall, resulting in less damage.
-        * Must fall from a height of 1.5F or greater for it to increase.
+        * Must fall from a height of 1.5F or greater for it to have a chance to increase.
     * Fortune upgrades passively when mining ZE ores.
         * The higher the fortune stat, the higher the chance for more drops from ZE ores.
             * Note that there is only a chance (5 out of 10 or 50%) of extra drops, it's not always guaranteed.
@@ -91,6 +91,10 @@
         * Vanilla ores do not currently affect and are not affected by fortune.
         * Fortune levels are not the same thing as the "Fortune" enchantment on pickaxes.
 * Removed message that sent upon joining the world / respawning.
+* Current biome now displays on the HUD by default.
+
+---- FIXES ----
+* Fixed issue with boiled egg item. Item is now registered and in-game.
 
 [2.6.1]
 

@@ -37,7 +37,6 @@ public class ItemHeartForce extends Item {
 			int par6, int par7, float par8, float par9, float par10) {
 		EntityPlayer player = par2EntityPlayer;
 		ExtendedPlayer props = ExtendedPlayer.get(player);
-		
 		if (!player.capabilities.isCreativeMode) {
 			float maxHealth = player.getMaxHealth();
 			IAttributeInstance attrMaxHealth = player
@@ -55,7 +54,7 @@ public class ItemHeartForce extends Item {
 						+ props.getMaxHealth());
 			} else {
 				M.addChatMessage(player, "Max health cannot exceed "
-						+ intMaxHealthLimit + ".");
+						+ dblMaxHealthLimit + ".");
 			}
 		}
 		return true;

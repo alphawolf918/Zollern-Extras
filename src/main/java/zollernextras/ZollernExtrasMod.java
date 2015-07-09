@@ -63,5 +63,6 @@ public class ZollernExtrasMod {
 	
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event) {
+		proxy.initGUI();
 	}
 }

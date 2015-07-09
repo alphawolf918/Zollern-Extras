@@ -3,6 +3,7 @@ package zollernextras.proxies;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraftforge.common.MinecraftForge;
 import zollernextras.blocks.tiles.TEAmaranthBlockIngot;
 import zollernextras.blocks.tiles.TEBlockBase;
 import zollernextras.blocks.tiles.TECandySphereRed;
@@ -25,6 +26,7 @@ import zollernextras.blocks.tiles.renders.TESRShiniumIngotStack;
 import zollernextras.blocks.tiles.renders.TESRSphereRed;
 import zollernextras.blocks.tiles.renders.TESRZincIngotStack;
 import zollernextras.blocks.tiles.renders.TESRZollerniumIngotStack;
+import zollernextras.gui.GuiBiomeType;
 import zollernextras.lib.M;
 import zollernextras.mobs.entities.EntityBabyDragon;
 import zollernextras.mobs.entities.EntityDuck;
@@ -118,6 +120,12 @@ public class ClientProxy extends CommonProxy {
 		addSphere(TECandySphereRed.class, new TESRSphereRed());
 		
 		M.Log("Renderers initialized.");
+	}
+	
+	@Override
+	public void initGUI() {
+		MinecraftForge.EVENT_BUS.register(new GuiBiomeType(Minecraft
+				.getMinecraft()));
 	}
 	
 	public void addTile(Class<? extends TEBlockBase> TEClass,

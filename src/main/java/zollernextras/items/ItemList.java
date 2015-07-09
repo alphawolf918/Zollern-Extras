@@ -132,9 +132,9 @@ public class ItemList {
 			.setUnlocalizedName(Reference.MODID + "_marblestick")
 			.setTextureName(Reference.MODID + ":marblestick");
 	public static Item blackMarbleStick = new Item()
-	.setCreativeTab(ModTabs.zTab)
-	.setUnlocalizedName(Reference.MODID + "_blackmarblestick")
-	.setTextureName(Reference.MODID + ":blackmarblestick");
+			.setCreativeTab(ModTabs.zTab)
+			.setUnlocalizedName(Reference.MODID + "_blackmarblestick")
+			.setTextureName(Reference.MODID + ":blackmarblestick");
 	public static Item lapisStick = new Item().setCreativeTab(ModTabs.zTab)
 			.setUnlocalizedName(Reference.MODID + "_lapisstick")
 			.setTextureName(Reference.MODID + ":lapisstick");
@@ -234,6 +234,7 @@ public class ItemList {
 		addItem(cookedDuck, "Cooked Duck");
 		addItem(duckEgg, "Duck Egg");
 		addItem(duckFeather, "Duck Feather");
+		addItem(boiledEgg, "Boiled Egg");
 		addItem(shadowBone, "Shadow Bone");
 		addItem(marbleStick, "White Cave Marble Stick");
 		addItem(blackMarbleStick, "Black Cave Marble Stick");

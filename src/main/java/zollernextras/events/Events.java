@@ -48,6 +48,7 @@ import zollernextras.proxies.CommonProxy;
 import cpw.mods.fml.common.eventhandler.Event.Result;
 import cpw.mods.fml.common.eventhandler.EventPriority;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import cpw.mods.fml.common.gameevent.PlayerEvent.ItemSmeltedEvent;
 
 public class Events {
 	
@@ -59,6 +60,12 @@ public class Events {
 				ExtendedPlayer.register((EntityPlayer) event.entity);
 			}
 		}
+	}
+	
+	@SubscribeEvent
+	public void onSmelting(ItemSmeltedEvent event) {
+		EntityPlayer player = event.player;
+		// TODO
 	}
 	
 	@SubscribeEvent
@@ -163,7 +170,7 @@ public class Events {
 					IOre oreBlock = (IOre) event.block;
 					ExtendedPlayer props = ExtendedPlayer.get(player);
 					double fortune = props.getMaxFortune();
-					if (new Random().nextInt(50) == 1) {
+					if (new Random().nextInt(20) == 1) {
 						double blockFortune = oreBlock.getFortune();
 						props.setMaxFortune(fortune + blockFortune);
 						String strFortuneLevel = "" + props.getMaxFortune();

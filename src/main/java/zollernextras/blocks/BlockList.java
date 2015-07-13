@@ -6,6 +6,7 @@ import net.minecraft.tileentity.TileEntity;
 import zollernextras.blocks.crops.CropBlackberry;
 import zollernextras.blocks.crops.CropBlueberry;
 import zollernextras.blocks.crops.CropGrape;
+import zollernextras.blocks.crops.CropRadish;
 import zollernextras.blocks.crops.CropStrawberry;
 import zollernextras.blocks.ingotstacks.AmaranthIngotStack;
 import zollernextras.blocks.ingotstacks.FueltoniumIngotStack;
@@ -39,6 +40,7 @@ import zollernextras.blocks.sirens.IronSiren;
 import zollernextras.blocks.spheres.CandySphereBase;
 import zollernextras.blocks.spheres.CandySphereRed;
 import zollernextras.blocks.tiles.TEAmaranthBlockIngot;
+import zollernextras.blocks.tiles.TECandySphereRed;
 import zollernextras.blocks.tiles.TEFueltoniumBlockIngot;
 import zollernextras.blocks.tiles.TEGoldBlockIngot;
 import zollernextras.blocks.tiles.TEIronBlockIngot;
@@ -136,6 +138,7 @@ public class BlockList {
 	public static Block blackberry = new CropBlackberry();
 	public static Block grape = new CropGrape();
 	public static Block strawberry = new CropStrawberry();
+	public static Block radish = new CropRadish();
 	
 	public static Block cosmos = new FlowerBlock("cosmos");
 	public static Block aster = new FlowerBlock("aster");
@@ -266,6 +269,7 @@ public class BlockList {
 		addBlock(blackberry, "Blackberries");
 		addBlock(grape, "Grapes");
 		addBlock(strawberry, "Strawberries");
+		addBlock(radish, "Radishes");
 		addBlock(cosmos, "Cosmos");
 		addBlock(aster, "Aster");
 		addBlock(lilac, "Lilac");
@@ -320,8 +324,8 @@ public class BlockList {
 				"shinestone"), "shinestone", TEShinestoneBlockIngot.class);
 		shiniumBlockIngot = addIngotTile(new ShiniumIngotStack("shinium"),
 				"shinium", TEShiniumBlockIngot.class);
-		// candySphereRed = addSphereTile(new CandySphereRed(), "red",
-		// TECandySphereRed.class);
+		candySphereRed = addSphereTile(new CandySphereRed(), "red",
+				TECandySphereRed.class);
 		M.Log("Blocks loaded, " + totalBlocks + " entries.");
 	}
 	

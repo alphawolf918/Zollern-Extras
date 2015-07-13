@@ -31,6 +31,7 @@ import zollernextras.lib.M;
 import zollernextras.mobs.entities.EntityBabyDragon;
 import zollernextras.mobs.entities.EntityDuck;
 import zollernextras.mobs.entities.EntityFish;
+import zollernextras.mobs.entities.EntityHellDuck;
 import zollernextras.mobs.entities.EntityHog;
 import zollernextras.mobs.entities.EntityHogZombie;
 import zollernextras.mobs.entities.EntityJellyfish;
@@ -57,6 +58,7 @@ import zollernextras.mobs.models.ModelShrimp;
 import zollernextras.mobs.renders.RenderBabyDragon;
 import zollernextras.mobs.renders.RenderDuck;
 import zollernextras.mobs.renders.RenderFish;
+import zollernextras.mobs.renders.RenderHellDuck;
 import zollernextras.mobs.renders.RenderHog;
 import zollernextras.mobs.renders.RenderHogZombie;
 import zollernextras.mobs.renders.RenderJellyfish;
@@ -106,6 +108,8 @@ public class ClientProxy extends CommonProxy {
 				new RenderHogZombie(new ModelHogZombie(), 0.5F));
 		RenderingRegistry.registerEntityRenderingHandler(EntityShark.class,
 				new RenderShark(new ModelShark(), 0.5F));
+		RenderingRegistry.registerEntityRenderingHandler(EntityHellDuck.class,
+				new RenderHellDuck(new ModelDuck(), 0.5F));
 		
 		addTile(TEIronBlockIngot.class, new TESRIronIngotStack());
 		addTile(TEGoldBlockIngot.class, new TESRGoldIngotStack());

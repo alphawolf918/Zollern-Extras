@@ -132,9 +132,9 @@ public class ItemList {
 			.setUnlocalizedName(Reference.MODID + "_marblestick")
 			.setTextureName(Reference.MODID + ":marblestick");
 	public static Item blackMarbleStick = new Item()
-			.setCreativeTab(ModTabs.zTab)
-			.setUnlocalizedName(Reference.MODID + "_blackmarblestick")
-			.setTextureName(Reference.MODID + ":blackmarblestick");
+	.setCreativeTab(ModTabs.zTab)
+	.setUnlocalizedName(Reference.MODID + "_blackmarblestick")
+	.setTextureName(Reference.MODID + ":blackmarblestick");
 	public static Item lapisStick = new Item().setCreativeTab(ModTabs.zTab)
 			.setUnlocalizedName(Reference.MODID + "_lapisstick")
 			.setTextureName(Reference.MODID + ":lapisstick");
@@ -153,6 +153,8 @@ public class ItemList {
 			Blocks.farmland, "grape");
 	public static Item strawberry = new SeedFood(8, 0.9F, BlockList.strawberry,
 			Blocks.farmland, "strawberry");
+	public static Item radish = new SeedFood(8, 0.9F, BlockList.radish,
+			Blocks.farmland, "radish");
 	public static Item obsidianDust = new ModItem("obsidiandust");
 	public static Item silverNugget = new ModItem("silvernugget");
 	public static Item silverIngot = new ModItem("silveringot");
@@ -246,6 +248,7 @@ public class ItemList {
 		addItem(blackberry, "Blackberry");
 		addItem(grape, "Grape");
 		addItem(strawberry, "Strawberry");
+		addItem(radish, "Radish");
 		addItem(rawBacon, "Raw Bacon");
 		addItem(cookedBacon, "Cooked Bacon");
 		addItem(obsidianDust, "Obsidian Dust");

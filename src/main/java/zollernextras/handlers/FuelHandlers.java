@@ -10,7 +10,8 @@ public class FuelHandlers implements IFuelHandler {
 	public int getBurnTime(ItemStack fuel) {
 		if (fuel.getItem() == ItemList.spcItem) {
 			return 102400;
+		} else {
+			return 0;
 		}
-		return 0;
 	}
 }

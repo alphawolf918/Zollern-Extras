@@ -89,12 +89,32 @@
         * Fortune must be at least 1.0 or higher to receive extra drops.
             * 1.0 means 1 extra drop, 2.0 means 2 extra, etc.
         * Vanilla ores do not currently affect and are not affected by fortune.
-        * Fortune levels are not the same thing as the "Fortune" enchantment on pickaxes.
+        * Fortune levels are NOT the same thing as the "Fortune" enchantment on pickaxes.
 * Removed message that sent upon joining the world / respawning.
 * Current biome now displays on the HUD by default.
+    * Can be turned on and off via config.
+* Increased hardness of Candy Cube blocks.
+* 9 azurite can now be crafted into an azurite block and vice versa.
+* Added Hell Duck mob.
+    * Only spawns in the Nether.
+    * Hostile mob.
+* Added commands.
+    * /tpd <dimID>
+        * Sends the Player to the target dimension with the specified ID.
+        * Commands must be enabled.
+        * Player must be in Creative Mode for it to work.
+            * This is a safety measure, and a work-around to allow only Ops to be able to use it.
+        * Currently only sends the user to the dimension (no way to teleport to another player, bring them with you, etc.).
+        * There seems to be a slight glitch when using the command as /tpd 0 - it displays nothingness around the Player and 
+          then sends them to the Nether.
+    * /wp <player>
+        * Allows any Player to 'warp' to any other Player, provided that they are in the same dimension.
+* Added radishes.
+* Crops should now spawn randomly throughout the world.
 
 ---- FIXES ----
 * Fixed issue with boiled egg item. Item is now registered and in-game.
+
 
 [2.6.1]
 
@@ -162,7 +182,8 @@
 * Modified the Mushroom Forest a bit.
 * Added in the Miner's Land biome.
     * Rare biome.
-    * All types of vanilla and ZE ores found here at almost any level (from layer 1 to layer 256), can also have obsidian and azurite.
+    * All types of vanilla and ZE ores found here at almost any level (from layer 1 to layer 256), can also have 
+      obsidian and azurite.
     * No mobs spawn here whatsoever.
     * Has a rare, mutated version of itself.
     * No rain in this biome.
@@ -178,7 +199,8 @@
         * One of the eyes is red, referencing one of the mod author's favorite Marvel characters, Deathlok.
     * Spawns with a diamond sword.
     * Has more health than a Zombie Pigman.
-* Quivers are no longer glitchy - there should be no crash. However, there is a minor visual issue, and it is currently impossible to shift-click to move items TO the quiver, however it is possible to shift-click them FROM it.
+* Quivers are no longer glitchy - there should be no crash. However, there is a minor visual issue, and it 
+  is currently impossible to shift-click to move items TO the quiver, however it is possible to shift-click them FROM it.
     * Crash still happens when not in development environment.
 * Added 4 new flowers.
     * Cosmos

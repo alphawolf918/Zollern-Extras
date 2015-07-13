@@ -20,6 +20,7 @@ public class ZEConfig {
 	public static boolean rottenFleshCooksIntoLeather;
 	public static boolean vanillaItemsAreCraftable;
 	public static boolean horseArmorIsCraftable;
+	public static boolean biomeDisplaysOnHUD;
 	
 	public static int biomeIcyDesertID;
 	public static int biomeSlimeLandsID;
@@ -77,6 +78,8 @@ public class ZEConfig {
 				"Various improvements and extras for the mod.");
 		config.addCustomCategoryComment(CATEGORY_MOBS,
 				"Spawn rates of ZE mobs.");
+		config.addCustomCategoryComment(CATEGORY_ORES,
+				"Spawn rates of ZE ores.");
 		
 		// category, key, default value, comment
 		
@@ -114,6 +117,10 @@ public class ZEConfig {
 						true,
 						"If enabled, horse armor may be crafted using its respective material and obsidian. (This is separate from the above on purpose.)")
 						.getBoolean();
+		biomeDisplaysOnHUD = config
+				.get(CATEGORY_IMPROVEMENTS, "biomeDisplaysOnHUD", true,
+						"Disable this if you don't want the current biome to show on your HUD.")
+						.getBoolean();
 		
 		// Biomes
 		biomeIcyDesertID = config.get(CATEGORY_BIOMES, "biomeIcyDesertID", 67)
@@ -147,7 +154,7 @@ public class ZEConfig {
 		// Mobs
 		mobFishSpawnRate = config.get(CATEGORY_MOBS, "mobFishSpawnRate", 70)
 				.getInt();
-		mobSharkSpawnRate = config.get(CATEGORY_MOBS, "mobSharkSpawnRate", 45)
+		mobSharkSpawnRate = config.get(CATEGORY_MOBS, "mobSharkSpawnRate", 24)
 				.getInt();
 		mobMegaCreeperSpawnRate = config.get(CATEGORY_MOBS,
 				"mobMegaCreeperSpawnRate", 10).getInt();

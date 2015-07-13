@@ -9,8 +9,8 @@ public class CandyCube extends Block {
 		super(Material.rock);
 		M.setTab(this);
 		M.setNameAndTexture(this, "candycube_" + strTexture);
-		setHardness(0.6F);
-		setResistance(0.4F);
+		setHardness(1.6F);
+		setResistance(0.2F);
 		setStepSound(soundTypeStone);
 		setLightLevel(0.6F);
 	}

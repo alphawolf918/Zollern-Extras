@@ -12,6 +12,7 @@ import zollernextras.lib.Reference;
 import zollernextras.mobs.entities.EntityBabyDragon;
 import zollernextras.mobs.entities.EntityDuck;
 import zollernextras.mobs.entities.EntityFish;
+import zollernextras.mobs.entities.EntityHellDuck;
 import zollernextras.mobs.entities.EntityHog;
 import zollernextras.mobs.entities.EntityHogZombie;
 import zollernextras.mobs.entities.EntityJellyfish;
@@ -217,6 +218,12 @@ public class Mobs {
 				BiomeGenBase.deepOcean, BiomeGenBase.megaTaiga,
 				BiomeGenBase.mesa, BiomeGenBase.birchForest,
 				BiomeList.crystalOcean);
+		
+		// Hell Duck
+		registerEntity(EntityHellDuck.class, "hellduck", 0x8b0000, 0x000000);
+		EntityRegistry.addSpawn(EntityHellDuck.class,
+				ZEConfig.mobHellDuckSpawnRate, 2, 4, EnumCreatureType.monster,
+				BiomeGenBase.hell);
 		
 		M.Log("Entities have been registered!");
 	}

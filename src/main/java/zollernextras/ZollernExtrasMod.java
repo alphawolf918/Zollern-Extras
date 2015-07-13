@@ -2,6 +2,7 @@ package zollernextras;
 
 import zollernextras.biomes.BiomeList;
 import zollernextras.blocks.BlockList;
+import zollernextras.command.Commands;
 import zollernextras.config.ZEConfig;
 import zollernextras.creativetabs.ModTabs;
 import zollernextras.handlers.Handlers;
@@ -19,10 +20,11 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 
-@Mod(modid = Reference.MODID, name = "Zollern Extras",
-		version = Reference.VERSION)
+@Mod(modid = Reference.MODID, name = Reference.NAME,
+version = Reference.VERSION)
 public class ZollernExtrasMod {
 	
 	@Mod.Instance(Reference.MODID)
@@ -38,9 +40,6 @@ public class ZollernExtrasMod {
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
-		// KeyBindings.init();
-		// FMLCommonHandler.instance().bus().register(new
-		// KeyInputHandler());
 		M.Log("Beginning to load Zollern Extras...");
 		ModTabs.init();
 		ZEConfig.init(event);
@@ -58,11 +57,19 @@ public class ZollernExtrasMod {
 		Handlers.init();
 		OreDict.init();
 		NetworkRegistry.INSTANCE.registerGuiHandler(this, new CommonProxy());
-		M.Log("Loaded Zollern Extras successfully!");
 	}
 	
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event) {
-		proxy.initGUI();
+		if (ZEConfig.biomeDisplaysOnHUD) {
+			proxy.initGUI();
+		}
+		M.Log("Loaded Zollern Extras successfully!");
+	}
+	
+	@EventHandler
+	public void serverLoad(FMLServerStartingEvent event) {
+		Commands.init(event);
+		M.Log("Commands loaded.");
 	}
 }

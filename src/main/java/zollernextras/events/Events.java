@@ -2,9 +2,9 @@ package zollernextras.events;
 
 import java.util.Random;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockCrops;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.attributes.IAttributeInstance;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.monster.EntityBlaze;
 import net.minecraft.entity.monster.EntityEnderman;
@@ -31,8 +31,11 @@ import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.EntityStruckByLightningEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
+import net.minecraftforge.event.entity.living.LivingEvent.LivingJumpEvent;
 import net.minecraftforge.event.entity.living.LivingFallEvent;
+import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
+import net.minecraftforge.event.entity.player.PlayerEvent.NameFormat;
 import net.minecraftforge.event.entity.player.UseHoeEvent;
 import net.minecraftforge.event.terraingen.PopulateChunkEvent;
 import net.minecraftforge.event.world.BlockEvent;
@@ -48,12 +51,14 @@ import zollernextras.proxies.CommonProxy;
 import cpw.mods.fml.common.eventhandler.Event.Result;
 import cpw.mods.fml.common.eventhandler.EventPriority;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import cpw.mods.fml.common.gameevent.PlayerEvent.ItemCraftedEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent.ItemSmeltedEvent;
+import cpw.mods.fml.common.gameevent.PlayerEvent.PlayerRespawnEvent;
 
 public class Events {
 	
-	@SubscribeEvent
-	public void onEntityConstructing(EntityConstructing event) {
+	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
+	public void onEntityConstructingEvent(EntityConstructing event) {
 		if (event.entity instanceof EntityPlayer) {
 			EntityPlayer player = (EntityPlayer) event.entity;
 			if (ExtendedPlayer.get((EntityPlayer) event.entity) == null) {
@@ -62,13 +67,36 @@ public class Events {
 		}
 	}
 	
-	@SubscribeEvent
-	public void onSmelting(ItemSmeltedEvent event) {
+	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
+	public void onNameFormatEvent(NameFormat event) {
+		String username = event.username;
+		if (username.toLowerCase().equals("alphawolf918")) {
+			event.displayname = EnumChatFormatting.GOLD + "Zollern Wolf"
+					+ EnumChatFormatting.WHITE;
+		} else if (username.toLowerCase().equals("applepiec00kie")) {
+			event.displayname = EnumChatFormatting.LIGHT_PURPLE + "Queen Kassy";
+		} else if (username.toLowerCase().equals("takumikomeiji")) {
+			event.displayname = EnumChatFormatting.RED + "Red";
+		} else if (username.toLowerCase().equals("lazy_logic")) {
+			event.displayname = EnumChatFormatting.AQUA + "Logic";
+		} else if (username.toLowerCase().equals("cryokor")) {
+			event.displayname = EnumChatFormatting.DARK_AQUA + "Ice Lady";
+		}
+	}
+	
+	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
+	public void onItemCraftedEvent(ItemCraftedEvent event) {
 		EntityPlayer player = event.player;
 		// TODO
 	}
 	
-	@SubscribeEvent
+	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
+	public void onItemSmeltedEvent(ItemSmeltedEvent event) {
+		EntityPlayer player = event.player;
+		// TODO
+	}
+	
+	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
 	public void onLivingDeathEvent(LivingDeathEvent event) {
 		if (!event.entity.worldObj.isRemote
 				&& event.entity instanceof EntityPlayer) {
@@ -88,8 +116,8 @@ public class Events {
 		}
 	}
 	
-	@SubscribeEvent
-	public void onEntityJoinWorld(EntityJoinWorldEvent event) {
+	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
+	public void onEntityJoinWorldEvent(EntityJoinWorldEvent event) {
 		if (event.entity instanceof EntityPlayer
 				&& !event.entity.worldObj.isRemote) {
 			if (!event.entity.worldObj.isRemote
@@ -107,12 +135,21 @@ public class Events {
 					EntityPlayer player = (EntityPlayer) event.entity;
 					ExtendedPlayer props = ExtendedPlayer.get(player);
 					if (!player.capabilities.isCreativeMode) {
+						
+						// Max Health
 						double maxHealth = props.getMaxHealth();
-						IAttributeInstance attrMaxHealth = player
-								.getEntityAttribute(SharedMonsterAttributes.maxHealth);
 						player.getEntityAttribute(
 								SharedMonsterAttributes.maxHealth)
 								.setBaseValue(maxHealth);
+						
+						// Max Attack
+						double maxAttack = props.getMaxDamage();
+						double attrMaxDamage = player.getEntityAttribute(
+								SharedMonsterAttributes.attackDamage)
+								.getBaseValue();
+						player.getEntityAttribute(
+								SharedMonsterAttributes.attackDamage)
+								.setBaseValue(attrMaxDamage + maxAttack);
 					}
 					PacketDispatcher.sendTo(new SyncPlayerPropsMessage(
 							(EntityPlayer) event.entity),
@@ -123,7 +160,30 @@ public class Events {
 	}
 	
 	@SubscribeEvent
-	public void onEntityFalling(LivingFallEvent event) {
+	public void onPlayerRespawnEvent(PlayerRespawnEvent event) {
+		EntityPlayer player = event.player;
+		ExtendedPlayer props = ExtendedPlayer.get(player);
+		if (!player.capabilities.isCreativeMode) {
+			double maxHealth = props.getMaxHealth();
+			player.getEntityAttribute(SharedMonsterAttributes.maxHealth)
+					.setBaseValue(maxHealth);
+		}
+	}
+	
+	@SubscribeEvent
+	public void onLivingJumpEvent(LivingJumpEvent event) {
+		if (event.entity instanceof EntityPlayer) {
+			EntityPlayer player = (EntityPlayer) event.entity;
+			ExtendedPlayer props = ExtendedPlayer.get(player);
+			if (!event.entity.worldObj.isRemote) {
+				event.entity.motionY += props.getMaxJump();
+				// System.out.println("Boing -> " + props.getMaxJump());
+			}
+		}
+	}
+	
+	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
+	public void onLivingFallEvent(LivingFallEvent event) {
 		if (event.entity instanceof EntityPlayer) {
 			EntityPlayer player = (EntityPlayer) event.entity;
 			if (!player.capabilities.isCreativeMode) {
@@ -134,9 +194,11 @@ public class Events {
 					double totalResistance = fallDistance - resist;
 					if (totalResistance > 0.0D) {
 						event.distance -= (float) resist;
+					} else {
+						event.setCanceled(true);
 					}
 					
-					if (new Random().nextInt(20) == 1) {
+					if (new Random().nextInt(15) == 1) {
 						double incrAmnt = new Random().nextDouble();
 						if (incrAmnt > 0.3D) {
 							incrAmnt = 0.3D;
@@ -145,14 +207,15 @@ public class Events {
 							incrAmnt = 0.1D;
 						}
 						if (incrAmnt > 0.0D) {
-							String strFallResist = ""
-									+ props.getFallResistance();
-							String strIncrAmnt = "" + incrAmnt;
-							M.addChatMessage(player, EnumChatFormatting.GOLD
-									+ "+" + strIncrAmnt.substring(0, 3)
-									+ " Fall Resistance! Total: "
-									+ strFallResist.substring(0, 3));
 							props.setMaxFallResistance(resist + incrAmnt);
+							String fullResist = "" + resist + incrAmnt;
+							String strIncrAmnt = "" + incrAmnt;
+							M.addChatMessage(
+									player,
+									EnumChatFormatting.GOLD + "+"
+											+ strIncrAmnt.substring(0, 3)
+											+ " Fall Resistance! Total: "
+											+ fullResist.substring(0, 3));
 						}
 					}
 				}
@@ -160,8 +223,20 @@ public class Events {
 		}
 	}
 	
-	@SubscribeEvent
-	public void onHarvestOre(BlockEvent.HarvestDropsEvent event) {
+	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
+	public void onLivingHurtEvent(LivingHurtEvent event) {
+		if (event.entityLiving instanceof EntityPlayer) {
+			EntityPlayer player = (EntityPlayer) event.entityLiving;
+			ExtendedPlayer props = ExtendedPlayer.get(player);
+			double defense = props.getMaxDefense();
+			event.ammount = (float) (event.ammount - defense > 0F ? event.ammount
+					- defense
+					: 0F);
+		}
+	}
+	
+	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
+	public void onHarvestDropsEvent(BlockEvent.HarvestDropsEvent event) {
 		if (event.harvester instanceof EntityPlayer) {
 			EntityPlayer player = event.harvester;
 			if (!player.capabilities.isCreativeMode) {
@@ -170,7 +245,7 @@ public class Events {
 					IOre oreBlock = (IOre) event.block;
 					ExtendedPlayer props = ExtendedPlayer.get(player);
 					double fortune = props.getMaxFortune();
-					if (new Random().nextInt(20) == 1) {
+					if (new Random().nextInt(10) == 1) {
 						double blockFortune = oreBlock.getFortune();
 						props.setMaxFortune(fortune + blockFortune);
 						String strFortuneLevel = "" + props.getMaxFortune();
@@ -191,13 +266,15 @@ public class Events {
 								.getItem();
 						event.drops.add(new ItemStack(droppedItem, numDropped));
 					}
+				} else if (event.block instanceof BlockCrops) {
+					// TODO
 				}
 			}
 		}
 	}
 	
-	@SubscribeEvent
-	public void onEntityItemDrop(LivingDropsEvent event) {
+	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
+	public void onLivingDropsEvent(LivingDropsEvent event) {
 		Entity theEntity = event.entityLiving;
 		World worldObj = theEntity.worldObj;
 		if (theEntity instanceof EntityZombie) {
@@ -244,14 +321,14 @@ public class Events {
 		}
 	}
 	
-	@SubscribeEvent
-	public void onClonePlayer(PlayerEvent.Clone event) {
+	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
+	public void onClonePlayerEvent(PlayerEvent.Clone event) {
 		ExtendedPlayer.get(event.entityPlayer).copy(
 				ExtendedPlayer.get(event.original));
 	}
 	
-	@SubscribeEvent(priority = EventPriority.NORMAL)
-	public void UseHoe(UseHoeEvent event) {
+	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
+	public void UseHoeEvent(UseHoeEvent event) {
 		EntityPlayer par2EntityPlayer = event.entityPlayer;
 		ItemStack par1ItemStack = par2EntityPlayer.getHeldItem();
 		World par3World = event.world;
@@ -361,8 +438,9 @@ public class Events {
 		}
 	}
 	
-	@SubscribeEvent
-	public void onEntityStruckByLightning(EntityStruckByLightningEvent event) {
+	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
+	public void onEntityStruckByLightningEvent(
+			EntityStruckByLightningEvent event) {
 		Entity theEntity = event.entity;
 		World worldObj = theEntity.worldObj;
 		if (theEntity instanceof EntityVillager) {

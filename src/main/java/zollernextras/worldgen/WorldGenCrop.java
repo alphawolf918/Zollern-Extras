@@ -5,14 +5,12 @@ import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
-import zollernextras.lib.Treasures;
+import zollernextras.blocks.BlockList;
 
-public class WorldGenTreasureChest extends WorldGenerator {
-	int randInt = (int) (Math.random() * Math.floor(10));
+public class WorldGenCrop extends WorldGenerator {
 	
 	protected Block[] GetValidSpawnBlocks() {
-		return new Block[] { Blocks.sand, Blocks.clay, Blocks.dirt,
-				Blocks.grass, Blocks.gravel, Blocks.water, Blocks.gravel };
+		return new Block[] { Blocks.grass, Blocks.dirt, BlockList.betterGrass };
 	}
 	
 	public boolean LocationIsValidSpawn(World world, int i, int j, int k) {
@@ -33,38 +31,39 @@ public class WorldGenTreasureChest extends WorldGenerator {
 		Block blockIDAbove = world.getBlock(i, j + 1, k);
 		Block blockIDBelow = world.getBlock(i, j - 1, k);
 		for (Block x : GetValidSpawnBlocks()) {
-			if (blockIDAbove != Blocks.water && blockIDAbove != Blocks.air) {
+			if (blockIDAbove != Blocks.air) {
 				return false;
 			}
 			if (blockID == x) {
+				return true;
+			} else if (blockID == Blocks.stone && blockIDBelow == x) {
 				return true;
 			}
 		}
 		return false;
 	}
 	
-	public WorldGenTreasureChest() {
-	}
-	
 	@Override
-	public boolean generate(World world, Random rand, int i, int j, int k) {
-		// check that each corner is one of the valid spawn blocks
+	public boolean generate(World world, Random random, int i, int j, int k) {
 		if (!LocationIsValidSpawn(world, i, j, k)) {
 			return false;
 		}
-		int randDist = rand.nextInt(10);
-		int chestX = i + 0;
-		int chestY = j - 2;
-		int chestZ = k + 0;
-		int chestRand = rand.nextInt(2);
-		boolean isBigChest = chestRand == 1 ? true : false;
-		String chestString = chestX + " " + chestY + " " + chestZ;
-		
-		world.setBlock(chestX, chestY, chestZ, Blocks.chest);
-		if (randInt == 5) {
-			Treasures.spawnChest(world, rand, chestX, chestY, chestZ,
-					isBigChest, Treasures.pickChestType());
+		Block randBlock;
+		int randInt = random.nextInt(10);
+		if (randInt == 1) {
+			randBlock = BlockList.strawberry;
+		} else if (randInt == 2) {
+			randBlock = BlockList.blueberry;
+		} else if (randInt == 3) {
+			randBlock = BlockList.blackberry;
+		} else if (randInt == 4) {
+			randBlock = BlockList.grape;
+		} else if (randInt == 5) {
+			randBlock = BlockList.radish;
+		} else {
+			randBlock = BlockList.aster;
 		}
+		world.setBlock(i, j, k, randBlock);
 		return true;
 	}
 }

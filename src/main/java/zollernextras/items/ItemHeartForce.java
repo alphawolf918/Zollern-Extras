@@ -45,13 +45,15 @@ public class ItemHeartForce extends Item {
 					&& props.getMaxHealth() < dblMaxHealthLimit) {
 				maxHealth += healthIncreaseAmount;
 				player.getEntityAttribute(SharedMonsterAttributes.maxHealth)
-				.setBaseValue(maxHealth);
+						.setBaseValue(maxHealth);
 				player.setHealth(maxHealth);
 				props.setMaxHealth(maxHealth);
 				par1ItemStack.damageItem(2, par2EntityPlayer);
-				M.addChatMessage(player, EnumChatFormatting.GOLD + "+"
-						+ this.healthIncreaseAmount + " Max Health! Total: "
-						+ props.getMaxHealth());
+				if (!player.worldObj.isRemote) {
+					M.addChatMessage(player, EnumChatFormatting.GOLD + "+"
+							+ this.healthIncreaseAmount
+							+ " Max Health! Total: " + props.getMaxHealth());
+				}
 			} else {
 				M.addChatMessage(player, "Max health cannot exceed "
 						+ dblMaxHealthLimit + ".");

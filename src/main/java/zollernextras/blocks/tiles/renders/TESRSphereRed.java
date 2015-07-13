@@ -14,21 +14,58 @@ public class TESRSphereRed extends TileEntitySpecialRenderer {
 			"textures/blocks/candycube_red.png");
 	IModelCustom model = AdvancedModelLoader.loadModel(new ResourceLocation(
 			Reference.MODID, "obj/ball.obj"));
-	float scalex = 0.80F;
-	float scaley = 0.20F;
-	float scalez = 0.60F;
+	float scalex = 0.080F;
+	float scaley = 0.40F;
+	float scalez = 0.06F;
 	float offset = 0.0F;
-	float offseth = 0.0F;
+	float offseth = 0.00F;
 	
 	@Override
 	public void renderTileEntityAt(TileEntity entity, double x, double y,
 			double z, float scale) {
+		int meta = entity.getBlockMetadata();
 		bindTexture(candy);
 		GL11.glPushMatrix();
 		GL11.glTranslatef((float) x + 0.5F, (float) y + offseth,
 				(float) z + 0.5F);
+		if (meta >= 2) {
+			GL11.glTranslatef(0.0F, 0.0F, offset / 2);
+		}
 		GL11.glScaled(scalex, scaley, scalez);
+		
 		model.renderAll();
 		GL11.glPopMatrix();
+		
+		if (meta >= 2) {
+			GL11.glPushMatrix();
+			GL11.glTranslatef((float) x + 0.5F, (float) y + offseth,
+					(float) z + 0.5F);
+			GL11.glTranslatef(0.0F, 0.0F, offset / -2);
+			GL11.glScaled(scalex, scaley, scalez);
+			model.renderAll();
+			GL11.glPopMatrix();
+		}
+		
+		if (meta >= 4) {
+			GL11.glPushMatrix();
+			GL11.glTranslatef((float) x + 0.5F, (float) y + offseth,
+					(float) z + 0.5F);
+			GL11.glTranslatef((offset - 0.02F) / 2, 0.125F, 0.0F);
+			GL11.glRotatef(90.0F, 0.0F, 1.0F, 0.0F);
+			GL11.glScaled(scalex, scaley, scalez);
+			model.renderAll();
+			GL11.glPopMatrix();
+		}
+		
+		if (meta >= 6) {
+			GL11.glPushMatrix();
+			GL11.glTranslatef((float) x + 0.5F, (float) y + offseth,
+					(float) z + 0.5F);
+			GL11.glTranslatef((offset - 0.02F) / -2, 0.125F, 0.0F);
+			GL11.glRotatef(90.0F, 0.0F, 1.0F, 0.0F);
+			GL11.glScaled(scalex, scaley, scalez);
+			model.renderAll();
+			GL11.glPopMatrix();
+		}
 	}
 }

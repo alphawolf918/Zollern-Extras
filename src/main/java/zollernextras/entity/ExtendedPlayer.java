@@ -17,14 +17,14 @@ public class ExtendedPlayer implements IExtendedEntityProperties {
 	
 	private final EntityPlayer player;
 	
-	private static double maxHealth = 20F;
+	private static double maxHealth = 20.0F;
 	private static double maxJump = 0.0D;
 	private static double fallResistance = 0.0D;
-	private static double maxDefense = 0D;
-	private static double maxDamage = 0D;
-	private static double maxFortune = 0D;
-	private static double maxIntelligence = 0D;
-	private static double maxSmelting = 0D;
+	private static double maxDefense = 0.0D;
+	private static double maxDamage = 1.0D;
+	private static double maxFortune = 0.0D;
+	private static double maxIntelligence = 0.0D;
+	private static double maxSmelting = 0.0D;
 	private static double maxHarvest = 0;
 	private static double currentXP = 0.0D;
 	private static double xpToNextLevel = 0.0D;

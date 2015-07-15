@@ -8,11 +8,13 @@ import zollernextras.creativetabs.ModTabs;
 import zollernextras.items.armor.ArmorMaterials;
 import zollernextras.items.armor.amaranth.AmaranthArmor;
 import zollernextras.items.armor.zollernium.ZollerniumArmor;
+import zollernextras.items.crops.Seed;
 import zollernextras.items.crops.SeedFood;
 import zollernextras.items.dust.AmaranthDust;
 import zollernextras.items.dust.ZincDust;
 import zollernextras.items.dust.ZollerniumDust;
 import zollernextras.items.food.CookedFood;
+import zollernextras.items.food.CropFood;
 import zollernextras.items.food.RawFood;
 import zollernextras.items.food.SweetFood;
 import zollernextras.items.ingots.AmaranthIngot;
@@ -155,6 +157,8 @@ public class ItemList {
 			Blocks.farmland, "strawberry");
 	public static Item radish = new SeedFood(8, 0.9F, BlockList.radish,
 			Blocks.farmland, "radish");
+	public static Item cornKernel = new Seed("cornkernel", BlockList.corn);
+	public static Item corn = new CropFood("corn");
 	public static Item obsidianDust = new ModItem("obsidiandust");
 	public static Item silverNugget = new ModItem("silvernugget");
 	public static Item silverIngot = new ModItem("silveringot");
@@ -249,6 +253,8 @@ public class ItemList {
 		addItem(grape, "Grape");
 		addItem(strawberry, "Strawberry");
 		addItem(radish, "Radish");
+		addItem(cornKernel, "Corn Kernel");
+		addItem(corn, "Corn");
 		addItem(rawBacon, "Raw Bacon");
 		addItem(cookedBacon, "Cooked Bacon");
 		addItem(obsidianDust, "Obsidian Dust");

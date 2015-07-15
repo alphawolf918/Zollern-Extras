@@ -58,7 +58,7 @@ public class GuiBiomeType extends Gui {
 					l3 & 15, this.mc.theWorld.getWorldChunkManager()).biomeName;
 			String s = "Biome: " + biomeName;
 			fontRendererObj.drawString(s, 2, 96, i3);
-			fontRendererObj.drawString(s, 26, yPos - 96 + 4, i3);
+			fontRendererObj.drawString(s, 26, yPos - 90, i3);
 		}
 	}
 }

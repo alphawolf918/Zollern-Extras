@@ -74,13 +74,17 @@ public class Events {
 			event.displayname = EnumChatFormatting.GOLD + "Zollern Wolf"
 					+ EnumChatFormatting.WHITE;
 		} else if (username.toLowerCase().equals("applepiec00kie")) {
-			event.displayname = EnumChatFormatting.LIGHT_PURPLE + "Queen Kassy";
+			event.displayname = EnumChatFormatting.LIGHT_PURPLE + "Queen Apple"
+					+ EnumChatFormatting.WHITE;
 		} else if (username.toLowerCase().equals("takumikomeiji")) {
-			event.displayname = EnumChatFormatting.RED + "Red";
+			event.displayname = EnumChatFormatting.RED + "Red"
+					+ EnumChatFormatting.WHITE;
 		} else if (username.toLowerCase().equals("lazy_logic")) {
-			event.displayname = EnumChatFormatting.AQUA + "Logic";
+			event.displayname = EnumChatFormatting.AQUA + "Logic"
+					+ EnumChatFormatting.WHITE;
 		} else if (username.toLowerCase().equals("cryokor")) {
-			event.displayname = EnumChatFormatting.DARK_AQUA + "Ice Lady";
+			event.displayname = EnumChatFormatting.DARK_AQUA + "Ice Lady"
+					+ EnumChatFormatting.WHITE;
 		}
 	}
 	

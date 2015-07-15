@@ -8,26 +8,18 @@
 :downloadClient SKIPPED
 :downloadServer SKIPPED
 :getVersionJson
-:extractUserDev
-Download http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.7.10-10.13.4.1447-1.7.10/forge-1.7.10-10.13.4.1447-1.7.10-userdev.jar
+:extractUserDev UP-TO-DATE
 :mergeJars SKIPPED
-:applyBinPatches
+:applyBinPatches SKIPPED
 :downloadMcpTools SKIPPED
-:extractMcpData
-:genSrgs
-:deobfBinJar
-Applying SpecialSource...
-Applying Exceptor...
-Stripping synthetics...
+:extractMcpData UP-TO-DATE
+:genSrgs SKIPPED
+:deobfBinJar SKIPPED
 :compileApiJava UP-TO-DATE
 :processApiResources UP-TO-DATE
 :apiClasses UP-TO-DATE
 :sourceMainJava
-:compileJava
-Download http://files.minecraftforge.net/maven/org/scala-lang/scala-parser-combinators_2.11/1.0.1/scala-parser-combinators_2.11-1.0.1.jar
-Download http://files.minecraftforge.net/maven/org/scala-lang/scala-swing_2.11/1.0.1/scala-swing_2.11-1.0.1.jar
-Download http://files.minecraftforge.net/maven/org/scala-lang/scala-xml_2.11/1.0.2/scala-xml_2.11-1.0.2.jar
-warning: [options] bootstrap class path not set in conjunction with -source 1.6
+:compileJavawarning: [options] bootstrap class path not set in conjunction with -source 1.6
 C:\Forge1710\src\main\build\sources\java\zollernextras\mobs\renders\RenderBabyDragon.java:39: warning: doRender(Entity,double,double,double,float,float) in RenderBabyDragon overrides doRender(Entity,double,double,double,float,float) in RenderLiving; overridden method is a bridge method
 	public void doRender(Entity par1Entity, double par2, double par4,
 	            ^
@@ -35,6 +27,9 @@ C:\Forge1710\src\main\build\sources\java\zollernextras\mobs\renders\RenderDuck.j
 	public void doRender(Entity par1Entity, double par2, double par4,
 	            ^
 C:\Forge1710\src\main\build\sources\java\zollernextras\mobs\renders\RenderFish.java:50: warning: doRender(Entity,double,double,double,float,float) in RenderFish overrides doRender(Entity,double,double,double,float,float) in RenderLiving; overridden method is a bridge method
+	public void doRender(Entity par1Entity, double par2, double par4,
+	            ^
+C:\Forge1710\src\main\build\sources\java\zollernextras\mobs\renders\RenderHellDuck.java:75: warning: doRender(Entity,double,double,double,float,float) in RenderHellDuck overrides doRender(Entity,double,double,double,float,float) in RenderLiving; overridden method is a bridge method
 	public void doRender(Entity par1Entity, double par2, double par4,
 	            ^
 C:\Forge1710\src\main\build\sources\java\zollernextras\mobs\renders\RenderHog.java:50: warning: doRender(Entity,double,double,double,float,float) in RenderHog overrides doRender(Entity,double,double,double,float,float) in RenderLiving; overridden method is a bridge method
@@ -61,12 +56,16 @@ C:\Forge1710\src\main\build\sources\java\zollernextras\mobs\renders\RenderScorpi
 C:\Forge1710\src\main\build\sources\java\zollernextras\mobs\renders\RenderShadowSkeleton.java:292: warning: doRender(Entity,double,double,double,float,float) in RenderShadowSkeleton overrides doRender(Entity,double,double,double,float,float) in RenderLiving; overridden method is a bridge method
 	public void doRender(Entity par1Entity, double par2, double par4,
 	            ^
+C:\Forge1710\src\main\build\sources\java\zollernextras\mobs\renders\RenderShark.java:52: warning: doRender(Entity,double,double,double,float,float) in RenderShark overrides doRender(Entity,double,double,double,float,float) in RenderLiving; overridden method is a bridge method
+	public void doRender(Entity par1Entity, double par2, double par4,
+	            ^
 C:\Forge1710\src\main\build\sources\java\zollernextras\mobs\renders\RenderShrimp.java:36: warning: doRender(Entity,double,double,double,float,float) in RenderShrimp overrides doRender(Entity,double,double,double,float,float) in RenderLiving; overridden method is a bridge method
 	public void doRender(Entity par1Entity, double par2, double par4,
 	            ^
 Note: Some input files use unchecked or unsafe operations.
 Note: Recompile with -Xlint:unchecked for details.
-13 warnings
+15 warnings
+
 :processResources
 :classes
 :jar
@@ -81,4 +80,4 @@ Note: Recompile with -Xlint:unchecked for details.
 
 BUILD SUCCESSFUL
 
-Total time: 3 mins 12.51 secs
+Total time: 30.157 secs

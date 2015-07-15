@@ -161,7 +161,7 @@ public class WorldGenManager implements IWorldGenerator {
 				|| currentBiome.isEqualTo(BiomeList.mudSwamp)) {
 			spawnStructure(40, 120, world, random, x, y, z,
 					new WorldGenBerries());
-			spawnStructure(40, 120, world, random, x, y, z, new WorldGenCrop());
+			spawnStructure(40, 70, world, random, x, y, z, new WorldGenCrop());
 		}
 		
 		// Custom flowers
@@ -265,12 +265,12 @@ public class WorldGenManager implements IWorldGenerator {
 		
 		// Nether Ender Shard Ore
 		new WorldGenNetherMinable(BlockList.enderShardNetherOre, 1, 5)
-				.generate(world, random, Xcoord, Ycoord, Zcoord);
+		.generate(world, random, Xcoord, Ycoord, Zcoord);
 		
 		// Azurite
 		new WorldGenNetherMinable(BlockList.azuriteOre,
 				ZEConfig.oreAzuriteSpawnRate, 30).generate(world, random,
-				Xcoord, Ycoord, Zcoord);
+						Xcoord, Ycoord, Zcoord);
 		
 		// Nether Dirt
 		new WorldGenNetherMinable(BlockList.netherDirt, 10, 25).generate(world,
@@ -306,7 +306,7 @@ public class WorldGenManager implements IWorldGenerator {
 		// Ender Ore
 		new WorldGenEnderMinable(BlockList.enderiteOre,
 				ZEConfig.oreEnderiteSpawnRate, 25).generate(world, random,
-				Xcoord, Ycoord, Zcoord);
+						Xcoord, Ycoord, Zcoord);
 	}
 	
 	/**

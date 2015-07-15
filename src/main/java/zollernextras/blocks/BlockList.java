@@ -5,6 +5,7 @@ import net.minecraft.block.Block;
 import net.minecraft.tileentity.TileEntity;
 import zollernextras.blocks.crops.CropBlackberry;
 import zollernextras.blocks.crops.CropBlueberry;
+import zollernextras.blocks.crops.CropCorn;
 import zollernextras.blocks.crops.CropGrape;
 import zollernextras.blocks.crops.CropRadish;
 import zollernextras.blocks.crops.CropStrawberry;
@@ -139,6 +140,7 @@ public class BlockList {
 	public static Block grape = new CropGrape();
 	public static Block strawberry = new CropStrawberry();
 	public static Block radish = new CropRadish();
+	public static Block corn = new CropCorn();
 	
 	public static Block cosmos = new FlowerBlock("cosmos");
 	public static Block aster = new FlowerBlock("aster");
@@ -270,6 +272,7 @@ public class BlockList {
 		addBlock(grape, "Grapes");
 		addBlock(strawberry, "Strawberries");
 		addBlock(radish, "Radishes");
+		addBlock(corn, "Corn Stalk");
 		addBlock(cosmos, "Cosmos");
 		addBlock(aster, "Aster");
 		addBlock(lilac, "Lilac");

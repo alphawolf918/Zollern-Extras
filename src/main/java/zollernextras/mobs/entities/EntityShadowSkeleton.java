@@ -3,11 +3,9 @@ package zollernextras.mobs.entities;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIArrowAttack;
 import net.minecraft.entity.ai.EntityAIAttackOnCollide;
-import net.minecraft.entity.ai.EntityAIFleeSun;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
-import net.minecraft.entity.ai.EntityAIRestrictSun;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
@@ -29,12 +27,10 @@ public class EntityShadowSkeleton extends EntitySkeleton {
 		super(par1World);
 		this.setCanPickUpLoot(true);
 		this.tasks.addTask(1, new EntityAISwimming(this));
-		this.tasks.addTask(2, new EntityAIRestrictSun(this));
-		this.tasks.addTask(3, new EntityAIFleeSun(this, 1.0D));
-		this.tasks.addTask(5, new EntityAIWander(this, 1.0D));
-		this.tasks.addTask(6, new EntityAIWatchClosest(this,
+		this.tasks.addTask(2, new EntityAIWander(this, 1.0D));
+		this.tasks.addTask(3, new EntityAIWatchClosest(this,
 				EntityPlayer.class, 8.0F));
-		this.tasks.addTask(6, new EntityAILookIdle(this));
+		this.tasks.addTask(3, new EntityAILookIdle(this));
 		this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
 		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this,
 				EntityPlayer.class, 0, true));
@@ -47,12 +43,20 @@ public class EntityShadowSkeleton extends EntitySkeleton {
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
+		this.getEntityAttribute(SharedMonsterAttributes.maxHealth)
+				.setBaseValue(25.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed)
-				.setBaseValue(0.3D);
+		.setBaseValue(0.3D);
+	}
+	
+	@Override
+	public void setFire(int par1) {
+		// nothing
 	}
 	
 	@Override
 	public void onLivingUpdate() {
+		super.onLivingUpdate();
 		if (this.worldObj.isDaytime() && !this.worldObj.isRemote) {
 			float f = this.getBrightness(1.0F);
 			
@@ -86,7 +90,6 @@ public class EntityShadowSkeleton extends EntitySkeleton {
 				}
 			}
 		}
-		super.onLivingUpdate();
 	}
 	
 	/**

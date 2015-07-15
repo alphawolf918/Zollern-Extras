@@ -53,7 +53,7 @@ public class CommandWp extends CommandBase implements ICommand {
 			if (entityplayermp == null) {
 				throw new PlayerNotFoundException();
 			}
-			EntityPlayerMP entityplayermp1 = getPlayer(sender, args[1]);
+			EntityPlayerMP entityplayermp1 = getPlayer(sender, args[0]);
 			if (entityplayermp1 == null) {
 				throw new PlayerNotFoundException();
 			}
@@ -68,9 +68,8 @@ public class CommandWp extends CommandBase implements ICommand {
 					entityplayermp1.posZ, entityplayermp1.rotationYaw,
 					entityplayermp1.rotationPitch);
 			sender.addChatMessage(new ChatComponentText(
-					EnumChatFormatting.GREEN
-							+ "Successfully teleported to Player "
-							+ EnumChatFormatting.GOLD + args[1]
+					EnumChatFormatting.GREEN + "Successfully warped to Player "
+							+ EnumChatFormatting.GOLD + args[0]
 							+ EnumChatFormatting.WHITE + "."));
 		}
 	}

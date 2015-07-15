@@ -24,7 +24,7 @@ import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 
 @Mod(modid = Reference.MODID, name = Reference.NAME,
-version = Reference.VERSION)
+		version = Reference.VERSION)
 public class ZollernExtrasMod {
 	
 	@Mod.Instance(Reference.MODID)

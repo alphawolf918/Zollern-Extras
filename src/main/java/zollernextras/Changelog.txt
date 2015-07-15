@@ -52,7 +52,7 @@
     * Is also a light source, similar to Sea Lamps.
     * Drops 2-3 Prismarine Crystals when mined with a pickaxe that does not have silk touch.
 * Added in Prismarine Ore.
-    * Drops 1-2 Prismarine Crystals when mined with a pickaxe.
+    * Drops 1-2 Prismarine Shards when mined with a pickaxe.
     * Only generates in Crystal Oceans.
 * Added in Polished Shinestone Crystal blocks.
     * Craftable.
@@ -110,11 +110,17 @@
     * /wp <player>
         * Allows any Player to 'warp' to any other Player, provided that they are in the same dimension.
 * Added radishes.
+* Added corn.
+    * Drops corn-cobs when harvested.
+    * Planted using corn kernels.
+        * Decraft corn cobs to make corn kernels.
 * Crops should now spawn randomly throughout the world.
+* Increased health of Shadow Skeletons.
 
 ---- FIXES ----
-* Fixed issue with boiled egg item. Item is now registered and in-game.
-
+* Fixed issue with boiled egg item not being in the game.
+* Fixed issue with fuelonite not smelting into fueltonium.
+* Fixed issue with Shadow Skeletons burning in sunlight.
 
 [2.6.1]
 
@@ -252,10 +258,10 @@
     * Scorpions
     * Jellyfish
     * Shrimp
-    * Duck
+    * Ducks
         * Lays duck eggs and drops duck feathers upon death.
         * Duck eggs can be cooked.
-    * Pigshroom
+    * Pigshrooms
 * Nether Quartz Blocks can now be turned back into Nether Quartz Items.
 * Sea Lamps will now also spawn in Deep Oceans as well.
 * Chicken eggs can now be cooked into edible boiled eggs.

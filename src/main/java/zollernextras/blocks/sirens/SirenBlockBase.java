@@ -2,7 +2,7 @@ package zollernextras.blocks.sirens;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import zollernextras.lib.M;
+import zollernextras.lib.MainHelper;
 import zollernextras.lib.enums.State;
 
 public class SirenBlockBase extends Block {
@@ -19,7 +19,7 @@ public class SirenBlockBase extends Block {
 		} else {
 			this.setLightLevel(0.0F);
 		}
-		M.setTab(this);
+		MainHelper.setTab(this);
 		this.setHardness(2F);
 		this.setResistance(10);
 		this.setStepSound(soundTypeMetal);

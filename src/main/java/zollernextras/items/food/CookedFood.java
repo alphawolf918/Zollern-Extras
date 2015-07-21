@@ -1,7 +1,7 @@
 package zollernextras.items.food;
 
 import net.minecraft.item.ItemFood;
-import zollernextras.lib.M;
+import zollernextras.lib.MainHelper;
 
 public class CookedFood extends ItemFood {
 	
@@ -13,8 +13,8 @@ public class CookedFood extends ItemFood {
 	}
 	
 	public void setDefaults(String strTexture) {
-		M.setTab(this);
-		M.setNameAndTexture(this, strTexture);
+		MainHelper.setTab(this);
+		MainHelper.setNameAndTexture(this, strTexture);
 		setMaxStackSize(64);
 	}
 	

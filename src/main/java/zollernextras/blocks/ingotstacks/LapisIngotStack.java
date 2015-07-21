@@ -14,7 +14,7 @@ import net.minecraft.world.World;
 import zollernextras.blocks.tiles.TEBlockBase;
 import zollernextras.blocks.tiles.TELapisBlockIngot;
 import zollernextras.items.ItemList;
-import zollernextras.lib.M;
+import zollernextras.lib.MainHelper;
 
 public class LapisIngotStack extends BlockContainer {
 	
@@ -22,8 +22,8 @@ public class LapisIngotStack extends BlockContainer {
 	
 	public LapisIngotStack(String strTexture) {
 		super(Material.iron);
-		M.setTab(this);
-		M.setName(this, "ingotBlock_" + strTexture);
+		MainHelper.setTab(this);
+		MainHelper.setName(this, "ingotBlock_" + strTexture);
 		this.setBlockTextureName("minecraft:lapis_block");
 		this.setBlockBounds(0.125F, 0.0F, 0.125F, 1.0F - 0.125F,
 				boundingBoxMaxY, 1.0F - 0.125F);

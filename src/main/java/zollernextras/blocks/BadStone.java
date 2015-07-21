@@ -2,14 +2,14 @@ package zollernextras.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import zollernextras.lib.M;
+import zollernextras.lib.MainHelper;
 
 public class BadStone extends Block {
 	public BadStone() {
 		super(Material.rock);
-		M.setTab(this);
+		MainHelper.setTab(this);
 		this.setHardness(1.6F);
 		this.setResistance(5.0F);
-		M.setNameAndTexture(this, "badstone");
+		MainHelper.setNameAndTexture(this, "badstone");
 	}
 }

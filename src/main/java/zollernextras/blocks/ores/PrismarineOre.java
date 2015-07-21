@@ -8,7 +8,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import zollernextras.items.ItemList;
-import zollernextras.lib.M;
+import zollernextras.lib.MainHelper;
 
 public class PrismarineOre extends Block implements IOre {
 	
@@ -16,8 +16,8 @@ public class PrismarineOre extends Block implements IOre {
 	
 	public PrismarineOre() {
 		super(Material.rock);
-		M.setTab(this);
-		M.setNameAndTexture(this, "prismarineore");
+		MainHelper.setTab(this);
+		MainHelper.setNameAndTexture(this, "prismarineore");
 		this.setHarvestLevel("pickaxe", 2);
 		this.setStepSound(soundTypePiston);
 		this.setHardness(5.0F);

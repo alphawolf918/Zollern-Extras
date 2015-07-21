@@ -1,11 +1,11 @@
 package zollernextras.items;
 
 import net.minecraft.item.Item;
-import zollernextras.lib.M;
+import zollernextras.lib.MainHelper;
 
 public class ItemBrickIngot extends Item {
 	public ItemBrickIngot(String color) {
-		M.setTab(this);
-		M.setNameAndTexture(this, "brickingot_" + color);
+		MainHelper.setTab(this);
+		MainHelper.setNameAndTexture(this, "brickingot_" + color);
 	}
 }

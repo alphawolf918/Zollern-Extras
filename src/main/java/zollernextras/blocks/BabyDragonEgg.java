@@ -10,7 +10,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.world.World;
-import zollernextras.lib.M;
+import zollernextras.lib.MainHelper;
 import zollernextras.mobs.entities.EntityBabyDragon;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -19,9 +19,9 @@ public class BabyDragonEgg extends BlockDragonEgg {
 	private static int ticksExisted = 0;
 	
 	public BabyDragonEgg() {
-		M.setTab(this);
-		M.setName(this, "babydragonegg");
-		M.setTexture(this, "azurite");
+		MainHelper.setTab(this);
+		MainHelper.setName(this, "babydragonegg");
+		MainHelper.setTexture(this, "azurite");
 		setHardness(3.0F);
 		setResistance(15.0F);
 		setStepSound(Block.soundTypePiston);

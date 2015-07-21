@@ -44,7 +44,7 @@ import zollernextras.blocks.BlockList;
 import zollernextras.blocks.ores.IOre;
 import zollernextras.entity.ExtendedPlayer;
 import zollernextras.items.ItemList;
-import zollernextras.lib.M;
+import zollernextras.lib.MainHelper;
 import zollernextras.network.PacketDispatcher;
 import zollernextras.network.client.SyncPlayerPropsMessage;
 import zollernextras.proxies.CommonProxy;
@@ -198,8 +198,6 @@ public class Events {
 					double totalResistance = fallDistance - resist;
 					if (totalResistance > 0.0D) {
 						event.distance -= (float) resist;
-					} else {
-						event.setCanceled(true);
 					}
 					
 					if (new Random().nextInt(15) == 1) {
@@ -214,12 +212,29 @@ public class Events {
 							props.setMaxFallResistance(resist + incrAmnt);
 							String fullResist = "" + resist + incrAmnt;
 							String strIncrAmnt = "" + incrAmnt;
-							M.addChatMessage(
+							MainHelper.addChatMessage(
 									player,
 									EnumChatFormatting.GOLD + "+"
 											+ strIncrAmnt.substring(0, 3)
 											+ " Fall Resistance! Total: "
 											+ fullResist.substring(0, 3));
+							if (new Random().nextInt(100) == 1) {
+								if (props.getMaxJump() < 8.0D) {
+									props.setMaxJump(props.getMaxJump()
+											+ incrAmnt);
+									fullResist = props.getMaxJump() + incrAmnt
+											+ "";
+									MainHelper.addChatMessage(
+											player,
+											EnumChatFormatting.GOLD
+													+ "+"
+													+ strIncrAmnt.substring(0,
+															3)
+													+ " Jump Height! Total: "
+													+ fullResist
+															.substring(0, 3));
+								}
+							}
 						}
 					}
 				}
@@ -253,7 +268,7 @@ public class Events {
 						double blockFortune = oreBlock.getFortune();
 						props.setMaxFortune(fortune + blockFortune);
 						String strFortuneLevel = "" + props.getMaxFortune();
-						M.addChatMessage(player, EnumChatFormatting.GOLD + "+"
+						MainHelper.addChatMessage(player, EnumChatFormatting.GOLD + "+"
 								+ blockFortune + " Fortune! Total: "
 								+ strFortuneLevel.substring(0, 3));
 					}

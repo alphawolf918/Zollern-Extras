@@ -7,7 +7,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.common.EnumPlantType;
-import zollernextras.lib.M;
+import zollernextras.lib.MainHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -19,8 +19,8 @@ public class FlowerBlock extends BlockBush {
 	
 	public FlowerBlock(String strTexture) {
 		super(Material.plants);
-		M.setTab(this);
-		M.setNameAndTexture(this, strTexture);
+		MainHelper.setTab(this);
+		MainHelper.setNameAndTexture(this, strTexture);
 		flowerTexture = strTexture;
 		setHardness(0.1F);
 		setResistance(0.0F);

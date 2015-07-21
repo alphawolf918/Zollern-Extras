@@ -27,7 +27,7 @@ import zollernextras.blocks.tiles.renders.TESRSphereRed;
 import zollernextras.blocks.tiles.renders.TESRZincIngotStack;
 import zollernextras.blocks.tiles.renders.TESRZollerniumIngotStack;
 import zollernextras.gui.GuiBiomeType;
-import zollernextras.lib.M;
+import zollernextras.lib.MainHelper;
 import zollernextras.mobs.entities.EntityBabyDragon;
 import zollernextras.mobs.entities.EntityDuck;
 import zollernextras.mobs.entities.EntityFish;
@@ -123,7 +123,7 @@ public class ClientProxy extends CommonProxy {
 		
 		addSphere(TECandySphereRed.class, new TESRSphereRed());
 		
-		M.Log("Renderers initialized.");
+		MainHelper.Log("Renderers initialized.");
 	}
 	
 	@Override

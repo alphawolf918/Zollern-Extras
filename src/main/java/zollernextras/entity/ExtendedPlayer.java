@@ -6,7 +6,7 @@ import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
 import net.minecraftforge.common.IExtendedEntityProperties;
-import zollernextras.lib.M;
+import zollernextras.lib.MainHelper;
 import zollernextras.network.PacketDispatcher;
 import zollernextras.network.client.SyncPlayerPropsMessage;
 import zollernextras.proxies.CommonProxy;
@@ -139,7 +139,7 @@ public class ExtendedPlayer implements IExtendedEntityProperties {
 		this.maxFortune = properties.getDouble("maxFortune");
 		this.maxIntelligence = properties.getDouble("maxIntelligence");
 		this.currentLevel = properties.getInteger("currentLevel");
-		M.Log("Loaded NBT data for " + EXT_PROP_NAME + ".");
+		MainHelper.Log("Loaded NBT data for " + EXT_PROP_NAME + ".");
 	}
 	
 	public static void saveProxyData(EntityPlayer player) {

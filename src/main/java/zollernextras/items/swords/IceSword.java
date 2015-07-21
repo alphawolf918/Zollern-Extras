@@ -17,7 +17,8 @@ import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
 import zollernextras.creativetabs.ModTabs;
 import zollernextras.items.tools.ToolMaterials;
-import zollernextras.lib.M;
+import zollernextras.lib.KeyHelper;
+import zollernextras.lib.MainHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -26,8 +27,8 @@ public class IceSword extends ItemSword {
 	public IceSword(ToolMaterial p_i45347_1_) {
 		super(p_i45347_1_);
 		this.setCreativeTab(ModTabs.zTab);
-		M.setTab(this);
-		M.setNameAndTexture(this, "icesword");
+		MainHelper.setTab(this);
+		MainHelper.setNameAndTexture(this, "icesword");
 	}
 	
 	@Override
@@ -78,7 +79,7 @@ public class IceSword extends ItemSword {
 				vec3d1, false);
 		
 		if (movingobjectposition == null)
-			
+		
 		{
 			
 			return itemstack;
@@ -138,7 +139,11 @@ public class IceSword extends ItemSword {
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack p_77624_1_, EntityPlayer p_77624_2_,
 			List list, boolean p_77624_4_) {
-		list.add(EnumChatFormatting.ITALIC
-				+ "A sword born from the ice demons.");
+		if (KeyHelper.isCtrlKeyDown() || KeyHelper.isShiftKeyDown()) {
+			list.add(EnumChatFormatting.ITALIC
+					+ "A sword born from the land of ice.");
+		} else {
+			list.add("Hold SHIFT for more information.");
+		}
 	}
 }

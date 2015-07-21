@@ -8,13 +8,13 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import zollernextras.blocks.ores.IOre;
-import zollernextras.lib.M;
+import zollernextras.lib.MainHelper;
 
 public class EnderFueltoniumOre extends Block implements IOre {
 	public EnderFueltoniumOre() {
 		super(Material.rock);
-		M.setTab(this);
-		M.setNameAndTexture(this, "enderfnore");
+		MainHelper.setTab(this);
+		MainHelper.setNameAndTexture(this, "enderfnore");
 		this.setStepSound(this.soundTypeStone);
 		this.setHarvestLevel("pickaxe", 4);
 		this.setStepSound(soundTypePiston);

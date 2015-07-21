@@ -2,7 +2,7 @@ package zollernextras.network;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
-import zollernextras.lib.M;
+import zollernextras.lib.MainHelper;
 import zollernextras.lib.Reference;
 import zollernextras.network.client.SyncPlayerPropsMessage;
 import zollernextras.network.server.OpenGuiMessage;
@@ -32,7 +32,7 @@ public class PacketDispatcher {
 	 */
 	public static final void registerPackets() {
 		
-		M.Log("Registering packets..");
+		MainHelper.Log("Registering packets..");
 		
 		// Packets handled on CLIENT
 		registerMessage(SyncPlayerPropsMessage.class);
@@ -40,7 +40,7 @@ public class PacketDispatcher {
 		// Packets handled on SERVER
 		registerMessage(OpenGuiMessage.class);
 		
-		M.Log("Packets regsitered.");
+		MainHelper.Log("Packets regsitered.");
 	}
 	
 	/**

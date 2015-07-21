@@ -8,13 +8,13 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import zollernextras.blocks.ores.IOre;
-import zollernextras.lib.M;
+import zollernextras.lib.MainHelper;
 import zollernextras.lib.Reference;
 
 public class NetherAmaranthOre extends Block implements IOre {
 	public NetherAmaranthOre() {
 		super(Material.rock);
-		M.setTab(this);
+		MainHelper.setTab(this);
 		this.setBlockName(Reference.MODID + "_netheramaranthore");
 		this.setStepSound(this.soundTypeStone);
 		this.setBlockTextureName(Reference.MODID + ":" + "amaranthnetherore");

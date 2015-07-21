@@ -17,7 +17,8 @@ import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
 import zollernextras.creativetabs.ModTabs;
 import zollernextras.items.tools.ToolMaterials;
-import zollernextras.lib.M;
+import zollernextras.lib.KeyHelper;
+import zollernextras.lib.MainHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -26,8 +27,8 @@ public class EnderSword extends ItemSword {
 	public EnderSword(ToolMaterial p_i45347_1_) {
 		super(p_i45347_1_);
 		this.setCreativeTab(ModTabs.zTab);
-		M.setTab(this);
-		M.setNameAndTexture(this, "endersword");
+		MainHelper.setTab(this);
+		MainHelper.setNameAndTexture(this, "endersword");
 	}
 	
 	@Override
@@ -145,7 +146,11 @@ public class EnderSword extends ItemSword {
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack p_77624_1_, EntityPlayer p_77624_2_,
 			List list, boolean p_77624_4_) {
-		list.add(EnumChatFormatting.ITALIC
-				+ "A sword of teleportation, forged from the teeth of the Ender Dragon.");
+		if (KeyHelper.isCtrlKeyDown() || KeyHelper.isShiftKeyDown()) {
+			list.add(EnumChatFormatting.ITALIC
+					+ "A sword forged from the teeth of the Ender Dragon.");
+		} else {
+			list.add("Hold SHIFT for more information.");
+		}
 	}
 }

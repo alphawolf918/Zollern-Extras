@@ -3,7 +3,7 @@ package zollernextras.blocks.sirens;
 import java.util.Random;
 import net.minecraft.world.World;
 import zollernextras.blocks.BlockList;
-import zollernextras.lib.M;
+import zollernextras.lib.MainHelper;
 import zollernextras.lib.Reference;
 import zollernextras.lib.enums.State;
 
@@ -15,7 +15,7 @@ public class IronSiren extends SirenBlockBase {
 		super(state);
 		this.state = state;
 		this.setSirenBlockSound(sirenInfo);
-		M.setNameAndTexture(this, sirenInfo);
+		MainHelper.setNameAndTexture(this, sirenInfo);
 		this.setTickRandomly(true);
 	}
 	

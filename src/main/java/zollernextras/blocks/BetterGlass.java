@@ -5,7 +5,7 @@ import net.minecraft.block.BlockGlass;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.util.IIcon;
-import zollernextras.lib.M;
+import zollernextras.lib.MainHelper;
 import zollernextras.lib.Reference;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -17,8 +17,8 @@ public class BetterGlass extends BlockGlass {
 	
 	public BetterGlass() {
 		super(Material.glass, false);
-		M.setTab(this);
-		M.setNameAndTexture(this, "betterglass");
+		MainHelper.setTab(this);
+		MainHelper.setNameAndTexture(this, "betterglass");
 		this.setHardness(0.5F);
 		this.setStepSound(this.soundTypeGlass);
 	}

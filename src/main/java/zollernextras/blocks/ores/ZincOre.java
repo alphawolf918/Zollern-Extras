@@ -7,14 +7,14 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
-import zollernextras.lib.M;
+import zollernextras.lib.MainHelper;
 
 public class ZincOre extends Block implements IOre {
 	public ZincOre() {
 		super(Material.rock);
-		M.setTab(this);
+		MainHelper.setTab(this);
 		this.setStepSound(this.soundTypeGlass);
-		M.setNameAndTexture(this, "zincore");
+		MainHelper.setNameAndTexture(this, "zincore");
 		this.setHarvestLevel("pickaxe", 4);
 		this.setStepSound(soundTypePiston);
 		this.setHardness(6.0F);

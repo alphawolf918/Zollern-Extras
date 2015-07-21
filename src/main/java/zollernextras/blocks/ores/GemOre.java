@@ -7,7 +7,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
-import zollernextras.lib.M;
+import zollernextras.lib.MainHelper;
 
 public class GemOre extends Block implements IOre {
 	
@@ -15,8 +15,8 @@ public class GemOre extends Block implements IOre {
 	
 	public GemOre(String name, Item itemToDrop) {
 		super(Material.rock);
-		M.setTab(this);
-		M.setNameAndTexture(this, name);
+		MainHelper.setTab(this);
+		MainHelper.setNameAndTexture(this, name);
 		this.dropItem = itemToDrop;
 		this.setStepSound(this.soundTypeGlass);
 		this.setHarvestLevel("pickaxe", 3);

@@ -8,13 +8,13 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import zollernextras.blocks.ores.IOre;
-import zollernextras.lib.M;
+import zollernextras.lib.MainHelper;
 
 public class EnderAmaranthOre extends Block implements IOre {
 	public EnderAmaranthOre() {
 		super(Material.rock);
-		M.setTab(this);
-		M.setNameAndTexture(this, "amaranthenderore");
+		MainHelper.setTab(this);
+		MainHelper.setNameAndTexture(this, "amaranthenderore");
 		this.setStepSound(this.soundTypeStone);
 		this.setHarvestLevel("pickaxe", 3);
 		this.setStepSound(soundTypePiston);

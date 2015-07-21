@@ -8,13 +8,13 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import zollernextras.blocks.ores.IOre;
-import zollernextras.lib.M;
+import zollernextras.lib.MainHelper;
 import zollernextras.lib.Reference;
 
 public class NetherSPCOre extends Block implements IOre {
 	public NetherSPCOre() {
 		super(Material.rock);
-		M.setTab(this);
+		MainHelper.setTab(this);
 		this.setBlockName(Reference.MODID + "_netherspcore");
 		this.setHardness(0.3F);
 		this.setStepSound(this.soundTypeStone);

@@ -1,6 +1,7 @@
 package zollernextras.lib;
 
 import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
@@ -14,7 +15,7 @@ public class OreDict {
 	
 	public static void init() {
 		
-		M.Log("Loading OreDictionary..");
+		MainHelper.Log("Loading OreDictionary..");
 		
 		// Better Glass
 		if (ZEConfig.betterGlassIsGlass) {
@@ -39,7 +40,9 @@ public class OreDict {
 		
 		// Zinc
 		registerOre("ingotZinc", ItemList.zincIngot);
+		registerOre("dustZinc", ItemList.zincDust);
 		registerOre("oreZinc", BlockList.zincOre);
+		registerOre("blockZinc", BlockList.zincBlock);
 		
 		// Amaranth
 		registerOre("ingotAmaranth", ItemList.amaranthIngot);
@@ -64,6 +67,7 @@ public class OreDict {
 		registerOre("ingotObsidian", ItemList.obsidianIngot);
 		
 		// Stone Registry
+		registerOre("blockStone", Blocks.stone);
 		registerOre("blockStone", BlockList.andesite);
 		registerOre("blockAndesite", BlockList.andesite);
 		registerOre("blockStone", BlockList.diorite);
@@ -71,7 +75,7 @@ public class OreDict {
 		registerOre("blockStone", BlockList.granite);
 		registerOre("blockGranite", BlockList.granite);
 		
-		M.Log("OreDictionary loaded: " + totalEntries + "entries.");
+		MainHelper.Log("OreDictionary loaded: " + totalEntries + " entries.");
 	}
 	
 	public static void registerOre(String strName, Item item) {

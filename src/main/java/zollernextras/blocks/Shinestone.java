@@ -5,13 +5,13 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import zollernextras.items.ItemList;
-import zollernextras.lib.M;
+import zollernextras.lib.MainHelper;
 import zollernextras.lib.Reference;
 
 public class Shinestone extends Block {
 	public Shinestone() {
 		super(Material.glass);
-		M.setTab(this);
+		MainHelper.setTab(this);
 		setBlockName(Reference.MODID + "_shinestone");
 		setHardness(0.6F);
 		setResistance(2.0F);

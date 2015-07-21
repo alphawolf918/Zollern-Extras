@@ -7,7 +7,7 @@ import zollernextras.config.ZEConfig;
 import zollernextras.creativetabs.ModTabs;
 import zollernextras.handlers.Handlers;
 import zollernextras.items.ItemList;
-import zollernextras.lib.M;
+import zollernextras.lib.MainHelper;
 import zollernextras.lib.OreDict;
 import zollernextras.lib.Recipes;
 import zollernextras.lib.Reference;
@@ -40,7 +40,7 @@ public class ZollernExtrasMod {
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
-		M.Log("Beginning to load Zollern Extras...");
+		MainHelper.Log("Beginning to load Zollern Extras...");
 		ModTabs.init();
 		ZEConfig.init(event);
 		ItemList.init();
@@ -64,12 +64,12 @@ public class ZollernExtrasMod {
 		if (ZEConfig.biomeDisplaysOnHUD) {
 			proxy.initGUI();
 		}
-		M.Log("Loaded Zollern Extras successfully!");
+		MainHelper.Log("Loaded Zollern Extras successfully!");
 	}
 	
 	@EventHandler
 	public void serverLoad(FMLServerStartingEvent event) {
 		Commands.init(event);
-		M.Log("Commands loaded.");
+		MainHelper.Log("Commands loaded.");
 	}
 }

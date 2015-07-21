@@ -52,7 +52,7 @@ import zollernextras.blocks.tiles.TESphereBase;
 import zollernextras.blocks.tiles.TEZincBlockIngot;
 import zollernextras.blocks.tiles.TEZollerniumBlockIngot;
 import zollernextras.items.ItemList;
-import zollernextras.lib.M;
+import zollernextras.lib.MainHelper;
 import zollernextras.lib.Reference;
 import zollernextras.lib.enums.State;
 import zollernextras.util.RegistryUtil;
@@ -199,6 +199,8 @@ public class BlockList {
 	public static Block iceCreamSandwichBlock = new IceCreamSandwichBlock();
 	public static Block chocolateBricks = new ChocolateBricks();
 	
+	public static Block shinetorch = new Shinetorch();
+	
 	public static HashMap<String, Class<? extends TileEntity>> TERegistry;
 	
 	public static void init() {
@@ -307,6 +309,7 @@ public class BlockList {
 		addBlock(brownieBlock, "Brownie Block");
 		addBlock(iceCreamSandwichBlock, "Ice Cream Sandwich Block");
 		addBlock(chocolateBricks, "Chocolate Bricks");
+		addBlock(shinetorch, "Shinetorch");
 		
 		TERegistry = new HashMap<String, Class<? extends TileEntity>>();
 		ironBlockIngot = addIngotTile(new IronIngotStack("iron"), "iron",
@@ -329,7 +332,7 @@ public class BlockList {
 				"shinium", TEShiniumBlockIngot.class);
 		candySphereRed = addSphereTile(new CandySphereRed(), "red",
 				TECandySphereRed.class);
-		M.Log("Blocks loaded, " + totalBlocks + " entries.");
+		MainHelper.Log("Blocks loaded, " + totalBlocks + " entries.");
 	}
 	
 	public static void addBlock(Block block, String name) {

@@ -4,15 +4,15 @@ import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
-import zollernextras.lib.M;
+import zollernextras.lib.MainHelper;
 
 public class RedRock extends Block {
 	public RedRock() {
 		super(Material.rock);
-		M.setTab(this);
+		MainHelper.setTab(this);
 		this.setHardness(1.6F);
 		this.setResistance(10F);
-		M.setNameAndTexture(this, "redrock");
+		MainHelper.setNameAndTexture(this, "redrock");
 		this.setStepSound(Block.soundTypeStone);
 	}
 	

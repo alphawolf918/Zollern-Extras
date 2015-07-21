@@ -2,7 +2,7 @@ package zollernextras.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import zollernextras.lib.M;
+import zollernextras.lib.MainHelper;
 
 public class GenericBlock extends Block {
 	
@@ -13,8 +13,8 @@ public class GenericBlock extends Block {
 	
 	public GenericBlock(String strTexture, float resistHardness) {
 		super(blockMaterial);
-		M.setTab(this);
-		M.setNameAndTexture(this, strTexture);
+		MainHelper.setTab(this);
+		MainHelper.setNameAndTexture(this, strTexture);
 		if (resistHardness != 0F) {
 			this.setResistance(resistHardness);
 			this.setHardness(resistHardness);

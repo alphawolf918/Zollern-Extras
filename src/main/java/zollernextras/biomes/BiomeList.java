@@ -6,7 +6,7 @@ import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.BiomeManager.BiomeEntry;
 import net.minecraftforge.common.BiomeManager.BiomeType;
 import zollernextras.config.ZEConfig;
-import zollernextras.lib.M;
+import zollernextras.lib.MainHelper;
 
 public class BiomeList {
 	
@@ -44,7 +44,7 @@ public class BiomeList {
 			ZEConfig.biomeCrystalOceanID);
 	
 	public static void init() {
-		M.Log("Preparing to load biomes..");
+		MainHelper.Log("Preparing to load biomes..");
 		addBiome(icyDesert, BiomeType.ICY, 15);
 		addBiome(slimeLands, BiomeType.WARM, 15);
 		addBiome(redShroomPlains, BiomeType.WARM, 34);
@@ -59,7 +59,7 @@ public class BiomeList {
 		addBiome(minersLand, BiomeType.WARM, 6);
 		addBiome(candyLand, BiomeType.WARM, 26);
 		addBiome(crystalOcean, BiomeType.WARM, 32);
-		M.Log("Biomes loaded!");
+		MainHelper.Log("Biomes loaded!");
 	}
 	
 	public static void addBiome(BiomeGenBase biome, BiomeType biomeType,
@@ -69,7 +69,7 @@ public class BiomeList {
 		BiomeManager.addVillageBiome(biome, true);
 		BiomeManager.addStrongholdBiome(biome);
 		biomeGenList.add(biome);
-		M.Log("Loaded biome '" + biome.biomeName + "' with ID: "
+		MainHelper.Log("Loaded biome '" + biome.biomeName + "' with ID: "
 				+ biome.biomeID);
 	}
 }

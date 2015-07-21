@@ -2,7 +2,7 @@ package zollernextras.config;
 
 import java.io.File;
 import net.minecraftforge.common.config.Configuration;
-import zollernextras.lib.M;
+import zollernextras.lib.MainHelper;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 public class ZEConfig {
@@ -208,6 +208,6 @@ public class ZEConfig {
 				"oreEnderiteSpawnRate", 4).getInt();
 		
 		config.save();
-		M.Log("Config loaded.");
+		MainHelper.Log("Config loaded.");
 	}
 }

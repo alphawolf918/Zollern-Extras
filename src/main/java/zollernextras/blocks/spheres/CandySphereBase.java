@@ -6,7 +6,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import zollernextras.blocks.tiles.TESphereBase;
-import zollernextras.lib.M;
+import zollernextras.lib.MainHelper;
 
 public class CandySphereBase extends BlockContainer {
 	
@@ -14,8 +14,8 @@ public class CandySphereBase extends BlockContainer {
 	
 	public CandySphereBase(String strTexture) {
 		super(Material.piston);
-		M.setTab(this);
-		M.setNameAndTexture(this, "candycube_" + strTexture);
+		MainHelper.setTab(this);
+		MainHelper.setNameAndTexture(this, "candycube_" + strTexture);
 		this.setHardness(0.6F);
 		this.setResistance(0.4F);
 		this.setBlockBounds(0.125F, 0.0F, 0.125F, 1.0F - 0.125F,

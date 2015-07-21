@@ -1,11 +1,11 @@
 package zollernextras.items.ingots;
 
 import net.minecraft.item.Item;
-import zollernextras.lib.M;
+import zollernextras.lib.MainHelper;
 
 public class Gem extends Item {
 	public Gem(String name) {
-		M.setTab(this);
-		M.setNameAndTexture(this, name);
+		MainHelper.setTab(this);
+		MainHelper.setNameAndTexture(this, name);
 	}
 }

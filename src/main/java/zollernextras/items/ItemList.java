@@ -4,25 +4,16 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.potion.Potion;
 import zollernextras.blocks.BlockList;
-import zollernextras.creativetabs.ModTabs;
 import zollernextras.items.armor.ArmorMaterials;
 import zollernextras.items.armor.amaranth.AmaranthArmor;
 import zollernextras.items.armor.zollernium.ZollerniumArmor;
 import zollernextras.items.crops.Seed;
 import zollernextras.items.crops.SeedFood;
-import zollernextras.items.dust.AmaranthDust;
-import zollernextras.items.dust.ZincDust;
-import zollernextras.items.dust.ZollerniumDust;
 import zollernextras.items.food.CookedFood;
 import zollernextras.items.food.CropFood;
 import zollernextras.items.food.RawFood;
 import zollernextras.items.food.SweetFood;
-import zollernextras.items.ingots.AmaranthIngot;
 import zollernextras.items.ingots.Gem;
-import zollernextras.items.ingots.ItemIngot;
-import zollernextras.items.ingots.ShinestoneIngot;
-import zollernextras.items.ingots.ZincIngot;
-import zollernextras.items.ingots.ZollerniumIngot;
 import zollernextras.items.storage.ItemQuiver;
 import zollernextras.items.swords.EnderSword;
 import zollernextras.items.swords.IceSword;
@@ -39,8 +30,7 @@ import zollernextras.items.tools.zollernium.ZollerniumHoe;
 import zollernextras.items.tools.zollernium.ZollerniumPickaxe;
 import zollernextras.items.tools.zollernium.ZollerniumShovel;
 import zollernextras.items.tools.zollernium.ZollerniumSword;
-import zollernextras.lib.M;
-import zollernextras.lib.Reference;
+import zollernextras.lib.MainHelper;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ItemList {
@@ -52,8 +42,8 @@ public class ItemList {
 	public static Item fuelonite = new ModItem("fuelonite");
 	public static Item ingotFueltonium = new ModItem("fueltoniumingot");
 	public static Item enderShard = new ModItem("endershard");
-	public static Item amaranthIngot = new AmaranthIngot();
-	public static Item amaranthDust = new AmaranthDust();
+	public static Item amaranthIngot = new ModItem("amaranthingot");
+	public static Item amaranthDust = new ModItem("amaranthdust");
 	public static Item amaranthPickaxe = new AmaranthPickaxe(
 			ToolMaterials.AMARANTH);
 	public static Item amaranthSword = new AmaranthSword(ToolMaterials.AMARANTH);
@@ -69,11 +59,11 @@ public class ItemList {
 			ArmorMaterials.AMARANTH, "amaranthleggings", 2);
 	public static Item amaranthBoots = new AmaranthArmor(
 			ArmorMaterials.AMARANTH, "amaranthboots", 3);
-	public static Item swampClayBall = new SwampClayBall();
-	public static Item zincIngot = new ZincIngot();
-	public static Item zincDust = new ZincDust();
-	public static Item zollerniumIngot = new ZollerniumIngot();
-	public static Item zollerniumDust = new ZollerniumDust();
+	public static Item swampClayBall = new ModItem("swampclayball");
+	public static Item zincIngot = new ModItem("zincingot");
+	public static Item zincDust = new ModItem("zincdust");
+	public static Item zollerniumIngot = new ModItem("zollerniumingot");
+	public static Item zollerniumDust = new ModItem("zollerniumdust");
 	public static Item zollerniumPickaxe = new ZollerniumPickaxe(
 			ToolMaterials.ZOLLERNIUM);
 	public static Item zollerniumAxe = new ZollerniumAxe(
@@ -92,10 +82,10 @@ public class ItemList {
 			ArmorMaterials.ZOLLERNIUM, "zollerniumleggings", 2);
 	public static Item zollerniumBoots = new ZollerniumArmor(
 			ArmorMaterials.ZOLLERNIUM, "zollerniumboots", 3);
-	public static Item shinestoneIngot = new ShinestoneIngot();
-	public static Item shiniumIngot = new ItemIngot("shinium");
-	public static Item shiniumDust = new ItemIngot("shiniumdust");
-	public static Item flour = new Flour();
+	public static Item shinestoneIngot = new ModItem("shinestoneingot");
+	public static Item shiniumIngot = new ModItem("shinium");
+	public static Item shiniumDust = new ModItem("shiniumdust");
+	public static Item flour = new ModItem("flour");
 	public static Item heartForce = new ItemHeartForce();
 	public static Item heart = new ItemHeart();
 	public static Item amber = new Gem("amber");
@@ -121,31 +111,14 @@ public class ItemList {
 	public static Item rawBacon = new RawFood("rawbacon");
 	public static Item cookedBacon = new CookedFood("cookedbacon");
 	public static Item boiledEgg = new CookedFood("boiledegg");
-	public static Item duckEgg = new Item().setCreativeTab(ModTabs.zTab)
-			.setUnlocalizedName(Reference.MODID + "_" + "duckegg")
-			.setTextureName(Reference.MODID + ":duckegg");
-	public static Item duckFeather = new Item().setCreativeTab(ModTabs.zTab)
-			.setUnlocalizedName(Reference.MODID + "_" + "duckfeather")
-			.setTextureName(Reference.MODID + ":duckfeather");
-	public static Item shadowBone = new Item().setCreativeTab(ModTabs.zTab)
-			.setUnlocalizedName(Reference.MODID + "_shadowbone")
-			.setTextureName(Reference.MODID + ":shadowbone");
-	public static Item marbleStick = new Item().setCreativeTab(ModTabs.zTab)
-			.setUnlocalizedName(Reference.MODID + "_marblestick")
-			.setTextureName(Reference.MODID + ":marblestick");
-	public static Item blackMarbleStick = new Item()
-	.setCreativeTab(ModTabs.zTab)
-	.setUnlocalizedName(Reference.MODID + "_blackmarblestick")
-	.setTextureName(Reference.MODID + ":blackmarblestick");
-	public static Item lapisStick = new Item().setCreativeTab(ModTabs.zTab)
-			.setUnlocalizedName(Reference.MODID + "_lapisstick")
-			.setTextureName(Reference.MODID + ":lapisstick");
-	public static Item powerStick = new Item().setCreativeTab(ModTabs.zTab)
-			.setUnlocalizedName(Reference.MODID + "_powerrod")
-			.setTextureName(Reference.MODID + ":powerrod");
-	public static Item greenDye = new Item().setCreativeTab(ModTabs.zTab)
-			.setUnlocalizedName(Reference.MODID + "_greendye")
-			.setTextureName(Reference.MODID + ":greendye");
+	public static Item duckEgg = new ModItem("duckegg");
+	public static Item duckFeather = new ModItem("duckfeather");
+	public static Item shadowBone = new ModItem("shadowbone");
+	public static Item marbleStick = new ModItem("marblestick");
+	public static Item blackMarbleStick = new ModItem("blackmarblestick");
+	public static Item lapisStick = new ModItem("lapisstick");
+	public static Item powerStick = new ModItem("powerrod");
+	public static Item greenDye = new ModItem("greendye");
 	public static Item quiver = new ItemQuiver();
 	public static Item blueberry = new SeedFood(6, 0.8F, BlockList.blueberry,
 			Blocks.farmland, "blueberry");
@@ -274,7 +247,7 @@ public class ItemList {
 		addItem(iceCreamSandwich, "Ice Cream Sandwich");
 		addItem(sharkLeather, "Shagreen");
 		addItem(sharkTooth, "Shark Tooth");
-		M.Log("Items loaded, " + totalItems + " entries.");
+		MainHelper.Log("Items loaded, " + totalItems + " entries.");
 	}
 	
 	public static void addItem(Item item, String name) {

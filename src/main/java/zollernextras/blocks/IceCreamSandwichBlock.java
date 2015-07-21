@@ -4,7 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.util.IIcon;
-import zollernextras.lib.M;
+import zollernextras.lib.MainHelper;
 import zollernextras.lib.Reference;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -18,8 +18,8 @@ public class IceCreamSandwichBlock extends Block {
 	
 	public IceCreamSandwichBlock() {
 		super(Material.clay);
-		M.setTab(this);
-		M.setName(this, "icecreamsandwichblock");
+		MainHelper.setTab(this);
+		MainHelper.setName(this, "icecreamsandwichblock");
 		this.setHardness(1.6F);
 		this.setResistance(0.1F);
 		this.setStepSound(soundTypeSnow);

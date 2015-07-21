@@ -17,7 +17,8 @@ import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
 import zollernextras.creativetabs.ModTabs;
 import zollernextras.items.tools.ToolMaterials;
-import zollernextras.lib.M;
+import zollernextras.lib.KeyHelper;
+import zollernextras.lib.MainHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -26,8 +27,8 @@ public class ThunderSword extends ItemSword {
 	public ThunderSword(ToolMaterial p_i45347_1_) {
 		super(p_i45347_1_);
 		this.setCreativeTab(ModTabs.zTab);
-		M.setTab(this);
-		M.setNameAndTexture(this, "thorsword");
+		MainHelper.setTab(this);
+		MainHelper.setNameAndTexture(this, "thorsword");
 	}
 	
 	@Override
@@ -130,7 +131,11 @@ public class ThunderSword extends ItemSword {
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack p_77624_1_, EntityPlayer p_77624_2_,
 			List list, boolean p_77624_4_) {
-		list.add(EnumChatFormatting.ITALIC
-				+ "A sword worthy of the power of Mjolnir, created by the Allfather himself.");
+		if (KeyHelper.isCtrlKeyDown() || KeyHelper.isShiftKeyDown()) {
+			list.add(EnumChatFormatting.ITALIC
+					+ "A sword worthy of the power of Mjolnir, created by the Allfather himself.");
+		} else {
+			list.add("Hold SHIFT for more information.");
+		}
 	}
 }

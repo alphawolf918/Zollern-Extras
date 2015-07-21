@@ -1,3 +1,7 @@
+[2.6.3]
+
+
+
 [2.6.2 - The Sweet Tooth & Marine Update]
 
 * Zombies now have a 50% chance of dropping flour upon death.
@@ -116,11 +120,22 @@
         * Decraft corn cobs to make corn kernels.
 * Crops should now spawn randomly throughout the world.
 * Increased health of Shadow Skeletons.
+* Added lore to Triumph Swords.
+    * Toggle visibility with CTRL and SHIFT keys.
+* Added Shine Torch blocks.
+    * Gives off more light than a regular torch.
+    * Has a light blue color.
+    * Craftable using a stick and shinedust.
+    * Produces 4 Shine Torches per craft.
+    * Does not yet give off smoke and flame effects.
+* Crusher recipes should work now.
+
 
 ---- FIXES ----
 * Fixed issue with boiled egg item not being in the game.
 * Fixed issue with fuelonite not smelting into fueltonium.
 * Fixed issue with Shadow Skeletons burning in sunlight.
+* Fixed issue with crops not growing.
 
 [2.6.1]
 

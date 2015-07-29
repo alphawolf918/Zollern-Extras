@@ -80,8 +80,8 @@ public class NetherSword extends ItemSword {
 			List list, boolean p_77624_4_) {
 		if (KeyHelper.isCtrlKeyDown() || KeyHelper.isShiftKeyDown()) {
 			list.add(EnumChatFormatting.ITALIC
-					+ "A sword of fire, said to match the"
-					+ " power of the Nether itself.");
+					+ "A sword of fire, said to match the");
+			list.add(EnumChatFormatting.ITALIC + "power of the Nether itself.");
 		} else {
 			list.add("Hold SHIFT for more information.");
 		}

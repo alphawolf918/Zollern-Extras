@@ -79,7 +79,7 @@ public class IceSword extends ItemSword {
 				vec3d1, false);
 		
 		if (movingobjectposition == null)
-		
+			
 		{
 			
 			return itemstack;
@@ -140,8 +140,8 @@ public class IceSword extends ItemSword {
 	public void addInformation(ItemStack p_77624_1_, EntityPlayer p_77624_2_,
 			List list, boolean p_77624_4_) {
 		if (KeyHelper.isCtrlKeyDown() || KeyHelper.isShiftKeyDown()) {
-			list.add(EnumChatFormatting.ITALIC
-					+ "A sword born from the land of ice.");
+			list.add(EnumChatFormatting.ITALIC + "A sword born from");
+			list.add(EnumChatFormatting.ITALIC + " the land of ice.");
 		} else {
 			list.add("Hold SHIFT for more information.");
 		}

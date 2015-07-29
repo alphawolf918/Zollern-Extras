@@ -79,7 +79,7 @@ public class ThunderSword extends ItemSword {
 				vec3d1, false);
 		
 		if (movingobjectposition == null)
-		
+			
 		{
 			
 			return itemstack;
@@ -133,7 +133,9 @@ public class ThunderSword extends ItemSword {
 			List list, boolean p_77624_4_) {
 		if (KeyHelper.isCtrlKeyDown() || KeyHelper.isShiftKeyDown()) {
 			list.add(EnumChatFormatting.ITALIC
-					+ "A sword worthy of the power of Mjolnir, created by the Allfather himself.");
+					+ "A sword worthy of the power of Mjolnir,");
+			list.add(EnumChatFormatting.ITALIC
+					+ "created by the Allfather himself.");
 		} else {
 			list.add("Hold SHIFT for more information.");
 		}

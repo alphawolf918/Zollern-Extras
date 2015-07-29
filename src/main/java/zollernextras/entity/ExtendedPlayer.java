@@ -28,7 +28,7 @@ public class ExtendedPlayer implements IExtendedEntityProperties {
 	private static double maxHarvest = 0;
 	private static double currentXP = 0.0D;
 	private static double xpToNextLevel = 0.0D;
-	private static int currentLevel = 0;
+	private static int currentLevel = 1;
 	
 	public void setMaxHealth(double health) {
 		this.maxHealth = health;
@@ -56,6 +56,10 @@ public class ExtendedPlayer implements IExtendedEntityProperties {
 	
 	public void setMaxIntelligence(double intelligence) {
 		this.maxIntelligence = intelligence;
+	}
+	
+	public void setMaxSmelting(double smelting) {
+		this.maxSmelting = smelting;
 	}
 	
 	public void setCurrentLevel(int level) {
@@ -92,6 +96,14 @@ public class ExtendedPlayer implements IExtendedEntityProperties {
 	
 	public double getFallResistance() {
 		return this.fallResistance;
+	}
+	
+	public double getMaxSmelting() {
+		return this.maxSmelting;
+	}
+	
+	public int getLevel() {
+		return this.currentLevel;
 	}
 	
 	public ExtendedPlayer(EntityPlayer player) {

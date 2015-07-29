@@ -6,5 +6,6 @@ public class Commands {
 	public static void init(FMLServerStartingEvent event) {
 		event.registerServerCommand(new CommandTpd());
 		event.registerServerCommand(new CommandWp());
+		event.registerServerCommand(new CommandStats());
 	}
 }

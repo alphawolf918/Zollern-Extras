@@ -1,6 +1,9 @@
-[2.6.3]
+[2.6.2.2]
+* New /stats command to check on your power stats.
 
-
+---- FIXES ----
+* Fixed a bug that caused the Player to crash when using a quarry to harvest ZE ores.
+    * Fortune message no longer sends to the Player.
 
 [2.6.2 - The Sweet Tooth & Marine Update]
 

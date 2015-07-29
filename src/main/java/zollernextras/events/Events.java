@@ -67,7 +67,7 @@ public class Events {
 		}
 	}
 	
-	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
+	@SubscribeEvent(priority = EventPriority.HIGH, receiveCanceled = false)
 	public void onNameFormatEvent(NameFormat event) {
 		String username = event.username;
 		if (username.toLowerCase().equals("alphawolf918")) {
@@ -258,35 +258,40 @@ public class Events {
 	public void onHarvestDropsEvent(BlockEvent.HarvestDropsEvent event) {
 		if (event.harvester instanceof EntityPlayer) {
 			EntityPlayer player = event.harvester;
-			if (!player.capabilities.isCreativeMode) {
-				if (event.block instanceof IOre) {
-					Random rand = new Random();
-					IOre oreBlock = (IOre) event.block;
-					ExtendedPlayer props = ExtendedPlayer.get(player);
-					double fortune = props.getMaxFortune();
-					if (new Random().nextInt(10) == 1) {
-						double blockFortune = oreBlock.getFortune();
-						props.setMaxFortune(fortune + blockFortune);
-						String strFortuneLevel = "" + props.getMaxFortune();
-						MainHelper.addChatMessage(player, EnumChatFormatting.GOLD + "+"
-								+ blockFortune + " Fortune! Total: "
-								+ strFortuneLevel.substring(0, 3));
-					}
-					if (new Random().nextInt(5) == 1) {
-						int numDropped = 0;
-						if (fortune >= 1.0D) {
-							int r = new Random().nextInt((int) fortune);
-							numDropped = r == 0 ? 1 : r;
+			if (!event.world.isRemote) {
+				if (!player.capabilities.isCreativeMode) {
+					if (event.block instanceof IOre) {
+						Random rand = new Random();
+						IOre oreBlock = (IOre) event.block;
+						ExtendedPlayer props = ExtendedPlayer.get(player);
+						double fortune = props.getMaxFortune();
+						if (new Random().nextInt(10) == 1) {
+							double blockFortune = oreBlock.getFortune();
+							props.setMaxFortune(fortune + blockFortune);
+							String strFortuneLevel = "" + props.getMaxFortune();
+							// MainHelper.addChatMessage(player,
+							// EnumChatFormatting.GOLD + "+"
+							// + blockFortune
+							// + " Fortune! Total: "
+							// + strFortuneLevel.substring(0, 3));
 						}
-						if (numDropped > oreBlock.getMaxDropIncrease()) {
-							numDropped = oreBlock.getMaxDropIncrease();
+						if (new Random().nextInt(5) == 1) {
+							int numDropped = 0;
+							if (fortune >= 1.0D) {
+								int r = new Random().nextInt((int) fortune);
+								numDropped = r == 0 ? 1 : r;
+							}
+							if (numDropped > oreBlock.getMaxDropIncrease()) {
+								numDropped = oreBlock.getMaxDropIncrease();
+							}
+							Item droppedItem = oreBlock.getDroppedItemStack()
+									.getItem();
+							event.drops.add(new ItemStack(droppedItem,
+									numDropped));
 						}
-						Item droppedItem = oreBlock.getDroppedItemStack()
-								.getItem();
-						event.drops.add(new ItemStack(droppedItem, numDropped));
+					} else if (event.block instanceof BlockCrops) {
+						// TODO
 					}
-				} else if (event.block instanceof BlockCrops) {
-					// TODO
 				}
 			}
 		}

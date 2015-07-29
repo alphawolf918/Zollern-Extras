@@ -79,7 +79,7 @@ public class EnderSword extends ItemSword {
 				vec3d1, false);
 		
 		if (movingobjectposition == null)
-		
+			
 		{
 			
 			return itemstack;
@@ -147,10 +147,11 @@ public class EnderSword extends ItemSword {
 	public void addInformation(ItemStack p_77624_1_, EntityPlayer p_77624_2_,
 			List list, boolean p_77624_4_) {
 		if (KeyHelper.isCtrlKeyDown() || KeyHelper.isShiftKeyDown()) {
+			list.add(EnumChatFormatting.ITALIC + "A sword forged from");
 			list.add(EnumChatFormatting.ITALIC
-					+ "A sword forged from the teeth of the Ender Dragon.");
+					+ "the teeth of the Ender Dragon.");
 		} else {
-			list.add("Hold SHIFT for more information.");
+			list.add("Hold LSHIFT for more information.");
 		}
 	}
 }

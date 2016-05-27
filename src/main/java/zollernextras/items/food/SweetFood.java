@@ -9,6 +9,6 @@ public class SweetFood extends ItemFood {
 		MainHelper.setTab(this);
 		MainHelper.setNameAndTexture(this, par1);
 		this.setAlwaysEdible();
-		this.setPotionEffect(par2, 360, 4, 100);
+		this.setPotionEffect(par2, 360, 4, 1.0F);
 	}
 }

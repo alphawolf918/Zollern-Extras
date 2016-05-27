@@ -6,13 +6,16 @@ import net.minecraft.potion.Potion;
 import zollernextras.blocks.BlockList;
 import zollernextras.items.armor.ArmorMaterials;
 import zollernextras.items.armor.amaranth.AmaranthArmor;
+import zollernextras.items.armor.azurite.AzuriteArmor;
 import zollernextras.items.armor.zollernium.ZollerniumArmor;
 import zollernextras.items.crops.Seed;
 import zollernextras.items.crops.SeedFood;
 import zollernextras.items.food.CookedFood;
 import zollernextras.items.food.CropFood;
+import zollernextras.items.food.IceCream;
 import zollernextras.items.food.RawFood;
 import zollernextras.items.food.SweetFood;
+import zollernextras.items.food.TreeFood;
 import zollernextras.items.ingots.Gem;
 import zollernextras.items.storage.ItemQuiver;
 import zollernextras.items.swords.EnderSword;
@@ -25,6 +28,11 @@ import zollernextras.items.tools.amaranth.AmaranthHoe;
 import zollernextras.items.tools.amaranth.AmaranthPickaxe;
 import zollernextras.items.tools.amaranth.AmaranthShovel;
 import zollernextras.items.tools.amaranth.AmaranthSword;
+import zollernextras.items.tools.azurite.AzuriteAxe;
+import zollernextras.items.tools.azurite.AzuriteHoe;
+import zollernextras.items.tools.azurite.AzuritePickaxe;
+import zollernextras.items.tools.azurite.AzuriteShovel;
+import zollernextras.items.tools.azurite.AzuriteSword;
 import zollernextras.items.tools.zollernium.ZollerniumAxe;
 import zollernextras.items.tools.zollernium.ZollerniumHoe;
 import zollernextras.items.tools.zollernium.ZollerniumPickaxe;
@@ -44,6 +52,9 @@ public class ItemList {
 	public static Item enderShard = new ModItem("endershard");
 	public static Item amaranthIngot = new ModItem("amaranthingot");
 	public static Item amaranthDust = new ModItem("amaranthdust");
+	public static Item zollerniumIngot = new ModItem("zollerniumingot");
+	public static Item zollerniumDust = new ModItem("zollerniumdust");
+	
 	public static Item amaranthPickaxe = new AmaranthPickaxe(
 			ToolMaterials.AMARANTH);
 	public static Item amaranthSword = new AmaranthSword(ToolMaterials.AMARANTH);
@@ -51,6 +62,7 @@ public class ItemList {
 	public static Item amaranthShovel = new AmaranthShovel(
 			ToolMaterials.AMARANTH);
 	public static Item amaranthHoe = new AmaranthHoe(ToolMaterials.AMARANTH);
+	
 	public static Item amaranthHelmet = new AmaranthArmor(
 			ArmorMaterials.AMARANTH, "amaranthhelmet", 0);
 	public static Item amaranthChestplate = new AmaranthArmor(
@@ -59,11 +71,7 @@ public class ItemList {
 			ArmorMaterials.AMARANTH, "amaranthleggings", 2);
 	public static Item amaranthBoots = new AmaranthArmor(
 			ArmorMaterials.AMARANTH, "amaranthboots", 3);
-	public static Item swampClayBall = new ModItem("swampclayball");
-	public static Item zincIngot = new ModItem("zincingot");
-	public static Item zincDust = new ModItem("zincdust");
-	public static Item zollerniumIngot = new ModItem("zollerniumingot");
-	public static Item zollerniumDust = new ModItem("zollerniumdust");
+	
 	public static Item zollerniumPickaxe = new ZollerniumPickaxe(
 			ToolMaterials.ZOLLERNIUM);
 	public static Item zollerniumAxe = new ZollerniumAxe(
@@ -74,6 +82,7 @@ public class ItemList {
 			ToolMaterials.ZOLLERNIUM);
 	public static Item zollerniumSword = new ZollerniumSword(
 			ToolMaterials.ZOLLERNIUM);
+	
 	public static Item zollerniumHelmet = new ZollerniumArmor(
 			ArmorMaterials.ZOLLERNIUM, "zollerniumhelmet", 0);
 	public static Item zollerniumChestplate = new ZollerniumArmor(
@@ -82,6 +91,35 @@ public class ItemList {
 			ArmorMaterials.ZOLLERNIUM, "zollerniumleggings", 2);
 	public static Item zollerniumBoots = new ZollerniumArmor(
 			ArmorMaterials.ZOLLERNIUM, "zollerniumboots", 3);
+	
+	public static Item azuritePickaxe = new AzuritePickaxe();
+	public static Item azuriteAxe = new AzuriteAxe();
+	public static Item azuriteHoe = new AzuriteHoe();
+	public static Item azuriteShovel = new AzuriteShovel();
+	public static Item azuriteSword = new AzuriteSword();
+	
+	public static Item azuriteHelmet = new AzuriteArmor(ArmorMaterials.AZURITE,
+			"azuritehelmet", 0);
+	public static Item azuriteChestPlate = new AzuriteArmor(
+			ArmorMaterials.AZURITE, "azuritechestplate", 1);
+	public static Item azuriteLeggings = new AzuriteArmor(
+			ArmorMaterials.AZURITE, "azuriteleggings", 2);
+	public static Item azuriteBoots = new AzuriteArmor(ArmorMaterials.AZURITE,
+			"azuriteboots", 3);
+	
+	public static Item banana = new TreeFood("banana", 4, 4);
+	public static Item orange = new TreeFood("orange", 3, 5);
+	public static Item guava = new TreeFood("guava", 2, 6);
+	public static Item lemon = new TreeFood("lemon", 2, 2);
+	public static Item lime = new TreeFood("lime", 3, 2);
+	public static Item limon = new TreeFood("limon", 3, 3);
+	public static Item cherry = new TreeFood("cherry", 2, 2);
+	public static Item grapefruit = new TreeFood("grapefruit", 5, 5);
+	
+	public static Item swampClayBall = new ModItem("swampclayball");
+	public static Item zincIngot = new ModItem("zincingot");
+	public static Item zincDust = new ModItem("zincdust");
+	
 	public static Item shinestoneIngot = new ModItem("shinestoneingot");
 	public static Item shiniumIngot = new ModItem("shinium");
 	public static Item shiniumDust = new ModItem("shiniumdust");
@@ -120,18 +158,32 @@ public class ItemList {
 	public static Item powerStick = new ModItem("powerrod");
 	public static Item greenDye = new ModItem("greendye");
 	public static Item quiver = new ItemQuiver();
-	public static Item blueberry = new SeedFood(6, 0.8F, BlockList.blueberry,
+	
+	public static Item blueberry = new SeedFood(2, 0.2F, BlockList.blueberry,
 			Blocks.farmland, "blueberry");
-	public static Item blackberry = new SeedFood(6, 0.8F, BlockList.blackberry,
+	public static Item blackberry = new SeedFood(2, 0.2F, BlockList.blackberry,
 			Blocks.farmland, "blackberry");
-	public static Item grape = new SeedFood(6, 0.8F, BlockList.grape,
+	public static Item grape = new SeedFood(2, 0.4F, BlockList.grape,
 			Blocks.farmland, "grape");
-	public static Item strawberry = new SeedFood(8, 0.9F, BlockList.strawberry,
+	public static Item strawberry = new SeedFood(2, 0.6F, BlockList.strawberry,
 			Blocks.farmland, "strawberry");
-	public static Item radish = new SeedFood(8, 0.9F, BlockList.radish,
+	public static Item radish = new SeedFood(3, 0.4F, BlockList.radish,
 			Blocks.farmland, "radish");
+	public static Item garlic = new SeedFood(1, 0.2F, BlockList.garlic,
+			Blocks.farmland, "garlic");
+	public static Item onion = new SeedFood(2, 0.6F, BlockList.onion,
+			Blocks.farmland, "onion");
 	public static Item cornKernel = new Seed("cornkernel", BlockList.corn);
-	public static Item corn = new CropFood("corn");
+	public static Item corn = new CropFood("corn", 4, 5);
+	public static Item popcorn = new CookedFood("popcorn", 2, 4);
+	public static Item pea = new Seed("pea", BlockList.peas);
+	public static Item peaPod = new CropFood("peas", 2, 3);
+	public static Item tomato = new CropFood("tomato", 3, 3);
+	public static Item tomatoSeeds = new Seed("tomatoseeds", BlockList.tomatoes);
+	public static Item cucumber = new CropFood("cucumber", 4, 4);
+	public static Item cucumberSeeds = new Seed("cucumberseeds",
+			BlockList.cucumbers);
+	
 	public static Item obsidianDust = new ModItem("obsidiandust");
 	public static Item silverNugget = new ModItem("silvernugget");
 	public static Item silverIngot = new ModItem("silveringot");
@@ -147,12 +199,13 @@ public class ItemList {
 	public static Item brownie = new SweetFood("brownie", Potion.resistance.id);
 	public static Item candyApple = new SweetFood("candyapple",
 			Potion.moveSpeed.id);
-	public static Item iceCream = new SweetFood("icecream",
-			Potion.fireResistance.id);
+	public static Item iceCream = new IceCream();
 	public static Item iceCreamSandwich = new SweetFood("icecreamsandwich",
 			Potion.damageBoost.id);
 	public static Item sharkLeather = new ModItem("shagreen");
 	public static Item sharkTooth = new ModItem("sharktooth");
+	
+	// public static Item transporter = new ItemTransporter("transporter");
 	
 	public static void init() {
 		addItem(spcItem, "Super Charged Coal");
@@ -185,6 +238,15 @@ public class ItemList {
 		addItem(zollerniumChestplate, "Zollernium Chestplate");
 		addItem(zollerniumLeggings, "Zollernium Leggings");
 		addItem(zollerniumBoots, "Zollernium Boots");
+		addItem(azuritePickaxe, "Azurite Pickaxe");
+		addItem(azuriteAxe, "Azurite Axe");
+		addItem(azuriteHoe, "Azurite Hoe");
+		addItem(azuriteShovel, "Azurite Shovel");
+		addItem(azuriteSword, "Azurite Sword");
+		addItem(azuriteHelmet, "Azurite Helmet");
+		addItem(azuriteChestPlate, "Azurite Chestplate");
+		addItem(azuriteLeggings, "Azurite Leggings");
+		addItem(azuriteBoots, "Azurite Boots");
 		addItem(shinestoneIngot, "Shinestone Ingot");
 		addItem(shiniumIngot, "Shinium Ingot");
 		addItem(shiniumDust, "Precious Shinium");
@@ -221,13 +283,33 @@ public class ItemList {
 		addItem(powerStick, "Power Stick");
 		addItem(greenDye, "Green Dye");
 		addItem(quiver, "Quiver");
+		
 		addItem(blueberry, "Blueberry");
 		addItem(blackberry, "Blackberry");
 		addItem(grape, "Grape");
 		addItem(strawberry, "Strawberry");
 		addItem(radish, "Radish");
+		addItem(garlic, "Garlic");
+		addItem(onion, "Onion");
+		addItem(cucumber, "Cucumber");
+		addItem(cucumberSeeds, "Cucumber Seeds");
+		addItem(pea, "Pea");
+		addItem(tomato, "Tomato");
+		addItem(tomatoSeeds, "Tomato Seeds");
+		addItem(peaPod, "Pea Pod");
 		addItem(cornKernel, "Corn Kernel");
 		addItem(corn, "Corn");
+		addItem(popcorn, "Popcorn");
+		
+		addItem(banana, "Banana");
+		addItem(orange, "Orange");
+		addItem(guava, "Guava");
+		addItem(lemon, "Lemon");
+		addItem(lime, "Lime");
+		addItem(limon, "Limon");
+		addItem(cherry, "Cherry");
+		addItem(grapefruit, "Grapefruit");
+		
 		addItem(rawBacon, "Raw Bacon");
 		addItem(cookedBacon, "Cooked Bacon");
 		addItem(obsidianDust, "Obsidian Dust");
@@ -247,6 +329,7 @@ public class ItemList {
 		addItem(iceCreamSandwich, "Ice Cream Sandwich");
 		addItem(sharkLeather, "Shagreen");
 		addItem(sharkTooth, "Shark Tooth");
+		// addItem(transporter, "Dimensional Transporter");
 		MainHelper.Log("Items loaded, " + totalItems + " entries.");
 	}
 	

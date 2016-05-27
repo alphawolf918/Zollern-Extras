@@ -6,16 +6,16 @@ import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import zollernextras.creativetabs.ModTabs;
 import zollernextras.items.ItemList;
-import zollernextras.lib.Reference;
+import zollernextras.lib.ModInfo;
 
 public class SwampClay extends Block {
 	public SwampClay() {
 		super(Material.clay);
 		this.setCreativeTab(ModTabs.zTab);
-		this.setBlockName(Reference.MODID + "_swampclay");
+		this.setBlockName(ModInfo.MODID + "_swampclay");
 		this.setHardness(1.5F);
 		this.setResistance(0.1F);
-		this.setBlockTextureName(Reference.MODID + ":" + "swampclay");
+		this.setBlockTextureName(ModInfo.MODID + ":" + "swampclay");
 		this.setHarvestLevel("shovel", 0);
 		this.setStepSound(this.soundTypeGravel);
 	}

@@ -71,6 +71,10 @@ public class CommandWp extends CommandBase implements ICommand {
 					EnumChatFormatting.GREEN + "Successfully warped to Player "
 							+ EnumChatFormatting.GOLD + args[0]
 							+ EnumChatFormatting.WHITE + "."));
+			entityplayermp1.addChatMessage(new ChatComponentText(
+					EnumChatFormatting.GOLD + sender.getCommandSenderName()
+							+ EnumChatFormatting.GREEN
+							+ " has warped to your location."));
 		}
 	}
 	

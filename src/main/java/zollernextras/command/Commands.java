@@ -7,5 +7,7 @@ public class Commands {
 		event.registerServerCommand(new CommandTpd());
 		event.registerServerCommand(new CommandWp());
 		event.registerServerCommand(new CommandStats());
+		event.registerServerCommand(new CommandHeal());
+		// event.registerServerCommand(new CommandSetHome());
 	}
 }

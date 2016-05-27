@@ -9,4 +9,10 @@ public class CropFood extends ItemFood {
 		MainHelper.setTab(this);
 		MainHelper.setNameAndTexture(this, strTexture);
 	}
+	
+	public CropFood(String strTexture, int hunger, int saturation) {
+		super(hunger, saturation, false);
+		MainHelper.setTab(this);
+		MainHelper.setNameAndTexture(this, strTexture);
+	}
 }

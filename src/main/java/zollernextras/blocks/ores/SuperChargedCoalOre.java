@@ -9,7 +9,7 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import zollernextras.creativetabs.ModTabs;
 import zollernextras.items.ItemList;
-import zollernextras.lib.Reference;
+import zollernextras.lib.ModInfo;
 
 public class SuperChargedCoalOre extends Block implements IOre {
 	
@@ -18,10 +18,10 @@ public class SuperChargedCoalOre extends Block implements IOre {
 	public SuperChargedCoalOre() {
 		super(Material.rock);
 		this.setCreativeTab(ModTabs.zTab);
-		this.setBlockName(Reference.MODID + "_superchargedcoalore");
+		this.setBlockName(ModInfo.MODID + "_superchargedcoalore");
 		this.setHardness(0.3F);
 		this.setStepSound(this.soundTypeGlass);
-		this.setBlockTextureName(Reference.MODID + ":" + "spc_coal_ore");
+		this.setBlockTextureName(ModInfo.MODID + ":" + "spc_coal_ore");
 		this.setHarvestLevel("pickaxe", 3);
 		this.setStepSound(soundTypePiston);
 		this.setHardness(5.0F);

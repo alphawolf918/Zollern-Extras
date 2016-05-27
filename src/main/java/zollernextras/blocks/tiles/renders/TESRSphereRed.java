@@ -6,17 +6,17 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.AdvancedModelLoader;
 import net.minecraftforge.client.model.IModelCustom;
 import org.lwjgl.opengl.GL11;
-import zollernextras.lib.Reference;
+import zollernextras.lib.ModInfo;
 
 public class TESRSphereRed extends TileEntitySpecialRenderer {
 	
-	ResourceLocation candy = new ResourceLocation(Reference.MODID,
-			"textures/blocks/candycube_red.png");
+	ResourceLocation candy = new ResourceLocation(ModInfo.MODID,
+			"textures/blocks/bowlingpin.png");
 	IModelCustom model = AdvancedModelLoader.loadModel(new ResourceLocation(
-			Reference.MODID, "obj/ball.obj"));
-	float scalex = 0.080F;
-	float scaley = 0.40F;
-	float scalez = 0.06F;
+			ModInfo.MODID, "obj/untitled.obj"));
+	float scalex = 0.075F;
+	float scaley = 0.30F;
+	float scalez = 0.08F;
 	float offset = 0.0F;
 	float offseth = 0.00F;
 	

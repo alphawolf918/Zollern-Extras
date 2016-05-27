@@ -48,6 +48,6 @@ public class FlowerBlock extends BlockBush {
 	// @Override
 	// @SideOnly(Side.CLIENT)
 	// public void registerBlockIcons(IIconRegister par1) {
-	// par1.registerIcon(Reference.MODID + ":" + flowerTexture);
+	// par1.registerIcon(ModInfo.MODID + ":" + flowerTexture);
 	// }
 }

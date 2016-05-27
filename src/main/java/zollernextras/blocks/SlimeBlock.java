@@ -9,15 +9,15 @@ import net.minecraft.item.Item;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 import zollernextras.creativetabs.ModTabs;
-import zollernextras.lib.Reference;
+import zollernextras.lib.ModInfo;
 
 public class SlimeBlock extends Block {
 	
 	public SlimeBlock() {
 		super(Material.cake);
 		this.setCreativeTab(ModTabs.zTab);
-		this.setBlockName(Reference.MODID + "_slimeblock");
-		this.setBlockTextureName(Reference.MODID + ":" + "slimeblock");
+		this.setBlockName(ModInfo.MODID + "_slimeblock");
+		this.setBlockTextureName(ModInfo.MODID + ":" + "slimeblock");
 		this.setResistance(1F);
 		this.setHardness(0.5F);
 		this.setStepSound(Block.soundTypeCloth);

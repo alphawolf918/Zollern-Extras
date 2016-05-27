@@ -4,7 +4,8 @@ import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import zollernextras.creativetabs.ModTabs;
-import zollernextras.lib.Reference;
+import zollernextras.items.ItemList;
+import zollernextras.lib.ModInfo;
 
 public class AmaranthArmor extends ItemArmor {
 	
@@ -16,14 +17,19 @@ public class AmaranthArmor extends ItemArmor {
 		this.textureName = textureName;
 		unName = textureName;
 		this.setCreativeTab(ModTabs.zTab);
-		this.setUnlocalizedName(Reference.MODID + "_" + unName);
-		this.setTextureName(Reference.MODID + ":" + textureName);
+		this.setUnlocalizedName(ModInfo.MODID + "_" + unName);
+		this.setTextureName(ModInfo.MODID + ":" + textureName);
 	}
 	
 	@Override
 	public String getArmorTexture(ItemStack stack, Entity entity, int slot,
 			String type) {
-		return Reference.MODID + ":textures/armor/" + "amarantharmor" + "_"
+		return ModInfo.MODID + ":textures/armor/" + "amarantharmor" + "_"
 				+ (this.armorType == 2 ? "2" : "1") + ".png";
+	}
+	
+	@Override
+	public boolean getIsRepairable(ItemStack p_82789_1_, ItemStack p_82789_2_) {
+		return p_82789_2_ == new ItemStack(ItemList.amaranthIngot, 1);
 	}
 }

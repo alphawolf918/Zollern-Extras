@@ -3,7 +3,7 @@ package zollernextras.network;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import zollernextras.lib.MainHelper;
-import zollernextras.lib.Reference;
+import zollernextras.lib.ModInfo;
 import zollernextras.network.client.SyncPlayerPropsMessage;
 import zollernextras.network.server.OpenGuiMessage;
 import cpw.mods.fml.common.network.NetworkRegistry;
@@ -24,7 +24,7 @@ public class PacketDispatcher {
 	 * but you should make it public if you plan on using it directly.
 	 */
 	private static final SimpleNetworkWrapper dispatcher = NetworkRegistry.INSTANCE
-			.newSimpleChannel(Reference.MODID);
+			.newSimpleChannel(ModInfo.MODID);
 	
 	/**
 	 * Call this during pre-init or loading and register all of your packets

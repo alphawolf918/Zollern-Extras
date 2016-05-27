@@ -62,6 +62,14 @@ public class WorldGenCrop extends WorldGenerator {
 			randBlock = BlockList.radish;
 		} else if (randInt == 6) {
 			randBlock = BlockList.corn;
+		} else if (randInt == 7) {
+			randBlock = BlockList.radish;
+		} else if (randInt == 8) {
+			randBlock = BlockList.peas;
+		} else if (randInt == 9) {
+			randBlock = BlockList.corn;
+		} else if (randInt == 10) {
+			randBlock = BlockList.tomatoes;
 		} else {
 			randBlock = BlockList.aster;
 		}

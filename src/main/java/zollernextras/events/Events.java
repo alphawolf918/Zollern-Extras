@@ -4,6 +4,7 @@ import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockCrops;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.monster.EntityBlaze;
@@ -22,8 +23,11 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.storage.ExtendedBlockStorage;
 import net.minecraftforge.event.entity.EntityEvent.EntityConstructing;
@@ -32,6 +36,7 @@ import net.minecraftforge.event.entity.EntityStruckByLightningEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingJumpEvent;
+import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 import net.minecraftforge.event.entity.living.LivingFallEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
@@ -42,8 +47,12 @@ import net.minecraftforge.event.world.BlockEvent;
 import zollernextras.biomes.BiomeList;
 import zollernextras.blocks.BlockList;
 import zollernextras.blocks.ores.IOre;
+import zollernextras.dimensions.Dimensions;
 import zollernextras.entity.ExtendedPlayer;
 import zollernextras.items.ItemList;
+import zollernextras.items.armor.amaranth.AmaranthArmor;
+import zollernextras.items.armor.azurite.AzuriteArmor;
+import zollernextras.items.armor.zollernium.ZollerniumArmor;
 import zollernextras.lib.MainHelper;
 import zollernextras.network.PacketDispatcher;
 import zollernextras.network.client.SyncPlayerPropsMessage;
@@ -53,6 +62,7 @@ import cpw.mods.fml.common.eventhandler.EventPriority;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent.ItemCraftedEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent.ItemSmeltedEvent;
+import cpw.mods.fml.common.gameevent.PlayerEvent.PlayerLoggedInEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent.PlayerRespawnEvent;
 
 public class Events {
@@ -64,10 +74,64 @@ public class Events {
 			if (ExtendedPlayer.get((EntityPlayer) event.entity) == null) {
 				ExtendedPlayer.register((EntityPlayer) event.entity);
 			}
+		} else if (event.entity instanceof EntityVillager
+				&& event.entity.dimension == Dimensions.dimId) {
+			event.setCanceled(true);
 		}
 	}
 	
-	@SubscribeEvent(priority = EventPriority.HIGH, receiveCanceled = false)
+	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
+	public void onLivingUpdate(LivingUpdateEvent event) {
+		EntityLivingBase entity = event.entityLiving;
+		if (entity instanceof EntityPlayer) {
+			EntityPlayer player = (EntityPlayer) entity;
+			ItemStack[] armor = player.inventory.armorInventory;
+			int amArmorCount = 0;
+			int zArmorCount = 0;
+			int azArmorCount = 0;
+			for (ItemStack armorStack : armor) {
+				if (armorStack != null
+						&& armorStack.getItem() instanceof AmaranthArmor) {
+					AmaranthArmor butterArmor = (AmaranthArmor) armorStack
+							.getItem();
+					amArmorCount++;
+				} else if (armorStack != null
+						&& armorStack.getItem() instanceof ZollerniumArmor) {
+					ZollerniumArmor zollernArmor = (ZollerniumArmor) armorStack
+							.getItem();
+					zArmorCount++;
+				} else if (armorStack != null
+						&& armorStack.getItem() instanceof AzuriteArmor) {
+					AzuriteArmor azuriteArmor = (AzuriteArmor) armorStack
+							.getItem();
+					azArmorCount++;
+				}
+			}
+			for (int i = 0; i < 4; ++i) {
+				if (amArmorCount == 4) {
+					player.addPotionEffect(new PotionEffect(
+							Potion.resistance.id, 5, 4));
+				} else if (azArmorCount == 4) {
+					player.addPotionEffect(new PotionEffect(
+							Potion.damageBoost.id, 5, 4));
+				} else if (zArmorCount == 4) {
+					player.addPotionEffect(new PotionEffect(
+							Potion.fireResistance.id, 5, 4));
+					player.stepHeight = 2F;
+					player.capabilities.setPlayerWalkSpeed(0.3F);
+				}
+			}
+		}
+	}
+	
+	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
+	public void onPlayerLoginEvent(PlayerLoggedInEvent event) {
+		if (!event.player.worldObj.isRemote) {
+			
+		}
+	}
+	
+	@SubscribeEvent(priority = EventPriority.HIGH, receiveCanceled = true)
 	public void onNameFormatEvent(NameFormat event) {
 		String username = event.username;
 		if (username.toLowerCase().equals("alphawolf918")) {
@@ -85,18 +149,24 @@ public class Events {
 		} else if (username.toLowerCase().equals("cryokor")) {
 			event.displayname = EnumChatFormatting.DARK_AQUA + "Ice Lady"
 					+ EnumChatFormatting.WHITE;
+		} else if (username.toLowerCase().equals("master_zane")) {
+			event.displayname = EnumChatFormatting.GOLD + "Master Zane";
+		} else if (username.toLowerCase().equals("asylumneeds")) {
+			event.displayname = EnumChatFormatting.BLACK + "ChronoxShift";
 		}
 	}
 	
 	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
 	public void onItemCraftedEvent(ItemCraftedEvent event) {
 		EntityPlayer player = event.player;
+		ItemStack crafting = event.crafting;
 		// TODO
 	}
 	
 	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
 	public void onItemSmeltedEvent(ItemSmeltedEvent event) {
 		EntityPlayer player = event.player;
+		ItemStack smelting = event.smelting;
 		// TODO
 	}
 	
@@ -181,7 +251,6 @@ public class Events {
 			ExtendedPlayer props = ExtendedPlayer.get(player);
 			if (!event.entity.worldObj.isRemote) {
 				event.entity.motionY += props.getMaxJump();
-				// System.out.println("Boing -> " + props.getMaxJump());
 			}
 		}
 	}
@@ -193,7 +262,7 @@ public class Events {
 			if (!player.capabilities.isCreativeMode) {
 				ExtendedPlayer props = ExtendedPlayer.get(player);
 				float fallDistance = event.distance;
-				if (fallDistance >= 1.5F) {
+				if (fallDistance >= 3.5F) {
 					double resist = props.getFallResistance();
 					double totalResistance = fallDistance - resist;
 					if (totalResistance > 0.0D) {
@@ -218,7 +287,7 @@ public class Events {
 											+ strIncrAmnt.substring(0, 3)
 											+ " Fall Resistance! Total: "
 											+ fullResist.substring(0, 3));
-							if (new Random().nextInt(100) == 1) {
+							if (new Random().nextInt(40) == 1) {
 								if (props.getMaxJump() < 8.0D) {
 									props.setMaxJump(props.getMaxJump()
 											+ incrAmnt);
@@ -268,7 +337,8 @@ public class Events {
 						if (new Random().nextInt(10) == 1) {
 							double blockFortune = oreBlock.getFortune();
 							props.setMaxFortune(fortune + blockFortune);
-							String strFortuneLevel = "" + props.getMaxFortune();
+							// String strFortuneLevel = "" +
+							// props.getMaxFortune();
 							// MainHelper.addChatMessage(player,
 							// EnumChatFormatting.GOLD + "+"
 							// + blockFortune
@@ -318,9 +388,10 @@ public class Events {
 					theEntity.posY, theEntity.posZ, new ItemStack(
 							Items.ender_pearl, 1));
 			worldObj.spawnEntityInWorld(item);
-		} else if (theEntity instanceof EntitySkeleton) {
+		} else if (theEntity.getClass() == EntitySkeleton.class) {
 			EntityItem item = new EntityItem(worldObj, theEntity.posX,
-					theEntity.posY, theEntity.posZ, new ItemStack(Items.bow, 1));
+					theEntity.posY, theEntity.posZ,
+					new ItemStack(Items.bone, 1));
 			worldObj.spawnEntityInWorld(item);
 		} else if (theEntity instanceof EntitySilverfish) {
 			EntityItem item = new EntityItem(worldObj, theEntity.posX,
@@ -385,8 +456,9 @@ public class Events {
 	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
 	public void onChunkPreLoadEvent(PopulateChunkEvent.Pre event) {
 		World worldObj = event.world;
-		if (worldObj.getBiomeGenForCoords(event.chunkX * 16, event.chunkZ * 16)
-				.isEqualTo(BiomeList.candyLand)) {
+		BiomeGenBase biome = worldObj.getBiomeGenForCoords(event.chunkX * 16,
+				event.chunkZ * 16);
+		if (biome.isEqualTo(BiomeList.candyLand)) {
 			Chunk chunk = event.world.getChunkFromChunkCoords(event.chunkX,
 					event.chunkZ);
 			Block fromBlock = Blocks.stone;
@@ -438,8 +510,7 @@ public class Events {
 				}
 			}
 			chunk.isModified = true;
-		} else if (worldObj.getBiomeGenForCoords(event.chunkX * 16,
-				event.chunkZ * 16).isEqualTo(BiomeList.crystalOcean)) {
+		} else if (biome.isEqualTo(BiomeList.crystalOcean)) {
 			Chunk chunk = event.world.getChunkFromChunkCoords(event.chunkX,
 					event.chunkZ);
 			Block fromBlock = Blocks.stone;
@@ -449,7 +520,8 @@ public class Events {
 					for (int x = 0; x < 16; ++x) {
 						for (int y = 0; y < 16; ++y) {
 							for (int z = 0; z < 16; ++z) {
-								if (storage.getBlockByExtId(x, y, z) == fromBlock) {
+								if (storage.getBlockByExtId(x, y, z) == fromBlock
+										|| storage.getBlockByExtId(x, y, z) == Blocks.dirt) {
 									Block theBlock = toBlock;
 									storage.func_150818_a(x, y, z, toBlock);
 								}
@@ -457,8 +529,32 @@ public class Events {
 						}
 					}
 				}
-				chunk.isModified = true;
 			}
+			chunk.isModified = true;
+		} else if (biome.isEqualTo(BiomeList.lostDesert)) {
+			Chunk chunk = event.world.getChunkFromChunkCoords(event.chunkX,
+					event.chunkZ);
+			Block fromBlock = Blocks.stone;
+			Block toBlock = BlockList.wonderStone;
+			for (ExtendedBlockStorage storage : chunk.getBlockStorageArray()) {
+				if (storage != null) {
+					for (int x = 0; x < 16; ++x) {
+						for (int y = 0; y < 16; ++y) {
+							for (int z = 0; z < 16; ++z) {
+								if (storage.getBlockByExtId(x, y, z) == fromBlock) {
+									Block theBlock = toBlock;
+									storage.func_150818_a(x, y, z, toBlock);
+								} else if (storage.getBlockByExtId(x, y, z) == Blocks.dirt) {
+									Block theBlock = BlockList.creepDirt;
+								} else if (storage.getBlockByExtId(x, y, z) == Blocks.gravel) {
+									Block theBlock = BlockList.creepStone;
+								}
+							}
+						}
+					}
+				}
+			}
+			chunk.isModified = true;
 		}
 	}
 	

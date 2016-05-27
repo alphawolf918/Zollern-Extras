@@ -6,18 +6,18 @@ import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import zollernextras.items.ItemList;
 import zollernextras.lib.MainHelper;
-import zollernextras.lib.Reference;
+import zollernextras.lib.ModInfo;
 
 public class Shinestone extends Block {
 	public Shinestone() {
 		super(Material.glass);
 		MainHelper.setTab(this);
-		setBlockName(Reference.MODID + "_shinestone");
+		setBlockName(ModInfo.MODID + "_shinestone");
 		setHardness(0.6F);
 		setResistance(2.0F);
 		setLightLevel(1.0F);
 		setStepSound(soundTypeGlass);
-		setBlockTextureName(Reference.MODID + ":" + "shinestone");
+		setBlockTextureName(ModInfo.MODID + ":" + "shinestone");
 	}
 	
 	@Override

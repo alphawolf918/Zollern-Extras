@@ -9,16 +9,16 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import zollernextras.blocks.ores.IOre;
 import zollernextras.lib.MainHelper;
-import zollernextras.lib.Reference;
+import zollernextras.lib.ModInfo;
 
 public class NetherZincOre extends Block implements IOre {
 	public NetherZincOre() {
 		super(Material.rock);
 		MainHelper.setTab(this);
-		this.setBlockName(Reference.MODID + "_netherzincore");
+		this.setBlockName(ModInfo.MODID + "_netherzincore");
 		this.setHardness(0.3F);
 		this.setStepSound(this.soundTypeStone);
-		this.setBlockTextureName(Reference.MODID + ":" + "zincnetherore");
+		this.setBlockTextureName(ModInfo.MODID + ":" + "zincnetherore");
 		this.setHarvestLevel("pickaxe", 4);
 		this.setStepSound(soundTypePiston);
 		this.setHardness(3.5F);

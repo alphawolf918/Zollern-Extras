@@ -8,7 +8,7 @@ import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.world.World;
 import zollernextras.ZollernExtrasMod;
 import zollernextras.lib.MainHelper;
-import zollernextras.lib.Reference;
+import zollernextras.lib.ModInfo;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -18,7 +18,7 @@ public class ItemQuiver extends Item {
 		MainHelper.setTab(this);
 		this.setMaxDamage(0);
 		this.setMaxStackSize(1);
-		this.setUnlocalizedName(Reference.MODID + "_quiver");
+		this.setUnlocalizedName(ModInfo.MODID + "_quiver");
 		this.setTextureName("quiver");
 	}
 	

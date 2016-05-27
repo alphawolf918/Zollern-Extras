@@ -12,7 +12,7 @@ import net.minecraft.world.World;
 import zollernextras.creativetabs.ModTabs;
 import zollernextras.entity.ExtendedPlayer;
 import zollernextras.lib.MainHelper;
-import zollernextras.lib.Reference;
+import zollernextras.lib.ModInfo;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -25,8 +25,8 @@ public class ItemHeartForce extends Item {
 	
 	public ItemHeartForce() {
 		this.setCreativeTab(ModTabs.zTab);
-		this.setUnlocalizedName(Reference.MODID + "_heartforce");
-		this.setTextureName(Reference.MODID + ":" + "heartforce");
+		this.setUnlocalizedName(ModInfo.MODID + "_heartforce");
+		this.setTextureName(ModInfo.MODID + ":" + "heartforce");
 		this.setMaxStackSize(1);
 		this.setMaxDamage(1);
 	}

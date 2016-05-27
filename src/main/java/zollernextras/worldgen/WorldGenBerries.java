@@ -8,6 +8,7 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 import zollernextras.blocks.BlockList;
 
 public class WorldGenBerries extends WorldGenerator {
+	
 	protected Block[] GetValidSpawnBlocks() {
 		return new Block[] { Blocks.dirt, Blocks.grass, Blocks.sand,
 				Blocks.gravel, BlockList.swampClay, BlockList.betterGrass };

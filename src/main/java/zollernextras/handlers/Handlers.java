@@ -8,7 +8,6 @@ import cpw.mods.fml.common.registry.GameRegistry;
 public class Handlers {
 	public static void init() {
 		MainHelper.Log("Initializing handlers..");
-		GameRegistry.registerFuelHandler(new FuelHandlers());
 		GameRegistry.registerWorldGenerator(new WorldGenManager(), 40);
 		EventHandler.init();
 		MainHelper.Log("Handlers initialized.");

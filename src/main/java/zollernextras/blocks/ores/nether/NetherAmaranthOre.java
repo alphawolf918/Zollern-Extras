@@ -9,15 +9,15 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import zollernextras.blocks.ores.IOre;
 import zollernextras.lib.MainHelper;
-import zollernextras.lib.Reference;
+import zollernextras.lib.ModInfo;
 
 public class NetherAmaranthOre extends Block implements IOre {
 	public NetherAmaranthOre() {
 		super(Material.rock);
 		MainHelper.setTab(this);
-		this.setBlockName(Reference.MODID + "_netheramaranthore");
+		this.setBlockName(ModInfo.MODID + "_netheramaranthore");
 		this.setStepSound(this.soundTypeStone);
-		this.setBlockTextureName(Reference.MODID + ":" + "amaranthnetherore");
+		this.setBlockTextureName(ModInfo.MODID + ":" + "amaranthnetherore");
 		this.setHarvestLevel("pickaxe", 3);
 		this.setStepSound(soundTypePiston);
 		this.setHardness(3.5F);

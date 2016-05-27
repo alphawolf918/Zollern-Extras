@@ -1,16 +1,19 @@
 package zollernextras;
 
+import java.io.File;
 import zollernextras.biomes.BiomeList;
 import zollernextras.blocks.BlockList;
 import zollernextras.command.Commands;
 import zollernextras.config.ZEConfig;
 import zollernextras.creativetabs.ModTabs;
+import zollernextras.handlers.FuelHandlers;
 import zollernextras.handlers.Handlers;
 import zollernextras.items.ItemList;
 import zollernextras.lib.MainHelper;
+import zollernextras.lib.ModInfo;
 import zollernextras.lib.OreDict;
 import zollernextras.lib.Recipes;
-import zollernextras.lib.Reference;
+import zollernextras.lib.modhelper.TreeCapHelper;
 import zollernextras.mobs.Mobs;
 import zollernextras.network.PacketDispatcher;
 import zollernextras.proxies.CommonProxy;
@@ -22,16 +25,18 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
+import cpw.mods.fml.common.registry.GameRegistry;
 
-@Mod(modid = Reference.MODID, name = Reference.NAME,
-		version = Reference.VERSION)
+@Mod(modid = ModInfo.MODID, name = ModInfo.NAME, version = ModInfo.VERSION)
 public class ZollernExtrasMod {
 	
-	@Mod.Instance(Reference.MODID)
+	@Mod.Instance(ModInfo.MODID)
 	public static ZollernExtrasMod INSTANCE;
 	
-	@SidedProxy(clientSide = Reference.PROXY_LOCATION + ".ClientProxy",
-			serverSide = Reference.PROXY_LOCATION + ".CommonProxy")
+	public static File filePath;
+	
+	@SidedProxy(clientSide = ModInfo.PROXY_LOCATION + ".ClientProxy",
+			serverSide = ModInfo.PROXY_LOCATION + ".CommonProxy")
 	public static CommonProxy proxy;
 	
 	public static int modGuiIndex = 10;
@@ -41,11 +46,14 @@ public class ZollernExtrasMod {
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		MainHelper.Log("Beginning to load Zollern Extras...");
+		this.filePath = MainHelper.getFilePath(event);
 		ModTabs.init();
 		ZEConfig.init(event);
 		ItemList.init();
 		BlockList.init();
+		TreeCapHelper.init();
 		Mobs.init();
+		// Dimensions.init();
 		PacketDispatcher.registerPackets();
 	}
 	
@@ -64,6 +72,7 @@ public class ZollernExtrasMod {
 		if (ZEConfig.biomeDisplaysOnHUD) {
 			proxy.initGUI();
 		}
+		GameRegistry.registerFuelHandler(new FuelHandlers());
 		MainHelper.Log("Loaded Zollern Extras successfully!");
 	}
 	

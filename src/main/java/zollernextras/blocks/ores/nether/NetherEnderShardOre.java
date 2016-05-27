@@ -9,16 +9,16 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import zollernextras.blocks.ores.IOre;
 import zollernextras.lib.MainHelper;
-import zollernextras.lib.Reference;
+import zollernextras.lib.ModInfo;
 
 public class NetherEnderShardOre extends Block implements IOre {
 	public NetherEnderShardOre() {
 		super(Material.rock);
 		MainHelper.setTab(this);
-		this.setBlockName(Reference.MODID + "_netherendershardore");
+		this.setBlockName(ModInfo.MODID + "_netherendershardore");
 		this.setHardness(0.3F);
 		this.setStepSound(this.soundTypeStone);
-		this.setBlockTextureName(Reference.MODID + ":" + "endernetherore");
+		this.setBlockTextureName(ModInfo.MODID + ":" + "endernetherore");
 		this.setHarvestLevel("pickaxe", 3);
 		this.setStepSound(soundTypePiston);
 		this.setHardness(3.5F);

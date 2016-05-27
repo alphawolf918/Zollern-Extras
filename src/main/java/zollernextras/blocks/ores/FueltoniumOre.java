@@ -9,7 +9,7 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import zollernextras.creativetabs.ModTabs;
 import zollernextras.items.ItemList;
-import zollernextras.lib.Reference;
+import zollernextras.lib.ModInfo;
 
 public class FueltoniumOre extends Block implements IOre {
 	
@@ -18,10 +18,10 @@ public class FueltoniumOre extends Block implements IOre {
 	public FueltoniumOre() {
 		super(Material.rock);
 		this.setCreativeTab(ModTabs.zTab);
-		this.setBlockName(Reference.MODID + "_fueltoniumore");
+		this.setBlockName(ModInfo.MODID + "_fueltoniumore");
 		this.setHardness(0.3F);
 		this.setStepSound(this.soundTypeGlass);
-		this.setBlockTextureName(Reference.MODID + ":" + "fueltonium");
+		this.setBlockTextureName(ModInfo.MODID + ":" + "fueltonium");
 		this.setHarvestLevel("pickaxe", 4);
 		this.setStepSound(soundTypePiston);
 		this.setHardness(6.0F);

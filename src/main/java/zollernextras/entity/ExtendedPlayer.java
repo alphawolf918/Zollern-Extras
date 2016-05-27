@@ -13,8 +13,7 @@ import zollernextras.proxies.CommonProxy;
 
 public class ExtendedPlayer implements IExtendedEntityProperties {
 	
-	public final static String EXT_PROP_NAME = "ExtendedPlayer";
-	
+	public static String EXT_PROP_NAME = "ExntededPlayer_";
 	private final EntityPlayer player;
 	
 	private static double maxHealth = 20.0F;
@@ -116,6 +115,7 @@ public class ExtendedPlayer implements IExtendedEntityProperties {
 		this.setMaxFortune(maxFortune);
 		this.setMaxIntelligence(maxIntelligence);
 		this.setCurrentLevel(currentLevel);
+		
 	}
 	
 	private static final String getSaveKey(EntityPlayer player) {
@@ -174,7 +174,6 @@ public class ExtendedPlayer implements IExtendedEntityProperties {
 	
 	@Override
 	public void init(Entity entity, World world) {
-		
 	}
 	
 	public static final void register(EntityPlayer player) {

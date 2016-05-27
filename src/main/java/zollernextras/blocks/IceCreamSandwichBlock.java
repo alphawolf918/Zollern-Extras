@@ -5,7 +5,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.util.IIcon;
 import zollernextras.lib.MainHelper;
-import zollernextras.lib.Reference;
+import zollernextras.lib.ModInfo;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -38,11 +38,11 @@ public class IceCreamSandwichBlock extends Block {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister p_149651_1_) {
-		this.blockIcon = p_149651_1_.registerIcon(Reference.MODID
+		this.blockIcon = p_149651_1_.registerIcon(ModInfo.MODID
 				+ ":icecreamsandwichblock");
-		this.field_150035_a = p_149651_1_.registerIcon(Reference.MODID
-				+ ":cookieblock");
-		this.field_150034_b = p_149651_1_.registerIcon(Reference.MODID
+		this.field_150035_a = p_149651_1_.registerIcon(ModInfo.MODID
+				+ ":brownieblock");
+		this.field_150034_b = p_149651_1_.registerIcon(ModInfo.MODID
 				+ ":icecreamsandwichblock");
 	}
 }

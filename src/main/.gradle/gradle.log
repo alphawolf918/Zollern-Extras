@@ -1,6 +1,6 @@
 ****************************
  Powered By MCP:             
- http://mcp.ocean-labs.de/   
+ http://modcoderpack.com/    
  Searge, ProfMobius, Fesh0r, 
  R4wk, ZeuX, IngisKahn, bspkrs
  MCP Data version : unknown
@@ -66,7 +66,7 @@ Note: Some input files use unchecked or unsafe operations.
 Note: Recompile with -Xlint:unchecked for details.
 15 warnings
 
-:processResources UP-TO-DATE
+:processResources
 :classes
 :jar
 :compileTestJava UP-TO-DATE
@@ -80,4 +80,4 @@ Note: Recompile with -Xlint:unchecked for details.
 
 BUILD SUCCESSFUL
 
-Total time: 37.571 secs
+Total time: 37.457 secs

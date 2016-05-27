@@ -17,6 +17,37 @@ public class OreDict {
 		
 		MainHelper.Log("Loading OreDictionary..");
 		
+		/** <Trees> **/
+		
+		// Logs
+		registerOre("logWood", BlockList.bananaLog, BlockList.orangeLog,
+				BlockList.guavaLog, BlockList.lemonLog, BlockList.limeLog,
+				BlockList.limonLog, BlockList.cherryLog,
+				BlockList.grapefruitLog);
+		
+		// Leaves
+		registerOre("treeLeaves", BlockList.bananaLeaves,
+				BlockList.orangeLeaves, BlockList.guavaLeaves,
+				BlockList.lemonLeaves, BlockList.limeLeaves,
+				BlockList.limonLeaves, BlockList.cherryLeaves,
+				BlockList.grapefruitLeaves);
+		
+		// Saplings
+		registerOre("treeSapling", BlockList.bananaSapling,
+				BlockList.orangeSapling, BlockList.guavaSapling,
+				BlockList.lemonSapling, BlockList.limeSapling,
+				BlockList.limonSapling, BlockList.cherrySapling,
+				BlockList.grapefruitSapling);
+		
+		// Planks
+		registerOre("plankWood", BlockList.bananaPlanks,
+				BlockList.orangePlanks, BlockList.guavaPlanks,
+				BlockList.lemonPlanks, BlockList.limePlanks,
+				BlockList.limonPlanks, BlockList.cherryPlanks,
+				BlockList.grapefruitPlanks);
+		
+		/** </Trees> **/
+		
 		// Better Glass
 		if (ZEConfig.betterGlassIsGlass) {
 			registerOre("glass", BlockList.betterGlass);
@@ -67,12 +98,10 @@ public class OreDict {
 		registerOre("ingotObsidian", ItemList.obsidianIngot);
 		
 		// Stone Registry
-		registerOre("blockStone", Blocks.stone);
-		registerOre("blockStone", BlockList.andesite);
+		registerOre("blockStone", Blocks.stone, BlockList.andesite,
+				BlockList.diorite, BlockList.granite);
 		registerOre("blockAndesite", BlockList.andesite);
-		registerOre("blockStone", BlockList.diorite);
 		registerOre("blockDiorite", BlockList.diorite);
-		registerOre("blockStone", BlockList.granite);
 		registerOre("blockGranite", BlockList.granite);
 		
 		MainHelper.Log("OreDictionary loaded: " + totalEntries + " entries.");
@@ -86,5 +115,17 @@ public class OreDict {
 	public static void registerOre(String strName, Block block) {
 		OreDictionary.registerOre(strName, new ItemStack(block, 1));
 		totalEntries++;
+	}
+	
+	public static void registerOre(String strName, Block... blocks) {
+		for (Block novaBlock : blocks) {
+			registerOre(strName, novaBlock);
+		}
+	}
+	
+	public static void registerOre(String strName, Item... items) {
+		for (Item novaItem : items) {
+			registerOre(strName, novaItem);
+		}
 	}
 }

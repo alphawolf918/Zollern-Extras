@@ -4,7 +4,7 @@ import java.util.Random;
 import net.minecraft.world.World;
 import zollernextras.blocks.BlockList;
 import zollernextras.lib.MainHelper;
-import zollernextras.lib.Reference;
+import zollernextras.lib.ModInfo;
 import zollernextras.lib.enums.State;
 
 public class GoldSiren extends SirenBlockBase {
@@ -53,7 +53,7 @@ public class GoldSiren extends SirenBlockBase {
 		if (state == State.ON
 				&& par1World.isBlockIndirectlyGettingPowered(par2, par3, par4)) {
 			par1World.playSoundEffect(par2 + 1.5D, par3 + 1.5D, par4 + 1.5D,
-					Reference.MODID + ":" + "alarms." + sirenInfo, 2.5F,
+					ModInfo.MODID + ":" + "alarms." + sirenInfo, 2.5F,
 					par1World.rand.nextFloat() * 0.1F + 0.9F);
 		}
 	}

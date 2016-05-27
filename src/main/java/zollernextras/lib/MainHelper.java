@@ -1,11 +1,13 @@
 package zollernextras.lib;
 
+import java.io.File;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.util.ChatComponentText;
 import net.minecraftforge.common.config.Configuration;
 import zollernextras.creativetabs.ModTabs;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 public class MainHelper {
 	
@@ -18,19 +20,19 @@ public class MainHelper {
 	}
 	
 	public static void setName(Block block, String strName) {
-		block.setBlockName(Reference.MODID + "_" + strName);
+		block.setBlockName(ModInfo.MODID + "_" + strName);
 	}
 	
 	public static void setName(Item item, String strName) {
-		item.setUnlocalizedName(Reference.MODID + "_" + strName);
+		item.setUnlocalizedName(ModInfo.MODID + "_" + strName);
 	}
 	
 	public static void setTexture(Block block, String strTexture) {
-		block.setBlockTextureName(Reference.MODID + ":" + strTexture);
+		block.setBlockTextureName(ModInfo.MODID + ":" + strTexture);
 	}
 	
 	public static void setTexture(Item item, String strTexture) {
-		item.setTextureName(Reference.MODID + ":" + strTexture);
+		item.setTextureName(ModInfo.MODID + ":" + strTexture);
 	}
 	
 	public static void setNameAndTexture(Block block, String strName,
@@ -66,6 +68,11 @@ public class MainHelper {
 			String configKey, int configDefaultValue, String configComment) {
 		return config.get(configCategory, configKey, configDefaultValue,
 				configComment).getInt();
+	}
+	
+	public static File getFilePath(FMLPreInitializationEvent event) {
+		return new File(event.getModConfigurationDirectory().getAbsolutePath()
+				+ "ZollernExtras/");
 	}
 	
 	public static void addChatMessage(EntityPlayer player, String text) {

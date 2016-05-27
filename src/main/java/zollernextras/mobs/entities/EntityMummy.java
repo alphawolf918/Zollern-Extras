@@ -25,11 +25,11 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 import zollernextras.items.ItemList;
-import zollernextras.lib.Reference;
+import zollernextras.lib.ModInfo;
 
 public class EntityMummy extends EntityZombie {
 	protected static final IAttribute field_110186_bp = (new RangedAttribute(
-			"mummy.spawnReinforcements", 0.0D, 0.0D, 1.0D));
+			"zombie.spawnReinforcements", 0.0D, 0.0D, 1.0D));
 	
 	public EntityMummy(World par1World) {
 		super(par1World);
@@ -67,17 +67,17 @@ public class EntityMummy extends EntityZombie {
 	
 	@Override
 	protected String getLivingSound() {
-		return Reference.MODID + ":mummy.say";
+		return ModInfo.MODID + ":mummy.say";
 	}
 	
 	@Override
 	protected String getHurtSound() {
-		return Reference.MODID + ":mummy.hurt";
+		return ModInfo.MODID + ":mummy.hurt";
 	}
 	
 	@Override
 	protected String getDeathSound() {
-		return Reference.MODID + ":mummy.die";
+		return ModInfo.MODID + ":mummy.die";
 	}
 	
 	@Override

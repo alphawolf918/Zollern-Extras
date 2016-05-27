@@ -3,13 +3,13 @@ package zollernextras.blocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import zollernextras.lib.MainHelper;
-import zollernextras.lib.Reference;
+import zollernextras.lib.ModInfo;
 
 public class SeaLamp extends Block {
 	public SeaLamp() {
 		super(Material.glass);
 		MainHelper.setTab(this);
-		this.setBlockName(Reference.MODID + "_sealamp");
+		this.setBlockName(ModInfo.MODID + "_sealamp");
 		MainHelper.setNameAndTexture(this, "sealamp");
 		this.setHardness(0.5F);
 		this.setResistance(0.5F);

@@ -7,18 +7,15 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
-import zollernextras.creativetabs.ModTabs;
-import zollernextras.lib.Reference;
+import zollernextras.lib.MainHelper;
 
 public class AmaranthOre extends Block implements IOre {
 	public AmaranthOre() {
 		super(Material.rock);
-		this.setCreativeTab(ModTabs.zTab);
-		this.setBlockName(Reference.MODID + "_amaranthore");
-		this.setStepSound(this.soundTypeGlass);
-		this.setBlockTextureName(Reference.MODID + ":" + "amaranthore");
+		MainHelper.setTab(this);
+		MainHelper.setNameAndTexture(this, "amaranthore");
+		this.setStepSound(this.soundTypeStone);
 		this.setHarvestLevel("pickaxe", 3);
-		this.setStepSound(soundTypePiston);
 		this.setHardness(4.0F);
 		this.setResistance(9.2F);
 	}

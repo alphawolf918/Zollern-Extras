@@ -7,7 +7,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
-import zollernextras.lib.Reference;
+import zollernextras.lib.ModInfo;
 
 public class GuiQuiver extends GuiContainer {
 	/**
@@ -22,7 +22,7 @@ public class GuiQuiver extends GuiContainer {
 	 * location: "src/minecraft/assets/modid/"
 	 */
 	private static final ResourceLocation iconLocation = new ResourceLocation(
-			Reference.MODID + ":textures/gui/inventory_quiver.png");
+			ModInfo.MODID + ":textures/gui/inventory_quiver.png");
 	
 	/** The inventory to render on screen */
 	private final InventoryQuiver inventory;

@@ -8,7 +8,7 @@ import net.minecraft.world.biome.BiomeGenBase;
 import zollernextras.biomes.BiomeList;
 import zollernextras.config.ZEConfig;
 import zollernextras.lib.MainHelper;
-import zollernextras.lib.Reference;
+import zollernextras.lib.ModInfo;
 import zollernextras.mobs.entities.EntityBabyDragon;
 import zollernextras.mobs.entities.EntityDuck;
 import zollernextras.mobs.entities.EntityFish;
@@ -232,7 +232,7 @@ public class Mobs {
 			String entityName, int entityPrimaryColor, int entitySecondaryColor) {
 		int uniqueEntityId = EntityRegistry.findGlobalUniqueEntityId();
 		MainHelper.Log("Loading entity '" + entityName + "' with ID " + uniqueEntityId);
-		EntityRegistry.registerGlobalEntityID(entity, Reference.MODID + "_"
+		EntityRegistry.registerGlobalEntityID(entity, ModInfo.MODID + "_"
 				+ entityName, uniqueEntityId);
 		registerEntityEgg(entity, entityPrimaryColor, entitySecondaryColor);
 	}

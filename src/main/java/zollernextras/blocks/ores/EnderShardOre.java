@@ -9,7 +9,7 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import zollernextras.creativetabs.ModTabs;
 import zollernextras.items.ItemList;
-import zollernextras.lib.Reference;
+import zollernextras.lib.ModInfo;
 
 public class EnderShardOre extends Block implements IOre {
 	
@@ -18,10 +18,10 @@ public class EnderShardOre extends Block implements IOre {
 	public EnderShardOre() {
 		super(Material.rock);
 		this.setCreativeTab(ModTabs.zTab);
-		this.setBlockName(Reference.MODID + "_endershardore");
+		this.setBlockName(ModInfo.MODID + "_endershardore");
 		this.setHardness(0.3F);
 		this.setStepSound(this.soundTypeGlass);
-		this.setBlockTextureName(Reference.MODID + ":" + "endershardore");
+		this.setBlockTextureName(ModInfo.MODID + ":" + "endershardore");
 		this.setHarvestLevel("pickaxe", 3);
 		this.setStepSound(soundTypePiston);
 		this.setHardness(6.0F);

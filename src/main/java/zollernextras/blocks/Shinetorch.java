@@ -26,6 +26,11 @@ public class Shinetorch extends Block {
 	}
 	
 	@Override
+	public boolean isOpaqueCube() {
+		return false;
+	}
+	
+	@Override
 	public AxisAlignedBB getCollisionBoundingBoxFromPool(World p_149668_1_,
 			int p_149668_2_, int p_149668_3_, int p_149668_4_) {
 		return null;
@@ -61,12 +66,12 @@ public class Shinetorch extends Block {
 				p_149742_4_, EAST, true)
 				|| p_149742_1_.isSideSolid(p_149742_2_ + 1, p_149742_3_,
 						p_149742_4_, WEST, true)
-				|| p_149742_1_.isSideSolid(p_149742_2_, p_149742_3_,
-						p_149742_4_ - 1, SOUTH, true)
-				|| p_149742_1_.isSideSolid(p_149742_2_, p_149742_3_,
-						p_149742_4_ + 1, NORTH, true)
-				|| func_150107_m(p_149742_1_, p_149742_2_, p_149742_3_ - 1,
-						p_149742_4_);
+						|| p_149742_1_.isSideSolid(p_149742_2_, p_149742_3_,
+								p_149742_4_ - 1, SOUTH, true)
+								|| p_149742_1_.isSideSolid(p_149742_2_, p_149742_3_,
+										p_149742_4_ + 1, NORTH, true)
+										|| func_150107_m(p_149742_1_, p_149742_2_, p_149742_3_ - 1,
+												p_149742_4_);
 	}
 	
 	/**
@@ -211,7 +216,7 @@ public class Shinetorch extends Block {
 						p_150108_4_, p_150108_1_.getBlockMetadata(p_150108_2_,
 								p_150108_3_, p_150108_4_), 0);
 				p_150108_1_
-						.setBlockToAir(p_150108_2_, p_150108_3_, p_150108_4_);
+				.setBlockToAir(p_150108_2_, p_150108_3_, p_150108_4_);
 				return true;
 			} else {
 				return false;
@@ -230,7 +235,7 @@ public class Shinetorch extends Block {
 						p_150109_4_, p_150109_1_.getBlockMetadata(p_150109_2_,
 								p_150109_3_, p_150109_4_), 0);
 				p_150109_1_
-						.setBlockToAir(p_150109_2_, p_150109_3_, p_150109_4_);
+				.setBlockToAir(p_150109_2_, p_150109_3_, p_150109_4_);
 			}
 			
 			return false;

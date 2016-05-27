@@ -10,12 +10,12 @@ import zollernextras.lib.MainHelper;
 
 public class CandySphereBase extends BlockContainer {
 	
-	private float boundingBoxMaxY = 0.6F;
+	private float boundingBoxMaxY = 0.4F;
 	
 	public CandySphereBase(String strTexture) {
 		super(Material.piston);
 		MainHelper.setTab(this);
-		MainHelper.setNameAndTexture(this, "candycube_" + strTexture);
+		MainHelper.setNameAndTexture(this, "bowlingpin");
 		this.setHardness(0.6F);
 		this.setResistance(0.4F);
 		this.setBlockBounds(0.125F, 0.0F, 0.125F, 1.0F - 0.125F,

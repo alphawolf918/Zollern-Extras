@@ -9,16 +9,16 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import zollernextras.blocks.ores.IOre;
 import zollernextras.lib.MainHelper;
-import zollernextras.lib.Reference;
+import zollernextras.lib.ModInfo;
 
 public class NetherSPCOre extends Block implements IOre {
 	public NetherSPCOre() {
 		super(Material.rock);
 		MainHelper.setTab(this);
-		this.setBlockName(Reference.MODID + "_netherspcore");
+		this.setBlockName(ModInfo.MODID + "_netherspcore");
 		this.setHardness(0.3F);
 		this.setStepSound(this.soundTypeStone);
-		this.setBlockTextureName(Reference.MODID + ":" + "spcnetherore");
+		this.setBlockTextureName(ModInfo.MODID + ":" + "spcnetherore");
 		this.setHarvestLevel("pickaxe", 3);
 		this.setStepSound(soundTypePiston);
 		this.setHardness(3.0F);

@@ -1,18 +1,24 @@
 package zollernextras.config;
 
 import java.io.File;
+import java.util.ArrayList;
 import net.minecraftforge.common.config.Configuration;
+import zollernextras.ZollernExtrasMod;
 import zollernextras.lib.MainHelper;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 public class ZEConfig {
 	
 	public static Configuration config;
+	public static Configuration config2;
+	
+	public static ArrayList<String> homeList = new ArrayList<String>();
 	
 	public static String CATEGORY_BIOMES = "Biomes";
 	public static String CATEGORY_IMPROVEMENTS = "Improvements";
 	public static String CATEGORY_MOBS = "Mobs";
 	public static String CATEGORY_ORES = "Ores";
+	public static String CATEGORY_HOMES = "Homes";
 	
 	public static boolean fueltoniumIsYellorite;
 	public static boolean shiniumIsPlatinum;
@@ -36,6 +42,7 @@ public class ZEConfig {
 	public static int biomeMinersLandID;
 	public static int biomeCandyLandID;
 	public static int biomeCrystalOceanID;
+	public static int biomeLostDesertID;
 	
 	public static int mobDuckSpawnRate;
 	public static int mobFishSpawnRate;
@@ -68,7 +75,10 @@ public class ZEConfig {
 	public static void init(FMLPreInitializationEvent event) {
 		config = new Configuration(new File(event
 				.getModConfigurationDirectory().getAbsolutePath()
-				+ "/ZollernExtras.cfg"));
+				+ "/ZollernExtras/ZollernExtras.cfg"));
+		ZollernExtrasMod.INSTANCE.filePath = new File(event
+				.getModConfigurationDirectory().getAbsolutePath()
+				+ "/ZollernExtras/");
 		config.load();
 		
 		config.addCustomCategoryComment(config.CATEGORY_GENERAL,
@@ -88,19 +98,19 @@ public class ZEConfig {
 						"fueltoniumActsAsYellorite",
 						true,
 						"If enabled, Fueltonium Ingots will do the same as Yellorium Ingots in BigReactors, and can be used in their place.")
-						.getBoolean();
+				.getBoolean();
 		shiniumIsPlatinum = config
 				.get(config.CATEGORY_GENERAL,
 						"shiniumIsPlatinum",
 						true,
 						"If enabled, Shinium Ingots and Precious Shinium will function as Platinum Ingots and Platinum Dust, respectively (Thermal Foundation, Metallurgy, etc).")
-						.getBoolean();
+				.getBoolean();
 		betterGlassIsGlass = config
 				.get(config.CATEGORY_GENERAL,
 						"betterGlassIsGlass",
 						true,
 						"If enabled, Better Glass can be used in place of regular glass. Useful if you have a lot of gravel.")
-						.getBoolean();
+				.getBoolean();
 		rottenFleshCooksIntoLeather = config.get(CATEGORY_IMPROVEMENTS,
 				"rottenFleshCooksIntoLeather", true,
 				"If enabled, rotten flesh can be smelted into leather.")
@@ -110,17 +120,17 @@ public class ZEConfig {
 		vanillaItemsAreCraftable = config
 				.get(CATEGORY_IMPROVEMENTS, "vanillaItemsAreCraftable", true,
 						"If enabled, normally uncraftable vanilla items will be craftable.")
-						.getBoolean();
+				.getBoolean();
 		horseArmorIsCraftable = config
 				.get(CATEGORY_IMPROVEMENTS,
 						"horseArmorIsCraftable",
 						true,
 						"If enabled, horse armor may be crafted using its respective material and obsidian. (This is separate from the above on purpose.)")
-						.getBoolean();
+				.getBoolean();
 		biomeDisplaysOnHUD = config
 				.get(CATEGORY_IMPROVEMENTS, "biomeDisplaysOnHUD", true,
 						"Disable this if you don't want the current biome to show on your HUD.")
-						.getBoolean();
+				.getBoolean();
 		
 		// Biomes
 		biomeIcyDesertID = config.get(CATEGORY_BIOMES, "biomeIcyDesertID", 67)
@@ -151,6 +161,9 @@ public class ZEConfig {
 				.getInt();
 		biomeCrystalOceanID = config.get(CATEGORY_BIOMES,
 				"biomeCrystalOceanID", 80).getInt();
+		biomeLostDesertID = config.get(CATEGORY_BIOMES, "biomeLostDesertID",
+				180).getInt();
+		
 		// Mobs
 		mobFishSpawnRate = config.get(CATEGORY_MOBS, "mobFishSpawnRate", 70)
 				.getInt();
@@ -208,6 +221,22 @@ public class ZEConfig {
 				"oreEnderiteSpawnRate", 4).getInt();
 		
 		config.save();
-		MainHelper.Log("Config loaded.");
+		
+		config2 = new Configuration(new File(event
+				.getModConfigurationDirectory().getAbsolutePath()
+				+ "/ZollernExtras/Homes.cfg"));
+		config2.load();
+		MainHelper.Log("Config2 loaded.");
+		
+		config2.addCustomCategoryComment(
+				CATEGORY_HOMES,
+				"These are the coordinates of the homes set for each Player. Changing this would indeed be amusing, but also not advised.");
+		String[] str = {};
+		for (int i = 0; i < homeList.size(); i++) {
+			str[i] = config2.get(CATEGORY_HOMES,
+					homeList.get(i).split("=")[0] + "Home",
+					homeList.get(i).split("=")[1]).getString();
+		}
+		config2.save();
 	}
 }

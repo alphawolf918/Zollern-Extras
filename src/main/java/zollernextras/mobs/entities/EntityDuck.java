@@ -18,7 +18,7 @@ import net.minecraft.item.ItemSeeds;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import zollernextras.items.ItemList;
-import zollernextras.lib.Reference;
+import zollernextras.lib.ModInfo;
 
 public class EntityDuck extends EntityAnimal {
 	
@@ -124,7 +124,7 @@ public class EntityDuck extends EntityAnimal {
 	 */
 	@Override
 	protected String getLivingSound() {
-		return Reference.MODID + ":duck.say";
+		return ModInfo.MODID + ":duck.say";
 	}
 	
 	/**
@@ -132,7 +132,7 @@ public class EntityDuck extends EntityAnimal {
 	 */
 	@Override
 	protected String getHurtSound() {
-		return Reference.MODID + ":duck.hurt";
+		return ModInfo.MODID + ":duck.hurt";
 	}
 	
 	/**
@@ -140,7 +140,7 @@ public class EntityDuck extends EntityAnimal {
 	 */
 	@Override
 	protected String getDeathSound() {
-		return Reference.MODID + ":duck.die";
+		return ModInfo.MODID + ":duck.die";
 	}
 	
 	@Override

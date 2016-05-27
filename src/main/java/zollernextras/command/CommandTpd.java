@@ -7,6 +7,7 @@ import net.minecraft.command.ICommand;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ChatComponentText;
+import net.minecraft.util.EnumChatFormatting;
 
 public class CommandTpd extends CommandBase implements ICommand {
 	
@@ -44,29 +45,17 @@ public class CommandTpd extends CommandBase implements ICommand {
 	
 	@Override
 	public void processCommand(ICommandSender sender, String[] str) {
-		if (!sender.getEntityWorld().isRemote) {
+		if (!sender.getEntityWorld().isRemote && sender instanceof EntityPlayer) {
 			EntityPlayer player = (EntityPlayer) sender;
-			if (player.worldObj.getWorldInfo().areCommandsAllowed()) {
-				if (player.capabilities.isCreativeMode) {
-					if (str.length == 0) {
-						sender.addChatMessage(new ChatComponentText(
-								"Invalid use of command."));
-						return;
-					} else if (str.length >= 1) {
-						int dimId = Integer.parseInt(str[0]);
-						player.travelToDimension(dimId);
-						sender.addChatMessage(new ChatComponentText(
-								"Successfully traveled to dimension " + dimId));
-					}
-				} else {
-					sender.addChatMessage(new ChatComponentText(
-							"You must be in Creative Mode to use this command."));
-					return;
-				}
-			} else {
+			if (str.length == 0) {
 				sender.addChatMessage(new ChatComponentText(
-						"Commands are not allowed on this world."));
+						EnumChatFormatting.RED + "Invalid use of command."));
 				return;
+			} else if (str.length >= 1) {
+				int dimId = Integer.parseInt(str[0]);
+				player.travelToDimension(dimId);
+				sender.addChatMessage(new ChatComponentText(
+						"Successfully traveled to dimension " + dimId));
 			}
 		}
 	}

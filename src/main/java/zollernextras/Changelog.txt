@@ -1,9 +1,72 @@
+[2.6.3 - The Produce / Interdimensional Update (Pt. 1) + Bug Fixes + Misc Other Sutff]
+
+* Increased spawn rate of Obsidian blocks in lakes in Miner's Land biome.
+    * Obsidian should now also spawn with the same rate as the ores.
+* Added a "/heal" command to fully restore a Player's entire health.
+* Decreased rate of fall resistance increase.
+* Increased rate of jump height increase.
+* New blocks.
+    * Wonder Sand.
+    * Wonder Stone.
+    * Creep Stone.
+    * Creep Dirt.
+* New "Lost Desert" biome.
+    * Made explicitly for an alternate dimension.
+    * All regular stone is replaced by Wonder Stone.
+* New "Lost Desert" dimension.
+    * Entire world is (currently) made up of the Lost Desert biome.
+    * Consists of purple and green blocks.
+    * Four hostile ZE mobs spawn here.
+        * Mummy, Mega Creeper, Scorpion and Shadow Skeleton.
+    * Mineshafts, caves, villages and dungeons should generate here.
+    * Added ores:
+        * Desert Iron
+        * Desert Gold
+        * Desert Amaranth 
+        * Desert Shinium
+        * Desert Zollernium
+    * All ores must be mined with a diamond pickaxe or greater.
+    * Creep Stone and Creep Dirt generate in place of dirt and gravel.
+* Ice Cream Sandwich Block texture set to brownie block instead of cookie.
+* Corn kernels can now be cooked into popcorn.
+* Amaranth Armor now gives a resistance boost when all pieces are worn.
+* Added Azurite Armor.
+    * Gives a damage boost when all pieces are worn.
+* Added Azurite tools and sword.
+    * Build is slightly better than Amaranth tools, however the harvest level is still 5.
+* Zollernium Armor now gives fire resistance, and allows the player to step over 2 blocks at a time.
+    * There is currently a glitch that lets the 2-block step height last even after the armor is taken off.
+* Added crops.
+    * Garlic
+    * Peas
+    * Tomatoes
+    * Cucumbers
+    * Onions
+* Added in fruit trees and their respective fruit.
+    * Banana
+    * Orange
+    * Guava
+    * Lemon
+    * Lime
+    * Limon
+    * Cherry
+    * Grapefruit
+* All fruit trees now generate in certain biomes, though some trees have a different spawn rate than others.
+* All crops and flowers now have a chance to generate in the world, both as individual plants and as a farm group.
+
+---- FIXES ----
+* Fixed a bug that enabled you to see through walls and floors when placing a Shine Torch.
+* Skeletons now guaranteed to drop bones instead of bows.
+    * This is due to how many bows Players acquired thanks to this "feature," so, my bad. Fix'd.
+---------------
+
 [2.6.2.2]
 * New /stats command to check on your power stats.
 
 ---- FIXES ----
 * Fixed a bug that caused the Player to crash when using a quarry to harvest ZE ores.
     * Fortune message no longer sends to the Player.
+---------------
 
 [2.6.2 - The Sweet Tooth & Marine Update]
 
@@ -15,7 +78,6 @@
     * Will not drop an enchanted bow if they were holding one before death (bow will still be regular).
 * Silverfish will now always drop a Silver Nugget upon death.
     * Silver Nuggets can be crafted into Silver Ingots.
-        * This is the only way to obtain Silver in this mod.
 * Ghasts will now always drop Ghast Tears upon death.
 * Added mutton.
     * Both raw and cooked.

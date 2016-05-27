@@ -1,4 +1,4 @@
-[2.6.3 - The Produce / Interdimensional Update (Pt. 1) + Bug Fixes + Misc Other Sutff]
+[2.6.3 - The Produce / Interdimensional Update (Pt. 1) + Bug Fixes + Misc Other Stuff]
 
 * Increased spawn rate of Obsidian blocks in lakes in Miner's Land biome.
     * Obsidian should now also spawn with the same rate as the ores.
@@ -34,8 +34,8 @@
     * Gives a damage boost when all pieces are worn.
 * Added Azurite tools and sword.
     * Build is slightly better than Amaranth tools, however the harvest level is still 5.
-* Zollernium Armor now gives fire resistance, and allows the player to step over 2 blocks at a time.
-    * There is currently a glitch that lets the 2-block step height last even after the armor is taken off.
+* Zollernium Armor now gives fire resistance, allows the player to step over 2 blocks at a time, and slightly increases walk speed.
+    * There is currently a glitch that lets the 2-block step height and increased walk speed to last even after the armor is taken off.
 * Added crops.
     * Garlic
     * Peas
@@ -53,11 +53,16 @@
     * Grapefruit
 * All fruit trees now generate in certain biomes, though some trees have a different spawn rate than others.
 * All crops and flowers now have a chance to generate in the world, both as individual plants and as a farm group.
+* Cookie block now has the "cloth" step sound, and drops 1-9 cookies when broken (unless the tool used has Silk Touch).
+* Tall Grass Blocks now have a 5% chance to drop tomato or cucumber seeds.
+* Popcorn Bowls can be crafted by surrounding a bowl with popcorn.
+* Sea Lamps and Sea Lanterns now spawn at much lower levels, and the spawn rate has been reduced.
 
 ---- FIXES ----
 * Fixed a bug that enabled you to see through walls and floors when placing a Shine Torch.
 * Skeletons now guaranteed to drop bones instead of bows.
     * This is due to how many bows Players acquired thanks to this "feature," so, my bad. Fix'd.
+* This is listed in the features as well, but Sea Lamps and Sea Lanterns should no longer spawn at surface level.
 ---------------
 
 [2.6.2.2]

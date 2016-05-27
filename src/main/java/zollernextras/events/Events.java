@@ -3,6 +3,7 @@ package zollernextras.events;
 import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockCrops;
+import net.minecraft.block.BlockTallGrass;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -44,10 +45,10 @@ import net.minecraftforge.event.entity.player.PlayerEvent.NameFormat;
 import net.minecraftforge.event.entity.player.UseHoeEvent;
 import net.minecraftforge.event.terraingen.PopulateChunkEvent;
 import net.minecraftforge.event.world.BlockEvent;
+import net.minecraftforge.event.world.BlockEvent.BreakEvent;
 import zollernextras.biomes.BiomeList;
 import zollernextras.blocks.BlockList;
 import zollernextras.blocks.ores.IOre;
-import zollernextras.dimensions.Dimensions;
 import zollernextras.entity.ExtendedPlayer;
 import zollernextras.items.ItemList;
 import zollernextras.items.armor.amaranth.AmaranthArmor;
@@ -74,9 +75,6 @@ public class Events {
 			if (ExtendedPlayer.get((EntityPlayer) event.entity) == null) {
 				ExtendedPlayer.register((EntityPlayer) event.entity);
 			}
-		} else if (event.entity instanceof EntityVillager
-				&& event.entity.dimension == Dimensions.dimId) {
-			event.setCanceled(true);
 		}
 	}
 	
@@ -92,7 +90,7 @@ public class Events {
 			for (ItemStack armorStack : armor) {
 				if (armorStack != null
 						&& armorStack.getItem() instanceof AmaranthArmor) {
-					AmaranthArmor butterArmor = (AmaranthArmor) armorStack
+					AmaranthArmor amaranthArmor = (AmaranthArmor) armorStack
 							.getItem();
 					amArmorCount++;
 				} else if (armorStack != null
@@ -118,7 +116,7 @@ public class Events {
 					player.addPotionEffect(new PotionEffect(
 							Potion.fireResistance.id, 5, 4));
 					player.stepHeight = 2F;
-					player.capabilities.setPlayerWalkSpeed(0.3F);
+					player.capabilities.setPlayerWalkSpeed(0.2F);
 				}
 			}
 		}
@@ -187,6 +185,32 @@ public class Events {
 					((EntityPlayer) event.entity).getCommandSenderName(),
 					playerData);
 			ExtendedPlayer.saveProxyData((EntityPlayer) event.entity);
+		}
+	}
+	
+	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
+	public void onBlockBrokenEvent(BreakEvent event) {
+		World world = event.world;
+		if (!world.isRemote) {
+			Block block = event.block;
+			if (block.getClass() == BlockTallGrass.class) {
+				Random rand = new Random();
+				int randInt = rand.nextInt(75);
+				if (randInt <= 5) {
+					Item seedToDrop;
+					switch (randInt) {
+					default:
+						seedToDrop = ItemList.tomatoSeeds;
+						break;
+					case 1:
+						seedToDrop = ItemList.cucumberSeeds;
+						break;
+					}
+					EntityItem seedItem = new EntityItem(world, event.x,
+							event.y, event.z, new ItemStack(seedToDrop, 1));
+					world.spawnEntityInWorld(seedItem);
+				}
+			}
 		}
 	}
 	
@@ -262,7 +286,7 @@ public class Events {
 			if (!player.capabilities.isCreativeMode) {
 				ExtendedPlayer props = ExtendedPlayer.get(player);
 				float fallDistance = event.distance;
-				if (fallDistance >= 3.5F) {
+				if (fallDistance >= 2.5F) {
 					double resist = props.getFallResistance();
 					double totalResistance = fallDistance - resist;
 					if (totalResistance > 0.0D) {

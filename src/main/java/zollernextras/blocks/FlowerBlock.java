@@ -38,16 +38,4 @@ public class FlowerBlock extends BlockBush {
 	public EnumPlantType getPlantType(IBlockAccess world, int x, int y, int z) {
 		return EnumPlantType.Plains;
 	}
-	
-	// @Override
-	// @SideOnly(Side.CLIENT)
-	// public IIcon getIcon(int p_149691_1_, int p_149691_2_) {
-	// return blockIcon;
-	// }
-	//
-	// @Override
-	// @SideOnly(Side.CLIENT)
-	// public void registerBlockIcons(IIconRegister par1) {
-	// par1.registerIcon(ModInfo.MODID + ":" + flowerTexture);
-	// }
 }

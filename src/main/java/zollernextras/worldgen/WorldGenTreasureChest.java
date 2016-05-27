@@ -8,7 +8,8 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 import zollernextras.lib.Treasures;
 
 public class WorldGenTreasureChest extends WorldGenerator {
-	int randInt = (int) (Math.random() * Math.floor(10));
+	
+	int randInt = new Random().nextInt(10);
 	
 	protected Block[] GetValidSpawnBlocks() {
 		return new Block[] { Blocks.sand, Blocks.clay, Blocks.dirt,

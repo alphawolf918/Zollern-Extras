@@ -13,6 +13,7 @@ import zollernextras.items.crops.SeedFood;
 import zollernextras.items.food.CookedFood;
 import zollernextras.items.food.CropFood;
 import zollernextras.items.food.IceCream;
+import zollernextras.items.food.PopcornBowl;
 import zollernextras.items.food.RawFood;
 import zollernextras.items.food.SweetFood;
 import zollernextras.items.food.TreeFood;
@@ -176,6 +177,7 @@ public class ItemList {
 	public static Item cornKernel = new Seed("cornkernel", BlockList.corn);
 	public static Item corn = new CropFood("corn", 4, 5);
 	public static Item popcorn = new CookedFood("popcorn", 2, 4);
+	public static Item popcornBowl = new PopcornBowl();
 	public static Item pea = new Seed("pea", BlockList.peas);
 	public static Item peaPod = new CropFood("peas", 2, 3);
 	public static Item tomato = new CropFood("tomato", 3, 3);
@@ -300,6 +302,7 @@ public class ItemList {
 		addItem(cornKernel, "Corn Kernel");
 		addItem(corn, "Corn");
 		addItem(popcorn, "Popcorn");
+		addItem(popcornBowl, "Popcorn Bowl");
 		
 		addItem(banana, "Banana");
 		addItem(orange, "Orange");

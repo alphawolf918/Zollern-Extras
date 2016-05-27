@@ -132,15 +132,15 @@ public class WorldGenManager implements IWorldGenerator {
 				|| currentBiome.isEqualTo(BiomeGenBase.ocean)
 				|| currentBiome.isEqualTo(BiomeGenBase.deepOcean)) {
 			addBlockSpawn(BlockList.seaLamp, world, random, x, z, 16, 16,
-					4 + random.nextInt(4), 40, 24, 42);
+					4 + random.nextInt(4), 35, 24, 42);
 			addBlockSpawn(BlockList.prismarine, world, random, x, z, 16, 16,
-					15 + random.nextInt(6), 40, 4, 28);
+					15 + random.nextInt(6), 35, 4, 28);
 		}
 		
 		// Sea Lanterns
 		if (currentBiome.isEqualTo(BiomeList.crystalOcean)) {
 			addBlockSpawn(BlockList.seaLantern, world, random, x, z, 16, 16,
-					10 + random.nextInt(10), 25, 4, 78);
+					4 + random.nextInt(6), 25, 4, 48);
 			addBlockSpawn(BlockList.prismarineOre, world, random, x, z, 16, 16,
 					2 + random.nextInt(4), 15, 4, 28);
 		}
@@ -151,7 +151,7 @@ public class WorldGenManager implements IWorldGenerator {
 		}
 		
 		if (currentBiome.isEqualTo(BiomeList.mudSwamp)) {
-			spawnStructure(5, 100, world, random, x, y, z, new WorldGenLakes(
+			spawnStructure(10, 65, world, random, x, y, z, new WorldGenLakes(
 					Blocks.dirt));
 		}
 		
@@ -174,10 +174,10 @@ public class WorldGenManager implements IWorldGenerator {
 				|| currentBiome.isEqualTo(BiomeList.mudSwamp)
 				|| currentBiome.isEqualTo(BiomeList.mushroomForest)) {
 			Random r = new Random();
-			int randInt = random.nextInt(200);
+			int randInt = random.nextInt(250);
 			if (randInt <= 5) {
 				y -= 1;
-				spawnStructure(5, 20, world, random, x, y, z,
+				spawnStructure(5, 56, world, random, x, y, z,
 						new WorldGenBerries());
 				spawnStructure(5, 65, world, random, x, y, z,
 						new WorldGenCrop());
@@ -191,19 +191,33 @@ public class WorldGenManager implements IWorldGenerator {
 						new WorldGenCrops(BlockList.radish));
 				spawnStructure(6, 82, world, random, x, y, z,
 						new WorldGenCrops(BlockList.corn));
+				spawnStructure(2, 92, world, random, x, y, z,
+						new WorldGenCrops(BlockList.cucumbers));
 			}
 		}
 		
 		// Custom flowers
-		if (currentBiome.isEqualTo(BiomeList.floweryField)
-				|| currentBiome.isEqualTo(BiomeGenBase.plains)
+		if (currentBiome.isEqualTo(BiomeGenBase.plains)
 				|| currentBiome.isEqualTo(BiomeGenBase.extremeHills)
 				|| currentBiome.isEqualTo(BiomeGenBase.forest)
 				|| currentBiome.isEqualTo(BiomeGenBase.birchForest)
 				|| currentBiome.isEqualTo(BiomeList.mushroomForest)) {
 			Random r = new Random();
-			int randInt = random.nextInt(50);
-			if (randInt <= 35) {
+			int randInt = random.nextInt(75);
+			if (randInt <= 15) {
+				spawnStructure(5, 40, world, random, x, y, z,
+						new WorldGenFlowers(BlockList.aster));
+				spawnStructure(5, 40, world, random, x, y, z,
+						new WorldGenFlowers(BlockList.crocosmia));
+				spawnStructure(5, 40, world, random, x, y, z,
+						new WorldGenFlowers(BlockList.cosmos));
+				spawnStructure(5, 40, world, random, x, y, z,
+						new WorldGenFlowers(BlockList.lilac));
+			}
+		}
+		
+		if (currentBiome.isEqualTo(BiomeList.floweryField)) {
+			if (new Random().nextInt(50) <= 35) {
 				spawnStructure(15, 20, world, random, x, y, z,
 						new WorldGenFlowers(BlockList.aster));
 				spawnStructure(15, 20, world, random, x, y, z,
@@ -212,6 +226,8 @@ public class WorldGenManager implements IWorldGenerator {
 						new WorldGenFlowers(BlockList.cosmos));
 				spawnStructure(15, 20, world, random, x, y, z,
 						new WorldGenFlowers(BlockList.lilac));
+				spawnStructure(15, 20, world, random, x, y, z,
+						new WorldGenFlowers(BlockList.heartFlower));
 			}
 		}
 		

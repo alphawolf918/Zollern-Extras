@@ -193,6 +193,7 @@ public class BlockList {
 	public static Block aster = new FlowerBlock("aster");
 	public static Block lilac = new FlowerBlock("lilac");
 	public static Block crocosmia = new FlowerBlock("orangeflower");
+	public static Block heartFlower = new HeartFlower();
 	
 	public static Block ironBlockIngot = new IronIngotStack("iron");
 	public static Block goldBlockIngot = new GoldIngotStack("gold");
@@ -392,6 +393,7 @@ public class BlockList {
 		addBlock(aster, "Aster");
 		addBlock(lilac, "Lilac");
 		addBlock(crocosmia, "Crocosmia");
+		addBlock(heartFlower, "Heart Flower");
 		addBlock(candyCubeBlue, "Blue Candy Cube");
 		addBlock(candyCubeBrown, "Brown Candy Cube");
 		addBlock(candyCubeCyan, "Cyan Candy Cube");

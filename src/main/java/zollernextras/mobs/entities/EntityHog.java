@@ -57,9 +57,9 @@ public class EntityHog extends EntityPig {
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.maxHealth)
-				.setBaseValue(25.0D);
+		.setBaseValue(25.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed)
-				.setBaseValue(0.38D);
+		.setBaseValue(0.38D);
 	}
 	
 	/**
@@ -147,6 +147,8 @@ public class EntityHog extends EntityPig {
 			EntityHogZombie entitypigzombie = new EntityHogZombie(this.worldObj);
 			entitypigzombie.setLocationAndAngles(this.posX, this.posY,
 					this.posZ, this.rotationYaw, this.rotationPitch);
+			entitypigzombie.setCurrentItemOrArmor(0, new ItemStack(
+					Items.diamond_sword));
 			this.worldObj.spawnEntityInWorld(entitypigzombie);
 			this.setDead();
 		}
@@ -160,7 +162,7 @@ public class EntityHog extends EntityPig {
 		super.fall(par1);
 		if (par1 > 5.0F && this.riddenByEntity instanceof EntityPlayer) {
 			((EntityPlayer) this.riddenByEntity)
-					.triggerAchievement(AchievementList.flyPig);
+			.triggerAchievement(AchievementList.flyPig);
 		}
 	}
 	

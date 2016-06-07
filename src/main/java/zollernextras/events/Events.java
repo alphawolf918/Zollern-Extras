@@ -116,7 +116,6 @@ public class Events {
 					player.addPotionEffect(new PotionEffect(
 							Potion.fireResistance.id, 5, 4));
 					player.stepHeight = 2F;
-					player.capabilities.setPlayerWalkSpeed(0.2F);
 				}
 			}
 		}
@@ -154,11 +153,9 @@ public class Events {
 		}
 	}
 	
-	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
+	@SubscribeEvent(priority = EventPriority.HIGH, receiveCanceled = true)
 	public void onItemCraftedEvent(ItemCraftedEvent event) {
-		EntityPlayer player = event.player;
-		ItemStack crafting = event.crafting;
-		// TODO
+		
 	}
 	
 	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
@@ -264,7 +261,7 @@ public class Events {
 		if (!player.capabilities.isCreativeMode) {
 			double maxHealth = props.getMaxHealth();
 			player.getEntityAttribute(SharedMonsterAttributes.maxHealth)
-					.setBaseValue(maxHealth);
+			.setBaseValue(maxHealth);
 		}
 	}
 	
@@ -320,12 +317,12 @@ public class Events {
 									MainHelper.addChatMessage(
 											player,
 											EnumChatFormatting.GOLD
-													+ "+"
-													+ strIncrAmnt.substring(0,
-															3)
+											+ "+"
+											+ strIncrAmnt.substring(0,
+													3)
 													+ " Jump Height! Total: "
 													+ fullResist
-															.substring(0, 3));
+													.substring(0, 3));
 								}
 							}
 						}

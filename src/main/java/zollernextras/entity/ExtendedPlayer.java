@@ -13,7 +13,7 @@ import zollernextras.proxies.CommonProxy;
 
 public class ExtendedPlayer implements IExtendedEntityProperties {
 	
-	public static String EXT_PROP_NAME = "ExntededPlayer_";
+	public static String EXT_PROP_NAME = "ExtendedPlayer";
 	private final EntityPlayer player;
 	
 	private static double maxHealth = 20.0F;
@@ -119,7 +119,8 @@ public class ExtendedPlayer implements IExtendedEntityProperties {
 	}
 	
 	private static final String getSaveKey(EntityPlayer player) {
-		return player.getCommandSenderName() + ":" + EXT_PROP_NAME;
+		return player.getCommandSenderName() + ":" + EXT_PROP_NAME + "_"
+				+ player.getCommandSenderName();
 	}
 	
 	public void copy(ExtendedPlayer props) {
@@ -143,7 +144,7 @@ public class ExtendedPlayer implements IExtendedEntityProperties {
 	public void loadNBTData(NBTTagCompound compound) {
 		NBTTagCompound properties = (NBTTagCompound) compound
 				.getTag(EXT_PROP_NAME);
-		this.maxHealth = properties.getFloat("maxHealth");
+		this.maxHealth = properties.getDouble("maxHealth");
 		this.maxJump = properties.getDouble("maxJump");
 		this.fallResistance = properties.getDouble("fallResistance");
 		this.maxDefense = properties.getDouble("maxDefense");

@@ -15,11 +15,11 @@ public class CandySphereBase extends BlockContainer {
 	public CandySphereBase(String strTexture) {
 		super(Material.piston);
 		MainHelper.setTab(this);
-		MainHelper.setNameAndTexture(this, "bowlingpin");
+		MainHelper.setName(this, "testblock");
 		this.setHardness(0.6F);
 		this.setResistance(0.4F);
-		this.setBlockBounds(0.125F, 0.0F, 0.125F, 1.0F - 0.125F,
-				boundingBoxMaxY, 1.0F - 0.125F);
+		this.setBlockBounds(0.0F, -1.0F, 0.0F, 1.0F - 0.125F, boundingBoxMaxY,
+				1.0F - 0.125F);
 	}
 	
 	@Override

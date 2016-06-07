@@ -1,5 +1,6 @@
 package zollernextras.items.armor.amaranth;
 
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
@@ -11,6 +12,9 @@ public class AmaranthArmor extends ItemArmor {
 	
 	public String textureName;
 	public String unName;
+	
+	protected Enchantment armorEnchantment;
+	protected int enchantmentAmplifier = 1;
 	
 	public AmaranthArmor(ArmorMaterial material, String textureName, int type) {
 		super(material, 0, type);

@@ -148,6 +148,7 @@ tile.zollernextras_desertsuperchargedcoalore.name=Desert Super Charged Coal Ore
 tile.zollernextras_desertfueltoniumore.name=Desert Fueltonium Ore
 tile.zollernextras_desertzincore.name=Desert Zinc Ore
 tile.zollernextras_desertzollerniumore.name=Desert Zollernium Ore
+tile.zollernextras_shinetorch.name=Shine Torch
 
 tile.zollernextras_bpalmsapling.name=Bananapalm Sapling
 tile.zollernextras_bpalmlog.name=Bananapalm Log
@@ -248,10 +249,13 @@ item.zollernextras_icegem.name=Ice Gem
 item.zollernextras_thundergem.name=Thunder Gem
 item.zollernextras_nethergem.name=Nether Gem
 item.zollernextras_endergem.name=Ender Gem
+
 item.zollernextras_thorsword.name=Thor
 item.zollernextras_endersword.name=Ender
 item.zollernextras_icesword.name=Glacies
 item.zollernextras_nethersword.name=Diablo
+item.zollernextras_withersword.name=Mortem
+
 item.zollernextras_rawshrimp.name=Raw Shrimp
 item.zollernextras_cookedshrimp.name=Cooked Shrimp
 item.zollernextras_rawduck.name=Raw Duck
@@ -317,6 +321,7 @@ item.zollernextras_shagreen.name=Shagreen
 item.zollernextras_sharktooth.name=Shark Tooth
 item.zollernextras_transporter.name=Dimensional Transporter
 item.zollernextras_gemextractor.name=Gem Extractor
+item.zollernextras_popcornbowl.name=Popcorn Bowl
 
 entity.zollernextras_fish.name=Fish
 entity.zollernextras_jellyfish.name=Jellyfish

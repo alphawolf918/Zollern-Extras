@@ -93,6 +93,9 @@ public class EnderSword extends ItemSword {
 		int k = movingobjectposition.blockZ;
 		
 		this.checkBlockAt(i, j, k, world, entityplayer);
+		world.playSoundEffect(i + 5.0D, j + 5.0D, k + 5.0D,
+				"mob.endermen.portal", 2.0F,
+				world.rand.nextFloat() * 0.1F + 0.9F);
 		return itemstack;
 	}
 	

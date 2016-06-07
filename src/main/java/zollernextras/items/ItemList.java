@@ -23,6 +23,7 @@ import zollernextras.items.swords.EnderSword;
 import zollernextras.items.swords.IceSword;
 import zollernextras.items.swords.NetherSword;
 import zollernextras.items.swords.ThunderSword;
+import zollernextras.items.swords.WitherSword;
 import zollernextras.items.tools.ToolMaterials;
 import zollernextras.items.tools.amaranth.AmaranthAxe;
 import zollernextras.items.tools.amaranth.AmaranthHoe;
@@ -64,6 +65,7 @@ public class ItemList {
 			ToolMaterials.AMARANTH);
 	public static Item amaranthHoe = new AmaranthHoe(ToolMaterials.AMARANTH);
 	
+	// EXAMPLE //
 	public static Item amaranthHelmet = new AmaranthArmor(
 			ArmorMaterials.AMARANTH, "amaranthhelmet", 0);
 	public static Item amaranthChestplate = new AmaranthArmor(
@@ -72,6 +74,7 @@ public class ItemList {
 			ArmorMaterials.AMARANTH, "amaranthleggings", 2);
 	public static Item amaranthBoots = new AmaranthArmor(
 			ArmorMaterials.AMARANTH, "amaranthboots", 3);
+	// EXAMPLE //
 	
 	public static Item zollerniumPickaxe = new ZollerniumPickaxe(
 			ToolMaterials.ZOLLERNIUM);
@@ -139,10 +142,13 @@ public class ItemList {
 	public static Item enderOpal = new Gem("enderopal");
 	public static Item enderite = new Gem("enderite");
 	public static Item lapisIngot = new Gem("lapisingot");
+	
 	public static Item thorSword = new ThunderSword(ToolMaterials.POWER);
 	public static Item enderSword = new EnderSword(ToolMaterials.POWER);
 	public static Item diabloSword = new NetherSword(ToolMaterials.POWER);
 	public static Item iceSword = new IceSword(ToolMaterials.POWER);
+	public static Item witherSword = new WitherSword(ToolMaterials.POWER);
+	
 	public static Item rawShrimp = new RawFood("rawshrimp");
 	public static Item cookedShrimp = new CookedFood("cookedshrimp");
 	public static Item rawDuck = new RawFood("rawduck");
@@ -267,10 +273,13 @@ public class ItemList {
 		addItem(enderOpal, "Ender Opal");
 		addItem(enderite, "Enderite");
 		addItem(lapisIngot, "Lapis Ingot");
+		
 		addItem(thorSword, "Thunder Sword");
 		addItem(enderSword, "Ender Sword");
 		addItem(diabloSword, "Nether Sword");
 		addItem(iceSword, "Ice Sword");
+		addItem(witherSword, "Wither Sword");
+		
 		addItem(rawShrimp, "Raw Shrimp");
 		addItem(cookedShrimp, "Cooked Shrimp");
 		addItem(rawDuck, "Raw Duck");

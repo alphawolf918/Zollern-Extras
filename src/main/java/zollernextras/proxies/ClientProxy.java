@@ -81,33 +81,46 @@ public class ClientProxy extends CommonProxy {
 	public void initRenderers() {
 		RenderingRegistry.registerEntityRenderingHandler(EntityFish.class,
 				new RenderFish(new ModelFish(), 0.5F));
+		
 		RenderingRegistry.registerEntityRenderingHandler(
 				EntityMegaCreeper.class, new RenderMegaCreeper(
 						new ModelMegaCreeper(), 0.5F));
+		
 		RenderingRegistry.registerEntityRenderingHandler(EntityScorpion.class,
 				new RenderScorpion(new ModelScorpion(), 0.5F));
+		
 		RenderingRegistry.registerEntityRenderingHandler(EntityJellyfish.class,
 				new RenderJellyfish(new ModelJellyfish(), 0.5F));
+		
 		RenderingRegistry.registerEntityRenderingHandler(EntityShrimp.class,
 				new RenderShrimp(new ModelShrimp(), 0.5F));
+		
 		RenderingRegistry.registerEntityRenderingHandler(
 				EntityBabyDragon.class, new RenderBabyDragon(
 						new ModelBabyDragon(), 0.5F));
+		
 		RenderingRegistry.registerEntityRenderingHandler(EntityDuck.class,
 				new RenderDuck(new ModelDuck(), 0.5F));
+		
 		RenderingRegistry.registerEntityRenderingHandler(EntityPigshroom.class,
 				new RenderPigshroom(new ModelPigshroom(), 0.5F));
+		
 		RenderingRegistry.registerEntityRenderingHandler(
 				EntityShadowSkeleton.class, new RenderShadowSkeleton(
 						new ModelShadowSkeleton(), 0.5F));
+		
 		RenderingRegistry.registerEntityRenderingHandler(EntityMummy.class,
 				new RenderMummy(new ModelMummy(), 0.5F));
+		
 		RenderingRegistry.registerEntityRenderingHandler(EntityHog.class,
 				new RenderHog(new ModelHog(), 0.5F));
+		
 		RenderingRegistry.registerEntityRenderingHandler(EntityHogZombie.class,
 				new RenderHogZombie(new ModelHogZombie(), 0.5F));
+		
 		RenderingRegistry.registerEntityRenderingHandler(EntityShark.class,
 				new RenderShark(new ModelShark(), 0.5F));
+		
 		RenderingRegistry.registerEntityRenderingHandler(EntityHellDuck.class,
 				new RenderHellDuck(new ModelDuck(), 0.5F));
 		

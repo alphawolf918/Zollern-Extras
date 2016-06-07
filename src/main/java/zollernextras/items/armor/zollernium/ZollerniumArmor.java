@@ -36,6 +36,6 @@ public class ZollerniumArmor extends ItemArmor {
 	
 	@Override
 	public boolean getIsRepairable(ItemStack p_82789_1_, ItemStack p_82789_2_) {
-		return p_82789_2_ == new ItemStack(ItemList.zollerniumIngot, 2);
+		return p_82789_2_ == new ItemStack(ItemList.zollerniumIngot, 1);
 	}
 }

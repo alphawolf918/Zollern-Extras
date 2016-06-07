@@ -1,7 +1,13 @@
 package zollernextras.items.tools.amaranth;
 
+import java.util.List;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemHoe;
+import net.minecraft.item.ItemStack;
 import zollernextras.creativetabs.ModTabs;
+import zollernextras.items.ItemList;
 import zollernextras.lib.ModInfo;
 
 public class AmaranthHoe extends ItemHoe {
@@ -11,5 +17,12 @@ public class AmaranthHoe extends ItemHoe {
 		this.setCreativeTab(ModTabs.zTab);
 		this.setUnlocalizedName(ModInfo.MODID + "_amaranthhoe");
 		this.setTextureName(ModInfo.MODID + ":" + "amaranthhoe");
+	}
+	
+	@Override
+	public void getSubItems(Item item, CreativeTabs creativeTab, List items) {
+		ItemStack amaranthHoe = new ItemStack(ItemList.amaranthHoe, 1);
+		amaranthHoe.addEnchantment(Enchantment.unbreaking, 2);
+		items.add(amaranthHoe);
 	}
 }

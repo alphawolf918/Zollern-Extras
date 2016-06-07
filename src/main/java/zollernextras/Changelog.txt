@@ -1,3 +1,19 @@
+[2.6.5]
+* Amaranth tools now have enchantments on them when crafted / grabbed from creative inventory.
+* Lang issues have been fixed with Shine Torch and Popcorn Bowl.
+* Zollernium harvest level has been increased to 6.
+* Registered more ores, blocks, dusts and ingots with the Ore Dictionary.
+* Hog Zombies now spawn with diamond swords when a hog is struck by lightning.
+* Added a fifth, Wither-themed Power Sword called Mortem.
+    * Applies Wither effect to entities and players on left-click.
+    * Shoots out Wither Skulls on right-click.
+* Added Cookie Block and Chocolate Block to Candy Land world gen spawn.
+
+[2.6.4]
+
+* Ender Sword now always plays the "teleportation" noise.
+* Zollernium Armor no longer gives increased walk speed.
+
 [2.6.3 - The Produce / Interdimensional Update (Pt. 1) + Bug Fixes + Misc Other Stuff]
 
 * Increased spawn rate of Obsidian blocks in lakes in Miner's Land biome.

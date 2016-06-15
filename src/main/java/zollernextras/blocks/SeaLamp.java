@@ -16,5 +16,6 @@ public class SeaLamp extends Block {
 		this.setLightOpacity(0);
 		this.setLightLevel(1.0F);
 		this.setStepSound(soundTypeGlass);
+		this.setHarvestLevel("pickaxe", 1);
 	}
 }

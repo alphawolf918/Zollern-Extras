@@ -71,6 +71,7 @@ public class ZEConfig {
 	public static int oreAzuriteSpawnRate;
 	public static int oreEnderiteSpawnRate;
 	public static int oreAquamarineSpawnRate;
+	public static int oreWitheriteSpawnRate;
 	
 	public static void init(FMLPreInitializationEvent event) {
 		config = new Configuration(new File(event
@@ -219,6 +220,8 @@ public class ZEConfig {
 				4).getInt();
 		oreEnderiteSpawnRate = config.get(CATEGORY_ORES,
 				"oreEnderiteSpawnRate", 4).getInt();
+		oreWitheriteSpawnRate = config.get(CATEGORY_ORES,
+				"oreWitheriteSpawnRate", 6).getInt();
 		
 		config.save();
 		

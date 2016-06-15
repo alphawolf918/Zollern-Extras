@@ -28,7 +28,8 @@ public class ShiniumIngotStack extends BlockContainer {
 		this.setLightLevel(1.0F);
 		this.setBlockBounds(0.125F, 0.0F, 0.125F, 1.0F - 0.125F,
 				boundingBoxMaxY, 1.0F - 0.125F);
-		this.setHardness(2.0F);
+		this.setHardness(1.0F);
+		this.setHarvestLevel("pickaxe", 2);
 	}
 	
 	@Override

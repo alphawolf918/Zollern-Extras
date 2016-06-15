@@ -6,7 +6,6 @@ import zollernextras.blocks.BlockList;
 import zollernextras.command.Commands;
 import zollernextras.config.ZEConfig;
 import zollernextras.creativetabs.ModTabs;
-import zollernextras.dimensions.Dimensions;
 import zollernextras.handlers.FuelHandlers;
 import zollernextras.handlers.Handlers;
 import zollernextras.items.ItemList;
@@ -54,7 +53,6 @@ public class ZollernExtrasMod {
 		BlockList.init();
 		TreeCapHelper.init();
 		Mobs.init();
-		// Dimensions.init();
 		PacketDispatcher.registerPackets();
 	}
 	

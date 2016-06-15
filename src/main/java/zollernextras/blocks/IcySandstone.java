@@ -10,6 +10,7 @@ public class IcySandstone extends Block {
 		MainHelper.setTab(this);
 		MainHelper.setNameAndTexture(this, "icysandstone", "coldsandsmooth");
 		this.setResistance(2F);
-		this.setHardness(2F);
+		this.setHardness(1.5F);
+		this.setHarvestLevel("pickaxe", 0);
 	}
 }

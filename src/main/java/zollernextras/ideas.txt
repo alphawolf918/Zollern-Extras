@@ -1,13 +1,15 @@
-* Make horse armor craftable.
-    * Add new horse armor: Emerald & Amaranth. (?)
+* Add new horse armor: Emerald & Amaranth. (?)
 * Hell Ducks.
     * Have them make a "Quack" sound, similar to how Hellcows make a "moo" sound.
     * Spawn in the Nether.
     * Regular ducks turn into Hellducks when killed at night, or when struck with lightning.
-    * Immune to fire and lava.
-* Blaze Rods craftable using Blaze Powder and Black Cave Marble Sticks.
-* More crops and food.
-* Add in food and items from Sweet Tooth mod.
-* Sharks.
-    * Should drop their teeth and shagreen (leather).
 * Make different-colored fish to match the new fish items. (?)
+* Zinc Armor and Tools.
+* Add Enchantments to Zinc and Zollernium Tools.
+* Wood and Stone Armor. (?)
+* Nether Eye that transports the user to the Nether.
+    * Good for four uses.
+* Add my own Ruby and Sapphire Ore blocks.
+    * New tools, armor, gems, ores and blocks.
+    * Could be used in crafting recipes.
+* Make Nether Ores spawn using events. (?)

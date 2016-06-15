@@ -65,7 +65,6 @@ public class ItemList {
 			ToolMaterials.AMARANTH);
 	public static Item amaranthHoe = new AmaranthHoe(ToolMaterials.AMARANTH);
 	
-	// EXAMPLE //
 	public static Item amaranthHelmet = new AmaranthArmor(
 			ArmorMaterials.AMARANTH, "amaranthhelmet", 0);
 	public static Item amaranthChestplate = new AmaranthArmor(
@@ -74,7 +73,6 @@ public class ItemList {
 			ArmorMaterials.AMARANTH, "amaranthleggings", 2);
 	public static Item amaranthBoots = new AmaranthArmor(
 			ArmorMaterials.AMARANTH, "amaranthboots", 3);
-	// EXAMPLE //
 	
 	public static Item zollerniumPickaxe = new ZollerniumPickaxe(
 			ToolMaterials.ZOLLERNIUM);
@@ -142,6 +140,9 @@ public class ItemList {
 	public static Item enderOpal = new Gem("enderopal");
 	public static Item enderite = new Gem("enderite");
 	public static Item lapisIngot = new Gem("lapisingot");
+	public static Item witherite = new Gem("witherite");
+	public static Item shadowEssence = new Gem("shadowessence");
+	public static Item netheridium = new Gem("netheridium");
 	
 	public static Item thorSword = new ThunderSword(ToolMaterials.POWER);
 	public static Item enderSword = new EnderSword(ToolMaterials.POWER);
@@ -213,8 +214,6 @@ public class ItemList {
 	public static Item sharkLeather = new ModItem("shagreen");
 	public static Item sharkTooth = new ModItem("sharktooth");
 	
-	// public static Item transporter = new ItemTransporter("transporter");
-	
 	public static void init() {
 		addItem(spcItem, "Super Charged Coal");
 		addItem(shinedust, "Shinedust");
@@ -273,6 +272,9 @@ public class ItemList {
 		addItem(enderOpal, "Ender Opal");
 		addItem(enderite, "Enderite");
 		addItem(lapisIngot, "Lapis Ingot");
+		addItem(witherite, "Witherite");
+		addItem(shadowEssence, "Shadow Essence");
+		addItem(netheridium, "Netheridium");
 		
 		addItem(thorSword, "Thunder Sword");
 		addItem(enderSword, "Ender Sword");
@@ -341,7 +343,6 @@ public class ItemList {
 		addItem(iceCreamSandwich, "Ice Cream Sandwich");
 		addItem(sharkLeather, "Shagreen");
 		addItem(sharkTooth, "Shark Tooth");
-		// addItem(transporter, "Dimensional Transporter");
 		MainHelper.Log("Items loaded, " + totalItems + " entries.");
 	}
 	

@@ -5,5 +5,6 @@ public class DarkPrismarine extends GenericBlock {
 		super("darkprismarine", 0F);
 		this.setHardness(0.6F);
 		this.setResistance(6F);
+		this.setHarvestLevel("pickaxe", 1);
 	}
 }

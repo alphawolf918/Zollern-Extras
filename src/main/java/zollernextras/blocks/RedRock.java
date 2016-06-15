@@ -10,10 +10,11 @@ public class RedRock extends Block {
 	public RedRock() {
 		super(Material.rock);
 		MainHelper.setTab(this);
-		this.setHardness(1.6F);
+		this.setHardness(1.4F);
 		this.setResistance(10F);
 		MainHelper.setNameAndTexture(this, "redrock");
 		this.setStepSound(Block.soundTypeStone);
+		this.setHarvestLevel("pickaxe", 1);
 	}
 	
 	@Override

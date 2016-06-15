@@ -17,6 +17,7 @@ public class GoldSiren extends SirenBlockBase {
 		this.setSirenBlockSound(sirenInfo);
 		MainHelper.setNameAndTexture(this, sirenInfo);
 		this.setTickRandomly(true);
+		this.setHarvestLevel("pickaxe", 1);
 	}
 	
 	@Override

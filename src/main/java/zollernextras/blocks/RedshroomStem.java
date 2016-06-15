@@ -2,16 +2,16 @@ package zollernextras.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import zollernextras.creativetabs.ModTabs;
-import zollernextras.lib.ModInfo;
+import zollernextras.lib.MainHelper;
 
 public class RedshroomStem extends Block {
 	public RedshroomStem() {
 		super(Material.rock);
-		this.setCreativeTab(ModTabs.zTab);
-		this.setBlockName(ModInfo.MODID + "_redshroomstem");
-		this.setBlockTextureName(ModInfo.MODID + ":" + "redstem");
-		this.setHardness(1.2F);
+		MainHelper.setTab(this);
+		MainHelper.setName(this, "redshroomstem");
+		MainHelper.setTexture(this, "redstem");
+		this.setHardness(1.0F);
 		this.setResistance(0F);
+		this.setHarvestLevel("pickaxe", 0);
 	}
 }

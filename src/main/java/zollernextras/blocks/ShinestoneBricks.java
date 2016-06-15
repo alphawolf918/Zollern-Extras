@@ -9,9 +9,10 @@ public class ShinestoneBricks extends Block {
 		super(Material.glass);
 		MainHelper.setTab(this);
 		MainHelper.setNameAndTexture(this, "crystalbricks");
-		this.setHardness(1.4F);
+		this.setHardness(1.2F);
 		this.setResistance(6.0F);
 		this.setLightLevel(1.0F);
 		this.setStepSound(this.soundTypeGlass);
+		this.setHarvestLevel("pickaxe", 1);
 	}
 }

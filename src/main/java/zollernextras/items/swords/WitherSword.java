@@ -2,7 +2,6 @@ package zollernextras.items.swords;
 
 import java.util.List;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityWitherSkull;
@@ -38,7 +37,7 @@ public class WitherSword extends ItemSword {
 		EntityWitherSkull witherSkull = new EntityWitherSkull(par2World);
 		witherSkull.setPosition(par3Entity.posX + look.xCoord * 5,
 				par3Entity.posY + 1 + look.yCoord * 5, par3Entity.posZ
-				+ look.zCoord * 5);
+						+ look.zCoord * 5);
 		witherSkull.accelerationX = look.xCoord * 0.1;
 		witherSkull.accelerationY = look.xCoord * 0.1;
 		witherSkull.accelerationZ = look.xCoord * 0.1;
@@ -65,8 +64,8 @@ public class WitherSword extends ItemSword {
 	public boolean onLeftClickEntity(ItemStack par1ItemStack,
 			EntityPlayer par2EntityPlayer, Entity entity) {
 		super.onLeftClickEntity(par1ItemStack, par2EntityPlayer, entity);
-		if (entity instanceof EntityLiving) {
-			EntityLiving living = (EntityLiving) entity;
+		if (entity instanceof EntityLivingBase) {
+			EntityLivingBase living = (EntityLivingBase) entity;
 			living.addPotionEffect(new PotionEffect(Potion.wither.id, 50, 2));
 			this.playWitherSound(living.worldObj, living.posX, living.posY,
 					living.posZ);
@@ -96,7 +95,8 @@ public class WitherSword extends ItemSword {
 			list.add(EnumChatFormatting.ITALIC + "A withering");
 			list.add(EnumChatFormatting.ITALIC + "blade, touched with death.");
 		} else {
-			list.add("Hold SHIFT for more information.");
+			list.add("Hold SHIFT for");
+			list.add("more information.");
 		}
 	}
 }

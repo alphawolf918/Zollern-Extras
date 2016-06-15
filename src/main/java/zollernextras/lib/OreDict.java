@@ -62,6 +62,7 @@ public class OreDict {
 		}
 		registerOre("ingotFueltonium", ItemList.ingotFueltonium);
 		registerOre("oreFueltonium", BlockList.fueltonium);
+		registerOre("oreNetherFueltonium", BlockList.fuelNetherOre);
 		registerOre("dustFueltonium", ItemList.fuelonite);
 		registerOre("blockFueltonium", BlockList.fueltoniumBlock);
 		
@@ -135,6 +136,11 @@ public class OreDict {
 		registerOre("ingotEnderite", ItemList.enderite);
 		registerOre("oreEnderite", BlockList.enderiteOre);
 		registerOre("blockEnderite", BlockList.enderite);
+		
+		// Witherite
+		registerOre("oreWitherite", BlockList.witheriteOre);
+		registerOre("gemWitherite", ItemList.witherite);
+		registerOre("blockWitherite", BlockList.witheriteBlock);
 		
 		// Dye
 		registerOre("dyeGreen", ItemList.greenDye);

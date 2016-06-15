@@ -27,7 +27,8 @@ public class GoldIngotStack extends BlockContainer {
 		this.setBlockTextureName("minecraft:gold_block");
 		this.setBlockBounds(0.125F, 0.0F, 0.125F, 1.0F - 0.125F,
 				boundingBoxMaxY, 1.0F - 0.125F);
-		this.setHardness(2.0F);
+		this.setHardness(1.0F);
+		this.setHarvestLevel("pickaxe", 2);
 	}
 	
 	@Override
@@ -50,7 +51,7 @@ public class GoldIngotStack extends BlockContainer {
 	public void onBlockPlacedBy(World world, int i, int j, int k,
 			EntityLivingBase entityLiving, ItemStack itemStack) {
 		int facing = MathHelper
-				.floor_double((entityLiving.rotationYaw * 4F) / 360F + 0.5D) & 3;
+				.floor_double(entityLiving.rotationYaw * 4F / 360F + 0.5D) & 3;
 		TileEntity te = world.getTileEntity(i, j, k);
 		if (te != null && te instanceof TEBlockBase) {
 			TEBlockBase ted = (TEBlockBase) te;

@@ -18,7 +18,7 @@ public class EnderAmaranthOre extends Block implements IOre {
 		this.setStepSound(this.soundTypeStone);
 		this.setHarvestLevel("pickaxe", 3);
 		this.setStepSound(soundTypePiston);
-		this.setHardness(3.5F);
+		this.setHardness(1.5F);
 		this.setResistance(6.2F);
 	}
 	

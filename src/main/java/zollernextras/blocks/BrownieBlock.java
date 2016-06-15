@@ -7,5 +7,8 @@ public class BrownieBlock extends GenericBlock {
 		super("brownieblock", 0.4F);
 		this.setMaterial(Material.cloth);
 		this.setStepSound(soundTypeCloth);
+		this.setHardness(0.4F);
+		this.setResistance(2.0F);
+		this.setHarvestLevel("pickaxe", 1);
 	}
 }

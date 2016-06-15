@@ -47,6 +47,7 @@ import net.minecraftforge.event.terraingen.PopulateChunkEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.event.world.BlockEvent.BreakEvent;
 import zollernextras.biomes.BiomeList;
+import zollernextras.blocks.BabyDragonEgg;
 import zollernextras.blocks.BlockList;
 import zollernextras.blocks.ores.IOre;
 import zollernextras.entity.ExtendedPlayer;
@@ -55,14 +56,14 @@ import zollernextras.items.armor.amaranth.AmaranthArmor;
 import zollernextras.items.armor.azurite.AzuriteArmor;
 import zollernextras.items.armor.zollernium.ZollerniumArmor;
 import zollernextras.lib.MainHelper;
+import zollernextras.mobs.entities.EntityBabyDragon;
+import zollernextras.mobs.entities.EntityShadowSkeleton;
 import zollernextras.network.PacketDispatcher;
 import zollernextras.network.client.SyncPlayerPropsMessage;
 import zollernextras.proxies.CommonProxy;
 import cpw.mods.fml.common.eventhandler.Event.Result;
 import cpw.mods.fml.common.eventhandler.EventPriority;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import cpw.mods.fml.common.gameevent.PlayerEvent.ItemCraftedEvent;
-import cpw.mods.fml.common.gameevent.PlayerEvent.ItemSmeltedEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent.PlayerLoggedInEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent.PlayerRespawnEvent;
 
@@ -153,17 +154,17 @@ public class Events {
 		}
 	}
 	
-	@SubscribeEvent(priority = EventPriority.HIGH, receiveCanceled = true)
-	public void onItemCraftedEvent(ItemCraftedEvent event) {
-		
-	}
+	// @SubscribeEvent(priority = EventPriority.HIGH, receiveCanceled = true)
+	// public void onItemCraftedEvent(ItemCraftedEvent event) {
+	//
+	// }
 	
-	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
-	public void onItemSmeltedEvent(ItemSmeltedEvent event) {
-		EntityPlayer player = event.player;
-		ItemStack smelting = event.smelting;
-		// TODO
-	}
+	// @SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
+	// public void onItemSmeltedEvent(ItemSmeltedEvent event) {
+	// EntityPlayer player = event.player;
+	// ItemStack smelting = event.smelting;
+	// // TODO
+	// }
 	
 	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
 	public void onLivingDeathEvent(LivingDeathEvent event) {
@@ -207,6 +208,11 @@ public class Events {
 							event.y, event.z, new ItemStack(seedToDrop, 1));
 					world.spawnEntityInWorld(seedItem);
 				}
+			} else if (block.getClass() == BabyDragonEgg.class) {
+				EntityBabyDragon dragon = new EntityBabyDragon(world);
+				dragon.setLocationAndAngles(event.x + 0.5D, event.y + 0.5D,
+						event.z + 0.5D, 0.0F, 0.0F);
+				world.spawnEntityInWorld(dragon);
 			}
 		}
 	}
@@ -308,7 +314,7 @@ public class Events {
 											+ strIncrAmnt.substring(0, 3)
 											+ " Fall Resistance! Total: "
 											+ fullResist.substring(0, 3));
-							if (new Random().nextInt(40) == 1) {
+							if (new Random().nextInt(20) <= 2) {
 								if (props.getMaxJump() < 8.0D) {
 									props.setMaxJump(props.getMaxJump()
 											+ incrAmnt);
@@ -347,41 +353,46 @@ public class Events {
 	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
 	public void onHarvestDropsEvent(BlockEvent.HarvestDropsEvent event) {
 		if (event.harvester instanceof EntityPlayer) {
-			EntityPlayer player = event.harvester;
-			if (!event.world.isRemote) {
-				if (!player.capabilities.isCreativeMode) {
-					if (event.block instanceof IOre) {
-						Random rand = new Random();
-						IOre oreBlock = (IOre) event.block;
-						ExtendedPlayer props = ExtendedPlayer.get(player);
-						double fortune = props.getMaxFortune();
-						if (new Random().nextInt(10) == 1) {
-							double blockFortune = oreBlock.getFortune();
-							props.setMaxFortune(fortune + blockFortune);
-							// String strFortuneLevel = "" +
-							// props.getMaxFortune();
-							// MainHelper.addChatMessage(player,
-							// EnumChatFormatting.GOLD + "+"
-							// + blockFortune
-							// + " Fortune! Total: "
-							// + strFortuneLevel.substring(0, 3));
-						}
-						if (new Random().nextInt(5) == 1) {
-							int numDropped = 0;
-							if (fortune >= 1.0D) {
-								int r = new Random().nextInt((int) fortune);
-								numDropped = r == 0 ? 1 : r;
+			if (event.harvester.getClass() == EntityPlayer.class) {
+				EntityPlayer player = event.harvester;
+				if (!event.world.isRemote) {
+					if (!player.capabilities.isCreativeMode) {
+						if (event.block instanceof IOre) {
+							Random rand = new Random();
+							IOre oreBlock = (IOre) event.block;
+							ExtendedPlayer props = ExtendedPlayer.get(player);
+							double fortune = props.getMaxFortune();
+							if (new Random().nextInt(10) == 1) {
+								double blockFortune = oreBlock.getFortune();
+								props.setMaxFortune(fortune + blockFortune);
+								String strFortuneLevel = ""
+										+ props.getMaxFortune();
+								MainHelper.addChatMessage(
+										player,
+										EnumChatFormatting.GOLD
+										+ "+"
+										+ blockFortune
+										+ " Fortune! Total: "
+										+ strFortuneLevel.substring(0,
+												3));
 							}
-							if (numDropped > oreBlock.getMaxDropIncrease()) {
-								numDropped = oreBlock.getMaxDropIncrease();
+							if (new Random().nextInt(5) == 1) {
+								int numDropped = 0;
+								if (fortune >= 1.0D) {
+									int r = new Random().nextInt((int) fortune);
+									numDropped = r == 0 ? 1 : r;
+								}
+								if (numDropped > oreBlock.getMaxDropIncrease()) {
+									numDropped = oreBlock.getMaxDropIncrease();
+								}
+								Item droppedItem = oreBlock
+										.getDroppedItemStack().getItem();
+								event.drops.add(new ItemStack(droppedItem,
+										numDropped));
 							}
-							Item droppedItem = oreBlock.getDroppedItemStack()
-									.getItem();
-							event.drops.add(new ItemStack(droppedItem,
-									numDropped));
+						} else if (event.block instanceof BlockCrops) {
+							// TODO
 						}
-					} else if (event.block instanceof BlockCrops) {
-						// TODO
 					}
 				}
 			}
@@ -434,6 +445,16 @@ public class Events {
 					theEntity.posY, theEntity.posZ, new ItemStack(theItem,
 							numDropped));
 			worldObj.spawnEntityInWorld(item);
+		} else if (theEntity instanceof EntityShadowSkeleton) {
+			Random rand = new Random();
+			int randInt = rand.nextInt(100);
+			if (randInt <= 10) {
+				ItemStack itemStack = new ItemStack(ItemList.shadowEssence, 1);
+				EntityItem itemEntity = new EntityItem(worldObj,
+						theEntity.posX, theEntity.posY, theEntity.posZ,
+						itemStack);
+				worldObj.spawnEntityInWorld(itemEntity);
+			}
 		}
 	}
 	
@@ -491,7 +512,7 @@ public class Events {
 							for (int z = 0; z < 16; ++z) {
 								if (storage.getBlockByExtId(x, y, z) == fromBlock) {
 									Block theBlock = toBlock;
-									int rand = new Random().nextInt(26);
+									int rand = new Random().nextInt(34);
 									if (rand == 0) {
 										theBlock = BlockList.candyCubeWhite;
 									} else if (rand == 1) {
@@ -514,6 +535,14 @@ public class Events {
 										theBlock = BlockList.candyCubePurple;
 									} else if (rand == 10) {
 										theBlock = BlockList.sugarCube;
+									} else if (rand == 11) {
+										theBlock = BlockList.chocolateBlock;
+									} else if (rand == 12) {
+										theBlock = BlockList.brownieBlock;
+									} else if (rand == 13) {
+										theBlock = BlockList.iceCreamSandwichBlock;
+									} else if (rand == 14) {
+										theBlock = BlockList.cookieBlock;
 									} else {
 										theBlock = toBlock;
 									}
@@ -524,6 +553,9 @@ public class Events {
 								} else if (storage.getBlockByExtId(x, y, z) == Blocks.gravel) {
 									storage.func_150818_a(x, y, z,
 											BlockList.candyCubeGray);
+								} else if (storage.getBlockByExtId(x, y, z) == Blocks.clay) {
+									storage.func_150818_a(x, y, z,
+											BlockList.candyCubeBlack);
 								}
 							}
 						}
@@ -545,30 +577,6 @@ public class Events {
 										|| storage.getBlockByExtId(x, y, z) == Blocks.dirt) {
 									Block theBlock = toBlock;
 									storage.func_150818_a(x, y, z, toBlock);
-								}
-							}
-						}
-					}
-				}
-			}
-			chunk.isModified = true;
-		} else if (biome.isEqualTo(BiomeList.lostDesert)) {
-			Chunk chunk = event.world.getChunkFromChunkCoords(event.chunkX,
-					event.chunkZ);
-			Block fromBlock = Blocks.stone;
-			Block toBlock = BlockList.wonderStone;
-			for (ExtendedBlockStorage storage : chunk.getBlockStorageArray()) {
-				if (storage != null) {
-					for (int x = 0; x < 16; ++x) {
-						for (int y = 0; y < 16; ++y) {
-							for (int z = 0; z < 16; ++z) {
-								if (storage.getBlockByExtId(x, y, z) == fromBlock) {
-									Block theBlock = toBlock;
-									storage.func_150818_a(x, y, z, toBlock);
-								} else if (storage.getBlockByExtId(x, y, z) == Blocks.dirt) {
-									Block theBlock = BlockList.creepDirt;
-								} else if (storage.getBlockByExtId(x, y, z) == Blocks.gravel) {
-									Block theBlock = BlockList.creepStone;
 								}
 							}
 						}

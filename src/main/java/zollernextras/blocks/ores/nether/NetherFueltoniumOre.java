@@ -9,19 +9,17 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import zollernextras.blocks.ores.IOre;
 import zollernextras.lib.MainHelper;
-import zollernextras.lib.ModInfo;
 
 public class NetherFueltoniumOre extends Block implements IOre {
 	public NetherFueltoniumOre() {
 		super(Material.rock);
 		MainHelper.setTab(this);
-		this.setBlockName(ModInfo.MODID + "_netherfueltoniumore");
-		this.setHardness(0.3F);
+		MainHelper.setNameAndTexture(this, "netherfueltoniumore",
+				"fuelnetherore");
+		this.setHardness(1.6F);
 		this.setStepSound(this.soundTypeStone);
-		this.setBlockTextureName(ModInfo.MODID + ":" + "fuelnetherore");
 		this.setHarvestLevel("pickaxe", 4);
 		this.setStepSound(soundTypePiston);
-		this.setHardness(6.0F);
 		this.setResistance(9.2F);
 	}
 	

@@ -21,8 +21,8 @@ public class GemOre extends Block implements IOre {
 		this.setStepSound(this.soundTypeGlass);
 		this.setHarvestLevel("pickaxe", 3);
 		this.setStepSound(soundTypePiston);
-		this.setHardness(5.0F);
-		this.setResistance(9.2F);
+		this.setHardness(1.5F);
+		this.setResistance(4.2F);
 	}
 	
 	@Override

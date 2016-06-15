@@ -18,7 +18,7 @@ public class EnderFueltoniumOre extends Block implements IOre {
 		this.setStepSound(this.soundTypeStone);
 		this.setHarvestLevel("pickaxe", 4);
 		this.setStepSound(soundTypePiston);
-		this.setHardness(4.5F);
+		this.setHardness(1.4F);
 		this.setResistance(8.2F);
 	}
 	

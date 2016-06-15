@@ -20,9 +20,10 @@ public class IceCreamSandwichBlock extends Block {
 		super(Material.clay);
 		MainHelper.setTab(this);
 		MainHelper.setName(this, "icecreamsandwichblock");
-		this.setHardness(1.6F);
+		this.setHardness(1.2F);
 		this.setResistance(0.1F);
 		this.setStepSound(soundTypeSnow);
+		this.setHarvestLevel("pickaxe", 1);
 	}
 	
 	@Override

@@ -8,7 +8,7 @@ public class HeartFlower extends FlowerBlock {
 	
 	public HeartFlower() {
 		super("heartflower");
-		this.setHardness(0.2F);
+		this.setHardness(0.1F);
 	}
 	
 	@Override

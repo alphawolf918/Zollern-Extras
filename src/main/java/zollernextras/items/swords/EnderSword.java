@@ -79,7 +79,7 @@ public class EnderSword extends ItemSword {
 				vec3d1, false);
 		
 		if (movingobjectposition == null)
-			
+		
 		{
 			
 			return itemstack;
@@ -154,7 +154,8 @@ public class EnderSword extends ItemSword {
 			list.add(EnumChatFormatting.ITALIC
 					+ "the teeth of the Ender Dragon.");
 		} else {
-			list.add("Hold LSHIFT for more information.");
+			list.add("Hold SHIFT for");
+			list.add("more information.");
 		}
 	}
 }

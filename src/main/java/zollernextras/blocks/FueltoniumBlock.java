@@ -9,7 +9,7 @@ public class FueltoniumBlock extends Block {
 		super(Material.rock);
 		MainHelper.setTab(this);
 		MainHelper.setNameAndTexture(this, "fueltoniumblock");
-		this.setHardness(8.0F);
+		this.setHardness(1.8F);
 		this.setResistance(8.0F);
 		this.setHarvestLevel("pickaxe", 2);
 	}

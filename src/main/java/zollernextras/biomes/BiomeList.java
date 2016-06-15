@@ -42,8 +42,6 @@ public class BiomeList {
 			ZEConfig.biomeCandyLandID);
 	public static BiomeGenBase crystalOcean = new BiomeGenCrystalOcean(
 			ZEConfig.biomeCrystalOceanID);
-	public static BiomeGenBase lostDesert = new BiomeGenLostDesert(
-			ZEConfig.biomeLostDesertID);
 	
 	public static void init() {
 		MainHelper.Log("Preparing to load biomes..");
@@ -58,10 +56,9 @@ public class BiomeList {
 		addBiome(iceMountains, BiomeType.ICY, 14);
 		addBiome(coalHills, BiomeType.WARM, 8);
 		addBiome(badLands, BiomeType.DESERT, 17);
-		addBiome(minersLand, BiomeType.WARM, 6);
-		addBiome(candyLand, BiomeType.WARM, 20);
+		addBiome(minersLand, BiomeType.WARM, 4);
+		addBiome(candyLand, BiomeType.WARM, 10);
 		addBiome(crystalOcean, BiomeType.WARM, 6);
-		addNoSpawnBiome(lostDesert, BiomeType.WARM, 0);
 		MainHelper.Log("Biomes loaded!");
 	}
 	

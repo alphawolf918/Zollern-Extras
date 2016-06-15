@@ -9,10 +9,12 @@ public class SeaLantern extends GenericBlock {
 	
 	public SeaLantern() {
 		super("sealantern", 2.0F);
-		this.harvestLevel = 2;
 		this.setLightLevel(1.0F);
 		this.setMaterial(Material.glass);
 		this.setStepSound(this.soundTypeGlass);
+		this.setHardness(2.0F);
+		this.setResistance(2.4F);
+		this.setHarvestLevel("pickaxe", 1);
 	}
 	
 	@Override

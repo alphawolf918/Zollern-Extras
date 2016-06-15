@@ -18,7 +18,7 @@ public class EnderSpcOre extends Block implements IOre {
 		this.setStepSound(this.soundTypeStone);
 		this.setHarvestLevel("pickaxe", 3);
 		this.setStepSound(soundTypePiston);
-		this.setHardness(2.5F);
+		this.setHardness(1.2F);
 		this.setResistance(4.2F);
 	}
 	

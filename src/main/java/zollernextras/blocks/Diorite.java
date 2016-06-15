@@ -5,6 +5,6 @@ public class Diorite extends GenericBlock {
 		super("diorite", 0F);
 		this.setHardness(1.0F);
 		this.setResistance(10F);
-		this.harvestLevel = 1;
+		this.setHarvestLevel("pickaxe", 1);
 	}
 }

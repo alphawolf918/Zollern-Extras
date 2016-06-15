@@ -9,6 +9,9 @@ public class SugarCube extends GenericBlock {
 	public SugarCube() {
 		super("sugarcube", 0.1F);
 		this.setMaterial(Material.sand);
+		this.setHardness(0.3F);
+		this.setResistance(0.1F);
+		this.setHarvestLevel("shovel", 1);
 		this.setStepSound(soundTypeSand);
 	}
 	

@@ -4,18 +4,16 @@ import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
-import zollernextras.creativetabs.ModTabs;
 import zollernextras.items.ItemList;
-import zollernextras.lib.ModInfo;
+import zollernextras.lib.MainHelper;
 
 public class SwampClay extends Block {
 	public SwampClay() {
 		super(Material.clay);
-		this.setCreativeTab(ModTabs.zTab);
-		this.setBlockName(ModInfo.MODID + "_swampclay");
-		this.setHardness(1.5F);
+		MainHelper.setTab(this);
+		MainHelper.setNameAndTexture(this, "swampclay");
+		this.setHardness(1.0F);
 		this.setResistance(0.1F);
-		this.setBlockTextureName(ModInfo.MODID + ":" + "swampclay");
 		this.setHarvestLevel("shovel", 0);
 		this.setStepSound(this.soundTypeGravel);
 	}

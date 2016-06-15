@@ -8,7 +8,7 @@ public class ZollerniumBlock extends Block {
 	public ZollerniumBlock() {
 		super(Material.iron);
 		MainHelper.setTab(this);
-		this.setHardness(3.0F);
+		this.setHardness(1.3F);
 		this.setResistance(10.0F);
 		MainHelper.setNameAndTexture(this, "zollerniumblock");
 		this.setHarvestLevel("pickaxe", 4);

@@ -17,7 +17,7 @@ public class ZincOre extends Block implements IOre {
 		MainHelper.setNameAndTexture(this, "zincore");
 		this.setHarvestLevel("pickaxe", 4);
 		this.setStepSound(soundTypePiston);
-		this.setHardness(6.0F);
+		this.setHardness(1.6F);
 		this.setResistance(9.2F);
 	}
 	

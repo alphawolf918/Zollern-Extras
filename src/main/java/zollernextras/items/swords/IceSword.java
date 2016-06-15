@@ -79,7 +79,7 @@ public class IceSword extends ItemSword {
 				vec3d1, false);
 		
 		if (movingobjectposition == null)
-			
+		
 		{
 			
 			return itemstack;
@@ -143,7 +143,8 @@ public class IceSword extends ItemSword {
 			list.add(EnumChatFormatting.ITALIC + "A sword born from");
 			list.add(EnumChatFormatting.ITALIC + " the land of ice.");
 		} else {
-			list.add("Hold SHIFT for more information.");
+			list.add("Hold SHIFT for");
+			list.add("more information.");
 		}
 	}
 }

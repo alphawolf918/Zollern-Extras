@@ -24,12 +24,6 @@ import zollernextras.blocks.ingotstacks.ShinestoneIngotStack;
 import zollernextras.blocks.ingotstacks.ShiniumIngotStack;
 import zollernextras.blocks.ingotstacks.ZincIngotStack;
 import zollernextras.blocks.ingotstacks.ZollerniumIngotStack;
-import zollernextras.blocks.itemblocks.ItemBlockBowlingPin;
-import zollernextras.blocks.lostdesert.CreepDirt;
-import zollernextras.blocks.lostdesert.CreepStone;
-import zollernextras.blocks.lostdesert.PortalBlock;
-import zollernextras.blocks.lostdesert.WonderSand;
-import zollernextras.blocks.lostdesert.WonderStone;
 import zollernextras.blocks.ores.AmaranthOre;
 import zollernextras.blocks.ores.EnderShardOre;
 import zollernextras.blocks.ores.FueltoniumOre;
@@ -41,11 +35,6 @@ import zollernextras.blocks.ores.ender.EnderAmaranthOre;
 import zollernextras.blocks.ores.ender.EnderFueltoniumOre;
 import zollernextras.blocks.ores.ender.EnderSpcOre;
 import zollernextras.blocks.ores.ender.EnderZincOre;
-import zollernextras.blocks.ores.lostdesert.DesertAmaranthOre;
-import zollernextras.blocks.ores.lostdesert.DesertGoldOre;
-import zollernextras.blocks.ores.lostdesert.DesertIronOre;
-import zollernextras.blocks.ores.lostdesert.DesertShiniumOre;
-import zollernextras.blocks.ores.lostdesert.DesertZollerniumOre;
 import zollernextras.blocks.ores.nether.NetherAmaranthOre;
 import zollernextras.blocks.ores.nether.NetherEnderShardOre;
 import zollernextras.blocks.ores.nether.NetherFueltoniumOre;
@@ -55,17 +44,13 @@ import zollernextras.blocks.sirens.DiamondSiren;
 import zollernextras.blocks.sirens.EmeraldSiren;
 import zollernextras.blocks.sirens.GoldSiren;
 import zollernextras.blocks.sirens.IronSiren;
-import zollernextras.blocks.spheres.CandySphereBase;
-import zollernextras.blocks.spheres.CandySphereWhite;
 import zollernextras.blocks.tiles.TEAmaranthBlockIngot;
-import zollernextras.blocks.tiles.TECandySphereRed;
 import zollernextras.blocks.tiles.TEFueltoniumBlockIngot;
 import zollernextras.blocks.tiles.TEGoldBlockIngot;
 import zollernextras.blocks.tiles.TEIronBlockIngot;
 import zollernextras.blocks.tiles.TELapisBlockIngot;
 import zollernextras.blocks.tiles.TEShinestoneBlockIngot;
 import zollernextras.blocks.tiles.TEShiniumBlockIngot;
-import zollernextras.blocks.tiles.TESphereBase;
 import zollernextras.blocks.tiles.TEZincBlockIngot;
 import zollernextras.blocks.tiles.TEZollerniumBlockIngot;
 import zollernextras.blocks.trees.ZollernPlanks;
@@ -145,6 +130,7 @@ public class BlockList {
 	public static Block amaranthNetherOre = new NetherAmaranthOre();
 	public static Block zincNetherOre = new NetherZincOre();
 	public static Block enderShardNetherOre = new NetherEnderShardOre();
+	
 	public static Block amberOre = new GemOre("amberore", ItemList.amber);
 	public static Block azuriteOre = new GemOre("azuriteore", ItemList.azurite);
 	public static Block aquamarineOre = new GemOre("aquaore",
@@ -154,14 +140,19 @@ public class BlockList {
 	public static Block opalOre = new GemOre("opalore", ItemList.opal);
 	public static Block enderiteOre = new GemOre("enderiteore",
 			ItemList.enderite);
+	public static Block witheriteOre = new GemOre("witheriteore",
+			ItemList.witherite);
+	
 	public static Block caveMarbleWhite = new CaveMarble("marble");
 	public static Block caveMarbleBlack = new CaveMarble("blackmarble");
 	public static Block brimStone = new Brimstone();
 	public static Block netherDirt = new NetherDirt();
+	
 	public static Block enderAmaranthOre = new EnderAmaranthOre();
 	public static Block enderFnOre = new EnderFueltoniumOre();
 	public static Block enderSpcOre = new EnderSpcOre();
 	public static Block enderZincOre = new EnderZincOre();
+	
 	public static Block garnet = new GemBlock("garnet");
 	public static Block fireGarnet = new GemBlock("firegarnet");
 	public static Block aqua = new GemBlock("aqua");
@@ -174,6 +165,8 @@ public class BlockList {
 	public static Block topaz = new GemBlock("topaz");
 	public static Block azurite = new GemBlock("azurite");
 	public static Block shiniumBlock = new GemBlock("shinium");
+	public static Block witheriteBlock = new GemBlock("witheriteblock");
+	public static Block netheridiumBlock = new GemBlock("netheridiumblock");
 	
 	public static Block babyEnderDragonEgg = new BabyDragonEgg();
 	
@@ -222,8 +215,6 @@ public class BlockList {
 	public static Block candyCubeGray = new CandyCube("gray");
 	
 	public static Block sugarCube = new SugarCube();
-	
-	public static Block candySphereRed = new CandySphereWhite();
 	
 	public static Block andesite = new Andesite();
 	public static Block polishedAndesite = new PolishedAndesite();
@@ -295,20 +286,11 @@ public class BlockList {
 	public static Block grapefruitLeaves = new GrapefruitLeaves();
 	public static Block grapefruitSapling = new GrapefruitSapling();
 	
-	public static Block wonderSand = new WonderSand();
-	public static Block wonderStone = new WonderStone();
-	public static Block creepStone = new CreepStone();
-	public static Block creepDirt = new CreepDirt();
-	public static Block lostDesertPortal = new PortalBlock();
-	
-	// LD ores
-	public static Block desertIronOre = new DesertIronOre();
-	public static Block desertGoldOre = new DesertGoldOre();
-	public static Block desertAmaranthOre = new DesertAmaranthOre();
-	public static Block desertShiniumOre = new DesertShiniumOre();
-	public static Block desertZollerniumOre = new DesertZollerniumOre();
-	
 	public static Block shinetorch = new Shinetorch();
+	public static Block enderPearlBlock = new BlockEnderPearl();
+	public static Block netherizedObsidian = new NetherizedObsidian();
+	
+	public static Block energyTestBlock = new EnergyTestBlock("energytest");
 	
 	public static HashMap<String, Class<? extends TileEntity>> TERegistry;
 	
@@ -325,6 +307,7 @@ public class BlockList {
 		addBlock(topazOre, "Topaz Ore");
 		addBlock(opalOre, "Opal Ore");
 		addBlock(enderiteOre, "Enderite Ore");
+		addBlock(witheriteOre, "Witherite Ore");
 		addBlock(fuelNetherOre, "Nether Fueltonium Ore");
 		addBlock(spcNetherOre, "Nether Super Charged Coal Ore");
 		addBlock(amaranthNetherOre, "Nether Amaranth Ore");
@@ -377,6 +360,8 @@ public class BlockList {
 		addBlock(topaz, "Block of Topaz");
 		addBlock(azurite, "Block of Azurite");
 		addBlock(shiniumBlock, "Block of Shinium");
+		addBlock(witheriteBlock, "Block of Witherite");
+		addBlock(netheridiumBlock, "Block of Netheridium");
 		addBlock(babyEnderDragonEgg, "Baby Ender Dragon Egg");
 		addBlock(blueberry, "Blueberries");
 		addBlock(blackberry, "Blackberries");
@@ -424,7 +409,12 @@ public class BlockList {
 		addBlock(brownieBlock, "Brownie Block");
 		addBlock(iceCreamSandwichBlock, "Ice Cream Sandwich Block");
 		addBlock(chocolateBricks, "Chocolate Bricks");
+		
 		addBlock(shinetorch, "Shinetorch");
+		addBlock(enderPearlBlock, "Ender Pearl Block");
+		addBlock(netherizedObsidian, "Netherized Obsidian");
+		
+		addBlock(energyTestBlock, "Energy Test");
 		
 		addBlock(bananaSapling, "Banana Sapling");
 		addBlock(bananaLog, "Banana Log");
@@ -466,17 +456,6 @@ public class BlockList {
 		addBlock(grapefruitPlanks, "Grapefruit Planks");
 		addBlock(grapefruitLeaves, "Grapefruit Leaves");
 		
-		addBlock(wonderSand, "Wonder Sand");
-		addBlock(wonderStone, "Wonder Stone");
-		addBlock(creepStone, "Creep Stone");
-		addBlock(creepDirt, "Creep Dirt");
-		addBlock(lostDesertPortal, "Desert Portal");
-		addBlock(desertIronOre, "Desert Iron Ore");
-		addBlock(desertGoldOre, "Desert Gold Ore");
-		addBlock(desertAmaranthOre, "Desert Amaranth Ore");
-		addBlock(desertShiniumOre, "Desert Shinium Ore");
-		addBlock(desertZollerniumOre, "Desert Zollernium Ore");
-		
 		TERegistry = new HashMap<String, Class<? extends TileEntity>>();
 		ironBlockIngot = addIngotTile(new IronIngotStack("iron"), "iron",
 				TEIronBlockIngot.class);
@@ -496,8 +475,6 @@ public class BlockList {
 				"shinestone"), "shinestone", TEShinestoneBlockIngot.class);
 		shiniumBlockIngot = addIngotTile(new ShiniumIngotStack("shinium"),
 				"shinium", TEShiniumBlockIngot.class);
-		candySphereRed = addSphereTile(new CandySphereWhite(), "_bowlingpin",
-				TECandySphereRed.class);
 		MainHelper.Log("Blocks loaded, " + totalBlocks + " entries.");
 	}
 	
@@ -511,13 +488,6 @@ public class BlockList {
 		totalBlocks++;
 		return RegistryUtil.fullRegister(block, ModInfo.MODID + "_ingotBlock_"
 				+ strName, TEClass);
-	}
-	
-	public static Block addSphereTile(CandySphereBase block, String name,
-			Class<? extends TESphereBase> TEClass) {
-		totalBlocks++;
-		return RegistryUtil.registerItemBlock(block, ItemBlockBowlingPin.class,
-				TEClass, ModInfo.MODID + name);
 	}
 	
 	public static void addItem(Item item, String name) {

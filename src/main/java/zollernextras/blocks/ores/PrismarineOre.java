@@ -18,10 +18,10 @@ public class PrismarineOre extends Block implements IOre {
 		super(Material.rock);
 		MainHelper.setTab(this);
 		MainHelper.setNameAndTexture(this, "prismarineore");
-		this.setHarvestLevel("pickaxe", 2);
 		this.setStepSound(soundTypePiston);
-		this.setHardness(5.0F);
+		this.setHardness(1.0F);
 		this.setResistance(4.2F);
+		this.setHarvestLevel("pickaxe", 2);
 	}
 	
 	@Override

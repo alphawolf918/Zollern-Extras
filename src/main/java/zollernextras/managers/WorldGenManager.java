@@ -13,15 +13,13 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 import zollernextras.biomes.BiomeList;
 import zollernextras.blocks.BlockList;
 import zollernextras.config.ZEConfig;
-import zollernextras.dimensions.Dimensions;
-import zollernextras.dimensions.lostdesert.WorldGenMinableLostDesert;
 import zollernextras.worldgen.WorldGenBerries;
 import zollernextras.worldgen.WorldGenCandyTree;
 import zollernextras.worldgen.WorldGenCrop;
 import zollernextras.worldgen.WorldGenCrops;
 import zollernextras.worldgen.WorldGenEnderMinable;
 import zollernextras.worldgen.WorldGenFruitTree;
-import zollernextras.worldgen.WorldGenNetherMinable;
+import zollernextras.worldgen.WorldGenNetherOre;
 import zollernextras.worldgen.WorldGenSeaLamp;
 import zollernextras.worldgen.WorldGenSugarCubes;
 import zollernextras.worldgen.WorldGenSwampClay;
@@ -46,10 +44,6 @@ public class WorldGenManager implements IWorldGenerator {
 		case 1:
 			generateEnd(world, random, chunkX * 16, chunkZ * 16);
 			break;
-		}
-		
-		if (world.provider.dimensionId == Dimensions.dimId) {
-			this.generateLostDesert(world, random, chunkX * 16, chunkZ * 16);
 		}
 	}
 	
@@ -114,6 +108,9 @@ public class WorldGenManager implements IWorldGenerator {
 		// Topaz Ore
 		addOreSpawn(BlockList.topazOre, world, random, x, z, 16, 16,
 				3 + random.nextInt(3), ZEConfig.oreTopazSpawnRate, 12, 16);
+		// Witherite Ore
+		addOreSpawn(BlockList.witheriteOre, world, random, x, z, 16, 16,
+				3 + random.nextInt(3), ZEConfig.oreWitheriteSpawnRate, 12, 16);
 		
 		// Grab Biome
 		currentBiome = world.getBiomeGenForCoords(x, z);
@@ -140,7 +137,7 @@ public class WorldGenManager implements IWorldGenerator {
 		// Sea Lanterns
 		if (currentBiome.isEqualTo(BiomeList.crystalOcean)) {
 			addBlockSpawn(BlockList.seaLantern, world, random, x, z, 16, 16,
-					4 + random.nextInt(6), 25, 4, 48);
+					2 + random.nextInt(2), 15, 4, 48);
 			addBlockSpawn(BlockList.prismarineOre, world, random, x, z, 16, 16,
 					2 + random.nextInt(4), 15, 4, 28);
 		}
@@ -158,7 +155,7 @@ public class WorldGenManager implements IWorldGenerator {
 		// Treasure Chests
 		if ((currentBiome.isEqualTo(BiomeGenBase.deepOcean)
 				|| currentBiome.equals(BiomeGenBase.ocean) || currentBiome
-				.equals(BiomeList.crystalOcean)) && y <= 44) {
+					.equals(BiomeList.crystalOcean)) && y <= 44) {
 			spawnStructure(80, 200, world, random, x, y, z,
 					new WorldGenTreasureChest());
 		}
@@ -174,10 +171,10 @@ public class WorldGenManager implements IWorldGenerator {
 				|| currentBiome.isEqualTo(BiomeList.mudSwamp)
 				|| currentBiome.isEqualTo(BiomeList.mushroomForest)) {
 			Random r = new Random();
-			int randInt = random.nextInt(152);
-			if (randInt <= 95) {
+			int randInt = random.nextInt(172);
+			if (randInt <= 45) {
 				y -= 1;
-				spawnStructure(5, 66, world, random, x, y, z,
+				spawnStructure(5, 76, world, random, x, y, z,
 						new WorldGenBerries());
 				spawnStructure(5, 85, world, random, x, y, z,
 						new WorldGenCrop());
@@ -187,9 +184,9 @@ public class WorldGenManager implements IWorldGenerator {
 						new WorldGenCrops(BlockList.tomatoes));
 				spawnStructure(2, 92, world, random, x, y, z,
 						new WorldGenCrops(BlockList.garlic));
-				spawnStructure(6, 79, world, random, x, y, z,
+				spawnStructure(4, 79, world, random, x, y, z,
 						new WorldGenCrops(BlockList.radish));
-				spawnStructure(6, 82, world, random, x, y, z,
+				spawnStructure(4, 82, world, random, x, y, z,
 						new WorldGenCrops(BlockList.corn));
 				spawnStructure(2, 92, world, random, x, y, z,
 						new WorldGenCrops(BlockList.cucumbers));
@@ -241,7 +238,6 @@ public class WorldGenManager implements IWorldGenerator {
 				|| currentBiome.isEqualTo(BiomeGenBase.jungle)) {
 			Random r = new Random();
 			int randInt = random.nextInt(75);
-			
 			if (randInt <= 10) {
 				// BERNANERZ
 				spawnStructure(25, 100, world, random, x, y, z,
@@ -274,7 +270,7 @@ public class WorldGenManager implements IWorldGenerator {
 								BlockList.cherryLeaves));
 				
 				// GRERPFRUTS
-				spawnStructure(11, 100, world, random, x, y, z,
+				spawnStructure(8, 100, world, random, x, y, z,
 						new WorldGenFruitTree(BlockList.grapefruitLog,
 								BlockList.grapefruitLeaves));
 			}
@@ -312,6 +308,9 @@ public class WorldGenManager implements IWorldGenerator {
 			// Azurite
 			addOreSpawn(BlockList.azuriteOre, world, random, x, z, 16, 16,
 					4 + random.nextInt(8), 60, 2, 256);
+			// Witherite
+			addOreSpawn(BlockList.topazOre, world, random, x, z, 16, 16,
+					1 + random.nextInt(3), 4, 2, 256);
 			
 			// Obsidian
 			addOreSpawn(Blocks.obsidian, world, random, x, z, 16, 16,
@@ -364,41 +363,56 @@ public class WorldGenManager implements IWorldGenerator {
 		int Zcoord = z + random.nextInt(16);
 		
 		// Nether Super Coal Ore
-		new WorldGenNetherMinable(BlockList.spcNetherOre, 2, 4).generate(world,
-				random, Xcoord, Ycoord, Zcoord);
+		int randGen = random.nextInt(100);
+		if (randGen <= 16) {
+			new WorldGenNetherOre(BlockList.spcNetherOre, 4).generate(world,
+					random, Xcoord, Ycoord, Zcoord);
+		}
 		
 		// Nether Fueltonium Ore
-		new WorldGenNetherMinable(BlockList.fuelNetherOre, 2, 4).generate(
-				world, random, Xcoord, Ycoord, Zcoord);
+		if (randGen <= 8) {
+			new WorldGenNetherOre(BlockList.fuelNetherOre, 2).generate(world,
+					random, Xcoord, Ycoord, Zcoord);
+		}
 		
 		// Nether Amaranth Ore
-		new WorldGenNetherMinable(BlockList.amaranthNetherOre, 1, 5).generate(
-				world, random, Xcoord, Ycoord, Zcoord);
+		if (randGen <= 32) {
+			new WorldGenNetherOre(BlockList.amaranthNetherOre, 4).generate(
+					world, random, Xcoord, Ycoord, Zcoord);
+		}
 		
 		// Nether Zinc Ore
-		new WorldGenNetherMinable(BlockList.zincNetherOre, 1, 5).generate(
-				world, random, Xcoord, Ycoord, Zcoord);
+		if (randGen <= 28) {
+			new WorldGenNetherOre(BlockList.zincNetherOre, 4).generate(world,
+					random, Xcoord, Ycoord, Zcoord);
+		}
 		
 		// Nether Ender Shard Ore
-		new WorldGenNetherMinable(BlockList.enderShardNetherOre, 1, 5)
-				.generate(world, random, Xcoord, Ycoord, Zcoord);
+		if (randGen <= 22) {
+			new WorldGenNetherOre(BlockList.enderShardNetherOre, 6).generate(
+					world, random, Xcoord, Ycoord, Zcoord);
+		}
 		
 		// Azurite
-		new WorldGenNetherMinable(BlockList.azuriteOre,
-				ZEConfig.oreAzuriteSpawnRate, 30).generate(world, random,
-				Xcoord, Ycoord, Zcoord);
+		if (randGen <= 5) {
+			new WorldGenNetherOre(BlockList.azuriteOre, 8).generate(world,
+					random, Xcoord, Ycoord, Zcoord);
+		}
 		
 		// Nether Dirt
-		new WorldGenNetherMinable(BlockList.netherDirt, 10, 25).generate(world,
-				random, Xcoord, Ycoord, Zcoord);
+		if (randGen <= 65) {
+			new WorldGenNetherOre(BlockList.netherDirt, 16).generate(world,
+					random, Xcoord, Ycoord, Zcoord);
+		}
 		
 		// Brimstone
-		new WorldGenNetherMinable(BlockList.brimStone, 20, 45).generate(world,
-				random, Xcoord, Ycoord, Zcoord);
+		if (randGen <= 24) {
+			new WorldGenNetherOre(BlockList.brimStone, 4).generate(world,
+					random, Xcoord, Ycoord, Zcoord);
+		}
 	}
 	
 	private void generateEnd(World world, Random random, int x, int z) {
-		
 		int Xcoord = x + random.nextInt(16);
 		int Ycoord = 10 + random.nextInt(80);
 		int Zcoord = z + random.nextInt(16);
@@ -421,63 +435,8 @@ public class WorldGenManager implements IWorldGenerator {
 		
 		// Ender Ore
 		new WorldGenEnderMinable(BlockList.enderiteOre,
-				ZEConfig.oreEnderiteSpawnRate, 25).generate(world, random,
-				Xcoord, Ycoord, Zcoord);
-	}
-	
-	private void generateLostDesert(World world, Random random, int x, int z) {
-		
-		// Shinestone
-		this.addLostDesertOreSpawn(BlockList.shinestone, world, random, x, z,
-				16, 16, 6 + random.nextInt(8), 35, 1, 55);
-		
-		// Iron Ore
-		this.addLostDesertOreSpawn(BlockList.desertIronOre, world, random, x,
-				z, 16, 16, 4 + random.nextInt(4), 15, 1, 45);
-		
-		// Gold Ore
-		this.addLostDesertOreSpawn(BlockList.desertGoldOre, world, random, x,
-				z, 16, 16, 2 + random.nextInt(2), 10, 1, 35);
-		
-		// Amaranth Ore
-		this.addLostDesertOreSpawn(BlockList.desertAmaranthOre, world, random,
-				x, z, 16, 16, 2 + random.nextInt(2), 8, 1, 25);
-		
-		// Shinium Ore
-		this.addLostDesertOreSpawn(BlockList.desertShiniumOre, world, random,
-				x, z, 16, 16, 1 + random.nextInt(1), 2, 10, 11);
-		
-		// Zollernium Ore
-		this.addLostDesertOreSpawn(BlockList.desertZollerniumOre, world,
-				random, x, z, 16, 16, 2 + random.nextInt(2), 5, 10, 11);
-	}
-	
-	public void addLostDesertOreSpawn(Block block, World world, Random random,
-			int blockXPos, int blockZPos, int maxX, int maxZ, int maxVeinSize,
-			int chancesToSpawn, int minY, int maxY) {
-		int maxPossY = minY + maxY - 1;
-		assert maxY > minY : "The maximum Y must be greater than the Minimum Y";
-		assert maxX > 0 && maxX <= 16 : "addOreSpawn: The Maximum X must be greater than 0 and less than 16";
-		assert minY > 0 : "addOreSpawn: The Minimum Y must be greater than 0";
-		assert maxY < 256 && maxY > 0 : "addOreSpawn: The Maximum Y must be less than 256 but greater than 0";
-		assert maxZ > 0 && maxZ <= 16 : "addOreSpawn: The Maximum Z must be greater than 0 and less than 16";
-		
-		int diffBtwnMinMaxY = maxY - minY;
-		for (int x = 0; x < chancesToSpawn; x++) {
-			int posX = blockXPos + random.nextInt(maxX);
-			int posY = minY + random.nextInt(diffBtwnMinMaxY);
-			int posZ = blockZPos + random.nextInt(maxZ);
-			new WorldGenMinable(block, maxVeinSize).generate(world, random,
-					posX, posY, posZ);
-		}
-		
-		for (int x = 0; x < chancesToSpawn; x++) {
-			int posX = blockXPos + random.nextInt(maxX);
-			int posY = minY + random.nextInt(diffBtwnMinMaxY);
-			int posZ = blockZPos + random.nextInt(maxZ);
-			new WorldGenMinableLostDesert(block, maxVeinSize).generate(world,
-					random, posX, posY, posZ);
-		}
+				ZEConfig.oreEnderiteSpawnRate, 15).generate(world, random,
+						Xcoord, Ycoord, Zcoord);
 	}
 	
 	/**
@@ -529,8 +488,10 @@ public class WorldGenManager implements IWorldGenerator {
 			} else if (block.equals(BlockList.seaLamp)
 					|| block.equals(BlockList.seaLantern)) {
 				wg = new WorldGenSeaLamp(block, maxVeinSize);
-			} else if (block.equals(BlockList.sugarCube)) {
-				wg = new WorldGenSugarCubes(BlockList.sugarCube, maxVeinSize);
+			} else if (block.equals(BlockList.sugarCube)
+					|| block.equals(BlockList.cookieBlock)
+					|| block.equals(BlockList.chocolateBlock)) {
+				wg = new WorldGenSugarCubes(block, maxVeinSize);
 			} else {
 				wg = new WorldGenMinable(block, maxVeinSize);
 			}

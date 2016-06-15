@@ -5,9 +5,11 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.FurnaceRecipes;
 import zollernextras.blocks.BlockList;
 import zollernextras.config.ZEConfig;
 import zollernextras.items.ItemList;
+import zollernextras.lib.modhelper.ThermalExpansionHelper;
 import zollernextras.lib.recipes.InductionSmelterRecipes;
 import zollernextras.lib.recipes.PulverizerRecipes;
 import zollernextras.lib.recipes.ToolArmorRecipes;
@@ -65,7 +67,14 @@ public class Recipes {
 						new ItemStack(Item.getItemById(406), 9),
 						new Object[] { Block.getBlockById(155) });
 				
-				// TODO: Add craftable horse armor
+				// Iron
+				addHorseArmor(Items.iron_horse_armor, Blocks.iron_block);
+				
+				// Gold
+				addHorseArmor(Items.golden_horse_armor, Blocks.gold_block);
+				
+				// Diamond
+				addHorseArmor(Items.diamond_horse_armor, Blocks.diamond_block);
 			}
 			
 			// Ender Shards to Ender Pearl
@@ -119,11 +128,18 @@ public class Recipes {
 							Block.getBlockById(49), 'I', Item.getItemById(388),
 							'R', Item.getItemById(331) });
 			
+			// Black Cave Marble Block
 			GameRegistry.addRecipe(
 					new ItemStack(BlockList.caveMarbleBlack, 8),
 					new Object[] { "III", "IMI", "III", 'I',
 							new ItemStack(Item.getItemById(351), 1, 0), 'M',
 							BlockList.caveMarbleWhite });
+			
+			// Blaze Rod
+			GameRegistry
+			.addRecipe(new ItemStack(Items.blaze_rod, 1), new Object[] {
+				" B ", "BSB", " B ", 'B', Items.blaze_powder, 'S',
+				ItemList.blackMarbleStick });
 			
 			// Healing Heart
 			GameRegistry.addRecipe(new ItemStack(ItemList.heart), new Object[] {
@@ -171,11 +187,27 @@ public class Recipes {
 							'P', Items.ender_pearl, 'E', ItemList.enderite,
 							'O', BlockList.opal, 'M', Items.emerald });
 			
+			// Netheridium (Gem Form)
+			GameRegistry
+					.addRecipe(new ItemStack(ItemList.netheridium, 1),
+							new Object[] { "BSB", "LXL", "VAV", 'B',
+									ItemList.shadowEssence, 'S',
+									ItemList.spcItem, 'V', ItemList.garnet,
+									'X', BlockList.witheriteBlock, 'V',
+									Items.blaze_powder, 'A',
+									ItemList.shadowBone });
+			
 			// Shinium
 			GameRegistry.addRecipe(new ItemStack(ItemList.shiniumIngot, 1),
 					new Object[] { "DLD", "DSD", "DLD", 'D', Items.diamond,
 							'S', ItemList.shinestoneIngot, 'L',
 							ItemList.lapisIngot });
+			
+			// Netherized Obsidian
+			GameRegistry.addRecipe(new ItemStack(BlockList.netherizedObsidian,
+					1), new Object[] { "WNW", "NON", "SNS", 'N',
+				BlockList.netheridiumBlock, 'W', BlockList.witheriteBlock,
+				'O', Blocks.obsidian, 'S', ItemList.shadowEssence });
 			
 			// Garnet
 			fullBlockCraft(BlockList.garnet, ItemList.garnet);
@@ -195,6 +227,9 @@ public class Recipes {
 			// Enderite
 			fullBlockCraft(BlockList.enderite, ItemList.enderite);
 			
+			// Witherite
+			fullBlockCraft(BlockList.witheriteBlock, ItemList.witherite);
+			
 			// Fire Garnet
 			fullBlockCraft(BlockList.fireGarnet, ItemList.fireGarnet);
 			
@@ -206,6 +241,12 @@ public class Recipes {
 			
 			// Ender Opal
 			fullBlockCraft(BlockList.enderOpal, ItemList.enderOpal);
+			
+			// Netheridium
+			fullBlockCraft(BlockList.netheridiumBlock, ItemList.netheridium);
+			
+			// Ender Pearl Block
+			fullBlockCraft(BlockList.enderPearlBlock, Items.ender_pearl);
 			
 			// Sugar
 			fullBlockCraft(BlockList.sugarCube, Items.sugar);
@@ -236,6 +277,14 @@ public class Recipes {
 			GameRegistry.addRecipe(new ItemStack(ItemList.blackMarbleStick, 2),
 					new Object[] { "B  ", "B  ", "   ", 'B',
 							BlockList.caveMarbleBlack });
+			
+			// The End Portal Stone Thingy
+			GameRegistry.addRecipe(new ItemStack(Blocks.end_portal_frame, 1),
+					new Object[] { "EOE", "RNR", "TAT", 'E',
+				BlockList.enderPearlBlock, 'O', BlockList.opal,
+				'R', Items.ender_eye, 'N',
+				BlockList.netherizedObsidian, 'T',
+							Blocks.glowstone, 'A', BlockList.staticAmber });
 			
 			// Lapis Stick
 			GameRegistry.addRecipe(new ItemStack(ItemList.lapisStick, 1),
@@ -275,9 +324,17 @@ public class Recipes {
 							BlockList.enderOpal, 'O', ItemList.opal, 'M',
 							ItemList.enderite, 'P', ItemList.powerStick });
 			
+			// Mortem
+			GameRegistry.addRecipe(new ItemStack(ItemList.witherSword, 1),
+					new Object[] { " W ", " W ", "RAX", 'W',
+							BlockList.netheridiumBlock, 'R',
+							ItemList.witherite, 'A', ItemList.powerStick, 'X',
+							ItemList.shadowEssence });
+			
+			// Dragon Egg
 			GameRegistry.addRecipe(new ItemStack(BlockList.babyEnderDragonEgg,
 					1), new Object[] { "A A", " B ", "A A", 'A',
-					ItemList.azurite, 'B', Blocks.dragon_egg });
+					BlockList.azurite, 'B', Blocks.dragon_egg });
 			
 			// Ingot Stacks
 			addIngotStack(Items.iron_ingot, BlockList.ironBlockIngot);
@@ -424,6 +481,17 @@ public class Recipes {
 			GameRegistry.addShapelessRecipe(new ItemStack(ItemList.tomatoSeeds,
 					4), new Object[] { ItemList.tomato });
 			
+			// Cucumber Seeds
+			GameRegistry.addShapelessRecipe(new ItemStack(
+					ItemList.cucumberSeeds, 4),
+					new Object[] { ItemList.cucumberSeeds });
+			
+			// Tomato
+			addSeeds(ItemList.tomatoSeeds, ItemList.tomato);
+			
+			// Cucumber
+			addSeeds(ItemList.cucumberSeeds, ItemList.cucumber);
+			
 			// Limon Sapling
 			GameRegistry.addShapelessRecipe(new ItemStack(
 					BlockList.limonSapling, 1), new Object[] {
@@ -446,7 +514,17 @@ public class Recipes {
 			addLogPlanks(BlockList.limonLog, BlockList.limonPlanks);
 			addLogPlanks(BlockList.cherryLog, BlockList.cherryPlanks);
 			addLogPlanks(BlockList.grapefruitPlanks, BlockList.grapefruitPlanks);
-			
+		}
+		
+		public static void addHorseArmor(Item horseArmor, Block armorMetal) {
+			GameRegistry.addRecipe(new ItemStack(horseArmor, 1),
+					new Object[] { "I I", " I ", "OOO", 'I', armorMetal, 'O',
+							Blocks.obsidian });
+		}
+		
+		public static void addSeeds(Item crop, Item seeds) {
+			GameRegistry.addShapelessRecipe(new ItemStack(seeds, 2),
+					new Object[] { crop });
 		}
 		
 		private static void addOWBricks(Item itemInput, Block blockOutput) {
@@ -562,11 +640,14 @@ public class Recipes {
 					ItemList.chocolateBar, 1), 2F);
 			addSmelting(new ItemStack(ItemList.cornKernel, 1), new ItemStack(
 					ItemList.popcorn, 1), 1F);
+			addSmelting(ItemList.swampClayBall, Items.brick, 0.2F);
 		}
 		
-		private static void addSmelting(ItemStack itemStack, ItemStack output,
+		private static void addSmelting(ItemStack input, ItemStack output,
 				float xp) {
-			GameRegistry.addSmelting(itemStack, output, xp);
+			GameRegistry.addSmelting(input, output, xp);
+			FurnaceRecipes.smelting().func_151394_a(input, output, xp);
+			ThermalExpansionHelper.addFurnaceRecipe(500, input, output);
 		}
 		
 		private static void addSmelting(Block input, Item output, float xp) {
@@ -575,6 +656,10 @@ public class Recipes {
 		
 		public static void addSmelting(Item input, ItemStack output, float xp) {
 			GameRegistry.addSmelting(input, output, xp);
+			FurnaceRecipes.smelting().func_151394_a(new ItemStack(input, 1),
+					output, xp);
+			ThermalExpansionHelper.addFurnaceRecipe(500,
+					new ItemStack(input, 1), output);
 		}
 		
 		public static void addSmelting(Item input, Item output, float xp) {
@@ -583,6 +668,9 @@ public class Recipes {
 		
 		public static void addSmelting(Block input, ItemStack output, float xp) {
 			GameRegistry.addSmelting(input, output, xp);
+			FurnaceRecipes.smelting().func_151393_a(input, output, xp);
+			ThermalExpansionHelper.addFurnaceRecipe(500,
+					new ItemStack(input, 1), output);
 		}
 		
 		public static void addSmelting(Block input, Block output, float xp) {

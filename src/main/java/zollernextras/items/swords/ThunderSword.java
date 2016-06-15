@@ -79,7 +79,7 @@ public class ThunderSword extends ItemSword {
 				vec3d1, false);
 		
 		if (movingobjectposition == null)
-			
+		
 		{
 			
 			return itemstack;
@@ -137,7 +137,8 @@ public class ThunderSword extends ItemSword {
 			list.add(EnumChatFormatting.ITALIC
 					+ "created by the Allfather himself.");
 		} else {
-			list.add("Hold SHIFT for more information.");
+			list.add("Hold SHIFT for");
+			list.add("more information.");
 		}
 	}
 }

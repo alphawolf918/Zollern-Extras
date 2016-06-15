@@ -5,28 +5,28 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.monster.EntitySlime;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
-import zollernextras.creativetabs.ModTabs;
-import zollernextras.lib.ModInfo;
+import zollernextras.lib.MainHelper;
 
 public class SlimeBlock extends Block {
 	
 	public SlimeBlock() {
 		super(Material.cake);
-		this.setCreativeTab(ModTabs.zTab);
-		this.setBlockName(ModInfo.MODID + "_slimeblock");
-		this.setBlockTextureName(ModInfo.MODID + ":" + "slimeblock");
+		MainHelper.setTab(this);
+		MainHelper.setNameAndTexture(this, "slimeblock");
 		this.setResistance(1F);
 		this.setHardness(0.5F);
 		this.setStepSound(Block.soundTypeCloth);
+		this.setHarvestLevel("pickaxe", 0);
 	}
 	
 	@Override
 	public void onBlockDestroyedByPlayer(World par1world, int par2, int par3,
 			int par4, int par5) {
-		int rand = (new Random()).nextInt(8);
+		int rand = new Random().nextInt(8);
 		if (par1world.difficultySetting != EnumDifficulty.PEACEFUL
 				&& !par1world.isRemote) {
 			if (rand <= 3) {
@@ -39,9 +39,14 @@ public class SlimeBlock extends Block {
 	}
 	
 	@Override
+	public boolean isOpaqueCube() {
+		return false;
+	}
+	
+	@Override
 	public Item getItemDropped(int p_149650_1_, Random p_149650_2_,
 			int p_149650_3_) {
-		return Item.getItemById(341);
+		return Items.slime_ball;
 	}
 	
 	@Override
@@ -55,7 +60,7 @@ public class SlimeBlock extends Block {
 	
 	@Override
 	public void onEntityWalking(World world, int x, int y, int z, Entity entity) {
-		entity.motionY += 1.0F;
+		entity.motionY += 1.5F;
 		entity.fallDistance = 0F;
 	}
 }

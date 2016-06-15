@@ -95,8 +95,8 @@ public class BetterGrass extends Block {
 				int i2 = par1IBlockAccess.getBiomeGenForCoords(par2 + l1,
 						par4 + k1).getBiomeGrassColor(l, i1, j1);
 				l += (i2 & 16711680) >> 16;
-				i1 += (i2 & 65280) >> 8;
-				j1 += i2 & 255;
+			i1 += (i2 & 65280) >> 8;
+							j1 += i2 & 255;
 			}
 		}
 		

@@ -8,8 +8,9 @@ public class BadStone extends Block {
 	public BadStone() {
 		super(Material.rock);
 		MainHelper.setTab(this);
-		this.setHardness(1.6F);
+		this.setHardness(1.4F);
 		this.setResistance(5.0F);
 		MainHelper.setNameAndTexture(this, "badstone");
+		this.setHarvestLevel("pickaxe", 1);
 	}
 }

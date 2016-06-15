@@ -8,8 +8,9 @@ public class RedRockBricks extends Block {
 	public RedRockBricks() {
 		super(Material.rock);
 		MainHelper.setTab(this);
-		this.setHardness(1.6F);
+		this.setHardness(0.5F);
 		this.setResistance(10F);
 		MainHelper.setNameAndTexture(this, "redrockbricks", "redrockbrick");
+		this.setHarvestLevel("pickaxe", 1);
 	}
 }

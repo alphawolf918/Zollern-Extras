@@ -1,13 +1,51 @@
+[2.7]
+* Removed all traces of Lost Desert / interdimensional stuff.
+* Cucumbers now give Cucumber Seeds when placed in a crafting grid.
+* Vastly changed the way that the Nether Ores spawn from this mod.
+    * They used to all spawn together in a group, now they should all spawn separately.
+* Added in a secondary method of smelting items.
+    * Some items would randomly not be smeltable despite being registered - this is an attempt to fix that.
+* Brimstone now directly extends Netherrack.
+* Drastically lowered the "hardness" of many blocks.
+* Revitalized and updated some of the mechanics of certain blocks.
+* Applied "harvest level" to blocks that did not have one.
+* Slightly reduced brightness of Candy Cube blocks.
+* Cave Marble no longer gives off light. (blame Jon! :p)
+* Baby Ender Dragon Egg now spawns a Baby Ender Dragon upon being broken.
+* Added Thermal Expansion Redstone Furnace compatibility for all smelting recipes.
+* Blaze Rods can now be crafted using Blaze Powder and Black Marble Sticks.
+* Set Slime Block to no longer being an opaque cube.
+* End Portal Frame Blocks are now craftable (and expensive).
+* Horse Armor is now craftable.
+* Slightly reduced spawn rate of crop farms.
+* 
+
+-- FIXES --
+* Fixed Mortem sword not applying Wither effect to Players.
+* Fixed "Hold LSHIFT for more information" not displaying properly on all Swords.
+-----------
+
+
 [2.6.5]
-* Amaranth tools now have enchantments on them when crafted / grabbed from creative inventory.
+* Amaranth and Azurite tools now have enchantments on them when crafted / grabbed from creative inventory.
 * Lang issues have been fixed with Shine Torch and Popcorn Bowl.
 * Zollernium harvest level has been increased to 6.
 * Registered more ores, blocks, dusts and ingots with the Ore Dictionary.
 * Hog Zombies now spawn with diamond swords when a hog is struck by lightning.
 * Added a fifth, Wither-themed Power Sword called Mortem.
-    * Applies Wither effect to entities and players on left-click.
+    * Applies Wither effect to entities and Players on left-click.
     * Shoots out Wither Skulls on right-click.
 * Added Cookie Block and Chocolate Block to Candy Land world gen spawn.
+* Candy Trees now spawn in the Candy Land biome.
+* Changed biome spawn rates.
+* Swamp Clay Balls can now be cooked into bricks.
+* Fortune message now sends to the Player again, hopefully without crashing this time.
+* Reduced hardness and resistance of Andesite block.
+* Witherite Ore now spawns in the Overworld.
+* Added Shadow Essence and Netheridium.
+    * Necessary components in crafting the Mortem Sword.
+* Shadow Skeletons now have a 10% chance to drop Shadow Essence.
+* Changed spawn rate of Crop Farms.
 
 [2.6.4]
 

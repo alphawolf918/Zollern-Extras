@@ -83,7 +83,8 @@ public class NetherSword extends ItemSword {
 					+ "A sword of fire, said to match the");
 			list.add(EnumChatFormatting.ITALIC + "power of the Nether itself.");
 		} else {
-			list.add("Hold SHIFT for more information.");
+			list.add("Hold SHIFT for");
+			list.add("more information.");
 		}
 	}
 }

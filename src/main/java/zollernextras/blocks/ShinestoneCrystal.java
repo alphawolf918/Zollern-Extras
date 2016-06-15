@@ -13,5 +13,6 @@ public class ShinestoneCrystal extends Block {
 		this.setResistance(4.0F);
 		this.setLightLevel(1.0F);
 		this.setStepSound(this.soundTypeGlass);
+		this.setHarvestLevel("pickaxe", 1);
 	}
 }

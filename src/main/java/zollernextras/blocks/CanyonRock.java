@@ -8,9 +8,10 @@ public class CanyonRock extends Block {
 	public CanyonRock() {
 		super(Material.rock);
 		MainHelper.setTab(this);
-		this.setHardness(1.4F);
+		this.setHardness(1.1F);
 		this.setResistance(9.9F);
 		MainHelper.setNameAndTexture(this, "canyonrock");
 		this.setStepSound(soundTypeStone);
+		this.setHarvestLevel("pickaxe", 1);
 	}
 }

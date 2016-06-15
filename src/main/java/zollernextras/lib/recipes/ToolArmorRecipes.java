@@ -34,8 +34,10 @@ public class ToolArmorRecipes {
 			addToolSet(amaranthShovel, ItemList.amaranthIngot, "shovel");
 			addToolSet(new ItemStack(ItemList.zollerniumShovel, 1),
 					ItemList.zollerniumIngot, "shovel");
-			addToolSet(new ItemStack(ItemList.azuriteShovel, 1),
-					ItemList.azurite, "shovel");
+			ItemStack azuriteShovel = new ItemStack(ItemList.azuriteShovel, 1);
+			azuriteShovel.addEnchantment(Enchantment.efficiency, 2);
+			azuriteShovel.addEnchantment(Enchantment.power, 1);
+			addToolSet(azuriteShovel, ItemList.azurite, "shovel");
 			
 			// Axe
 			ItemStack amaranthAxe = new ItemStack(ItemList.amaranthAxe, 1);
@@ -43,15 +45,17 @@ public class ToolArmorRecipes {
 			addToolSet(amaranthAxe, ItemList.amaranthIngot, "axe");
 			addToolSet(new ItemStack(ItemList.zollerniumAxe, 1),
 					ItemList.zollerniumIngot, "axe");
-			addToolSet(new ItemStack(ItemList.azuriteAxe, 1), ItemList.azurite,
-					"axe");
+			ItemStack azuriteAxe = new ItemStack(ItemList.azuriteAxe, 1);
+			azuriteAxe.addEnchantment(Enchantment.efficiency, 3);
+			addToolSet(azuriteAxe, ItemList.azurite, "axe");
 			
 			// Hoe
 			ItemStack amaranthHoe = new ItemStack(ItemList.amaranthHoe, 1);
 			amaranthHoe.addEnchantment(Enchantment.unbreaking, 2);
 			addToolSet(amaranthHoe, ItemList.amaranthIngot, "hoe");
-			addToolSet(new ItemStack(ItemList.azuriteHoe, 1), ItemList.azurite,
-					"hoe");
+			ItemStack azuriteHoe = new ItemStack(ItemList.azuriteHoe, 1);
+			azuriteHoe.addEnchantment(Enchantment.unbreaking, 3);
+			addToolSet(azuriteHoe, ItemList.azurite, "hoe");
 			addToolSet(new ItemStack(ItemList.zollerniumHoe, 1),
 					ItemList.zollerniumIngot, "hoe");
 			
@@ -61,12 +65,14 @@ public class ToolArmorRecipes {
 			addToolSet(amaranthSword, ItemList.amaranthSword, "sword");
 			addToolSet(new ItemStack(ItemList.zollerniumSword, 1),
 					ItemList.zollerniumIngot, "sword");
-			addToolSet(new ItemStack(ItemList.azuriteSword, 1),
-					ItemList.azurite, "sword");
+			ItemStack azuriteSword = new ItemStack(ItemList.azuriteSword, 1);
+			azuriteSword.addEnchantment(Enchantment.sharpness, 2);
+			azuriteSword.addEnchantment(Enchantment.smite, 1);
+			addToolSet(azuriteSword, ItemList.azurite, "sword");
 		}
 		
 		/**
-		 * Creates a tool easily.
+		 * Adds a tool recipe easily.
 		 * 
 		 * @param itemOutput
 		 *            The ItemStack to be returned as a crafting result.
@@ -144,26 +150,26 @@ public class ToolArmorRecipes {
 			// Helmet
 			if (armorType.equals("helmet")) {
 				GameRegistry.addRecipe(new ItemStack(itemOutput), new Object[] {
-						"ZZZ", "Z Z", "   ", 'Z', itemIngot });
+					"ZZZ", "Z Z", "   ", 'Z', itemIngot });
 				// Chestplate
 			} else if (armorType.equals("chestplate")) {
 				GameRegistry.addRecipe(new ItemStack(
 						ItemList.amaranthChestplate), new Object[] { "Z Z",
-						"ZZZ", "ZZZ", 'Z', ItemList.amaranthIngot });
+					"ZZZ", "ZZZ", 'Z', ItemList.amaranthIngot });
 				// Leggings
 			} else if (armorType.equals("leggings")) {
 				GameRegistry.addRecipe(
 						new ItemStack(ItemList.amaranthLeggings), new Object[] {
-								"ZZZ", "Z Z", "Z Z", 'Z',
-								ItemList.amaranthIngot });
+							"ZZZ", "Z Z", "Z Z", 'Z',
+							ItemList.amaranthIngot });
 				// Boots
 			} else if (armorType.equals("boots")) {
 				GameRegistry.addRecipe(new ItemStack(ItemList.amaranthBoots),
 						new Object[] { "   ", "Z Z", "Z Z", 'Z',
-								ItemList.amaranthIngot });
+					ItemList.amaranthIngot });
 				GameRegistry.addRecipe(new ItemStack(ItemList.amaranthBoots),
 						new Object[] { "Z Z", "Z Z", "   ", 'Z',
-								ItemList.amaranthIngot });
+					ItemList.amaranthIngot });
 			}
 		}
 	}

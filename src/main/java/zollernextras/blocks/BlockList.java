@@ -142,6 +142,9 @@ public class BlockList {
 			ItemList.enderite);
 	public static Block witheriteOre = new GemOre("witheriteore",
 			ItemList.witherite);
+	public static Block rubyOre = new GemOre("rubyore", ItemList.ruby);
+	public static Block sapphireOre = new GemOre("sapphireore",
+			ItemList.sapphire);
 	
 	public static Block caveMarbleWhite = new CaveMarble("marble");
 	public static Block caveMarbleBlack = new CaveMarble("blackmarble");
@@ -167,6 +170,8 @@ public class BlockList {
 	public static Block shiniumBlock = new GemBlock("shinium");
 	public static Block witheriteBlock = new GemBlock("witheriteblock");
 	public static Block netheridiumBlock = new GemBlock("netheridiumblock");
+	public static Block rubyBlock = new GemBlock("rubyblock");
+	public static Block sapphireBlock = new GemBlock("sapphireblock");
 	
 	public static Block babyEnderDragonEgg = new BabyDragonEgg();
 	
@@ -290,6 +295,24 @@ public class BlockList {
 	public static Block enderPearlBlock = new BlockEnderPearl();
 	public static Block netherizedObsidian = new NetherizedObsidian();
 	
+	// Colored Bricks
+	public static Block bricksBlack = new ColoredBricks("black");
+	public static Block bricksLime = new ColoredBricks("lime");
+	public static Block bricksBrown = new ColoredBricks("brown");
+	public static Block bricksLightBlue = new ColoredBricks("lightblue");
+	public static Block bricksLightGray = new ColoredBricks("lightgray");
+	public static Block bricksGray = new ColoredBricks("gray");
+	public static Block bricksMagenta = new ColoredBricks("magenta");
+	public static Block bricksOrange = new ColoredBricks("orange");
+	public static Block bricksWhite = new ColoredBricks("white");
+	public static Block bricksPink = new ColoredBricks("pink");
+	public static Block bricksCyan = new ColoredBricks("cyan");
+	public static Block bricksRed = new ColoredBricks("red");
+	public static Block bricksBlue = new ColoredBricks("blue");
+	public static Block bricksYellow = new ColoredBricks("yellow");
+	public static Block bricksGreen = new ColoredBricks("green");
+	public static Block bricksPurple = new ColoredBricks("purple");
+	
 	public static Block energyTestBlock = new EnergyTestBlock("energytest");
 	
 	public static HashMap<String, Class<? extends TileEntity>> TERegistry;
@@ -308,6 +331,8 @@ public class BlockList {
 		addBlock(opalOre, "Opal Ore");
 		addBlock(enderiteOre, "Enderite Ore");
 		addBlock(witheriteOre, "Witherite Ore");
+		addBlock(rubyOre, "Ruby Ore");
+		addBlock(sapphireOre, "Sapphire Ore");
 		addBlock(fuelNetherOre, "Nether Fueltonium Ore");
 		addBlock(spcNetherOre, "Nether Super Charged Coal Ore");
 		addBlock(amaranthNetherOre, "Nether Amaranth Ore");
@@ -362,6 +387,8 @@ public class BlockList {
 		addBlock(shiniumBlock, "Block of Shinium");
 		addBlock(witheriteBlock, "Block of Witherite");
 		addBlock(netheridiumBlock, "Block of Netheridium");
+		addBlock(rubyBlock, "Ruby Block");
+		addBlock(sapphireBlock, "Sapphire Block");
 		addBlock(babyEnderDragonEgg, "Baby Ender Dragon Egg");
 		addBlock(blueberry, "Blueberries");
 		addBlock(blackberry, "Blackberries");
@@ -413,6 +440,23 @@ public class BlockList {
 		addBlock(shinetorch, "Shinetorch");
 		addBlock(enderPearlBlock, "Ender Pearl Block");
 		addBlock(netherizedObsidian, "Netherized Obsidian");
+		
+		addBlock(bricksBlack, "Black Bricks");
+		addBlock(bricksLime, "Lime Green Bricks");
+		addBlock(bricksBrown, "Brown Bricks");
+		addBlock(bricksLightBlue, "Light Blue Bricks");
+		addBlock(bricksLightGray, "Light Gray Bricks");
+		addBlock(bricksGray, "Gray Bricks");
+		addBlock(bricksMagenta, "Magenta Bricks");
+		addBlock(bricksOrange, "Orange Bricks");
+		addBlock(bricksWhite, "White Bricks");
+		addBlock(bricksPink, "Pink Bricks");
+		addBlock(bricksCyan, "Cyan Bricks");
+		addBlock(bricksRed, "Red Bricks");
+		addBlock(bricksBlue, "Blue Bricks");
+		addBlock(bricksYellow, "Yellow Bricks");
+		addBlock(bricksGreen, "Green Bricks");
+		addBlock(bricksPurple, "Purple Bricks");
 		
 		addBlock(energyTestBlock, "Energy Test");
 		

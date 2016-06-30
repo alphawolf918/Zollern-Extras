@@ -12,4 +12,8 @@ public class ArmorMaterials {
 			"Azurite", 55, new int[] { 5, 7, 5, 3 }, 82);
 	public static ArmorMaterial POWER = EnumHelper.addArmorMaterial("Power",
 			55, new int[] { 5, 5, 5, 5 }, 100);
+	public static ArmorMaterial WOOD = EnumHelper.addArmorMaterial("wood", 10,
+			new int[] { 1, 1, 1, 1 }, 4);
+	public static ArmorMaterial STONE = EnumHelper.addArmorMaterial("stone",
+			20, new int[] { 4, 4, 4, 4 }, 8);
 }

@@ -4,21 +4,18 @@ import java.util.List;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemStack;
-import zollernextras.creativetabs.ModTabs;
 import zollernextras.items.ItemList;
+import zollernextras.items.tools.ItemZEPickaxe;
 import zollernextras.items.tools.ToolMaterials;
-import zollernextras.lib.ModInfo;
+import zollernextras.lib.MainHelper;
 
-public class AzuritePickaxe extends ItemPickaxe {
+public class AzuritePickaxe extends ItemZEPickaxe {
 	
 	public AzuritePickaxe() {
 		super(ToolMaterials.AZURITE);
-		this.setCreativeTab(ModTabs.zTab);
-		this.setUnlocalizedName(ModInfo.MODID + "_azuritepickaxe");
-		this.setTextureName(ModInfo.MODID + ":" + "azuritepickaxe");
-		this.setHarvestLevel("pickaxe", 5);
+		MainHelper.setNameAndTexture(this, "azuritepickaxe");
+		this.setHarvestLevel("pickaxe", ToolMaterials.AZURITE.getHarvestLevel());
 	}
 	
 	@Override

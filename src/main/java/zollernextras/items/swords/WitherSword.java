@@ -37,10 +37,10 @@ public class WitherSword extends ItemSword {
 		EntityWitherSkull witherSkull = new EntityWitherSkull(par2World);
 		witherSkull.setPosition(par3Entity.posX + look.xCoord * 5,
 				par3Entity.posY + 1 + look.yCoord * 5, par3Entity.posZ
-						+ look.zCoord * 5);
+				+ look.zCoord * 5);
 		witherSkull.accelerationX = look.xCoord * 0.1;
-		witherSkull.accelerationY = look.xCoord * 0.1;
-		witherSkull.accelerationZ = look.xCoord * 0.1;
+		witherSkull.accelerationY = look.yCoord * 0.1;
+		witherSkull.accelerationZ = look.zCoord * 0.1;
 		this.playWitherSound(par2World, par3Entity.posX, par3Entity.posY,
 				par3Entity.posZ);
 		par2World.spawnEntityInWorld(witherSkull);

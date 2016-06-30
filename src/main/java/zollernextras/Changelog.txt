@@ -10,7 +10,7 @@
 * Revitalized and updated some of the mechanics of certain blocks.
 * Applied "harvest level" to blocks that did not have one.
 * Slightly reduced brightness of Candy Cube blocks.
-* Cave Marble no longer gives off light. (blame Jon! :p)
+* Cave Marble no longer gives off light. (blame Zane! :p)
 * Baby Ender Dragon Egg now spawns a Baby Ender Dragon upon being broken.
 * Added Thermal Expansion Redstone Furnace compatibility for all smelting recipes.
 * Blaze Rods can now be crafted using Blaze Powder and Black Marble Sticks.
@@ -18,11 +18,25 @@
 * End Portal Frame Blocks are now craftable (and expensive).
 * Horse Armor is now craftable.
 * Slightly reduced spawn rate of crop farms.
-* 
+* Added Ruby and Sapphire stuff.
+* Set Saddles to be stackable up to 64.
+* Lowered ore spawn chances.
+* Zollernium harvest level has been increased to 7.
+* Amaranth harvest level has been increased to 5.
+* Added in Ruby tools.
+* Added in Sapphire tools.
+    * Slightly better than Ruby, but with the same harvest level.
+* Added back in Colored Bricks.
+* Added the Tropical Forest biome.
+* Added Wood and Stone Armor.
 
 -- FIXES --
 * Fixed Mortem sword not applying Wither effect to Players.
+* Fixed Mortem shooting Wither Skulls in wrong direction.
 * Fixed "Hold LSHIFT for more information" not displaying properly on all Swords.
+* Fixed Silver Ingots not being craftable from Silver Nuggets.
+* Fixed Grapefruit Logs not crafting into Grapefruit Planks.
+* Fixed armor pieces not being craftable and only crafting the Amaranth equivalent.
 -----------
 
 

@@ -96,21 +96,34 @@ public class WorldGenManager implements IWorldGenerator {
 		// Opal Ore
 		addOreSpawn(BlockList.opalOre, world, random, x, z, 16, 16,
 				2 + random.nextInt(3), ZEConfig.oreOpalSpawnRate, 12, 16);
+		
 		// Amber Ore
 		addOreSpawn(BlockList.amberOre, world, random, x, z, 16, 16,
 				3 + random.nextInt(3), ZEConfig.oreAmberSpawnRate, 12, 16);
+		
 		// Garnet Ore
 		addOreSpawn(BlockList.garnetOre, world, random, x, z, 16, 16,
 				3 + random.nextInt(3), ZEConfig.oreGarnetSpawnRate, 12, 16);
+		
 		// Aquamarine Ore
 		addOreSpawn(BlockList.aquamarineOre, world, random, x, z, 16, 16,
 				3 + random.nextInt(3), ZEConfig.oreAquamarineSpawnRate, 12, 16);
+		
 		// Topaz Ore
 		addOreSpawn(BlockList.topazOre, world, random, x, z, 16, 16,
 				3 + random.nextInt(3), ZEConfig.oreTopazSpawnRate, 12, 16);
+		
 		// Witherite Ore
 		addOreSpawn(BlockList.witheriteOre, world, random, x, z, 16, 16,
 				3 + random.nextInt(3), ZEConfig.oreWitheriteSpawnRate, 12, 16);
+		
+		// Ruby Ore
+		addOreSpawn(BlockList.rubyOre, world, random, x, z, 16, 16,
+				2 + random.nextInt(2), ZEConfig.oreRubySpawnRate, 12, 16);
+		
+		// Sapphire Ore
+		addOreSpawn(BlockList.sapphireOre, world, random, x, z, 16, 16,
+				2 + random.nextInt(2), ZEConfig.oreSapphireSpawnRate, 12, 16);
 		
 		// Grab Biome
 		currentBiome = world.getBiomeGenForCoords(x, z);
@@ -171,24 +184,24 @@ public class WorldGenManager implements IWorldGenerator {
 				|| currentBiome.isEqualTo(BiomeList.mudSwamp)
 				|| currentBiome.isEqualTo(BiomeList.mushroomForest)) {
 			Random r = new Random();
-			int randInt = random.nextInt(172);
-			if (randInt <= 45) {
+			int randInt = random.nextInt(282);
+			if (randInt <= 25) {
 				y -= 1;
-				spawnStructure(5, 76, world, random, x, y, z,
+				spawnStructure(5, 86, world, random, x, y, z,
 						new WorldGenBerries());
-				spawnStructure(5, 85, world, random, x, y, z,
+				spawnStructure(5, 95, world, random, x, y, z,
 						new WorldGenCrop());
-				spawnStructure(5, 68, world, random, x, y, z,
+				spawnStructure(5, 78, world, random, x, y, z,
 						new WorldGenCrops(BlockList.peas));
-				spawnStructure(5, 72, world, random, x, y, z,
+				spawnStructure(5, 82, world, random, x, y, z,
 						new WorldGenCrops(BlockList.tomatoes));
-				spawnStructure(2, 92, world, random, x, y, z,
+				spawnStructure(2, 102, world, random, x, y, z,
 						new WorldGenCrops(BlockList.garlic));
-				spawnStructure(4, 79, world, random, x, y, z,
+				spawnStructure(4, 89, world, random, x, y, z,
 						new WorldGenCrops(BlockList.radish));
-				spawnStructure(4, 82, world, random, x, y, z,
+				spawnStructure(4, 92, world, random, x, y, z,
 						new WorldGenCrops(BlockList.corn));
-				spawnStructure(2, 92, world, random, x, y, z,
+				spawnStructure(2, 102, world, random, x, y, z,
 						new WorldGenCrops(BlockList.cucumbers));
 			}
 		}
@@ -311,6 +324,12 @@ public class WorldGenManager implements IWorldGenerator {
 			// Witherite
 			addOreSpawn(BlockList.topazOre, world, random, x, z, 16, 16,
 					1 + random.nextInt(3), 4, 2, 256);
+			// Ruby Ore
+			addOreSpawn(BlockList.rubyOre, world, random, x, z, 16, 16,
+					4 + random.nextInt(8), 60, 2, 256);
+			// Sapphire Ore
+			addOreSpawn(BlockList.sapphireOre, world, random, x, z, 16, 16,
+					4 + random.nextInt(8), 60, 2, 256);
 			
 			// Obsidian
 			addOreSpawn(Blocks.obsidian, world, random, x, z, 16, 16,
@@ -354,6 +373,44 @@ public class WorldGenManager implements IWorldGenerator {
 				this.spawnStructure(4, 20, world, random, x, y, z,
 						new WorldGenCandyTree(candyCube, candyCube2));
 			}
+		}
+		
+		// Tropical Forest
+		if (currentBiome.isEqualTo(BiomeList.tropicalForest)) {
+			// BERNANERZ
+			spawnStructure(25, 30, world, random, x, y, z,
+					new WorldGenFruitTree(BlockList.bananaLog,
+							BlockList.bananaLeaves));
+			
+			// ERNGES
+			spawnStructure(25, 30, world, random, x, y, z,
+					new WorldGenFruitTree(BlockList.orangeLog,
+							BlockList.orangeLeaves));
+			
+			// GWAVERS
+			spawnStructure(25, 30, world, random, x, y, z,
+					new WorldGenFruitTree(BlockList.guavaLog,
+							BlockList.guavaLeaves));
+			
+			// LERMENS
+			spawnStructure(25, 30, world, random, x, y, z,
+					new WorldGenFruitTree(BlockList.lemonLog,
+							BlockList.lemonLeaves));
+			
+			// LIRMS
+			spawnStructure(25, 30, world, random, x, y, z,
+					new WorldGenFruitTree(BlockList.limeLog,
+							BlockList.limeLeaves));
+			
+			// CHURRIES
+			spawnStructure(25, 30, world, random, x, y, z,
+					new WorldGenFruitTree(BlockList.cherryLog,
+							BlockList.cherryLeaves));
+			
+			// GRERPFRUTS
+			spawnStructure(25, 30, world, random, x, y, z,
+					new WorldGenFruitTree(BlockList.grapefruitLog,
+							BlockList.grapefruitLeaves));
 		}
 	}
 	
@@ -436,7 +493,7 @@ public class WorldGenManager implements IWorldGenerator {
 		// Ender Ore
 		new WorldGenEnderMinable(BlockList.enderiteOre,
 				ZEConfig.oreEnderiteSpawnRate, 15).generate(world, random,
-						Xcoord, Ycoord, Zcoord);
+				Xcoord, Ycoord, Zcoord);
 	}
 	
 	/**

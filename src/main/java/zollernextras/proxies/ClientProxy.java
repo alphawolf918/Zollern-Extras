@@ -26,7 +26,10 @@ import zollernextras.blocks.tiles.renders.TESRShiniumIngotStack;
 import zollernextras.blocks.tiles.renders.TESRSphereRed;
 import zollernextras.blocks.tiles.renders.TESRZincIngotStack;
 import zollernextras.blocks.tiles.renders.TESRZollerniumIngotStack;
+import zollernextras.entity.EntityDuckEgg;
+import zollernextras.entity.render.RenderDuckEgg;
 import zollernextras.gui.GuiBiomeType;
+import zollernextras.items.ItemList;
 import zollernextras.lib.MainHelper;
 import zollernextras.mobs.entities.EntityBabyDragon;
 import zollernextras.mobs.entities.EntityDuck;
@@ -135,6 +138,9 @@ public class ClientProxy extends CommonProxy {
 		addTile(TEShiniumBlockIngot.class, new TESRShiniumIngotStack());
 		
 		addSphere(TECandySphereRed.class, new TESRSphereRed());
+		
+		RenderingRegistry.registerEntityRenderingHandler(EntityDuckEgg.class,
+				new RenderDuckEgg(ItemList.duckEgg));
 		
 		MainHelper.Log("Renderers initialized.");
 	}

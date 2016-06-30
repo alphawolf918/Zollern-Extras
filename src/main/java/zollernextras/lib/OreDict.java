@@ -142,6 +142,16 @@ public class OreDict {
 		registerOre("gemWitherite", ItemList.witherite);
 		registerOre("blockWitherite", BlockList.witheriteBlock);
 		
+		// Ruby
+		registerOre("oreRuby", BlockList.rubyOre);
+		registerOre("blockRuby", BlockList.rubyBlock);
+		registerOre("gemRuby", ItemList.ruby);
+		
+		// Sapphire
+		registerOre("oreSapphire", BlockList.sapphireOre);
+		registerOre("blockSapphire", BlockList.sapphireBlock);
+		registerOre("gemSapphire", ItemList.sapphire);
+		
 		// Dye
 		registerOre("dyeGreen", ItemList.greenDye);
 		

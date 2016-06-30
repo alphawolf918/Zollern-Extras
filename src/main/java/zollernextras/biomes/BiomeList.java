@@ -42,6 +42,8 @@ public class BiomeList {
 			ZEConfig.biomeCandyLandID);
 	public static BiomeGenBase crystalOcean = new BiomeGenCrystalOcean(
 			ZEConfig.biomeCrystalOceanID);
+	public static BiomeGenBase tropicalForest = new BiomeTropicalForest(
+			ZEConfig.biomeTropicalForestID);
 	
 	public static void init() {
 		MainHelper.Log("Preparing to load biomes..");
@@ -59,6 +61,7 @@ public class BiomeList {
 		addBiome(minersLand, BiomeType.WARM, 4);
 		addBiome(candyLand, BiomeType.WARM, 10);
 		addBiome(crystalOcean, BiomeType.WARM, 6);
+		addBiome(tropicalForest, BiomeType.WARM, 8);
 		MainHelper.Log("Biomes loaded!");
 	}
 	

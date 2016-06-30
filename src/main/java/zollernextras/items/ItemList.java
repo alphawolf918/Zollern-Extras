@@ -7,6 +7,8 @@ import zollernextras.blocks.BlockList;
 import zollernextras.items.armor.ArmorMaterials;
 import zollernextras.items.armor.amaranth.AmaranthArmor;
 import zollernextras.items.armor.azurite.AzuriteArmor;
+import zollernextras.items.armor.stone.StoneArmor;
+import zollernextras.items.armor.wood.WoodArmor;
 import zollernextras.items.armor.zollernium.ZollerniumArmor;
 import zollernextras.items.crops.Seed;
 import zollernextras.items.crops.SeedFood;
@@ -35,6 +37,16 @@ import zollernextras.items.tools.azurite.AzuriteHoe;
 import zollernextras.items.tools.azurite.AzuritePickaxe;
 import zollernextras.items.tools.azurite.AzuriteShovel;
 import zollernextras.items.tools.azurite.AzuriteSword;
+import zollernextras.items.tools.ruby.RubyAxe;
+import zollernextras.items.tools.ruby.RubyHoe;
+import zollernextras.items.tools.ruby.RubyPickaxe;
+import zollernextras.items.tools.ruby.RubyShovel;
+import zollernextras.items.tools.ruby.RubySword;
+import zollernextras.items.tools.sapphire.SapphireAxe;
+import zollernextras.items.tools.sapphire.SapphireHoe;
+import zollernextras.items.tools.sapphire.SapphirePickaxe;
+import zollernextras.items.tools.sapphire.SapphireShovel;
+import zollernextras.items.tools.sapphire.SapphireSword;
 import zollernextras.items.tools.zollernium.ZollerniumAxe;
 import zollernextras.items.tools.zollernium.ZollerniumHoe;
 import zollernextras.items.tools.zollernium.ZollerniumPickaxe;
@@ -100,6 +112,18 @@ public class ItemList {
 	public static Item azuriteShovel = new AzuriteShovel();
 	public static Item azuriteSword = new AzuriteSword();
 	
+	public static Item rubyPickaxe = new RubyPickaxe();
+	public static Item rubyShovel = new RubyShovel();
+	public static Item rubyAxe = new RubyAxe();
+	public static Item rubyHoe = new RubyHoe();
+	public static Item rubySword = new RubySword();
+	
+	public static Item sapphirePickaxe = new SapphirePickaxe();
+	public static Item sapphireShovel = new SapphireShovel();
+	public static Item sapphireAxe = new SapphireAxe();
+	public static Item sapphireHoe = new SapphireHoe();
+	public static Item sapphireSword = new SapphireSword();
+	
 	public static Item azuriteHelmet = new AzuriteArmor(ArmorMaterials.AZURITE,
 			"azuritehelmet", 0);
 	public static Item azuriteChestPlate = new AzuriteArmor(
@@ -108,6 +132,24 @@ public class ItemList {
 			ArmorMaterials.AZURITE, "azuriteleggings", 2);
 	public static Item azuriteBoots = new AzuriteArmor(ArmorMaterials.AZURITE,
 			"azuriteboots", 3);
+	
+	public static Item woodHelmet = new WoodArmor(ArmorMaterials.WOOD,
+			"woodhelmet", 0);
+	public static Item woodChestplate = new WoodArmor(ArmorMaterials.WOOD,
+			"woodchestplate", 1);
+	public static Item woodLeggings = new WoodArmor(ArmorMaterials.WOOD,
+			"woodleggings", 2);
+	public static Item woodBoots = new WoodArmor(ArmorMaterials.WOOD,
+			"woodboots", 3);
+	
+	public static Item stoneHelmet = new StoneArmor(ArmorMaterials.STONE,
+			"stonehelmet", 0);
+	public static Item stoneChestplate = new StoneArmor(ArmorMaterials.STONE,
+			"stonechestplate", 1);
+	public static Item stoneLeggings = new StoneArmor(ArmorMaterials.STONE,
+			"stoneleggings", 2);
+	public static Item stoneBoots = new StoneArmor(ArmorMaterials.STONE,
+			"stoneboots", 3);
 	
 	public static Item banana = new TreeFood("banana", 4, 4);
 	public static Item orange = new TreeFood("orange", 3, 5);
@@ -143,6 +185,8 @@ public class ItemList {
 	public static Item witherite = new Gem("witherite");
 	public static Item shadowEssence = new Gem("shadowessence");
 	public static Item netheridium = new Gem("netheridium");
+	public static Item ruby = new Gem("ruby");
+	public static Item sapphire = new Gem("sapphire");
 	
 	public static Item thorSword = new ThunderSword(ToolMaterials.POWER);
 	public static Item enderSword = new EnderSword(ToolMaterials.POWER);
@@ -157,7 +201,7 @@ public class ItemList {
 	public static Item rawBacon = new RawFood("rawbacon");
 	public static Item cookedBacon = new CookedFood("cookedbacon");
 	public static Item boiledEgg = new CookedFood("boiledegg");
-	public static Item duckEgg = new ModItem("duckegg");
+	public static Item duckEgg = new ItemDuckEgg();
 	public static Item duckFeather = new ModItem("duckfeather");
 	public static Item shadowBone = new ModItem("shadowbone");
 	public static Item marbleStick = new ModItem("marblestick");
@@ -211,8 +255,28 @@ public class ItemList {
 	public static Item iceCream = new IceCream();
 	public static Item iceCreamSandwich = new SweetFood("icecreamsandwich",
 			Potion.damageBoost.id);
+	public static Item chocolateStrawberry = new SweetFood(
+			"strawberry_chocolate", Potion.damageBoost.id);
 	public static Item sharkLeather = new ModItem("shagreen");
 	public static Item sharkTooth = new ModItem("sharktooth");
+	
+	// Colored Bricks
+	public static Item bricksBrown = new ColoredBrick("brown");
+	public static Item bricksLime = new ColoredBrick("lime");
+	public static Item bricksLightBlue = new ColoredBrick("lightblue");
+	public static Item bricksLightGray = new ColoredBrick("lightgray");
+	public static Item bricksGray = new ColoredBrick("gray");
+	public static Item bricksMagenta = new ColoredBrick("magenta");
+	public static Item bricksOrange = new ColoredBrick("orange");
+	public static Item bricksBlack = new ColoredBrick("black");
+	public static Item bricksWhite = new ColoredBrick("white");
+	public static Item bricksPink = new ColoredBrick("pink");
+	public static Item bricksYellow = new ColoredBrick("yellow");
+	public static Item bricksGreen = new ColoredBrick("green");
+	public static Item bricksCyan = new ColoredBrick("cyan");
+	public static Item bricksRed = new ColoredBrick("red");
+	public static Item bricksBlue = new ColoredBrick("blue");
+	public static Item bricksPurple = new ColoredBrick("purple");
 	
 	public static void init() {
 		addItem(spcItem, "Super Charged Coal");
@@ -254,6 +318,24 @@ public class ItemList {
 		addItem(azuriteChestPlate, "Azurite Chestplate");
 		addItem(azuriteLeggings, "Azurite Leggings");
 		addItem(azuriteBoots, "Azurite Boots");
+		addItem(rubyPickaxe, "Ruby Pickaxe");
+		addItem(rubyAxe, "Ruby Axe");
+		addItem(rubyHoe, "Ruby Hoe");
+		addItem(rubyShovel, "Ruby Shovel");
+		addItem(rubySword, "Ruby Sword");
+		addItem(sapphirePickaxe, "Sapphire Pickaxe");
+		addItem(sapphireAxe, "Sapphire Axe");
+		addItem(sapphireHoe, "Sapphire Hoe");
+		addItem(sapphireShovel, "Sapphire Shovel");
+		addItem(sapphireSword, "Sapphire Sword");
+		addItem(woodHelmet, "Wood Helmet");
+		addItem(woodChestplate, "Wood Chestplate");
+		addItem(woodLeggings, "Wood Leggings");
+		addItem(woodBoots, "Wood Boots");
+		addItem(stoneHelmet, "Stone Helmet");
+		addItem(stoneChestplate, "Stone Chestplate");
+		addItem(stoneLeggings, "Stone Leggings");
+		addItem(stoneBoots, "Stone Boots");
 		addItem(shinestoneIngot, "Shinestone Ingot");
 		addItem(shiniumIngot, "Shinium Ingot");
 		addItem(shiniumDust, "Precious Shinium");
@@ -275,6 +357,8 @@ public class ItemList {
 		addItem(witherite, "Witherite");
 		addItem(shadowEssence, "Shadow Essence");
 		addItem(netheridium, "Netheridium");
+		addItem(ruby, "Ruby");
+		addItem(sapphire, "Sapphire");
 		
 		addItem(thorSword, "Thunder Sword");
 		addItem(enderSword, "Ender Sword");
@@ -341,8 +425,27 @@ public class ItemList {
 		addItem(candyApple, "Candy Apple");
 		addItem(iceCream, "Ice Cream");
 		addItem(iceCreamSandwich, "Ice Cream Sandwich");
+		addItem(chocolateStrawberry, "Chocolate Strawberry");
 		addItem(sharkLeather, "Shagreen");
 		addItem(sharkTooth, "Shark Tooth");
+		
+		addItem(bricksBrown, "Brown Brick Ingot");
+		addItem(bricksLime, "Lime Green Brick Ingot");
+		addItem(bricksLightBlue, "Light Blue Brick Ingot");
+		addItem(bricksLightGray, "Light Gray Brick Ingot");
+		addItem(bricksGray, "Gray Brick Ingot");
+		addItem(bricksMagenta, "Magenta Brick Ingot");
+		addItem(bricksOrange, "Orange Brick Ingot");
+		addItem(bricksBlack, "Black Brick Ingot");
+		addItem(bricksWhite, "White Brick Ingot");
+		addItem(bricksPink, "Pink Brick Ingot");
+		addItem(bricksYellow, "Yellow Brick Ingot");
+		addItem(bricksGreen, "Green Brick Ingot");
+		addItem(bricksCyan, "Cyan Brick Ingot");
+		addItem(bricksRed, "Red Brick ingot");
+		addItem(bricksBlue, "Blue Brick Ingot");
+		addItem(bricksPurple, "Purple Brick Ingot");
+		
 		MainHelper.Log("Items loaded, " + totalItems + " entries.");
 	}
 	

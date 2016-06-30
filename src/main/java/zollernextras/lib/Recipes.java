@@ -40,47 +40,55 @@ public class Recipes {
 			// Popcorn Bowl
 			GameRegistry.addRecipe(new ItemStack(ItemList.popcornBowl, 1),
 					new Object[] { "PPP", "PBP", "PPP", 'P', ItemList.popcorn,
-							'B', Items.bowl });
+				'B', Items.bowl });
 			
 			// Red Rock
 			ItemStack rrb = new ItemStack(BlockList.redRockBrick, 4);
 			GameRegistry.addRecipe(rrb, new Object[] { "SS ", "SS ", "   ",
 					'S', BlockList.redRock });
 			
+			// Silver
+			GameRegistry.addRecipe(new ItemStack(ItemList.silverIngot, 1),
+					new Object[] { "NNN", "NNN", "NNN", 'N',
+				ItemList.silverNugget });
+			
 			if (ZEConfig.vanillaItemsAreCraftable) {
 				// Name Tag
 				GameRegistry.addRecipe(
 						new ItemStack(Item.getItemById(421), 2),
 						new Object[] { "  I", " S ", "S  ", 'S',
-								ItemList.swampClayBall, 'I',
-								Item.getItemById(265) });
+							ItemList.swampClayBall, 'I',
+							Item.getItemById(265) });
 				
 				// Saddle
 				GameRegistry.addRecipe(
-						new ItemStack(Item.getItemById(329), 1),
+						new ItemStack(Items.saddle, 1),
 						new Object[] { "LLL", "L L", "I I", 'L',
-								Item.getItemById(334), 'I',
-								Item.getItemById(265) });
+							Item.getItemById(334), 'I',
+							Item.getItemById(265) });
 				
 				// Turn Nether Quartz Block back into Nether Quartz Item
 				GameRegistry.addShapelessRecipe(
 						new ItemStack(Item.getItemById(406), 9),
 						new Object[] { Block.getBlockById(155) });
 				
-				// Iron
-				addHorseArmor(Items.iron_horse_armor, Blocks.iron_block);
-				
-				// Gold
-				addHorseArmor(Items.golden_horse_armor, Blocks.gold_block);
-				
-				// Diamond
-				addHorseArmor(Items.diamond_horse_armor, Blocks.diamond_block);
+				if (ZEConfig.horseArmorIsCraftable) {
+					// Iron
+					addHorseArmor(Items.iron_horse_armor, Blocks.iron_block);
+					
+					// Gold
+					addHorseArmor(Items.golden_horse_armor, Blocks.gold_block);
+					
+					// Diamond
+					addHorseArmor(Items.diamond_horse_armor,
+							Blocks.diamond_block);
+				}
 			}
 			
 			// Ender Shards to Ender Pearl
 			GameRegistry.addRecipe(new ItemStack(Item.getItemById(368), 1),
 					new Object[] { "RRR", "R R", "RRR", 'R',
-							ItemList.enderShard });
+				ItemList.enderShard });
 			
 			// Ender Pearl to Ender Shards
 			GameRegistry.addShapelessRecipe(new ItemStack(ItemList.enderShard,
@@ -95,10 +103,10 @@ public class Recipes {
 			// Torches
 			GameRegistry.addRecipe(new ItemStack(Block.getBlockById(50), 8),
 					new Object[] { "G  ", "S  ", 'G', ItemList.spcItem, 'S',
-							Items.stick });
+				Items.stick });
 			GameRegistry.addRecipe(new ItemStack(Block.getBlockById(50), 8),
 					new Object[] { " G ", " S ", 'G', ItemList.spcItem, 'S',
-							Items.stick });
+				Items.stick });
 			
 			// Zinc Ingot (to block)
 			fullBlockCraft(BlockList.zincBlock, ItemList.zincIngot);
@@ -110,30 +118,30 @@ public class Recipes {
 			GameRegistry.addRecipe(
 					new ItemStack(BlockList.ironSiren, 1),
 					new Object[] { "OIO", "IRI", "OIO", 'O',
-							Block.getBlockById(49), 'I', Item.getItemById(265),
-							'R', Item.getItemById(331) });
+						Block.getBlockById(49), 'I', Item.getItemById(265),
+						'R', Item.getItemById(331) });
 			GameRegistry.addRecipe(
 					new ItemStack(BlockList.goldSiren, 1),
 					new Object[] { "OIO", "IRI", "OIO", 'O',
-							Block.getBlockById(49), 'I', Item.getItemById(266),
-							'R', Item.getItemById(331) });
+						Block.getBlockById(49), 'I', Item.getItemById(266),
+						'R', Item.getItemById(331) });
 			GameRegistry.addRecipe(
 					new ItemStack(BlockList.diamondSiren, 1),
 					new Object[] { "OIO", "IRI", "OIO", 'O',
-							Block.getBlockById(49), 'I', Item.getItemById(264),
-							'R', Item.getItemById(331) });
+						Block.getBlockById(49), 'I', Item.getItemById(264),
+						'R', Item.getItemById(331) });
 			GameRegistry.addRecipe(
 					new ItemStack(BlockList.emeraldSiren, 1),
 					new Object[] { "OIO", "IRI", "OIO", 'O',
-							Block.getBlockById(49), 'I', Item.getItemById(388),
-							'R', Item.getItemById(331) });
+						Block.getBlockById(49), 'I', Item.getItemById(388),
+						'R', Item.getItemById(331) });
 			
 			// Black Cave Marble Block
 			GameRegistry.addRecipe(
 					new ItemStack(BlockList.caveMarbleBlack, 8),
 					new Object[] { "III", "IMI", "III", 'I',
-							new ItemStack(Item.getItemById(351), 1, 0), 'M',
-							BlockList.caveMarbleWhite });
+						new ItemStack(Item.getItemById(351), 1, 0), 'M',
+						BlockList.caveMarbleWhite });
 			
 			// Blaze Rod
 			GameRegistry
@@ -143,19 +151,19 @@ public class Recipes {
 			
 			// Healing Heart
 			GameRegistry.addRecipe(new ItemStack(ItemList.heart), new Object[] {
-					"AZA", "AOA", "ARA", 'A', ItemList.amaranthIngot, 'O',
-					ItemList.zollerniumIngot, 'R', Item.getItemById(331) });
+				"AZA", "AOA", "ARA", 'A', ItemList.amaranthIngot, 'O',
+				ItemList.zollerniumIngot, 'R', Item.getItemById(331) });
 			
 			// Health Upgrade
 			GameRegistry.addRecipe(new ItemStack(ItemList.heartForce),
 					new Object[] { "ZSZ", "ZHZ", "ZZZ", 'Z',
-							ItemList.zincIngot, 'S', ItemList.zollerniumIngot,
-							'H', ItemList.heart });
+				ItemList.zincIngot, 'S', ItemList.zollerniumIngot,
+				'H', ItemList.heart });
 			
 			// Sea Lamps
 			GameRegistry.addRecipe(new ItemStack(BlockList.seaLamp),
 					new Object[] { "L L", " S ", "L L", 'L',
-							ItemList.lapisIngot, 'S', BlockList.shinestone });
+				ItemList.lapisIngot, 'S', BlockList.shinestone });
 			
 			// SPC Block
 			fullBlockCraft(BlockList.spcBlock, ItemList.spcItem);
@@ -166,42 +174,42 @@ public class Recipes {
 			// Firey Garnet (Gem Form)
 			GameRegistry.addRecipe(new ItemStack(ItemList.fireGarnet, 1),
 					new Object[] { "BLB", "RGR", "BLB", 'B',
-							Items.blaze_powder, 'G', BlockList.garnet, 'R',
-							Items.redstone, 'L', Items.blaze_rod });
+				Items.blaze_powder, 'G', BlockList.garnet, 'R',
+				Items.redstone, 'L', Items.blaze_rod });
 			
 			// Icy Aqua (Gem Form)
 			GameRegistry.addRecipe(new ItemStack(ItemList.icyAqua, 1),
 					new Object[] { "SDS", "ZAZ", "AAA", 'S',
-							ItemList.shiniumIngot, 'Z', ItemList.shinedust,
-							'A', BlockList.aqua, 'D', Items.diamond });
+				ItemList.shiniumIngot, 'Z', ItemList.shinedust,
+				'A', BlockList.aqua, 'D', Items.diamond });
 			
 			// Static Amber (Gem Form)
 			GameRegistry.addRecipe(new ItemStack(ItemList.staticAmber, 1),
 					new Object[] { "GTG", "UAU", "ZTZ", 'G', Items.gold_ingot,
-							'T', ItemList.topaz, 'A', BlockList.amber, 'Z',
-							ItemList.zincIngot, 'U', ItemList.azurite });
+				'T', ItemList.topaz, 'A', BlockList.amber, 'Z',
+				ItemList.zincIngot, 'U', ItemList.azurite });
 			
 			// Ender Opal (Gem Form)
 			GameRegistry.addRecipe(new ItemStack(ItemList.enderOpal, 1),
 					new Object[] { "FPF", "EOE", "EME", 'F', Items.ender_eye,
-							'P', Items.ender_pearl, 'E', ItemList.enderite,
-							'O', BlockList.opal, 'M', Items.emerald });
+				'P', Items.ender_pearl, 'E', ItemList.enderite,
+				'O', BlockList.opal, 'M', Items.emerald });
 			
 			// Netheridium (Gem Form)
 			GameRegistry
-					.addRecipe(new ItemStack(ItemList.netheridium, 1),
-							new Object[] { "BSB", "LXL", "VAV", 'B',
-									ItemList.shadowEssence, 'S',
-									ItemList.spcItem, 'V', ItemList.garnet,
-									'X', BlockList.witheriteBlock, 'V',
-									Items.blaze_powder, 'A',
-									ItemList.shadowBone });
+			.addRecipe(new ItemStack(ItemList.netheridium, 1),
+					new Object[] { "BSB", "LXL", "VAV", 'B',
+				ItemList.shadowEssence, 'S',
+				ItemList.spcItem, 'V', ItemList.garnet,
+				'X', BlockList.witheriteBlock, 'V',
+				Items.blaze_powder, 'A',
+				ItemList.shadowBone });
 			
 			// Shinium
 			GameRegistry.addRecipe(new ItemStack(ItemList.shiniumIngot, 1),
 					new Object[] { "DLD", "DSD", "DLD", 'D', Items.diamond,
-							'S', ItemList.shinestoneIngot, 'L',
-							ItemList.lapisIngot });
+				'S', ItemList.shinestoneIngot, 'L',
+				ItemList.lapisIngot });
 			
 			// Netherized Obsidian
 			GameRegistry.addRecipe(new ItemStack(BlockList.netherizedObsidian,
@@ -229,6 +237,12 @@ public class Recipes {
 			
 			// Witherite
 			fullBlockCraft(BlockList.witheriteBlock, ItemList.witherite);
+			
+			// Ruby
+			fullBlockCraft(BlockList.rubyBlock, ItemList.ruby);
+			
+			// Sapphire
+			fullBlockCraft(BlockList.sapphireBlock, ItemList.sapphire);
 			
 			// Fire Garnet
 			fullBlockCraft(BlockList.fireGarnet, ItemList.fireGarnet);
@@ -263,7 +277,7 @@ public class Recipes {
 			// Obsidian
 			GameRegistry.addRecipe(new ItemStack(Blocks.obsidian, 1),
 					new Object[] { "OOO", "O O", "OOO", 'O',
-							ItemList.obsidianIngot });
+				ItemList.obsidianIngot });
 			GameRegistry.addShapelessRecipe(new ItemStack(
 					ItemList.obsidianIngot, 8),
 					new Object[] { Blocks.obsidian });
@@ -271,12 +285,12 @@ public class Recipes {
 			// White Cave Marble Stick
 			GameRegistry.addRecipe(new ItemStack(ItemList.marbleStick, 2),
 					new Object[] { "B  ", "B  ", "   ", 'B',
-							BlockList.caveMarbleWhite });
+				BlockList.caveMarbleWhite });
 			
 			// Black Cave Marble Stick
 			GameRegistry.addRecipe(new ItemStack(ItemList.blackMarbleStick, 2),
 					new Object[] { "B  ", "B  ", "   ", 'B',
-							BlockList.caveMarbleBlack });
+				BlockList.caveMarbleBlack });
 			
 			// The End Portal Stone Thingy
 			GameRegistry.addRecipe(new ItemStack(Blocks.end_portal_frame, 1),
@@ -284,57 +298,57 @@ public class Recipes {
 				BlockList.enderPearlBlock, 'O', BlockList.opal,
 				'R', Items.ender_eye, 'N',
 				BlockList.netherizedObsidian, 'T',
-							Blocks.glowstone, 'A', BlockList.staticAmber });
+				Blocks.glowstone, 'A', BlockList.staticAmber });
 			
 			// Lapis Stick
 			GameRegistry.addRecipe(new ItemStack(ItemList.lapisStick, 1),
 					new Object[] { " L ", " L ", "   ", 'L',
-							ItemList.lapisIngot });
+				ItemList.lapisIngot });
 			
 			// Power Stick
 			GameRegistry.addRecipe(new ItemStack(ItemList.powerStick, 1),
 					new Object[] { "LBL", "ASA", "ABA", 'L',
-							ItemList.lapisIngot, 'B',
-							BlockList.caveMarbleBlack, 'A',
-							ItemList.amaranthIngot, 'S', ItemList.lapisStick });
+				ItemList.lapisIngot, 'B',
+				BlockList.caveMarbleBlack, 'A',
+				ItemList.amaranthIngot, 'S', ItemList.lapisStick });
 			
 			// Diablo
 			GameRegistry.addRecipe(new ItemStack(ItemList.diabloSword, 1),
 					new Object[] { " F ", " F ", "GPG", 'F',
-							BlockList.fireGarnet, 'G', ItemList.garnet, 'P',
-							ItemList.powerStick });
+				BlockList.fireGarnet, 'G', ItemList.garnet, 'P',
+				ItemList.powerStick });
 			
 			// Glacies
 			GameRegistry
-					.addRecipe(new ItemStack(ItemList.iceSword, 1),
-							new Object[] { " I ", " I ", "APA", 'I',
-									BlockList.icyAqua, 'A',
-									ItemList.aquamarine, 'P',
-									ItemList.powerStick });
+			.addRecipe(new ItemStack(ItemList.iceSword, 1),
+					new Object[] { " I ", " I ", "APA", 'I',
+				BlockList.icyAqua, 'A',
+				ItemList.aquamarine, 'P',
+				ItemList.powerStick });
 			
 			// Thor
 			GameRegistry.addRecipe(new ItemStack(ItemList.thorSword, 1),
 					new Object[] { " S ", " S ", "APA", 'S',
-							BlockList.staticAmber, 'A', ItemList.amber, 'P',
-							ItemList.powerStick });
+				BlockList.staticAmber, 'A', ItemList.amber, 'P',
+				ItemList.powerStick });
 			
 			// Ender
 			GameRegistry.addRecipe(new ItemStack(ItemList.enderSword, 1),
 					new Object[] { " E ", " E ", "OPM", 'E',
-							BlockList.enderOpal, 'O', ItemList.opal, 'M',
-							ItemList.enderite, 'P', ItemList.powerStick });
+				BlockList.enderOpal, 'O', ItemList.opal, 'M',
+				ItemList.enderite, 'P', ItemList.powerStick });
 			
 			// Mortem
 			GameRegistry.addRecipe(new ItemStack(ItemList.witherSword, 1),
 					new Object[] { " W ", " W ", "RAX", 'W',
-							BlockList.netheridiumBlock, 'R',
-							ItemList.witherite, 'A', ItemList.powerStick, 'X',
-							ItemList.shadowEssence });
+				BlockList.netheridiumBlock, 'R',
+				ItemList.witherite, 'A', ItemList.powerStick, 'X',
+				ItemList.shadowEssence });
 			
-			// Dragon Egg
+			// Baby Ender Dragon Egg
 			GameRegistry.addRecipe(new ItemStack(BlockList.babyEnderDragonEgg,
 					1), new Object[] { "A A", " B ", "A A", 'A',
-					BlockList.azurite, 'B', Blocks.dragon_egg });
+				BlockList.azurite, 'B', Blocks.dragon_egg });
 			
 			// Ingot Stacks
 			addIngotStack(Items.iron_ingot, BlockList.ironBlockIngot);
@@ -350,6 +364,98 @@ public class Recipes {
 					BlockList.shineStoneBlockIngot);
 			addIngotStack(ItemList.shiniumIngot, BlockList.shiniumBlockIngot);
 			
+			// Colored Bricks
+			addBricks(ItemList.bricksBlack, BlockList.bricksBlack);
+			addBricks(ItemList.bricksBlue, BlockList.bricksBlue);
+			addBricks(ItemList.bricksBrown, BlockList.bricksBrown);
+			addBricks(ItemList.bricksCyan, BlockList.bricksCyan);
+			addBricks(ItemList.bricksGray, BlockList.bricksGray);
+			addBricks(ItemList.bricksGreen, BlockList.bricksGreen);
+			addBricks(ItemList.bricksLightBlue, BlockList.bricksLightBlue);
+			addBricks(ItemList.bricksLightGray, BlockList.bricksLightGray);
+			addBricks(ItemList.bricksLime, BlockList.bricksLime);
+			addBricks(ItemList.bricksMagenta, BlockList.bricksMagenta);
+			addBricks(ItemList.bricksOrange, BlockList.bricksOrange);
+			addBricks(ItemList.bricksPink, BlockList.bricksPink);
+			addBricks(ItemList.bricksPurple, BlockList.bricksPurple);
+			addBricks(ItemList.bricksRed, BlockList.bricksRed);
+			addBricks(ItemList.bricksWhite, BlockList.bricksWhite);
+			addBricks(ItemList.bricksYellow, BlockList.bricksYellow);
+			
+			// //Colored Bricks
+			// // (Ingots)
+			// Blue
+			GameRegistry.addShapelessRecipe(new ItemStack(ItemList.bricksBlue,
+					1), new Object[] { Items.brick,
+					new ItemStack(Items.dye, 1, 4) // 4
+					});
+			// Red
+			GameRegistry.addShapelessRecipe(
+					new ItemStack(ItemList.bricksRed, 1), new Object[] {
+							Items.brick, new ItemStack(Items.dye, 1, 1) // 1
+					});
+			// Green
+			GameRegistry.addShapelessRecipe(new ItemStack(ItemList.bricksGreen,
+					1), new Object[] { Items.brick,
+					new ItemStack(Items.dye, 1, 2) // 2
+					});
+			// Purple
+			GameRegistry.addShapelessRecipe(new ItemStack(
+					ItemList.bricksPurple, 1), new Object[] { Items.brick,
+					new ItemStack(Items.dye, 1, 5) // 5
+					});
+			// Cyan
+			GameRegistry.addShapelessRecipe(new ItemStack(ItemList.bricksCyan,
+					1), new Object[] { Items.brick,
+					new ItemStack(Items.dye, 1, 6) // 6
+					});
+			// Pink
+			GameRegistry.addShapelessRecipe(new ItemStack(ItemList.bricksPink,
+					1), new Object[] { Items.brick,
+					new ItemStack(Items.dye, 1, 9) // 9
+					});
+			// Yellow
+			GameRegistry.addShapelessRecipe(new ItemStack(
+					ItemList.bricksYellow, 1), new Object[] { Items.brick,
+					new ItemStack(Items.dye, 1, 11) // 11
+					});
+			// Black
+			GameRegistry.addShapelessRecipe(new ItemStack(ItemList.bricksBlack,
+					1), new Object[] { Items.brick,
+					new ItemStack(Items.dye, 1, 0) });
+			// White
+			GameRegistry.addShapelessRecipe(new ItemStack(ItemList.bricksWhite,
+					1), new Object[] { Items.brick,
+					new ItemStack(Items.dye, 1, 15) });
+			// Lime
+			GameRegistry.addShapelessRecipe(new ItemStack(ItemList.bricksLime,
+					1), new Object[] { Items.brick,
+					new ItemStack(Items.dye, 1, 10) });
+			// Brown
+			GameRegistry.addShapelessRecipe(new ItemStack(ItemList.bricksBrown,
+					1), new Object[] { Items.brick,
+					new ItemStack(Items.dye, 1, 3) });
+			// Magenta
+			GameRegistry.addShapelessRecipe(new ItemStack(
+					ItemList.bricksMagenta, 1), new Object[] { Items.brick,
+					new ItemStack(Items.dye, 1, 13) });
+			// Light Blue
+			GameRegistry.addShapelessRecipe(new ItemStack(
+					ItemList.bricksLightBlue, 1), new Object[] { Items.brick,
+					new ItemStack(Items.dye, 1, 12) });
+			// Light Gray
+			GameRegistry.addShapelessRecipe(new ItemStack(
+					ItemList.bricksLightGray, 1), new Object[] { Items.brick,
+					new ItemStack(Items.dye, 1, 7) });
+			// Orange
+			GameRegistry.addShapelessRecipe(new ItemStack(
+					ItemList.bricksOrange, 1), new Object[] { Items.brick,
+					new ItemStack(Items.dye, 1, 14) });
+			// Gray
+			GameRegistry.addShapelessRecipe(new ItemStack(ItemList.bricksGray,
+					1), new Object[] { Items.brick,
+					new ItemStack(Items.dye, 1, 8) });
+			
 			// Other Stuff
 			addBricks(ItemList.shinedust, BlockList.shinestone);
 			addBricks(ItemList.shinestoneIngot, BlockList.shinestoneCrystal);
@@ -360,17 +466,17 @@ public class Recipes {
 			// Andesite
 			GameRegistry.addShapelessRecipe(
 					new ItemStack(BlockList.andesite, 2), new Object[] {
-							BlockList.diorite, Blocks.cobblestone });
+						BlockList.diorite, Blocks.cobblestone });
 			
 			// Granite
 			GameRegistry.addShapelessRecipe(
 					new ItemStack(BlockList.granite, 2), new Object[] {
-							BlockList.diorite, Items.quartz });
+						BlockList.diorite, Items.quartz });
 			
 			// Diorite
 			GameRegistry.addRecipe(new ItemStack(BlockList.diorite, 2),
 					new Object[] { "NC ", "NC ", "   ", 'N', Items.quartz, 'C',
-							Blocks.cobblestone });
+				Blocks.cobblestone });
 			
 			// Prismarine
 			addOWBricks(ItemList.prismarineShard, BlockList.prismarine);
@@ -379,42 +485,42 @@ public class Recipes {
 			GameRegistry.addRecipe(
 					new ItemStack(BlockList.prismarineBricks, 1),
 					new Object[] { "PPP", "PPP", "PPP", 'P',
-							ItemList.prismarineShard });
+						ItemList.prismarineShard });
 			
 			// Dark Prismarine
 			GameRegistry.addRecipe(new ItemStack(BlockList.darkPrismarine, 1),
 					new Object[] { "PPP", "PIP", "PPP", 'P',
-							ItemList.prismarineShard, 'I',
-							new ItemStack(Items.dye, 1, 0) });
+				ItemList.prismarineShard, 'I',
+				new ItemStack(Items.dye, 1, 0) });
 			
 			// Sea Lantern
 			GameRegistry.addRecipe(new ItemStack(BlockList.seaLantern, 1),
 					new Object[] { "PCP", "CCC", "PCP", 'P',
-							ItemList.prismarineShard, 'C',
-							ItemList.prismarineCrystal });
+				ItemList.prismarineShard, 'C',
+				ItemList.prismarineCrystal });
 			
 			// Polished Crystal
 			GameRegistry.addRecipe(new ItemStack(BlockList.polishedCrystal, 1),
 					new Object[] { "PCP", "SZS", "ICI", 'P',
-							ItemList.prismarineShard, 'C',
-							ItemList.prismarineCrystal, 'S',
-							ItemList.shinedust, 'Z',
-							BlockList.shinestoneCrystal, 'I',
-							ItemList.shinestoneIngot });
+				ItemList.prismarineShard, 'C',
+				ItemList.prismarineCrystal, 'S',
+				ItemList.shinedust, 'Z',
+				BlockList.shinestoneCrystal, 'I',
+				ItemList.shinestoneIngot });
 			
 			// Raw Chocolate
 			GameRegistry.addRecipe(new ItemStack(ItemList.rawChocolate, 3),
 					new Object[] { "CCC", "CEC", "CCC", 'C',
-							new ItemStack(Items.dye, 1, 3), 'E', Items.egg });
+				new ItemStack(Items.dye, 1, 3), 'E', Items.egg });
 			GameRegistry.addRecipe(new ItemStack(ItemList.rawChocolate, 3),
 					new Object[] { "CCC", "CEC", "CCC", 'C',
-							new ItemStack(Items.dye, 1, 3), 'E',
-							ItemList.duckEgg });
+				new ItemStack(Items.dye, 1, 3), 'E',
+				ItemList.duckEgg });
 			
 			// Brownie
 			GameRegistry.addRecipe(new ItemStack(ItemList.brownie, 4),
 					new Object[] { "CC ", "CC ", "   ", 'C',
-							ItemList.rawChocolate });
+				ItemList.rawChocolate });
 			
 			// Candy Apple
 			GameRegistry.addShapelessRecipe(new ItemStack(ItemList.candyApple,
@@ -423,31 +529,31 @@ public class Recipes {
 			// Cream Ball
 			GameRegistry.addShapelessRecipe(
 					new ItemStack(ItemList.creamBall, 3), new Object[] {
-							Items.milk_bucket, Items.sugar });
+						Items.milk_bucket, Items.sugar });
 			
 			// Ice Cream
 			GameRegistry.addShapelessRecipe(
 					new ItemStack(ItemList.iceCream, 1), new Object[] {
-							ItemList.creamBall, Items.bowl, Items.snowball });
+						ItemList.creamBall, Items.bowl, Items.snowball });
 			GameRegistry.addShapelessRecipe(
 					new ItemStack(ItemList.iceCream, 1), new Object[] {
-							ItemList.creamBall, Items.bowl, Blocks.ice });
+						ItemList.creamBall, Items.bowl, Blocks.ice });
 			
 			// Ice Cream Sandwich
 			GameRegistry.addRecipe(new ItemStack(ItemList.iceCreamSandwich, 1),
 					new Object[] { "B  ", "C  ", "B  ", 'B', ItemList.brownie,
-							'C', ItemList.creamBall });
+				'C', ItemList.creamBall });
 			GameRegistry.addRecipe(new ItemStack(ItemList.iceCreamSandwich, 1),
 					new Object[] { " B ", " C ", " B ", 'B', ItemList.brownie,
-							'C', ItemList.creamBall });
+				'C', ItemList.creamBall });
 			GameRegistry.addRecipe(new ItemStack(ItemList.iceCreamSandwich, 1),
 					new Object[] { "  B", "  C", "  B", 'B', ItemList.brownie,
-							'C', ItemList.creamBall });
+				'C', ItemList.creamBall });
 			
 			// Cookie Block
 			GameRegistry.addRecipe(new ItemStack(BlockList.cookieBlock, 1),
 					new Object[] { "CCC", "CHC", "CCC", 'C', Items.cookie, 'H',
-							BlockList.chocolateBlock });
+				BlockList.chocolateBlock });
 			
 			// ICSW Block
 			fullBlockCraft(BlockList.iceCreamSandwichBlock,
@@ -458,10 +564,10 @@ public class Recipes {
 			
 			// Chocolate Bricks
 			GameRegistry
-					.addRecipe(new ItemStack(BlockList.chocolateBricks, 4),
-							new Object[] { "H H", " B ", "H H", 'H',
-									BlockList.chocolateBlock, 'B',
-									Blocks.brick_block });
+			.addRecipe(new ItemStack(BlockList.chocolateBricks, 4),
+					new Object[] { "H H", " B ", "H H", 'H',
+				BlockList.chocolateBlock, 'B',
+				Blocks.brick_block });
 			
 			// Chocolate Block
 			fullBlockCraft(BlockList.chocolateBlock, ItemList.chocolateBar);
@@ -492,18 +598,23 @@ public class Recipes {
 			// Cucumber
 			addSeeds(ItemList.cucumberSeeds, ItemList.cucumber);
 			
+			// Chocolate Strawberry
+			GameRegistry.addShapelessRecipe(new ItemStack(
+					ItemList.chocolateStrawberry, 1), new Object[] {
+				ItemList.strawberry, ItemList.rawChocolate });
+			
 			// Limon Sapling
 			GameRegistry.addShapelessRecipe(new ItemStack(
 					BlockList.limonSapling, 1), new Object[] {
-					BlockList.lemonSapling, BlockList.limeSapling });
+				BlockList.lemonSapling, BlockList.limeSapling });
 			
 			// Shine Torch
 			GameRegistry.addRecipe(new ItemStack(BlockList.shinetorch, 4),
 					new Object[] { "G  ", "S  ", 'G', ItemList.shinedust, 'S',
-							Items.stick });
+				Items.stick });
 			GameRegistry.addRecipe(new ItemStack(BlockList.shinetorch, 4),
 					new Object[] { " G ", " S ", 'G', ItemList.shinedust, 'S',
-							Items.stick });
+				Items.stick });
 			
 			// Logs -> Planks
 			addLogPlanks(BlockList.bananaLog, BlockList.bananaPlanks);
@@ -513,13 +624,13 @@ public class Recipes {
 			addLogPlanks(BlockList.limeLog, BlockList.limePlanks);
 			addLogPlanks(BlockList.limonLog, BlockList.limonPlanks);
 			addLogPlanks(BlockList.cherryLog, BlockList.cherryPlanks);
-			addLogPlanks(BlockList.grapefruitPlanks, BlockList.grapefruitPlanks);
+			addLogPlanks(BlockList.grapefruitLog, BlockList.grapefruitPlanks);
 		}
 		
 		public static void addHorseArmor(Item horseArmor, Block armorMetal) {
 			GameRegistry.addRecipe(new ItemStack(horseArmor, 1),
 					new Object[] { "I I", " I ", "OOO", 'I', armorMetal, 'O',
-							Blocks.obsidian });
+				Blocks.obsidian });
 		}
 		
 		public static void addSeeds(Item crop, Item seeds) {
@@ -529,7 +640,7 @@ public class Recipes {
 		
 		private static void addOWBricks(Item itemInput, Block blockOutput) {
 			GameRegistry.addRecipe(new ItemStack(blockOutput, 4), new Object[] {
-					"CC ", "CC ", "   ", 'C', itemInput });
+				"CC ", "CC ", "   ", 'C', itemInput });
 		}
 		
 		public static void addBricks(Item coloredBrick, Block coloredBlock) {
@@ -564,12 +675,12 @@ public class Recipes {
 		
 		public static void addOWBricks(Block blockInput, Block blockOutput) {
 			GameRegistry.addRecipe(new ItemStack(blockOutput, 4), new Object[] {
-					"CC ", "CC ", "   ", 'C', blockInput });
+				"CC ", "CC ", "   ", 'C', blockInput });
 		}
 		
 		public static void fullBlockCraft(Block block, Item item, int numItem) {
 			GameRegistry.addRecipe(new ItemStack(block, 1), new Object[] {
-					"SSS", "SSS", "SSS", 'S', item });
+				"SSS", "SSS", "SSS", 'S', item });
 			GameRegistry.addShapelessRecipe(new ItemStack(item, numItem),
 					new Object[] { block });
 		}
@@ -580,7 +691,7 @@ public class Recipes {
 		
 		public static void addIngotStack(Item ingot, Block ingotStack) {
 			GameRegistry.addRecipe(new ItemStack(ingotStack, 1), new Object[] {
-					" I ", "I I", "III", 'I', ingot });
+				" I ", "I I", "III", 'I', ingot });
 		}
 		
 		public static void addLogPlanks(Block log, Block planks) {

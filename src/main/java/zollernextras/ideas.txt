@@ -11,5 +11,8 @@
     * Good for four uses.
 * Add my own Ruby and Sapphire Ore blocks.
     * New tools, armor, gems, ores and blocks.
-    * Could be used in crafting recipes.
+    * Could also be used in crafting recipes.
 * Make Nether Ores spawn using events. (?)
+* Add in the colored brick blocks.
+* Create tools and armor for amber, topaz, garnet, ruby, sapphire, opal, and aquamarine gems.
+    * Maybe do the same thing for Witherium too.

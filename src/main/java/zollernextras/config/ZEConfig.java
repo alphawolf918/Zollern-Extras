@@ -42,7 +42,7 @@ public class ZEConfig {
 	public static int biomeMinersLandID;
 	public static int biomeCandyLandID;
 	public static int biomeCrystalOceanID;
-	public static int biomeLostDesertID;
+	public static int biomeTropicalForestID;
 	
 	public static int mobDuckSpawnRate;
 	public static int mobFishSpawnRate;
@@ -72,6 +72,8 @@ public class ZEConfig {
 	public static int oreEnderiteSpawnRate;
 	public static int oreAquamarineSpawnRate;
 	public static int oreWitheriteSpawnRate;
+	public static int oreRubySpawnRate;
+	public static int oreSapphireSpawnRate;
 	
 	public static void init(FMLPreInitializationEvent event) {
 		config = new Configuration(new File(event
@@ -99,19 +101,19 @@ public class ZEConfig {
 						"fueltoniumActsAsYellorite",
 						true,
 						"If enabled, Fueltonium Ingots will do the same as Yellorium Ingots in BigReactors, and can be used in their place.")
-				.getBoolean();
+						.getBoolean();
 		shiniumIsPlatinum = config
 				.get(config.CATEGORY_GENERAL,
 						"shiniumIsPlatinum",
 						true,
 						"If enabled, Shinium Ingots and Precious Shinium will function as Platinum Ingots and Platinum Dust, respectively (Thermal Foundation, Metallurgy, etc).")
-				.getBoolean();
+						.getBoolean();
 		betterGlassIsGlass = config
 				.get(config.CATEGORY_GENERAL,
 						"betterGlassIsGlass",
 						true,
 						"If enabled, Better Glass can be used in place of regular glass. Useful if you have a lot of gravel.")
-				.getBoolean();
+						.getBoolean();
 		rottenFleshCooksIntoLeather = config.get(CATEGORY_IMPROVEMENTS,
 				"rottenFleshCooksIntoLeather", true,
 				"If enabled, rotten flesh can be smelted into leather.")
@@ -121,17 +123,17 @@ public class ZEConfig {
 		vanillaItemsAreCraftable = config
 				.get(CATEGORY_IMPROVEMENTS, "vanillaItemsAreCraftable", true,
 						"If enabled, normally uncraftable vanilla items will be craftable.")
-				.getBoolean();
+						.getBoolean();
 		horseArmorIsCraftable = config
 				.get(CATEGORY_IMPROVEMENTS,
 						"horseArmorIsCraftable",
 						true,
 						"If enabled, horse armor may be crafted using its respective material and obsidian. (This is separate from the above on purpose.)")
-				.getBoolean();
+						.getBoolean();
 		biomeDisplaysOnHUD = config
 				.get(CATEGORY_IMPROVEMENTS, "biomeDisplaysOnHUD", true,
 						"Disable this if you don't want the current biome to show on your HUD.")
-				.getBoolean();
+						.getBoolean();
 		
 		// Biomes
 		biomeIcyDesertID = config.get(CATEGORY_BIOMES, "biomeIcyDesertID", 67)
@@ -162,7 +164,7 @@ public class ZEConfig {
 				.getInt();
 		biomeCrystalOceanID = config.get(CATEGORY_BIOMES,
 				"biomeCrystalOceanID", 80).getInt();
-		biomeLostDesertID = config.get(CATEGORY_BIOMES, "biomeLostDesertID",
+		biomeTropicalForestID = config.get(CATEGORY_BIOMES, "biomeTropicalForestID",
 				180).getInt();
 		
 		// Mobs
@@ -195,33 +197,37 @@ public class ZEConfig {
 		
 		// Ore Generation
 		oreSuperCoalSpawnRate = config.get(CATEGORY_ORES,
-				"oreSuperCoalSpawnRate", 6).getInt();
+				"oreSuperCoalSpawnRate", 4).getInt();
 		oreFueltoniumSpawnRate = config.get(CATEGORY_ORES,
-				"oreFueltoniumSpawnRate", 14).getInt();
+				"oreFueltoniumSpawnRate", 7).getInt();
 		oreEnderShardSpawnRate = config.get(CATEGORY_ORES,
-				"oreEnderShardOreSpawnRate", 8).getInt();
+				"oreEnderShardOreSpawnRate", 6).getInt();
 		oreAmaranthSpawnRate = config.get(CATEGORY_ORES,
-				"oreAmaranthSpawnRate", 10).getInt();
-		oreZincSpawnRate = config.get(CATEGORY_ORES, "oreZincSpawnRate", 11)
+				"oreAmaranthSpawnRate", 5).getInt();
+		oreZincSpawnRate = config.get(CATEGORY_ORES, "oreZincSpawnRate", 2)
 				.getInt();
 		oreDiamondIncreaseSpawnRate = config.get(CATEGORY_ORES,
 				"oreDiamondIncreaseSpawnRate", 13).getInt();
-		oreOpalSpawnRate = config.get(CATEGORY_ORES, "oreOpalSpawnRate", 4)
+		oreOpalSpawnRate = config.get(CATEGORY_ORES, "oreOpalSpawnRate", 2)
 				.getInt();
-		oreAmberSpawnRate = config.get(CATEGORY_ORES, "oreAmberSpawnRate", 4)
+		oreAmberSpawnRate = config.get(CATEGORY_ORES, "oreAmberSpawnRate", 2)
 				.getInt();
-		oreGarnetSpawnRate = config.get(CATEGORY_ORES, "oreGarnetSpawnRate", 4)
+		oreGarnetSpawnRate = config.get(CATEGORY_ORES, "oreGarnetSpawnRate", 2)
 				.getInt();
 		oreAquamarineSpawnRate = config.get(CATEGORY_ORES,
-				"oreAquamarineSpawnRate", 4).getInt();
-		oreTopazSpawnRate = config.get(CATEGORY_ORES, "oreTopazSpawnRate", 4)
+				"oreAquamarineSpawnRate", 2).getInt();
+		oreTopazSpawnRate = config.get(CATEGORY_ORES, "oreTopazSpawnRate", 2)
 				.getInt();
 		oreAzuriteSpawnRate = config.get(CATEGORY_ORES, "oreAzuriteSpawnRate",
-				4).getInt();
+				2).getInt();
 		oreEnderiteSpawnRate = config.get(CATEGORY_ORES,
 				"oreEnderiteSpawnRate", 4).getInt();
 		oreWitheriteSpawnRate = config.get(CATEGORY_ORES,
 				"oreWitheriteSpawnRate", 6).getInt();
+		oreRubySpawnRate = config.get(CATEGORY_ORES, "oreRubySpawnRate", 4)
+				.getInt();
+		oreSapphireSpawnRate = config.get(CATEGORY_ORES,
+				"oreSapphireSpawnRate", 4).getInt();
 		
 		config.save();
 		

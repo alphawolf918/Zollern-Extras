@@ -2,6 +2,7 @@ package zollernextras.items.tools.zollernium;
 
 import net.minecraft.item.ItemPickaxe;
 import zollernextras.creativetabs.ModTabs;
+import zollernextras.items.tools.ToolMaterials;
 import zollernextras.lib.ModInfo;
 
 public class ZollerniumPickaxe extends ItemPickaxe {
@@ -11,6 +12,7 @@ public class ZollerniumPickaxe extends ItemPickaxe {
 		this.setCreativeTab(ModTabs.zTab);
 		this.setUnlocalizedName(ModInfo.MODID + "_zollerniumpickaxe");
 		this.setTextureName(ModInfo.MODID + ":" + "zollerniumpickaxe");
-		this.setHarvestLevel("pickaxe", 5);
+		this.setHarvestLevel("pickaxe",
+				ToolMaterials.ZOLLERNIUM.getHarvestLevel());
 	}
 }

@@ -11,6 +11,7 @@ import zollernextras.entity.EntityDuckEgg;
 import zollernextras.handlers.FuelHandlers;
 import zollernextras.handlers.Handlers;
 import zollernextras.items.ItemList;
+import zollernextras.items.teleporter.MessageTeleportToDimension;
 import zollernextras.lib.MainHelper;
 import zollernextras.lib.ModInfo;
 import zollernextras.lib.OreDict;
@@ -27,14 +28,18 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
+import cpw.mods.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.relauncher.Side;
 
 @Mod(modid = ModInfo.MODID, name = ModInfo.NAME, version = ModInfo.VERSION)
 public class ZollernExtrasMod {
 	
 	@Mod.Instance(ModInfo.MODID)
 	public static ZollernExtrasMod INSTANCE;
+	
+	public static SimpleNetworkWrapper snw;
 	
 	public static File filePath;
 	
@@ -48,12 +53,16 @@ public class ZollernExtrasMod {
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
+		snw = NetworkRegistry.INSTANCE.newSimpleChannel(ModInfo.MODID);
+		snw.registerMessage(MessageTeleportToDimension.TeleportHandler.class,
+				MessageTeleportToDimension.class, 1, Side.SERVER);
 		MainHelper.Log("Beginning to load Zollern Extras...");
 		this.filePath = MainHelper.getFilePath(event);
 		ModTabs.init();
 		ZEConfig.init(event);
 		ItemList.init();
 		Items.saddle.setMaxStackSize(64);
+		Items.ender_pearl.setMaxStackSize(64);
 		BlockList.init();
 		TreeCapHelper.init();
 		Mobs.init();

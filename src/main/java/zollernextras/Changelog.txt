@@ -29,6 +29,7 @@
 * Added back in Colored Bricks.
 * Added the Tropical Forest biome.
 * Added Wood and Stone Armor.
+* Duck Eggs are now throwable.
 
 -- FIXES --
 * Fixed Mortem sword not applying Wither effect to Players.

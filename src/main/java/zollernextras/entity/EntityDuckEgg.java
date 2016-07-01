@@ -1,13 +1,15 @@
 package zollernextras.entity;
 
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 import zollernextras.mobs.entities.EntityDuck;
+import cpw.mods.fml.common.registry.IThrowableEntity;
 
-public class EntityDuckEgg extends EntityThrowable {
+public class EntityDuckEgg extends EntityThrowable implements IThrowableEntity {
 	
 	public EntityDuckEgg(World p_i1779_1_) {
 		super(p_i1779_1_);
@@ -57,5 +59,10 @@ public class EntityDuckEgg extends EntityThrowable {
 		if (!this.worldObj.isRemote) {
 			this.setDead();
 		}
+	}
+	
+	@Override
+	public void setThrower(Entity entity) {
+		
 	}
 }

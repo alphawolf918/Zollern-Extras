@@ -54,6 +54,7 @@ import zollernextras.items.tools.zollernium.ZollerniumShovel;
 import zollernextras.items.tools.zollernium.ZollerniumSword;
 import zollernextras.lib.MainHelper;
 import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class ItemList {
 	
@@ -278,6 +279,8 @@ public class ItemList {
 	public static Item bricksBlue = new ColoredBrick("blue");
 	public static Item bricksPurple = new ColoredBrick("purple");
 	
+	public static Item netherEye = new ItemNetherEye();
+	
 	public static void init() {
 		addItem(spcItem, "Super Charged Coal");
 		addItem(shinedust, "Shinedust");
@@ -446,11 +449,14 @@ public class ItemList {
 		addItem(bricksBlue, "Blue Brick Ingot");
 		addItem(bricksPurple, "Purple Brick Ingot");
 		
+		addItem(netherEye, "Nether Eye");
+		
 		MainHelper.Log("Items loaded, " + totalItems + " entries.");
 	}
 	
 	public static void addItem(Item item, String name) {
 		GameRegistry.registerItem(item, name);
+		LanguageRegistry.addName(item, name);
 		totalItems++;
 	}
 }

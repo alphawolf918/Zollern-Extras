@@ -31,6 +31,7 @@ import zollernextras.blocks.ores.GemOre;
 import zollernextras.blocks.ores.PrismarineOre;
 import zollernextras.blocks.ores.SuperChargedCoalOre;
 import zollernextras.blocks.ores.ZincOre;
+import zollernextras.blocks.ores.ZollerniumOre;
 import zollernextras.blocks.ores.ender.EnderAmaranthOre;
 import zollernextras.blocks.ores.ender.EnderFueltoniumOre;
 import zollernextras.blocks.ores.ender.EnderSpcOre;
@@ -315,6 +316,8 @@ public class BlockList {
 	
 	public static Block energyTestBlock = new EnergyTestBlock("energytest");
 	
+	public static Block zollerniumOre = new ZollerniumOre();
+	
 	public static HashMap<String, Class<? extends TileEntity>> TERegistry;
 	
 	public static void init() {
@@ -499,6 +502,8 @@ public class BlockList {
 		addBlock(grapefruitLog, "Grapefruit Log");
 		addBlock(grapefruitPlanks, "Grapefruit Planks");
 		addBlock(grapefruitLeaves, "Grapefruit Leaves");
+		
+		addBlock(zollerniumOre, "Zollernium Ore");
 		
 		TERegistry = new HashMap<String, Class<? extends TileEntity>>();
 		ironBlockIngot = addIngotTile(new IronIngotStack("iron"), "iron",

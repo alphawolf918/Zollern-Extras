@@ -1,16 +1,13 @@
 package zollernextras.blocks;
 
 import java.util.Random;
-import net.minecraft.block.material.Material;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 
 public class CookieBlock extends GenericBlock {
+	
 	public CookieBlock() {
 		super("cookieblock", 0.2F);
-		this.blockMaterial = Material.clay;
-		this.setHardness(0.2F);
-		this.setHarvestLevel("pickaxe", 1);
 		this.setStepSound(soundTypeCloth);
 	}
 	

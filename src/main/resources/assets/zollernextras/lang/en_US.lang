@@ -199,6 +199,8 @@ tile.zollernextras_grapefruitlog.name=Grapefruit Log
 tile.zollernextras_grapefruitleaves.name=Grapefruit Leaves
 tile.zollernextras_grapefruitplanks.name=Grapefruit Planks
 
+tile.zollernextras_zollerniumore.name=Zollernium Ore
+
 item.zollernextras_superchargedcoal.name=Super Charged Coal
 item.zollernextras_shinedust.name=Shinedust
 item.zollernextras_fuelonite.name=Fuelonite
@@ -380,6 +382,8 @@ item.zollernextras_brickingot_cyan.name=Cyan Brick Ingot
 item.zollernextras_brickingot_red.name=Red Brick Ingot
 item.zollernextras_brickingot_blue.name=Blue Brick Ingot
 item.zollernextras_brickingot_purple.name=Purple Brick Ingot
+
+item.zollernextras_nethereye.name=Nether Eye
 
 item.zollernextras_backpack.name=Backpack
 

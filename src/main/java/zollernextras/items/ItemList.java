@@ -54,7 +54,6 @@ import zollernextras.items.tools.zollernium.ZollerniumShovel;
 import zollernextras.items.tools.zollernium.ZollerniumSword;
 import zollernextras.lib.MainHelper;
 import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class ItemList {
 	
@@ -164,7 +163,6 @@ public class ItemList {
 	public static Item swampClayBall = new ModItem("swampclayball");
 	public static Item zincIngot = new ModItem("zincingot");
 	public static Item zincDust = new ModItem("zincdust");
-	
 	public static Item shinestoneIngot = new ModItem("shinestoneingot");
 	public static Item shiniumIngot = new ModItem("shinium");
 	public static Item shiniumDust = new ModItem("shiniumdust");
@@ -456,7 +454,7 @@ public class ItemList {
 	
 	public static void addItem(Item item, String name) {
 		GameRegistry.registerItem(item, name);
-		LanguageRegistry.addName(item, name);
+		// LanguageRegistry.addName(item, name);
 		totalItems++;
 	}
 }

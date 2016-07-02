@@ -6,8 +6,6 @@
 * Make different-colored fish to match the new fish items. (?)
 * Zinc Armor and Tools.
 * Add Enchantments to Zinc and Zollernium Tools.
-* Nether Eye that transports the user to the Nether.
-    * Good for four uses.
 * Make Nether Ores spawn using events. (?)
 * Create tools and armor for amber, topaz, garnet, ruby, sapphire, opal, and aquamarine gems.
     * Maybe do the same thing for Witherium too.

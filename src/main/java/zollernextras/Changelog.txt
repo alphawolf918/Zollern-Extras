@@ -19,7 +19,7 @@
 * Horse Armor is now craftable.
 * Slightly reduced spawn rate of crop farms.
 * Added Ruby and Sapphire stuff.
-* Set Saddles to be stackable up to 64.
+* Set Saddles and Ender Pearls to be stackable up to 64.
 * Lowered ore spawn chances.
 * Zollernium harvest level has been increased to 7.
 * Amaranth harvest level has been increased to 5.
@@ -30,6 +30,14 @@
 * Added the Tropical Forest biome.
 * Added Wood and Stone Armor.
 * Duck Eggs are now throwable.
+* Added a Nether Eye that transports the user to and from the Nether and the Overworld.
+    * Good for 16 uses.
+    * Buggy, currently transports the Player twice, making it ineffective.
+* Hostile mobs and cave mobs now spawn in Miner's Lands.
+* Lowered the spawn chance of Miner's Lands and Candy Lands.
+* Added a rare ore called Zollernium Ore.
+* Quiver is now craftable.
+    * Can carry two stacks of arrows at one time.
 
 -- FIXES --
 * Fixed Mortem sword not applying Wither effect to Players.
@@ -38,6 +46,7 @@
 * Fixed Silver Ingots not being craftable from Silver Nuggets.
 * Fixed Grapefruit Logs not crafting into Grapefruit Planks.
 * Fixed armor pieces not being craftable and only crafting the Amaranth equivalent.
+* Fixed (apparently) issue with the Quiver causing a crash, should work fully now.
 -----------
 
 

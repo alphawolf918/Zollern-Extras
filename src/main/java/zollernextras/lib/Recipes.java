@@ -616,6 +616,13 @@ public class Recipes {
 					new Object[] { " G ", " S ", 'G', ItemList.shinedust, 'S',
 				Items.stick });
 			
+			// Nether Eye
+			GameRegistry.addRecipe(new ItemStack(ItemList.netherEye, 1),
+					new Object[] { "NBN", "WEW", "IOI", 'N',
+				ItemList.netheridium, 'B', Items.blaze_powder, 'W',
+				ItemList.witherite, 'E', Items.ender_eye, 'O',
+				Blocks.obsidian });
+			
 			// Logs -> Planks
 			addLogPlanks(BlockList.bananaLog, BlockList.bananaPlanks);
 			addLogPlanks(BlockList.orangeLog, BlockList.orangePlanks);
@@ -625,6 +632,11 @@ public class Recipes {
 			addLogPlanks(BlockList.limonLog, BlockList.limonPlanks);
 			addLogPlanks(BlockList.cherryLog, BlockList.cherryPlanks);
 			addLogPlanks(BlockList.grapefruitLog, BlockList.grapefruitPlanks);
+			
+			// Quiver
+			GameRegistry.addRecipe(new ItemStack(ItemList.quiver, 1),
+					new Object[] { " F ", " S ", " L ", 'F', Items.feather,
+							'S', Items.string, 'L', Items.leather });
 		}
 		
 		public static void addHorseArmor(Item horseArmor, Block armorMetal) {

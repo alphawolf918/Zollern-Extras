@@ -15,6 +15,7 @@ public class Shinestone extends Block {
 		setHardness(0.4F);
 		setResistance(2.0F);
 		setLightLevel(1.0F);
+		this.setStepSound(soundTypeGlass);
 	}
 	
 	@Override

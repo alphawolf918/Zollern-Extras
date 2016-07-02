@@ -101,6 +101,7 @@ public class OreDict {
 		registerOre("ingotZollernium", ItemList.zollerniumIngot);
 		registerOre("dustZollernium", ItemList.zollerniumDust);
 		registerOre("blockZollernium", BlockList.zollerniumBlock);
+		registerOre("oreZollernium", BlockList.zollerniumOre);
 		
 		// Azurite
 		registerOre("gemAzurite", ItemList.azurite);

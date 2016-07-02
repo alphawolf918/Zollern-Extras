@@ -44,10 +44,10 @@ public class GuiQuiver extends GuiContainer {
 	protected void drawGuiContainerForegroundLayer(int par1, int par2) {
 		String s = inventory.hasCustomInventoryName() ? inventory
 				.getInventoryName() : I18n.format(inventory.getInventoryName());
-		fontRendererObj.drawString(s,
-				xSize / 2 - fontRendererObj.getStringWidth(s) / 2, 0, 4210752);
-		fontRendererObj.drawString(I18n.format("container.inventory"), 26,
-				ySize - 96 + 4, 4210752);
+				fontRendererObj.drawString(s,
+						xSize / 2 - fontRendererObj.getStringWidth(s) / 2, 0, 4210752);
+				fontRendererObj.drawString(I18n.format("container.inventory"), 26,
+						ySize - 96 + 6, 4210752);
 	}
 	
 	@Override
@@ -59,7 +59,7 @@ public class GuiQuiver extends GuiContainer {
 		int l = (height - ySize) / 2;
 		drawTexturedModalRect(k, l, 0, 0, xSize, ySize);
 		// utilize vanilla drawPlayerModel method:
-		GuiInventory.func_147046_a(k + 51, l + 75, 30, (k + 51) - xSize_lo,
-				(l + 75 - 50) - ySize_lo, mc.thePlayer);
+		GuiInventory.func_147046_a(k + 51, l + 75, 30, k + 51 - xSize_lo, l
+				+ 75 - 50 - ySize_lo, mc.thePlayer);
 	}
 }

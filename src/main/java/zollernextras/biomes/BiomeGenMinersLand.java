@@ -21,8 +21,6 @@ public class BiomeGenMinersLand extends BiomeGenBase {
 		this.theBiomeDecorator.sandPerChunk2 = -999;
 		this.theBiomeDecorator.mushroomsPerChunk = -999;
 		this.theBiomeDecorator.clayPerChunk = -999;
-		this.spawnableMonsterList.clear();
-		this.spawnableCaveCreatureList.clear();
 		this.spawnableCreatureList.clear();
 		this.spawnableWaterCreatureList.clear();
 		this.topBlock = Blocks.stone;

@@ -76,6 +76,10 @@ public class WorldGenManager implements IWorldGenerator {
 		addOreSpawn(BlockList.fueltonium, world, random, x, z, 16, 16,
 				6 + random.nextInt(8), ZEConfig.oreFueltoniumSpawnRate, 2, 12);
 		
+		// Zollernium
+		addOreSpawn(BlockList.zollerniumOre, world, random, x, z, 16, 16, 1, 4,
+				2, 12);
+		
 		// Shard Ore
 		addOreSpawn(BlockList.enderShardOre, world, random, x, z, 16, 16,
 				2 + random.nextInt(2), ZEConfig.oreEnderShardSpawnRate, 6, 48);
@@ -168,7 +172,7 @@ public class WorldGenManager implements IWorldGenerator {
 		// Treasure Chests
 		if ((currentBiome.isEqualTo(BiomeGenBase.deepOcean)
 				|| currentBiome.equals(BiomeGenBase.ocean) || currentBiome
-					.equals(BiomeList.crystalOcean)) && y <= 44) {
+				.equals(BiomeList.crystalOcean)) && y <= 44) {
 			spawnStructure(80, 200, world, random, x, y, z,
 					new WorldGenTreasureChest());
 		}
@@ -330,7 +334,9 @@ public class WorldGenManager implements IWorldGenerator {
 			// Sapphire Ore
 			addOreSpawn(BlockList.sapphireOre, world, random, x, z, 16, 16,
 					4 + random.nextInt(8), 60, 2, 256);
-			
+			// Zollernium Ore
+			addOreSpawn(BlockList.zollerniumOre, world, random, x, z, 16, 16,
+					1, 4, 1, 256);
 			// Obsidian
 			addOreSpawn(Blocks.obsidian, world, random, x, z, 16, 16,
 					4 + random.nextInt(8), 60, 2, 256);
@@ -493,7 +499,7 @@ public class WorldGenManager implements IWorldGenerator {
 		// Ender Ore
 		new WorldGenEnderMinable(BlockList.enderiteOre,
 				ZEConfig.oreEnderiteSpawnRate, 15).generate(world, random,
-				Xcoord, Ycoord, Zcoord);
+						Xcoord, Ycoord, Zcoord);
 	}
 	
 	/**

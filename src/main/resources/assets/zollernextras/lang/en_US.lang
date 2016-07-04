@@ -200,6 +200,11 @@ tile.zollernextras_grapefruitleaves.name=Grapefruit Leaves
 tile.zollernextras_grapefruitplanks.name=Grapefruit Planks
 
 tile.zollernextras_zollerniumore.name=Zollernium Ore
+tile.zollernextras_enderreeds.name=Ender Cane
+tile.zollernextras_enderdirt.name=Ender Dirt
+tile.zollernextras_magmarock.name=Magma Rock
+
+tile.zollernextras_chocolate.name=Melted Chocolate
 
 item.zollernextras_superchargedcoal.name=Super Charged Coal
 item.zollernextras_shinedust.name=Shinedust
@@ -384,6 +389,9 @@ item.zollernextras_brickingot_blue.name=Blue Brick Ingot
 item.zollernextras_brickingot_purple.name=Purple Brick Ingot
 
 item.zollernextras_nethereye.name=Nether Eye
+item.zollernextras_enderreeds.name=Ender Cane
+
+item.zollernextras_bucket_chocolate.name=Chocolate Bucket
 
 item.zollernextras_backpack.name=Backpack
 

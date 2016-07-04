@@ -27,7 +27,6 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
-import cpw.mods.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 
@@ -36,8 +35,6 @@ public class ZollernExtrasMod {
 	
 	@Mod.Instance(ModInfo.MODID)
 	public static ZollernExtrasMod INSTANCE;
-	
-	public static SimpleNetworkWrapper snw;
 	
 	public static File filePath;
 	

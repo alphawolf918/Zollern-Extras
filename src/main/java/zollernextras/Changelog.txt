@@ -1,3 +1,20 @@
+[2.8]
+* Added Ender Cane.
+    * Generates naturally in The End.
+    * Only grows on End Stone.
+* Added melted chocolate fluid block.
+    * Generates naturally as lakes in Candy Land biomes.
+    * Behaves just like water.
+    * Can be picked up in a bucket.
+* Added Ender Dirt block.
+    * Generates naturally in lakes in The End.
+* Added Magma Rock block.
+    * Generates naturally in the Nether.
+    * Touching it causes fire damage, and also sets the Player on fire, which causes separate damage.
+    * Can also be crafted using four Magma Creams and vice versa.
+
+
+
 [2.7]
 * Removed all traces of Lost Desert / interdimensional stuff.
 * Cucumbers now give Cucumber Seeds when placed in a crafting grid.

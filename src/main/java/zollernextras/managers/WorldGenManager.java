@@ -18,7 +18,9 @@ import zollernextras.worldgen.WorldGenCandyTree;
 import zollernextras.worldgen.WorldGenCrop;
 import zollernextras.worldgen.WorldGenCrops;
 import zollernextras.worldgen.WorldGenEnderMinable;
+import zollernextras.worldgen.WorldGenEnderReeds;
 import zollernextras.worldgen.WorldGenFruitTree;
+import zollernextras.worldgen.WorldGenMagmaRock;
 import zollernextras.worldgen.WorldGenNetherOre;
 import zollernextras.worldgen.WorldGenSeaLamp;
 import zollernextras.worldgen.WorldGenSugarCubes;
@@ -77,8 +79,8 @@ public class WorldGenManager implements IWorldGenerator {
 				6 + random.nextInt(8), ZEConfig.oreFueltoniumSpawnRate, 2, 12);
 		
 		// Zollernium
-		addOreSpawn(BlockList.zollerniumOre, world, random, x, z, 16, 16, 1, 4,
-				2, 12);
+		addOreSpawn(BlockList.zollerniumOre, world, random, x, z, 16, 16, 1, 6,
+				2, 16);
 		
 		// Shard Ore
 		addOreSpawn(BlockList.enderShardOre, world, random, x, z, 16, 16,
@@ -336,7 +338,7 @@ public class WorldGenManager implements IWorldGenerator {
 					4 + random.nextInt(8), 60, 2, 256);
 			// Zollernium Ore
 			addOreSpawn(BlockList.zollerniumOre, world, random, x, z, 16, 16,
-					1, 4, 1, 256);
+					1, 8, 1, 256);
 			// Obsidian
 			addOreSpawn(Blocks.obsidian, world, random, x, z, 16, 16,
 					4 + random.nextInt(8), 60, 2, 256);
@@ -378,6 +380,10 @@ public class WorldGenManager implements IWorldGenerator {
 						: BlockList.candyCubeWhite;
 				this.spawnStructure(4, 20, world, random, x, y, z,
 						new WorldGenCandyTree(candyCube, candyCube2));
+			}
+			if (random.nextInt(55) < 22) {
+				new WorldGenLakes(BlockList.blockChocolate).generate(world,
+						random, x, y, z);
 			}
 		}
 		
@@ -473,6 +479,16 @@ public class WorldGenManager implements IWorldGenerator {
 			new WorldGenNetherOre(BlockList.brimStone, 4).generate(world,
 					random, Xcoord, Ycoord, Zcoord);
 		}
+		
+		// Magma Rock
+		if (new Random().nextInt(250) < 150) {
+			new WorldGenLakes(BlockList.magmaBlock).generate(world, random,
+					Xcoord, Ycoord, Zcoord);
+		}
+		if (new Random().nextInt(550) < 340) {
+			new WorldGenMagmaRock().generate(world, random, Xcoord, Ycoord,
+					Zcoord);
+		}
 	}
 	
 	private void generateEnd(World world, Random random, int x, int z) {
@@ -499,7 +515,23 @@ public class WorldGenManager implements IWorldGenerator {
 		// Ender Ore
 		new WorldGenEnderMinable(BlockList.enderiteOre,
 				ZEConfig.oreEnderiteSpawnRate, 15).generate(world, random,
-						Xcoord, Ycoord, Zcoord);
+				Xcoord, Ycoord, Zcoord);
+		
+		// Ender Dirt
+		new WorldGenEnderMinable(BlockList.enderDirt, 10, 20).generate(world,
+				random, Xcoord, Ycoord, Zcoord);
+		
+		// Ender Dirt
+		if (new Random().nextInt(55) <= 42) {
+			new WorldGenLakes(BlockList.enderDirt).generate(world, random,
+					Xcoord, Ycoord, Zcoord);
+		}
+		
+		// Ender Reeds
+		if (new Random().nextInt(45) <= 15) {
+			new WorldGenEnderReeds().generate(world, random, Xcoord,
+					Ycoord + 1, Zcoord);
+		}
 	}
 	
 	/**

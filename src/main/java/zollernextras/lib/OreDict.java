@@ -195,6 +195,12 @@ public class OreDict {
 		registerOre("itemClay", ItemList.swampClayBall);
 		registerOre("blockClay", BlockList.swampClay);
 		
+		// Fluid Registry
+		registerOre("fluidChocolate", BlockList.blockChocolate);
+		
+		// Bucket Registry
+		registerOre("bucketChocolate", ItemList.chocolateBucket);
+		
 		MainHelper.Log("OreDictionary loaded: " + totalEntries + " entries.");
 	}
 	
@@ -209,14 +215,14 @@ public class OreDict {
 	}
 	
 	public static void registerOre(String strName, Block... blocks) {
-		for (Block novaBlock : blocks) {
-			registerOre(strName, novaBlock);
+		for (Block zollernBlock : blocks) {
+			registerOre(strName, zollernBlock);
 		}
 	}
 	
 	public static void registerOre(String strName, Item... items) {
-		for (Item novaItem : items) {
-			registerOre(strName, novaItem);
+		for (Item zollernItem : items) {
+			registerOre(strName, zollernItem);
 		}
 	}
 }

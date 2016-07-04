@@ -4,6 +4,7 @@ import java.util.HashMap;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.tileentity.TileEntity;
+import zollernextras.blocks.crops.BlockEnderReeds;
 import zollernextras.blocks.crops.CropBlackberry;
 import zollernextras.blocks.crops.CropBlueberry;
 import zollernextras.blocks.crops.CropCorn;
@@ -15,6 +16,8 @@ import zollernextras.blocks.crops.CropPeas;
 import zollernextras.blocks.crops.CropRadish;
 import zollernextras.blocks.crops.CropStrawberry;
 import zollernextras.blocks.crops.CropTomato;
+import zollernextras.blocks.fluids.BlockFChocolate;
+import zollernextras.blocks.fluids.FluidChocolate;
 import zollernextras.blocks.ingotstacks.AmaranthIngotStack;
 import zollernextras.blocks.ingotstacks.FueltoniumIngotStack;
 import zollernextras.blocks.ingotstacks.GoldIngotStack;
@@ -314,9 +317,15 @@ public class BlockList {
 	public static Block bricksGreen = new ColoredBricks("green");
 	public static Block bricksPurple = new ColoredBricks("purple");
 	
-	public static Block energyTestBlock = new EnergyTestBlock("energytest");
-	
 	public static Block zollerniumOre = new ZollerniumOre();
+	public static Block enderReeds = new BlockEnderReeds();
+	public static Block enderDirt = new EnderDirt();
+	public static Block magmaBlock = new BlockMagma();
+	
+	public static FluidChocolate fluidChocolate = new FluidChocolate(
+			"chocolate");
+	public static final Block blockChocolate = new BlockFChocolate(
+			fluidChocolate);
 	
 	public static HashMap<String, Class<? extends TileEntity>> TERegistry;
 	
@@ -461,8 +470,6 @@ public class BlockList {
 		addBlock(bricksGreen, "Green Bricks");
 		addBlock(bricksPurple, "Purple Bricks");
 		
-		addBlock(energyTestBlock, "Energy Test");
-		
 		addBlock(bananaSapling, "Banana Sapling");
 		addBlock(bananaLog, "Banana Log");
 		addBlock(bananaLeaves, "Banana Leaves");
@@ -504,6 +511,11 @@ public class BlockList {
 		addBlock(grapefruitLeaves, "Grapefruit Leaves");
 		
 		addBlock(zollerniumOre, "Zollernium Ore");
+		addBlock(enderReeds, "Ender Reeds");
+		addBlock(enderDirt, "Ender Dirt");
+		addBlock(magmaBlock, "Magma Block");
+		
+		addBlock(blockChocolate, "Melted Chocolate");
 		
 		TERegistry = new HashMap<String, Class<? extends TileEntity>>();
 		ironBlockIngot = addIngotTile(new IronIngotStack("iron"), "iron",

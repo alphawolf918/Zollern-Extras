@@ -10,6 +10,7 @@ import zollernextras.items.armor.azurite.AzuriteArmor;
 import zollernextras.items.armor.stone.StoneArmor;
 import zollernextras.items.armor.wood.WoodArmor;
 import zollernextras.items.armor.zollernium.ZollerniumArmor;
+import zollernextras.items.crops.ItemEnderReed;
 import zollernextras.items.crops.Seed;
 import zollernextras.items.crops.SeedFood;
 import zollernextras.items.food.CookedFood;
@@ -279,6 +280,11 @@ public class ItemList {
 	
 	public static Item netherEye = new ItemNetherEye();
 	
+	public static Item enderReeds = new ItemEnderReed();
+	
+	public static Item chocolateBucket = new ZollernBucket("bucket_chocolate",
+			BlockList.blockChocolate);
+	
 	public static void init() {
 		addItem(spcItem, "Super Charged Coal");
 		addItem(shinedust, "Shinedust");
@@ -448,6 +454,9 @@ public class ItemList {
 		addItem(bricksPurple, "Purple Brick Ingot");
 		
 		addItem(netherEye, "Nether Eye");
+		addItem(enderReeds, "Ender Cane");
+		
+		addItem(chocolateBucket, "Chocolate Bucket");
 		
 		MainHelper.Log("Items loaded, " + totalItems + " entries.");
 	}

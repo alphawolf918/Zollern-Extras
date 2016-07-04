@@ -27,6 +27,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.EnumChatFormatting;
+import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.chunk.Chunk;
@@ -40,6 +41,7 @@ import net.minecraftforge.event.entity.living.LivingEvent.LivingJumpEvent;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 import net.minecraftforge.event.entity.living.LivingFallEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
+import net.minecraftforge.event.entity.player.FillBucketEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent.NameFormat;
 import net.minecraftforge.event.entity.player.UseHoeEvent;
@@ -218,6 +220,26 @@ public class Events {
 	}
 	
 	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
+	public void FillBucket(FillBucketEvent event) {
+		ItemStack result = attemptFill(event.world, event.target);
+		if (result != null) {
+			event.result = result;
+			event.setResult(Result.ALLOW);
+		}
+	}
+	
+	private ItemStack attemptFill(World world, MovingObjectPosition p) {
+		Block id = world.getBlock(p.blockX, p.blockY, p.blockZ);
+		if (id == BlockList.blockChocolate) {
+			if (world.getBlockMetadata(p.blockX, p.blockY, p.blockZ) == 0) {
+				world.setBlock(p.blockX, p.blockY, p.blockZ, Blocks.air);
+				return new ItemStack(ItemList.chocolateBucket);
+			}
+		}
+		return null;
+	}
+	
+	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
 	public void onEntityJoinWorldEvent(EntityJoinWorldEvent event) {
 		if (event.entity instanceof EntityPlayer
 				&& !event.entity.worldObj.isRemote) {
@@ -267,7 +289,7 @@ public class Events {
 		if (!player.capabilities.isCreativeMode) {
 			double maxHealth = props.getMaxHealth();
 			player.getEntityAttribute(SharedMonsterAttributes.maxHealth)
-			.setBaseValue(maxHealth);
+					.setBaseValue(maxHealth);
 		}
 	}
 	
@@ -323,12 +345,12 @@ public class Events {
 									MainHelper.addChatMessage(
 											player,
 											EnumChatFormatting.GOLD
-											+ "+"
-											+ strIncrAmnt.substring(0,
-													3)
+													+ "+"
+													+ strIncrAmnt.substring(0,
+															3)
 													+ " Jump Height! Total: "
 													+ fullResist
-													.substring(0, 3));
+															.substring(0, 3));
 								}
 							}
 						}
@@ -370,11 +392,11 @@ public class Events {
 								MainHelper.addChatMessage(
 										player,
 										EnumChatFormatting.GOLD
-										+ "+"
-										+ blockFortune
-										+ " Fortune! Total: "
-										+ strFortuneLevel.substring(0,
-												3));
+												+ "+"
+												+ blockFortune
+												+ " Fortune! Total: "
+												+ strFortuneLevel.substring(0,
+														3));
 							}
 							if (new Random().nextInt(5) == 1) {
 								int numDropped = 0;

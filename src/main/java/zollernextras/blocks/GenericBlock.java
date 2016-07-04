@@ -33,4 +33,5 @@ public class GenericBlock extends Block {
 	public Material getMaterial() {
 		return blockMaterial;
 	}
+	
 }

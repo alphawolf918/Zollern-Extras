@@ -1,27 +1,27 @@
 package zollernextras.blocks.fluids;
 
-import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fluids.Fluid;
+import zollernextras.blocks.materials.MaterialList;
 import zollernextras.lib.MainHelper;
 import zollernextras.lib.ModInfo;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockFChocolate extends BlockFluidClassic {
+public class BlockFFueltonium extends BlockFluidClassic {
 	
 	@SideOnly(Side.CLIENT)
 	protected IIcon stillIcon;
 	@SideOnly(Side.CLIENT)
 	protected IIcon flowingIcon;
 	
-	public BlockFChocolate(Fluid fluid) {
-		super(fluid, Material.water);
-		MainHelper.setName(this, "chocolate");
+	public BlockFFueltonium(Fluid fluid) {
+		super(fluid, MaterialList.fueltonium);
+		MainHelper.setName(this, "fuel");
 	}
 	
 	@Override
@@ -37,19 +37,17 @@ public class BlockFChocolate extends BlockFluidClassic {
 	@SideOnly(Side.CLIENT)
 	public int colorMultiplier(IBlockAccess p_149720_1_, int p_149720_2_,
 			int p_149720_3_, int p_149720_4_) {
-		return 0x302013;
+		return 0x00ff00;
 	}
 	
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerBlockIcons(IIconRegister iir) {
-		stillIcon = iir.registerIcon(ModInfo.MODID + ":" + "chocolate_still");
-		flowingIcon = iir.registerIcon(ModInfo.MODID + ":"
-				+ "chocolate_flowing");
-		this.getFluid().setStillIcon(
-				iir.registerIcon(ModInfo.MODID + ":chocolate_still"));
+		stillIcon = iir.registerIcon(ModInfo.MODID + ":" + "fuel");
+		flowingIcon = iir.registerIcon(ModInfo.MODID + ":" + "fuel");
+		this.getFluid().setStillIcon(iir.registerIcon(ModInfo.MODID + ":fuel"));
 		this.getFluid().setFlowingIcon(
-				iir.registerIcon(ModInfo.MODID + ":chocolate_flowing"));
+				iir.registerIcon(ModInfo.MODID + ":fuel"));
 	}
 	
 	@Override

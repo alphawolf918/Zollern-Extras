@@ -203,8 +203,19 @@ tile.zollernextras_zollerniumore.name=Zollernium Ore
 tile.zollernextras_enderreeds.name=Ender Cane
 tile.zollernextras_enderdirt.name=Ender Dirt
 tile.zollernextras_magmarock.name=Magma Rock
+tile.zollernextras_boneblock.name=Bone Rock
+tile.zollernextras_endstonebricks.name=End Stone Bricks
+tile.zollernextras_rednetherbricks.name=Crimson Nether Bricks
+tile.zollernextras_netherwartblock.name=Nether Wart Block
+tile.zollernextras_redobsidian.name=Glowing Obsidian
 
 tile.zollernextras_chocolate.name=Melted Chocolate
+fluid.zollernextras_chocolate=Melted Chocolate
+zollernextras_chocolate=Melted Chocolate
+
+tile.zollernextras_fuel.name=Molten Fueltonium
+fluid.zollernextras_fuel=Molten Fueltonium
+zollernextras_fuel=Molten Fueltonium
 
 item.zollernextras_superchargedcoal.name=Super Charged Coal
 item.zollernextras_shinedust.name=Shinedust
@@ -392,6 +403,7 @@ item.zollernextras_nethereye.name=Nether Eye
 item.zollernextras_enderreeds.name=Ender Cane
 
 item.zollernextras_bucket_chocolate.name=Chocolate Bucket
+item.zollernextras_fuelbucket.name=Molten Fueltonium Bucket
 
 item.zollernextras_backpack.name=Backpack
 

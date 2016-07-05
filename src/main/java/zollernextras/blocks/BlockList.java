@@ -17,7 +17,9 @@ import zollernextras.blocks.crops.CropRadish;
 import zollernextras.blocks.crops.CropStrawberry;
 import zollernextras.blocks.crops.CropTomato;
 import zollernextras.blocks.fluids.BlockFChocolate;
+import zollernextras.blocks.fluids.BlockFFueltonium;
 import zollernextras.blocks.fluids.FluidChocolate;
+import zollernextras.blocks.fluids.FluidFueltonium;
 import zollernextras.blocks.ingotstacks.AmaranthIngotStack;
 import zollernextras.blocks.ingotstacks.FueltoniumIngotStack;
 import zollernextras.blocks.ingotstacks.GoldIngotStack;
@@ -321,11 +323,23 @@ public class BlockList {
 	public static Block enderReeds = new BlockEnderReeds();
 	public static Block enderDirt = new EnderDirt();
 	public static Block magmaBlock = new BlockMagma();
+	public static Block boneBlock = new GenericBlock("boneblock", 1.6F);
+	public static Block endStoneBricks = new GenericBlock("endstonebricks",
+			1.4F);
+	public static Block redNetherBricks = new GenericBlock("rednetherbricks",
+			1.2F);
+	public static Block netherWartBlock = new GenericBlock("netherwartblock",
+			0.8F);
+	public static Block redObsidian = new RedObsidian();
 	
 	public static FluidChocolate fluidChocolate = new FluidChocolate(
-			"chocolate");
+			ModInfo.MODID + "_chocolate");
 	public static final Block blockChocolate = new BlockFChocolate(
 			fluidChocolate);
+	
+	public static FluidFueltonium fluidFuel = new FluidFueltonium(
+			"Molten Fueltonium");
+	public static Block blockFuel = new BlockFFueltonium(fluidFuel);
 	
 	public static HashMap<String, Class<? extends TileEntity>> TERegistry;
 	
@@ -514,8 +528,14 @@ public class BlockList {
 		addBlock(enderReeds, "Ender Reeds");
 		addBlock(enderDirt, "Ender Dirt");
 		addBlock(magmaBlock, "Magma Block");
+		addBlock(boneBlock, "Bone Rock");
+		addBlock(endStoneBricks, "Endstone Bricks");
+		addBlock(redNetherBricks, "Red Nether Bricks");
+		addBlock(netherWartBlock, "Nether Wart Block");
+		addBlock(redObsidian, "Crimson Obsidian");
 		
 		addBlock(blockChocolate, "Melted Chocolate");
+		addBlock(blockFuel, "Molten Fueltonium");
 		
 		TERegistry = new HashMap<String, Class<? extends TileEntity>>();
 		ironBlockIngot = addIngotTile(new IronIngotStack("iron"), "iron",

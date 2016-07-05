@@ -195,4 +195,14 @@ public class ZollernBucket extends ModItem {
 			}
 		}
 	}
+	
+	@Override
+	public ItemStack getContainerItem(ItemStack itemStack) {
+		return new ItemStack(Items.bucket);
+	}
+	
+	@Override
+	public boolean hasContainerItem() {
+		return true;
+	}
 }

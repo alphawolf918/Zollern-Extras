@@ -55,6 +55,8 @@ public class ZollernExtrasMod {
 		ItemList.init();
 		Items.saddle.setMaxStackSize(64);
 		Items.ender_pearl.setMaxStackSize(64);
+		Items.bucket.setMaxStackSize(64);
+		Items.snowball.setMaxStackSize(64);
 		BlockList.init();
 		TreeCapHelper.init();
 		Mobs.init();

@@ -284,6 +284,8 @@ public class ItemList {
 	
 	public static Item chocolateBucket = new ZollernBucket("bucket_chocolate",
 			BlockList.blockChocolate);
+	public static Item fuelBucket = new ZollernBucket("fuelbucket",
+			BlockList.blockFuel);
 	
 	public static void init() {
 		addItem(spcItem, "Super Charged Coal");
@@ -457,6 +459,7 @@ public class ItemList {
 		addItem(enderReeds, "Ender Cane");
 		
 		addItem(chocolateBucket, "Chocolate Bucket");
+		addItem(fuelBucket, "Fueltonium Bucket");
 		
 		MainHelper.Log("Items loaded, " + totalItems + " entries.");
 	}

@@ -41,6 +41,8 @@ import net.minecraftforge.event.entity.living.LivingEvent.LivingJumpEvent;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 import net.minecraftforge.event.entity.living.LivingFallEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
+import net.minecraftforge.event.entity.player.ArrowLooseEvent;
+import net.minecraftforge.event.entity.player.ArrowNockEvent;
 import net.minecraftforge.event.entity.player.FillBucketEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent.NameFormat;
@@ -122,6 +124,18 @@ public class Events {
 				}
 			}
 		}
+	}
+	
+	// Began using a bow
+	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
+	public void onPlayerStartedUsingBow(ArrowNockEvent event) {
+		
+	}
+	
+	// Stopped using a bow
+	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
+	public void onPlayerStoppedUsingBow(ArrowLooseEvent event) {
+		
 	}
 	
 	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
@@ -235,6 +249,11 @@ public class Events {
 				world.setBlock(p.blockX, p.blockY, p.blockZ, Blocks.air);
 				return new ItemStack(ItemList.chocolateBucket);
 			}
+		} else if (id == BlockList.blockFuel) {
+			if (world.getBlockMetadata(p.blockX, p.blockY, p.blockZ) == 0) {
+				world.setBlock(p.blockX, p.blockY, p.blockZ, Blocks.air);
+				return new ItemStack(ItemList.fuelBucket);
+			}
 		}
 		return null;
 	}
@@ -289,7 +308,7 @@ public class Events {
 		if (!player.capabilities.isCreativeMode) {
 			double maxHealth = props.getMaxHealth();
 			player.getEntityAttribute(SharedMonsterAttributes.maxHealth)
-					.setBaseValue(maxHealth);
+			.setBaseValue(maxHealth);
 		}
 	}
 	
@@ -345,12 +364,12 @@ public class Events {
 									MainHelper.addChatMessage(
 											player,
 											EnumChatFormatting.GOLD
-													+ "+"
-													+ strIncrAmnt.substring(0,
-															3)
+											+ "+"
+											+ strIncrAmnt.substring(0,
+													3)
 													+ " Jump Height! Total: "
 													+ fullResist
-															.substring(0, 3));
+													.substring(0, 3));
 								}
 							}
 						}
@@ -392,11 +411,11 @@ public class Events {
 								MainHelper.addChatMessage(
 										player,
 										EnumChatFormatting.GOLD
-												+ "+"
-												+ blockFortune
-												+ " Fortune! Total: "
-												+ strFortuneLevel.substring(0,
-														3));
+										+ "+"
+										+ blockFortune
+										+ " Fortune! Total: "
+										+ strFortuneLevel.substring(0,
+												3));
 							}
 							if (new Random().nextInt(5) == 1) {
 								int numDropped = 0;

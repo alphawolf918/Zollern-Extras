@@ -155,6 +155,7 @@ public class OreDict {
 		
 		// Dye
 		registerOre("dyeGreen", ItemList.greenDye);
+		registerOre("dyePink", ItemList.enderReeds);
 		
 		// Obsidian
 		registerOre("ingotObsidian", ItemList.obsidianIngot);

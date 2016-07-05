@@ -1,18 +1,33 @@
 [2.8]
 * Added Ender Cane.
     * Generates naturally in The End.
-    * Only grows on End Stone.
-* Added melted chocolate fluid block.
+    * Only grows on End Stone and Ender Dirt.
+    * Item can be used as a pink dye.
+* Added the Melted Chocolate fluid and Melted Chocolate Bucket.
     * Generates naturally as lakes in Candy Land biomes.
-    * Behaves just like water.
-    * Can be picked up in a bucket.
+    * Obtained by putting Chocolate Blocks in a Magma Crucible, or by picking it up in a bucket.
 * Added Ender Dirt block.
     * Generates naturally in lakes in The End.
 * Added Magma Rock block.
-    * Generates naturally in the Nether.
+    * Generates naturally in the Nether, in lake form and Glowstone form.
     * Touching it causes fire damage, and also sets the Player on fire, which causes separate damage.
     * Can also be crafted using four Magma Creams and vice versa.
-
+    * One Magma Rock block can be put into the Magma Crucible to give 5,000 mB of Lava.
+* Added the Molten Fueltonium fluid and Molten Fueltonium Bucket.
+    * Obtained by putting Fueltonium Ingots or Blocks into a Magma Crucible.
+* Buckets and Snowballs are now stackable up to 64.
+* Changed the texture for Flour.
+* Slightly lowered the spawn chance for Flowery Field biomes.
+* Added the Bone Rock block.
+    * Crafted using 9 Skeleton bones and vice versa.
+* Added End Stone Bricks.
+    * Crafted using 4 End Stone blocks.
+* Added Red Nether Bricks.
+    * Crafted using 2 Nether Bricks and 2 Nether Warts.
+* Added the Glowing Obsidian block.
+    * Crafted using 2 Obsidian and 2 Red Netherbricks.
+    * One Glowing Obsidian block can be put into the Magma Crucible to give 2,500 mB of lava.
+* Changed the Grapefruit Log textures.
 
 
 [2.7]

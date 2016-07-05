@@ -11,6 +11,7 @@ import zollernextras.config.ZEConfig;
 import zollernextras.items.ItemList;
 import zollernextras.lib.modhelper.ThermalExpansionHelper;
 import zollernextras.lib.recipes.InductionSmelterRecipes;
+import zollernextras.lib.recipes.LiquidRecipes;
 import zollernextras.lib.recipes.PulverizerRecipes;
 import zollernextras.lib.recipes.ToolArmorRecipes;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -26,6 +27,7 @@ public class Recipes {
 		MainHelper.Log("Pulverizer recipes successfully loaded.");
 		InductionSmelterRecipes.init();
 		MainHelper.Log("Induction smelter recipes successfully loaded.");
+		LiquidRecipes.init();
 	}
 	
 	static class Crafting {
@@ -83,6 +85,11 @@ public class Recipes {
 					addHorseArmor(Items.diamond_horse_armor,
 							Blocks.diamond_block);
 				}
+				
+				// Red Nether Bricks
+				GameRegistry.addRecipe(new ItemStack(BlockList.redNetherBricks,
+						2), new Object[] { "NB ", "BN ", "   ", 'B',
+						Items.netherbrick, 'N', Items.nether_wart });
 			}
 			
 			// Ender Shards to Ender Pearl
@@ -211,11 +218,16 @@ public class Recipes {
 							'S', ItemList.shinestoneIngot, 'L',
 							ItemList.lapisIngot });
 			
+			// Crimson Obsidian
+			GameRegistry.addRecipe(new ItemStack(BlockList.redObsidian, 2),
+					new Object[] { "BN ", "NB ", "   ", 'B',
+				BlockList.netherWartBlock, 'N', Blocks.obsidian });
+			
 			// Netherized Obsidian
 			GameRegistry.addRecipe(new ItemStack(BlockList.netherizedObsidian,
 					1), new Object[] { "WNW", "NON", "SNS", 'N',
 					BlockList.netheridiumBlock, 'W', BlockList.witheriteBlock,
-					'O', Blocks.obsidian, 'S', ItemList.shadowEssence });
+					'O', BlockList.redObsidian, 'S', ItemList.shadowEssence });
 			
 			// Garnet
 			fullBlockCraft(BlockList.garnet, ItemList.garnet);
@@ -265,6 +277,9 @@ public class Recipes {
 			// Sugar
 			fullBlockCraft(BlockList.sugarCube, Items.sugar);
 			
+			// Nether Wart Block
+			fullBlockCraft(BlockList.netherWartBlock, Items.nether_wart);
+			
 			// Polished Andesite
 			addOWBricks(BlockList.andesite, BlockList.polishedAndesite);
 			
@@ -273,6 +288,9 @@ public class Recipes {
 			
 			// Polished Granite
 			addOWBricks(BlockList.granite, BlockList.polishedGranite);
+			
+			// Endstone Bricks
+			addOWBricks(Blocks.end_stone, BlockList.endStoneBricks);
 			
 			// Obsidian
 			GameRegistry.addRecipe(new ItemStack(Blocks.obsidian, 1),
@@ -572,6 +590,9 @@ public class Recipes {
 			
 			// Chocolate Block
 			fullBlockCraft(BlockList.chocolateBlock, ItemList.chocolateBar);
+			
+			// Bone Block
+			fullBlockCraft(BlockList.boneBlock, Items.bone);
 			
 			// Azurite
 			fullBlockCraft(BlockList.azurite, ItemList.azurite);

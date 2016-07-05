@@ -19,6 +19,7 @@ import net.minecraft.entity.passive.EntitySheep;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -129,7 +130,16 @@ public class Events {
 	// Began using a bow
 	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
 	public void onPlayerStartedUsingBow(ArrowNockEvent event) {
-		
+		Entity entity = event.entity;
+		if (event.entity instanceof EntityPlayer) {
+			EntityPlayer player = event.entityPlayer;
+			World world = event.entityPlayer.worldObj;
+			InventoryPlayer playerInventory = player.inventory;
+			if (playerInventory.hasItem(ItemList.quiver)) {
+				// int quiverInventorySlot = playerInventory
+				// .func_146029_c(ItemList.quiver);
+			}
+		}
 	}
 	
 	// Stopped using a bow

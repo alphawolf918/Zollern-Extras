@@ -101,19 +101,19 @@ public class ZEConfig {
 						"fueltoniumActsAsYellorite",
 						true,
 						"If enabled, Fueltonium Ingots will do the same as Yellorium Ingots in BigReactors, and can be used in their place.")
-						.getBoolean();
+				.getBoolean();
 		shiniumIsPlatinum = config
 				.get(config.CATEGORY_GENERAL,
 						"shiniumIsPlatinum",
 						true,
 						"If enabled, Shinium Ingots and Precious Shinium will function as Platinum Ingots and Platinum Dust, respectively (Thermal Foundation, Metallurgy, etc).")
-						.getBoolean();
+				.getBoolean();
 		betterGlassIsGlass = config
 				.get(config.CATEGORY_GENERAL,
 						"betterGlassIsGlass",
 						true,
 						"If enabled, Better Glass can be used in place of regular glass. Useful if you have a lot of gravel.")
-						.getBoolean();
+				.getBoolean();
 		rottenFleshCooksIntoLeather = config.get(CATEGORY_IMPROVEMENTS,
 				"rottenFleshCooksIntoLeather", true,
 				"If enabled, rotten flesh can be smelted into leather.")
@@ -123,17 +123,17 @@ public class ZEConfig {
 		vanillaItemsAreCraftable = config
 				.get(CATEGORY_IMPROVEMENTS, "vanillaItemsAreCraftable", true,
 						"If enabled, normally uncraftable vanilla items will be craftable.")
-						.getBoolean();
+				.getBoolean();
 		horseArmorIsCraftable = config
 				.get(CATEGORY_IMPROVEMENTS,
 						"horseArmorIsCraftable",
 						true,
 						"If enabled, horse armor may be crafted using its respective material and obsidian. (This is separate from the above on purpose.)")
-						.getBoolean();
+				.getBoolean();
 		biomeDisplaysOnHUD = config
 				.get(CATEGORY_IMPROVEMENTS, "biomeDisplaysOnHUD", true,
 						"Disable this if you don't want the current biome to show on your HUD.")
-						.getBoolean();
+				.getBoolean();
 		
 		// Biomes
 		biomeIcyDesertID = config.get(CATEGORY_BIOMES, "biomeIcyDesertID", 67)
@@ -164,8 +164,8 @@ public class ZEConfig {
 				.getInt();
 		biomeCrystalOceanID = config.get(CATEGORY_BIOMES,
 				"biomeCrystalOceanID", 80).getInt();
-		biomeTropicalForestID = config.get(CATEGORY_BIOMES, "biomeTropicalForestID",
-				180).getInt();
+		biomeTropicalForestID = config.get(CATEGORY_BIOMES,
+				"biomeTropicalForestID", 81).getInt();
 		
 		// Mobs
 		mobFishSpawnRate = config.get(CATEGORY_MOBS, "mobFishSpawnRate", 70)

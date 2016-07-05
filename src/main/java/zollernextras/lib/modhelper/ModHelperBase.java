@@ -1,25 +1,23 @@
 package zollernextras.lib.modhelper;
 
+import zollernextras.lib.MainHelper;
 import cpw.mods.fml.common.Loader;
-import cpw.mods.fml.common.ModAPIManager;
 
 public class ModHelperBase {
 	
-	public static boolean useCofh;
-	public static boolean useBuildcraftTools;
-	public static boolean useBuildcraftTransport;
-	public static boolean useMetallurgy;
-	
-	public void register() {
-		
-	}
+	public static boolean useCofh = false;
+	public static boolean useZaneExtras = false;
 	
 	public static void detectMods() {
-		useCofh = Loader.isModLoaded("CoFHCore");
-		useMetallurgy = Loader.isModLoaded("Metallurgy");
-		useBuildcraftTools = ModAPIManager.INSTANCE
-				.hasAPI("BuildCraftAPI|tools");
-		useBuildcraftTransport = ModAPIManager.INSTANCE
-				.hasAPI("BuildCraftAPI|transport");
+		useCofh = isModLoaded("CoFHCore");
+		useZaneExtras = isModLoaded("zaneextras");
+	}
+	
+	public static boolean isModLoaded(String modName) {
+		boolean isLoaded = Loader.isModLoaded(modName);
+		if (isLoaded) {
+			MainHelper.Log("Detected mod: " + modName + ".");
+		}
+		return isLoaded;
 	}
 }

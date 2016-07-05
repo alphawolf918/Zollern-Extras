@@ -208,6 +208,7 @@ tile.zollernextras_endstonebricks.name=End Stone Bricks
 tile.zollernextras_rednetherbricks.name=Crimson Nether Bricks
 tile.zollernextras_netherwartblock.name=Nether Wart Block
 tile.zollernextras_redobsidian.name=Glowing Obsidian
+tile.zollernextras_pizza.name=Pizza Block
 
 tile.zollernextras_chocolate.name=Melted Chocolate
 fluid.zollernextras_chocolate=Melted Chocolate
@@ -401,6 +402,10 @@ item.zollernextras_brickingot_purple.name=Purple Brick Ingot
 
 item.zollernextras_nethereye.name=Nether Eye
 item.zollernextras_enderreeds.name=Ender Cane
+item.zollernextras_dough.name=Dough
+item.zollernextras_cookeddough.name=Cooked Dough
+item.zollernextras_tomatopaste.name=Tomato Paste
+item.zollernextras_pizza.name=Pizza
 
 item.zollernextras_bucket_chocolate.name=Chocolate Bucket
 item.zollernextras_fuelbucket.name=Molten Fueltonium Bucket

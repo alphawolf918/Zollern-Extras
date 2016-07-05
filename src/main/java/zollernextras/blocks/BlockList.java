@@ -20,6 +20,7 @@ import zollernextras.blocks.fluids.BlockFChocolate;
 import zollernextras.blocks.fluids.BlockFFueltonium;
 import zollernextras.blocks.fluids.FluidChocolate;
 import zollernextras.blocks.fluids.FluidFueltonium;
+import zollernextras.blocks.food.BlockPizza;
 import zollernextras.blocks.ingotstacks.AmaranthIngotStack;
 import zollernextras.blocks.ingotstacks.FueltoniumIngotStack;
 import zollernextras.blocks.ingotstacks.GoldIngotStack;
@@ -331,6 +332,7 @@ public class BlockList {
 	public static Block netherWartBlock = new GenericBlock("netherwartblock",
 			0.8F);
 	public static Block redObsidian = new RedObsidian();
+	public static Block blockPizza = new BlockPizza();
 	
 	public static FluidChocolate fluidChocolate = new FluidChocolate(
 			ModInfo.MODID + "_chocolate");
@@ -533,6 +535,7 @@ public class BlockList {
 		addBlock(redNetherBricks, "Red Nether Bricks");
 		addBlock(netherWartBlock, "Nether Wart Block");
 		addBlock(redObsidian, "Crimson Obsidian");
+		addBlock(blockPizza, "Pizza Block");
 		
 		addBlock(blockChocolate, "Melted Chocolate");
 		addBlock(blockFuel, "Molten Fueltonium");

@@ -3,6 +3,7 @@ package zollernextras.inventory;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.IInventory;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
@@ -92,19 +93,20 @@ public class InventoryQuiver implements IInventory {
 	@Override
 	public void markDirty() {
 		for (int i = 0; i < getSizeInventory(); ++i) {
-			if (getStackInSlot(i) != null && getStackInSlot(i).stackSize == 0)
+			if (getStackInSlot(i) != null && getStackInSlot(i).stackSize == 0) {
 				inventory[i] = null;
+			}
 		}
 		writeToNBT(invStack.getTagCompound());
 	}
 	
 	@Override
 	public boolean isUseableByPlayer(EntityPlayer player) {
-		// this will close the inventory if the player tries to move
+		// This will close the inventory if the player tries to move
 		// the item that opened it, but you need to return this method
-		// from the Container's canInteractWith method
-		// an alternative would be to override the slotClick method and
-		// prevent the current item slot from being clicked
+		// from the Container's canInteractWith method.
+		// An alternative would be to override the slotClick method and
+		// prevent the current item slot from being clicked.
 		return player.getHeldItem() == invStack;
 	}
 	
@@ -118,8 +120,12 @@ public class InventoryQuiver implements IInventory {
 	
 	@Override
 	public boolean isItemValidForSlot(int slot, ItemStack stack) {
-		return !(stack.getItem() instanceof ItemQuiver)
-				&& stack.getItem() == Items.arrow;
+		Item item = stack.getItem();
+		if (!(item instanceof ItemQuiver)) {
+			return stack.getItem() == Items.arrow
+					|| item.getUnlocalizedName().contains("arrow");
+		}
+		return false;
 	}
 	
 	public void readFromNBT(NBTTagCompound compound) {

@@ -6,8 +6,10 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.util.ChatComponentText;
 import net.minecraftforge.common.config.Configuration;
+import org.apache.logging.log4j.Level;
 import zollernextras.creativetabs.ModTabs;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.relauncher.FMLRelaunchLog;
 
 public class MainHelper {
 	
@@ -80,10 +82,10 @@ public class MainHelper {
 	}
 	
 	public static void echo(String str) {
-		System.out.println(str);
+		FMLRelaunchLog.log(ModInfo.OFFICIAL_NAME, Level.INFO, str);
 	}
 	
 	public static void Log(String str) {
-		echo("[Zollern Extras] " + str);
+		echo(str);
 	}
 }

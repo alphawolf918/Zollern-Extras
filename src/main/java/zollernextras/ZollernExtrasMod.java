@@ -15,6 +15,7 @@ import zollernextras.lib.MainHelper;
 import zollernextras.lib.ModInfo;
 import zollernextras.lib.OreDict;
 import zollernextras.lib.Recipes;
+import zollernextras.lib.modhelper.ModHelperBase;
 import zollernextras.lib.modhelper.TreeCapHelper;
 import zollernextras.mobs.Mobs;
 import zollernextras.network.PacketDispatcher;
@@ -49,6 +50,7 @@ public class ZollernExtrasMod {
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		MainHelper.Log("Beginning to load Zollern Extras...");
+		ModHelperBase.detectMods();
 		this.filePath = MainHelper.getFilePath(event);
 		ModTabs.init();
 		ZEConfig.init(event);

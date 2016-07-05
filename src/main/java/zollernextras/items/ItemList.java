@@ -1,6 +1,7 @@
 package zollernextras.items;
 
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.potion.Potion;
 import zollernextras.blocks.BlockList;
@@ -279,8 +280,11 @@ public class ItemList {
 	public static Item bricksPurple = new ColoredBrick("purple");
 	
 	public static Item netherEye = new ItemNetherEye();
-	
 	public static Item enderReeds = new ItemEnderReed();
+	public static Item dough = new ModItem("dough");
+	public static Item cookedDough = new ModItem("cookeddough");
+	public static Item tomatoPaste = new ZollernContainer("tomatopaste",
+			Items.glass_bottle);
 	
 	public static Item chocolateBucket = new ZollernBucket("bucket_chocolate",
 			BlockList.blockChocolate);
@@ -457,6 +461,9 @@ public class ItemList {
 		
 		addItem(netherEye, "Nether Eye");
 		addItem(enderReeds, "Ender Cane");
+		addItem(dough, "Dough");
+		addItem(tomatoPaste, "Tomato Paste");
+		addItem(cookedDough, "Cooked Dough");
 		
 		addItem(chocolateBucket, "Chocolate Bucket");
 		addItem(fuelBucket, "Fueltonium Bucket");

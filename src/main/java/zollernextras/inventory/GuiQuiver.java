@@ -10,9 +10,10 @@ import org.lwjgl.opengl.GL11;
 import zollernextras.lib.ModInfo;
 
 public class GuiQuiver extends GuiContainer {
+	
 	/**
 	 * x and y size of the inventory window in pixels. Defined as float, passed
-	 * as int These are used for drawing the player model.
+	 * as int. These are used for drawing the player model.
 	 */
 	private float xSize_lo;
 	private float ySize_lo;

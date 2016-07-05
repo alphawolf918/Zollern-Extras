@@ -13,13 +13,13 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.FillBucketEvent;
 import cpw.mods.fml.common.eventhandler.Event;
 
-public class ZollernBucket extends ModItem {
+public class ZollernBucket extends ZollernContainer {
+	
 	/** field for checking if the bucket has been filled. */
 	private Block isFull;
-	private static final String __OBFID = "CL_00000000";
 	
 	public ZollernBucket(String strTexture, Block p_i45331_1_) {
-		super(strTexture);
+		super(strTexture, Items.bucket);
 		this.maxStackSize = 1;
 		this.isFull = p_i45331_1_;
 	}
@@ -167,14 +167,14 @@ public class ZollernBucket extends ModItem {
 				if (p_77875_1_.provider.isHellWorld
 						&& this.isFull == Blocks.flowing_water) {
 					p_77875_1_
-							.playSoundEffect(
-									p_77875_2_ + 0.5F,
-									p_77875_3_ + 0.5F,
-									p_77875_4_ + 0.5F,
-									"random.fizz",
-									0.5F,
-									2.6F + (p_77875_1_.rand.nextFloat() - p_77875_1_.rand
-											.nextFloat()) * 0.8F);
+					.playSoundEffect(
+							p_77875_2_ + 0.5F,
+							p_77875_3_ + 0.5F,
+							p_77875_4_ + 0.5F,
+							"random.fizz",
+							0.5F,
+							2.6F + (p_77875_1_.rand.nextFloat() - p_77875_1_.rand
+									.nextFloat()) * 0.8F);
 					
 					for (int l = 0; l < 8; ++l) {
 						p_77875_1_.spawnParticle("largesmoke", p_77875_2_
@@ -196,13 +196,13 @@ public class ZollernBucket extends ModItem {
 		}
 	}
 	
-	@Override
-	public ItemStack getContainerItem(ItemStack itemStack) {
-		return new ItemStack(Items.bucket);
-	}
-	
-	@Override
-	public boolean hasContainerItem() {
-		return true;
-	}
+	// @Override
+	// public ItemStack getContainerItem(ItemStack itemStack) {
+	// return new ItemStack(Items.bucket);
+	// }
+	//
+	// @Override
+	// public boolean hasContainerItem() {
+	// return true;
+	// }
 }

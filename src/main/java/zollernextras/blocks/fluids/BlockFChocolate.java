@@ -2,6 +2,10 @@ package zollernextras.blocks.fluids;
 
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
@@ -22,6 +26,15 @@ public class BlockFChocolate extends BlockFluidClassic {
 	public BlockFChocolate(Fluid fluid) {
 		super(fluid, Material.water);
 		MainHelper.setName(this, "chocolate");
+	}
+	
+	@Override
+	public void onEntityCollidedWithBlock(World world, int x, int y, int z,
+			Entity entity) {
+		if (entity instanceof EntityLivingBase) {
+			EntityLivingBase living = (EntityLivingBase) entity;
+			living.addPotionEffect(new PotionEffect(Potion.moveSpeed.id, 100, 4));
+		}
 	}
 	
 	@Override

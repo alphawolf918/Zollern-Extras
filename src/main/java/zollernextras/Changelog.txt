@@ -6,6 +6,7 @@
 * Added the Melted Chocolate fluid and Melted Chocolate Bucket.
     * Generates naturally as lakes in Candy Land biomes.
     * Obtained by putting Chocolate Blocks in a Magma Crucible, or by picking it up in a bucket.
+    * Briefly applies a speed boost to the Player when swam in.
 * Added Ender Dirt block.
     * Generates naturally in lakes in The End.
 * Added Magma Rock block.
@@ -15,6 +16,9 @@
     * One Magma Rock block can be put into the Magma Crucible to give 5,000 mB of Lava.
 * Added the Molten Fueltonium fluid and Molten Fueltonium Bucket.
     * Obtained by putting Fueltonium Ingots or Blocks into a Magma Crucible.
+    * Greatly harms the Player when swam in.
+    * Kills items when they're tossed into it.
+    * Used as a very powerful reactant fuel for the Reactant Dynamo.
 * Buckets and Snowballs are now stackable up to 64.
 * Changed the texture for Flour.
 * Slightly lowered the spawn chance for Flowery Field biomes.
@@ -28,6 +32,13 @@
     * Crafted using 2 Obsidian and 2 Red Netherbricks.
     * One Glowing Obsidian block can be put into the Magma Crucible to give 2,500 mB of lava.
 * Changed the Grapefruit Log textures.
+* "Heal" command now heals the Player's hunger bar as well.
+* Changed ID of Tropical Forest biome from 180 to 81.
+* This mod can now directly communicate with Zane Extras.
+* Added Tomato Paste and Cooked Dough.
+* Added the Pizza Block.
+    * Crafted using Tomato Paste, Cheese from Zane Extras, and Cooked Dough.
+    * This recipe requires Zane Extras to be present, otherwise it does not load.
 
 
 [2.7]

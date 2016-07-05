@@ -53,6 +53,8 @@ public class CommandHeal extends CommandBase implements ICommand {
 						+ "Only online Players may use this command.");
 				return;
 			}
+			player.getFoodStats().setFoodLevel(20);
+			player.getFoodStats().setFoodSaturationLevel(5.0F);
 			ExtendedPlayer props = ExtendedPlayer.get(player);
 			double maxHealth = props.getMaxHealth();
 			player.setHealth((float) maxHealth);

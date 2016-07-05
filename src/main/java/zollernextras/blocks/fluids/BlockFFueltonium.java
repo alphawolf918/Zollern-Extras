@@ -1,6 +1,11 @@
 package zollernextras.blocks.fluids;
 
 import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.item.EntityItem;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
@@ -22,6 +27,18 @@ public class BlockFFueltonium extends BlockFluidClassic {
 	public BlockFFueltonium(Fluid fluid) {
 		super(fluid, MaterialList.fueltonium);
 		MainHelper.setName(this, "fuel");
+	}
+	
+	@Override
+	public void onEntityCollidedWithBlock(World world, int x, int y, int z,
+			Entity entity) {
+		if (entity instanceof EntityLivingBase) {
+			EntityLivingBase living = (EntityLivingBase) entity;
+			living.addPotionEffect(new PotionEffect(Potion.harm.id, 60, 4));
+		} else if (entity instanceof EntityItem) {
+			EntityItem item = (EntityItem) entity;
+			item.setDead();
+		}
 	}
 	
 	@Override

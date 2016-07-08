@@ -2,11 +2,12 @@ package zollernextras.items;
 
 import java.util.List;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.world.World;
+import zollernextras.items.teleporter.MessageTeleportToDimension;
 import zollernextras.lib.KeyHelper;
+import zollernextras.network.PacketDispatcher;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -24,19 +25,10 @@ public class ItemNetherEye extends ModItem {
 		if (!par3EntityPlayer.capabilities.isCreativeMode) {
 			par1ItemStack.damageItem(1, par3EntityPlayer);
 		}
-		if (!par2World.isRemote) {
-			int dimId = par3EntityPlayer.dimension == 0 ? -1 : 0;
-			par3EntityPlayer.travelToDimension(dimId);
-			double posX = par3EntityPlayer.posX;
-			double posY = par3EntityPlayer.posY;
-			double posZ = par3EntityPlayer.posZ;
-			for (int i = 0; i < 5; i++) {
-				par2World.setBlock((int) posX + i, (int) posY + i, (int) posZ
-						+ i, Blocks.air);
-				par2World.setBlock((int) posX + i, (int) posY + 1, (int) posZ
-						+ i, Blocks.air);
-			}
-		}
+		int dimId = par3EntityPlayer.dimension == 0 ? -1 : 0;
+		int entityId = par3EntityPlayer.getEntityId();
+		PacketDispatcher.getSimpleNetworkWrapper().sendToServer(
+				new MessageTeleportToDimension(dimId, entityId));
 		return par1ItemStack;
 	}
 	
@@ -45,12 +37,10 @@ public class ItemNetherEye extends ModItem {
 	public void addInformation(ItemStack p_77624_1_, EntityPlayer p_77624_2_,
 			List list, boolean p_77624_4_) {
 		if (KeyHelper.isCtrlKeyDown() || KeyHelper.isShiftKeyDown()) {
-			list.add(EnumChatFormatting.ITALIC + "WARNING: ");
-			list.add(EnumChatFormatting.ITALIC
-					+ "Currently buggy, may not work");
-			list.add(EnumChatFormatting.ITALIC + " correctly.");
+			list.add(EnumChatFormatting.ITALIC + "Teleport to and from the");
+			list.add(EnumChatFormatting.ITALIC + " Nether at will!");
 		} else {
-			list.add("Hold SHIFT for");
+			list.add("Hold LSHIFT for ");
 			list.add("more information.");
 		}
 	}

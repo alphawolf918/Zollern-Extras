@@ -1,7 +1,6 @@
 package zollernextras;
 
 import java.io.File;
-import net.minecraft.init.Items;
 import zollernextras.biomes.BiomeList;
 import zollernextras.blocks.BlockList;
 import zollernextras.command.Commands;
@@ -11,10 +10,12 @@ import zollernextras.entity.EntityDuckEgg;
 import zollernextras.handlers.FuelHandlers;
 import zollernextras.handlers.Handlers;
 import zollernextras.items.ItemList;
+import zollernextras.items.StackChange;
 import zollernextras.lib.MainHelper;
 import zollernextras.lib.ModInfo;
 import zollernextras.lib.OreDict;
-import zollernextras.lib.Recipes;
+import zollernextras.lib.RecipeManager;
+import zollernextras.lib.Treasures;
 import zollernextras.lib.modhelper.ModHelperBase;
 import zollernextras.lib.modhelper.TreeCapHelper;
 import zollernextras.mobs.Mobs;
@@ -55,10 +56,7 @@ public class ZollernExtrasMod {
 		ModTabs.init();
 		ZEConfig.init(event);
 		ItemList.init();
-		Items.saddle.setMaxStackSize(64);
-		Items.ender_pearl.setMaxStackSize(64);
-		Items.bucket.setMaxStackSize(64);
-		Items.snowball.setMaxStackSize(64);
+		StackChange.init();
 		BlockList.init();
 		TreeCapHelper.init();
 		Mobs.init();
@@ -71,7 +69,8 @@ public class ZollernExtrasMod {
 		EntityRegistry.registerModEntity(EntityDuckEgg.class, "DuckEgg", 1,
 				INSTANCE, 64, 20, true);
 		BiomeList.init();
-		Recipes.init();
+		RecipeManager.init();
+		Treasures.init();
 		Handlers.init();
 		OreDict.init();
 		NetworkRegistry.INSTANCE.registerGuiHandler(this, new CommonProxy());

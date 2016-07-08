@@ -2,6 +2,7 @@ package zollernextras.network;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
+import zollernextras.items.teleporter.MessageTeleportToDimension;
 import zollernextras.lib.MainHelper;
 import zollernextras.lib.ModInfo;
 import zollernextras.network.client.SyncPlayerPropsMessage;
@@ -14,8 +15,6 @@ import cpw.mods.fml.relauncher.Side;
 
 public class PacketDispatcher {
 	
-	// a simple counter will allow us to get rid of 'magic' numbers used during
-	// packet registration
 	private static byte packetId = 0;
 	
 	/**
@@ -40,7 +39,16 @@ public class PacketDispatcher {
 		// Packets handled on SERVER
 		registerMessage(OpenGuiMessage.class);
 		
+		// Nether Eye Teleport Message
+		PacketDispatcher.dispatcher.registerMessage(
+				MessageTeleportToDimension.TeleportHandler.class,
+				MessageTeleportToDimension.class, 1, Side.SERVER);
+		
 		MainHelper.Log("Packets regsitered.");
+	}
+	
+	public static SimpleNetworkWrapper getSimpleNetworkWrapper() {
+		return PacketDispatcher.dispatcher;
 	}
 	
 	/**
@@ -48,14 +56,6 @@ public class PacketDispatcher {
 	 */
 	private static final <T extends AbstractMessage<T> & IMessageHandler<T, IMessage>> void registerMessage(
 			Class<T> clazz) {
-		// We can tell by the message class which side to register it on by
-		// using #isAssignableFrom (google it)
-		
-		// Also, one can see the convenience of using a static counter
-		// 'packetId' to keep
-		// track of the current index, rather than hard-coding them all, plus
-		// it's one less
-		// parameter to pass.
 		if (AbstractMessage.AbstractClientMessage.class.isAssignableFrom(clazz)) {
 			PacketDispatcher.dispatcher.registerMessage(clazz, clazz,
 					packetId++, Side.CLIENT);
@@ -64,20 +64,12 @@ public class PacketDispatcher {
 			PacketDispatcher.dispatcher.registerMessage(clazz, clazz,
 					packetId++, Side.SERVER);
 		} else {
-			// hopefully you didn't forget to extend the right class, or you
-			// will get registered on both sides
 			PacketDispatcher.dispatcher.registerMessage(clazz, clazz, packetId,
 					Side.CLIENT);
 			PacketDispatcher.dispatcher.registerMessage(clazz, clazz,
 					packetId++, Side.SERVER);
 		}
 	}
-	
-	// ========================================================//
-	// The following methods are the 'wrapper' methods; again,
-	// this just makes sending a message slightly more compact
-	// and is purely a matter of stylistic preference
-	// ========================================================//
 	
 	/**
 	 * Send this message to the specified player's client-side counterpart. See

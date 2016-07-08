@@ -1,7 +1,6 @@
 package zollernextras.items;
 
 import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.potion.Potion;
 import zollernextras.blocks.BlockList;
@@ -188,6 +187,7 @@ public class ItemList {
 	public static Item netheridium = new Gem("netheridium");
 	public static Item ruby = new Gem("ruby");
 	public static Item sapphire = new Gem("sapphire");
+	public static Item enderDiamond = new Gem("enderdiamond");
 	
 	public static Item thorSword = new ThunderSword(ToolMaterials.POWER);
 	public static Item enderSword = new EnderSword(ToolMaterials.POWER);
@@ -278,13 +278,15 @@ public class ItemList {
 	public static Item bricksRed = new ColoredBrick("red");
 	public static Item bricksBlue = new ColoredBrick("blue");
 	public static Item bricksPurple = new ColoredBrick("purple");
+	public static Item bricksMud = new ColoredBrick("mud");
 	
 	public static Item netherEye = new ItemNetherEye();
 	public static Item enderReeds = new ItemEnderReed();
 	public static Item dough = new ModItem("dough");
 	public static Item cookedDough = new ModItem("cookeddough");
-	public static Item tomatoPaste = new ZollernContainer("tomatopaste",
-			Items.glass_bottle);
+	public static Item tomatoPaste = new ZollernBottle("tomatopaste");
+	public static Item enderBerry = new TreeFood("enderberry", 2, 5);
+	public static Item enderGlowstoneDust = new ModItem("enderglowstonedust");
 	
 	public static Item chocolateBucket = new ZollernBucket("bucket_chocolate",
 			BlockList.blockChocolate);
@@ -458,12 +460,16 @@ public class ItemList {
 		addItem(bricksRed, "Red Brick ingot");
 		addItem(bricksBlue, "Blue Brick Ingot");
 		addItem(bricksPurple, "Purple Brick Ingot");
+		addItem(bricksMud, "Mud Brick Ingot");
 		
 		addItem(netherEye, "Nether Eye");
 		addItem(enderReeds, "Ender Cane");
 		addItem(dough, "Dough");
 		addItem(tomatoPaste, "Tomato Paste");
 		addItem(cookedDough, "Cooked Dough");
+		addItem(enderBerry, "Ender Berry");
+		addItem(enderDiamond, "Ender Diamond");
+		addItem(enderGlowstoneDust, "Ender Glowstone Dust");
 		
 		addItem(chocolateBucket, "Chocolate Bucket");
 		addItem(fuelBucket, "Fueltonium Bucket");

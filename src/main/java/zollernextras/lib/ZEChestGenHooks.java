@@ -14,23 +14,27 @@ import net.minecraftforge.oredict.OreDictionary;
 import zollernextras.items.ItemList;
 
 public class ZEChestGenHooks extends ChestGenHooks {
+	
 	public static final String CRYSTAL_TOWER = "crystalTower";
 	public static final WeightedRandomChestContent[] CTChestContents = new WeightedRandomChestContent[] {
-			new WeightedRandomChestContent(Items.iron_ingot, 0, 1, 5, 10),
-			new WeightedRandomChestContent(Items.gold_ingot, 0, 1, 5, 10),
-			new WeightedRandomChestContent(ItemList.amaranthIngot, 0, 1, 5, 10),
-			new WeightedRandomChestContent(ItemList.ingotFueltonium, 0, 1, 5,
-					10),
-			new WeightedRandomChestContent(ItemList.spcItem, 0, 1, 5, 10),
-			new WeightedRandomChestContent(ItemList.enderShard, 0, 1, 5, 10), };
+		new WeightedRandomChestContent(Items.iron_ingot, 2, 1, 5, 10),
+		new WeightedRandomChestContent(Items.gold_ingot, 4, 1, 5, 10),
+		new WeightedRandomChestContent(ItemList.amaranthIngot, 6, 1, 5, 10),
+		new WeightedRandomChestContent(ItemList.ingotFueltonium, 8, 1, 5,
+				10),
+				new WeightedRandomChestContent(ItemList.spcItem, 20, 1, 5, 10),
+				new WeightedRandomChestContent(ItemList.enderShard, 16, 1, 5, 10),
+				new WeightedRandomChestContent(ItemList.shiniumIngot, 4, 1, 5, 10) };
 	
 	private static final HashMap<String, ZEChestGenHooks> chestInfo = new HashMap<String, ZEChestGenHooks>();
+	
 	private static boolean hasInit = false;
+	
 	static {
 		init();
 	}
 	
-	private static void init() {
+	public static void init() {
 		if (hasInit) {
 			return;
 		}
@@ -86,7 +90,7 @@ public class ZEChestGenHooks extends ChestGenHooks {
 	 */
 	public static ItemStack[] generateStacks(Random rand, ItemStack source,
 			int min, int max) {
-		int count = min + (rand.nextInt(max - min + 1));
+		int count = min + rand.nextInt(max - min + 1);
 		
 		ItemStack[] ret;
 		if (source.getItem() == null) {
@@ -130,8 +134,7 @@ public class ZEChestGenHooks extends ChestGenHooks {
 	private String category;
 	private int countMin = 0;
 	private int countMax = 0;
-	// TO-DO: Privatize this once again when we remove the Deprecated stuff in
-	// DungeonHooks
+	
 	ArrayList<WeightedRandomChestContent> contents = new ArrayList<WeightedRandomChestContent>();
 	
 	public ZEChestGenHooks(String category) {
@@ -174,7 +177,8 @@ public class ZEChestGenHooks extends ChestGenHooks {
 		while (itr.hasNext()) {
 			WeightedRandomChestContent cont = itr.next();
 			if (item.isItemEqual(cont.theItemId)
-					|| (item.getItemDamage() == OreDictionary.WILDCARD_VALUE && item == cont.theItemId)) {
+					|| item.getItemDamage() == OreDictionary.WILDCARD_VALUE
+					&& item == cont.theItemId) {
 				itr.remove();
 			}
 		}
@@ -234,10 +238,9 @@ public class ZEChestGenHooks extends ChestGenHooks {
 		ItemStack[] stacks = ZEChestGenHooks.generateStacks(rand,
 				item.theItemId, item.theMinimumChanceToGenerateItem,
 				item.theMaximumChanceToGenerateItem);
-		return (stacks.length > 0 ? stacks[0] : null);
+		return stacks.length > 0 ? stacks[0] : null;
 	}
 	
-	// Accessors
 	@Override
 	public int getMin() {
 		return countMin;

@@ -9,8 +9,11 @@ import zollernextras.biomes.BiomeList;
 import zollernextras.config.ZEConfig;
 import zollernextras.lib.MainHelper;
 import zollernextras.lib.ModInfo;
+import zollernextras.lib.modhelper.ModHelperBase;
 import zollernextras.mobs.entities.EntityBabyDragon;
 import zollernextras.mobs.entities.EntityDuck;
+import zollernextras.mobs.entities.EntityEnderBug;
+import zollernextras.mobs.entities.EntityEnderSkeleton;
 import zollernextras.mobs.entities.EntityFish;
 import zollernextras.mobs.entities.EntityHellDuck;
 import zollernextras.mobs.entities.EntityHog;
@@ -172,6 +175,17 @@ public class Mobs {
 				BiomeGenBase.savanna, BiomeList.coalHills, BiomeList.mudSwamp,
 				BiomeList.grandCanyon, BiomeList.slimeLands);
 		
+		// Ender Skeleton
+		if (ModHelperBase.useZaneExtras) {
+			registerEntity(EntityEnderSkeleton.class, "enderskeleton",
+					0xffffff, 0xbb00ff);
+			EntityRegistry.addSpawn(EntityEnderSkeleton.class, 30, 2, 4,
+					EnumCreatureType.monster, BiomeGenBase.sky);
+		}
+		
+		// Ender Bug
+		registerEntity(EntityEnderBug.class, "enderbug", 0xeeeeee, 0xdd008b);
+		
 		// Mummy
 		registerEntity(EntityMummy.class, "mummy", 0x8b990, 0xf5eeb3);
 		EntityRegistry.addSpawn(EntityMummy.class, ZEConfig.mobMummySpawnRate,
@@ -199,7 +213,7 @@ public class Mobs {
 		// Shark
 		registerEntity(EntityShark.class, "shark", 0x444444, 0x8b2222);
 		EntityRegistry.addSpawn(EntityShark.class, ZEConfig.mobSharkSpawnRate,
-				1, 4, EnumCreatureType.monster, BiomeGenBase.plains,
+				2, 4, EnumCreatureType.monster, BiomeGenBase.plains,
 				BiomeGenBase.forest, BiomeGenBase.desert,
 				BiomeGenBase.extremeHills, BiomeGenBase.jungle,
 				BiomeGenBase.swampland, BiomeGenBase.taiga, BiomeGenBase.ocean,
@@ -222,7 +236,7 @@ public class Mobs {
 		// Hell Duck
 		registerEntity(EntityHellDuck.class, "hellduck", 0x8b0000, 0x000000);
 		EntityRegistry.addSpawn(EntityHellDuck.class,
-				ZEConfig.mobHellDuckSpawnRate, 2, 4, EnumCreatureType.monster,
+				ZEConfig.mobHellDuckSpawnRate, 2, 4, EnumCreatureType.creature,
 				BiomeGenBase.hell);
 		
 		MainHelper.Log("Entities have been registered!");
@@ -231,7 +245,8 @@ public class Mobs {
 	public static void registerEntity(Class<? extends EntityLiving> entity,
 			String entityName, int entityPrimaryColor, int entitySecondaryColor) {
 		int uniqueEntityId = EntityRegistry.findGlobalUniqueEntityId();
-		MainHelper.Log("Loading entity '" + entityName + "' with ID " + uniqueEntityId);
+		MainHelper.Log("Loading entity '" + entityName + "' with ID "
+				+ uniqueEntityId);
 		EntityRegistry.registerGlobalEntityID(entity, ModInfo.MODID + "_"
 				+ entityName, uniqueEntityId);
 		registerEntityEgg(entity, entityPrimaryColor, entitySecondaryColor);

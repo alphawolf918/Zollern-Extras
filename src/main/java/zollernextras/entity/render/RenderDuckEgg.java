@@ -11,6 +11,7 @@ import net.minecraft.util.IIcon;
 import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL12;
+import zollernextras.items.ItemList;
 import zollernextras.lib.ModInfo;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -18,11 +19,11 @@ import cpw.mods.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class RenderDuckEgg extends Render {
 	
-	private Item field_94151_a;
+	private Item field_94151_a = ItemList.duckEgg;
 	private int field_94150_f;
 	
 	public RenderDuckEgg(Item p_i1259_1_, int p_i1259_2_) {
-		this.field_94151_a = p_i1259_1_;
+		this.field_94151_a = ItemList.duckEgg;
 		this.field_94150_f = p_i1259_2_;
 	}
 	

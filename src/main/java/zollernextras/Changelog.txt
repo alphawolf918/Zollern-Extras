@@ -1,4 +1,4 @@
-[2.8]
+[3.0 - The Ender Update]
 * Added Ender Cane.
     * Generates naturally in The End.
     * Only grows on End Stone and Ender Dirt.
@@ -17,11 +17,12 @@
 * Added the Molten Fueltonium fluid and Molten Fueltonium Bucket.
     * Obtained by putting Fueltonium Ingots or Blocks into a Magma Crucible.
     * Greatly harms the Player when swam in.
+        * Has a custom death message.
     * Kills items when they're tossed into it.
     * Used as a very powerful reactant fuel for the Reactant Dynamo.
 * Buckets and Snowballs are now stackable up to 64.
 * Changed the texture for Flour.
-* Slightly lowered the spawn chance for Flowery Field biomes.
+* Lowered the spawn chance for Flowery Field biomes.
 * Added the Bone Rock block.
     * Crafted using 9 Skeleton bones and vice versa.
 * Added End Stone Bricks.
@@ -29,17 +30,54 @@
 * Added Red Nether Bricks.
     * Crafted using 2 Nether Bricks and 2 Nether Warts.
 * Added the Glowing Obsidian block.
-    * Crafted using 2 Obsidian and 2 Red Netherbricks.
+    * Crafted using 2 Obsidian and 2 Nether Wart Blocks.
     * One Glowing Obsidian block can be put into the Magma Crucible to give 2,500 mB of lava.
 * Changed the Grapefruit Log textures.
 * "Heal" command now heals the Player's hunger bar as well.
+    * You can now heal other Players (Untested).
 * Changed ID of Tropical Forest biome from 180 to 81.
 * This mod can now directly communicate with Zane Extras.
 * Added Tomato Paste and Cooked Dough.
 * Added the Pizza Block.
     * Crafted using Tomato Paste, Cheese from Zane Extras, and Cooked Dough.
-    * This recipe requires Zane Extras to be present, otherwise it does not load.
+    * This recipe requires Zane Extras to be present, otherwise it does not get registered.
+    * First edible block in the mod.
+    * Behaves just like the Cake block.
+* Added the Purpur Block.
+    * Structural block that generates in The End.
+    * Requires a diamond pickaxe or higher to mine.
+* Added the Purpur Pillar block.
+    * Requires a diamond pickaxe or higher to mine.
+    * Crafted using four Purpur Blocks.
+* Added Ender Tower that spawns in The End.
+    * Made of Purpur blocks.
+    * Contains up to two treasure chests.
+* Added Ender Diamond Ore.
+    * Found naturally in The End.
+    * Drops Ender Diamonds.
+        * Now required to make the Ender sword.
+    * Can be crafted into Ender Diamond Blocks using 9 Ender Diamonds.
+* Added Ender Glow blocks.
+    * Purple Glowstone for The End that generates like Glowstone in the Nether.
+* Ducks now turn into Hell Ducks when caught on fire.
+* Changed the texture for Chocolate Bricks.
+* Added Ender Skeleton mob.
+    * Only loads when the Zane Extras mod is running alongside this one.
+    * Spawns naturally in The End.
+    * Has an Ender Bow equipped and uses Ender Arrows.
+        * Drops arrows pretty often, but the bow is a very rare drop.
+        * This item is used directly from Zane Extras.
+    * Same size as a Shadow Skeleton.
+* Added Ender Berry trees.
+    * Drops Ender Berries.
+        * Currently just used a fruit, but will be expanded on to have special functionality in the future.
+* Ender particles now spawn around the Player after using the Ender sword.
+* Swamp Clay now cooks into Mud Bricks which can be crafted into Mud Brick blocks.
 
+
+-- FIXES --
+* Fixed Nether Eye sending the Player back from whence they came when teleporting.
+-----------
 
 [2.7]
 * Removed all traces of Lost Desert / interdimensional stuff.

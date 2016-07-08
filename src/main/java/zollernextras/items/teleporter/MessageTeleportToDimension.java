@@ -33,8 +33,7 @@ public class MessageTeleportToDimension implements IMessage {
 	}
 	
 	public static class TeleportHandler implements
-	IMessageHandler<MessageTeleportToDimension, IMessage> {
-		
+			IMessageHandler<MessageTeleportToDimension, IMessage> {
 		@Override
 		public IMessage onMessage(MessageTeleportToDimension message,
 				MessageContext ctx) {
@@ -43,11 +42,11 @@ public class MessageTeleportToDimension implements IMessage {
 			if (ent instanceof EntityPlayerMP) {
 				EntityPlayerMP player = (EntityPlayerMP) ent;
 				player.mcServer.getConfigurationManager()
-						.transferPlayerToDimension(
-						player,
-						message.dim,
-								new CustomTeleporter(player.mcServer
-										.worldServerForDimension(message.dim)));
+				.transferPlayerToDimension(
+								player,
+								message.dim,
+						new CustomTeleporter(player.mcServer
+								.worldServerForDimension(message.dim)));
 				player.fallDistance = 0.0f;
 			}
 			return message;

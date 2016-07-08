@@ -23,30 +23,34 @@ public class OreDict {
 		registerOre("logWood", BlockList.bananaLog, BlockList.orangeLog,
 				BlockList.guavaLog, BlockList.lemonLog, BlockList.limeLog,
 				BlockList.limonLog, BlockList.cherryLog,
-				BlockList.grapefruitLog);
+				BlockList.grapefruitLog, BlockList.enderBerryLog);
 		
 		// Leaves
 		registerOre("treeLeaves", BlockList.bananaLeaves,
 				BlockList.orangeLeaves, BlockList.guavaLeaves,
 				BlockList.lemonLeaves, BlockList.limeLeaves,
 				BlockList.limonLeaves, BlockList.cherryLeaves,
-				BlockList.grapefruitLeaves);
+				BlockList.grapefruitLeaves, BlockList.enderBerryLeaves);
 		
 		// Saplings
 		registerOre("treeSapling", BlockList.bananaSapling,
 				BlockList.orangeSapling, BlockList.guavaSapling,
 				BlockList.lemonSapling, BlockList.limeSapling,
 				BlockList.limonSapling, BlockList.cherrySapling,
-				BlockList.grapefruitSapling);
+				BlockList.grapefruitSapling, BlockList.enderBerrySapling);
 		
 		// Planks
 		registerOre("plankWood", BlockList.bananaPlanks,
 				BlockList.orangePlanks, BlockList.guavaPlanks,
 				BlockList.lemonPlanks, BlockList.limePlanks,
 				BlockList.limonPlanks, BlockList.cherryPlanks,
-				BlockList.grapefruitPlanks);
+				BlockList.grapefruitPlanks, BlockList.enderBerryPlanks);
 		
 		/** </Trees> **/
+		
+		// Ender Glow
+		registerOre("blockEnderGlowstone", BlockList.enderGlowstone);
+		registerOre("dustEnderGlowstone", BlockList.enderGlowstone);
 		
 		// Better Glass
 		if (ZEConfig.betterGlassIsGlass) {

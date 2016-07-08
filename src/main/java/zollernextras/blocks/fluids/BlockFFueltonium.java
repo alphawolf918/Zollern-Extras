@@ -4,14 +4,13 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
-import net.minecraft.potion.Potion;
-import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fluids.Fluid;
 import zollernextras.blocks.materials.MaterialList;
+import zollernextras.lib.DSource;
 import zollernextras.lib.MainHelper;
 import zollernextras.lib.ModInfo;
 import cpw.mods.fml.relauncher.Side;
@@ -27,14 +26,23 @@ public class BlockFFueltonium extends BlockFluidClassic {
 	public BlockFFueltonium(Fluid fluid) {
 		super(fluid, MaterialList.fueltonium);
 		MainHelper.setName(this, "fuel");
+		// this.setTickRandomly(true);
 	}
+	
+	// @Override
+	// public void updateTick(World world, int x, int y, int z, Random rand) {
+	// super.updateTick(world, x, y, z, rand);
+	// if (world.getBlock(x, y + 1, z) == Blocks.fire) {
+	// world.createExplosion(null, x, y, z, 20, true);
+	// }
+	// }
 	
 	@Override
 	public void onEntityCollidedWithBlock(World world, int x, int y, int z,
 			Entity entity) {
 		if (entity instanceof EntityLivingBase) {
 			EntityLivingBase living = (EntityLivingBase) entity;
-			living.addPotionEffect(new PotionEffect(Potion.harm.id, 60, 4));
+			living.attackEntityFrom(DSource.deathFueltonium, 4.0F);
 		} else if (entity instanceof EntityItem) {
 			EntityItem item = (EntityItem) entity;
 			item.setDead();
@@ -54,7 +62,7 @@ public class BlockFFueltonium extends BlockFluidClassic {
 	@SideOnly(Side.CLIENT)
 	public int colorMultiplier(IBlockAccess p_149720_1_, int p_149720_2_,
 			int p_149720_3_, int p_149720_4_) {
-		return 0x00ff00;
+		return 0x008b00;
 	}
 	
 	@SideOnly(Side.CLIENT)

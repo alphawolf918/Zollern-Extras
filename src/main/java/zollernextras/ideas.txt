@@ -1,13 +1,22 @@
 * Add new horse armor: Emerald & Amaranth. (?)
+    * Work with Jon and figure out how to make them render.
 * Hell Ducks.
     * Have them make a "Quack" sound, similar to how Hellcows make a "moo" sound.
-    * Spawn in the Nether.
-    * Regular ducks turn into Hellducks when killed at night, or when struck with lightning.
-* Make different-colored fish to match the new fish items. (?)
 * Zinc Armor and Tools.
 * Add Enchantments to Zinc and Zollernium Tools.
-* Make Nether Ores spawn using events. (?)
 * Create tools and armor for amber, topaz, garnet, ruby, sapphire, opal, and aquamarine gems.
     * Maybe do the same thing for Witherium too.
-* Grenades.
-* Guns.
+* Helletons.
+    * Nether Skeletons that use the Enderman model but behave like Skeletons.
+
+== ENDER STUFF ===================
+[Ideas for how to revamp The End.]
+==================================
+
+* Ender Spider.
+    * Behaves the same way the Enderman does.
+* Find a way to make The End terrain bigger.
+    * Perhaps use a structure gen for End Stone to increase its land.
+    * Find out if there is a way to "stretch" or otherwise "increase" The End size.
+* Ender Creeper.
+    * If he blows up near the Player, he will send them back to the Overworld.

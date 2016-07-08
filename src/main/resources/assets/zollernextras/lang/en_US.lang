@@ -138,6 +138,7 @@ tile.zollernextras_shinetorch.name=Shine Torch
 tile.zollernextras_energytest.name=Energy Test
 tile.zollernextras_enderpearlblock.name=Ender Pearl Block
 tile.zollernextras_netherizedobsidian.name=Netherized Obsidian
+tile.zollernextras_garlic.name=Garlic
 
 tile.zollernextras_brick_black.name=Black Colored Bricks
 tile.zollernextras_brick_lime.name=Lime Green Colored Bricks
@@ -158,6 +159,7 @@ tile.zollernextras_brick_blue.name=Blue Colored Bricks
 tile.zollernextras_brick_yellow.name=Yellow Colored Bricks
 tile.zollernextras_brick_green.name=Green Colored Bricks
 tile.zollernextras_brick_purple.name=Purple Colored Bricks
+tile.zollernextras_brick_mud.name=Mud Bricks
 
 tile.zollernextras_bpalmsapling.name=Bananapalm Sapling
 tile.zollernextras_bpalmlog.name=Bananapalm Log
@@ -199,16 +201,26 @@ tile.zollernextras_grapefruitlog.name=Grapefruit Log
 tile.zollernextras_grapefruitleaves.name=Grapefruit Leaves
 tile.zollernextras_grapefruitplanks.name=Grapefruit Planks
 
+tile.zollernextras_enderberrysapling.name=Ender Berry Sapling
+tile.zollernextras_enderberrylog.name=Ender Berry Log
+tile.zollernextras_enderberryleaves.name=Ender Berry Leaves
+tile.zollernextras_enderberryplanks.name=Ender Berry Planks
+
 tile.zollernextras_zollerniumore.name=Zollernium Ore
 tile.zollernextras_enderreeds.name=Ender Cane
 tile.zollernextras_enderdirt.name=Ender Dirt
 tile.zollernextras_magmarock.name=Magma Rock
 tile.zollernextras_boneblock.name=Bone Rock
 tile.zollernextras_endstonebricks.name=End Stone Bricks
-tile.zollernextras_rednetherbricks.name=Crimson Nether Bricks
+tile.zollernextras_rednetherbricks.name=Red Nether Bricks
 tile.zollernextras_netherwartblock.name=Nether Wart Block
 tile.zollernextras_redobsidian.name=Glowing Obsidian
 tile.zollernextras_pizza.name=Pizza Block
+tile.zollernextras_purpurblock.name=Purpur
+tile.zollernextras_purpurpillar.name=Purpur Pillar
+tile.zollernextras_enderglowstone.name=Ender Glow
+tile.zollernextras_enderdiamondblock.name=Ender Diamond
+tile.zollernextras_enderdiamondore.name=Ender Diamond Ore
 
 tile.zollernextras_chocolate.name=Melted Chocolate
 fluid.zollernextras_chocolate=Melted Chocolate
@@ -399,6 +411,7 @@ item.zollernextras_brickingot_cyan.name=Cyan Brick Ingot
 item.zollernextras_brickingot_red.name=Red Brick Ingot
 item.zollernextras_brickingot_blue.name=Blue Brick Ingot
 item.zollernextras_brickingot_purple.name=Purple Brick Ingot
+item.zollernextras_brickingot+mud.name=Mud Brick Ingot
 
 item.zollernextras_nethereye.name=Nether Eye
 item.zollernextras_enderreeds.name=Ender Cane
@@ -406,6 +419,9 @@ item.zollernextras_dough.name=Dough
 item.zollernextras_cookeddough.name=Cooked Dough
 item.zollernextras_tomatopaste.name=Tomato Paste
 item.zollernextras_pizza.name=Pizza
+item.zollernextras_enderberry.name=Ender Berry
+item.zollernextras_enderdiamond.name=Ender Diamond
+item.zollernextras_enderglowstonedust.name=Ender Glow Dust
 
 item.zollernextras_bucket_chocolate.name=Chocolate Bucket
 item.zollernextras_fuelbucket.name=Molten Fueltonium Bucket
@@ -425,13 +441,21 @@ entity.zollernextras_hog.name=Hog
 entity.zollernextras_pigshroom.name=Pigshroom
 entity.zollernextras_hogzombie.name=Zombie Hogman
 entity.zollernextras_goldgolem.name=Golden Golem
+entity.zollernextras_rubygolem.name=Ruby Golem
+entity.zollernextras_sapphiregolem.name=Sapphire Golem
 entity.zollernextras_diamondgolem.name=Diamond Golem
+entity.zollernextras_emeraldgolem.name=Emerald Golem
+entity.zollernextras_amaranthgolem.name=Amaranth Golem
+entity.zollernextras_zincgolem.name=Zinc Golem
+entity.zollernextras_zollerniumgolem.name=Zollernium Golem
 entity.zollernextras_hellduck.name=Hell Duck
 entity.zollernextras_shrimp.name=Shrimp
+entity.zollernextras_shadowskeleton.name=Shadow Skeleton
+entity.zollernextras_enderskeleton.name=Ender Skeleton
 entity.zollernextras_babydragon.name=Baby Ender Dragon
 entity.zollernextras_enderspider.name=Ender Spider
 entity.zollernextras_endercreeper.name=Ender Creeper
-entity.zollernextras_shadowskeleton.name=Shadow Skeleton
+entity.zollernextras_enderbug.name=Ender Bug
 
 death.attack.fueltonium=%1$s was submerged in fueltonium.
 death.attack.fueltonium.player=%1$s was submerged in fueltonium by %2$s.
@@ -442,5 +466,7 @@ death.attack.jellyfishsting.item=%1$s was stung by a jellyfish thanks to %2$s us
 death.attack.sharkattack=%1$s got ate by a shark. Yummy.
 death.attack.sharkattack.player=%1$s got ate by a shark because of %2$s. Mmmm, betrayal.
 death.attack.sharkattack.item=%1$s got ate by a shark because of %2$s using %3$s. Nom.
+
+zollernextras_commands.heal.usage=/heal [player]
 
 itemGroup.Zollern Extras=Zollern Extras

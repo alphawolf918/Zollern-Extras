@@ -26,6 +26,16 @@ public final class Treasures {
 	private static WeightedRandomChestContent item5 = new WeightedRandomChestContent(
 			new ItemStack(Items.gold_ingot, 64), 50, 90, 2);
 	
+	public static final WeightedRandomChestContent[] CTChestContents = new WeightedRandomChestContent[] {
+		new WeightedRandomChestContent(Items.iron_ingot, 2, 1, 5, 10),
+		new WeightedRandomChestContent(Items.gold_ingot, 4, 1, 5, 10),
+		new WeightedRandomChestContent(ItemList.amaranthIngot, 6, 1, 5, 10),
+		new WeightedRandomChestContent(ItemList.ingotFueltonium, 8, 1, 5,
+				10),
+				new WeightedRandomChestContent(ItemList.spcItem, 20, 1, 5, 10),
+				new WeightedRandomChestContent(ItemList.enderShard, 16, 1, 5, 10),
+				new WeightedRandomChestContent(ItemList.shiniumIngot, 4, 1, 5, 10) };
+	
 	public static void init() {
 		addChestTypes();
 		addItems();
@@ -36,6 +46,9 @@ public final class Treasures {
 		addChestItem(item2);
 		addChestItem(item3);
 		addChestItem(item4);
+		for (WeightedRandomChestContent chestContent : CTChestContents) {
+			addChestItem(chestContent);
+		}
 	}
 	
 	private static void addChestItem(WeightedRandomChestContent item) {
@@ -50,7 +63,7 @@ public final class Treasures {
 		int chestX = i;
 		int chestY = j;
 		int chestZ = k;
-		boolean isBigChest = (rand.nextInt(4) == 1) ? true : false;
+		boolean isBigChest = rand.nextInt(4) == 1 ? true : false;
 		spawnChest(world, rand, chestX, chestY, chestZ, isBigChest, chestType);
 	}
 	
@@ -83,6 +96,6 @@ public final class Treasures {
 	}
 	
 	public static String pickChestType() {
-		return chestTypes.get((new Random()).nextInt(chestTypes.size()));
+		return chestTypes.get(0);
 	}
 }

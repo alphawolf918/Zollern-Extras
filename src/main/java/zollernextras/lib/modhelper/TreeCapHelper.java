@@ -49,6 +49,10 @@ public class TreeCapHelper {
 		String grapefruitLog = blockName(BlockList.grapefruitLog);
 		String grapefruitLeaves = blockName(BlockList.grapefruitLeaves);
 		
+		// Ender Berry
+		String enderBerryLog = blockName(BlockList.enderBerryLog);
+		String enderBerryLeaves = blockName(BlockList.enderBerryLeaves);
+		
 		tpModCfg.setString("modID", ModInfo.MODID);
 		
 		// Banana Tree
@@ -120,6 +124,15 @@ public class TreeCapHelper {
 				grapefruitLog, grapefruitLog, grapefruitLog));
 		tree.setString("leaves", String.format("%s, 0; %s, 8",
 				grapefruitLeaves, grapefruitLeaves));
+		tree.setBoolean("requireLeafDecayCheck", false);
+		treeList.appendTag(tree);
+		
+		// Ender Berry Tree
+		tree.setString("treeName", "enderberrywood");
+		tree.setString("logs", String.format("%s, 0; %s, 4; %s, 8",
+				enderBerryLog, enderBerryLog, enderBerryLog));
+		tree.setString("leaves", String.format("%s, 0; %s, 8",
+				enderBerryLeaves, enderBerryLeaves));
 		tree.setBoolean("requireLeafDecayCheck", false);
 		treeList.appendTag(tree);
 		

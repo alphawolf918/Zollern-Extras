@@ -31,8 +31,11 @@ import zollernextras.entity.render.RenderDuckEgg;
 import zollernextras.gui.GuiBiomeType;
 import zollernextras.items.ItemList;
 import zollernextras.lib.MainHelper;
+import zollernextras.lib.modhelper.ModHelperBase;
 import zollernextras.mobs.entities.EntityBabyDragon;
 import zollernextras.mobs.entities.EntityDuck;
+import zollernextras.mobs.entities.EntityEnderBug;
+import zollernextras.mobs.entities.EntityEnderSkeleton;
 import zollernextras.mobs.entities.EntityFish;
 import zollernextras.mobs.entities.EntityHellDuck;
 import zollernextras.mobs.entities.EntityHog;
@@ -47,6 +50,8 @@ import zollernextras.mobs.entities.EntityShark;
 import zollernextras.mobs.entities.EntityShrimp;
 import zollernextras.mobs.models.ModelBabyDragon;
 import zollernextras.mobs.models.ModelDuck;
+import zollernextras.mobs.models.ModelEnderBug;
+import zollernextras.mobs.models.ModelEnderSkeleton;
 import zollernextras.mobs.models.ModelFish;
 import zollernextras.mobs.models.ModelHog;
 import zollernextras.mobs.models.ModelHogZombie;
@@ -60,6 +65,8 @@ import zollernextras.mobs.models.ModelShark;
 import zollernextras.mobs.models.ModelShrimp;
 import zollernextras.mobs.renders.RenderBabyDragon;
 import zollernextras.mobs.renders.RenderDuck;
+import zollernextras.mobs.renders.RenderEnderBug;
+import zollernextras.mobs.renders.RenderEnderSkeleton;
 import zollernextras.mobs.renders.RenderFish;
 import zollernextras.mobs.renders.RenderHellDuck;
 import zollernextras.mobs.renders.RenderHog;
@@ -111,6 +118,15 @@ public class ClientProxy extends CommonProxy {
 		RenderingRegistry.registerEntityRenderingHandler(
 				EntityShadowSkeleton.class, new RenderShadowSkeleton(
 						new ModelShadowSkeleton(), 0.5F));
+		
+		if (ModHelperBase.useZaneExtras) {
+			RenderingRegistry.registerEntityRenderingHandler(
+					EntityEnderSkeleton.class, new RenderEnderSkeleton(
+							new ModelEnderSkeleton(), 0.5F));
+		}
+		
+		RenderingRegistry.registerEntityRenderingHandler(EntityEnderBug.class,
+				new RenderEnderBug(new ModelEnderBug(), 0.5F));
 		
 		RenderingRegistry.registerEntityRenderingHandler(EntityMummy.class,
 				new RenderMummy(new ModelMummy(), 0.5F));

@@ -67,6 +67,9 @@ import zollernextras.blocks.trees.banana.BananaSapling;
 import zollernextras.blocks.trees.cherry.CherryLeaves;
 import zollernextras.blocks.trees.cherry.CherryLog;
 import zollernextras.blocks.trees.cherry.CherrySapling;
+import zollernextras.blocks.trees.ender.EnderBerryLeaves;
+import zollernextras.blocks.trees.ender.EnderBerryLog;
+import zollernextras.blocks.trees.ender.EnderBerrySapling;
 import zollernextras.blocks.trees.grapefruit.GrapefruitLeaves;
 import zollernextras.blocks.trees.grapefruit.GrapefruitLog;
 import zollernextras.blocks.trees.grapefruit.GrapefruitSapling;
@@ -152,6 +155,8 @@ public class BlockList {
 	public static Block rubyOre = new GemOre("rubyore", ItemList.ruby);
 	public static Block sapphireOre = new GemOre("sapphireore",
 			ItemList.sapphire);
+	public static Block enderDiamondOre = new GemOre("enderdiamondore",
+			ItemList.enderDiamond);
 	
 	public static Block caveMarbleWhite = new CaveMarble("marble");
 	public static Block caveMarbleBlack = new CaveMarble("blackmarble");
@@ -298,6 +303,12 @@ public class BlockList {
 	public static Block grapefruitLeaves = new GrapefruitLeaves();
 	public static Block grapefruitSapling = new GrapefruitSapling();
 	
+	// Trees (Ender)
+	public static Block enderBerryLog = new EnderBerryLog();
+	public static Block enderBerryPlanks = new ZollernPlanks("enderberryplanks");
+	public static Block enderBerryLeaves = new EnderBerryLeaves();
+	public static Block enderBerrySapling = new EnderBerrySapling();
+	
 	public static Block shinetorch = new Shinetorch();
 	public static Block enderPearlBlock = new BlockEnderPearl();
 	public static Block netherizedObsidian = new NetherizedObsidian();
@@ -319,6 +330,7 @@ public class BlockList {
 	public static Block bricksYellow = new ColoredBricks("yellow");
 	public static Block bricksGreen = new ColoredBricks("green");
 	public static Block bricksPurple = new ColoredBricks("purple");
+	public static Block bricksMud = new ColoredBricks("mud");
 	
 	public static Block zollerniumOre = new ZollerniumOre();
 	public static Block enderReeds = new BlockEnderReeds();
@@ -333,6 +345,12 @@ public class BlockList {
 			0.8F);
 	public static Block redObsidian = new RedObsidian();
 	public static Block blockPizza = new BlockPizza();
+	public static Block purpurBlock = new GenericBlock("purpurblock", 1.2F);
+	public static Block purpurPillar = new PurpurPillar();
+	public static Block enderGlowstone = new GenericBlock("enderglowstone",
+			0.6F).setLightLevel(1.0F).setStepSound(Block.soundTypeGlass);
+	public static Block enderDiamondBlock = new GenericBlock(
+			"enderdiamondblock", 1.2F).setLightLevel(0.6F);
 	
 	public static FluidChocolate fluidChocolate = new FluidChocolate(
 			ModInfo.MODID + "_chocolate");
@@ -485,6 +503,7 @@ public class BlockList {
 		addBlock(bricksYellow, "Yellow Bricks");
 		addBlock(bricksGreen, "Green Bricks");
 		addBlock(bricksPurple, "Purple Bricks");
+		addBlock(bricksMud, "Mud Bricks");
 		
 		addBlock(bananaSapling, "Banana Sapling");
 		addBlock(bananaLog, "Banana Log");
@@ -521,6 +540,11 @@ public class BlockList {
 		addBlock(cherryPlanks, "Cherry Planks");
 		addBlock(cherryLeaves, "Cherry Leaves");
 		
+		addBlock(enderBerryLog, "Ender Berry Log");
+		addBlock(enderBerryPlanks, "Ender Berry Planks");
+		addBlock(enderBerryLeaves, "Ender Berry Leaves");
+		addBlock(enderBerrySapling, "Ender Berry Sapling");
+		
 		addBlock(grapefruitSapling, "Grapefruit Sapling");
 		addBlock(grapefruitLog, "Grapefruit Log");
 		addBlock(grapefruitPlanks, "Grapefruit Planks");
@@ -536,6 +560,11 @@ public class BlockList {
 		addBlock(netherWartBlock, "Nether Wart Block");
 		addBlock(redObsidian, "Crimson Obsidian");
 		addBlock(blockPizza, "Pizza Block");
+		addBlock(purpurBlock, "Purpur Block");
+		addBlock(purpurPillar, "Purpur Pillar");
+		addBlock(enderGlowstone, "Ender Glowstone");
+		addBlock(enderDiamondOre, "Ender Diamond Ore");
+		addBlock(enderDiamondBlock, "Ender Diamond Block");
 		
 		addBlock(blockChocolate, "Melted Chocolate");
 		addBlock(blockFuel, "Molten Fueltonium");

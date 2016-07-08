@@ -3,13 +3,15 @@ package zollernextras.items;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 
-public class ZollernContainer extends ModItem {
+public class ZollernBottle extends ModItem {
 	
-	public static Item itemContainer = Items.glass_bottle;
-	
-	public ZollernContainer(String strTexture, Item containerItem) {
+	public ZollernBottle(String strTexture) {
 		super(strTexture);
-		this.itemContainer = containerItem;
+	}
+	
+	@Override
+	public boolean getShareTag() {
+		return true;
 	}
 	
 	@Override
@@ -19,7 +21,6 @@ public class ZollernContainer extends ModItem {
 	
 	@Override
 	public Item getContainerItem() {
-		return this.itemContainer;
+		return Items.glass_bottle;
 	}
-	
 }

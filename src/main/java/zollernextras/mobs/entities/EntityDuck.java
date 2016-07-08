@@ -16,6 +16,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemSeeds;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 import zollernextras.items.ItemList;
 import zollernextras.lib.ModInfo;
@@ -67,6 +68,24 @@ public class EntityDuck extends EntityAnimal {
 				.setBaseValue(8.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed)
 				.setBaseValue(0.45D);
+	}
+	
+	@Override
+	public boolean attackEntityFrom(DamageSource damageSource,
+			float damageAmount) {
+		super.attackEntityFrom(damageSource, damageAmount);
+		if (damageSource.isFireDamage() && !this.worldObj.isRemote) {
+			double posX = this.posX;
+			double posY = this.posY;
+			double posZ = this.posZ;
+			float pitch = this.rotationPitch;
+			float yaw = this.rotationYaw;
+			this.setDead();
+			EntityHellDuck hellDuck = new EntityHellDuck(this.worldObj);
+			hellDuck.setPositionAndRotation(posX, posY, posZ, pitch, yaw);
+			this.worldObj.spawnEntityInWorld(hellDuck);
+		}
+		return true;
 	}
 	
 	/**

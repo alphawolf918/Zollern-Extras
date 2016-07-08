@@ -1,19 +1,11 @@
 package zollernextras.blocks.trees;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
-import zollernextras.creativetabs.ModTabs;
-import zollernextras.lib.ModInfo;
+import zollernextras.blocks.GenericBlock;
 
-public class ZollernPlanks extends Block {
+public class ZollernPlanks extends GenericBlock {
 	
 	public ZollernPlanks(String planksTexture) {
-		super(Material.wood);
-		this.setCreativeTab(ModTabs.zTab);
-		this.setBlockName(ModInfo.MODID + "_" + planksTexture);
-		this.setBlockTextureName(ModInfo.MODID + ":" + planksTexture);
-		this.setHardness(2.0F);
-		this.setResistance(4.0F);
+		super(planksTexture, 1.5F);
 		this.setStepSound(soundTypeWood);
 	}
 }

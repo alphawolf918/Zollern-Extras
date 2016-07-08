@@ -17,8 +17,11 @@ import zollernextras.worldgen.WorldGenBerries;
 import zollernextras.worldgen.WorldGenCandyTree;
 import zollernextras.worldgen.WorldGenCrop;
 import zollernextras.worldgen.WorldGenCrops;
+import zollernextras.worldgen.WorldGenEnderBerryTree;
+import zollernextras.worldgen.WorldGenEnderGlow;
 import zollernextras.worldgen.WorldGenEnderMinable;
 import zollernextras.worldgen.WorldGenEnderReeds;
+import zollernextras.worldgen.WorldGenEnderTower;
 import zollernextras.worldgen.WorldGenFruitTree;
 import zollernextras.worldgen.WorldGenMagmaRock;
 import zollernextras.worldgen.WorldGenNetherOre;
@@ -174,7 +177,7 @@ public class WorldGenManager implements IWorldGenerator {
 		// Treasure Chests
 		if ((currentBiome.isEqualTo(BiomeGenBase.deepOcean)
 				|| currentBiome.equals(BiomeGenBase.ocean) || currentBiome
-				.equals(BiomeList.crystalOcean)) && y <= 44) {
+					.equals(BiomeList.crystalOcean)) && y <= 44) {
 			spawnStructure(80, 200, world, random, x, y, z,
 					new WorldGenTreasureChest());
 		}
@@ -497,29 +500,30 @@ public class WorldGenManager implements IWorldGenerator {
 		int Zcoord = z + random.nextInt(16);
 		
 		// Ender Super Coal Ore
-		new WorldGenEnderMinable(BlockList.enderSpcOre, 2, 4).generate(world,
+		new WorldGenEnderMinable(BlockList.enderSpcOre, 6, 8).generate(world,
 				random, Xcoord, Ycoord, Zcoord);
 		
 		// Ender Fueltonium Ore
-		new WorldGenEnderMinable(BlockList.enderFnOre, 2, 4).generate(world,
+		new WorldGenEnderMinable(BlockList.enderFnOre, 6, 8).generate(world,
 				random, Xcoord, Ycoord, Zcoord);
 		
 		// Ender Amaranth Ore
-		new WorldGenEnderMinable(BlockList.enderAmaranthOre, 2, 4).generate(
+		new WorldGenEnderMinable(BlockList.enderAmaranthOre, 6, 8).generate(
 				world, random, Xcoord, Ycoord, Zcoord);
 		
 		// Ender Zinc Ore
-		new WorldGenEnderMinable(BlockList.enderZincOre, 2, 4).generate(world,
+		new WorldGenEnderMinable(BlockList.enderZincOre, 6, 8).generate(world,
 				random, Xcoord, Ycoord, Zcoord);
 		
-		// Ender Ore
+		// Enderite Ore
 		new WorldGenEnderMinable(BlockList.enderiteOre,
-				ZEConfig.oreEnderiteSpawnRate, 15).generate(world, random,
-				Xcoord, Ycoord, Zcoord);
+				ZEConfig.oreEnderiteSpawnRate,
+				ZEConfig.oreEnderiteSpawnRate + 6).generate(world, random,
+						Xcoord, Ycoord, Zcoord);
 		
-		// Ender Dirt
-		new WorldGenEnderMinable(BlockList.enderDirt, 10, 20).generate(world,
-				random, Xcoord, Ycoord, Zcoord);
+		// Ender Diamond Ore
+		new WorldGenEnderMinable(BlockList.enderDiamondOre, 6, 8).generate(
+				world, random, Xcoord, Ycoord, Zcoord);
 		
 		// Ender Dirt
 		if (new Random().nextInt(55) <= 42) {
@@ -528,9 +532,28 @@ public class WorldGenManager implements IWorldGenerator {
 		}
 		
 		// Ender Reeds
-		if (new Random().nextInt(45) <= 15) {
+		if (new Random().nextInt(35) <= 15) {
 			new WorldGenEnderReeds().generate(world, random, Xcoord,
 					Ycoord + 1, Zcoord);
+		}
+		
+		// Ender Tower
+		if (new Random().nextInt(32) <= 11) {
+			this.spawnStructure(2, 8, world, random, Xcoord, Ycoord, Zcoord,
+					new WorldGenEnderTower());
+		}
+		
+		// Ender Glow
+		if (new Random().nextInt(11) <= 10) {
+			new WorldGenEnderGlow().generate(world, random, Xcoord, Ycoord,
+					Zcoord);
+		}
+		
+		// Ender Berry Tree
+		if (new Random().nextInt(20) <= 15) {
+			this.spawnStructure(2, 3, world, random, Xcoord, Ycoord, Zcoord,
+					new WorldGenEnderBerryTree(BlockList.enderBerryLog,
+							BlockList.enderBerryLeaves));
 		}
 	}
 	

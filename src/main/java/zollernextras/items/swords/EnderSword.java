@@ -1,6 +1,7 @@
 package zollernextras.items.swords;
 
 import java.util.List;
+import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -23,6 +24,8 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class EnderSword extends ItemSword {
+	
+	Random rand = new Random();
 	
 	public EnderSword(ToolMaterial p_i45347_1_) {
 		super(p_i45347_1_);
@@ -111,6 +114,7 @@ public class EnderSword extends ItemSword {
 					"mob.endermen.portal", 2.0F,
 					world.rand.nextFloat() * 0.1F + 0.9F);
 			entityplayer.setPosition(x, y, z);
+			world.spawnParticle("portal", x, y, z, 4D, 4D, 4D);
 		} else {
 			checkBlockAt(x, y + 2, z, world, entityplayer);
 		}

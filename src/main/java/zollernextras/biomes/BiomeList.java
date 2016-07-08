@@ -53,7 +53,7 @@ public class BiomeList {
 		addBiome(redRockMountains, BiomeType.WARM, 16);
 		addBiome(mushroomForest, BiomeType.COOL, 8);
 		addBiome(mudSwamp, BiomeType.WARM, 14);
-		addBiome(floweryField, BiomeType.WARM, 62);
+		addBiome(floweryField, BiomeType.WARM, 32);
 		addBiome(grandCanyon, BiomeType.DESERT, 14);
 		addBiome(iceMountains, BiomeType.ICY, 14);
 		addBiome(coalHills, BiomeType.WARM, 8);

@@ -16,7 +16,6 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
-import zollernextras.creativetabs.ModTabs;
 import zollernextras.items.tools.ToolMaterials;
 import zollernextras.lib.KeyHelper;
 import zollernextras.lib.MainHelper;
@@ -29,7 +28,6 @@ public class EnderSword extends ItemSword {
 	
 	public EnderSword(ToolMaterial p_i45347_1_) {
 		super(p_i45347_1_);
-		this.setCreativeTab(ModTabs.zTab);
 		MainHelper.setTab(this);
 		MainHelper.setNameAndTexture(this, "endersword");
 	}
@@ -82,7 +80,7 @@ public class EnderSword extends ItemSword {
 				vec3d1, false);
 		
 		if (movingobjectposition == null)
-		
+			
 		{
 			
 			return itemstack;
@@ -99,6 +97,7 @@ public class EnderSword extends ItemSword {
 		world.playSoundEffect(i + 5.0D, j + 5.0D, k + 5.0D,
 				"mob.endermen.portal", 2.0F,
 				world.rand.nextFloat() * 0.1F + 0.9F);
+		world.spawnParticle("portal", i, j, k, 0D, 0D, 0D);
 		return itemstack;
 	}
 	
@@ -114,7 +113,6 @@ public class EnderSword extends ItemSword {
 					"mob.endermen.portal", 2.0F,
 					world.rand.nextFloat() * 0.1F + 0.9F);
 			entityplayer.setPosition(x, y, z);
-			world.spawnParticle("portal", x, y, z, 4D, 4D, 4D);
 		} else {
 			checkBlockAt(x, y + 2, z, world, entityplayer);
 		}

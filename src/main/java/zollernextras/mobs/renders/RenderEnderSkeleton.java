@@ -31,7 +31,7 @@ public class RenderEnderSkeleton extends RenderLiving {
 	private final ModelBiped modelArmor;
 	/** List of armor texture filenames. */
 	public static String[] bipedArmorFilenamePrefix = new String[] { "leather",
-			"chainmail", "iron", "diamond", "gold" };
+		"chainmail", "iron", "diamond", "gold" };
 	protected float field_77070_b;
 	protected ModelBiped field_82423_g;
 	protected ModelBiped field_82425_h;
@@ -259,7 +259,7 @@ public class RenderEnderSkeleton extends RenderLiving {
 		ItemArmor item = (ItemArmor) stack.getItem();
 		String s1 = String.format("textures/models/armor/%s_layer_%d%s.png",
 				bipedArmorFilenamePrefix[item.renderIndex], slot == 2 ? 2 : 1,
-				type == null ? "" : String.format("_%s", type));
+						type == null ? "" : String.format("_%s", type));
 		
 		s1 = ForgeHooksClient.getArmorTexture(entity, stack, s1, slot, type);
 		ResourceLocation resourcelocation = (ResourceLocation) field_110859_k
@@ -300,7 +300,7 @@ public class RenderEnderSkeleton extends RenderLiving {
 	
 	protected void scaleEnderSkeleton(
 			EntityEnderSkeleton par1EntityEnderSkeleton, float par2) {
-		GL11.glScalef(f6, f6, f6);
+		GL11.glScalef(f6, f6 + 0.2F, f6);
 	}
 	
 	@Override

@@ -175,17 +175,6 @@ public class Mobs {
 				BiomeGenBase.savanna, BiomeList.coalHills, BiomeList.mudSwamp,
 				BiomeList.grandCanyon, BiomeList.slimeLands);
 		
-		// Ender Skeleton
-		if (ModHelperBase.useZaneExtras) {
-			registerEntity(EntityEnderSkeleton.class, "enderskeleton",
-					0xffffff, 0xbb00ff);
-			EntityRegistry.addSpawn(EntityEnderSkeleton.class, 30, 2, 4,
-					EnumCreatureType.monster, BiomeGenBase.sky);
-		}
-		
-		// Ender Bug
-		registerEntity(EntityEnderBug.class, "enderbug", 0xeeeeee, 0xdd008b);
-		
 		// Mummy
 		registerEntity(EntityMummy.class, "mummy", 0x8b990, 0xf5eeb3);
 		EntityRegistry.addSpawn(EntityMummy.class, ZEConfig.mobMummySpawnRate,
@@ -236,8 +225,19 @@ public class Mobs {
 		// Hell Duck
 		registerEntity(EntityHellDuck.class, "hellduck", 0x8b0000, 0x000000);
 		EntityRegistry.addSpawn(EntityHellDuck.class,
-				ZEConfig.mobHellDuckSpawnRate, 2, 4, EnumCreatureType.creature,
+				ZEConfig.mobHellDuckSpawnRate, 2, 4, EnumCreatureType.monster,
 				BiomeGenBase.hell);
+		
+		// Ender Skeleton
+		if (ModHelperBase.useZaneExtras) {
+			registerEntity(EntityEnderSkeleton.class, "enderskeleton",
+					0xffffff, 0xbb00ff);
+			EntityRegistry.addSpawn(EntityEnderSkeleton.class, 45, 4, 6,
+					EnumCreatureType.monster, BiomeGenBase.sky);
+		}
+		
+		// Ender Bug
+		registerEntity(EntityEnderBug.class, "enderbug", 0xeeeeee, 0xdd008b);
 		
 		MainHelper.Log("Entities have been registered!");
 	}

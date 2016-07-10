@@ -345,7 +345,7 @@ public class BlockList {
 			0.8F);
 	public static Block redObsidian = new RedObsidian();
 	public static Block blockPizza = new BlockPizza();
-	public static Block purpurBlock = new GenericBlock("purpurblock", 1.2F);
+	public static Block purpurBlock = new BlockPurpur();
 	public static Block purpurPillar = new PurpurPillar();
 	public static Block enderGlowstone = new GenericBlock("enderglowstone",
 			0.6F).setLightLevel(1.0F).setStepSound(Block.soundTypeGlass);

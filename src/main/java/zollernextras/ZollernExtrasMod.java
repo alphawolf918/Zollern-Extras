@@ -60,6 +60,7 @@ public class ZollernExtrasMod {
 		BlockList.init();
 		TreeCapHelper.init();
 		Mobs.init();
+		Treasures.init();
 		PacketDispatcher.registerPackets();
 	}
 	
@@ -70,7 +71,6 @@ public class ZollernExtrasMod {
 				INSTANCE, 64, 20, true);
 		BiomeList.init();
 		RecipeManager.init();
-		Treasures.init();
 		Handlers.init();
 		OreDict.init();
 		NetworkRegistry.INSTANCE.registerGuiHandler(this, new CommonProxy());

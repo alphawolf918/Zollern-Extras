@@ -82,8 +82,8 @@ public class WorldGenManager implements IWorldGenerator {
 				6 + random.nextInt(8), ZEConfig.oreFueltoniumSpawnRate, 2, 12);
 		
 		// Zollernium
-		addOreSpawn(BlockList.zollerniumOre, world, random, x, z, 16, 16, 1, 6,
-				2, 16);
+		addOreSpawn(BlockList.zollerniumOre, world, random, x, z, 16, 16,
+				1 + random.nextInt(1), 6, 2, 16);
 		
 		// Shard Ore
 		addOreSpawn(BlockList.enderShardOre, world, random, x, z, 16, 16,
@@ -177,7 +177,7 @@ public class WorldGenManager implements IWorldGenerator {
 		// Treasure Chests
 		if ((currentBiome.isEqualTo(BiomeGenBase.deepOcean)
 				|| currentBiome.equals(BiomeGenBase.ocean) || currentBiome
-					.equals(BiomeList.crystalOcean)) && y <= 44) {
+				.equals(BiomeList.crystalOcean)) && y <= 44) {
 			spawnStructure(80, 200, world, random, x, y, z,
 					new WorldGenTreasureChest());
 		}
@@ -499,6 +499,13 @@ public class WorldGenManager implements IWorldGenerator {
 		int Ycoord = 10 + random.nextInt(80);
 		int Zcoord = z + random.nextInt(16);
 		
+		// End Lakes
+		// if (random.nextInt(40) <= 25) {
+		// new WorldGenLakes(Blocks.end_stone).generate(world, random, Xcoord
+		// + random.nextInt(50), Ycoord + random.nextInt(50), Zcoord
+		// + random.nextInt(50));
+		// }
+		
 		// Ender Super Coal Ore
 		new WorldGenEnderMinable(BlockList.enderSpcOre, 6, 8).generate(world,
 				random, Xcoord, Ycoord, Zcoord);
@@ -519,7 +526,7 @@ public class WorldGenManager implements IWorldGenerator {
 		new WorldGenEnderMinable(BlockList.enderiteOre,
 				ZEConfig.oreEnderiteSpawnRate,
 				ZEConfig.oreEnderiteSpawnRate + 6).generate(world, random,
-						Xcoord, Ycoord, Zcoord);
+				Xcoord, Ycoord, Zcoord);
 		
 		// Ender Diamond Ore
 		new WorldGenEnderMinable(BlockList.enderDiamondOre, 6, 8).generate(
@@ -539,14 +546,15 @@ public class WorldGenManager implements IWorldGenerator {
 		
 		// Ender Tower
 		if (new Random().nextInt(32) <= 11) {
-			this.spawnStructure(2, 8, world, random, Xcoord, Ycoord, Zcoord,
+			this.spawnStructure(2, 4, world, random, Xcoord,
+					Ycoord + random.nextInt(5), Zcoord,
 					new WorldGenEnderTower());
 		}
 		
 		// Ender Glow
 		if (new Random().nextInt(11) <= 10) {
-			new WorldGenEnderGlow().generate(world, random, Xcoord, Ycoord,
-					Zcoord);
+			new WorldGenEnderGlow().generate(world, random, Xcoord, Ycoord
+					+ random.nextInt(20), Zcoord);
 		}
 		
 		// Ender Berry Tree

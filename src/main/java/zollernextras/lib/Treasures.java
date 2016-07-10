@@ -27,14 +27,14 @@ public final class Treasures {
 			new ItemStack(Items.gold_ingot, 64), 50, 90, 2);
 	
 	public static final WeightedRandomChestContent[] CTChestContents = new WeightedRandomChestContent[] {
-		new WeightedRandomChestContent(Items.iron_ingot, 2, 1, 5, 10),
-		new WeightedRandomChestContent(Items.gold_ingot, 4, 1, 5, 10),
-		new WeightedRandomChestContent(ItemList.amaranthIngot, 6, 1, 5, 10),
-		new WeightedRandomChestContent(ItemList.ingotFueltonium, 8, 1, 5,
-				10),
-				new WeightedRandomChestContent(ItemList.spcItem, 20, 1, 5, 10),
-				new WeightedRandomChestContent(ItemList.enderShard, 16, 1, 5, 10),
-				new WeightedRandomChestContent(ItemList.shiniumIngot, 4, 1, 5, 10) };
+			new WeightedRandomChestContent(Items.iron_ingot, 2, 1, 5, 10),
+			new WeightedRandomChestContent(Items.gold_ingot, 4, 1, 5, 10),
+			new WeightedRandomChestContent(ItemList.amaranthIngot, 6, 1, 5, 10),
+			new WeightedRandomChestContent(ItemList.ingotFueltonium, 8, 1, 5,
+					10),
+			new WeightedRandomChestContent(ItemList.spcItem, 20, 1, 5, 10),
+			new WeightedRandomChestContent(ItemList.enderShard, 16, 1, 5, 10),
+			new WeightedRandomChestContent(ItemList.shiniumIngot, 4, 1, 5, 10) };
 	
 	public static void init() {
 		addChestTypes();
@@ -88,14 +88,14 @@ public final class Treasures {
 		// chestTypes.add(ChestGenHooks.PYRAMID_DESERT_CHEST);
 		// chestTypes.add(ChestGenHooks.PYRAMID_JUNGLE_CHEST);
 		// chestTypes.add(ChestGenHooks.PYRAMID_JUNGLE_DISPENSER);
-		// chestTypes.add(ChestGenHooks.STRONGHOLD_CORRIDOR);
-		// chestTypes.add(ChestGenHooks.STRONGHOLD_CROSSING);
-		// chestTypes.add(ChestGenHooks.STRONGHOLD_LIBRARY);
+		chestTypes.add(ChestGenHooks.STRONGHOLD_CORRIDOR);
+		chestTypes.add(ChestGenHooks.STRONGHOLD_CROSSING);
+		chestTypes.add(ChestGenHooks.STRONGHOLD_LIBRARY);
 		// chestTypes.add(ChestGenHooks.VILLAGE_BLACKSMITH);
 		chestTypes.add(ZEChestGenHooks.CRYSTAL_TOWER);
 	}
 	
 	public static String pickChestType() {
-		return chestTypes.get(0);
+		return chestTypes.get(new Random().nextInt(chestTypes.size()));
 	}
 }

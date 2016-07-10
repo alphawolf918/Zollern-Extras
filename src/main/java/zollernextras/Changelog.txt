@@ -46,6 +46,8 @@
 * Added the Purpur Block.
     * Structural block that generates in The End.
     * Requires a diamond pickaxe or higher to mine.
+        * Has a 56% chance to spawn an Ender Bug when broken.
+            * Hostile mob that attacks the Player, much larger than a regular Silverfish.
 * Added the Purpur Pillar block.
     * Requires a diamond pickaxe or higher to mine.
     * Crafted using four Purpur Blocks.
@@ -71,7 +73,6 @@
 * Added Ender Berry trees.
     * Drops Ender Berries.
         * Currently just used a fruit, but will be expanded on to have special functionality in the future.
-* Ender particles now spawn around the Player after using the Ender sword.
 * Swamp Clay now cooks into Mud Bricks which can be crafted into Mud Brick blocks.
 
 

@@ -7,6 +7,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
+import zollernextras.api.ores.IOre;
 import zollernextras.items.ItemList;
 import zollernextras.lib.MainHelper;
 
@@ -19,10 +20,9 @@ public class FueltoniumOre extends Block implements IOre {
 		MainHelper.setTab(this);
 		MainHelper.setName(this, "fueltoniumore");
 		MainHelper.setTexture(this, "fueltonium");
-		this.setHardness(1.3F);
+		MainHelper.setHardResist(this, 1.3F, 9.2F);
 		this.setHarvestLevel("pickaxe", 4);
 		this.setStepSound(soundTypePiston);
-		this.setResistance(9.2F);
 	}
 	
 	@Override
@@ -48,7 +48,7 @@ public class FueltoniumOre extends Block implements IOre {
 		if (this.getItemDropped(p_149690_5_, rand, p_149690_7_) != Item
 				.getItemFromBlock(this)) {
 			int j1 = 0;
-			j1 = MathHelper.getRandomIntegerInRange(rand, 4, 8);
+			j1 = MathHelper.getRandomIntegerInRange(rand, 6, 10);
 			
 			return j1;
 		}

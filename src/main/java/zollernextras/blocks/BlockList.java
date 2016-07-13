@@ -184,6 +184,8 @@ public class BlockList {
 	public static Block netheridiumBlock = new GemBlock("netheridiumblock");
 	public static Block rubyBlock = new GemBlock("rubyblock");
 	public static Block sapphireBlock = new GemBlock("sapphireblock");
+	public static Block enderDiamondBlock = new GemBlock("enderdiamondblock")
+	.setLightLevel(0.6F);
 	
 	public static Block babyEnderDragonEgg = new BabyDragonEgg();
 	
@@ -349,9 +351,6 @@ public class BlockList {
 	public static Block purpurPillar = new PurpurPillar();
 	public static Block enderGlowstone = new GenericBlock("enderglowstone",
 			0.6F).setLightLevel(1.0F).setStepSound(Block.soundTypeGlass);
-	public static Block enderDiamondBlock = new GenericBlock(
-			"enderdiamondblock", 1.2F).setLightLevel(0.6F);
-	
 	public static FluidChocolate fluidChocolate = new FluidChocolate(
 			ModInfo.MODID + "_chocolate");
 	public static final Block blockChocolate = new BlockFChocolate(

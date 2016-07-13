@@ -36,6 +36,7 @@ import net.minecraft.world.chunk.storage.ExtendedBlockStorage;
 import net.minecraftforge.event.entity.EntityEvent.EntityConstructing;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.EntityStruckByLightningEvent;
+import net.minecraftforge.event.entity.living.EnderTeleportEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingJumpEvent;
@@ -51,10 +52,10 @@ import net.minecraftforge.event.entity.player.UseHoeEvent;
 import net.minecraftforge.event.terraingen.PopulateChunkEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.event.world.BlockEvent.BreakEvent;
+import zollernextras.api.ores.IOre;
 import zollernextras.biomes.BiomeList;
 import zollernextras.blocks.BabyDragonEgg;
 import zollernextras.blocks.BlockList;
-import zollernextras.blocks.ores.IOre;
 import zollernextras.entity.ExtendedPlayer;
 import zollernextras.items.ItemList;
 import zollernextras.items.armor.amaranth.AmaranthArmor;
@@ -62,6 +63,7 @@ import zollernextras.items.armor.azurite.AzuriteArmor;
 import zollernextras.items.armor.zollernium.ZollerniumArmor;
 import zollernextras.lib.MainHelper;
 import zollernextras.mobs.entities.EntityBabyDragon;
+import zollernextras.mobs.entities.EntityEnderBug;
 import zollernextras.mobs.entities.EntityShadowSkeleton;
 import zollernextras.network.PacketDispatcher;
 import zollernextras.network.client.SyncPlayerPropsMessage;
@@ -80,6 +82,23 @@ public class Events {
 			EntityPlayer player = (EntityPlayer) event.entity;
 			if (ExtendedPlayer.get((EntityPlayer) event.entity) == null) {
 				ExtendedPlayer.register((EntityPlayer) event.entity);
+			}
+		}
+	}
+	
+	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
+	public void onEntityEnderTeleport(EnderTeleportEvent event) {
+		EntityLivingBase living = event.entityLiving;
+		Random rand = new Random();
+		int randInt = rand.nextInt(500);
+		if (randInt <= 10) {
+			double xCoord = event.targetX;
+			double yCoord = event.targetY;
+			double zCoord = event.targetZ;
+			World worldObj = living.worldObj;
+			if (!worldObj.isRemote) {
+				EntityEnderBug enderBug = new EntityEnderBug(worldObj);
+				worldObj.spawnEntityInWorld(enderBug);
 			}
 		}
 	}
@@ -272,42 +291,35 @@ public class Events {
 	public void onEntityJoinWorldEvent(EntityJoinWorldEvent event) {
 		if (event.entity instanceof EntityPlayer
 				&& !event.entity.worldObj.isRemote) {
-			if (!event.entity.worldObj.isRemote
-					&& event.entity instanceof EntityPlayer) {
-				NBTTagCompound playerData = CommonProxy
-						.getEntityData(((EntityPlayer) event.entity)
-								.getCommandSenderName());
-				if (playerData != null) {
-					((ExtendedPlayer) event.entity
-							.getExtendedProperties(ExtendedPlayer.EXT_PROP_NAME))
-							.loadNBTData(playerData);
-				}
+			NBTTagCompound playerData = CommonProxy
+					.getEntityData(((EntityPlayer) event.entity)
+							.getCommandSenderName());
+			if (playerData != null) {
+				((ExtendedPlayer) event.entity
+						.getExtendedProperties(ExtendedPlayer.EXT_PROP_NAME))
+						.loadNBTData(playerData);
+			}
+			
+			EntityPlayer player = (EntityPlayer) event.entity;
+			ExtendedPlayer props = ExtendedPlayer.get(player);
+			if (!player.capabilities.isCreativeMode) {
 				
-				if (event.entity instanceof EntityPlayer) {
-					EntityPlayer player = (EntityPlayer) event.entity;
-					ExtendedPlayer props = ExtendedPlayer.get(player);
-					if (!player.capabilities.isCreativeMode) {
-						
-						// Max Health
-						double maxHealth = props.getMaxHealth();
-						player.getEntityAttribute(
-								SharedMonsterAttributes.maxHealth)
-								.setBaseValue(maxHealth);
-						
-						// Max Attack
-						double maxAttack = props.getMaxDamage();
-						double attrMaxDamage = player.getEntityAttribute(
-								SharedMonsterAttributes.attackDamage)
-								.getBaseValue();
-						player.getEntityAttribute(
-								SharedMonsterAttributes.attackDamage)
-								.setBaseValue(attrMaxDamage + maxAttack);
-					}
-					PacketDispatcher.sendTo(new SyncPlayerPropsMessage(
+				// Max Health
+				double maxHealth = props.getMaxHealth();
+				player.getEntityAttribute(SharedMonsterAttributes.maxHealth)
+						.setBaseValue(maxHealth);
+				
+				// Max Attack
+				double maxAttack = props.getMaxDamage();
+				double attrMaxDamage = player.getEntityAttribute(
+						SharedMonsterAttributes.attackDamage).getBaseValue();
+				player.getEntityAttribute(SharedMonsterAttributes.attackDamage)
+						.setBaseValue(attrMaxDamage + maxAttack);
+			}
+			PacketDispatcher
+					.sendTo(new SyncPlayerPropsMessage(
 							(EntityPlayer) event.entity),
 							(EntityPlayerMP) event.entity);
-				}
-			}
 		}
 	}
 	
@@ -318,7 +330,7 @@ public class Events {
 		if (!player.capabilities.isCreativeMode) {
 			double maxHealth = props.getMaxHealth();
 			player.getEntityAttribute(SharedMonsterAttributes.maxHealth)
-			.setBaseValue(maxHealth);
+					.setBaseValue(maxHealth);
 		}
 	}
 	
@@ -374,12 +386,12 @@ public class Events {
 									MainHelper.addChatMessage(
 											player,
 											EnumChatFormatting.GOLD
-											+ "+"
-											+ strIncrAmnt.substring(0,
-													3)
+													+ "+"
+													+ strIncrAmnt.substring(0,
+															3)
 													+ " Jump Height! Total: "
 													+ fullResist
-													.substring(0, 3));
+															.substring(0, 3));
 								}
 							}
 						}
@@ -421,11 +433,11 @@ public class Events {
 								MainHelper.addChatMessage(
 										player,
 										EnumChatFormatting.GOLD
-										+ "+"
-										+ blockFortune
-										+ " Fortune! Total: "
-										+ strFortuneLevel.substring(0,
-												3));
+												+ "+"
+												+ blockFortune
+												+ " Fortune! Total: "
+												+ strFortuneLevel.substring(0,
+														3));
 							}
 							if (new Random().nextInt(5) == 1) {
 								int numDropped = 0;

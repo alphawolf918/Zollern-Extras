@@ -13,6 +13,7 @@ import zollernextras.lib.modhelper.ModHelperBase;
 import zollernextras.mobs.entities.EntityBabyDragon;
 import zollernextras.mobs.entities.EntityDuck;
 import zollernextras.mobs.entities.EntityEnderBug;
+import zollernextras.mobs.entities.EntityEnderCreeper;
 import zollernextras.mobs.entities.EntityEnderSkeleton;
 import zollernextras.mobs.entities.EntityFish;
 import zollernextras.mobs.entities.EntityHellDuck;
@@ -238,6 +239,12 @@ public class Mobs {
 		
 		// Ender Bug
 		registerEntity(EntityEnderBug.class, "enderbug", 0xeeeeee, 0xdd008b);
+		
+		// Ender Creeper
+		registerEntity(EntityEnderCreeper.class, "endercreeper", 0x008b00,
+				0x000000);
+		EntityRegistry.addSpawn(EntityEnderSkeleton.class, 14, 1, 1,
+				EnumCreatureType.monster, BiomeGenBase.sky);
 		
 		MainHelper.Log("Entities have been registered!");
 	}

@@ -1,6 +1,8 @@
 package zollernextras.mobs.entities;
 
+import java.util.List;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackOnCollide;
 import net.minecraft.entity.ai.EntityAIAvoidEntity;
@@ -11,15 +13,19 @@ import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
+import net.minecraft.entity.boss.EntityDragon;
 import net.minecraft.entity.monster.EntityCreeper;
 import net.minecraft.entity.passive.EntityOcelot;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.world.World;
+import zollernextras.items.ItemList;
+import zollernextras.items.teleporter.MessageTeleportToDimension;
+import zollernextras.network.PacketDispatcher;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class EntityMegaCreeper extends EntityCreeper {
+public class EntityEnderCreeper extends EntityCreeper {
 	/**
 	 * Time when this creeper was last in an active state (Messed up code here,
 	 * probably causes creeper animation to go weird)
@@ -31,12 +37,12 @@ public class EntityMegaCreeper extends EntityCreeper {
 	 * ignite
 	 */
 	private int timeSinceIgnited;
-	private final int fuseTime = 20;
+	private final int fuseTime = 25;
 	
 	/** Explosion radius for this creeper. */
 	private final int explosionRadius = 8;
 	
-	public EntityMegaCreeper(World par1World) {
+	public EntityEnderCreeper(World par1World) {
 		super(par1World);
 		this.tasks.addTask(1, new EntityAISwimming(this));
 		this.tasks.addTask(2, new EntityAICreeperSwell(this));
@@ -56,9 +62,9 @@ public class EntityMegaCreeper extends EntityCreeper {
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed)
-		.setBaseValue(0.28D);
+		.setBaseValue(0.294D);
 		this.getEntityAttribute(SharedMonsterAttributes.maxHealth)
-		.setBaseValue(20.0D);
+		.setBaseValue(10.0D);
 	}
 	
 	/**
@@ -84,12 +90,7 @@ public class EntityMegaCreeper extends EntityCreeper {
 	 */
 	@Override
 	protected void fall(float par1) {
-		super.fall(par1);
-		this.timeSinceIgnited = (int) (this.timeSinceIgnited + par1 * 1.5F);
 		
-		if (this.timeSinceIgnited > this.fuseTime - 5) {
-			this.timeSinceIgnited = this.fuseTime - 5;
-		}
 	}
 	
 	/**
@@ -100,39 +101,43 @@ public class EntityMegaCreeper extends EntityCreeper {
 		if (this.isEntityAlive()) {
 			this.lastActiveTime = this.timeSinceIgnited;
 			int i = this.getCreeperState();
-			
 			if (i > 0 && this.timeSinceIgnited == 0) {
 				this.playSound("random.fuse", 1.0F, 0.5F);
 			}
-			
 			this.timeSinceIgnited += i;
-			
 			if (this.timeSinceIgnited < 0) {
 				this.timeSinceIgnited = 0;
 			}
-			
 			if (this.timeSinceIgnited >= this.fuseTime) {
 				this.timeSinceIgnited = this.fuseTime;
-				
 				if (!this.worldObj.isRemote) {
-					boolean flag = this.worldObj.getGameRules()
-							.getGameRuleBooleanValue("mobGriefing");
-					
-					if (this.getPowered()) {
-						this.worldObj.createExplosion(this, this.posX,
-								this.posY, this.posZ, this.explosionRadius * 4,
-								flag);
-					} else {
-						this.worldObj.createExplosion(this, this.posX,
-								this.posY, this.posZ, this.explosionRadius,
-								flag);
+					this.worldObj.spawnParticle("portal", this.posX, this.posY,
+							this.posZ, 4D, 4D, 4D);
+					this.worldObj.playSoundEffect(this.posX, this.posY,
+							this.posZ, "mob.endermen.portal", 2.0F,
+							this.worldObj.rand.nextFloat() * 0.1F + 0.9F);
+					List players = worldObj.getEntitiesWithinAABB(
+							EntityLivingBase.class, this.boundingBox.expand(
+									3 + Math.floor(this.ticksExisted / 50), 2,
+									3 + Math.floor(this.ticksExisted / 50)));
+					Object[] playerArray = players.toArray();
+					for (Object o : playerArray) {
+						EntityLivingBase e = (EntityLivingBase) o;
+						if (!(e instanceof EntityDragon)) {
+							int entityId = e.getEntityId();
+							if (!this.worldObj.isRemote) {
+								PacketDispatcher.getSimpleNetworkWrapper()
+								.sendToServer(
+										new MessageTeleportToDimension(
+												e.dimension == 0 ? 1
+																: 0, entityId));
+							}
+						}
 					}
-					
 					this.setDead();
 				}
 			}
 		}
-		
 		super.onUpdate();
 	}
 	
@@ -149,7 +154,7 @@ public class EntityMegaCreeper extends EntityCreeper {
 	 */
 	@Override
 	protected String getDeathSound() {
-		return "mob.creeper.death";
+		return "mob.endermen.death";
 	}
 	
 	@Override
@@ -173,6 +178,6 @@ public class EntityMegaCreeper extends EntityCreeper {
 	 */
 	@Override
 	protected Item getDropItem() {
-		return Item.getItemById(289);
+		return ItemList.enderShard;
 	}
 }

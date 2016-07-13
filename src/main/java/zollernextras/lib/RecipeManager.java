@@ -35,6 +35,14 @@ public class RecipeManager {
 		static void init() {
 			ToolArmorRecipes.init();
 			
+			// Power Stick (Ender Cane)
+			GameRegistry.addRecipe(new ItemStack(ItemList.powerStick, 4),
+					new Object[] { " E ", " E ", "   ", 'E',
+				ItemList.enderReeds });
+			GameRegistry.addRecipe(new ItemStack(ItemList.powerStick, 4),
+					new Object[] { "   ", " E ", " E ", 'E',
+				ItemList.enderReeds });
+			
 			// Mud Bricks
 			addBricks(ItemList.bricksMud, BlockList.bricksMud);
 			

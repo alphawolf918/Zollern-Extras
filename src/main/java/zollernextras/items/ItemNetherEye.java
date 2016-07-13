@@ -6,7 +6,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.world.World;
 import zollernextras.items.teleporter.MessageTeleportToDimension;
-import zollernextras.lib.KeyHelper;
 import zollernextras.network.PacketDispatcher;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -36,12 +35,7 @@ public class ItemNetherEye extends ModItem {
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack p_77624_1_, EntityPlayer p_77624_2_,
 			List list, boolean p_77624_4_) {
-		if (KeyHelper.isCtrlKeyDown() || KeyHelper.isShiftKeyDown()) {
-			list.add(EnumChatFormatting.ITALIC + "Teleport to and from the");
-			list.add(EnumChatFormatting.ITALIC + " Nether at will!");
-		} else {
-			list.add("Hold LSHIFT for ");
-			list.add("more information.");
-		}
+		list.add(EnumChatFormatting.ITALIC + "Teleport to and from");
+		list.add(EnumChatFormatting.ITALIC + "the Nether at will!");
 	}
 }

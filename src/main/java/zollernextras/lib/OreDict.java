@@ -2,6 +2,7 @@ package zollernextras.lib;
 
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
@@ -67,6 +68,7 @@ public class OreDict {
 		registerOre("ingotFueltonium", ItemList.ingotFueltonium);
 		registerOre("oreFueltonium", BlockList.fueltonium);
 		registerOre("oreNetherFueltonium", BlockList.fuelNetherOre);
+		registerOre("oreEnderFueltonium", BlockList.enderFnOre);
 		registerOre("dustFueltonium", ItemList.fuelonite);
 		registerOre("blockFueltonium", BlockList.fueltoniumBlock);
 		
@@ -82,6 +84,7 @@ public class OreDict {
 		registerOre("dustZinc", ItemList.zincDust);
 		registerOre("oreZinc", BlockList.zincOre);
 		registerOre("oreNetherZinc", BlockList.zincNetherOre);
+		registerOre("oreEnderZinc", BlockList.enderZincOre);
 		registerOre("blockZinc", BlockList.zincBlock);
 		
 		// Silver
@@ -93,12 +96,14 @@ public class OreDict {
 		registerOre("dustAmaranth", ItemList.amaranthDust);
 		registerOre("oreAmaranth", BlockList.amaranthOre);
 		registerOre("oreNetherAmaranth", BlockList.amaranthNetherOre);
+		registerOre("oreEnderAmaranth", BlockList.enderAmaranthOre);
 		registerOre("blockAmaranth", BlockList.amaranthBlock);
 		
 		// Super Charged Coal
 		registerOre("dustSuperChargedCoal", ItemList.spcItem);
 		registerOre("oreSuperChargedCoal", BlockList.spcOre);
 		registerOre("oreNetherSuperChargedCoal", BlockList.spcNetherOre);
+		registerOre("oreEnderSuperChargedCoal", BlockList.enderSpcOre);
 		registerOre("blockSuperChargedCoal", BlockList.spcBlock);
 		
 		// Zollernium
@@ -106,6 +111,11 @@ public class OreDict {
 		registerOre("dustZollernium", ItemList.zollerniumDust);
 		registerOre("blockZollernium", BlockList.zollerniumBlock);
 		registerOre("oreZollernium", BlockList.zollerniumOre);
+		
+		// Ender Diamond
+		registerOre("gemEnderDiamond", ItemList.enderDiamond);
+		registerOre("oreEnderDiamond", BlockList.enderDiamondOre);
+		registerOre("blockEnderDiamond", BlockList.enderDiamondBlock);
 		
 		// Azurite
 		registerOre("gemAzurite", ItemList.azurite);
@@ -157,6 +167,10 @@ public class OreDict {
 		registerOre("blockSapphire", BlockList.sapphireBlock);
 		registerOre("gemSapphire", ItemList.sapphire);
 		
+		// Lapis
+		registerOre("ingotLapis", ItemList.lapisIngot);
+		registerOre("dustLapis", new ItemStack(Items.dye, 1, 4).getItem());
+		
 		// Dye
 		registerOre("dyeGreen", ItemList.greenDye);
 		registerOre("dyePink", ItemList.enderReeds);
@@ -202,9 +216,11 @@ public class OreDict {
 		
 		// Fluid Registry
 		registerOre("fluidChocolate", BlockList.blockChocolate);
+		registerOre("fluidFueltonium", BlockList.blockFuel);
 		
 		// Bucket Registry
 		registerOre("bucketChocolate", ItemList.chocolateBucket);
+		registerOre("bucketFueltonium", ItemList.fuelBucket);
 		
 		MainHelper.Log("OreDictionary loaded: " + totalEntries + " entries.");
 	}

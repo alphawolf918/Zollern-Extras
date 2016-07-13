@@ -59,6 +59,16 @@ public class MainHelper {
 		setTexture(item, strBoth);
 	}
 	
+	public static void setHardResist(Block block, float hardness,
+			float resistance) {
+		block.setHardness(hardness);
+		block.setResistance(resistance);
+	}
+	
+	public static void setHardResist(Block block, float hardResist) {
+		MainHelper.setHardResist(block, hardResist, hardResist);
+	}
+	
 	public static boolean getConfig(Configuration config,
 			String configCategory, String configKey,
 			boolean configDefaultValue, String configComment) {

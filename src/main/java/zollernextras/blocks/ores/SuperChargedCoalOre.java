@@ -7,6 +7,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
+import zollernextras.api.ores.IOre;
 import zollernextras.items.ItemList;
 import zollernextras.lib.MainHelper;
 
@@ -19,11 +20,8 @@ public class SuperChargedCoalOre extends Block implements IOre {
 		MainHelper.setTab(this);
 		MainHelper.setName(this, "superchargedcoalore");
 		MainHelper.setTexture(this, "spc_coal_ore");
-		this.setHardness(0.3F);
-		this.setStepSound(this.soundTypeGlass);
+		MainHelper.setHardResist(this, 1.4F, 9.2F);
 		this.setHarvestLevel("pickaxe", 3);
-		this.setStepSound(soundTypePiston);
-		this.setResistance(9.2F);
 	}
 	
 	@Override

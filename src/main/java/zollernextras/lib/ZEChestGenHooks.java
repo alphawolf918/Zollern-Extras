@@ -15,16 +15,16 @@ import zollernextras.items.ItemList;
 
 public class ZEChestGenHooks extends ChestGenHooks {
 	
-	public static final String CRYSTAL_TOWER = "crystalTower";
+	public static final String ENDER_TOWER = "enderTower";
 	public static final WeightedRandomChestContent[] CTChestContents = new WeightedRandomChestContent[] {
-			new WeightedRandomChestContent(Items.iron_ingot, 2, 1, 5, 10),
-			new WeightedRandomChestContent(Items.gold_ingot, 4, 1, 5, 10),
-			new WeightedRandomChestContent(ItemList.amaranthIngot, 6, 1, 5, 10),
-			new WeightedRandomChestContent(ItemList.ingotFueltonium, 8, 1, 5,
-					10),
-			new WeightedRandomChestContent(ItemList.spcItem, 20, 1, 5, 10),
-			new WeightedRandomChestContent(ItemList.enderShard, 16, 1, 5, 10),
-			new WeightedRandomChestContent(ItemList.shiniumIngot, 4, 1, 5, 10) };
+		new WeightedRandomChestContent(Items.iron_ingot, 2, 1, 5, 10),
+		new WeightedRandomChestContent(Items.gold_ingot, 4, 1, 5, 10),
+		new WeightedRandomChestContent(ItemList.amaranthIngot, 6, 1, 5, 10),
+		new WeightedRandomChestContent(ItemList.ingotFueltonium, 8, 1, 5,
+				10),
+				new WeightedRandomChestContent(ItemList.spcItem, 20, 1, 5, 10),
+				new WeightedRandomChestContent(ItemList.enderShard, 16, 1, 5, 10),
+				new WeightedRandomChestContent(ItemList.shiniumIngot, 4, 1, 5, 10) };
 	
 	private static final HashMap<String, ZEChestGenHooks> chestInfo = new HashMap<String, ZEChestGenHooks>();
 	
@@ -41,12 +41,12 @@ public class ZEChestGenHooks extends ChestGenHooks {
 		
 		hasInit = true;
 		
-		addInfo(CRYSTAL_TOWER, CTChestContents, 4, 8);
+		addInfo(ENDER_TOWER, CTChestContents, 4, 8);
 		
 		ItemStack book = new ItemStack(Items.enchanted_book, 1, 0);
 		WeightedRandomChestContent tmp = new WeightedRandomChestContent(book,
 				1, 1, 1);
-		getInfo(CRYSTAL_TOWER).addItem(tmp);
+		getInfo(ENDER_TOWER).addItem(tmp);
 	}
 	
 	static void addDungeonLoot(ZEChestGenHooks dungeon, ItemStack item,

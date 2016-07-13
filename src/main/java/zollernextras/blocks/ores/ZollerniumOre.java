@@ -7,6 +7,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
+import zollernextras.api.ores.IOre;
 import zollernextras.lib.MainHelper;
 
 public class ZollerniumOre extends Block implements IOre {
@@ -15,10 +16,8 @@ public class ZollerniumOre extends Block implements IOre {
 		super(Material.rock);
 		MainHelper.setTab(this);
 		MainHelper.setNameAndTexture(this, "zollerniumore");
-		this.setStepSound(this.soundTypeStone);
+		MainHelper.setHardResist(this, 1.4F, 10F);
 		this.setHarvestLevel("pickaxe", 6);
-		this.setHardness(1.4F);
-		this.setResistance(10F);
 	}
 	
 	private Random rand = new Random();

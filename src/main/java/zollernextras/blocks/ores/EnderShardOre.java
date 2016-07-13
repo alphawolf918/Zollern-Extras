@@ -7,6 +7,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
+import zollernextras.api.ores.IOre;
 import zollernextras.items.ItemList;
 import zollernextras.lib.MainHelper;
 
@@ -18,11 +19,10 @@ public class EnderShardOre extends Block implements IOre {
 		super(Material.rock);
 		MainHelper.setTab(this);
 		MainHelper.setNameAndTexture(this, "endershardore");
-		this.setHardness(1.3F);
+		MainHelper.setHardResist(this, 1.3F, 9.2F);
 		this.setStepSound(this.soundTypeGlass);
 		this.setHarvestLevel("pickaxe", 3);
 		this.setStepSound(soundTypePiston);
-		this.setResistance(9.2F);
 	}
 	
 	@Override

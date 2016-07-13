@@ -28,8 +28,9 @@ import zollernextras.items.ItemList;
 import zollernextras.lib.ModInfo;
 
 public class EntityMummy extends EntityZombie {
-	protected static final IAttribute field_110186_bp = (new RangedAttribute(
-			"zombie.spawnReinforcements", 0.0D, 0.0D, 1.0D));
+	
+	protected static final IAttribute field_110186_bp = new RangedAttribute(
+			"zombie.spawnReinforcements", 0.0D, 0.0D, 1.0D);
 	
 	public EntityMummy(World par1World) {
 		super(par1World);
@@ -42,7 +43,7 @@ public class EntityMummy extends EntityZombie {
 				EntityVillager.class, 2.0D, true));
 		this.tasks.addTask(4, new EntityAIMoveTowardsRestriction(this, 1.0D));
 		this.tasks
-				.addTask(5, new EntityAIMoveThroughVillage(this, 2.0D, false));
+		.addTask(5, new EntityAIMoveThroughVillage(this, 2.0D, false));
 		this.tasks.addTask(6, new EntityAIWander(this, 2.0D));
 		this.tasks.addTask(7, new EntityAIWatchClosest(this,
 				EntityPlayer.class, 8.0F));
@@ -88,14 +89,14 @@ public class EntityMummy extends EntityZombie {
 	@Override
 	protected void dropRareDrop(int par1) {
 		switch (this.rand.nextInt(3)) {
-			case 0:
-				this.dropItem(Items.gold_ingot, 1);
-				break;
-			case 1:
-				this.dropItem(Items.paper, 1);
-				break;
-			case 2:
-				this.dropItem(Items.potato, 1);
+		case 0:
+			this.dropItem(Items.gold_ingot, 1);
+			break;
+		case 1:
+			this.dropItem(Items.paper, 1);
+			break;
+		case 2:
+			this.dropItem(Items.potato, 1);
 		}
 	}
 	
@@ -130,11 +131,11 @@ public class EntityMummy extends EntityZombie {
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.followRange)
-				.setBaseValue(45.0D);
+		.setBaseValue(45.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed)
-				.setBaseValue(0.2D);
+		.setBaseValue(0.2D);
 		this.getEntityAttribute(SharedMonsterAttributes.attackDamage)
-				.setBaseValue(5.0D);
+		.setBaseValue(5.0D);
 	}
 	
 	@Override

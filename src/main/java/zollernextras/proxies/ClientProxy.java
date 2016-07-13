@@ -35,6 +35,7 @@ import zollernextras.lib.modhelper.ModHelperBase;
 import zollernextras.mobs.entities.EntityBabyDragon;
 import zollernextras.mobs.entities.EntityDuck;
 import zollernextras.mobs.entities.EntityEnderBug;
+import zollernextras.mobs.entities.EntityEnderCreeper;
 import zollernextras.mobs.entities.EntityEnderSkeleton;
 import zollernextras.mobs.entities.EntityFish;
 import zollernextras.mobs.entities.EntityHellDuck;
@@ -51,6 +52,7 @@ import zollernextras.mobs.entities.EntityShrimp;
 import zollernextras.mobs.models.ModelBabyDragon;
 import zollernextras.mobs.models.ModelDuck;
 import zollernextras.mobs.models.ModelEnderBug;
+import zollernextras.mobs.models.ModelEnderCreeper;
 import zollernextras.mobs.models.ModelEnderSkeleton;
 import zollernextras.mobs.models.ModelFish;
 import zollernextras.mobs.models.ModelHog;
@@ -66,6 +68,7 @@ import zollernextras.mobs.models.ModelShrimp;
 import zollernextras.mobs.renders.RenderBabyDragon;
 import zollernextras.mobs.renders.RenderDuck;
 import zollernextras.mobs.renders.RenderEnderBug;
+import zollernextras.mobs.renders.RenderEnderCreeper;
 import zollernextras.mobs.renders.RenderEnderSkeleton;
 import zollernextras.mobs.renders.RenderFish;
 import zollernextras.mobs.renders.RenderHellDuck;
@@ -127,6 +130,10 @@ public class ClientProxy extends CommonProxy {
 		
 		RenderingRegistry.registerEntityRenderingHandler(EntityEnderBug.class,
 				new RenderEnderBug(new ModelEnderBug(), 0.5F));
+		
+		RenderingRegistry.registerEntityRenderingHandler(
+				EntityEnderCreeper.class, new RenderEnderCreeper(
+						new ModelEnderCreeper(), 0.5F));
 		
 		RenderingRegistry.registerEntityRenderingHandler(EntityMummy.class,
 				new RenderMummy(new ModelMummy(), 0.5F));

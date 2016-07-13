@@ -3,6 +3,7 @@
     * Generates naturally in The End.
     * Only grows on End Stone and Ender Dirt.
     * Item can be used as a pink dye.
+    * Item can be crafted into four Power Sticks.
 * Added the Melted Chocolate fluid and Melted Chocolate Bucket.
     * Generates naturally as lakes in Candy Land biomes.
     * Obtained by putting Chocolate Blocks in a Magma Crucible, or by picking it up in a bucket.
@@ -48,6 +49,7 @@
     * Requires a diamond pickaxe or higher to mine.
         * Has a 56% chance to spawn an Ender Bug when broken.
             * Hostile mob that attacks the Player, much larger than a regular Silverfish.
+            * Also will attack Enderman.
 * Added the Purpur Pillar block.
     * Requires a diamond pickaxe or higher to mine.
     * Crafted using four Purpur Blocks.
@@ -69,11 +71,21 @@
     * Has an Ender Bow equipped and uses Ender Arrows.
         * Drops arrows pretty often, but the bow is a very rare drop.
         * This item is used directly from Zane Extras.
-    * Same size as a Shadow Skeleton.
+    * Same size as a Shadow Skeleton, but a little bit taller.
 * Added Ender Berry trees.
     * Drops Ender Berries.
         * Currently just used a fruit, but will be expanded on to have special functionality in the future.
 * Swamp Clay now cooks into Mud Bricks which can be crafted into Mud Brick blocks.
+* Ender sword now spawns Enderman particles when teleporting the Player.
+* Added the new wtp command which allows Players to tp to coordinates without being an Op.
+    * This will soon be disabled in the config by default.
+* Ender Bugs now have a 10/500 chance to spawn when the teleport event is called.
+    * Also have a 10/5000 chance to spawn when the Ender sword's teleport is used.
+* Added Ender Creeper mob.
+    * Naturally spawns in The End.
+    * Uses the same model as the Mega Creeper.
+    * Transports the Player back to the Overworld when it explodes.
+        * If the Player is in the Overworld, it will send them to The End.
 
 
 -- FIXES --

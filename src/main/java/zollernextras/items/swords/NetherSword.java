@@ -13,7 +13,6 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
-import zollernextras.creativetabs.ModTabs;
 import zollernextras.items.tools.ToolMaterials;
 import zollernextras.lib.KeyHelper;
 import zollernextras.lib.MainHelper;
@@ -24,7 +23,6 @@ public class NetherSword extends ItemSword {
 	
 	public NetherSword(ToolMaterial p_i45347_1_) {
 		super(p_i45347_1_);
-		this.setCreativeTab(ModTabs.zTab);
 		MainHelper.setTab(this);
 		MainHelper.setNameAndTexture(this, "nethersword");
 	}
@@ -33,14 +31,17 @@ public class NetherSword extends ItemSword {
 	public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World,
 			EntityPlayer par3Entity) {
 		super.onItemRightClick(par1ItemStack, par2World, par3Entity);
-		Vec3 look = par3Entity.getLookVec();
-		EntityLargeFireball fireball = new EntityLargeFireball(par2World);
-		fireball.setPosition(par3Entity.posX + look.xCoord * 5, par3Entity.posY
-				+ 1 + look.yCoord * 5, par3Entity.posZ + look.zCoord * 5);
-		fireball.accelerationX = look.xCoord * 0.1;
-		fireball.accelerationY = look.yCoord * 0.1;
-		fireball.accelerationZ = look.zCoord * 0.1;
-		par2World.spawnEntityInWorld(fireball);
+		if (!par2World.isRemote) {
+			Vec3 look = par3Entity.getLookVec();
+			EntityLargeFireball fireball = new EntityLargeFireball(par2World);
+			fireball.setPosition(par3Entity.posX + look.xCoord * 5,
+					par3Entity.posY + 1 + look.yCoord * 5, par3Entity.posZ
+							+ look.zCoord * 5);
+			fireball.accelerationX = look.xCoord * 0.1;
+			fireball.accelerationY = look.yCoord * 0.1;
+			fireball.accelerationZ = look.zCoord * 0.1;
+			par2World.spawnEntityInWorld(fireball);
+		}
 		return par1ItemStack;
 	}
 	

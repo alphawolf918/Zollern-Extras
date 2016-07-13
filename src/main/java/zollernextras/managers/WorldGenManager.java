@@ -13,6 +13,8 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 import zollernextras.biomes.BiomeList;
 import zollernextras.blocks.BlockList;
 import zollernextras.config.ZEConfig;
+import zollernextras.mobs.entities.EntityEnderCreeper;
+import zollernextras.mobs.entities.EntityEnderSkeleton;
 import zollernextras.worldgen.WorldGenBerries;
 import zollernextras.worldgen.WorldGenCandyTree;
 import zollernextras.worldgen.WorldGenCrop;
@@ -177,7 +179,7 @@ public class WorldGenManager implements IWorldGenerator {
 		// Treasure Chests
 		if ((currentBiome.isEqualTo(BiomeGenBase.deepOcean)
 				|| currentBiome.equals(BiomeGenBase.ocean) || currentBiome
-				.equals(BiomeList.crystalOcean)) && y <= 44) {
+					.equals(BiomeList.crystalOcean)) && y <= 44) {
 			spawnStructure(80, 200, world, random, x, y, z,
 					new WorldGenTreasureChest());
 		}
@@ -500,11 +502,11 @@ public class WorldGenManager implements IWorldGenerator {
 		int Zcoord = z + random.nextInt(16);
 		
 		// End Lakes
-		// if (random.nextInt(40) <= 25) {
-		// new WorldGenLakes(Blocks.end_stone).generate(world, random, Xcoord
-		// + random.nextInt(50), Ycoord + random.nextInt(50), Zcoord
-		// + random.nextInt(50));
-		// }
+		if (random.nextInt(20) <= 25) {
+			new WorldGenLakes(Blocks.end_stone).generate(world, random, Xcoord
+					+ random.nextInt(50), Ycoord + random.nextInt(50), Zcoord
+					+ random.nextInt(50));
+		}
 		
 		// Ender Super Coal Ore
 		new WorldGenEnderMinable(BlockList.enderSpcOre, 6, 8).generate(world,
@@ -526,22 +528,39 @@ public class WorldGenManager implements IWorldGenerator {
 		new WorldGenEnderMinable(BlockList.enderiteOre,
 				ZEConfig.oreEnderiteSpawnRate,
 				ZEConfig.oreEnderiteSpawnRate + 6).generate(world, random,
-				Xcoord, Ycoord, Zcoord);
+						Xcoord, Ycoord, Zcoord);
 		
 		// Ender Diamond Ore
 		new WorldGenEnderMinable(BlockList.enderDiamondOre, 6, 8).generate(
 				world, random, Xcoord, Ycoord, Zcoord);
 		
 		// Ender Dirt
-		if (new Random().nextInt(55) <= 42) {
+		if (new Random().nextInt(51) <= 42) {
 			new WorldGenLakes(BlockList.enderDirt).generate(world, random,
 					Xcoord, Ycoord, Zcoord);
+			if (!world.isRemote) {
+				for (int i = 0; i < 3; i++) {
+					EntityEnderSkeleton skeleton = new EntityEnderSkeleton(
+							world);
+					skeleton.setLocationAndAngles(Xcoord + i, Ycoord + 1,
+							Zcoord + i, 0.0f, 0.0f);
+					world.spawnEntityInWorld(skeleton);
+				}
+			}
 		}
 		
 		// Ender Reeds
 		if (new Random().nextInt(35) <= 15) {
 			new WorldGenEnderReeds().generate(world, random, Xcoord,
 					Ycoord + 1, Zcoord);
+			if (!world.isRemote) {
+				for (int i = 0; i < 4; i++) {
+					EntityEnderCreeper creeper = new EntityEnderCreeper(world);
+					creeper.setLocationAndAngles(Xcoord + i, Ycoord + 1, Zcoord
+							+ i, 0.0f, 0.0f);
+					world.spawnEntityInWorld(creeper);
+				}
+			}
 		}
 		
 		// Ender Tower

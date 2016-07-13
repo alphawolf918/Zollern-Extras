@@ -3,14 +3,17 @@ package zollernextras.blocks.crops;
 import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockReed;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
+import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.EnumPlantType;
 import zollernextras.blocks.BlockList;
 import zollernextras.items.ItemList;
 import zollernextras.lib.MainHelper;
+import zollernextras.lib.ModInfo;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -94,6 +97,19 @@ public class BlockEnderReeds extends BlockReed {
 	@Override
 	public EnumPlantType getPlantType(IBlockAccess world, int x, int y, int z) {
 		return EnumPlantType.Crop;
+	}
+	
+	@Override
+	@SideOnly(Side.CLIENT)
+	public IIcon getIcon(int p_149691_1_, int p_149691_2_) {
+		return this.blockIcon;
+	}
+	
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void registerBlockIcons(IIconRegister p_149651_1_) {
+		this.blockIcon = p_149651_1_
+				.registerIcon(ModInfo.MODID + ":enderreeds");
 	}
 	
 }

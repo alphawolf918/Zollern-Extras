@@ -33,17 +33,19 @@ public class WitherSword extends ItemSword {
 	public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World,
 			EntityPlayer par3Entity) {
 		super.onItemRightClick(par1ItemStack, par2World, par3Entity);
-		Vec3 look = par3Entity.getLookVec();
-		EntityWitherSkull witherSkull = new EntityWitherSkull(par2World);
-		witherSkull.setPosition(par3Entity.posX + look.xCoord * 5,
-				par3Entity.posY + 1 + look.yCoord * 5, par3Entity.posZ
-				+ look.zCoord * 5);
-		witherSkull.accelerationX = look.xCoord * 0.1;
-		witherSkull.accelerationY = look.yCoord * 0.1;
-		witherSkull.accelerationZ = look.zCoord * 0.1;
-		this.playWitherSound(par2World, par3Entity.posX, par3Entity.posY,
-				par3Entity.posZ);
-		par2World.spawnEntityInWorld(witherSkull);
+		if (!par2World.isRemote) {
+			Vec3 look = par3Entity.getLookVec();
+			EntityWitherSkull witherSkull = new EntityWitherSkull(par2World);
+			witherSkull.setPosition(par3Entity.posX + look.xCoord * 5,
+					par3Entity.posY + 1 + look.yCoord * 5, par3Entity.posZ
+							+ look.zCoord * 5);
+			witherSkull.accelerationX = look.xCoord * 0.1;
+			witherSkull.accelerationY = look.yCoord * 0.1;
+			witherSkull.accelerationZ = look.zCoord * 0.1;
+			this.playWitherSound(par2World, par3Entity.posX, par3Entity.posY,
+					par3Entity.posZ);
+			par2World.spawnEntityInWorld(witherSkull);
+		}
 		return par1ItemStack;
 	}
 	

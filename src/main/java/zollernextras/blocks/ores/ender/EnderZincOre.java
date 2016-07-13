@@ -7,19 +7,17 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
-import zollernextras.blocks.ores.IOre;
+import zollernextras.api.ores.IOre;
 import zollernextras.lib.MainHelper;
 
 public class EnderZincOre extends Block implements IOre {
+	
 	public EnderZincOre() {
 		super(Material.rock);
 		MainHelper.setTab(this);
 		MainHelper.setNameAndTexture(this, "enderzincore");
-		this.setStepSound(this.soundTypeStone);
+		MainHelper.setHardResist(this, 2.5F, 4.2F);
 		this.setHarvestLevel("pickaxe", 4);
-		this.setStepSound(soundTypePiston);
-		this.setHardness(2.5F);
-		this.setResistance(4.2F);
 	}
 	
 	private Random rand = new Random();

@@ -7,20 +7,18 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
-import zollernextras.blocks.ores.IOre;
+import zollernextras.api.ores.IOre;
 import zollernextras.lib.MainHelper;
 
 public class NetherEnderShardOre extends Block implements IOre {
+	
 	public NetherEnderShardOre() {
 		super(Material.rock);
 		MainHelper.setTab(this);
 		MainHelper.setNameAndTexture(this, "netherendershardore",
 				"endernetherore");
-		this.setStepSound(this.soundTypeStone);
+		MainHelper.setHardResist(this, 1.5F, 6.2F);
 		this.setHarvestLevel("pickaxe", 3);
-		this.setStepSound(soundTypePiston);
-		this.setHardness(1.5F);
-		this.setResistance(6.2F);
 	}
 	
 	private Random rand = new Random();

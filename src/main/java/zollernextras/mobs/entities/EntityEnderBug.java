@@ -5,6 +5,8 @@ import net.minecraft.block.BlockSilverfish;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.ai.EntityAIAttackOnCollide;
+import net.minecraft.entity.monster.EntityEnderman;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -23,11 +25,14 @@ public class EntityEnderBug extends EntityMob {
 	 * them in battle.
 	 */
 	private int allySummonCooldown;
-	private static final String __OBFID = "CL_00001696";
 	
 	public EntityEnderBug(World p_i1740_1_) {
 		super(p_i1740_1_);
 		this.setSize(this.width, this.height);
+		this.tasks.addTask(1, new EntityAIAttackOnCollide(this,
+				EntityPlayer.class, 1.2D, false));
+		this.tasks.addTask(2, new EntityAIAttackOnCollide(this,
+				EntityEnderman.class, 2.0D, false));
 	}
 	
 	@Override

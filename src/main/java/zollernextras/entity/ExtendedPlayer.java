@@ -115,12 +115,10 @@ public class ExtendedPlayer implements IExtendedEntityProperties {
 		this.setMaxFortune(maxFortune);
 		this.setMaxIntelligence(maxIntelligence);
 		this.setCurrentLevel(currentLevel);
-		
 	}
 	
 	private static final String getSaveKey(EntityPlayer player) {
-		return player.getCommandSenderName() + ":" + EXT_PROP_NAME + "_"
-				+ player.getCommandSenderName();
+		return player.getCommandSenderName() + ":" + EXT_PROP_NAME;
 	}
 	
 	public void copy(ExtendedPlayer props) {

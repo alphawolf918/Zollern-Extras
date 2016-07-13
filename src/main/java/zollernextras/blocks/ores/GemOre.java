@@ -7,6 +7,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
+import zollernextras.api.ores.IOre;
 import zollernextras.lib.MainHelper;
 
 public class GemOre extends Block implements IOre {
@@ -17,12 +18,10 @@ public class GemOre extends Block implements IOre {
 		super(Material.rock);
 		MainHelper.setTab(this);
 		MainHelper.setNameAndTexture(this, name);
+		MainHelper.setHardResist(this, 1.5F, 4.2F);
 		this.dropItem = itemToDrop;
-		this.setStepSound(this.soundTypeGlass);
 		this.setHarvestLevel("pickaxe", 3);
 		this.setStepSound(soundTypePiston);
-		this.setHardness(1.5F);
-		this.setResistance(4.2F);
 	}
 	
 	@Override
@@ -48,7 +47,7 @@ public class GemOre extends Block implements IOre {
 		if (this.getItemDropped(p_149690_5_, rand, p_149690_7_) != Item
 				.getItemFromBlock(this)) {
 			int j1 = 0;
-			j1 = MathHelper.getRandomIntegerInRange(rand, 8, 16);
+			j1 = MathHelper.getRandomIntegerInRange(rand, 8, 10);
 			
 			return j1;
 		}

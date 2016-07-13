@@ -411,7 +411,7 @@ item.zollernextras_brickingot_cyan.name=Cyan Brick Ingot
 item.zollernextras_brickingot_red.name=Red Brick Ingot
 item.zollernextras_brickingot_blue.name=Blue Brick Ingot
 item.zollernextras_brickingot_purple.name=Purple Brick Ingot
-item.zollernextras_brickingot+mud.name=Mud Brick Ingot
+item.zollernextras_brickingot_mud.name=Mud Brick Ingot
 
 item.zollernextras_nethereye.name=Nether Eye
 item.zollernextras_enderreeds.name=Ender Cane

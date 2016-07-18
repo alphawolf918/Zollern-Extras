@@ -51,7 +51,8 @@ public class ZollernExtrasMod {
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
-		MainHelper.Log("Beginning to load Zollern Extras...");
+		MainHelper.Log("Beginning to load Zollern Extras v" + ModInfo.VERSION
+				+ "...");
 		ModHelperBase.detectMods();
 		this.filePath = MainHelper.getFilePath(event);
 		ModTabs.init();

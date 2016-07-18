@@ -8,6 +8,7 @@
 * Fixed recipe for Precious Shinium not working.
 * Fixed Ender Tower chest contents spawning in Overworld chests.
 * Fixed unintentional crafting recipe that gave vegetables from seeds for tomatoes and cucumbers.
+* Fixed mod version inconsistencies (was listed as 2.6.7, is now listed as 3.0.2).
 -----------
 
 [3.0 - The Ender Update]

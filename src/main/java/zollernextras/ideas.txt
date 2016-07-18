@@ -18,5 +18,3 @@
 * Find a way to make The End terrain bigger.
     * Perhaps use a structure gen for End Stone to increase its land.
     * Find out if there is a way to "stretch" or otherwise "increase" The End size.
-* Ender Creeper.
-    * If he blows up near the Player, he will send them back to the Overworld.

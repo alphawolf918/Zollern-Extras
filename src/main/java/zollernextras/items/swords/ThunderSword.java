@@ -1,21 +1,17 @@
 package zollernextras.items.swords;
 
 import java.util.List;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.effect.EntityLightningBolt;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
-import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
-import zollernextras.items.tools.ToolMaterials;
 import zollernextras.lib.KeyHelper;
 import zollernextras.lib.MainHelper;
 import cpw.mods.fml.relauncher.Side;
@@ -68,6 +64,9 @@ public class ThunderSword extends ItemSword {
 		for (int l = 0; l < 16; l += 4) {
 			world.spawnEntityInWorld(new EntityLightningBolt(world, i, j, k + l));
 		}
+		if (!entityplayer.capabilities.isCreativeMode) {
+			itemstack.damageItem(1, entityplayer);
+		}
 		return itemstack;
 	}
 	
@@ -82,33 +81,14 @@ public class ThunderSword extends ItemSword {
 	}
 	
 	@Override
-	public boolean hitEntity(ItemStack par1ItemStack,
-			EntityLivingBase par2EntityLivingBase,
-			EntityLivingBase par3EntityLivingBase) {
-		par1ItemStack.damageItem(1, par3EntityLivingBase);
-		return true;
-	}
-	
-	@Override
-	public boolean onLeftClickEntity(ItemStack par1ItemStack,
-			EntityPlayer par2EntityPlayer, Entity entity) {
-		super.onLeftClickEntity(par1ItemStack, par2EntityPlayer, entity);
-		DamageSource par1DamageSource = DamageSource
-				.causePlayerDamage(par2EntityPlayer);
-		entity.attackEntityFrom(par1DamageSource,
-				ToolMaterials.POWER.getDamageVsEntity());
-		return true;
-	}
-	
-	@Override
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack p_77624_1_, EntityPlayer p_77624_2_,
 			List list, boolean p_77624_4_) {
 		if (KeyHelper.isCtrlKeyDown() || KeyHelper.isShiftKeyDown()) {
+			list.add(EnumChatFormatting.ITALIC + "Whosoever holds this blade,");
+			list.add(EnumChatFormatting.ITALIC + "should he be worthy,");
 			list.add(EnumChatFormatting.ITALIC
-					+ "A sword worthy of the power of Mjolnir,");
-			list.add(EnumChatFormatting.ITALIC
-					+ "created by the Allfather himself.");
+					+ "shall possess the power of Thor.");
 		} else {
 			list.add("Hold SHIFT for");
 			list.add("more information.");

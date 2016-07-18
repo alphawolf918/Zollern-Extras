@@ -78,6 +78,9 @@ public class OreDict {
 			registerOre("dustPlatinum", ItemList.shiniumDust);
 			registerOre("blockPlatinum", BlockList.shiniumBlock);
 		}
+		registerOre("ingotShinium", ItemList.shiniumIngot);
+		registerOre("dustShinium", ItemList.shiniumDust);
+		registerOre("blockShinium", BlockList.shiniumBlock);
 		
 		// Zinc
 		registerOre("ingotZinc", ItemList.zincIngot);
@@ -209,6 +212,11 @@ public class OreDict {
 		registerOre("cropLimon", ItemList.limon);
 		registerOre("cropCherry", ItemList.cherry);
 		registerOre("cropGrapefruit", ItemList.grapefruit);
+		
+		// Chargium
+		registerOre("dustChargium", ItemList.chargiumDust);
+		registerOre("ingotChargium", ItemList.chargiumIngot);
+		registerOre("blockChargium", BlockList.chargiumBlock);
 		
 		// Clay Registry
 		registerOre("itemClay", ItemList.swampClayBall);

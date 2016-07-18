@@ -1,6 +1,7 @@
 package zollernextras.command;
 
 import net.minecraft.command.CommandBase;
+import zollernextras.config.ZEConfig;
 import zollernextras.lib.MainHelper;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 
@@ -11,7 +12,9 @@ public class Commands {
 		registerCommand(event, new CommandWp());
 		registerCommand(event, new CommandStats());
 		registerCommand(event, new CommandHeal());
-		registerCommand(event, new CommandWarpTp());
+		if (ZEConfig.commandEnableWarpTp) {
+			registerCommand(event, new CommandWarpTp());
+		}
 		// event.registerServerCommand(new CommandSetHome());
 	}
 	

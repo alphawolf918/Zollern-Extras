@@ -15,9 +15,13 @@ public class ZEConfig {
 	public static ArrayList<String> homeList = new ArrayList<String>();
 	
 	public static String CATEGORY_BIOMES = "Biomes";
+	public static String CATEGORY_COMMANDS = "Commands";
+	public static String CATEGORY_GUI = "GUI";
 	public static String CATEGORY_IMPROVEMENTS = "Improvements";
 	public static String CATEGORY_MOBS = "Mobs";
 	public static String CATEGORY_ORES = "Ores";
+	
+	// Config2
 	public static String CATEGORY_HOMES = "Homes";
 	
 	public static boolean fueltoniumIsYellorite;
@@ -26,7 +30,6 @@ public class ZEConfig {
 	public static boolean rottenFleshCooksIntoLeather;
 	public static boolean vanillaItemsAreCraftable;
 	public static boolean horseArmorIsCraftable;
-	public static boolean biomeDisplaysOnHUD;
 	
 	public static int biomeIcyDesertID;
 	public static int biomeSlimeLandsID;
@@ -43,6 +46,11 @@ public class ZEConfig {
 	public static int biomeCandyLandID;
 	public static int biomeCrystalOceanID;
 	public static int biomeTropicalForestID;
+	
+	public static boolean commandEnableWarpTp;
+	public static boolean commandEnableWp;
+	
+	public static boolean biomeDisplaysOnHUD;
 	
 	public static int mobDuckSpawnRate;
 	public static int mobFishSpawnRate;
@@ -87,12 +95,16 @@ public class ZEConfig {
 		config.addCustomCategoryComment(config.CATEGORY_GENERAL,
 				"General settings for the mod.");
 		config.addCustomCategoryComment(CATEGORY_BIOMES, "IDs for ZE biomes.");
+		config.addCustomCategoryComment(CATEGORY_COMMANDS,
+				"Enable or disable special commands.");
+		config.addCustomCategoryComment(CATEGORY_GUI,
+				"Settings related to the GUI or HUD.");
 		config.addCustomCategoryComment(CATEGORY_IMPROVEMENTS,
 				"Various improvements and extras for the mod.");
 		config.addCustomCategoryComment(CATEGORY_MOBS,
-				"Spawn rates of ZE mobs.");
+				"Spawn rates of most ZE mobs.");
 		config.addCustomCategoryComment(CATEGORY_ORES,
-				"Spawn rates of ZE ores.");
+				"Spawn rates of most ZE ores.");
 		
 		// category, key, default value, comment
 		
@@ -131,7 +143,7 @@ public class ZEConfig {
 						"If enabled, horse armor may be crafted using its respective material and obsidian. (This is separate from the above on purpose.)")
 				.getBoolean();
 		biomeDisplaysOnHUD = config
-				.get(CATEGORY_IMPROVEMENTS, "biomeDisplaysOnHUD", true,
+				.get(CATEGORY_GUI, "biomeDisplaysOnHUD", true,
 						"Disable this if you don't want the current biome to show on your HUD.")
 				.getBoolean();
 		
@@ -166,6 +178,20 @@ public class ZEConfig {
 				"biomeCrystalOceanID", 80).getInt();
 		biomeTropicalForestID = config.get(CATEGORY_BIOMES,
 				"biomeTropicalForestID", 81).getInt();
+		
+		// Commands
+		commandEnableWarpTp = config
+				.get(CATEGORY_COMMANDS,
+						"Enable WarpTP command",
+						false,
+						"Allow or disallow any player, Op or not, to teleport to any coordinates. Default: false")
+				.getBoolean();
+		commandEnableWp = config
+				.get(CATEGORY_COMMANDS,
+						"Enable WP command",
+						false,
+						"Allow or disallow any player to instantly warp to any other player. Default: false")
+				.getBoolean();
 		
 		// Mobs
 		mobFishSpawnRate = config.get(CATEGORY_MOBS, "mobFishSpawnRate", 70)

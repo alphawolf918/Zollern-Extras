@@ -262,6 +262,11 @@ public class Events {
 		}
 	}
 	
+	// @SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
+	// public void onPlayerEvent(PlayerEvent.BreakSpeed event) {
+	//
+	// }
+	
 	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
 	public void FillBucket(FillBucketEvent event) {
 		ItemStack result = attemptFill(event.world, event.target);
@@ -282,6 +287,11 @@ public class Events {
 			if (world.getBlockMetadata(p.blockX, p.blockY, p.blockZ) == 0) {
 				world.setBlock(p.blockX, p.blockY, p.blockZ, Blocks.air);
 				return new ItemStack(ItemList.fuelBucket);
+			}
+		} else if (id == BlockList.blockChargium) {
+			if (world.getBlockMetadata(p.blockX, p.blockY, p.blockZ) == 0) {
+				world.setBlock(p.blockX, p.blockY, p.blockZ, Blocks.air);
+				return new ItemStack(ItemList.chargiumBucket);
 			}
 		}
 		return null;
@@ -315,6 +325,9 @@ public class Events {
 						SharedMonsterAttributes.attackDamage).getBaseValue();
 				player.getEntityAttribute(SharedMonsterAttributes.attackDamage)
 						.setBaseValue(attrMaxDamage + maxAttack);
+				
+				// Max Fortune
+				// double maxFortune = props.getMaxFortune();
 			}
 			PacketDispatcher
 					.sendTo(new SyncPlayerPropsMessage(
@@ -425,7 +438,7 @@ public class Events {
 							IOre oreBlock = (IOre) event.block;
 							ExtendedPlayer props = ExtendedPlayer.get(player);
 							double fortune = props.getMaxFortune();
-							if (new Random().nextInt(10) == 1) {
+							if (rand.nextInt(10) <= 4) {
 								double blockFortune = oreBlock.getFortune();
 								props.setMaxFortune(fortune + blockFortune);
 								String strFortuneLevel = ""
@@ -439,7 +452,7 @@ public class Events {
 												+ strFortuneLevel.substring(0,
 														3));
 							}
-							if (new Random().nextInt(5) == 1) {
+							if (new Random().nextInt(5) <= 2) {
 								int numDropped = 0;
 								if (fortune >= 1.0D) {
 									int r = new Random().nextInt((int) fortune);

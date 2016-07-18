@@ -6,6 +6,8 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackOnCollide;
+import net.minecraft.entity.ai.EntityAIHurtByTarget;
+import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.monster.EntityEnderman;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
@@ -33,17 +35,22 @@ public class EntityEnderBug extends EntityMob {
 				EntityPlayer.class, 1.2D, false));
 		this.tasks.addTask(2, new EntityAIAttackOnCollide(this,
 				EntityEnderman.class, 2.0D, false));
+		this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
+		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this,
+				EntityPlayer.class, 0, true));
+		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this,
+				EntityEnderman.class, 0, true));
 	}
 	
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.maxHealth)
-		.setBaseValue(14.0D);
+				.setBaseValue(14.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed)
-		.setBaseValue(0.6500000238418579D);
+				.setBaseValue(0.6500000238418579D);
 		this.getEntityAttribute(SharedMonsterAttributes.attackDamage)
-		.setBaseValue(1.2D);
+				.setBaseValue(1.2D);
 	}
 	
 	/**
@@ -177,24 +184,24 @@ public class EntityEnderBug extends EntityMob {
 										ImmutablePair immutablepair = BlockSilverfish
 												.func_150197_b(k1);
 										this.worldObj
-										.setBlock(
-												i + i1,
-												j + l,
-												k + j1,
-												(Block) immutablepair
-												.getLeft(),
-												((Integer) immutablepair
-														.getRight())
-														.intValue(), 3);
+												.setBlock(
+														i + i1,
+														j + l,
+														k + j1,
+														(Block) immutablepair
+																.getLeft(),
+														((Integer) immutablepair
+																.getRight())
+																.intValue(), 3);
 									} else {
 										this.worldObj.func_147480_a(i + i1, j
 												+ l, k + j1, false);
 									}
 									
 									BlockList.purpurBlock
-									.onBlockDestroyedByPlayer(
-											this.worldObj, i + i1, j
-											+ l, k + j1, 0);
+											.onBlockDestroyedByPlayer(
+													this.worldObj, i + i1, j
+															+ l, k + j1, 0);
 									
 									if (this.rand.nextBoolean()) {
 										flag = true;

@@ -1,21 +1,17 @@
 package zollernextras.items.swords;
 
 import java.util.List;
-import net.minecraft.block.Block;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
-import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
-import zollernextras.items.tools.ToolMaterials;
 import zollernextras.lib.KeyHelper;
 import zollernextras.lib.MainHelper;
 import cpw.mods.fml.relauncher.Side;
@@ -66,13 +62,13 @@ public class IceSword extends ItemSword {
 		int k = movingobjectposition.blockZ;
 		for (int u = 0; u < 8; u++) {
 			int newJ = j + u;
-			world.setBlock(i, j + u, k, Block.getBlockById(79));
+			world.setBlock(i, j + u, k, Blocks.packed_ice);
 			if (newJ <= 256) {
-				world.setBlock(i, newJ, k, Block.getBlockById(79));
+				world.setBlock(i, newJ, k, Blocks.packed_ice);
 			}
 		}
 		if (!entityplayer.capabilities.isCreativeMode) {
-			itemstack.damageItem(5, entityplayer);
+			itemstack.damageItem(1, entityplayer);
 		}
 		return itemstack;
 	}
@@ -85,25 +81,6 @@ public class IceSword extends ItemSword {
 	@Override
 	public EnumAction getItemUseAction(ItemStack p_77661_1_) {
 		return EnumAction.block;
-	}
-	
-	@Override
-	public boolean hitEntity(ItemStack par1ItemStack,
-			EntityLivingBase par2EntityLivingBase,
-			EntityLivingBase par3EntityLivingBase) {
-		par1ItemStack.damageItem(1, par3EntityLivingBase);
-		return true;
-	}
-	
-	@Override
-	public boolean onLeftClickEntity(ItemStack par1ItemStack,
-			EntityPlayer par2EntityPlayer, Entity entity) {
-		super.onLeftClickEntity(par1ItemStack, par2EntityPlayer, entity);
-		DamageSource par1DamageSource = DamageSource
-				.causePlayerDamage(par2EntityPlayer);
-		entity.attackEntityFrom(par1DamageSource,
-				ToolMaterials.POWER.getDamageVsEntity());
-		return true;
 	}
 	
 	@Override

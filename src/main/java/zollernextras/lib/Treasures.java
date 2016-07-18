@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Random;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntityChest;
 import net.minecraft.util.WeightedRandomChestContent;
 import net.minecraft.world.World;
@@ -16,27 +15,23 @@ public final class Treasures {
 	public static ArrayList<String> chestTypes = new ArrayList<String>();
 	
 	private static WeightedRandomChestContent item1 = new WeightedRandomChestContent(
-			new ItemStack(ItemList.spcItem, 1), 1, 10, 2);
+			ItemList.spcItem, 1, 10, 20, 5);
 	private static WeightedRandomChestContent item2 = new WeightedRandomChestContent(
-			new ItemStack(ItemList.fuelonite, 1), 1, 10, 2);
+			ItemList.fuelonite, 1, 5, 10, 5);
 	private static WeightedRandomChestContent item3 = new WeightedRandomChestContent(
-			new ItemStack(ItemList.amaranthIngot, 1), 1, 10, 2);
+			ItemList.amaranthIngot, 1, 10, 20, 4);
 	private static WeightedRandomChestContent item4 = new WeightedRandomChestContent(
-			new ItemStack(ItemList.heart, 1), 1, 1, 2);
+			ItemList.heart, 1, 5, 6, 2);
 	private static WeightedRandomChestContent item5 = new WeightedRandomChestContent(
-			new ItemStack(Items.gold_ingot, 64), 50, 90, 2);
+			Items.gold_ingot, 4, 20, 40, 10);
 	
 	public static final WeightedRandomChestContent[] CTChestContents = new WeightedRandomChestContent[] {
-		new WeightedRandomChestContent(Items.iron_ingot, 2, 1, 5, 10),
-		new WeightedRandomChestContent(Items.gold_ingot, 4, 1, 5, 10),
-		new WeightedRandomChestContent(ItemList.amaranthIngot, 6, 1, 5, 10),
-		new WeightedRandomChestContent(ItemList.ingotFueltonium, 8, 1, 5,
-				10),
-				new WeightedRandomChestContent(ItemList.spcItem, 20, 1, 5, 10),
-				new WeightedRandomChestContent(ItemList.enderShard, 16, 1, 5, 10),
-				new WeightedRandomChestContent(ItemList.shiniumIngot, 4, 1, 5, 10) };
+			new WeightedRandomChestContent(ItemList.shiniumIngot, 1, 2, 4, 2),
+			new WeightedRandomChestContent(ItemList.shinestoneIngot, 2, 10, 15,
+				20) };
 	
 	public static void init() {
+		ZEChestGenHooks.init();
 		addChestTypes();
 		addItems();
 	}
@@ -69,6 +64,21 @@ public final class Treasures {
 	
 	public static void spawnChest(World world, Random rand, int i, int j,
 			int k, boolean isBigChest, String chestType) {
+		world.setBlock(i, j, k, Blocks.chest);
+		if (isBigChest) {
+			world.setBlock(i + 1, j, k, Blocks.chest);
+		}
+		TileEntityChest tileentitychest = (TileEntityChest) world
+				.getTileEntity(i, j, k);
+		if (tileentitychest != null) {
+			ZEChestGenHooks info = ZEChestGenHooks.getInfo(chestType);
+			WeightedRandomChestContent.generateChestContents(rand,
+					info.getItems(rand), tileentitychest, info.getCount(rand));
+		}
+	}
+	
+	public static void spawnVanillaChest(World world, Random rand, int i,
+			int j, int k, boolean isBigChest, String chestType) {
 		world.setBlock(i, j, k, Blocks.chest);
 		if (isBigChest) {
 			world.setBlock(i + 1, j, k, Blocks.chest);

@@ -13,6 +13,7 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 import zollernextras.biomes.BiomeList;
 import zollernextras.blocks.BlockList;
 import zollernextras.config.ZEConfig;
+import zollernextras.lib.modhelper.ModHelperBase;
 import zollernextras.mobs.entities.EntityEnderCreeper;
 import zollernextras.mobs.entities.EntityEnderSkeleton;
 import zollernextras.worldgen.WorldGenBerries;
@@ -32,6 +33,7 @@ import zollernextras.worldgen.WorldGenSugarCubes;
 import zollernextras.worldgen.WorldGenSwampClay;
 import zollernextras.worldgen.WorldGenTreasureChest;
 import cpw.mods.fml.common.IWorldGenerator;
+import erogenousbeef.bigreactors.common.BigReactors;
 
 public class WorldGenManager implements IWorldGenerator {
 	
@@ -85,11 +87,11 @@ public class WorldGenManager implements IWorldGenerator {
 		
 		// Zollernium
 		addOreSpawn(BlockList.zollerniumOre, world, random, x, z, 16, 16,
-				1 + random.nextInt(1), 6, 2, 16);
+				1 + random.nextInt(3), 10, 2, 16);
 		
 		// Shard Ore
 		addOreSpawn(BlockList.enderShardOre, world, random, x, z, 16, 16,
-				2 + random.nextInt(2), ZEConfig.oreEnderShardSpawnRate, 6, 48);
+				4 + random.nextInt(4), ZEConfig.oreEnderShardSpawnRate, 4, 48);
 		
 		// Amaranth Ore
 		addOreSpawn(BlockList.amaranthOre, world, random, x, z, 16, 16,
@@ -101,8 +103,8 @@ public class WorldGenManager implements IWorldGenerator {
 		
 		// Diamond Ore
 		addOreSpawn(Blocks.diamond_ore, world, random, x, z, 16, 16,
-				2 + random.nextInt(2), ZEConfig.oreDiamondIncreaseSpawnRate, 4,
-				18);
+				2 + random.nextInt(4), ZEConfig.oreDiamondIncreaseSpawnRate, 4,
+				22);
 		
 		// Opal Ore
 		addOreSpawn(BlockList.opalOre, world, random, x, z, 16, 16,
@@ -179,7 +181,7 @@ public class WorldGenManager implements IWorldGenerator {
 		// Treasure Chests
 		if ((currentBiome.isEqualTo(BiomeGenBase.deepOcean)
 				|| currentBiome.equals(BiomeGenBase.ocean) || currentBiome
-					.equals(BiomeList.crystalOcean)) && y <= 44) {
+				.equals(BiomeList.crystalOcean)) && y <= 44) {
 			spawnStructure(80, 200, world, random, x, y, z,
 					new WorldGenTreasureChest());
 		}
@@ -367,6 +369,13 @@ public class WorldGenManager implements IWorldGenerator {
 					4 + random.nextInt(8), 60, 2, 256);
 			spawnStructure(5, 15, world, random, x, y, z, new WorldGenLakes(
 					Blocks.obsidian));
+			
+			// Intermod Ores
+			// Yellorite
+			if (ModHelperBase.useBigReactors) {
+				addOreSpawn(BigReactors.blockYelloriteOre, world, random, x, z,
+						16, 16, 4 + random.nextInt(8), 60, 2, 256);
+			}
 		}
 		
 		// Candy Land
@@ -528,7 +537,7 @@ public class WorldGenManager implements IWorldGenerator {
 		new WorldGenEnderMinable(BlockList.enderiteOre,
 				ZEConfig.oreEnderiteSpawnRate,
 				ZEConfig.oreEnderiteSpawnRate + 6).generate(world, random,
-						Xcoord, Ycoord, Zcoord);
+				Xcoord, Ycoord, Zcoord);
 		
 		// Ender Diamond Ore
 		new WorldGenEnderMinable(BlockList.enderDiamondOre, 6, 8).generate(

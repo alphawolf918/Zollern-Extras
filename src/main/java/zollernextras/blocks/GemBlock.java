@@ -11,7 +11,6 @@ public class GemBlock extends Block {
 		MainHelper.setNameAndTexture(this, strTexture);
 		this.setResistance(2F);
 		this.setHardness(1.2F);
-		this.setLightLevel(0.9F);
 		this.setStepSound(soundTypeMetal);
 		this.setHarvestLevel("pickaxe", 2);
 	}

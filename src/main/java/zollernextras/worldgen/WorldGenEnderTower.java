@@ -8,6 +8,7 @@ import net.minecraft.world.gen.feature.WorldGenLakes;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import zollernextras.blocks.BlockList;
 import zollernextras.lib.Treasures;
+import zollernextras.lib.ZEChestGenHooks;
 import zollernextras.mobs.entities.EntityEnderSkeleton;
 
 public class WorldGenEnderTower extends WorldGenerator {
@@ -224,7 +225,7 @@ public class WorldGenEnderTower extends WorldGenerator {
 		boolean isBigChest = chestRand == 1 ? true : false;
 		String chestString = chestX + " " + chestY + " " + chestZ;
 		Treasures.spawnChest(world, rand, chestX, chestY, chestZ, isBigChest,
-				Treasures.pickChestType());
+				ZEChestGenHooks.ENDER_TOWER);
 		world.setBlock(i + 5, j + 2, k + 8,
 		
 		BlockList.purpurBlock);
@@ -1127,7 +1128,7 @@ public class WorldGenEnderTower extends WorldGenerator {
 		boolean isBigChest2 = chestRand2 == 1 ? true : false;
 		String chestString2 = chestX2 + " " + chestY2 + " " + chestZ2;
 		Treasures.spawnChest(world, rand, chestX2, chestY2, chestZ2,
-				isBigChest2, Treasures.pickChestType());
+				isBigChest2, ZEChestGenHooks.ENDER_TOWER);
 		world.setBlock(i + 12, j + 2, k + 3,
 		
 		BlockList.purpurBlock);

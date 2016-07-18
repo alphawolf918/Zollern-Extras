@@ -16,8 +16,10 @@ import zollernextras.blocks.crops.CropPeas;
 import zollernextras.blocks.crops.CropRadish;
 import zollernextras.blocks.crops.CropStrawberry;
 import zollernextras.blocks.crops.CropTomato;
+import zollernextras.blocks.fluids.BlockFChargium;
 import zollernextras.blocks.fluids.BlockFChocolate;
 import zollernextras.blocks.fluids.BlockFFueltonium;
+import zollernextras.blocks.fluids.FluidChargium;
 import zollernextras.blocks.fluids.FluidChocolate;
 import zollernextras.blocks.fluids.FluidFueltonium;
 import zollernextras.blocks.food.BlockPizza;
@@ -178,14 +180,14 @@ public class BlockList {
 	public static Block opal = new GemBlock("opal");
 	public static Block enderOpal = new GemBlock("enderopal");
 	public static Block topaz = new GemBlock("topaz");
-	public static Block azurite = new GemBlock("azurite");
+	public static Block azurite = new GemBlock("azurite").setLightLevel(1.0F);
 	public static Block shiniumBlock = new GemBlock("shinium");
 	public static Block witheriteBlock = new GemBlock("witheriteblock");
 	public static Block netheridiumBlock = new GemBlock("netheridiumblock");
 	public static Block rubyBlock = new GemBlock("rubyblock");
 	public static Block sapphireBlock = new GemBlock("sapphireblock");
 	public static Block enderDiamondBlock = new GemBlock("enderdiamondblock")
-	.setLightLevel(0.6F);
+			.setLightLevel(0.6F);
 	
 	public static Block babyEnderDragonEgg = new BabyDragonEgg();
 	
@@ -351,6 +353,9 @@ public class BlockList {
 	public static Block purpurPillar = new PurpurPillar();
 	public static Block enderGlowstone = new GenericBlock("enderglowstone",
 			0.6F).setLightLevel(1.0F).setStepSound(Block.soundTypeGlass);
+	public static Block chargiumBlock = new GenericBlock("chargiumblock", 1.6F)
+			.setLightLevel(1.0F).setStepSound(Block.soundTypeGlass);
+	
 	public static FluidChocolate fluidChocolate = new FluidChocolate(
 			ModInfo.MODID + "_chocolate");
 	public static final Block blockChocolate = new BlockFChocolate(
@@ -359,6 +364,10 @@ public class BlockList {
 	public static FluidFueltonium fluidFuel = new FluidFueltonium(
 			"Molten Fueltonium");
 	public static Block blockFuel = new BlockFFueltonium(fluidFuel);
+	
+	public static FluidChargium fluidChargium = new FluidChargium(
+			"Conductive Chargium");
+	public static Block blockChargium = new BlockFChargium(fluidChargium);
 	
 	public static HashMap<String, Class<? extends TileEntity>> TERegistry;
 	
@@ -564,9 +573,11 @@ public class BlockList {
 		addBlock(enderGlowstone, "Ender Glowstone");
 		addBlock(enderDiamondOre, "Ender Diamond Ore");
 		addBlock(enderDiamondBlock, "Ender Diamond Block");
+		addBlock(chargiumBlock, "Chargium Block");
 		
 		addBlock(blockChocolate, "Melted Chocolate");
 		addBlock(blockFuel, "Molten Fueltonium");
+		addBlock(blockChargium, "Conductive Chargium");
 		
 		TERegistry = new HashMap<String, Class<? extends TileEntity>>();
 		ironBlockIngot = addIngotTile(new IronIngotStack("iron"), "iron",

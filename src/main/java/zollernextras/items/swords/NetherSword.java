@@ -2,18 +2,15 @@ package zollernextras.items.swords;
 
 import java.util.List;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityLargeFireball;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
-import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
-import zollernextras.items.tools.ToolMaterials;
 import zollernextras.lib.KeyHelper;
 import zollernextras.lib.MainHelper;
 import cpw.mods.fml.relauncher.Side;
@@ -41,16 +38,11 @@ public class NetherSword extends ItemSword {
 			fireball.accelerationY = look.yCoord * 0.1;
 			fireball.accelerationZ = look.zCoord * 0.1;
 			par2World.spawnEntityInWorld(fireball);
+			if (!par3Entity.capabilities.isCreativeMode) {
+				par1ItemStack.damageItem(1, par3Entity);
+			}
 		}
 		return par1ItemStack;
-	}
-	
-	@Override
-	public boolean hitEntity(ItemStack par1ItemStack,
-			EntityLivingBase par2EntityLivingBase,
-			EntityLivingBase par3EntityLivingBase) {
-		par1ItemStack.damageItem(1, par3EntityLivingBase);
-		return true;
 	}
 	
 	@Override
@@ -68,11 +60,7 @@ public class NetherSword extends ItemSword {
 			EntityPlayer par2EntityPlayer, Entity entity) {
 		super.onLeftClickEntity(par1ItemStack, par2EntityPlayer, entity);
 		entity.setFire(60);
-		DamageSource par1DamageSource = DamageSource
-				.causePlayerDamage(par2EntityPlayer);
-		entity.attackEntityFrom(par1DamageSource,
-				ToolMaterials.POWER.getDamageVsEntity());
-		return true;
+		return false;
 	}
 	
 	@Override

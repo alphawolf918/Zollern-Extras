@@ -60,12 +60,8 @@ public class WorldGenTreasureChest extends WorldGenerator {
 		int chestRand = rand.nextInt(2);
 		boolean isBigChest = chestRand == 1 ? true : false;
 		String chestString = chestX + " " + chestY + " " + chestZ;
-		
-		world.setBlock(chestX, chestY, chestZ, Blocks.chest);
-		if (randInt == 5) {
-			Treasures.spawnChest(world, rand, chestX, chestY, chestZ,
-					isBigChest, Treasures.pickChestType());
-		}
+		Treasures.spawnChest(world, rand, chestX, chestY, chestZ, isBigChest,
+				Treasures.pickChestType());
 		return true;
 	}
 }

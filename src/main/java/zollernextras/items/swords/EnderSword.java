@@ -2,21 +2,17 @@ package zollernextras.items.swords;
 
 import java.util.List;
 import java.util.Random;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
-import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
-import zollernextras.items.tools.ToolMaterials;
 import zollernextras.lib.KeyHelper;
 import zollernextras.lib.MainHelper;
 import zollernextras.mobs.entities.EntityEnderBug;
@@ -77,6 +73,12 @@ public class EnderSword extends ItemSword {
 			world.spawnParticle("portal", i + 5.0D, j + 5.0D, k + 5.0D, 0D + t,
 					0D + t, 0D + t);
 		}
+		if (new Random().nextInt(500) <= 10 && !world.isRemote) {
+			world.spawnEntityInWorld(new EntityEnderBug(world));
+		}
+		if (!entityplayer.capabilities.isCreativeMode) {
+			itemstack.damageItem(1, entityplayer);
+		}
 		return itemstack;
 	}
 	
@@ -95,9 +97,6 @@ public class EnderSword extends ItemSword {
 			for (int t = 1; t < 10; t++) {
 				world.spawnParticle("portal", x, y, z, 0D + t, 0D + t, 0D + t);
 			}
-			if (new Random().nextInt(5000) <= 10 && !world.isRemote) {
-				world.spawnEntityInWorld(new EntityEnderBug(world));
-			}
 		} else {
 			checkBlockAt(x, y + 2, z, world, entityplayer);
 		}
@@ -111,25 +110,6 @@ public class EnderSword extends ItemSword {
 	@Override
 	public EnumAction getItemUseAction(ItemStack p_77661_1_) {
 		return EnumAction.block;
-	}
-	
-	@Override
-	public boolean hitEntity(ItemStack par1ItemStack,
-			EntityLivingBase par2EntityLivingBase,
-			EntityLivingBase par3EntityLivingBase) {
-		par1ItemStack.damageItem(1, par3EntityLivingBase);
-		return true;
-	}
-	
-	@Override
-	public boolean onLeftClickEntity(ItemStack par1ItemStack,
-			EntityPlayer par2EntityPlayer, Entity entity) {
-		super.onLeftClickEntity(par1ItemStack, par2EntityPlayer, entity);
-		DamageSource par1DamageSource = DamageSource
-				.causePlayerDamage(par2EntityPlayer);
-		entity.attackEntityFrom(par1DamageSource,
-				ToolMaterials.POWER.getDamageVsEntity());
-		return true;
 	}
 	
 	@Override

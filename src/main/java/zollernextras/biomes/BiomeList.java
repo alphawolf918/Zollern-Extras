@@ -58,7 +58,7 @@ public class BiomeList {
 		addBiome(iceMountains, BiomeType.ICY, 14);
 		addBiome(coalHills, BiomeType.WARM, 8);
 		addBiome(badLands, BiomeType.DESERT, 17);
-		addBiome(minersLand, BiomeType.WARM, 2);
+		addBiome(minersLand, BiomeType.WARM, 5);
 		addBiome(candyLand, BiomeType.WARM, 5);
 		addBiome(crystalOcean, BiomeType.WARM, 6);
 		addBiome(tropicalForest, BiomeType.WARM, 8);

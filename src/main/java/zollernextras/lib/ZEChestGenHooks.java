@@ -17,14 +17,14 @@ public class ZEChestGenHooks extends ChestGenHooks {
 	
 	public static final String ENDER_TOWER = "enderTower";
 	public static final WeightedRandomChestContent[] CTChestContents = new WeightedRandomChestContent[] {
-		new WeightedRandomChestContent(Items.iron_ingot, 2, 1, 5, 10),
-		new WeightedRandomChestContent(Items.gold_ingot, 4, 1, 5, 10),
-		new WeightedRandomChestContent(ItemList.amaranthIngot, 6, 1, 5, 10),
-		new WeightedRandomChestContent(ItemList.ingotFueltonium, 8, 1, 5,
-				10),
-				new WeightedRandomChestContent(ItemList.spcItem, 20, 1, 5, 10),
-				new WeightedRandomChestContent(ItemList.enderShard, 16, 1, 5, 10),
-				new WeightedRandomChestContent(ItemList.shiniumIngot, 4, 1, 5, 10) };
+			new WeightedRandomChestContent(Items.iron_ingot, 4, 15, 25, 30),
+			new WeightedRandomChestContent(Items.gold_ingot, 4, 15, 25, 30),
+			new WeightedRandomChestContent(ItemList.amaranthIngot, 4, 4, 8, 30),
+			new WeightedRandomChestContent(ItemList.ingotFueltonium, 4, 15, 25,
+					30),
+			new WeightedRandomChestContent(ItemList.spcItem, 4, 25, 50, 30),
+			new WeightedRandomChestContent(ItemList.enderShard, 4, 10, 20, 30),
+			new WeightedRandomChestContent(ItemList.shiniumIngot, 4, 10, 20, 30) };
 	
 	private static final HashMap<String, ZEChestGenHooks> chestInfo = new HashMap<String, ZEChestGenHooks>();
 	
@@ -41,12 +41,22 @@ public class ZEChestGenHooks extends ChestGenHooks {
 		
 		hasInit = true;
 		
-		addInfo(ENDER_TOWER, CTChestContents, 4, 8);
+		addInfo(ENDER_TOWER, CTChestContents, 8, 16);
 		
 		ItemStack book = new ItemStack(Items.enchanted_book, 1, 0);
 		WeightedRandomChestContent tmp = new WeightedRandomChestContent(book,
 				1, 1, 1);
 		getInfo(ENDER_TOWER).addItem(tmp);
+		
+		getInfo(ENDER_TOWER)
+		.addItem(
+				new WeightedRandomChestContent(ItemList.spcItem, 4, 25,
+						50, 30));
+		
+		for (WeightedRandomChestContent chestContent : CTChestContents) {
+			ItemStack item = chestContent.theItemId;
+			addDungeonLoot(new ZEChestGenHooks("enderTower"), item, 50, 40, 80);
+		}
 	}
 	
 	static void addDungeonLoot(ZEChestGenHooks dungeon, ItemStack item,

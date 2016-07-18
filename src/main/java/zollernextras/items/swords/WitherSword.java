@@ -11,11 +11,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
-import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
-import zollernextras.items.tools.ToolMaterials;
 import zollernextras.lib.KeyHelper;
 import zollernextras.lib.MainHelper;
 import cpw.mods.fml.relauncher.Side;
@@ -31,20 +29,23 @@ public class WitherSword extends ItemSword {
 	
 	@Override
 	public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World,
-			EntityPlayer par3Entity) {
-		super.onItemRightClick(par1ItemStack, par2World, par3Entity);
+			EntityPlayer par3Player) {
+		super.onItemRightClick(par1ItemStack, par2World, par3Player);
 		if (!par2World.isRemote) {
-			Vec3 look = par3Entity.getLookVec();
+			Vec3 look = par3Player.getLookVec();
 			EntityWitherSkull witherSkull = new EntityWitherSkull(par2World);
-			witherSkull.setPosition(par3Entity.posX + look.xCoord * 5,
-					par3Entity.posY + 1 + look.yCoord * 5, par3Entity.posZ
-							+ look.zCoord * 5);
+			witherSkull.setPosition(par3Player.posX + look.xCoord * 5,
+					par3Player.posY + 1 + look.yCoord * 5, par3Player.posZ
+					+ look.zCoord * 5);
 			witherSkull.accelerationX = look.xCoord * 0.1;
 			witherSkull.accelerationY = look.yCoord * 0.1;
 			witherSkull.accelerationZ = look.zCoord * 0.1;
-			this.playWitherSound(par2World, par3Entity.posX, par3Entity.posY,
-					par3Entity.posZ);
+			this.playWitherSound(par2World, par3Player.posX, par3Player.posY,
+					par3Player.posZ);
 			par2World.spawnEntityInWorld(witherSkull);
+			if (!par3Player.capabilities.isCreativeMode) {
+				par1ItemStack.damageItem(1, par3Player);
+			}
 		}
 		return par1ItemStack;
 	}
@@ -52,14 +53,6 @@ public class WitherSword extends ItemSword {
 	private void playWitherSound(World world, double i, double j, double k) {
 		world.playSoundEffect(i + 5.0D, j + 5.0D, k + 5.0D, "mob.wither.idle",
 				1.0F, world.rand.nextFloat() * 0.1F + 0.9F);
-	}
-	
-	@Override
-	public boolean hitEntity(ItemStack par1ItemStack,
-			EntityLivingBase par2EntityLivingBase,
-			EntityLivingBase par3EntityLivingBase) {
-		par1ItemStack.damageItem(1, par3EntityLivingBase);
-		return true;
 	}
 	
 	@Override
@@ -72,11 +65,7 @@ public class WitherSword extends ItemSword {
 			this.playWitherSound(living.worldObj, living.posX, living.posY,
 					living.posZ);
 		}
-		DamageSource par1DamageSource = DamageSource
-				.causePlayerDamage(par2EntityPlayer);
-		entity.attackEntityFrom(par1DamageSource,
-				ToolMaterials.POWER.getDamageVsEntity());
-		return true;
+		return false;
 	}
 	
 	@Override

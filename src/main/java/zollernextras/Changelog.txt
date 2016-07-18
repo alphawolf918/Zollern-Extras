@@ -1,3 +1,15 @@
+[3.0.2 - Bug Fixes & Adjustments]
+* Triumph Swords (Diablo, Ender, Glacies, Thor and Mortem) now take durability hits when hitting entities or using their powers.
+* Changed the information displayed on Thor.
+* Registered Shinium with the OreDictionary as Shinium instead of just Platinum.
+
+
+-- FIXES --
+* Fixed recipe for Precious Shinium not working.
+* Fixed Ender Tower chest contents spawning in Overworld chests.
+* Fixed unintentional crafting recipe that gave vegetables from seeds for tomatoes and cucumbers.
+-----------
+
 [3.0 - The Ender Update]
 * Added Ender Cane.
     * Generates naturally in The End.
@@ -78,7 +90,7 @@
 * Swamp Clay now cooks into Mud Bricks which can be crafted into Mud Brick blocks.
 * Ender sword now spawns Enderman particles when teleporting the Player.
 * Added the new wtp command which allows Players to tp to coordinates without being an Op.
-    * This will soon be disabled in the config by default.
+    * Disabled in the config by default, along with the wp command.
 * Ender Bugs now have a 10/500 chance to spawn when the teleport event is called.
     * Also have a 10/5000 chance to spawn when the Ender sword's teleport is used.
 * Added Ender Creeper mob.
@@ -86,10 +98,22 @@
     * Uses the same model as the Mega Creeper.
     * Transports the Player back to the Overworld when it explodes.
         * If the Player is in the Overworld, it will send them to The End.
-
+* Certain metal blocks can now be used as turbine coils in Big Reactors.
+    * Fueltonium.
+        * Slightly more powerful than Gold Blocks.
+    * Zollernium.
+        * Just barely less powerful than Enderium Blocks.
+    * Chargium.
+        * Considerably better than Enderium.
+* Added Yellorite Ore to Miner's Land generation.
+    * Will only work if Big Reactors is present.
+* Upped spawn chance of Miner's Land from 2 to 5 (same as Candy Land biomes).
+* Took away slight light level from Gem Blocks.
+* Set max light level to Azurite Blocks.
 
 -- FIXES --
 * Fixed Nether Eye sending the Player back from whence they came when teleporting.
+* Fixed Amaranth Sword recipe requiring an Amaranth Sword to craft it.
 -----------
 
 [2.7]

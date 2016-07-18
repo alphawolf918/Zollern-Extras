@@ -16,6 +16,7 @@ import zollernextras.lib.ModInfo;
 import zollernextras.lib.OreDict;
 import zollernextras.lib.RecipeManager;
 import zollernextras.lib.Treasures;
+import zollernextras.lib.modhelper.BRTurbineHelper;
 import zollernextras.lib.modhelper.ModHelperBase;
 import zollernextras.lib.modhelper.TreeCapHelper;
 import zollernextras.mobs.Mobs;
@@ -58,6 +59,9 @@ public class ZollernExtrasMod {
 		ItemList.init();
 		StackChange.init();
 		BlockList.init();
+		if (ModHelperBase.useBigReactors) {
+			BRTurbineHelper.init();
+		}
 		TreeCapHelper.init();
 		Mobs.init();
 		Treasures.init();

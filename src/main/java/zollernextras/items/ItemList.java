@@ -287,11 +287,15 @@ public class ItemList {
 	public static Item tomatoPaste = new ZollernBottle("tomatopaste");
 	public static Item enderBerry = new TreeFood("enderberry", 2, 5);
 	public static Item enderGlowstoneDust = new ModItem("enderglowstonedust");
+	public static Item chargiumDust = new ModItem("chargiumdust");
+	public static Item chargiumIngot = new ModItem("chargiumingot");
 	
 	public static Item chocolateBucket = new ZollernBucket("bucket_chocolate",
 			BlockList.blockChocolate);
 	public static Item fuelBucket = new ZollernBucket("fuelbucket",
 			BlockList.blockFuel);
+	public static Item chargiumBucket = new ZollernBucket("chargiumbucket",
+			BlockList.blockChargium);
 	
 	public static void init() {
 		addItem(spcItem, "Super Charged Coal");
@@ -470,9 +474,12 @@ public class ItemList {
 		addItem(enderBerry, "Ender Berry");
 		addItem(enderDiamond, "Ender Diamond");
 		addItem(enderGlowstoneDust, "Ender Glowstone Dust");
+		addItem(chargiumDust, "Chargium Dust");
+		addItem(chargiumIngot, "Chargium Ingot");
 		
 		addItem(chocolateBucket, "Chocolate Bucket");
 		addItem(fuelBucket, "Fueltonium Bucket");
+		addItem(chargiumBucket, "Chargium Bucket");
 		
 		MainHelper.Log("Items loaded, " + totalItems + " entries.");
 	}

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Random;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntityChest;
 import net.minecraft.util.WeightedRandomChestContent;
 import net.minecraft.world.World;
@@ -15,20 +16,21 @@ public final class Treasures {
 	public static ArrayList<String> chestTypes = new ArrayList<String>();
 	
 	private static WeightedRandomChestContent item1 = new WeightedRandomChestContent(
-			ItemList.spcItem, 1, 10, 20, 5);
+			new ItemStack(ItemList.spcItem), 4, 5, 6);
 	private static WeightedRandomChestContent item2 = new WeightedRandomChestContent(
-			ItemList.fuelonite, 1, 5, 10, 5);
+			new ItemStack(ItemList.fuelonite), 1, 1, 2);
 	private static WeightedRandomChestContent item3 = new WeightedRandomChestContent(
-			ItemList.amaranthIngot, 1, 10, 20, 4);
+			new ItemStack(ItemList.amaranthIngot), 2, 4, 4);
 	private static WeightedRandomChestContent item4 = new WeightedRandomChestContent(
-			ItemList.heart, 1, 5, 6, 2);
+			new ItemStack(ItemList.heart), 5, 10, 4);
 	private static WeightedRandomChestContent item5 = new WeightedRandomChestContent(
-			Items.gold_ingot, 4, 20, 40, 10);
+			new ItemStack(Items.gold_ingot), 35, 62, 10);
 	
 	public static final WeightedRandomChestContent[] CTChestContents = new WeightedRandomChestContent[] {
-			new WeightedRandomChestContent(ItemList.shiniumIngot, 1, 2, 4, 2),
-			new WeightedRandomChestContent(ItemList.shinestoneIngot, 2, 10, 15,
-				20) };
+		new WeightedRandomChestContent(
+					new ItemStack(ItemList.shiniumIngot), 5, 10, 15),
+				new WeightedRandomChestContent(new ItemStack(
+						ItemList.shinestoneIngot), 15, 20, 25) };
 	
 	public static void init() {
 		ZEChestGenHooks.init();

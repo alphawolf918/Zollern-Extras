@@ -9,6 +9,7 @@ import net.minecraft.command.PlayerNotFoundException;
 import net.minecraft.command.WrongUsageException;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.EnumChatFormatting;
@@ -59,8 +60,15 @@ public class CommandHeal extends CommandBase implements ICommand {
 				return;
 			}
 			if (str.length <= 0) {
-				player.getFoodStats().setFoodLevel(20);
-				player.getFoodStats().setFoodSaturationLevel(5.0F);
+				// player.getFoodStats().setFoodLevel(20);
+				// player.getFoodStats().setFoodSaturationLevel(5.0F);
+				
+				NBTTagCompound nbtHunger = new NBTTagCompound();
+				nbtHunger.setInteger("foodLevel", 20);
+				nbtHunger.setInteger("foodTickTimer", 0);
+				nbtHunger.setFloat("foodSaturationLevel", 0.5F);
+				nbtHunger.setFloat("foodExhaustionLevel", 0.0F);
+				player.writeEntityToNBT(nbtHunger);
 				ExtendedPlayer props = ExtendedPlayer.get(player);
 				double maxHealth = props.getMaxHealth();
 				player.setHealth((float) maxHealth);

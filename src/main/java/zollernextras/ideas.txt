@@ -3,7 +3,7 @@
 * Hell Ducks.
     * Have them make a "Quack" sound, similar to how Hellcows make a "moo" sound.
 * Zinc Armor and Tools.
-* Add Enchantments to Zinc and Zollernium Tools.
+* Add Enchantments to Zinc tools.
 * Create tools and armor for amber, topaz, garnet, ruby, sapphire, opal, and aquamarine gems.
     * Maybe do the same thing for Witherium too.
 * Helletons.
@@ -14,7 +14,7 @@
 ==================================
 
 * Ender Spider.
-    * Behaves the same way the Enderman does.
+    * Behave the same way the Enderman does.
 * Find a way to make The End terrain bigger.
     * Perhaps use a structure gen for End Stone to increase its land.
     * Find out if there is a way to "stretch" or otherwise "increase" The End size.

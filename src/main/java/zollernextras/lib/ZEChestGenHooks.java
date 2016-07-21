@@ -17,14 +17,22 @@ public class ZEChestGenHooks extends ChestGenHooks {
 	
 	public static final String ENDER_TOWER = "enderTower";
 	public static final WeightedRandomChestContent[] CTChestContents = new WeightedRandomChestContent[] {
-			new WeightedRandomChestContent(Items.iron_ingot, 4, 15, 25, 30),
-			new WeightedRandomChestContent(Items.gold_ingot, 4, 15, 25, 30),
-			new WeightedRandomChestContent(ItemList.amaranthIngot, 4, 4, 8, 30),
-			new WeightedRandomChestContent(ItemList.ingotFueltonium, 4, 15, 25,
-					30),
-			new WeightedRandomChestContent(ItemList.spcItem, 4, 25, 50, 30),
-			new WeightedRandomChestContent(ItemList.enderShard, 4, 10, 20, 30),
-			new WeightedRandomChestContent(ItemList.shiniumIngot, 4, 10, 20, 30) };
+			new WeightedRandomChestContent(
+					new ItemStack(ItemList.shiniumIngot), 5, 10, 15),
+				new WeightedRandomChestContent(new ItemStack(
+						ItemList.shinestoneIngot), 15, 20, 25),
+						new WeightedRandomChestContent(new ItemStack(ItemList.enderShard),
+								15, 20, 25),
+			new WeightedRandomChestContent(
+					new ItemStack(ItemList.amaranthIngot), 15, 20, 25),
+										new WeightedRandomChestContent(new ItemStack(ItemList.enderite),
+												15, 20, 25),
+			new WeightedRandomChestContent(new ItemStack(Items.ender_pearl),
+					15, 20, 25),
+														new WeightedRandomChestContent(
+																new ItemStack(ItemList.chargiumDust), 5, 10, 15),
+			new WeightedRandomChestContent(
+					new ItemStack(ItemList.enderDiamond), 5, 10, 15) };
 	
 	private static final HashMap<String, ZEChestGenHooks> chestInfo = new HashMap<String, ZEChestGenHooks>();
 	
@@ -49,9 +57,9 @@ public class ZEChestGenHooks extends ChestGenHooks {
 		getInfo(ENDER_TOWER).addItem(tmp);
 		
 		getInfo(ENDER_TOWER)
-		.addItem(
-				new WeightedRandomChestContent(ItemList.spcItem, 4, 25,
-						50, 30));
+				.addItem(
+						new WeightedRandomChestContent(ItemList.spcItem, 4, 25,
+								50, 30));
 		
 		for (WeightedRandomChestContent chestContent : CTChestContents) {
 			ItemStack item = chestContent.theItemId;

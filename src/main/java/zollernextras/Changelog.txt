@@ -1,3 +1,9 @@
+[3.0.3 - "Oops" Fix]
+
+-- FIXES --
+* Fixed treasure spawning "fake" items in chest gen.
+-----------
+
 [3.0.2 - Bug Fixes & Adjustments]
 * Triumph Swords (Diablo, Ender, Glacies, Thor and Mortem) now take durability hits when hitting entities or using their powers.
 * Changed the information displayed on Thor.

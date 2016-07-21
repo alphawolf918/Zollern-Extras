@@ -7,7 +7,7 @@ public class ModInfo {
 	public static final String mcVersion = "1.7.10";
 	public static final String MAJOR = "3";
 	public static final String MINOR = "0";
-	public static final String BUILD = "2";
+	public static final String BUILD = "3";
 	public static final String VERSION = MAJOR + "." + MINOR + "." + BUILD
 			+ "-" + mcVersion;
 	public static final String CHANNEL = MODID;

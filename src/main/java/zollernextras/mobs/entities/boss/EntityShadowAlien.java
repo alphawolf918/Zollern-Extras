@@ -86,7 +86,7 @@ public class EntityShadowAlien extends EntityMob implements IBossDisplayData {
 				this.setHealth((float) health);
 			}
 		}
-		if (rand.nextInt(5000) <= 5 && this.getHealth() <= 500) {
+		if (rand.nextInt(5000) <= 15 && this.getHealth() <= 500) {
 			if (!this.worldObj.isRemote) {
 				EntityScorpion scorpion = new EntityScorpion(this.worldObj);
 				scorpion.setLocationAndAngles(this.posX, this.posY, this.posZ,

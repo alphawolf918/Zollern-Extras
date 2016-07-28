@@ -5,6 +5,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import zollernextras.blocks.BlockList;
+import zollernextras.lib.MainHelper;
 import zollernextras.lib.Treasures;
 import zollernextras.lib.ZEChestGenHooks;
 import zollernextras.mobs.entities.boss.EntityShadowAlien;
@@ -833,8 +834,10 @@ public class WorldGenShadowShrine extends WorldGenerator {
 		
 		if (!world.isRemote) {
 			EntityShadowAlien shadowAlien = new EntityShadowAlien(world);
-			shadowAlien.setLocationAndAngles(i + 8, j + 4, k + 8, 0, 0);
+			shadowAlien.setLocationAndAngles(i + 8, j + 2, k + 8, 0, 0);
 			world.spawnEntityInWorld(shadowAlien);
+			MainHelper.Log("Shadow Alien spawned at: " + (i + 8) + " "
+					+ (j + 2) + " " + (k + 8));
 		}
 		
 		return true;

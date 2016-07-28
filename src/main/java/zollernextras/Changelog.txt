@@ -14,6 +14,12 @@
     * Once health is at or lower than 500, has a 5/5000 chance to spawn a scorpion every tick.
     * Hits the Player extremely hard.
         * Can one-shot you if you're not careful and prepared.
+* While in the Upside-Down, the Player will take "shadow" damage.
+    * Has a custom death message.
+    * If the Player has the Radiance potion effect, they will be protected from the shadows.
+        * The Player must have at least one Radiance item in their inventory to receive the effect.
+        * This effect does not stack.
+
 
 -- FIXES --
 * Fixed block of Super Charged Coal not giving right amount of Conductive Chargium liquid.

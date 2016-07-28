@@ -18,3 +18,10 @@
 * Find a way to make The End terrain bigger.
     * Perhaps use a structure gen for End Stone to increase its land.
     * Find out if there is a way to "stretch" or otherwise "increase" The End size.
+
+== UPSIDE DOWN ===========
+[Ideas for the dimension.]
+==========================
+
+* Eggs that spawn Spiderlings when broken.
+    * Spiderlings can then lay more eggs.

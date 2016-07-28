@@ -1,4 +1,4 @@
-package zollernextras.lib;
+package zollernextras.lib.recipes;
 
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
@@ -9,12 +9,9 @@ import net.minecraft.item.crafting.FurnaceRecipes;
 import zollernextras.blocks.BlockList;
 import zollernextras.config.ZEConfig;
 import zollernextras.items.ItemList;
+import zollernextras.lib.MainHelper;
 import zollernextras.lib.modhelper.ModHelperBase;
 import zollernextras.lib.modhelper.ThermalExpansionHelper;
-import zollernextras.lib.recipes.InductionSmelterRecipes;
-import zollernextras.lib.recipes.LiquidRecipes;
-import zollernextras.lib.recipes.PulverizerRecipes;
-import zollernextras.lib.recipes.ToolArmorRecipes;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class RecipeManager {
@@ -34,6 +31,10 @@ public class RecipeManager {
 	public static class Crafting {
 		static void init() {
 			ToolArmorRecipes.init();
+			
+			// Upside Down Stone Bricks
+			addOWBricks(BlockList.upsideDownStone,
+					BlockList.upsideDownStoneBricks);
 			
 			// Chargium Dust
 			GameRegistry.addRecipe(new ItemStack(ItemList.chargiumDust, 8),
@@ -837,6 +838,29 @@ public class RecipeManager {
 					ItemList.popcorn, 1), 1F);
 			addSmelting(ItemList.swampClayBall, ItemList.bricksMud, 0.2F);
 			addSmelting(ItemList.dough, ItemList.cookedDough, 0.4F);
+			
+			// Upside-Down
+			addSmelting(BlockList.upsideDownAmaranthOre, new ItemStack(
+					BlockList.amaranthOre, 2), 1.0F);
+			addSmelting(BlockList.upsideDownDiamondOre, new ItemStack(
+					Blocks.diamond_ore, 2), 1.0F);
+			addSmelting(BlockList.upsideDownEmeraldOre, new ItemStack(
+					Blocks.emerald_ore, 2), 1.0F);
+			addSmelting(BlockList.upsideDownGoldOre, new ItemStack(
+					Blocks.gold_ore, 2), 1.0F);
+			addSmelting(BlockList.upsideDownIronOre, new ItemStack(
+					Blocks.iron_ore, 2), 1.0F);
+			addSmelting(BlockList.upsideDownRubyOre, new ItemStack(
+					BlockList.rubyOre, 2), 1.0F);
+			addSmelting(BlockList.upsideDownSapphireOre, new ItemStack(
+					BlockList.sapphireOre, 2), 1.0F);
+			addSmelting(BlockList.upsideDownZincOre, new ItemStack(
+					BlockList.zincOre, 2), 1.0F);
+			addSmelting(BlockList.zollerniumOre, new ItemStack(
+					ItemList.zollerniumIngot, 1), 0.5F);
+			addSmelting(BlockList.upsideDownCobble, BlockList.upsideDownStone,
+					0.5F);
+			
 		}
 		
 		private static void addSmelting(ItemStack input, ItemStack output,

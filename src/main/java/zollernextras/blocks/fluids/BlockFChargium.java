@@ -7,10 +7,11 @@ import net.minecraft.entity.item.EntityItem;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.common.util.ForgeDirection;
 import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fluids.Fluid;
 import zollernextras.lib.MainHelper;
-import zollernextras.lib.ModInfo;
+import zollernextras.lib.ZollernModInfo;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -35,6 +36,12 @@ public class BlockFChargium extends BlockFluidClassic {
 	// world.createExplosion(null, x, y, z, 20, true);
 	// }
 	// }
+	
+	@Override
+	public boolean isFlammable(IBlockAccess world, int x, int y, int z,
+			ForgeDirection face) {
+		return true;
+	}
 	
 	@Override
 	public void onEntityCollidedWithBlock(World world, int x, int y, int z,
@@ -64,12 +71,12 @@ public class BlockFChargium extends BlockFluidClassic {
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerBlockIcons(IIconRegister iir) {
-		stillIcon = iir.registerIcon(ModInfo.MODID + ":" + "chargiumfluid");
-		flowingIcon = iir.registerIcon(ModInfo.MODID + ":" + "chargiumfluid");
+		stillIcon = iir.registerIcon(ZollernModInfo.MODID + ":" + "chargiumfluid");
+		flowingIcon = iir.registerIcon(ZollernModInfo.MODID + ":" + "chargiumfluid");
 		this.getFluid().setStillIcon(
-				iir.registerIcon(ModInfo.MODID + ":chargiumfluid"));
+				iir.registerIcon(ZollernModInfo.MODID + ":chargiumfluid"));
 		this.getFluid().setFlowingIcon(
-				iir.registerIcon(ModInfo.MODID + ":chargiumfluid"));
+				iir.registerIcon(ZollernModInfo.MODID + ":chargiumfluid"));
 	}
 	
 	@Override

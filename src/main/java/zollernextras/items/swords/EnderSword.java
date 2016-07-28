@@ -77,7 +77,7 @@ public class EnderSword extends ItemSword {
 			world.spawnEntityInWorld(new EntityEnderBug(world));
 		}
 		if (!entityplayer.capabilities.isCreativeMode) {
-			itemstack.damageItem(1, entityplayer);
+			itemstack.damageItem(5, entityplayer);
 		}
 		return itemstack;
 	}

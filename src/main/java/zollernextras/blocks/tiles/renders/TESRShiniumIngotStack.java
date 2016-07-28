@@ -6,14 +6,14 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.AdvancedModelLoader;
 import net.minecraftforge.client.model.IModelCustom;
 import org.lwjgl.opengl.GL11;
-import zollernextras.lib.ModInfo;
+import zollernextras.lib.ZollernModInfo;
 
 public class TESRShiniumIngotStack extends TileEntitySpecialRenderer {
 	
-	ResourceLocation shinium = new ResourceLocation(ModInfo.MODID,
+	ResourceLocation shinium = new ResourceLocation(ZollernModInfo.MODID,
 			"textures/blocks/shinium.png");
 	IModelCustom model = AdvancedModelLoader.loadModel(new ResourceLocation(
-			ModInfo.MODID, "obj/ingotstack.obj"));
+			ZollernModInfo.MODID, "obj/ingotstack.obj"));
 	float scalex = 0.080F;
 	float scaley = 0.20F;
 	float scalez = 0.06F;

@@ -13,6 +13,8 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 import zollernextras.biomes.BiomeList;
 import zollernextras.blocks.BlockList;
 import zollernextras.config.ZEConfig;
+import zollernextras.dimension.DimensionLoader;
+import zollernextras.dimension.upsidedown.WorldGenUpsideDownMinable;
 import zollernextras.lib.modhelper.ModHelperBase;
 import zollernextras.mobs.entities.EntityEnderCreeper;
 import zollernextras.mobs.entities.EntityEnderSkeleton;
@@ -27,11 +29,14 @@ import zollernextras.worldgen.WorldGenEnderReeds;
 import zollernextras.worldgen.WorldGenEnderTower;
 import zollernextras.worldgen.WorldGenFruitTree;
 import zollernextras.worldgen.WorldGenMagmaRock;
+import zollernextras.worldgen.WorldGenMinableNether;
 import zollernextras.worldgen.WorldGenNetherOre;
 import zollernextras.worldgen.WorldGenSeaLamp;
 import zollernextras.worldgen.WorldGenSugarCubes;
 import zollernextras.worldgen.WorldGenSwampClay;
 import zollernextras.worldgen.WorldGenTreasureChest;
+import zollernextras.worldgen.upsidedown.WorldGenCrater;
+import zollernextras.worldgen.upsidedown.WorldGenShadowShrine;
 import cpw.mods.fml.common.IWorldGenerator;
 import erogenousbeef.bigreactors.common.BigReactors;
 
@@ -53,6 +58,9 @@ public class WorldGenManager implements IWorldGenerator {
 		case 1:
 			generateEnd(world, random, chunkX * 16, chunkZ * 16);
 			break;
+		}
+		if (world.provider.dimensionId == DimensionLoader.getDimID()) {
+			generateUpsideDown(world, random, chunkX * 16, chunkZ * 16);
 		}
 	}
 	
@@ -181,7 +189,7 @@ public class WorldGenManager implements IWorldGenerator {
 		// Treasure Chests
 		if ((currentBiome.isEqualTo(BiomeGenBase.deepOcean)
 				|| currentBiome.equals(BiomeGenBase.ocean) || currentBiome
-				.equals(BiomeList.crystalOcean)) && y <= 44) {
+					.equals(BiomeList.crystalOcean)) && y <= 44) {
 			spawnStructure(80, 200, world, random, x, y, z,
 					new WorldGenTreasureChest());
 		}
@@ -593,6 +601,95 @@ public class WorldGenManager implements IWorldGenerator {
 		}
 	}
 	
+	private void generateUpsideDown(World world, Random random, int x, int z) {
+		// Iron Ore
+		addUpsideDownOreSpawn(BlockList.upsideDownIronOre, world, random, x, z,
+				16, 16, 4 + random.nextInt(2), 44, 4, 55);
+		
+		// Gold Ore
+		addUpsideDownOreSpawn(BlockList.upsideDownGoldOre, world, random, x, z,
+				16, 16, 4 + random.nextInt(2), 34, 4, 45);
+		
+		// Amaranth Ore
+		addUpsideDownOreSpawn(BlockList.upsideDownAmaranthOre, world, random,
+				x, z, 16, 16, 2 + random.nextInt(2), 14, 4, 35);
+		
+		// Witherite Ore
+		addUpsideDownOreSpawn(BlockList.witheriteOre, world, random, x, z, 16,
+				16, 4 + random.nextInt(2), 24, 4, 35);
+		
+		// Diamond Ore
+		addUpsideDownOreSpawn(BlockList.upsideDownDiamondOre, world, random, x,
+				z, 16, 16, 2 + random.nextInt(2), 14, 8, 24);
+		
+		// Emerald Ore
+		addUpsideDownOreSpawn(BlockList.upsideDownEmeraldOre, world, random, x,
+				z, 16, 16, 2 + random.nextInt(4), 10, 4, 24);
+		
+		// Zollernium Ore
+		addUpsideDownOreSpawn(BlockList.zollerniumOre, world, random, x, z, 16,
+				16, 2 + random.nextInt(4), 10, 4, 24);
+		
+		// Zinc Ore
+		addUpsideDownOreSpawn(BlockList.upsideDownZincOre, world, random, x, z,
+				16, 16, 2 + random.nextInt(2), 10, 4, 35);
+		
+		// Ruby Ore
+		addUpsideDownOreSpawn(BlockList.upsideDownRubyOre, world, random, x, z,
+				16, 16, 2 + random.nextInt(2), 14, 4, 35);
+		
+		// Sapphire Ore
+		addUpsideDownOreSpawn(BlockList.upsideDownSapphireOre, world, random,
+				x, z, 16, 16, 2 + random.nextInt(2), 14, 4, 35);
+		
+		// Super Charged Coal Ore
+		addUpsideDownOreSpawn(BlockList.upsideDownSpcOre, world, random, x, z,
+				16, 16, 4 + random.nextInt(6), 16, 1, 30);
+		
+		// Fueltonium Ore
+		addUpsideDownOreSpawn(BlockList.upsideDownFuelOre, world, random, x, z,
+				16, 16, 4 + random.nextInt(4), 20, 1, 42);
+		
+		// Lapis Lazuli Ore
+		addUpsideDownOreSpawn(BlockList.upsideDownLapisOre, world, random, x,
+				z, 16, 16, 2 + random.nextInt(2), 18, 10, 52);
+		
+		// Redstone Ore
+		addUpsideDownOreSpawn(BlockList.upsideDownRedstoneOre, world, random,
+				x, z, 16, 16, 2 + random.nextInt(2), 11, 4, 14);
+		
+		// Ender Shard Ore
+		addUpsideDownOreSpawn(BlockList.upsideDownEnderShardOre, world, random,
+				x, z, 16, 16, 2 + random.nextInt(2), 18, 10, 52);
+		
+		// Zanium Ore
+		if (ModHelperBase.useZaneExtras) {
+			addUpsideDownOreSpawn(zaneextras.blocks.BlockList.zaniumOre, world,
+					random, x, z, 16, 16, 2 + random.nextInt(2), 8, 10, 22);
+		}
+		
+		int y = world.getHeightValue(x, z);
+		
+		// Shadow Shrine
+		if (random.nextInt(1500) <= 5) {
+			this.spawnStructure(5, 10, world, random, x, y, z,
+					new WorldGenShadowShrine());
+		}
+		
+		// Crater
+		if (random.nextInt(250) <= 50) {
+			this.spawnStructure(8, 10, world, random, x, y, z,
+					new WorldGenCrater());
+		}
+		
+		// Dirt
+		if (random.nextInt(300) <= 25) {
+			new WorldGenLakes(BlockList.upsideDownDirt).generate(world, random,
+					x, y, z);
+		}
+		
+	}
+	
 	/**
 	 * Spawns a structure in the world
 	 *
@@ -670,6 +767,66 @@ public class WorldGenManager implements IWorldGenerator {
 			int posZ = blockZPos + random.nextInt(maxZ);
 			new WorldGenMinable(block, maxVeinSize).generate(world, random,
 					posX, posY, posZ);
+		}
+	}
+	
+	public void addNetherOreSpawn(Block block, World world, Random random,
+			int blockXPos, int blockZPos, int maxX, int maxZ, int maxVeinSize,
+			int chancesToSpawn, int minY, int maxY) {
+		int maxPossY = minY + maxY - 1;
+		assert maxY > minY : "The maximum Y must be greater than the Minimum Y";
+		assert maxX > 0 && maxX <= 16 : "addOreSpawn: The Maximum X must be greater than 0 and less than 16";
+		assert minY > 0 : "addOreSpawn: The Minimum Y must be greater than 0";
+		assert maxY < 256 && maxY > 0 : "addOreSpawn: The Maximum Y must be less than 256 but greater than 0";
+		assert maxZ > 0 && maxZ <= 16 : "addOreSpawn: The Maximum Z must be greater than 0 and less than 16";
+		
+		int diffBtwnMinMaxY = maxY - minY;
+		for (int x = 0; x < chancesToSpawn; x++) {
+			int posX = blockXPos + random.nextInt(maxX);
+			int posY = minY + random.nextInt(diffBtwnMinMaxY);
+			int posZ = blockZPos + random.nextInt(maxZ);
+			new WorldGenMinableNether(block, maxVeinSize, 0).generate(world,
+					random, posX, posY, posZ);
+		}
+	}
+	
+	public void addEnderOreSpawn(Block block, World world, Random random,
+			int blockXPos, int blockZPos, int maxX, int maxZ, int maxVeinSize,
+			int chancesToSpawn, int minY, int maxY) {
+		int maxPossY = minY + maxY - 1;
+		assert maxY > minY : "The maximum Y must be greater than the Minimum Y";
+		assert maxX > 0 && maxX <= 16 : "addOreSpawn: The Maximum X must be greater than 0 and less than 16";
+		assert minY > 0 : "addOreSpawn: The Minimum Y must be greater than 0";
+		assert maxY < 256 && maxY > 0 : "addOreSpawn: The Maximum Y must be less than 256 but greater than 0";
+		assert maxZ > 0 && maxZ <= 16 : "addOreSpawn: The Maximum Z must be greater than 0 and less than 16";
+		
+		int diffBtwnMinMaxY = maxY - minY;
+		for (int x = 0; x < chancesToSpawn; x++) {
+			int posX = blockXPos + random.nextInt(maxX);
+			int posY = minY + random.nextInt(diffBtwnMinMaxY);
+			int posZ = blockZPos + random.nextInt(maxZ);
+			new WorldGenEnderMinable(block, maxVeinSize, 0).generate(world,
+					random, posX, posY, posZ);
+		}
+	}
+	
+	public void addUpsideDownOreSpawn(Block block, World world, Random random,
+			int blockXPos, int blockZPos, int maxX, int maxZ, int maxVeinSize,
+			int chancesToSpawn, int minY, int maxY) {
+		int maxPossY = minY + maxY - 1;
+		assert maxY > minY : "The maximum Y must be greater than the Minimum Y";
+		assert maxX > 0 && maxX <= 16 : "addOreSpawn: The Maximum X must be greater than 0 and less than 16";
+		assert minY > 0 : "addOreSpawn: The Minimum Y must be greater than 0";
+		assert maxY < 256 && maxY > 0 : "addOreSpawn: The Maximum Y must be less than 256 but greater than 0";
+		assert maxZ > 0 && maxZ <= 16 : "addOreSpawn: The Maximum Z must be greater than 0 and less than 16";
+		
+		int diffBtwnMinMaxY = maxY - minY;
+		for (int x = 0; x < chancesToSpawn; x++) {
+			int posX = blockXPos + random.nextInt(maxX);
+			int posY = minY + random.nextInt(diffBtwnMinMaxY);
+			int posZ = blockZPos + random.nextInt(maxZ);
+			new WorldGenUpsideDownMinable(block, maxVeinSize).generate(world,
+					random, posX, posY, posZ);
 		}
 	}
 }

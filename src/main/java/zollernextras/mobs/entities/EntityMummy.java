@@ -25,7 +25,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 import zollernextras.items.ItemList;
-import zollernextras.lib.ModInfo;
+import zollernextras.lib.ZollernModInfo;
 
 public class EntityMummy extends EntityZombie {
 	
@@ -68,17 +68,17 @@ public class EntityMummy extends EntityZombie {
 	
 	@Override
 	protected String getLivingSound() {
-		return ModInfo.MODID + ":mummy.say";
+		return ZollernModInfo.MODID + ":mummy.say";
 	}
 	
 	@Override
 	protected String getHurtSound() {
-		return ModInfo.MODID + ":mummy.hurt";
+		return ZollernModInfo.MODID + ":mummy.hurt";
 	}
 	
 	@Override
 	protected String getDeathSound() {
-		return ModInfo.MODID + ":mummy.die";
+		return ZollernModInfo.MODID + ":mummy.die";
 	}
 	
 	@Override

@@ -14,7 +14,7 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.EnumChatFormatting;
 import zollernextras.entity.ExtendedPlayer;
-import zollernextras.lib.ModInfo;
+import zollernextras.lib.ZollernModInfo;
 
 public class CommandHeal extends CommandBase implements ICommand {
 	
@@ -91,7 +91,7 @@ public class CommandHeal extends CommandBase implements ICommand {
 				player.addChatMessage(new ChatComponentText(otherPlayerName
 						+ " has been fully healed."));
 			} else {
-				throw new WrongUsageException(ModInfo.MODID
+				throw new WrongUsageException(ZollernModInfo.MODID
 						+ "_commands.heal.usage", new Object[0]);
 			}
 		}

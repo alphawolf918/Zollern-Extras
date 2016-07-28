@@ -8,9 +8,11 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraftforge.common.util.Constants;
+import zollernextras.api.items.IArrow;
 import zollernextras.items.storage.ItemQuiver;
 
 public class InventoryQuiver implements IInventory {
+	
 	private String name = "Quiver";
 	
 	/** Defining your inventory size this way is handy */
@@ -122,8 +124,9 @@ public class InventoryQuiver implements IInventory {
 	public boolean isItemValidForSlot(int slot, ItemStack stack) {
 		Item item = stack.getItem();
 		if (!(item instanceof ItemQuiver)) {
-			return stack.getItem() == Items.arrow
-					|| item.getUnlocalizedName().contains("arrow");
+			return item == Items.arrow
+					|| item.getUnlocalizedName().contains("arrow")
+					|| item instanceof IArrow;
 		}
 		return false;
 	}

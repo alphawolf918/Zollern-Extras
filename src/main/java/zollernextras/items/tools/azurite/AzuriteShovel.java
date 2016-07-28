@@ -9,15 +9,15 @@ import net.minecraft.item.ItemStack;
 import zollernextras.creativetabs.ModTabs;
 import zollernextras.items.ItemList;
 import zollernextras.items.tools.ToolMaterials;
-import zollernextras.lib.ModInfo;
+import zollernextras.lib.ZollernModInfo;
 
 public class AzuriteShovel extends ItemSpade {
 	
 	public AzuriteShovel() {
 		super(ToolMaterials.AZURITE);
 		this.setCreativeTab(ModTabs.zTab);
-		this.setUnlocalizedName(ModInfo.MODID + "_azuriteshovel");
-		this.setTextureName(ModInfo.MODID + ":" + "azuriteshovel");
+		this.setUnlocalizedName(ZollernModInfo.MODID + "_azuriteshovel");
+		this.setTextureName(ZollernModInfo.MODID + ":" + "azuriteshovel");
 	}
 	
 	@Override

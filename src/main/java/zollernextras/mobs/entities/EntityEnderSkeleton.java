@@ -66,9 +66,9 @@ public class EntityEnderSkeleton extends EntityMob implements IRangedAttackMob {
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.maxHealth)
-				.setBaseValue(50.0D);
+		.setBaseValue(50.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed)
-		.setBaseValue(0.45D);
+				.setBaseValue(0.45D);
 	}
 	
 	/**

@@ -44,6 +44,7 @@ public class BiomeList {
 			ZEConfig.biomeCrystalOceanID);
 	public static BiomeGenBase tropicalForest = new BiomeTropicalForest(
 			ZEConfig.biomeTropicalForestID);
+	public static BiomeGenBase upsideDown = new BiomeGenUpsideDown(96);
 	
 	public static void init() {
 		MainHelper.Log("Preparing to load biomes..");
@@ -62,6 +63,7 @@ public class BiomeList {
 		addBiome(candyLand, BiomeType.WARM, 5);
 		addBiome(crystalOcean, BiomeType.WARM, 6);
 		addBiome(tropicalForest, BiomeType.WARM, 8);
+		addNoSpawnBiome(upsideDown, BiomeType.COOL, 0);
 		MainHelper.Log("Biomes loaded!");
 	}
 	
@@ -81,5 +83,7 @@ public class BiomeList {
 		BiomeManager.addBiome(biomeType, new BiomeEntry(biome, biomeWeight));
 		BiomeManager.addVillageBiome(biome, true);
 		BiomeManager.addStrongholdBiome(biome);
+		MainHelper.Log("Loaded no-spawn biome \"" + biome.biomeName
+				+ "\" with ID: " + biome.biomeID);
 	}
 }

@@ -8,15 +8,15 @@ import net.minecraft.item.ItemHoe;
 import net.minecraft.item.ItemStack;
 import zollernextras.creativetabs.ModTabs;
 import zollernextras.items.ItemList;
-import zollernextras.lib.ModInfo;
+import zollernextras.lib.ZollernModInfo;
 
 public class AmaranthHoe extends ItemHoe {
 	
 	public AmaranthHoe(ToolMaterial p_i45347_1_) {
 		super(p_i45347_1_);
 		this.setCreativeTab(ModTabs.zTab);
-		this.setUnlocalizedName(ModInfo.MODID + "_amaranthhoe");
-		this.setTextureName(ModInfo.MODID + ":" + "amaranthhoe");
+		this.setUnlocalizedName(ZollernModInfo.MODID + "_amaranthhoe");
+		this.setTextureName(ZollernModInfo.MODID + ":" + "amaranthhoe");
 	}
 	
 	@Override

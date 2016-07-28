@@ -2,24 +2,19 @@ package zollernextras.items.storage;
 
 import java.util.List;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.world.World;
 import zollernextras.ZollernExtrasMod;
-import zollernextras.lib.MainHelper;
-import zollernextras.lib.ModInfo;
+import zollernextras.items.ModItem;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemQuiver extends Item {
+public class ItemQuiver extends ModItem {
 	public ItemQuiver() {
-		super();
-		MainHelper.setTab(this);
+		super("quiver");
 		this.setMaxDamage(0);
 		this.setMaxStackSize(1);
-		this.setUnlocalizedName(ModInfo.MODID + "_quiver");
-		this.setTextureName("quiver");
 	}
 	
 	@Override

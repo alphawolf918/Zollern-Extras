@@ -19,20 +19,25 @@ public class ZEChestGenHooks extends ChestGenHooks {
 	public static final WeightedRandomChestContent[] CTChestContents = new WeightedRandomChestContent[] {
 			new WeightedRandomChestContent(
 					new ItemStack(ItemList.shiniumIngot), 5, 10, 15),
-				new WeightedRandomChestContent(new ItemStack(
-						ItemList.shinestoneIngot), 15, 20, 25),
-						new WeightedRandomChestContent(new ItemStack(ItemList.enderShard),
-								15, 20, 25),
+			new WeightedRandomChestContent(new ItemStack(
+					ItemList.shinestoneIngot), 15, 20, 25),
+			new WeightedRandomChestContent(new ItemStack(ItemList.enderShard),
+					15, 20, 25),
 			new WeightedRandomChestContent(
 					new ItemStack(ItemList.amaranthIngot), 15, 20, 25),
-										new WeightedRandomChestContent(new ItemStack(ItemList.enderite),
-												15, 20, 25),
+			new WeightedRandomChestContent(new ItemStack(ItemList.enderite),
+					15, 20, 25),
 			new WeightedRandomChestContent(new ItemStack(Items.ender_pearl),
 					15, 20, 25),
-														new WeightedRandomChestContent(
-																new ItemStack(ItemList.chargiumDust), 5, 10, 15),
+			new WeightedRandomChestContent(
+					new ItemStack(ItemList.chargiumDust), 5, 10, 15),
 			new WeightedRandomChestContent(
 					new ItemStack(ItemList.enderDiamond), 5, 10, 15) };
+	
+	public static final String SHADOW_SHRINE = "shadowShrine";
+	public static final WeightedRandomChestContent[] SSChestContents = new WeightedRandomChestContent[] {
+	
+	};
 	
 	private static final HashMap<String, ZEChestGenHooks> chestInfo = new HashMap<String, ZEChestGenHooks>();
 	
@@ -50,6 +55,7 @@ public class ZEChestGenHooks extends ChestGenHooks {
 		hasInit = true;
 		
 		addInfo(ENDER_TOWER, CTChestContents, 8, 16);
+		addInfo(SHADOW_SHRINE, SSChestContents, 8, 16);
 		
 		ItemStack book = new ItemStack(Items.enchanted_book, 1, 0);
 		WeightedRandomChestContent tmp = new WeightedRandomChestContent(book,

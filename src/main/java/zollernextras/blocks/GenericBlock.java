@@ -22,7 +22,14 @@ public class GenericBlock extends Block {
 		this.setStepSound(soundType);
 		if (harvestLevel > 0) {
 			this.setHarvestLevel(harvestTool, harvestLevel);
+		} else {
+			this.setHarvestLevel("pickaxe", 0);
 		}
+	}
+	
+	public Block setBlockMaterial(Material material) {
+		blockMaterial = material;
+		return this;
 	}
 	
 	public static void setMaterial(Material material) {
@@ -32,6 +39,11 @@ public class GenericBlock extends Block {
 	@Override
 	public Material getMaterial() {
 		return blockMaterial;
+	}
+	
+	public Block setBlockHarvestLevel(String tool, int level) {
+		this.setHarvestLevel(tool, level, 0);
+		return this;
 	}
 	
 }

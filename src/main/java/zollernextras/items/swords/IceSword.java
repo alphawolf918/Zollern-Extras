@@ -68,7 +68,7 @@ public class IceSword extends ItemSword {
 			}
 		}
 		if (!entityplayer.capabilities.isCreativeMode) {
-			itemstack.damageItem(1, entityplayer);
+			itemstack.damageItem(5, entityplayer);
 		}
 		return itemstack;
 	}

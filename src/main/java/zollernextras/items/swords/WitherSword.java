@@ -36,7 +36,7 @@ public class WitherSword extends ItemSword {
 			EntityWitherSkull witherSkull = new EntityWitherSkull(par2World);
 			witherSkull.setPosition(par3Player.posX + look.xCoord * 5,
 					par3Player.posY + 1 + look.yCoord * 5, par3Player.posZ
-					+ look.zCoord * 5);
+							+ look.zCoord * 5);
 			witherSkull.accelerationX = look.xCoord * 0.1;
 			witherSkull.accelerationY = look.yCoord * 0.1;
 			witherSkull.accelerationZ = look.zCoord * 0.1;
@@ -44,7 +44,7 @@ public class WitherSword extends ItemSword {
 					par3Player.posZ);
 			par2World.spawnEntityInWorld(witherSkull);
 			if (!par3Player.capabilities.isCreativeMode) {
-				par1ItemStack.damageItem(1, par3Player);
+				par1ItemStack.damageItem(5, par3Player);
 			}
 		}
 		return par1ItemStack;

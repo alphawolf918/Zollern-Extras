@@ -5,6 +5,7 @@ import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import zollernextras.api.items.IArrow;
 import zollernextras.items.storage.ItemQuiver;
 
 public class SlotQuiver extends Slot {
@@ -19,9 +20,9 @@ public class SlotQuiver extends Slot {
 	public boolean isItemValid(ItemStack itemstack) {
 		Item item = itemstack.getItem();
 		if (!(item instanceof ItemQuiver)) {
-			return itemstack.getItem() == Items.arrow
-					|| itemstack.getItem().getUnlocalizedName()
-							.contains("arrow");
+			return item == Items.arrow
+					|| item.getUnlocalizedName().contains("arrow")
+					|| item instanceof IArrow;
 		}
 		return false;
 	}

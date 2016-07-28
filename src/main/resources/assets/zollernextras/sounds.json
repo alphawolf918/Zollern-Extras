@@ -65,5 +65,24 @@
 	"sounds": [
 		"mummy/die"
 	]
+  },
+  "shadowalien.say": {
+	"category": "master",
+	"sounds": [
+		"shadowalien/say1",
+		"shadowalien/say2"
+	]
+  },
+  "shadowalien.hurt": {
+	"category": "master",
+	"sounds": [
+		"shadowalien/hurt"
+	]
+  },
+  "shadowalien.death": {
+	"category": "master",
+	"sounds": [
+		"shadowalien/death"
+	]
   }
 }

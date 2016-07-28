@@ -6,13 +6,13 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import zollernextras.creativetabs.ModTabs;
-import zollernextras.lib.ModInfo;
+import zollernextras.lib.ZollernModInfo;
 
 public class ItemHeart extends Item {
 	public ItemHeart() {
 		this.setCreativeTab(ModTabs.zTab);
-		this.setUnlocalizedName(ModInfo.MODID + "_heart");
-		this.setTextureName(ModInfo.MODID + ":heart");
+		this.setUnlocalizedName(ZollernModInfo.MODID + "_heart");
+		this.setTextureName(ZollernModInfo.MODID + ":heart");
 		this.setMaxStackSize(1);
 		this.setMaxDamage(5);
 	}

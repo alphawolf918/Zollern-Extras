@@ -8,7 +8,7 @@ import net.minecraft.world.biome.BiomeGenBase;
 import zollernextras.biomes.BiomeList;
 import zollernextras.config.ZEConfig;
 import zollernextras.lib.MainHelper;
-import zollernextras.lib.ModInfo;
+import zollernextras.lib.ZollernModInfo;
 import zollernextras.lib.modhelper.ModHelperBase;
 import zollernextras.mobs.entities.EntityBabyDragon;
 import zollernextras.mobs.entities.EntityDuck;
@@ -27,6 +27,7 @@ import zollernextras.mobs.entities.EntityScorpion;
 import zollernextras.mobs.entities.EntityShadowSkeleton;
 import zollernextras.mobs.entities.EntityShark;
 import zollernextras.mobs.entities.EntityShrimp;
+import zollernextras.mobs.entities.boss.EntityShadowAlien;
 import cpw.mods.fml.common.registry.EntityRegistry;
 
 public class Mobs {
@@ -246,6 +247,10 @@ public class Mobs {
 		EntityRegistry.addSpawn(EntityEnderSkeleton.class, 14, 1, 1,
 				EnumCreatureType.monster, BiomeGenBase.sky);
 		
+		// Shadow Alien
+		registerEntity(EntityShadowAlien.class, "shadowalien", 0xeeeeee,
+				0xffffff);
+		
 		MainHelper.Log("Entities have been registered!");
 	}
 	
@@ -254,7 +259,7 @@ public class Mobs {
 		int uniqueEntityId = EntityRegistry.findGlobalUniqueEntityId();
 		MainHelper.Log("Loading entity '" + entityName + "' with ID "
 				+ uniqueEntityId);
-		EntityRegistry.registerGlobalEntityID(entity, ModInfo.MODID + "_"
+		EntityRegistry.registerGlobalEntityID(entity, ZollernModInfo.MODID + "_"
 				+ entityName, uniqueEntityId);
 		registerEntityEgg(entity, entityPrimaryColor, entitySecondaryColor);
 	}

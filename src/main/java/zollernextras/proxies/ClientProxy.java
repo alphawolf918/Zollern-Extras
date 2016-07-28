@@ -49,6 +49,7 @@ import zollernextras.mobs.entities.EntityScorpion;
 import zollernextras.mobs.entities.EntityShadowSkeleton;
 import zollernextras.mobs.entities.EntityShark;
 import zollernextras.mobs.entities.EntityShrimp;
+import zollernextras.mobs.entities.boss.EntityShadowAlien;
 import zollernextras.mobs.models.ModelBabyDragon;
 import zollernextras.mobs.models.ModelDuck;
 import zollernextras.mobs.models.ModelEnderBug;
@@ -65,6 +66,7 @@ import zollernextras.mobs.models.ModelScorpion;
 import zollernextras.mobs.models.ModelShadowSkeleton;
 import zollernextras.mobs.models.ModelShark;
 import zollernextras.mobs.models.ModelShrimp;
+import zollernextras.mobs.models.boss.ModelShadowAlien;
 import zollernextras.mobs.renders.RenderBabyDragon;
 import zollernextras.mobs.renders.RenderDuck;
 import zollernextras.mobs.renders.RenderEnderBug;
@@ -82,6 +84,7 @@ import zollernextras.mobs.renders.RenderScorpion;
 import zollernextras.mobs.renders.RenderShadowSkeleton;
 import zollernextras.mobs.renders.RenderShark;
 import zollernextras.mobs.renders.RenderShrimp;
+import zollernextras.mobs.renders.boss.RenderShadowAlien;
 import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.network.simpleimpl.MessageContext;
@@ -150,6 +153,10 @@ public class ClientProxy extends CommonProxy {
 		RenderingRegistry.registerEntityRenderingHandler(EntityHellDuck.class,
 				new RenderHellDuck(new ModelDuck(), 0.5F));
 		
+		RenderingRegistry.registerEntityRenderingHandler(
+				EntityShadowAlien.class, new RenderShadowAlien(
+						new ModelShadowAlien(), 0.5F));
+		
 		addTile(TEIronBlockIngot.class, new TESRIronIngotStack());
 		addTile(TEGoldBlockIngot.class, new TESRGoldIngotStack());
 		addTile(TEFueltoniumBlockIngot.class, new TESRFueltoniumIngotStack());
@@ -166,6 +173,21 @@ public class ClientProxy extends CommonProxy {
 				new RenderDuckEgg(ItemList.duckEgg));
 		
 		MainHelper.Log("Renderers initialized.");
+	}
+	
+	@Override
+	public void sendChatMessage(EntityPlayer player, String message) {
+		if (!player.worldObj.isRemote) {
+			MainHelper.addChatMessage(player, message);
+		}
+	}
+	
+	@Override
+	public void doPotionEffect(EntityPlayer player, int potionId) {
+		float playerWalkSpeed = player.capabilities.getWalkSpeed();
+		if (playerWalkSpeed < 2.0f) {
+			player.capabilities.setPlayerWalkSpeed(playerWalkSpeed + 1.0f);
+		}
 	}
 	
 	@Override

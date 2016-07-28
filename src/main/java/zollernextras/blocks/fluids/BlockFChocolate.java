@@ -12,7 +12,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fluids.Fluid;
 import zollernextras.lib.MainHelper;
-import zollernextras.lib.ModInfo;
+import zollernextras.lib.ZollernModInfo;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -56,13 +56,13 @@ public class BlockFChocolate extends BlockFluidClassic {
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerBlockIcons(IIconRegister iir) {
-		stillIcon = iir.registerIcon(ModInfo.MODID + ":" + "chocolate_still");
-		flowingIcon = iir.registerIcon(ModInfo.MODID + ":"
+		stillIcon = iir.registerIcon(ZollernModInfo.MODID + ":" + "chocolate_still");
+		flowingIcon = iir.registerIcon(ZollernModInfo.MODID + ":"
 				+ "chocolate_flowing");
 		this.getFluid().setStillIcon(
-				iir.registerIcon(ModInfo.MODID + ":chocolate_still"));
+				iir.registerIcon(ZollernModInfo.MODID + ":chocolate_still"));
 		this.getFluid().setFlowingIcon(
-				iir.registerIcon(ModInfo.MODID + ":chocolate_flowing"));
+				iir.registerIcon(ZollernModInfo.MODID + ":chocolate_flowing"));
 	}
 	
 	@Override

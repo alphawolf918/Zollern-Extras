@@ -223,6 +223,27 @@ tile.zollernextras_enderdiamondblock.name=Ender Diamond
 tile.zollernextras_enderdiamondore.name=Ender Diamond Ore
 tile.zollernextras_chargiumblock.name=Chargium Block
 
+tile.zollernextras_ud_surfacerock.name=Upside-Down Surface Rock
+tile.zollernextras_ud_rock.name=Upside-Down Subrock
+tile.zollernextras_ud_stone.name=Upside-Down Stone
+tile.zollernextras_ud_cobblestone.name=Upside-Down Cobblestone
+tile.zollernextras_ud_stonebricks.name=Upside-Down Stone Bricks
+tile.zollernextras_ud_dirt.name=Upside-Down Dirt
+tile.zollernextras_ud_ironore.name=Upside-Down Iron Ore
+tile.zollernextras_ud_goldore.name=Upside-Down Gold Ore
+tile.zollernextras_ud_lapisore.name=Upside-Down Lapis Lazuli Ore
+tile.zollernextras_ud_redstoneore.name=Upside-Down Redstone Ore
+tile.zollernextras_ud_diamondore.name=Upside-Down Diamond Ore
+tile.zollernextras_ud_emeraldore.name=Upside-Down Emerald Ore
+tile.zollernextras_ud_amaranthore.name=Upside-Down Amaranth Ore
+tile.zollernextras_ud_zincore.name=Upside-Down Zinc Ore
+tile.zollernextras_ud_zollerniumore.name=Upside-Down Zollernium Ore
+tile.zollernextras_ud_rubyore.name=Upside-Down Ruby Ore
+tile.zollernextras_ud_sapphireore.name=Upside-Down Sapphire Ore
+tile.zollernextras_ud_fuelore.name=Upside-Down Fueltonium Ore
+tile.zollernextras_ud_spcore.name=Upside-Down Super Charged Coal Ore
+tile.zollernextras_ud_endershardore.name=Upside-Down Ender Shard Ore
+
 tile.zollernextras_chocolate.name=Melted Chocolate
 fluid.zollernextras_chocolate=Melted Chocolate
 zollernextras_chocolate=Melted Chocolate
@@ -419,6 +440,7 @@ item.zollernextras_brickingot_purple.name=Purple Brick Ingot
 item.zollernextras_brickingot_mud.name=Mud Brick Ingot
 
 item.zollernextras_nethereye.name=Nether Eye
+item.zollernextras_upsidedowneye.name=Gateway Eye
 item.zollernextras_enderreeds.name=Ender Cane
 item.zollernextras_dough.name=Dough
 item.zollernextras_cookeddough.name=Cooked Dough
@@ -429,12 +451,11 @@ item.zollernextras_enderdiamond.name=Ender Diamond
 item.zollernextras_enderglowstonedust.name=Ender Glow Dust
 item.zollernextras_chargiumdust.name=Chargium Dust
 item.zollernextras_chargiumingot.name=Chargium Ingot
+item.zollernextras_radiance.name=Radiance
 
 item.zollernextras_bucket_chocolate.name=Chocolate Bucket
 item.zollernextras_fuelbucket.name=Molten Fueltonium Bucket
 item.zollernextras_chargiumbucket.name=Chargium Bucket
-
-item.zollernextras_backpack.name=Backpack
 
 entity.zollernextras_fish.name=Fish
 entity.zollernextras_jellyfish.name=Jellyfish
@@ -464,6 +485,7 @@ entity.zollernextras_babydragon.name=Baby Ender Dragon
 entity.zollernextras_enderspider.name=Ender Spider
 entity.zollernextras_endercreeper.name=Ender Creeper
 entity.zollernextras_enderbug.name=Ender Bug
+entity.zollernextras_shadowalien.name=Shadow God
 
 death.attack.fueltonium=%1$s was submerged in fueltonium.
 death.attack.fueltonium.player=%1$s was submerged in fueltonium by %2$s.
@@ -474,7 +496,16 @@ death.attack.jellyfishsting.item=%1$s was stung by a jellyfish thanks to %2$s us
 death.attack.sharkattack=%1$s got ate by a shark. Yummy.
 death.attack.sharkattack.player=%1$s got ate by a shark because of %2$s. Mmmm, betrayal.
 death.attack.sharkattack.item=%1$s got ate by a shark because of %2$s using %3$s. Nom.
+death.attack.shadows=%1$s was swallowed whole by the shadow realm.
+death.attack.shadows.player=%1$s was swallowed whole by the shadow realm due to the actions of %2$s.
+death.attack.shadows.item=%1$s was swallowed whole by the shadow realm, due to the actions of %2$s using %3$s.
 
 zollernextras_commands.heal.usage=/heal [player]
+zollernextras_commands.stats.usage=/stats
+zollernextras_commands.tpd.usage=/tpd <dimID>
+zollernextras_commands.wtp.usage=/wtp <x> <y> <x>
+zollernextras_commands.wp.usage=/wp <player>
+
+zollernextras_radiance=Radiance
 
 itemGroup.Zollern Extras=Zollern Extras

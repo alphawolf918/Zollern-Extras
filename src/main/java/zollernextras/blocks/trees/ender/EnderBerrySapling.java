@@ -11,7 +11,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import zollernextras.blocks.BlockList;
 import zollernextras.creativetabs.ModTabs;
-import zollernextras.lib.ModInfo;
+import zollernextras.lib.ZollernModInfo;
 import zollernextras.worldgen.WorldGenEnderBerryTree;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -23,8 +23,8 @@ public class EnderBerrySapling extends BlockBush implements IGrowable {
 	
 	public EnderBerrySapling() {
 		this.setCreativeTab(ModTabs.zTab);
-		this.setBlockName(ModInfo.MODID + "_enderberrysapling");
-		this.setBlockTextureName(ModInfo.MODID + ":enderberrysapling");
+		this.setBlockName(ZollernModInfo.MODID + "_enderberrysapling");
+		this.setBlockTextureName(ZollernModInfo.MODID + ":enderberrysapling");
 		float f = 0.4F;
 		this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, f * 2.0F,
 				0.5F + f);

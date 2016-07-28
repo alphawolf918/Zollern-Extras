@@ -281,6 +281,7 @@ public class ItemList {
 	public static Item bricksMud = new ColoredBrick("mud");
 	
 	public static Item netherEye = new ItemNetherEye();
+	public static Item upsideDownEye = new ItemUpsideDownEye();
 	public static Item enderReeds = new ItemEnderReed();
 	public static Item dough = new ModItem("dough");
 	public static Item cookedDough = new ModItem("cookeddough");
@@ -289,6 +290,7 @@ public class ItemList {
 	public static Item enderGlowstoneDust = new ModItem("enderglowstonedust");
 	public static Item chargiumDust = new ModItem("chargiumdust");
 	public static Item chargiumIngot = new ModItem("chargiumingot");
+	public static Item radiance = new ModItem("radiance");
 	
 	public static Item chocolateBucket = new ZollernBucket("bucket_chocolate",
 			BlockList.blockChocolate);
@@ -467,6 +469,7 @@ public class ItemList {
 		addItem(bricksMud, "Mud Brick Ingot");
 		
 		addItem(netherEye, "Nether Eye");
+		addItem(upsideDownEye, "Upside-Down Eye");
 		addItem(enderReeds, "Ender Cane");
 		addItem(dough, "Dough");
 		addItem(tomatoPaste, "Tomato Paste");
@@ -476,6 +479,7 @@ public class ItemList {
 		addItem(enderGlowstoneDust, "Ender Glowstone Dust");
 		addItem(chargiumDust, "Chargium Dust");
 		addItem(chargiumIngot, "Chargium Ingot");
+		addItem(radiance, "Radiance");
 		
 		addItem(chocolateBucket, "Chocolate Bucket");
 		addItem(fuelBucket, "Fueltonium Bucket");

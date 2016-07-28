@@ -8,15 +8,15 @@ import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemStack;
 import zollernextras.creativetabs.ModTabs;
 import zollernextras.items.ItemList;
-import zollernextras.lib.ModInfo;
+import zollernextras.lib.ZollernModInfo;
 
 public class AmaranthShovel extends ItemSpade {
 	
 	public AmaranthShovel(ToolMaterial p_i45347_1_) {
 		super(p_i45347_1_);
 		this.setCreativeTab(ModTabs.zTab);
-		this.setUnlocalizedName(ModInfo.MODID + "_amaranthshovel");
-		this.setTextureName(ModInfo.MODID + ":" + "amaranthshovel");
+		this.setUnlocalizedName(ZollernModInfo.MODID + "_amaranthshovel");
+		this.setTextureName(ZollernModInfo.MODID + ":" + "amaranthshovel");
 	}
 	
 	@Override

@@ -16,6 +16,7 @@ public class ZEConfig {
 	
 	public static String CATEGORY_BIOMES = "Biomes";
 	public static String CATEGORY_COMMANDS = "Commands";
+	public static String CATEGORY_DIMENSIONS = "Dimensions";
 	public static String CATEGORY_GUI = "GUI";
 	public static String CATEGORY_IMPROVEMENTS = "Improvements";
 	public static String CATEGORY_MOBS = "Mobs";
@@ -24,6 +25,7 @@ public class ZEConfig {
 	// Config2
 	public static String CATEGORY_HOMES = "Homes";
 	
+	// General
 	public static boolean fueltoniumIsYellorite;
 	public static boolean shiniumIsPlatinum;
 	public static boolean betterGlassIsGlass;
@@ -31,6 +33,7 @@ public class ZEConfig {
 	public static boolean vanillaItemsAreCraftable;
 	public static boolean horseArmorIsCraftable;
 	
+	// Biomes
 	public static int biomeIcyDesertID;
 	public static int biomeSlimeLandsID;
 	public static int biomeRedshroomPlainsID;
@@ -47,11 +50,17 @@ public class ZEConfig {
 	public static int biomeCrystalOceanID;
 	public static int biomeTropicalForestID;
 	
+	// Commands
 	public static boolean commandEnableWarpTp;
 	public static boolean commandEnableWp;
 	
+	// Dimensions
+	public static int dimensionUpsideDownID = -96;
+	
+	// GUI
 	public static boolean biomeDisplaysOnHUD;
 	
+	// mobs
 	public static int mobDuckSpawnRate;
 	public static int mobFishSpawnRate;
 	public static int mobSharkSpawnRate;
@@ -66,6 +75,7 @@ public class ZEConfig {
 	public static int mobShadowSkeletonSpawnRate;
 	public static int mobShrimpSpawnRate;
 	
+	// Ores
 	public static int oreSuperCoalSpawnRate;
 	public static int oreFueltoniumSpawnRate;
 	public static int oreEnderShardSpawnRate;
@@ -97,6 +107,8 @@ public class ZEConfig {
 		config.addCustomCategoryComment(CATEGORY_BIOMES, "IDs for ZE biomes.");
 		config.addCustomCategoryComment(CATEGORY_COMMANDS,
 				"Enable or disable special commands.");
+		config.addCustomCategoryComment(CATEGORY_DIMENSIONS,
+				"Customize settings for the Upside Down and other Zollern dimensions.");
 		config.addCustomCategoryComment(CATEGORY_GUI,
 				"Settings related to the GUI or HUD.");
 		config.addCustomCategoryComment(CATEGORY_IMPROVEMENTS,
@@ -192,6 +204,11 @@ public class ZEConfig {
 						false,
 						"Allow or disallow any player to instantly warp to any other player. Default: false")
 				.getBoolean();
+		
+		// Dimensions
+		dimensionUpsideDownID = config.get(CATEGORY_DIMENSIONS,
+				"Upside Down Dimension ID", -96,
+				"Set the ID for the Upside Down dimension.").getInt();
 		
 		// Mobs
 		mobFishSpawnRate = config.get(CATEGORY_MOBS, "mobFishSpawnRate", 70)

@@ -13,7 +13,7 @@ import net.minecraftforge.common.EnumPlantType;
 import zollernextras.blocks.BlockList;
 import zollernextras.items.ItemList;
 import zollernextras.lib.MainHelper;
-import zollernextras.lib.ModInfo;
+import zollernextras.lib.ZollernModInfo;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -109,7 +109,7 @@ public class BlockEnderReeds extends BlockReed {
 	@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister p_149651_1_) {
 		this.blockIcon = p_149651_1_
-				.registerIcon(ModInfo.MODID + ":enderreeds");
+				.registerIcon(ZollernModInfo.MODID + ":enderreeds");
 	}
 	
 }

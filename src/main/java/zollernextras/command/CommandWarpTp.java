@@ -8,7 +8,7 @@ import net.minecraft.command.ICommandSender;
 import net.minecraft.command.PlayerNotFoundException;
 import net.minecraft.command.WrongUsageException;
 import net.minecraft.entity.player.EntityPlayerMP;
-import zollernextras.lib.ModInfo;
+import zollernextras.lib.ZollernModInfo;
 
 public class CommandWarpTp extends CommandBase implements ICommand {
 	
@@ -43,7 +43,7 @@ public class CommandWarpTp extends CommandBase implements ICommand {
 	@Override
 	public void processCommand(ICommandSender sender, String[] args) {
 		if (args.length != 3) {
-			throw new WrongUsageException(ModInfo.MODID
+			throw new WrongUsageException(ZollernModInfo.MODID
 					+ "_commands.warptp.usage", new Object[0]);
 		} else {
 			EntityPlayerMP entityplayermp = getCommandSenderAsPlayer(sender);

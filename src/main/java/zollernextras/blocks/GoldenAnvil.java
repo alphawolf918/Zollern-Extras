@@ -13,7 +13,7 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import zollernextras.lib.MainHelper;
-import zollernextras.lib.ModInfo;
+import zollernextras.lib.ZollernModInfo;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -31,7 +31,7 @@ public class GoldenAnvil extends BlockAnvil {
 	protected GoldenAnvil() {
 		this.setLightOpacity(0);
 		MainHelper.setTab(this);
-		this.setBlockName(ModInfo.MODID + "_goldanvil");
+		this.setBlockName(ZollernModInfo.MODID + "_goldanvil");
 		this.setResistance(4000.0F);
 		this.setHardness(5.0F);
 	}
@@ -72,12 +72,12 @@ public class GoldenAnvil extends BlockAnvil {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister p_149651_1_) {
-		this.blockIcon = p_149651_1_.registerIcon(ModInfo.MODID
+		this.blockIcon = p_149651_1_.registerIcon(ZollernModInfo.MODID
 				+ ":goldanvil_base");
 		this.anvilIcons = new IIcon[anvilIconNames.length];
 		
 		for (int i = 0; i < this.anvilIcons.length; ++i) {
-			this.anvilIcons[i] = p_149651_1_.registerIcon(ModInfo.MODID + ":"
+			this.anvilIcons[i] = p_149651_1_.registerIcon(ZollernModInfo.MODID + ":"
 					+ anvilIconNames[i]);
 		}
 	}

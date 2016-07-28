@@ -12,7 +12,7 @@ import net.minecraftforge.fluids.Fluid;
 import zollernextras.blocks.materials.MaterialList;
 import zollernextras.lib.DSource;
 import zollernextras.lib.MainHelper;
-import zollernextras.lib.ModInfo;
+import zollernextras.lib.ZollernModInfo;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -68,11 +68,11 @@ public class BlockFFueltonium extends BlockFluidClassic {
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerBlockIcons(IIconRegister iir) {
-		stillIcon = iir.registerIcon(ModInfo.MODID + ":" + "fuel");
-		flowingIcon = iir.registerIcon(ModInfo.MODID + ":" + "fuel");
-		this.getFluid().setStillIcon(iir.registerIcon(ModInfo.MODID + ":fuel"));
+		stillIcon = iir.registerIcon(ZollernModInfo.MODID + ":" + "fuel");
+		flowingIcon = iir.registerIcon(ZollernModInfo.MODID + ":" + "fuel");
+		this.getFluid().setStillIcon(iir.registerIcon(ZollernModInfo.MODID + ":fuel"));
 		this.getFluid().setFlowingIcon(
-				iir.registerIcon(ModInfo.MODID + ":fuel"));
+				iir.registerIcon(ZollernModInfo.MODID + ":fuel"));
 	}
 	
 	@Override

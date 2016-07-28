@@ -52,26 +52,29 @@ import net.minecraftforge.event.entity.player.UseHoeEvent;
 import net.minecraftforge.event.terraingen.PopulateChunkEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.event.world.BlockEvent.BreakEvent;
+import zollernextras.ZollernExtrasMod;
 import zollernextras.api.ores.IOre;
 import zollernextras.biomes.BiomeList;
 import zollernextras.blocks.BabyDragonEgg;
 import zollernextras.blocks.BlockList;
+import zollernextras.config.ZEConfig;
 import zollernextras.entity.ExtendedPlayer;
 import zollernextras.items.ItemList;
 import zollernextras.items.armor.amaranth.AmaranthArmor;
 import zollernextras.items.armor.azurite.AzuriteArmor;
 import zollernextras.items.armor.zollernium.ZollerniumArmor;
+import zollernextras.lib.DSource;
 import zollernextras.lib.MainHelper;
 import zollernextras.mobs.entities.EntityBabyDragon;
 import zollernextras.mobs.entities.EntityEnderBug;
 import zollernextras.mobs.entities.EntityShadowSkeleton;
 import zollernextras.network.PacketDispatcher;
 import zollernextras.network.client.SyncPlayerPropsMessage;
+import zollernextras.potions.ZollernPotionList;
 import zollernextras.proxies.CommonProxy;
 import cpw.mods.fml.common.eventhandler.Event.Result;
 import cpw.mods.fml.common.eventhandler.EventPriority;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import cpw.mods.fml.common.gameevent.PlayerEvent.PlayerLoggedInEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent.PlayerRespawnEvent;
 
 public class Events {
@@ -98,6 +101,7 @@ public class Events {
 			World worldObj = living.worldObj;
 			if (!worldObj.isRemote) {
 				EntityEnderBug enderBug = new EntityEnderBug(worldObj);
+				enderBug.setLocationAndAngles(xCoord, yCoord, zCoord, 0, 0);
 				worldObj.spawnEntityInWorld(enderBug);
 			}
 		}
@@ -108,6 +112,32 @@ public class Events {
 		EntityLivingBase entity = event.entityLiving;
 		if (entity instanceof EntityPlayer) {
 			EntityPlayer player = (EntityPlayer) entity;
+			if (player.dimension == ZEConfig.dimensionUpsideDownID) {
+				// Hurt the Player every few ticks, unless they have the
+				// "Radiance" potion effect. What this does is it checks the
+				// Player's inventory for the Radiance item, and if it finds it,
+				// it automatically uses its potion effect (which consumes the
+				// item) to apply Radiance to
+				// the Player, protecting them from Shadow damage. However, it
+				// will only automatically use itself in the Upside-Down.
+				// Anywhere else, it must be used manually with a right-click.
+				Item lightItem = ItemList.radiance;
+				InventoryPlayer playerInventory = player.inventory;
+				if (playerInventory.hasItem(lightItem)
+						&& !player.capabilities.isCreativeMode
+						&& !player.isPotionActive(ZollernPotionList.radiance)) {
+					player.addPotionEffect(new PotionEffect(
+							ZollernPotionList.radiance.id, 6000, 0));
+					playerInventory.consumeInventoryItem(lightItem);
+					ZollernExtrasMod.proxy.sendChatMessage(player,
+							"You are irradiated with a brilliant light.");
+				}
+				if (!player.capabilities.isCreativeMode
+						&& !player.isPotionActive(ZollernPotionList.radiance)) {
+					player.attackEntityFrom(DSource.deathShadows, 5.0f);
+				}
+				
+			}
 			ItemStack[] armor = player.inventory.armorInventory;
 			int amArmorCount = 0;
 			int zArmorCount = 0;
@@ -167,18 +197,21 @@ public class Events {
 		
 	}
 	
-	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
-	public void onPlayerLoginEvent(PlayerLoggedInEvent event) {
-		if (!event.player.worldObj.isRemote) {
-			
-		}
-	}
+	// @SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
+	// public void onPlayerLoginEvent(PlayerLoggedInEvent event) {
+	// if (!event.player.worldObj.isRemote) {
+	//
+	// }
+	// }
 	
 	@SubscribeEvent(priority = EventPriority.HIGH, receiveCanceled = true)
 	public void onNameFormatEvent(NameFormat event) {
 		String username = event.username;
 		if (username.toLowerCase().equals("alphawolf918")) {
 			event.displayname = EnumChatFormatting.GOLD + "Zollern Wolf"
+					+ EnumChatFormatting.WHITE;
+		} else if (username.toLowerCase().equals("nascarmpfan")) {
+			event.displayname = EnumChatFormatting.RED + "Mike"
 					+ EnumChatFormatting.WHITE;
 		} else if (username.toLowerCase().equals("applepiec00kie")) {
 			event.displayname = EnumChatFormatting.LIGHT_PURPLE + "Queen Apple"
@@ -193,37 +226,22 @@ public class Events {
 			event.displayname = EnumChatFormatting.DARK_AQUA + "Ice Lady"
 					+ EnumChatFormatting.WHITE;
 		} else if (username.toLowerCase().equals("master_zane")) {
-			event.displayname = EnumChatFormatting.GOLD + "Master Zane";
+			event.displayname = EnumChatFormatting.GOLD + "Master Zane"
+					+ EnumChatFormatting.WHITE;
 		} else if (username.toLowerCase().equals("asylumneeds")) {
-			event.displayname = EnumChatFormatting.BLACK + "ChronoxShift";
+			event.displayname = EnumChatFormatting.BLACK + "ChronoxShift"
+					+ EnumChatFormatting.WHITE;
 		}
 	}
-	
-	// @SubscribeEvent(priority = EventPriority.HIGH, receiveCanceled = true)
-	// public void onItemCraftedEvent(ItemCraftedEvent event) {
-	//
-	// }
-	
-	// @SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
-	// public void onItemSmeltedEvent(ItemSmeltedEvent event) {
-	// EntityPlayer player = event.player;
-	// ItemStack smelting = event.smelting;
-	// // TODO
-	// }
 	
 	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
 	public void onLivingDeathEvent(LivingDeathEvent event) {
 		if (!event.entity.worldObj.isRemote
 				&& event.entity instanceof EntityPlayer) {
-			NBTTagCompound playerData = CommonProxy
-					.getEntityData(((EntityPlayer) event.entity)
-							.getCommandSenderName()
-							+ ExtendedPlayer.EXT_PROP_NAME);
-			if (playerData != null) {
-				((ExtendedPlayer) event.entity
-						.getExtendedProperties(ExtendedPlayer.EXT_PROP_NAME))
-						.saveNBTData(playerData);
-			}
+			NBTTagCompound playerData = new NBTTagCompound();
+			((ExtendedPlayer) event.entity
+					.getExtendedProperties(ExtendedPlayer.EXT_PROP_NAME))
+					.saveNBTData(playerData);
 			CommonProxy.storeEntityData(
 					((EntityPlayer) event.entity).getCommandSenderName(),
 					playerData);
@@ -261,11 +279,6 @@ public class Events {
 			}
 		}
 	}
-	
-	// @SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
-	// public void onPlayerEvent(PlayerEvent.BreakSpeed event) {
-	//
-	// }
 	
 	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
 	public void FillBucket(FillBucketEvent event) {
@@ -309,30 +322,9 @@ public class Events {
 						.getExtendedProperties(ExtendedPlayer.EXT_PROP_NAME))
 						.loadNBTData(playerData);
 			}
-			
 			EntityPlayer player = (EntityPlayer) event.entity;
-			ExtendedPlayer props = ExtendedPlayer.get(player);
-			if (!player.capabilities.isCreativeMode) {
-				
-				// Max Health
-				double maxHealth = props.getMaxHealth();
-				player.getEntityAttribute(SharedMonsterAttributes.maxHealth)
-						.setBaseValue(maxHealth);
-				
-				// Max Attack
-				double maxAttack = props.getMaxDamage();
-				double attrMaxDamage = player.getEntityAttribute(
-						SharedMonsterAttributes.attackDamage).getBaseValue();
-				player.getEntityAttribute(SharedMonsterAttributes.attackDamage)
-						.setBaseValue(attrMaxDamage + maxAttack);
-				
-				// Max Fortune
-				// double maxFortune = props.getMaxFortune();
-			}
-			PacketDispatcher
-					.sendTo(new SyncPlayerPropsMessage(
-							(EntityPlayer) event.entity),
-							(EntityPlayerMP) event.entity);
+			PacketDispatcher.sendTo(new SyncPlayerPropsMessage(player),
+					(EntityPlayerMP) player);
 		}
 	}
 	
@@ -343,7 +335,7 @@ public class Events {
 		if (!player.capabilities.isCreativeMode) {
 			double maxHealth = props.getMaxHealth();
 			player.getEntityAttribute(SharedMonsterAttributes.maxHealth)
-					.setBaseValue(maxHealth);
+			.setBaseValue(maxHealth);
 		}
 	}
 	
@@ -399,12 +391,12 @@ public class Events {
 									MainHelper.addChatMessage(
 											player,
 											EnumChatFormatting.GOLD
-													+ "+"
-													+ strIncrAmnt.substring(0,
-															3)
+											+ "+"
+											+ strIncrAmnt.substring(0,
+													3)
 													+ " Jump Height! Total: "
 													+ fullResist
-															.substring(0, 3));
+													.substring(0, 3));
 								}
 							}
 						}
@@ -446,11 +438,11 @@ public class Events {
 								MainHelper.addChatMessage(
 										player,
 										EnumChatFormatting.GOLD
-												+ "+"
-												+ blockFortune
-												+ " Fortune! Total: "
-												+ strFortuneLevel.substring(0,
-														3));
+										+ "+"
+										+ blockFortune
+										+ " Fortune! Total: "
+										+ strFortuneLevel.substring(0,
+												3));
 							}
 							if (new Random().nextInt(5) <= 2) {
 								int numDropped = 0;
@@ -524,7 +516,7 @@ public class Events {
 		} else if (theEntity instanceof EntityShadowSkeleton) {
 			Random rand = new Random();
 			int randInt = rand.nextInt(100);
-			if (randInt <= 10) {
+			if (randInt <= 40) {
 				ItemStack itemStack = new ItemStack(ItemList.shadowEssence, 1);
 				EntityItem itemEntity = new EntityItem(worldObj,
 						theEntity.posX, theEntity.posY, theEntity.posZ,
@@ -653,6 +645,27 @@ public class Events {
 										|| storage.getBlockByExtId(x, y, z) == Blocks.dirt) {
 									Block theBlock = toBlock;
 									storage.func_150818_a(x, y, z, toBlock);
+								}
+							}
+						}
+					}
+				}
+			}
+			chunk.isModified = true;
+		} else if (biome.isEqualTo(BiomeList.upsideDown)) {
+			Chunk chunk = event.world.getChunkFromChunkCoords(event.chunkX,
+					event.chunkZ);
+			for (ExtendedBlockStorage storage : chunk.getBlockStorageArray()) {
+				if (storage != null) {
+					for (int x = 0; x < 16; ++x) {
+						for (int y = 0; y < 16; ++y) {
+							for (int z = 0; z < 16; ++z) {
+								if (storage.getBlockByExtId(x, y, z) == Blocks.water) {
+									storage.func_150818_a(x, y, z, Blocks.air);
+								} else if (storage.getBlockByExtId(x, y, z) == Blocks.planks
+										|| storage.getBlockByExtId(x, y, z) == Blocks.fence) {
+									storage.func_150818_a(x, y, z,
+											BlockList.upsideDownStone);
 								}
 							}
 						}

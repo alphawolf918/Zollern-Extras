@@ -16,7 +16,7 @@ import net.minecraftforge.common.IShearable;
 import zollernextras.blocks.BlockList;
 import zollernextras.creativetabs.ModTabs;
 import zollernextras.items.ItemList;
-import zollernextras.lib.ModInfo;
+import zollernextras.lib.ZollernModInfo;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -28,8 +28,8 @@ public class LimonLeaves extends BlockLeavesBase implements IShearable {
 	public LimonLeaves() {
 		super(Material.leaves, false);
 		this.setCreativeTab(ModTabs.zTab);
-		this.setBlockName(ModInfo.MODID + "_limonleaves");
-		this.setBlockTextureName(ModInfo.MODID + ":limonleaves");
+		this.setBlockName(ZollernModInfo.MODID + "_limonleaves");
+		this.setBlockTextureName(ZollernModInfo.MODID + ":limonleaves");
 		this.setTickRandomly(true);
 		this.setHardness(0.2F);
 		this.setLightOpacity(1);

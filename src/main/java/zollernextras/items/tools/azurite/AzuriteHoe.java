@@ -9,15 +9,15 @@ import net.minecraft.item.ItemStack;
 import zollernextras.creativetabs.ModTabs;
 import zollernextras.items.ItemList;
 import zollernextras.items.tools.ToolMaterials;
-import zollernextras.lib.ModInfo;
+import zollernextras.lib.ZollernModInfo;
 
 public class AzuriteHoe extends ItemHoe {
 	
 	public AzuriteHoe() {
 		super(ToolMaterials.AZURITE);
 		this.setCreativeTab(ModTabs.zTab);
-		this.setUnlocalizedName(ModInfo.MODID + "_azuritehoe");
-		this.setTextureName(ModInfo.MODID + ":" + "azuritehoe");
+		this.setUnlocalizedName(ZollernModInfo.MODID + "_azuritehoe");
+		this.setTextureName(ZollernModInfo.MODID + ":" + "azuritehoe");
 	}
 	
 	@Override

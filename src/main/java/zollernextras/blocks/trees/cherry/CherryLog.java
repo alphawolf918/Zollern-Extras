@@ -10,7 +10,7 @@ import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import zollernextras.creativetabs.ModTabs;
-import zollernextras.lib.ModInfo;
+import zollernextras.lib.ZollernModInfo;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -26,7 +26,7 @@ public class CherryLog extends BlockRotatedPillar {
 		this.setCreativeTab(ModTabs.zTab);
 		this.setHardness(2.0F);
 		this.setResistance(2.0F);
-		this.setBlockName(ModInfo.MODID + "_cherrylog");
+		this.setBlockName(ZollernModInfo.MODID + "_cherrylog");
 		this.setStepSound(soundTypeWood);
 	}
 	

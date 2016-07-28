@@ -16,7 +16,7 @@ import net.minecraftforge.common.IShearable;
 import zollernextras.blocks.BlockList;
 import zollernextras.creativetabs.ModTabs;
 import zollernextras.items.ItemList;
-import zollernextras.lib.ModInfo;
+import zollernextras.lib.ZollernModInfo;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -28,8 +28,8 @@ public class CherryLeaves extends BlockLeavesBase implements IShearable {
 	public CherryLeaves() {
 		super(Material.leaves, false);
 		this.setCreativeTab(ModTabs.zTab);
-		this.setBlockName(ModInfo.MODID + "_cherryleaves");
-		this.setBlockTextureName(ModInfo.MODID + ":cherryleaves");
+		this.setBlockName(ZollernModInfo.MODID + "_cherryleaves");
+		this.setBlockTextureName(ZollernModInfo.MODID + ":cherryleaves");
 		this.setTickRandomly(true);
 		this.setHardness(0.2F);
 		this.setLightOpacity(1);

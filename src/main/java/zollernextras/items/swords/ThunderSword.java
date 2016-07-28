@@ -65,7 +65,7 @@ public class ThunderSword extends ItemSword {
 			world.spawnEntityInWorld(new EntityLightningBolt(world, i, j, k + l));
 		}
 		if (!entityplayer.capabilities.isCreativeMode) {
-			itemstack.damageItem(1, entityplayer);
+			itemstack.damageItem(5, entityplayer);
 		}
 		return itemstack;
 	}

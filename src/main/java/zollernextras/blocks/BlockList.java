@@ -2,7 +2,10 @@ package zollernextras.blocks;
 
 import java.util.HashMap;
 import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import zollernextras.blocks.crops.BlockEnderReeds;
 import zollernextras.blocks.crops.CropBlackberry;
@@ -37,6 +40,7 @@ import zollernextras.blocks.ores.EnderShardOre;
 import zollernextras.blocks.ores.FueltoniumOre;
 import zollernextras.blocks.ores.GemOre;
 import zollernextras.blocks.ores.PrismarineOre;
+import zollernextras.blocks.ores.ShadowGemOre;
 import zollernextras.blocks.ores.SuperChargedCoalOre;
 import zollernextras.blocks.ores.ZincOre;
 import zollernextras.blocks.ores.ZollerniumOre;
@@ -90,9 +94,10 @@ import zollernextras.blocks.trees.limon.LimonSapling;
 import zollernextras.blocks.trees.orange.OrangeLeaves;
 import zollernextras.blocks.trees.orange.OrangeLog;
 import zollernextras.blocks.trees.orange.OrangeSapling;
+import zollernextras.blocks.upsidedown.UpsideDownStone;
 import zollernextras.items.ItemList;
 import zollernextras.lib.MainHelper;
-import zollernextras.lib.ModInfo;
+import zollernextras.lib.ZollernModInfo;
 import zollernextras.lib.enums.State;
 import zollernextras.util.RegistryUtil;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -187,7 +192,7 @@ public class BlockList {
 	public static Block rubyBlock = new GemBlock("rubyblock");
 	public static Block sapphireBlock = new GemBlock("sapphireblock");
 	public static Block enderDiamondBlock = new GemBlock("enderdiamondblock")
-			.setLightLevel(0.6F);
+	.setLightLevel(0.6F);
 	
 	public static Block babyEnderDragonEgg = new BabyDragonEgg();
 	
@@ -354,10 +359,50 @@ public class BlockList {
 	public static Block enderGlowstone = new GenericBlock("enderglowstone",
 			0.6F).setLightLevel(1.0F).setStepSound(Block.soundTypeGlass);
 	public static Block chargiumBlock = new GenericBlock("chargiumblock", 1.6F)
-			.setLightLevel(1.0F).setStepSound(Block.soundTypeGlass);
+	.setLightLevel(1.0F).setStepSound(Block.soundTypeGlass);
+	
+	// Upside-Down
+	public static Block upsideDownSurfaceRock = new GenericBlock(
+			"ud_surfacerock", 1.2F);
+	public static Block upsideDownRock = new GenericBlock("ud_rock", 1.4F);
+	public static Block upsideDownStone = new UpsideDownStone();
+	public static Block upsideDownCobble = new GenericBlock("ud_cobblestone",
+			0.8F);
+	public static Block upsideDownStoneBricks = new GenericBlock(
+			"ud_stonebricks", 1.0F);
+	public static Block upsideDownDirt = ((GenericBlock) ((GenericBlock) new GenericBlock(
+			"ud_dirt", 0.5F).setStepSound(Block.soundTypeGravel))
+			.setBlockHarvestLevel("shovel", 0))
+			.setBlockMaterial(Material.grass);
+	public static Block upsideDownIronOre = new GenericBlockOre("ud_ironore",
+			1.6F);
+	public static Block upsideDownGoldOre = new GenericBlockOre("ud_goldore",
+			1.4F);
+	public static Block upsideDownDiamondOre = new ShadowGemOre(
+			"ud_diamondore", Items.diamond);
+	public static Block upsideDownEmeraldOre = new ShadowGemOre(
+			"ud_emeraldore", Items.emerald);
+	public static Block upsideDownAmaranthOre = new GenericBlockOre(
+			"ud_amaranthore", 1.4F);
+	public static Block upsideDownZincOre = new GenericBlockOre("ud_zincore",
+			1.4F);
+	public static Block upsideDownRubyOre = new ShadowGemOre("ud_rubyore",
+			ItemList.ruby);
+	public static Block upsideDownSapphireOre = new ShadowGemOre(
+			"ud_sapphireore", ItemList.sapphire);
+	public static Block upsideDownSpcOre = new ShadowGemOre("ud_spcore",
+			ItemList.spcItem);
+	public static Block upsideDownFuelOre = new ShadowGemOre("ud_fuelore",
+			ItemList.fuelonite);
+	public static Block upsideDownLapisOre = new ShadowGemOre("ud_lapisore",
+			new ItemStack(Items.dye, 1, 4).getItem());
+	public static Block upsideDownRedstoneOre = new ShadowGemOre(
+			"ud_redstoneore", Items.redstone);
+	public static Block upsideDownEnderShardOre = new ShadowGemOre(
+			"ud_endershardore", ItemList.enderShard);
 	
 	public static FluidChocolate fluidChocolate = new FluidChocolate(
-			ModInfo.MODID + "_chocolate");
+			ZollernModInfo.MODID + "_chocolate");
 	public static final Block blockChocolate = new BlockFChocolate(
 			fluidChocolate);
 	
@@ -575,6 +620,27 @@ public class BlockList {
 		addBlock(enderDiamondBlock, "Ender Diamond Block");
 		addBlock(chargiumBlock, "Chargium Block");
 		
+		// Upside Down
+		addBlock(upsideDownSurfaceRock, "UD SurfRock");
+		addBlock(upsideDownRock, "UD Rock");
+		addBlock(upsideDownStone, "UD Stone");
+		addBlock(upsideDownCobble, "UD Cobblestone");
+		addBlock(upsideDownStoneBricks, "UD Stone Bricks");
+		addBlock(upsideDownDirt, "UD Dirt");
+		addBlock(upsideDownIronOre, "UD Iron Ore");
+		addBlock(upsideDownGoldOre, "UD Gold Ore");
+		addBlock(upsideDownDiamondOre, "UD Diamond Ore");
+		addBlock(upsideDownEmeraldOre, "UD Emerald Ore");
+		addBlock(upsideDownAmaranthOre, "UD Amaranth Ore");
+		addBlock(upsideDownZincOre, "UD Zinc Ore");
+		addBlock(upsideDownRubyOre, "UD Ruby Ore");
+		addBlock(upsideDownSapphireOre, "UD Sapphire Ore");
+		addBlock(upsideDownSpcOre, "UD SPC Ore");
+		addBlock(upsideDownFuelOre, "UD Fuel Ore");
+		addBlock(upsideDownLapisOre, "UD Lapis Ore");
+		addBlock(upsideDownRedstoneOre, "UD Redstone Ore");
+		addBlock(upsideDownEnderShardOre, "UD Ender Shard Ore");
+		
 		addBlock(blockChocolate, "Melted Chocolate");
 		addBlock(blockFuel, "Molten Fueltonium");
 		addBlock(blockChargium, "Conductive Chargium");
@@ -609,7 +675,7 @@ public class BlockList {
 	public static Block addIngotTile(Block block, String strName,
 			Class<? extends TileEntity> TEClass) {
 		totalBlocks++;
-		return RegistryUtil.fullRegister(block, ModInfo.MODID + "_ingotBlock_"
+		return RegistryUtil.fullRegister(block, ZollernModInfo.MODID + "_ingotBlock_"
 				+ strName, TEClass);
 	}
 	

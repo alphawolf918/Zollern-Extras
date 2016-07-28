@@ -6,21 +6,24 @@ import zollernextras.blocks.BlockList;
 import zollernextras.command.Commands;
 import zollernextras.config.ZEConfig;
 import zollernextras.creativetabs.ModTabs;
+import zollernextras.dimension.DimensionLoader;
 import zollernextras.entity.EntityDuckEgg;
 import zollernextras.handlers.FuelHandlers;
 import zollernextras.handlers.Handlers;
 import zollernextras.items.ItemList;
 import zollernextras.items.StackChange;
 import zollernextras.lib.MainHelper;
-import zollernextras.lib.ModInfo;
 import zollernextras.lib.OreDict;
-import zollernextras.lib.RecipeManager;
 import zollernextras.lib.Treasures;
+import zollernextras.lib.ZollernModInfo;
+import zollernextras.lib.modhelper.AE2Helper;
 import zollernextras.lib.modhelper.BRTurbineHelper;
 import zollernextras.lib.modhelper.ModHelperBase;
 import zollernextras.lib.modhelper.TreeCapHelper;
+import zollernextras.lib.recipes.RecipeManager;
 import zollernextras.mobs.Mobs;
 import zollernextras.network.PacketDispatcher;
+import zollernextras.potions.ZollernPotionList;
 import zollernextras.proxies.CommonProxy;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -33,16 +36,17 @@ import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-@Mod(modid = ModInfo.MODID, name = ModInfo.NAME, version = ModInfo.VERSION)
+@Mod(modid = ZollernModInfo.MODID, name = ZollernModInfo.NAME,
+version = ZollernModInfo.VERSION)
 public class ZollernExtrasMod {
 	
-	@Mod.Instance(ModInfo.MODID)
+	@Mod.Instance(ZollernModInfo.MODID)
 	public static ZollernExtrasMod INSTANCE;
 	
 	public static File filePath;
 	
-	@SidedProxy(clientSide = ModInfo.PROXY_LOCATION + ".ClientProxy",
-			serverSide = ModInfo.PROXY_LOCATION + ".CommonProxy")
+	@SidedProxy(clientSide = ZollernModInfo.PROXY_LOCATION + ".ClientProxy",
+			serverSide = ZollernModInfo.PROXY_LOCATION + ".CommonProxy")
 	public static CommonProxy proxy;
 	
 	public static int modGuiIndex = 10;
@@ -51,8 +55,8 @@ public class ZollernExtrasMod {
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
-		MainHelper.Log("Beginning to load Zollern Extras v" + ModInfo.VERSION
-				+ "...");
+		MainHelper.Log("Beginning to load Zollern Extras v"
+				+ ZollernModInfo.VERSION + "...");
 		ModHelperBase.detectMods();
 		this.filePath = MainHelper.getFilePath(event);
 		ModTabs.init();
@@ -63,9 +67,14 @@ public class ZollernExtrasMod {
 		if (ModHelperBase.useBigReactors) {
 			BRTurbineHelper.init();
 		}
+		if (ModHelperBase.useAppliedEnergistics2) {
+			AE2Helper.init();
+		}
+		ZollernPotionList.init();
 		TreeCapHelper.init();
 		Mobs.init();
 		Treasures.init();
+		DimensionLoader.init();
 		PacketDispatcher.registerPackets();
 	}
 	

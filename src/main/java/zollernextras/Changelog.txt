@@ -1,3 +1,24 @@
+[3.1 - The Upside-Down Update]
+* Added the "Upside-Down" dimension.
+    * Inspired by the show "Stranger Things."
+    * Entirely black dimension with multiple different ores.
+    * Only ZE mobs spawn here.
+    * The only way to get there is via the Upside-Down Gateway Eye.
+    * A "Shadow Shrine" now spawns in the Upside-Down, filled with its own unique chest gen.
+* Shadow Skeletons are now 4 times more likely to drop Shadow Essence upon death.
+* Increased duration damage that Power Swords take upon using their powers.
+* Craters now spawn in the Upside-Down.
+* Added the Shadow Alien boss mob.
+    * Spawns near Shadow Shrines in the Upside-Down.
+    * Has a 10/800 chance to heal itself for 10 - 20 points every tick.
+    * Once health is at or lower than 500, has a 5/5000 chance to spawn a scorpion every tick.
+    * Hits the Player extremely hard.
+        * Can one-shot you if you're not careful and prepared.
+
+-- FIXES --
+* Fixed block of Super Charged Coal not giving right amount of Conductive Chargium liquid.
+-----------
+
 [3.0.3 - "Oops" Fix]
 
 -- FIXES --
@@ -8,7 +29,6 @@
 * Triumph Swords (Diablo, Ender, Glacies, Thor and Mortem) now take durability hits when hitting entities or using their powers.
 * Changed the information displayed on Thor.
 * Registered Shinium with the OreDictionary as Shinium instead of just Platinum.
-
 
 -- FIXES --
 * Fixed recipe for Precious Shinium not working.

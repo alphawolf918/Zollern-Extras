@@ -6,7 +6,7 @@ import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import zollernextras.creativetabs.ModTabs;
 import zollernextras.items.ItemList;
-import zollernextras.lib.ModInfo;
+import zollernextras.lib.ZollernModInfo;
 
 public class AmaranthArmor extends ItemArmor {
 	
@@ -21,14 +21,14 @@ public class AmaranthArmor extends ItemArmor {
 		this.textureName = textureName;
 		unName = textureName;
 		this.setCreativeTab(ModTabs.zTab);
-		this.setUnlocalizedName(ModInfo.MODID + "_" + unName);
-		this.setTextureName(ModInfo.MODID + ":" + textureName);
+		this.setUnlocalizedName(ZollernModInfo.MODID + "_" + unName);
+		this.setTextureName(ZollernModInfo.MODID + ":" + textureName);
 	}
 	
 	@Override
 	public String getArmorTexture(ItemStack stack, Entity entity, int slot,
 			String type) {
-		return ModInfo.MODID + ":textures/armor/" + "amarantharmor" + "_"
+		return ZollernModInfo.MODID + ":textures/armor/" + "amarantharmor" + "_"
 				+ (this.armorType == 2 ? "2" : "1") + ".png";
 	}
 	

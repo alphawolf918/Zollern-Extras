@@ -5,7 +5,7 @@ import net.minecraft.item.Item;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import zollernextras.blocks.BlockList;
-import zollernextras.lib.ModInfo;
+import zollernextras.lib.ZollernModInfo;
 import cpw.mods.fml.common.event.FMLInterModComms;
 import cpw.mods.fml.common.registry.GameData;
 
@@ -53,7 +53,7 @@ public class TreeCapHelper {
 		String enderBerryLog = blockName(BlockList.enderBerryLog);
 		String enderBerryLeaves = blockName(BlockList.enderBerryLeaves);
 		
-		tpModCfg.setString("modID", ModInfo.MODID);
+		tpModCfg.setString("modID", ZollernModInfo.MODID);
 		
 		// Banana Tree
 		tree.setString("treeName", "bananawood");

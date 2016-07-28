@@ -6,7 +6,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.util.IIcon;
 import zollernextras.lib.MainHelper;
-import zollernextras.lib.ModInfo;
+import zollernextras.lib.ZollernModInfo;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -47,7 +47,7 @@ public class BetterGlass extends BlockGlass {
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerBlockIcons(IIconRegister p_149651_1_) {
-		blockIcon = p_149651_1_.registerIcon(ModInfo.MODID + ":"
+		blockIcon = p_149651_1_.registerIcon(ZollernModInfo.MODID + ":"
 				+ "betterglass");
 	}
 	

@@ -2,6 +2,12 @@ package zollernextras.api.ores;
 
 import net.minecraft.item.ItemStack;
 
+/**
+ * Implement this interface on an ore to register it with this mod's "Fortune"
+ * ExtendedPlayer stat.
+ * 
+ * @author Zollern Wolf
+ */
 public interface IOre {
 	
 	/**

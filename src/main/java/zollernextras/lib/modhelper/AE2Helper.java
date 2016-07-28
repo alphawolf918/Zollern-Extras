@@ -2,9 +2,14 @@ package zollernextras.lib.modhelper;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import zollernextras.lib.MainHelper;
 import cpw.mods.fml.common.event.FMLInterModComms;
 
 public class AE2Helper {
+	
+	public static void init() {
+		MainHelper.Log("Registered Applied Energistics 2 helper.");
+	}
 	
 	protected static void sendInterModMessage(String to, String type,
 			NBTTagCompound message) {

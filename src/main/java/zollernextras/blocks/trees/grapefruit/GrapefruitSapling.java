@@ -9,7 +9,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import zollernextras.blocks.BlockList;
 import zollernextras.creativetabs.ModTabs;
-import zollernextras.lib.ModInfo;
+import zollernextras.lib.ZollernModInfo;
 import zollernextras.worldgen.WorldGenFruitTree;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -20,8 +20,8 @@ public class GrapefruitSapling extends BlockBush implements IGrowable {
 	
 	public GrapefruitSapling() {
 		this.setCreativeTab(ModTabs.zTab);
-		this.setBlockName(ModInfo.MODID + "_grapefruitsapling");
-		this.setBlockTextureName(ModInfo.MODID + ":grapefruitsapling");
+		this.setBlockName(ZollernModInfo.MODID + "_grapefruitsapling");
+		this.setBlockTextureName(ZollernModInfo.MODID + ":grapefruitsapling");
 		float f = 0.4F;
 		this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, f * 2.0F,
 				0.5F + f);

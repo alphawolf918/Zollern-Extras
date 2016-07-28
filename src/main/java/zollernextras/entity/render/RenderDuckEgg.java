@@ -9,7 +9,7 @@ import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL12;
 import zollernextras.items.ItemList;
-import zollernextras.lib.ModInfo;
+import zollernextras.lib.ZollernModInfo;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -63,7 +63,7 @@ public class RenderDuckEgg extends Render {
 	 */
 	@Override
 	protected ResourceLocation getEntityTexture(Entity p_110775_1_) {
-		return new ResourceLocation(ModInfo.MODID
+		return new ResourceLocation(ZollernModInfo.MODID
 				+ ":textures/items/duckegg.png");
 	}
 	

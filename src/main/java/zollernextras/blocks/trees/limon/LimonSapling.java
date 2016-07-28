@@ -9,7 +9,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import zollernextras.blocks.BlockList;
 import zollernextras.creativetabs.ModTabs;
-import zollernextras.lib.ModInfo;
+import zollernextras.lib.ZollernModInfo;
 import zollernextras.worldgen.WorldGenFruitTree;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -20,8 +20,8 @@ public class LimonSapling extends BlockBush implements IGrowable {
 	
 	public LimonSapling() {
 		this.setCreativeTab(ModTabs.zTab);
-		this.setBlockName(ModInfo.MODID + "_limonsapling");
-		this.setBlockTextureName(ModInfo.MODID + ":limonsapling");
+		this.setBlockName(ZollernModInfo.MODID + "_limonsapling");
+		this.setBlockTextureName(ZollernModInfo.MODID + ":limonsapling");
 		float f = 0.4F;
 		this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, f * 2.0F,
 				0.5F + f);

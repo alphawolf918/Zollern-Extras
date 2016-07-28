@@ -13,7 +13,7 @@ import zollernextras.proxies.CommonProxy;
 
 public class ExtendedPlayer implements IExtendedEntityProperties {
 	
-	public static String EXT_PROP_NAME = "ExtendedPlayer";
+	public static String EXT_PROP_NAME = "ZollernPlayer";
 	private final EntityPlayer player;
 	
 	private static double maxHealth = 20.0F;

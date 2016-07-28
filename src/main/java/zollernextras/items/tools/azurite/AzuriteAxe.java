@@ -9,15 +9,15 @@ import net.minecraft.item.ItemStack;
 import zollernextras.creativetabs.ModTabs;
 import zollernextras.items.ItemList;
 import zollernextras.items.tools.ToolMaterials;
-import zollernextras.lib.ModInfo;
+import zollernextras.lib.ZollernModInfo;
 
 public class AzuriteAxe extends ItemAxe {
 	
 	public AzuriteAxe() {
 		super(ToolMaterials.AZURITE);
 		this.setCreativeTab(ModTabs.zTab);
-		this.setUnlocalizedName(ModInfo.MODID + "_azuriteaxe");
-		this.setTextureName(ModInfo.MODID + ":azuriteaxe");
+		this.setUnlocalizedName(ZollernModInfo.MODID + "_azuriteaxe");
+		this.setTextureName(ZollernModInfo.MODID + ":azuriteaxe");
 	}
 	
 	@Override

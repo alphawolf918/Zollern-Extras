@@ -18,6 +18,7 @@ import net.minecraft.world.World;
 import zollernextras.items.ItemList;
 
 public class EntityShadowSkeleton extends EntitySkeleton {
+	
 	private final EntityAIArrowAttack aiArrowAttack = new EntityAIArrowAttack(
 			this, 2.0D, 20, 60, 15.0F);
 	private final EntityAIAttackOnCollide aiAttackOnCollide = new EntityAIAttackOnCollide(
@@ -44,9 +45,9 @@ public class EntityShadowSkeleton extends EntitySkeleton {
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.maxHealth)
-				.setBaseValue(25.0D);
+		.setBaseValue(25.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed)
-		.setBaseValue(0.3D);
+				.setBaseValue(0.3D);
 	}
 	
 	@Override

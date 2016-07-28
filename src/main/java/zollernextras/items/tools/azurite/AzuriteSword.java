@@ -9,15 +9,15 @@ import net.minecraft.item.ItemSword;
 import zollernextras.creativetabs.ModTabs;
 import zollernextras.items.ItemList;
 import zollernextras.items.tools.ToolMaterials;
-import zollernextras.lib.ModInfo;
+import zollernextras.lib.ZollernModInfo;
 
 public class AzuriteSword extends ItemSword {
 	
 	public AzuriteSword() {
 		super(ToolMaterials.AZURITE);
 		this.setCreativeTab(ModTabs.zTab);
-		this.setUnlocalizedName(ModInfo.MODID + "_azuritesword");
-		this.setTextureName(ModInfo.MODID + ":" + "azuritesword");
+		this.setUnlocalizedName(ZollernModInfo.MODID + "_azuritesword");
+		this.setTextureName(ZollernModInfo.MODID + ":" + "azuritesword");
 	}
 	
 	@Override

@@ -22,19 +22,19 @@ public class MainHelper {
 	}
 	
 	public static void setName(Block block, String strName) {
-		block.setBlockName(ModInfo.MODID + "_" + strName);
+		block.setBlockName(ZollernModInfo.MODID + "_" + strName);
 	}
 	
 	public static void setName(Item item, String strName) {
-		item.setUnlocalizedName(ModInfo.MODID + "_" + strName);
+		item.setUnlocalizedName(ZollernModInfo.MODID + "_" + strName);
 	}
 	
 	public static void setTexture(Block block, String strTexture) {
-		block.setBlockTextureName(ModInfo.MODID + ":" + strTexture);
+		block.setBlockTextureName(ZollernModInfo.MODID + ":" + strTexture);
 	}
 	
 	public static void setTexture(Item item, String strTexture) {
-		item.setTextureName(ModInfo.MODID + ":" + strTexture);
+		item.setTextureName(ZollernModInfo.MODID + ":" + strTexture);
 	}
 	
 	public static void setNameAndTexture(Block block, String strName,
@@ -92,7 +92,7 @@ public class MainHelper {
 	}
 	
 	public static void echo(String str) {
-		FMLRelaunchLog.log(ModInfo.OFFICIAL_NAME, Level.INFO, str);
+		FMLRelaunchLog.log(ZollernModInfo.OFFICIAL_NAME, Level.INFO, str);
 	}
 	
 	public static void Log(String str) {

@@ -9,15 +9,15 @@ import net.minecraft.item.ItemStack;
 import zollernextras.creativetabs.ModTabs;
 import zollernextras.items.ItemList;
 import zollernextras.items.tools.ToolMaterials;
-import zollernextras.lib.ModInfo;
+import zollernextras.lib.ZollernModInfo;
 
 public class AmaranthPickaxe extends ItemPickaxe {
 	
 	public AmaranthPickaxe(ToolMaterial p_i45347_1_) {
 		super(p_i45347_1_);
 		this.setCreativeTab(ModTabs.zTab);
-		this.setUnlocalizedName(ModInfo.MODID + "_amaranthpickaxe");
-		this.setTextureName(ModInfo.MODID + ":" + "amaranthpickaxe");
+		this.setUnlocalizedName(ZollernModInfo.MODID + "_amaranthpickaxe");
+		this.setTextureName(ZollernModInfo.MODID + ":" + "amaranthpickaxe");
 		this.setHarvestLevel("pickaxe",
 				ToolMaterials.AMARANTH.getHarvestLevel());
 	}

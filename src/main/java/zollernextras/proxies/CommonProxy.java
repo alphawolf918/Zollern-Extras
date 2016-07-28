@@ -3,12 +3,16 @@ package zollernextras.proxies;
 import java.util.HashMap;
 import java.util.Map;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
 import zollernextras.ZollernExtrasMod;
+import zollernextras.entity.ExtendedPlayer;
 import zollernextras.inventory.ContainerQuiver;
 import zollernextras.inventory.GuiQuiver;
 import zollernextras.inventory.InventoryQuiver;
+import zollernextras.network.PacketDispatcher;
+import zollernextras.network.client.SyncPlayerPropsMessage;
 import cpw.mods.fml.common.network.IGuiHandler;
 import cpw.mods.fml.common.network.simpleimpl.MessageContext;
 
@@ -24,11 +28,15 @@ public class CommonProxy implements IGuiHandler {
 		
 	}
 	
-	public void initSounds() {
+	public void initGUI() {
 		
 	}
 	
-	public void initGUI() {
+	public void sendChatMessage(EntityPlayer player, String message) {
+		
+	}
+	
+	public void doPotionEffect(EntityPlayer player, int potionId) {
 		
 	}
 	
@@ -52,6 +60,31 @@ public class CommonProxy implements IGuiHandler {
 		} else {
 			return null;
 		}
+	}
+	
+	private static String getSaveKey(EntityPlayer player) {
+		return player.getCommandSenderName() + ":"
+				+ ExtendedPlayer.EXT_PROP_NAME;
+	}
+	
+	public static void saveProxyData(EntityPlayer player) {
+		ExtendedPlayer playerData = ExtendedPlayer.get(player);
+		NBTTagCompound savedData = new NBTTagCompound();
+		
+		playerData.saveNBTData(savedData);
+		CommonProxy.storeEntityData(getSaveKey(player), savedData);
+	}
+	
+	public static void loadProxyData(EntityPlayer player) {
+		ExtendedPlayer playerData = ExtendedPlayer.get(player);
+		NBTTagCompound savedData = CommonProxy
+				.getEntityData(getSaveKey(player));
+		
+		if (savedData != null) {
+			playerData.loadNBTData(savedData);
+		}
+		PacketDispatcher.sendTo(new SyncPlayerPropsMessage(player),
+				(EntityPlayerMP) player);
 	}
 	
 	/**

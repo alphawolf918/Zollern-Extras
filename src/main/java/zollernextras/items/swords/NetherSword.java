@@ -33,13 +33,13 @@ public class NetherSword extends ItemSword {
 			EntityLargeFireball fireball = new EntityLargeFireball(par2World);
 			fireball.setPosition(par3Entity.posX + look.xCoord * 5,
 					par3Entity.posY + 1 + look.yCoord * 5, par3Entity.posZ
-							+ look.zCoord * 5);
+					+ look.zCoord * 5);
 			fireball.accelerationX = look.xCoord * 0.1;
 			fireball.accelerationY = look.yCoord * 0.1;
 			fireball.accelerationZ = look.zCoord * 0.1;
 			par2World.spawnEntityInWorld(fireball);
 			if (!par3Entity.capabilities.isCreativeMode) {
-				par1ItemStack.damageItem(1, par3Entity);
+				par1ItemStack.damageItem(5, par3Entity);
 			}
 		}
 		return par1ItemStack;

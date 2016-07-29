@@ -1,7 +1,7 @@
 package zollernextras.biomes;
 
 import net.minecraft.world.biome.BiomeGenBase;
-import zollernextras.blocks.BlockList;
+import zollernextras.blocks.ZollernBlocks;
 
 public class BiomeGenCandyLand extends BiomeGenBase {
 	public BiomeGenCandyLand(int par1) {
@@ -13,8 +13,8 @@ public class BiomeGenCandyLand extends BiomeGenBase {
 		setHeight(height_LowPlains);
 		theBiomeDecorator.generateLakes = false;
 		heightVariation = 1.6F;
-		topBlock = BlockList.candyCubePink;
-		fillerBlock = BlockList.candyCubeWhite;
+		topBlock = ZollernBlocks.candyCubePink;
+		fillerBlock = ZollernBlocks.candyCubeWhite;
 		explorationBiomesList.add(this);
 		createMutation();
 	}

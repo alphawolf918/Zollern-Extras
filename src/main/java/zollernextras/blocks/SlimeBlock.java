@@ -9,7 +9,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
-import zollernextras.lib.MainHelper;
+import zollernextras.lib.ZollernHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -17,8 +17,8 @@ public class SlimeBlock extends Block {
 	
 	public SlimeBlock() {
 		super(Material.cake);
-		MainHelper.setTab(this);
-		MainHelper.setNameAndTexture(this, "slimeblock");
+		ZollernHelper.setTab(this);
+		ZollernHelper.setNameAndTexture(this, "slimeblock");
 		this.setResistance(1F);
 		this.setHardness(0.5F);
 		this.setStepSound(Block.soundTypeCloth);

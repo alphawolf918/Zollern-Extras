@@ -10,7 +10,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fluids.Fluid;
-import zollernextras.lib.MainHelper;
+import zollernextras.lib.ZollernHelper;
 import zollernextras.lib.ZollernModInfo;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -24,7 +24,7 @@ public class BlockFChargium extends BlockFluidClassic {
 	
 	public BlockFChargium(Fluid fluid) {
 		super(fluid, Material.water);
-		MainHelper.setName(this, "chargiumfluid");
+		ZollernHelper.setName(this, "chargiumfluid");
 		this.setLightLevel(1.0F);
 		// this.setTickRandomly(true);
 	}

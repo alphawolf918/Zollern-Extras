@@ -6,7 +6,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import zollernextras.blocks.BlockList;
+import zollernextras.blocks.ZollernBlocks;
 import zollernextras.items.ModItem;
 
 public class ItemEnderReed extends ModItem {
@@ -15,7 +15,7 @@ public class ItemEnderReed extends ModItem {
 	
 	public ItemEnderReed() {
 		super("enderreeds");
-		this.field_150935_a = BlockList.enderReeds;
+		this.field_150935_a = ZollernBlocks.enderReeds;
 	}
 	
 	@Override

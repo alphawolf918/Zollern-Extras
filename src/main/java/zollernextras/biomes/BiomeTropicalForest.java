@@ -2,7 +2,7 @@ package zollernextras.biomes;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.world.biome.BiomeGenBase;
-import zollernextras.blocks.BlockList;
+import zollernextras.blocks.ZollernBlocks;
 
 public class BiomeTropicalForest extends BiomeGenBase {
 	
@@ -23,7 +23,7 @@ public class BiomeTropicalForest extends BiomeGenBase {
 		this.theBiomeDecorator.bigMushroomsPerChunk = -999;
 		this.theBiomeDecorator.clayPerChunk = 4;
 		this.theBiomeDecorator.generateLakes = true;
-		this.topBlock = BlockList.betterGrass;
+		this.topBlock = ZollernBlocks.betterGrass;
 		this.fillerBlock = Blocks.dirt;
 	}
 	

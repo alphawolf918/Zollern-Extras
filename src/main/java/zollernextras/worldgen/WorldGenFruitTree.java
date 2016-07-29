@@ -5,7 +5,7 @@ import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
-import zollernextras.blocks.BlockList;
+import zollernextras.blocks.ZollernBlocks;
 
 public class WorldGenFruitTree extends WorldGenerator {
 	
@@ -18,7 +18,7 @@ public class WorldGenFruitTree extends WorldGenerator {
 	}
 	
 	protected Block[] GetValidSpawnBlockList() {
-		return new Block[] { Blocks.grass, Blocks.dirt, BlockList.betterGrass };
+		return new Block[] { Blocks.grass, Blocks.dirt, ZollernBlocks.betterGrass };
 	}
 	
 	public boolean LocationIsValidSpawn(World world, int i, int j, int k) {

@@ -7,7 +7,7 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.MapGenBase;
-import zollernextras.blocks.BlockList;
+import zollernextras.blocks.ZollernBlocks;
 
 public class MapGenUpsideDownRavine extends MapGenBase {
 	
@@ -217,10 +217,10 @@ public class MapGenUpsideDownRavine extends MapGenBase {
 		Block filler = biome.fillerBlock;
 		Block block = data[index];
 		
-		if (block == BlockList.upsideDownStone || block == filler
+		if (block == ZollernBlocks.upsideDownStone || block == filler
 				|| block == top) {
 			if (y < 10) {
-				data[index] = BlockList.upsideDownStone;
+				data[index] = ZollernBlocks.upsideDownStone;
 			} else {
 				data[index] = null;
 				

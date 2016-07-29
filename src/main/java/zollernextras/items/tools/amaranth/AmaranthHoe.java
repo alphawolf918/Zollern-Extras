@@ -7,7 +7,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemHoe;
 import net.minecraft.item.ItemStack;
 import zollernextras.creativetabs.ModTabs;
-import zollernextras.items.ItemList;
+import zollernextras.items.ZollernItems;
 import zollernextras.lib.ZollernModInfo;
 
 public class AmaranthHoe extends ItemHoe {
@@ -21,7 +21,7 @@ public class AmaranthHoe extends ItemHoe {
 	
 	@Override
 	public void getSubItems(Item item, CreativeTabs creativeTab, List items) {
-		ItemStack amaranthHoe = new ItemStack(ItemList.amaranthHoe, 1);
+		ItemStack amaranthHoe = new ItemStack(ZollernItems.amaranthHoe, 1);
 		amaranthHoe.addEnchantment(Enchantment.unbreaking, 2);
 		items.add(amaranthHoe);
 	}

@@ -8,15 +8,15 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import zollernextras.api.ores.IOre;
-import zollernextras.lib.MainHelper;
+import zollernextras.lib.ZollernHelper;
 
 public class EnderFueltoniumOre extends Block implements IOre {
 	
 	public EnderFueltoniumOre() {
 		super(Material.rock);
-		MainHelper.setTab(this);
-		MainHelper.setNameAndTexture(this, "enderfnore");
-		MainHelper.setHardResist(this, 1.4F, 8.2F);
+		ZollernHelper.setTab(this);
+		ZollernHelper.setNameAndTexture(this, "enderfnore");
+		ZollernHelper.setHardResist(this, 1.4F, 8.2F);
 		this.setHarvestLevel("pickaxe", 4);
 	}
 	

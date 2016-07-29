@@ -11,7 +11,7 @@ import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fluids.Fluid;
 import zollernextras.blocks.materials.MaterialList;
 import zollernextras.lib.DSource;
-import zollernextras.lib.MainHelper;
+import zollernextras.lib.ZollernHelper;
 import zollernextras.lib.ZollernModInfo;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -25,7 +25,7 @@ public class BlockFFueltonium extends BlockFluidClassic {
 	
 	public BlockFFueltonium(Fluid fluid) {
 		super(fluid, MaterialList.fueltonium);
-		MainHelper.setName(this, "fuel");
+		ZollernHelper.setName(this, "fuel");
 		// this.setTickRandomly(true);
 	}
 	

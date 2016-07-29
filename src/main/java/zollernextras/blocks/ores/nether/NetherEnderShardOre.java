@@ -8,16 +8,16 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import zollernextras.api.ores.IOre;
-import zollernextras.lib.MainHelper;
+import zollernextras.lib.ZollernHelper;
 
 public class NetherEnderShardOre extends Block implements IOre {
 	
 	public NetherEnderShardOre() {
 		super(Material.rock);
-		MainHelper.setTab(this);
-		MainHelper.setNameAndTexture(this, "netherendershardore",
+		ZollernHelper.setTab(this);
+		ZollernHelper.setNameAndTexture(this, "netherendershardore",
 				"endernetherore");
-		MainHelper.setHardResist(this, 1.5F, 6.2F);
+		ZollernHelper.setHardResist(this, 1.5F, 6.2F);
 		this.setHarvestLevel("pickaxe", 3);
 	}
 	

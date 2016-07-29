@@ -5,12 +5,12 @@ import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
-import zollernextras.blocks.BlockList;
+import zollernextras.blocks.ZollernBlocks;
 
 public class WorldGenCrop extends WorldGenerator {
 	
 	protected Block[] GetValidSpawnBlocks() {
-		return new Block[] { Blocks.grass, Blocks.dirt, BlockList.betterGrass };
+		return new Block[] { Blocks.grass, Blocks.dirt, ZollernBlocks.betterGrass };
 	}
 	
 	public boolean LocationIsValidSpawn(World world, int i, int j, int k) {
@@ -51,27 +51,27 @@ public class WorldGenCrop extends WorldGenerator {
 		Block randBlock;
 		int randInt = random.nextInt(10);
 		if (randInt == 1) {
-			randBlock = BlockList.strawberry;
+			randBlock = ZollernBlocks.strawberry;
 		} else if (randInt == 2) {
-			randBlock = BlockList.blueberry;
+			randBlock = ZollernBlocks.blueberry;
 		} else if (randInt == 3) {
-			randBlock = BlockList.blackberry;
+			randBlock = ZollernBlocks.blackberry;
 		} else if (randInt == 4) {
-			randBlock = BlockList.grape;
+			randBlock = ZollernBlocks.grape;
 		} else if (randInt == 5) {
-			randBlock = BlockList.radish;
+			randBlock = ZollernBlocks.radish;
 		} else if (randInt == 6) {
-			randBlock = BlockList.corn;
+			randBlock = ZollernBlocks.corn;
 		} else if (randInt == 7) {
-			randBlock = BlockList.radish;
+			randBlock = ZollernBlocks.radish;
 		} else if (randInt == 8) {
-			randBlock = BlockList.peas;
+			randBlock = ZollernBlocks.peas;
 		} else if (randInt == 9) {
-			randBlock = BlockList.corn;
+			randBlock = ZollernBlocks.corn;
 		} else if (randInt == 10) {
-			randBlock = BlockList.tomatoes;
+			randBlock = ZollernBlocks.tomatoes;
 		} else {
-			randBlock = BlockList.aster;
+			randBlock = ZollernBlocks.aster;
 		}
 		world.setBlock(i, j, k, randBlock);
 		return true;

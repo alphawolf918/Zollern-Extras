@@ -3,7 +3,7 @@ package zollernextras.biomes;
 import net.minecraft.entity.monster.EntitySlime;
 import net.minecraft.entity.monster.EntityWitch;
 import net.minecraft.world.biome.BiomeGenBase;
-import zollernextras.blocks.BlockList;
+import zollernextras.blocks.ZollernBlocks;
 
 public class BiomeGenMudSwamp extends BiomeGenBase {
 	
@@ -24,8 +24,8 @@ public class BiomeGenMudSwamp extends BiomeGenBase {
 				1, 1));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityWitch.class, 1,
 				0, 1));
-		this.topBlock = BlockList.swampClay;
-		this.fillerBlock = BlockList.swampClay;
+		this.topBlock = ZollernBlocks.swampClay;
+		this.fillerBlock = ZollernBlocks.swampClay;
 		this.theBiomeDecorator.waterlilyPerChunk = 2;
 	}
 	

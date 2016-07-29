@@ -12,7 +12,7 @@ import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import zollernextras.lib.MainHelper;
+import zollernextras.lib.ZollernHelper;
 import zollernextras.lib.ZollernModInfo;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -30,7 +30,7 @@ public class GoldenAnvil extends BlockAnvil {
 	
 	protected GoldenAnvil() {
 		this.setLightOpacity(0);
-		MainHelper.setTab(this);
+		ZollernHelper.setTab(this);
 		this.setBlockName(ZollernModInfo.MODID + "_goldanvil");
 		this.setResistance(4000.0F);
 		this.setHardness(5.0F);

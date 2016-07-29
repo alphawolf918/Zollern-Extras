@@ -6,7 +6,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import zollernextras.items.ItemList;
+import zollernextras.items.ZollernItems;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ToolArmorRecipes {
@@ -19,76 +19,76 @@ public class ToolArmorRecipes {
 	static class ToolRecipes {
 		public static void init() {
 			// Pickaxe
-			ItemStack amaranthPickaxe = new ItemStack(ItemList.amaranthPickaxe,
+			ItemStack amaranthPickaxe = new ItemStack(ZollernItems.amaranthPickaxe,
 					1);
 			amaranthPickaxe.addEnchantment(Enchantment.fortune, 2);
-			addToolSet(amaranthPickaxe, ItemList.amaranthIngot, "pickaxe");
-			addToolSet(new ItemStack(ItemList.zollerniumPickaxe, 1),
-					ItemList.zollerniumIngot, "pickaxe");
-			ItemStack azuritePickaxe = new ItemStack(ItemList.azuritePickaxe, 1);
+			addToolSet(amaranthPickaxe, ZollernItems.amaranthIngot, "pickaxe");
+			addToolSet(new ItemStack(ZollernItems.zollerniumPickaxe, 1),
+					ZollernItems.zollerniumIngot, "pickaxe");
+			ItemStack azuritePickaxe = new ItemStack(ZollernItems.azuritePickaxe, 1);
 			azuritePickaxe.addEnchantment(Enchantment.fortune, 2);
 			azuritePickaxe.addEnchantment(Enchantment.unbreaking, 1);
-			addToolSet(azuritePickaxe, ItemList.azurite, "pickaxe");
-			addToolSet(new ItemStack(ItemList.rubyPickaxe, 1), ItemList.ruby,
+			addToolSet(azuritePickaxe, ZollernItems.azurite, "pickaxe");
+			addToolSet(new ItemStack(ZollernItems.rubyPickaxe, 1), ZollernItems.ruby,
 					"pickaxe");
-			addToolSet(new ItemStack(ItemList.sapphirePickaxe, 1),
-					ItemList.sapphire, "pickaxe");
+			addToolSet(new ItemStack(ZollernItems.sapphirePickaxe, 1),
+					ZollernItems.sapphire, "pickaxe");
 			
 			// Shovel
-			ItemStack amaranthShovel = new ItemStack(ItemList.amaranthShovel, 1);
+			ItemStack amaranthShovel = new ItemStack(ZollernItems.amaranthShovel, 1);
 			amaranthShovel.addEnchantment(Enchantment.silkTouch, 1);
-			addToolSet(amaranthShovel, ItemList.amaranthIngot, "shovel");
-			addToolSet(new ItemStack(ItemList.zollerniumShovel, 1),
-					ItemList.zollerniumIngot, "shovel");
-			ItemStack azuriteShovel = new ItemStack(ItemList.azuriteShovel, 1);
+			addToolSet(amaranthShovel, ZollernItems.amaranthIngot, "shovel");
+			addToolSet(new ItemStack(ZollernItems.zollerniumShovel, 1),
+					ZollernItems.zollerniumIngot, "shovel");
+			ItemStack azuriteShovel = new ItemStack(ZollernItems.azuriteShovel, 1);
 			azuriteShovel.addEnchantment(Enchantment.efficiency, 2);
 			azuriteShovel.addEnchantment(Enchantment.power, 1);
-			addToolSet(azuriteShovel, ItemList.azurite, "shovel");
-			addToolSet(new ItemStack(ItemList.rubyShovel, 1), ItemList.ruby,
+			addToolSet(azuriteShovel, ZollernItems.azurite, "shovel");
+			addToolSet(new ItemStack(ZollernItems.rubyShovel, 1), ZollernItems.ruby,
 					"shovel");
-			addToolSet(new ItemStack(ItemList.sapphireShovel, 1),
-					ItemList.sapphire, "shovel");
+			addToolSet(new ItemStack(ZollernItems.sapphireShovel, 1),
+					ZollernItems.sapphire, "shovel");
 			
 			// Axe
-			ItemStack amaranthAxe = new ItemStack(ItemList.amaranthAxe, 1);
+			ItemStack amaranthAxe = new ItemStack(ZollernItems.amaranthAxe, 1);
 			amaranthAxe.addEnchantment(Enchantment.efficiency, 2);
-			addToolSet(amaranthAxe, ItemList.amaranthIngot, "axe");
-			addToolSet(new ItemStack(ItemList.zollerniumAxe, 1),
-					ItemList.zollerniumIngot, "axe");
-			ItemStack azuriteAxe = new ItemStack(ItemList.azuriteAxe, 1);
+			addToolSet(amaranthAxe, ZollernItems.amaranthIngot, "axe");
+			addToolSet(new ItemStack(ZollernItems.zollerniumAxe, 1),
+					ZollernItems.zollerniumIngot, "axe");
+			ItemStack azuriteAxe = new ItemStack(ZollernItems.azuriteAxe, 1);
 			azuriteAxe.addEnchantment(Enchantment.efficiency, 3);
-			addToolSet(azuriteAxe, ItemList.azurite, "axe");
-			addToolSet(new ItemStack(ItemList.rubyAxe, 1), ItemList.ruby, "axe");
-			addToolSet(new ItemStack(ItemList.sapphireAxe, 1),
-					ItemList.sapphire, "axe");
+			addToolSet(azuriteAxe, ZollernItems.azurite, "axe");
+			addToolSet(new ItemStack(ZollernItems.rubyAxe, 1), ZollernItems.ruby, "axe");
+			addToolSet(new ItemStack(ZollernItems.sapphireAxe, 1),
+					ZollernItems.sapphire, "axe");
 			
 			// Hoe
-			ItemStack amaranthHoe = new ItemStack(ItemList.amaranthHoe, 1);
+			ItemStack amaranthHoe = new ItemStack(ZollernItems.amaranthHoe, 1);
 			amaranthHoe.addEnchantment(Enchantment.unbreaking, 2);
-			addToolSet(amaranthHoe, ItemList.amaranthIngot, "hoe");
-			ItemStack azuriteHoe = new ItemStack(ItemList.azuriteHoe, 1);
+			addToolSet(amaranthHoe, ZollernItems.amaranthIngot, "hoe");
+			ItemStack azuriteHoe = new ItemStack(ZollernItems.azuriteHoe, 1);
 			azuriteHoe.addEnchantment(Enchantment.unbreaking, 3);
-			addToolSet(azuriteHoe, ItemList.azurite, "hoe");
-			addToolSet(new ItemStack(ItemList.zollerniumHoe, 1),
-					ItemList.zollerniumIngot, "hoe");
-			addToolSet(new ItemStack(ItemList.rubyHoe, 1), ItemList.ruby, "hoe");
-			addToolSet(new ItemStack(ItemList.sapphireHoe, 1),
-					ItemList.sapphire, "hoe");
+			addToolSet(azuriteHoe, ZollernItems.azurite, "hoe");
+			addToolSet(new ItemStack(ZollernItems.zollerniumHoe, 1),
+					ZollernItems.zollerniumIngot, "hoe");
+			addToolSet(new ItemStack(ZollernItems.rubyHoe, 1), ZollernItems.ruby, "hoe");
+			addToolSet(new ItemStack(ZollernItems.sapphireHoe, 1),
+					ZollernItems.sapphire, "hoe");
 			
 			// Sword
-			ItemStack amaranthSword = new ItemStack(ItemList.amaranthSword, 1);
+			ItemStack amaranthSword = new ItemStack(ZollernItems.amaranthSword, 1);
 			amaranthSword.addEnchantment(Enchantment.sharpness, 2);
-			addToolSet(amaranthSword, ItemList.amaranthIngot, "sword");
-			addToolSet(new ItemStack(ItemList.zollerniumSword, 1),
-					ItemList.zollerniumIngot, "sword");
-			ItemStack azuriteSword = new ItemStack(ItemList.azuriteSword, 1);
+			addToolSet(amaranthSword, ZollernItems.amaranthIngot, "sword");
+			addToolSet(new ItemStack(ZollernItems.zollerniumSword, 1),
+					ZollernItems.zollerniumIngot, "sword");
+			ItemStack azuriteSword = new ItemStack(ZollernItems.azuriteSword, 1);
 			azuriteSword.addEnchantment(Enchantment.sharpness, 2);
 			azuriteSword.addEnchantment(Enchantment.smite, 1);
-			addToolSet(azuriteSword, ItemList.azurite, "sword");
-			addToolSet(new ItemStack(ItemList.rubySword, 1), ItemList.ruby,
+			addToolSet(azuriteSword, ZollernItems.azurite, "sword");
+			addToolSet(new ItemStack(ZollernItems.rubySword, 1), ZollernItems.ruby,
 					"sword");
-			addToolSet(new ItemStack(ItemList.sapphireSword, 1),
-					ItemList.sapphire, "sword");
+			addToolSet(new ItemStack(ZollernItems.sapphireSword, 1),
+					ZollernItems.sapphire, "sword");
 		}
 		
 		/**
@@ -136,40 +136,40 @@ public class ToolArmorRecipes {
 	static class ArmorRecipes {
 		public static void init() {
 			// Helmet
-			addArmorSet(ItemList.amaranthHelmet, ItemList.amaranthIngot,
+			addArmorSet(ZollernItems.amaranthHelmet, ZollernItems.amaranthIngot,
 					"helmet");
-			addArmorSet(ItemList.zollerniumHelmet, ItemList.zollerniumIngot,
+			addArmorSet(ZollernItems.zollerniumHelmet, ZollernItems.zollerniumIngot,
 					"helmet");
-			addArmorSet(ItemList.azuriteHelmet, ItemList.azurite, "helmet");
-			addArmorSet(ItemList.woodHelmet, Blocks.planks, "helmet");
-			addArmorSet(ItemList.stoneHelmet, Blocks.stone, "helmet");
+			addArmorSet(ZollernItems.azuriteHelmet, ZollernItems.azurite, "helmet");
+			addArmorSet(ZollernItems.woodHelmet, Blocks.planks, "helmet");
+			addArmorSet(ZollernItems.stoneHelmet, Blocks.stone, "helmet");
 			
 			// Chestplate
-			addArmorSet(ItemList.amaranthChestplate, ItemList.amaranthIngot,
+			addArmorSet(ZollernItems.amaranthChestplate, ZollernItems.amaranthIngot,
 					"chestplate");
-			addArmorSet(ItemList.zollerniumChestplate,
-					ItemList.zollerniumIngot, "chestplate");
-			addArmorSet(ItemList.zollerniumLeggings, ItemList.zollerniumIngot,
+			addArmorSet(ZollernItems.zollerniumChestplate,
+					ZollernItems.zollerniumIngot, "chestplate");
+			addArmorSet(ZollernItems.zollerniumLeggings, ZollernItems.zollerniumIngot,
 					"chestplate");
-			addArmorSet(ItemList.woodChestplate, Blocks.planks, "chestplate");
-			addArmorSet(ItemList.stoneChestplate, Blocks.stone, "chestplate");
+			addArmorSet(ZollernItems.woodChestplate, Blocks.planks, "chestplate");
+			addArmorSet(ZollernItems.stoneChestplate, Blocks.stone, "chestplate");
 			
 			// Leggings
-			addArmorSet(ItemList.amaranthLeggings, ItemList.amaranthIngot,
+			addArmorSet(ZollernItems.amaranthLeggings, ZollernItems.amaranthIngot,
 					"leggings");
-			addArmorSet(ItemList.zollerniumLeggings, ItemList.zollerniumIngot,
+			addArmorSet(ZollernItems.zollerniumLeggings, ZollernItems.zollerniumIngot,
 					"leggings");
-			addArmorSet(ItemList.azuriteLeggings, ItemList.azurite, "leggings");
-			addArmorSet(ItemList.woodLeggings, Blocks.planks, "leggings");
-			addArmorSet(ItemList.stoneLeggings, Blocks.stone, "leggings");
+			addArmorSet(ZollernItems.azuriteLeggings, ZollernItems.azurite, "leggings");
+			addArmorSet(ZollernItems.woodLeggings, Blocks.planks, "leggings");
+			addArmorSet(ZollernItems.stoneLeggings, Blocks.stone, "leggings");
 			
 			// Boots
-			addArmorSet(ItemList.amaranthBoots, ItemList.amaranthIngot, "boots");
-			addArmorSet(ItemList.zollerniumBoots, ItemList.zollerniumIngot,
+			addArmorSet(ZollernItems.amaranthBoots, ZollernItems.amaranthIngot, "boots");
+			addArmorSet(ZollernItems.zollerniumBoots, ZollernItems.zollerniumIngot,
 					"boots");
-			addArmorSet(ItemList.azuriteBoots, ItemList.azurite, "boots");
-			addArmorSet(ItemList.woodBoots, Blocks.planks, "boots");
-			addArmorSet(ItemList.stoneBoots, Blocks.stone, "boots");
+			addArmorSet(ZollernItems.azuriteBoots, ZollernItems.azurite, "boots");
+			addArmorSet(ZollernItems.woodBoots, Blocks.planks, "boots");
+			addArmorSet(ZollernItems.stoneBoots, Blocks.stone, "boots");
 		}
 		
 		private static void addArmorSet(Item itemOutput, Block blockOutput,

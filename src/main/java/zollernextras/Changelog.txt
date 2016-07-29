@@ -1,10 +1,11 @@
 [3.1 - The Upside-Down Update]
 * Added the "Upside-Down" dimension.
     * Inspired by the show "Stranger Things."
-    * Entirely black dimension with multiple different ores.
+    * Entirely black dimension with over 15 different ores.
+        * Zanium from Zane's Extras will also generate here if that mod is loaded.
     * Only ZE mobs spawn here.
     * The only way to get there is via the Upside-Down Gateway Eye.
-    * A "Shadow Shrine" now spawns in the Upside-Down, filled with its own unique chest gen.
+    * A "Shadow Shrine" now spawns in the Upside-Down, made of Netherized Obsidian walls and an Obsidian floor.
 * Shadow Skeletons are now 4 times more likely to drop Shadow Essence upon death.
 * Increased duration damage that Power Swords take upon using their powers.
 * Craters now spawn in the Upside-Down.
@@ -14,11 +15,22 @@
     * Once health is at or lower than 500, has a 5/5000 chance to spawn a scorpion every tick.
     * Hits the Player extremely hard.
         * Can one-shot you if you're not careful and prepared.
+    * Generates a chest underneath its body upon being killed.
+        * Should generate with high-quality loot.
+            * Guaranteed 1 - 5 Nether Stars.
+            * Guaranteed a Mortem (Wither) sword, with RNG setup for varying enchantments.
+        * Message sends to the Player that struck the final blow.
+    * When the Shadow Alien kills another entity (Players included), it heals for half of its health.
+    * At and under 250 health, has a 20/1000 chance every tick to increase attack damage by .5.
+        * However, will not exceed double its original attack damage, in this case, 8.
 * While in the Upside-Down, the Player will take "shadow" damage.
     * Has a custom death message.
     * If the Player has the Radiance potion effect, they will be protected from the shadows.
         * The Player must have at least one Radiance item in their inventory to receive the effect.
-        * This effect does not stack.
+            * Somewhat expensive to make, but not terrible.
+            * The Radiance item is only used automatically if the Player is in the Upside-Down.
+                * If they are in another dimension, they must use it manually.
+        * This effect only lasts for exactly 5 minutes, and it does not stack.
 
 
 -- FIXES --

@@ -1,13 +1,13 @@
 package zollernextras.items.tools;
 
 import net.minecraft.item.ItemHoe;
-import zollernextras.lib.MainHelper;
+import zollernextras.lib.ZollernHelper;
 
 public class ItemZEHoe extends ItemHoe {
 	
 	public ItemZEHoe(ToolMaterial toolMaterial) {
 		super(toolMaterial);
-		MainHelper.setTab(this);
+		ZollernHelper.setTab(this);
 	}
 	
 }

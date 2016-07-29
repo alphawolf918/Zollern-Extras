@@ -3,7 +3,7 @@ package zollernextras.worldgen;
 import java.util.Random;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
-import zollernextras.blocks.BlockList;
+import zollernextras.blocks.ZollernBlocks;
 
 public class WorldGenEnderReeds extends WorldGenerator {
 	
@@ -18,9 +18,9 @@ public class WorldGenEnderReeds extends WorldGenerator {
 			int l1 = 2 + p_76484_2_.nextInt(p_76484_2_.nextInt(3) + 1);
 			
 			for (int i2 = 0; i2 < l1; ++i2) {
-				if (BlockList.enderReeds.canBlockStay(p_76484_1_, i1, j1 + i2,
+				if (ZollernBlocks.enderReeds.canBlockStay(p_76484_1_, i1, j1 + i2,
 						k1)) {
-					p_76484_1_.setBlock(i1, j1 + i2, k1, BlockList.enderReeds,
+					p_76484_1_.setBlock(i1, j1 + i2, k1, ZollernBlocks.enderReeds,
 							0, 2);
 				}
 			}

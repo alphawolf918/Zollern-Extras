@@ -1,6 +1,6 @@
 package zollernextras.lib.modhelper;
 
-import zollernextras.lib.MainHelper;
+import zollernextras.lib.ZollernHelper;
 import cpw.mods.fml.common.Loader;
 
 public class ModHelperBase {
@@ -24,9 +24,9 @@ public class ModHelperBase {
 	public static boolean isModLoaded(String modName) {
 		boolean isLoaded = Loader.isModLoaded(modName);
 		if (isLoaded) {
-			MainHelper.Log("Detected mod: " + modName + ".");
+			ZollernHelper.Log("Detected mod: " + modName + ".");
 		} else {
-			MainHelper.Log("Could not detect mod: " + modName + ".");
+			ZollernHelper.Log("Could not detect mod: " + modName + ".");
 		}
 		return isLoaded;
 	}

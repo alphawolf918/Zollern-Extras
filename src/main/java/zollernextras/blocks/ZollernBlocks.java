@@ -95,14 +95,14 @@ import zollernextras.blocks.trees.orange.OrangeLeaves;
 import zollernextras.blocks.trees.orange.OrangeLog;
 import zollernextras.blocks.trees.orange.OrangeSapling;
 import zollernextras.blocks.upsidedown.UpsideDownStone;
-import zollernextras.items.ItemList;
-import zollernextras.lib.MainHelper;
+import zollernextras.items.ZollernItems;
+import zollernextras.lib.ZollernHelper;
 import zollernextras.lib.ZollernModInfo;
 import zollernextras.lib.enums.State;
 import zollernextras.util.RegistryUtil;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-public class BlockList {
+public class ZollernBlocks {
 	
 	public static int totalBlocks = 0;
 	
@@ -148,22 +148,23 @@ public class BlockList {
 	public static Block zincNetherOre = new NetherZincOre();
 	public static Block enderShardNetherOre = new NetherEnderShardOre();
 	
-	public static Block amberOre = new GemOre("amberore", ItemList.amber);
-	public static Block azuriteOre = new GemOre("azuriteore", ItemList.azurite);
+	public static Block amberOre = new GemOre("amberore", ZollernItems.amber);
+	public static Block azuriteOre = new GemOre("azuriteore",
+			ZollernItems.azurite);
 	public static Block aquamarineOre = new GemOre("aquaore",
-			ItemList.aquamarine);
-	public static Block garnetOre = new GemOre("garnetore", ItemList.garnet);
-	public static Block topazOre = new GemOre("topazore", ItemList.topaz);
-	public static Block opalOre = new GemOre("opalore", ItemList.opal);
+			ZollernItems.aquamarine);
+	public static Block garnetOre = new GemOre("garnetore", ZollernItems.garnet);
+	public static Block topazOre = new GemOre("topazore", ZollernItems.topaz);
+	public static Block opalOre = new GemOre("opalore", ZollernItems.opal);
 	public static Block enderiteOre = new GemOre("enderiteore",
-			ItemList.enderite);
+			ZollernItems.enderite);
 	public static Block witheriteOre = new GemOre("witheriteore",
-			ItemList.witherite);
-	public static Block rubyOre = new GemOre("rubyore", ItemList.ruby);
+			ZollernItems.witherite);
+	public static Block rubyOre = new GemOre("rubyore", ZollernItems.ruby);
 	public static Block sapphireOre = new GemOre("sapphireore",
-			ItemList.sapphire);
+			ZollernItems.sapphire);
 	public static Block enderDiamondOre = new GemOre("enderdiamondore",
-			ItemList.enderDiamond);
+			ZollernItems.enderDiamond);
 	
 	public static Block caveMarbleWhite = new CaveMarble("marble");
 	public static Block caveMarbleBlack = new CaveMarble("blackmarble");
@@ -387,19 +388,21 @@ public class BlockList {
 	public static Block upsideDownZincOre = new GenericBlockOre("ud_zincore",
 			1.4F);
 	public static Block upsideDownRubyOre = new ShadowGemOre("ud_rubyore",
-			ItemList.ruby);
+			ZollernItems.ruby);
 	public static Block upsideDownSapphireOre = new ShadowGemOre(
-			"ud_sapphireore", ItemList.sapphire);
+			"ud_sapphireore", ZollernItems.sapphire);
 	public static Block upsideDownSpcOre = new ShadowGemOre("ud_spcore",
-			ItemList.spcItem);
+			ZollernItems.spcItem);
 	public static Block upsideDownFuelOre = new ShadowGemOre("ud_fuelore",
-			ItemList.fuelonite);
+			ZollernItems.fuelonite);
 	public static Block upsideDownLapisOre = new ShadowGemOre("ud_lapisore",
 			new ItemStack(Items.dye, 1, 4).getItem());
 	public static Block upsideDownRedstoneOre = new ShadowGemOre(
 			"ud_redstoneore", Items.redstone);
 	public static Block upsideDownEnderShardOre = new ShadowGemOre(
-			"ud_endershardore", ItemList.enderShard);
+			"ud_endershardore", ZollernItems.enderShard);
+	public static Block upsideDownRadianceOre = new ShadowGemOre(
+			"ud_radianceore", ZollernItems.radiance);
 	
 	public static FluidChocolate fluidChocolate = new FluidChocolate(
 			ZollernModInfo.MODID + "_chocolate");
@@ -640,6 +643,7 @@ public class BlockList {
 		addBlock(upsideDownLapisOre, "UD Lapis Ore");
 		addBlock(upsideDownRedstoneOre, "UD Redstone Ore");
 		addBlock(upsideDownEnderShardOre, "UD Ender Shard Ore");
+		addBlock(upsideDownRadianceOre, "UD Radiance Ore");
 		
 		addBlock(blockChocolate, "Melted Chocolate");
 		addBlock(blockFuel, "Molten Fueltonium");
@@ -664,7 +668,7 @@ public class BlockList {
 				"shinestone"), "shinestone", TEShinestoneBlockIngot.class);
 		shiniumBlockIngot = addIngotTile(new ShiniumIngotStack("shinium"),
 				"shinium", TEShiniumBlockIngot.class);
-		MainHelper.Log("Blocks loaded, " + totalBlocks + " entries.");
+		ZollernHelper.Log("Blocks loaded, " + totalBlocks + " entries.");
 	}
 	
 	public static void addBlock(Block block, String name) {
@@ -675,12 +679,12 @@ public class BlockList {
 	public static Block addIngotTile(Block block, String strName,
 			Class<? extends TileEntity> TEClass) {
 		totalBlocks++;
-		return RegistryUtil.fullRegister(block, ZollernModInfo.MODID + "_ingotBlock_"
-				+ strName, TEClass);
+		return RegistryUtil.fullRegister(block, ZollernModInfo.MODID
+				+ "_ingotBlock_" + strName, TEClass);
 	}
 	
 	public static void addItem(Item item, String name) {
 		GameRegistry.registerItem(item, name);
-		ItemList.totalItems++;
+		ZollernItems.totalItems++;
 	}
 }

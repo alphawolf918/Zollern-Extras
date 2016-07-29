@@ -7,23 +7,23 @@ import net.minecraft.util.MathHelper;
 
 public class ModelShadowAlien extends ModelBase {
 	
-	ModelRenderer Neck;
-	ModelRenderer head;
-	ModelRenderer head2;
-	ModelRenderer head3;
-	ModelRenderer head4;
-	ModelRenderer head5;
-	ModelRenderer head6;
-	ModelRenderer head7;
-	ModelRenderer head8;
-	ModelRenderer body;
-	ModelRenderer rightarm;
-	ModelRenderer leftarm;
-	ModelRenderer Tail1;
-	ModelRenderer Tail2;
-	ModelRenderer Tail3;
-	ModelRenderer Tail4;
-	ModelRenderer Tail5;
+	public ModelRenderer Neck;
+	public ModelRenderer head;
+	public ModelRenderer head2;
+	public ModelRenderer head3;
+	public ModelRenderer head4;
+	public ModelRenderer head5;
+	public ModelRenderer head6;
+	public ModelRenderer head7;
+	public ModelRenderer head8;
+	public ModelRenderer body;
+	public ModelRenderer rightarm;
+	public ModelRenderer leftarm;
+	public ModelRenderer Tail1;
+	public ModelRenderer Tail2;
+	public ModelRenderer Tail3;
+	public ModelRenderer Tail4;
+	public ModelRenderer Tail5;
 	
 	public ModelShadowAlien() {
 		textureWidth = 64;

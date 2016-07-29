@@ -1,7 +1,7 @@
 package zollernextras.items.ingots;
 
 import zollernextras.items.ModItem;
-import zollernextras.lib.MainHelper;
+import zollernextras.lib.ZollernHelper;
 
 /**
  * Right now there's really no reason to have this extra class, but I have it
@@ -14,7 +14,7 @@ public class Gem extends ModItem {
 	
 	public Gem(String name) {
 		super(name);
-		MainHelper.setTab(this);
-		MainHelper.setNameAndTexture(this, name);
+		ZollernHelper.setTab(this);
+		ZollernHelper.setNameAndTexture(this, name);
 	}
 }

@@ -8,15 +8,15 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import zollernextras.api.ores.IOre;
-import zollernextras.lib.MainHelper;
+import zollernextras.lib.ZollernHelper;
 
 public class EnderZincOre extends Block implements IOre {
 	
 	public EnderZincOre() {
 		super(Material.rock);
-		MainHelper.setTab(this);
-		MainHelper.setNameAndTexture(this, "enderzincore");
-		MainHelper.setHardResist(this, 2.5F, 4.2F);
+		ZollernHelper.setTab(this);
+		ZollernHelper.setNameAndTexture(this, "enderzincore");
+		ZollernHelper.setHardResist(this, 2.5F, 4.2F);
 		this.setHarvestLevel("pickaxe", 4);
 	}
 	

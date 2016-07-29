@@ -5,16 +5,16 @@ import net.minecraft.block.BlockDragonEgg;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.world.World;
-import zollernextras.lib.MainHelper;
+import zollernextras.lib.ZollernHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class BabyDragonEgg extends BlockDragonEgg {
 	
 	public BabyDragonEgg() {
-		MainHelper.setTab(this);
-		MainHelper.setName(this, "babydragonegg");
-		MainHelper.setTexture(this, "azurite");
+		ZollernHelper.setTab(this);
+		ZollernHelper.setName(this, "babydragonegg");
+		ZollernHelper.setTexture(this, "azurite");
 		setHardness(1.3F);
 		setResistance(15.0F);
 		setStepSound(Block.soundTypePiston);

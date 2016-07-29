@@ -21,7 +21,7 @@ public class PurpurPillar extends GenericBlock {
 	@SideOnly(Side.CLIENT)
 	public IIcon getIcon(int p_149691_1_, int p_149691_2_) {
 		return p_149691_1_ == 1 ? this.field_150035_a
-				: p_149691_1_ == 0 ? BlockList.purpurBlock
+				: p_149691_1_ == 0 ? ZollernBlocks.purpurBlock
 						.getBlockTextureFromSide(p_149691_1_)
 						: p_149691_1_ != 2 && p_149691_1_ != 4 ? this.blockIcon
 								: this.field_150034_b;

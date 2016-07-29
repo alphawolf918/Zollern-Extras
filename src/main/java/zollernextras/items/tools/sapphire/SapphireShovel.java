@@ -2,13 +2,13 @@ package zollernextras.items.tools.sapphire;
 
 import zollernextras.items.tools.ItemZEShovel;
 import zollernextras.items.tools.ToolMaterials;
-import zollernextras.lib.MainHelper;
+import zollernextras.lib.ZollernHelper;
 
 public class SapphireShovel extends ItemZEShovel {
 	
 	public SapphireShovel() {
 		super(ToolMaterials.SAPPHIRE);
-		MainHelper.setNameAndTexture(this, "sapphireshovel");
+		ZollernHelper.setNameAndTexture(this, "sapphireshovel");
 		this.setHarvestLevel("shovel", ToolMaterials.SAPPHIRE.getHarvestLevel());
 	}
 	

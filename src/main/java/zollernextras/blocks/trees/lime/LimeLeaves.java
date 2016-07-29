@@ -13,9 +13,9 @@ import net.minecraft.world.ColorizerFoliage;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.IShearable;
-import zollernextras.blocks.BlockList;
+import zollernextras.blocks.ZollernBlocks;
 import zollernextras.creativetabs.ModTabs;
-import zollernextras.items.ItemList;
+import zollernextras.items.ZollernItems;
 import zollernextras.lib.ZollernModInfo;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -229,16 +229,16 @@ public class LimeLeaves extends BlockLeavesBase implements IShearable {
 		int dropCheck = new Random().nextInt(2);
 		switch (dropCheck) {
 		case 0:
-			droppedItem = ItemList.lime;
+			droppedItem = ZollernItems.lime;
 			break;
 		case 1:
-			droppedItem = Item.getItemFromBlock(BlockList.limeSapling);
+			droppedItem = Item.getItemFromBlock(ZollernBlocks.limeSapling);
 			break;
 		default:
-			droppedItem = Item.getItemFromBlock(BlockList.limeSapling);
+			droppedItem = Item.getItemFromBlock(ZollernBlocks.limeSapling);
 			break;
 		case 2:
-			droppedItem = ItemList.lime;
+			droppedItem = ZollernItems.lime;
 			break;
 		}
 		return droppedItem;

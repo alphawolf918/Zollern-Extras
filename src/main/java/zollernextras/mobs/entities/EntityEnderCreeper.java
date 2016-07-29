@@ -19,7 +19,7 @@ import net.minecraft.entity.passive.EntityOcelot;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.world.World;
-import zollernextras.items.ItemList;
+import zollernextras.items.ZollernItems;
 import zollernextras.items.teleporter.MessageTeleportToDimension;
 import zollernextras.network.PacketDispatcher;
 import cpw.mods.fml.relauncher.Side;
@@ -178,6 +178,6 @@ public class EntityEnderCreeper extends EntityCreeper {
 	 */
 	@Override
 	protected Item getDropItem() {
-		return ItemList.enderShard;
+		return ZollernItems.enderShard;
 	}
 }

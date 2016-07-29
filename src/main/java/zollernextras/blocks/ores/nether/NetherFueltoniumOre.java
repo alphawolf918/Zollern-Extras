@@ -8,16 +8,16 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import zollernextras.api.ores.IOre;
-import zollernextras.lib.MainHelper;
+import zollernextras.lib.ZollernHelper;
 
 public class NetherFueltoniumOre extends Block implements IOre {
 	
 	public NetherFueltoniumOre() {
 		super(Material.rock);
-		MainHelper.setTab(this);
-		MainHelper.setNameAndTexture(this, "netherfueltoniumore",
+		ZollernHelper.setTab(this);
+		ZollernHelper.setNameAndTexture(this, "netherfueltoniumore",
 				"fuelnetherore");
-		MainHelper.setHardResist(this, 1.6F, 9.2F);
+		ZollernHelper.setHardResist(this, 1.6F, 9.2F);
 		this.setHarvestLevel("pickaxe", 4);
 	}
 	

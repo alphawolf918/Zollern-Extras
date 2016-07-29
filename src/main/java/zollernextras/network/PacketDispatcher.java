@@ -3,7 +3,7 @@ package zollernextras.network;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import zollernextras.items.teleporter.MessageTeleportToDimension;
-import zollernextras.lib.MainHelper;
+import zollernextras.lib.ZollernHelper;
 import zollernextras.lib.ZollernModInfo;
 import zollernextras.network.client.SyncPlayerPropsMessage;
 import zollernextras.network.server.OpenGuiMessage;
@@ -31,7 +31,7 @@ public class PacketDispatcher {
 	 */
 	public static final void registerPackets() {
 		
-		MainHelper.Log("Registering packets..");
+		ZollernHelper.Log("Registering packets..");
 		
 		// Packets handled on CLIENT
 		registerMessage(SyncPlayerPropsMessage.class);
@@ -44,7 +44,7 @@ public class PacketDispatcher {
 				MessageTeleportToDimension.TeleportHandler.class,
 				MessageTeleportToDimension.class, 1, Side.SERVER);
 		
-		MainHelper.Log("Packets regsitered.");
+		ZollernHelper.Log("Packets regsitered.");
 	}
 	
 	public static SimpleNetworkWrapper getSimpleNetworkWrapper() {

@@ -11,13 +11,13 @@ import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
-import zollernextras.lib.MainHelper;
+import zollernextras.lib.ZollernHelper;
 
 public class Shinetorch extends Block {
 	public Shinetorch() {
 		super(Material.circuits);
-		MainHelper.setTab(this);
-		MainHelper.setNameAndTexture(this, "shinetorch");
+		ZollernHelper.setTab(this);
+		ZollernHelper.setNameAndTexture(this, "shinetorch");
 		this.setTickRandomly(true);
 		this.setLightLevel(1.0F);
 		this.setHardness(0.0F);

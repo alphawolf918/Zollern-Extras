@@ -2,7 +2,7 @@ package zollernextras.blocks;
 
 import java.util.Random;
 import net.minecraft.item.Item;
-import zollernextras.items.ItemList;
+import zollernextras.items.ZollernItems;
 
 public class HeartFlower extends FlowerBlock {
 	
@@ -19,7 +19,7 @@ public class HeartFlower extends FlowerBlock {
 	@Override
 	public Item getItemDropped(int p_149650_1_, Random p_149650_2_,
 			int p_149650_3_) {
-		return ItemList.heart;
+		return ZollernItems.heart;
 	}
 	
 	@Override

@@ -8,15 +8,15 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import zollernextras.api.ores.IOre;
-import zollernextras.lib.MainHelper;
+import zollernextras.lib.ZollernHelper;
 
 public class EnderAmaranthOre extends Block implements IOre {
 	
 	public EnderAmaranthOre() {
 		super(Material.rock);
-		MainHelper.setTab(this);
-		MainHelper.setNameAndTexture(this, "amaranthenderore");
-		MainHelper.setHardResist(this, 1.5F, 6.2F);
+		ZollernHelper.setTab(this);
+		ZollernHelper.setNameAndTexture(this, "amaranthenderore");
+		ZollernHelper.setHardResist(this, 1.5F, 6.2F);
 		this.setHarvestLevel("pickaxe", 3);
 	}
 	

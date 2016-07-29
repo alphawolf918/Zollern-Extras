@@ -1,7 +1,7 @@
 package zollernextras.biomes;
 
 import net.minecraft.world.biome.BiomeGenBase;
-import zollernextras.blocks.BlockList;
+import zollernextras.blocks.ZollernBlocks;
 
 public class BiomeGenGrandCanyon extends BiomeGenBase {
 	
@@ -16,7 +16,7 @@ public class BiomeGenGrandCanyon extends BiomeGenBase {
 		this.theBiomeDecorator.generateLakes = false;
 		this.theBiomeDecorator.mushroomsPerChunk = 1;
 		this.spawnableCreatureList.clear();
-		this.topBlock = BlockList.canyonRock;
-		this.fillerBlock = BlockList.canyonRock;
+		this.topBlock = ZollernBlocks.canyonRock;
+		this.fillerBlock = ZollernBlocks.canyonRock;
 	}
 }

@@ -1,13 +1,13 @@
 package zollernextras.items.tools;
 
 import net.minecraft.item.ItemSpade;
-import zollernextras.lib.MainHelper;
+import zollernextras.lib.ZollernHelper;
 
 public class ItemZEShovel extends ItemSpade {
 	
 	public ItemZEShovel(ToolMaterial toolMaterial) {
 		super(toolMaterial);
-		MainHelper.setTab(this);
+		ZollernHelper.setTab(this);
 	}
 	
 }

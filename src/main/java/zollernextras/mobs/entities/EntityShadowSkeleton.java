@@ -15,7 +15,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
-import zollernextras.items.ItemList;
+import zollernextras.items.ZollernItems;
 
 public class EntityShadowSkeleton extends EntitySkeleton {
 	
@@ -128,7 +128,7 @@ public class EntityShadowSkeleton extends EntitySkeleton {
 		j = this.rand.nextInt(3 + par2);
 		
 		for (k = 0; k < j; ++k) {
-			this.dropItem(ItemList.shadowBone, 1);
+			this.dropItem(ZollernItems.shadowBone, 1);
 		}
 	}
 	

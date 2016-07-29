@@ -14,7 +14,7 @@ import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
 import zollernextras.lib.KeyHelper;
-import zollernextras.lib.MainHelper;
+import zollernextras.lib.ZollernHelper;
 import zollernextras.mobs.entities.EntityEnderBug;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -25,8 +25,8 @@ public class EnderSword extends ItemSword {
 	
 	public EnderSword(ToolMaterial p_i45347_1_) {
 		super(p_i45347_1_);
-		MainHelper.setTab(this);
-		MainHelper.setNameAndTexture(this, "endersword");
+		ZollernHelper.setTab(this);
+		ZollernHelper.setNameAndTexture(this, "endersword");
 	}
 	
 	@Override

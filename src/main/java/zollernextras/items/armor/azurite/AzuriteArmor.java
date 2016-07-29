@@ -4,7 +4,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import zollernextras.creativetabs.ModTabs;
-import zollernextras.items.ItemList;
+import zollernextras.items.ZollernItems;
 import zollernextras.lib.ZollernModInfo;
 
 public class AzuriteArmor extends ItemArmor {
@@ -30,6 +30,6 @@ public class AzuriteArmor extends ItemArmor {
 	
 	@Override
 	public boolean getIsRepairable(ItemStack p_82789_1_, ItemStack p_82789_2_) {
-		return p_82789_2_ == new ItemStack(ItemList.azurite, 1);
+		return p_82789_2_ == new ItemStack(ZollernItems.azurite, 1);
 	}
 }

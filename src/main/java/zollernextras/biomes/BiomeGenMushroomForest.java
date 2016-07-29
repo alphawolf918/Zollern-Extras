@@ -3,7 +3,7 @@ package zollernextras.biomes;
 import net.minecraft.entity.monster.EntityWitch;
 import net.minecraft.entity.passive.EntityMooshroom;
 import net.minecraft.world.biome.BiomeGenBase;
-import zollernextras.blocks.BlockList;
+import zollernextras.blocks.ZollernBlocks;
 
 public class BiomeGenMushroomForest extends BiomeGenBase {
 	
@@ -28,8 +28,8 @@ public class BiomeGenMushroomForest extends BiomeGenBase {
 		this.theBiomeDecorator.bigMushroomsPerChunk = 80;
 		this.theBiomeDecorator.clayPerChunk = 4;
 		this.theBiomeDecorator.generateLakes = true;
-		this.topBlock = BlockList.betterGrass;
-		this.fillerBlock = BlockList.redShroomBlock;
+		this.topBlock = ZollernBlocks.betterGrass;
+		this.fillerBlock = ZollernBlocks.redShroomBlock;
 	}
 	
 	@Override

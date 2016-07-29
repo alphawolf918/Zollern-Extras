@@ -8,15 +8,15 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import zollernextras.api.ores.IOre;
-import zollernextras.lib.MainHelper;
+import zollernextras.lib.ZollernHelper;
 
 public class NetherSPCOre extends Block implements IOre {
 	
 	public NetherSPCOre() {
 		super(Material.rock);
-		MainHelper.setTab(this);
-		MainHelper.setNameAndTexture(this, "netherspcore", "spcnetherore");
-		MainHelper.setHardResist(this, 1.4F, 4.2F);
+		ZollernHelper.setTab(this);
+		ZollernHelper.setNameAndTexture(this, "netherspcore", "spcnetherore");
+		ZollernHelper.setHardResist(this, 1.4F, 4.2F);
 		this.setHarvestLevel("pickaxe", 3);
 	}
 	

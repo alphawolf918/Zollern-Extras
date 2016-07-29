@@ -13,8 +13,8 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import zollernextras.blocks.tiles.TEBlockBase;
 import zollernextras.blocks.tiles.TEShiniumBlockIngot;
-import zollernextras.items.ItemList;
-import zollernextras.lib.MainHelper;
+import zollernextras.items.ZollernItems;
+import zollernextras.lib.ZollernHelper;
 
 public class ShiniumIngotStack extends BlockContainer {
 	
@@ -22,9 +22,9 @@ public class ShiniumIngotStack extends BlockContainer {
 	
 	public ShiniumIngotStack(String strTexture) {
 		super(Material.iron);
-		MainHelper.setTab(this);
-		MainHelper.setName(this, "ingotBlock_" + strTexture);
-		MainHelper.setTexture(this, "shinium");
+		ZollernHelper.setTab(this);
+		ZollernHelper.setName(this, "ingotBlock_" + strTexture);
+		ZollernHelper.setTexture(this, "shinium");
 		this.setLightLevel(1.0F);
 		this.setBlockBounds(0.125F, 0.0F, 0.125F, 1.0F - 0.125F,
 				boundingBoxMaxY, 1.0F - 0.125F);
@@ -63,7 +63,7 @@ public class ShiniumIngotStack extends BlockContainer {
 	
 	@Override
 	public Item getItemDropped(int meta, Random rand, int p_149650_3_) {
-		return ItemList.shiniumIngot;
+		return ZollernItems.shiniumIngot;
 	}
 	
 	private int blockMetadata;

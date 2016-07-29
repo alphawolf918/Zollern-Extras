@@ -11,7 +11,7 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.EnumSkyBlock;
 import net.minecraft.world.World;
-import zollernextras.items.ItemList;
+import zollernextras.items.ZollernItems;
 import zollernextras.lib.DSource;
 
 public class EntityShark extends EntityFish implements IMob, IAnimals {
@@ -31,14 +31,14 @@ public class EntityShark extends EntityFish implements IMob, IAnimals {
 	
 	@Override
 	public Item getDropItem() {
-		return ItemList.sharkLeather;
+		return ZollernItems.sharkLeather;
 	}
 	
 	@Override
 	protected void dropFewItems(boolean par1, int par2) {
 		int j = this.rand.nextInt(3 + par2) + 1;
 		int l = (int) (Math.random() * Math.floor(4));
-		Item droppedItem = l > 2 ? ItemList.sharkTooth : ItemList.sharkLeather;
+		Item droppedItem = l > 2 ? ZollernItems.sharkTooth : ZollernItems.sharkLeather;
 		for (int k = 0; k < j; ++k) {
 			this.entityDropItem(new ItemStack(droppedItem, 1, 0), 0.0F);
 		}

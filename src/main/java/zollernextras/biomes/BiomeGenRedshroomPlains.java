@@ -3,7 +3,7 @@ package zollernextras.biomes;
 import net.minecraft.entity.passive.EntityChicken;
 import net.minecraft.entity.passive.EntityMooshroom;
 import net.minecraft.world.biome.BiomeGenBase;
-import zollernextras.blocks.BlockList;
+import zollernextras.blocks.ZollernBlocks;
 
 public class BiomeGenRedshroomPlains extends BiomeGenBase {
 	public BiomeGenRedshroomPlains(int id) {
@@ -25,7 +25,7 @@ public class BiomeGenRedshroomPlains extends BiomeGenBase {
 		this.theBiomeDecorator.reedsPerChunk = -999;
 		this.theBiomeDecorator.mushroomsPerChunk = 2;
 		this.theBiomeDecorator.bigMushroomsPerChunk = 5;
-		this.topBlock = BlockList.redShroomBlock;
-		this.fillerBlock = BlockList.redShroomStem;
+		this.topBlock = ZollernBlocks.redShroomBlock;
+		this.fillerBlock = ZollernBlocks.redShroomStem;
 	}
 }

@@ -4,7 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
-import zollernextras.blocks.BlockList;
+import zollernextras.blocks.ZollernBlocks;
 import zollernextras.lib.ZollernModInfo;
 import cpw.mods.fml.common.event.FMLInterModComms;
 import cpw.mods.fml.common.registry.GameData;
@@ -18,40 +18,40 @@ public class TreeCapHelper {
 		NBTTagCompound tree = new NBTTagCompound();
 		
 		// Banana
-		String bananaLog = blockName(BlockList.bananaLog);
-		String bananaLeaves = blockName(BlockList.bananaLeaves);
+		String bananaLog = blockName(ZollernBlocks.bananaLog);
+		String bananaLeaves = blockName(ZollernBlocks.bananaLeaves);
 		
 		// Orange
-		String orangeLog = blockName(BlockList.orangeLog);
-		String orangeLeaves = blockName(BlockList.orangeLeaves);
+		String orangeLog = blockName(ZollernBlocks.orangeLog);
+		String orangeLeaves = blockName(ZollernBlocks.orangeLeaves);
 		
 		// Guava
-		String guavaLog = blockName(BlockList.guavaLog);
-		String guavaLeaves = blockName(BlockList.guavaLeaves);
+		String guavaLog = blockName(ZollernBlocks.guavaLog);
+		String guavaLeaves = blockName(ZollernBlocks.guavaLeaves);
 		
 		// Lemon
-		String lemonLog = blockName(BlockList.lemonLog);
-		String lemonLeaves = blockName(BlockList.lemonLeaves);
+		String lemonLog = blockName(ZollernBlocks.lemonLog);
+		String lemonLeaves = blockName(ZollernBlocks.lemonLeaves);
 		
 		// Lime
-		String limeLog = blockName(BlockList.limeLog);
-		String limeLeaves = blockName(BlockList.limeLeaves);
+		String limeLog = blockName(ZollernBlocks.limeLog);
+		String limeLeaves = blockName(ZollernBlocks.limeLeaves);
 		
 		// Limon
-		String limonLog = blockName(BlockList.limonLog);
-		String limonLeaves = blockName(BlockList.limonLeaves);
+		String limonLog = blockName(ZollernBlocks.limonLog);
+		String limonLeaves = blockName(ZollernBlocks.limonLeaves);
 		
 		// Cherry
-		String cherryLog = blockName(BlockList.cherryLog);
-		String cherryLeaves = blockName(BlockList.cherryLeaves);
+		String cherryLog = blockName(ZollernBlocks.cherryLog);
+		String cherryLeaves = blockName(ZollernBlocks.cherryLeaves);
 		
 		// Grapefruit
-		String grapefruitLog = blockName(BlockList.grapefruitLog);
-		String grapefruitLeaves = blockName(BlockList.grapefruitLeaves);
+		String grapefruitLog = blockName(ZollernBlocks.grapefruitLog);
+		String grapefruitLeaves = blockName(ZollernBlocks.grapefruitLeaves);
 		
 		// Ender Berry
-		String enderBerryLog = blockName(BlockList.enderBerryLog);
-		String enderBerryLeaves = blockName(BlockList.enderBerryLeaves);
+		String enderBerryLog = blockName(ZollernBlocks.enderBerryLog);
+		String enderBerryLeaves = blockName(ZollernBlocks.enderBerryLeaves);
 		
 		tpModCfg.setString("modID", ZollernModInfo.MODID);
 		

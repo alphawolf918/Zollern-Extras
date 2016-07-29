@@ -8,16 +8,16 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import zollernextras.api.ores.IOre;
-import zollernextras.lib.MainHelper;
+import zollernextras.lib.ZollernHelper;
 
 public class NetherAmaranthOre extends Block implements IOre {
 	
 	public NetherAmaranthOre() {
 		super(Material.rock);
-		MainHelper.setTab(this);
-		MainHelper.setNameAndTexture(this, "netheramaranthore",
+		ZollernHelper.setTab(this);
+		ZollernHelper.setNameAndTexture(this, "netheramaranthore",
 				"amaranthnetherore");
-		MainHelper.setHardResist(this, 1.2F, 6.2F);
+		ZollernHelper.setHardResist(this, 1.2F, 6.2F);
 		this.setHarvestLevel("pickaxe", 3);
 	}
 	

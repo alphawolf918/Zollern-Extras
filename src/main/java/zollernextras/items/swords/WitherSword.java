@@ -15,7 +15,7 @@ import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
 import zollernextras.lib.KeyHelper;
-import zollernextras.lib.MainHelper;
+import zollernextras.lib.ZollernHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -23,8 +23,8 @@ public class WitherSword extends ItemSword {
 	
 	public WitherSword(ToolMaterial toolMaterial) {
 		super(toolMaterial);
-		MainHelper.setTab(this);
-		MainHelper.setNameAndTexture(this, "withersword");
+		ZollernHelper.setTab(this);
+		ZollernHelper.setNameAndTexture(this, "withersword");
 	}
 	
 	@Override

@@ -1,7 +1,7 @@
 package zollernextras.biomes;
 
 import net.minecraft.world.biome.BiomeGenBase;
-import zollernextras.blocks.BlockList;
+import zollernextras.blocks.ZollernBlocks;
 
 public class BiomeGenIcyDesert extends BiomeGenBase {
 	
@@ -25,7 +25,7 @@ public class BiomeGenIcyDesert extends BiomeGenBase {
 		this.theBiomeDecorator.grassPerChunk = -999;
 		this.theBiomeDecorator.flowersPerChunk = -999;
 		this.theBiomeDecorator.treesPerChunk = -999;
-		this.topBlock = BlockList.icySand;
-		this.fillerBlock = BlockList.icyStone;
+		this.topBlock = ZollernBlocks.icySand;
+		this.fillerBlock = ZollernBlocks.icyStone;
 	}
 }

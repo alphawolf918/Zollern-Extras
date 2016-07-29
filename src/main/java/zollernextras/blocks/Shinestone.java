@@ -4,14 +4,14 @@ import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
-import zollernextras.items.ItemList;
-import zollernextras.lib.MainHelper;
+import zollernextras.items.ZollernItems;
+import zollernextras.lib.ZollernHelper;
 
 public class Shinestone extends Block {
 	public Shinestone() {
 		super(Material.glass);
-		MainHelper.setTab(this);
-		MainHelper.setNameAndTexture(this, "shinestone");
+		ZollernHelper.setTab(this);
+		ZollernHelper.setNameAndTexture(this, "shinestone");
 		setHardness(0.4F);
 		setResistance(2.0F);
 		setLightLevel(1.0F);
@@ -26,7 +26,7 @@ public class Shinestone extends Block {
 	@Override
 	public Item getItemDropped(int p_149650_1_, Random p_149650_2_,
 			int p_149650_3_) {
-		return ItemList.shinedust;
+		return ZollernItems.shinedust;
 	}
 	
 	@Override

@@ -12,8 +12,8 @@ import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.common.ChestGenHooks;
 import net.minecraftforge.common.DungeonHooks;
-import zollernextras.blocks.BlockList;
-import zollernextras.items.ItemList;
+import zollernextras.blocks.ZollernBlocks;
+import zollernextras.items.ZollernItems;
 
 public class WorldGenUpsideDownDungeons extends WorldGenerator {
 	
@@ -22,7 +22,7 @@ public class WorldGenUpsideDownDungeons extends WorldGenerator {
 		new WeightedRandomChestContent(Items.bread, 1, 1, 1, 10),
 		new WeightedRandomChestContent(Items.wheat, 1, 1, 4, 10),
 		new WeightedRandomChestContent(Items.gunpowder, 1, 1, 4, 10),
-		new WeightedRandomChestContent(ItemList.amaranthIngot, 1, 1, 4, 10),
+		new WeightedRandomChestContent(ZollernItems.amaranthIngot, 1, 1, 4, 10),
 		new WeightedRandomChestContent(Items.string, 1, 1, 4, 10),
 		new WeightedRandomChestContent(Items.bucket, 1, 1, 1, 10),
 		new WeightedRandomChestContent(Items.golden_apple, 1, 1, 1, 1),
@@ -85,10 +85,10 @@ public class WorldGenUpsideDownDungeons extends WorldGenerator {
 							if (l1 == p_76484_4_ - 1
 									&& p_76484_2_.nextInt(4) != 0) {
 								p_76484_1_.setBlock(k1, l1, i2,
-										BlockList.upsideDownRock, 0, 2);
+										ZollernBlocks.upsideDownRock, 0, 2);
 							} else {
 								p_76484_1_.setBlock(k1, l1, i2,
-										BlockList.upsideDownSurfaceRock, 0, 2);
+										ZollernBlocks.upsideDownSurfaceRock, 0, 2);
 							}
 						}
 					}

@@ -8,17 +8,17 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import zollernextras.api.ores.IOre;
-import zollernextras.lib.MainHelper;
+import zollernextras.lib.ZollernHelper;
 
 public class AmaranthOre extends Block implements IOre {
 	
 	public AmaranthOre() {
 		super(Material.rock);
-		MainHelper.setTab(this);
-		MainHelper.setNameAndTexture(this, "amaranthore");
+		ZollernHelper.setTab(this);
+		ZollernHelper.setNameAndTexture(this, "amaranthore");
 		this.setStepSound(this.soundTypeStone);
 		this.setHarvestLevel("pickaxe", 3);
-		MainHelper.setHardResist(this, 4.0F, 9.2F);
+		ZollernHelper.setHardResist(this, 4.0F, 9.2F);
 	}
 	
 	private Random rand = new Random();

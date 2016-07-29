@@ -29,8 +29,8 @@ import zollernextras.blocks.tiles.renders.TESRZollerniumIngotStack;
 import zollernextras.entity.EntityDuckEgg;
 import zollernextras.entity.render.RenderDuckEgg;
 import zollernextras.gui.GuiBiomeType;
-import zollernextras.items.ItemList;
-import zollernextras.lib.MainHelper;
+import zollernextras.items.ZollernItems;
+import zollernextras.lib.ZollernHelper;
 import zollernextras.lib.modhelper.ModHelperBase;
 import zollernextras.mobs.entities.EntityBabyDragon;
 import zollernextras.mobs.entities.EntityDuck;
@@ -170,15 +170,15 @@ public class ClientProxy extends CommonProxy {
 		addSphere(TECandySphereRed.class, new TESRSphereRed());
 		
 		RenderingRegistry.registerEntityRenderingHandler(EntityDuckEgg.class,
-				new RenderDuckEgg(ItemList.duckEgg));
+				new RenderDuckEgg(ZollernItems.duckEgg));
 		
-		MainHelper.Log("Renderers initialized.");
+		ZollernHelper.Log("Renderers initialized.");
 	}
 	
 	@Override
 	public void sendChatMessage(EntityPlayer player, String message) {
 		if (!player.worldObj.isRemote) {
-			MainHelper.addChatMessage(player, message);
+			ZollernHelper.addChatMessage(player, message);
 		}
 	}
 	

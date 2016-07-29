@@ -6,7 +6,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import zollernextras.items.ItemList;
+import zollernextras.items.ZollernItems;
 
 public class EntityShrimp extends EntityJellyfish {
 	public EntityShrimp(World par1World) {
@@ -28,14 +28,14 @@ public class EntityShrimp extends EntityJellyfish {
 	
 	@Override
 	protected Item getDropItem() {
-		return ItemList.rawShrimp;
+		return ZollernItems.rawShrimp;
 	}
 	
 	@Override
 	protected void dropFewItems(boolean par1, int par2) {
 		int j = this.rand.nextInt(3 + par2) + 1;
 		for (int k = 0; k < j; ++k) {
-			this.entityDropItem(new ItemStack(ItemList.rawShrimp, 1), 0.0F);
+			this.entityDropItem(new ItemStack(ZollernItems.rawShrimp, 1), 0.0F);
 		}
 	}
 	

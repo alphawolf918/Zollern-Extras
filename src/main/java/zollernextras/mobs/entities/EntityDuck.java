@@ -18,7 +18,7 @@ import net.minecraft.item.ItemSeeds;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
-import zollernextras.items.ItemList;
+import zollernextras.items.ZollernItems;
 import zollernextras.lib.ZollernModInfo;
 
 public class EntityDuck extends EntityAnimal {
@@ -126,7 +126,7 @@ public class EntityDuck extends EntityAnimal {
 					"mob.chicken.plop",
 					0.5F,
 					(this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
-			this.dropItem(ItemList.duckEgg, 1);
+			this.dropItem(ZollernItems.duckEgg, 1);
 			this.timeUntilNextEgg = this.rand.nextInt(6000) + 6000;
 		}
 	}
@@ -173,7 +173,7 @@ public class EntityDuck extends EntityAnimal {
 	 */
 	@Override
 	protected Item getDropItem() {
-		return ItemList.duckFeather;
+		return ZollernItems.duckFeather;
 	}
 	
 	/**
@@ -186,13 +186,13 @@ public class EntityDuck extends EntityAnimal {
 		int j = this.rand.nextInt(3) + this.rand.nextInt(1 + par2);
 		
 		for (int k = 0; k < j; ++k) {
-			this.dropItem(ItemList.duckFeather, 1);
+			this.dropItem(ZollernItems.duckFeather, 1);
 		}
 		
 		if (this.isBurning()) {
-			this.dropItem(ItemList.cookedDuck, 1);
+			this.dropItem(ZollernItems.cookedDuck, 1);
 		} else {
-			this.dropItem(ItemList.rawDuck, 1);
+			this.dropItem(ZollernItems.rawDuck, 1);
 		}
 	}
 	

@@ -2,14 +2,14 @@ package zollernextras.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import zollernextras.lib.MainHelper;
+import zollernextras.lib.ZollernHelper;
 
 public class AmaranthBlock extends Block {
 	public AmaranthBlock() {
 		super(Material.iron);
-		MainHelper.setTab(this);
-		MainHelper.setHardResist(this, 3.0F, 6.0F);
-		MainHelper.setNameAndTexture(this, "amaranthblock");
+		ZollernHelper.setTab(this);
+		ZollernHelper.setHardResist(this, 3.0F, 6.0F);
+		ZollernHelper.setNameAndTexture(this, "amaranthblock");
 		this.setHarvestLevel("pickaxe", 2);
 		this.setStepSound(soundTypeMetal);
 	}

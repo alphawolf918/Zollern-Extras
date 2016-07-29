@@ -8,15 +8,15 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import zollernextras.api.ores.IOre;
-import zollernextras.lib.MainHelper;
+import zollernextras.lib.ZollernHelper;
 
 public class EnderSpcOre extends Block implements IOre {
 	
 	public EnderSpcOre() {
 		super(Material.rock);
-		MainHelper.setTab(this);
-		MainHelper.setNameAndTexture(this, "enderspcore");
-		MainHelper.setHardResist(this, 1.2F, 4.2F);
+		ZollernHelper.setTab(this);
+		ZollernHelper.setNameAndTexture(this, "enderspcore");
+		ZollernHelper.setHardResist(this, 1.2F, 4.2F);
 		this.setHarvestLevel("pickaxe", 3);
 	}
 	

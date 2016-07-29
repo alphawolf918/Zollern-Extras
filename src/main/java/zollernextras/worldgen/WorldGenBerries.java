@@ -5,13 +5,13 @@ import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
-import zollernextras.blocks.BlockList;
+import zollernextras.blocks.ZollernBlocks;
 
 public class WorldGenBerries extends WorldGenerator {
 	
 	protected Block[] GetValidSpawnBlocks() {
 		return new Block[] { Blocks.dirt, Blocks.grass, Blocks.sand,
-				Blocks.gravel, BlockList.swampClay, BlockList.betterGrass };
+				Blocks.gravel, ZollernBlocks.swampClay, ZollernBlocks.betterGrass };
 	}
 	
 	public boolean LocationIsValidSpawn(World world, int i, int j, int k) {
@@ -87,28 +87,28 @@ public class WorldGenBerries extends WorldGenerator {
 		world.setBlock(i + 3, j + 0, k + 9, Blocks.farmland);
 		world.setBlock(i + 3, j + 0, k + 10, Blocks.farmland);
 		
-		world.setBlock(i + 1, j + 1, k + 1, BlockList.grape);
-		world.setBlock(i + 1, j + 1, k + 2, BlockList.blueberry);
-		world.setBlock(i + 1, j + 1, k + 3, BlockList.blueberry);
-		world.setBlock(i + 1, j + 1, k + 4, BlockList.strawberry);
-		world.setBlock(i + 1, j + 1, k + 5, BlockList.blueberry);
-		world.setBlock(i + 1, j + 1, k + 6, BlockList.grape);
-		world.setBlock(i + 1, j + 1, k + 7, BlockList.blackberry);
-		world.setBlock(i + 1, j + 1, k + 8, BlockList.blueberry);
-		world.setBlock(i + 1, j + 1, k + 9, BlockList.strawberry);
-		world.setBlock(i + 1, j + 1, k + 10, BlockList.blueberry);
-		world.setBlock(i + 2, j + 1, k + 1, BlockList.grape);
-		world.setBlock(i + 2, j + 1, k + 10, BlockList.blackberry);
-		world.setBlock(i + 3, j + 1, k + 1, BlockList.blackberry);
-		world.setBlock(i + 3, j + 1, k + 2, BlockList.blackberry);
-		world.setBlock(i + 3, j + 1, k + 3, BlockList.blackberry);
-		world.setBlock(i + 3, j + 1, k + 4, BlockList.blackberry);
-		world.setBlock(i + 3, j + 1, k + 5, BlockList.blackberry);
-		world.setBlock(i + 3, j + 1, k + 6, BlockList.blackberry);
-		world.setBlock(i + 3, j + 1, k + 7, BlockList.blackberry);
-		world.setBlock(i + 3, j + 1, k + 8, BlockList.blackberry);
-		world.setBlock(i + 3, j + 1, k + 9, BlockList.blackberry);
-		world.setBlock(i + 3, j + 1, k + 10, BlockList.strawberry);
+		world.setBlock(i + 1, j + 1, k + 1, ZollernBlocks.grape);
+		world.setBlock(i + 1, j + 1, k + 2, ZollernBlocks.blueberry);
+		world.setBlock(i + 1, j + 1, k + 3, ZollernBlocks.blueberry);
+		world.setBlock(i + 1, j + 1, k + 4, ZollernBlocks.strawberry);
+		world.setBlock(i + 1, j + 1, k + 5, ZollernBlocks.blueberry);
+		world.setBlock(i + 1, j + 1, k + 6, ZollernBlocks.grape);
+		world.setBlock(i + 1, j + 1, k + 7, ZollernBlocks.blackberry);
+		world.setBlock(i + 1, j + 1, k + 8, ZollernBlocks.blueberry);
+		world.setBlock(i + 1, j + 1, k + 9, ZollernBlocks.strawberry);
+		world.setBlock(i + 1, j + 1, k + 10, ZollernBlocks.blueberry);
+		world.setBlock(i + 2, j + 1, k + 1, ZollernBlocks.grape);
+		world.setBlock(i + 2, j + 1, k + 10, ZollernBlocks.blackberry);
+		world.setBlock(i + 3, j + 1, k + 1, ZollernBlocks.blackberry);
+		world.setBlock(i + 3, j + 1, k + 2, ZollernBlocks.blackberry);
+		world.setBlock(i + 3, j + 1, k + 3, ZollernBlocks.blackberry);
+		world.setBlock(i + 3, j + 1, k + 4, ZollernBlocks.blackberry);
+		world.setBlock(i + 3, j + 1, k + 5, ZollernBlocks.blackberry);
+		world.setBlock(i + 3, j + 1, k + 6, ZollernBlocks.blackberry);
+		world.setBlock(i + 3, j + 1, k + 7, ZollernBlocks.blackberry);
+		world.setBlock(i + 3, j + 1, k + 8, ZollernBlocks.blackberry);
+		world.setBlock(i + 3, j + 1, k + 9, ZollernBlocks.blackberry);
+		world.setBlock(i + 3, j + 1, k + 10, ZollernBlocks.strawberry);
 		
 		world.setBlock(i + 1, j - 1, k + 1, Blocks.dirt);
 		world.setBlock(i + 1, j - 1, k + 2, Blocks.dirt);

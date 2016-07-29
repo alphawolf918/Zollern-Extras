@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Random;
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -11,33 +12,43 @@ import net.minecraft.util.WeightedRandom;
 import net.minecraft.util.WeightedRandomChestContent;
 import net.minecraftforge.common.ChestGenHooks;
 import net.minecraftforge.oredict.OreDictionary;
-import zollernextras.items.ItemList;
+import zollernextras.items.ZollernItems;
 
 public class ZEChestGenHooks extends ChestGenHooks {
 	
+	private static Random rand = new Random();
+	
 	public static final String ENDER_TOWER = "enderTower";
 	public static final WeightedRandomChestContent[] CTChestContents = new WeightedRandomChestContent[] {
-			new WeightedRandomChestContent(
-					new ItemStack(ItemList.shiniumIngot), 5, 10, 15),
-			new WeightedRandomChestContent(new ItemStack(
-					ItemList.shinestoneIngot), 15, 20, 25),
-			new WeightedRandomChestContent(new ItemStack(ItemList.enderShard),
-					15, 20, 25),
-			new WeightedRandomChestContent(
-					new ItemStack(ItemList.amaranthIngot), 15, 20, 25),
-			new WeightedRandomChestContent(new ItemStack(ItemList.enderite),
-					15, 20, 25),
-			new WeightedRandomChestContent(new ItemStack(Items.ender_pearl),
-					15, 20, 25),
-			new WeightedRandomChestContent(
-					new ItemStack(ItemList.chargiumDust), 5, 10, 15),
-			new WeightedRandomChestContent(
-					new ItemStack(ItemList.enderDiamond), 5, 10, 15) };
+		new WeightedRandomChestContent(new ItemStack(
+				ZollernItems.shiniumIngot), 5, 10, 15),
+				new WeightedRandomChestContent(new ItemStack(
+						ZollernItems.shinestoneIngot), 15, 20, 25),
+						new WeightedRandomChestContent(new ItemStack(
+								ZollernItems.enderShard), 15, 20, 25),
+								new WeightedRandomChestContent(new ItemStack(
+										ZollernItems.amaranthIngot), 15, 20, 25),
+										new WeightedRandomChestContent(
+												new ItemStack(ZollernItems.enderite), 15, 20, 25),
+												new WeightedRandomChestContent(new ItemStack(Items.ender_pearl),
+														15, 20, 25),
+														new WeightedRandomChestContent(new ItemStack(
+																ZollernItems.chargiumDust), 5, 10, 15),
+																new WeightedRandomChestContent(new ItemStack(
+																		ZollernItems.enderDiamond), 5, 10, 15) };
 	
 	public static final String SHADOW_SHRINE = "shadowShrine";
 	public static final WeightedRandomChestContent[] SSChestContents = new WeightedRandomChestContent[] {
-	
-	};
+		new WeightedRandomChestContent(new ItemStack(
+				ZollernItems.chargiumDust), 32, 64, 50),
+				new WeightedRandomChestContent(new ItemStack(
+						ZollernItems.shiniumIngot), 32, 64, 50),
+			new WeightedRandomChestContent(new ItemStack(Items.diamond), 32,
+					64, 60),
+			new WeightedRandomChestContent(new ItemStack(Items.nether_star), 1,
+					5, 100),
+										new WeightedRandomChestContent(
+												new ItemStack(ZollernItems.radiance), 5, 20, 25) };
 	
 	private static final HashMap<String, ZEChestGenHooks> chestInfo = new HashMap<String, ZEChestGenHooks>();
 	
@@ -62,15 +73,46 @@ public class ZEChestGenHooks extends ChestGenHooks {
 				1, 1, 1);
 		getInfo(ENDER_TOWER).addItem(tmp);
 		
-		getInfo(ENDER_TOWER)
-				.addItem(
-						new WeightedRandomChestContent(ItemList.spcItem, 4, 25,
-								50, 30));
+		getInfo(ENDER_TOWER).addItem(
+				new WeightedRandomChestContent(ZollernItems.spcItem, 4, 25, 50,
+						30));
 		
 		for (WeightedRandomChestContent chestContent : CTChestContents) {
 			ItemStack item = chestContent.theItemId;
 			addDungeonLoot(new ZEChestGenHooks("enderTower"), item, 50, 40, 80);
 		}
+		
+		for (WeightedRandomChestContent chestContent : SSChestContents) {
+			ItemStack item = chestContent.theItemId;
+			addDungeonLoot(new ZEChestGenHooks("shadowShine"), item, 50, 40, 80);
+		}
+		
+		ItemStack witherSword = new ItemStack(ZollernItems.witherSword);
+		if (ZollernHelper.getRNGChance(5, 10)) {
+			witherSword.addEnchantment(Enchantment.power, 5);
+		}
+		if (ZollernHelper.getRNGChance(5, 10)) {
+			witherSword.addEnchantment(Enchantment.unbreaking, 3);
+		}
+		if (ZollernHelper.getRNGChance(5, 10)) {
+			witherSword.addEnchantment(Enchantment.looting, 3);
+		}
+		if (ZollernHelper.getRNGChance(5, 10)) {
+			witherSword.addEnchantment(Enchantment.sharpness, 5);
+		}
+		
+		addDungeonLoot(ZEChestGenHooks.getDungeonInstance(SHADOW_SHRINE),
+				witherSword, 100, 1, 1);
+		
+	}
+	
+	public static ChestGenHooks getDungeonInstance(String category,
+			ChestGenHooks chestHook) {
+		return chestHook.getInfo(category);
+	}
+	
+	public static ZEChestGenHooks getDungeonInstance(String category) {
+		return ZEChestGenHooks.getInfo(category);
 	}
 	
 	static void addDungeonLoot(ZEChestGenHooks dungeon, ItemStack item,

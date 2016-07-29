@@ -14,7 +14,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import zollernextras.blocks.tiles.TEBlockBase;
 import zollernextras.blocks.tiles.TEGoldBlockIngot;
-import zollernextras.lib.MainHelper;
+import zollernextras.lib.ZollernHelper;
 
 public class GoldIngotStack extends BlockContainer {
 	
@@ -22,8 +22,8 @@ public class GoldIngotStack extends BlockContainer {
 	
 	public GoldIngotStack(String strTexture) {
 		super(Material.iron);
-		MainHelper.setTab(this);
-		MainHelper.setName(this, "ingotBlock_" + strTexture);
+		ZollernHelper.setTab(this);
+		ZollernHelper.setName(this, "ingotBlock_" + strTexture);
 		this.setBlockTextureName("minecraft:gold_block");
 		this.setBlockBounds(0.125F, 0.0F, 0.125F, 1.0F - 0.125F,
 				boundingBoxMaxY, 1.0F - 0.125F);

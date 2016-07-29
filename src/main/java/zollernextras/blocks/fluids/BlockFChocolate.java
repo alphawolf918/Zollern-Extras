@@ -11,7 +11,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fluids.Fluid;
-import zollernextras.lib.MainHelper;
+import zollernextras.lib.ZollernHelper;
 import zollernextras.lib.ZollernModInfo;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -25,7 +25,7 @@ public class BlockFChocolate extends BlockFluidClassic {
 	
 	public BlockFChocolate(Fluid fluid) {
 		super(fluid, Material.water);
-		MainHelper.setName(this, "chocolate");
+		ZollernHelper.setName(this, "chocolate");
 	}
 	
 	@Override

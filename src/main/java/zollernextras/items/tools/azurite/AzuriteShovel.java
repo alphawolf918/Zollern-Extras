@@ -7,7 +7,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemStack;
 import zollernextras.creativetabs.ModTabs;
-import zollernextras.items.ItemList;
+import zollernextras.items.ZollernItems;
 import zollernextras.items.tools.ToolMaterials;
 import zollernextras.lib.ZollernModInfo;
 
@@ -22,7 +22,7 @@ public class AzuriteShovel extends ItemSpade {
 	
 	@Override
 	public void getSubItems(Item item, CreativeTabs creativeTab, List items) {
-		ItemStack amaranthAxe = new ItemStack(ItemList.azuriteShovel, 1);
+		ItemStack amaranthAxe = new ItemStack(ZollernItems.azuriteShovel, 1);
 		amaranthAxe.addEnchantment(Enchantment.efficiency, 2);
 		amaranthAxe.addEnchantment(Enchantment.power, 1);
 		items.add(amaranthAxe);

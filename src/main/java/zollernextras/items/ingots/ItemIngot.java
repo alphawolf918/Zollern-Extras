@@ -1,11 +1,11 @@
 package zollernextras.items.ingots;
 
 import net.minecraft.item.Item;
-import zollernextras.lib.MainHelper;
+import zollernextras.lib.ZollernHelper;
 
 public class ItemIngot extends Item {
 	public ItemIngot(String strTexture) {
-		MainHelper.setTab(this);
-		MainHelper.setNameAndTexture(this, strTexture);
+		ZollernHelper.setTab(this);
+		ZollernHelper.setNameAndTexture(this, strTexture);
 	}
 }

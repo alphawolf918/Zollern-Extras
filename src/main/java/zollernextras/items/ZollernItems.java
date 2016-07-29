@@ -3,7 +3,7 @@ package zollernextras.items;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.potion.Potion;
-import zollernextras.blocks.BlockList;
+import zollernextras.blocks.ZollernBlocks;
 import zollernextras.items.armor.ArmorMaterials;
 import zollernextras.items.armor.amaranth.AmaranthArmor;
 import zollernextras.items.armor.azurite.AzuriteArmor;
@@ -53,10 +53,10 @@ import zollernextras.items.tools.zollernium.ZollerniumHoe;
 import zollernextras.items.tools.zollernium.ZollerniumPickaxe;
 import zollernextras.items.tools.zollernium.ZollerniumShovel;
 import zollernextras.items.tools.zollernium.ZollerniumSword;
-import zollernextras.lib.MainHelper;
+import zollernextras.lib.ZollernHelper;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-public class ItemList {
+public class ZollernItems {
 	
 	public static int totalItems = 0;
 	
@@ -212,31 +212,31 @@ public class ItemList {
 	public static Item greenDye = new ModItem("greendye");
 	public static Item quiver = new ItemQuiver();
 	
-	public static Item blueberry = new SeedFood(2, 0.2F, BlockList.blueberry,
+	public static Item blueberry = new SeedFood(2, 0.2F, ZollernBlocks.blueberry,
 			Blocks.farmland, "blueberry");
-	public static Item blackberry = new SeedFood(2, 0.2F, BlockList.blackberry,
+	public static Item blackberry = new SeedFood(2, 0.2F, ZollernBlocks.blackberry,
 			Blocks.farmland, "blackberry");
-	public static Item grape = new SeedFood(2, 0.4F, BlockList.grape,
+	public static Item grape = new SeedFood(2, 0.4F, ZollernBlocks.grape,
 			Blocks.farmland, "grape");
-	public static Item strawberry = new SeedFood(2, 0.6F, BlockList.strawberry,
+	public static Item strawberry = new SeedFood(2, 0.6F, ZollernBlocks.strawberry,
 			Blocks.farmland, "strawberry");
-	public static Item radish = new SeedFood(3, 0.4F, BlockList.radish,
+	public static Item radish = new SeedFood(3, 0.4F, ZollernBlocks.radish,
 			Blocks.farmland, "radish");
-	public static Item garlic = new SeedFood(1, 0.2F, BlockList.garlic,
+	public static Item garlic = new SeedFood(1, 0.2F, ZollernBlocks.garlic,
 			Blocks.farmland, "garlic");
-	public static Item onion = new SeedFood(2, 0.6F, BlockList.onion,
+	public static Item onion = new SeedFood(2, 0.6F, ZollernBlocks.onion,
 			Blocks.farmland, "onion");
-	public static Item cornKernel = new Seed("cornkernel", BlockList.corn);
+	public static Item cornKernel = new Seed("cornkernel", ZollernBlocks.corn);
 	public static Item corn = new CropFood("corn", 4, 5);
 	public static Item popcorn = new CookedFood("popcorn", 2, 4);
 	public static Item popcornBowl = new PopcornBowl();
-	public static Item pea = new Seed("pea", BlockList.peas);
+	public static Item pea = new Seed("pea", ZollernBlocks.peas);
 	public static Item peaPod = new CropFood("peas", 2, 3);
 	public static Item tomato = new CropFood("tomato", 3, 3);
-	public static Item tomatoSeeds = new Seed("tomatoseeds", BlockList.tomatoes);
+	public static Item tomatoSeeds = new Seed("tomatoseeds", ZollernBlocks.tomatoes);
 	public static Item cucumber = new CropFood("cucumber", 4, 4);
 	public static Item cucumberSeeds = new Seed("cucumberseeds",
-			BlockList.cucumbers);
+			ZollernBlocks.cucumbers);
 	
 	public static Item obsidianDust = new ModItem("obsidiandust");
 	public static Item silverNugget = new ModItem("silvernugget");
@@ -293,11 +293,11 @@ public class ItemList {
 	public static Item radiance = new ModItem("radiance");
 	
 	public static Item chocolateBucket = new ZollernBucket("bucket_chocolate",
-			BlockList.blockChocolate);
+			ZollernBlocks.blockChocolate);
 	public static Item fuelBucket = new ZollernBucket("fuelbucket",
-			BlockList.blockFuel);
+			ZollernBlocks.blockFuel);
 	public static Item chargiumBucket = new ZollernBucket("chargiumbucket",
-			BlockList.blockChargium);
+			ZollernBlocks.blockChargium);
 	
 	public static void init() {
 		addItem(spcItem, "Super Charged Coal");
@@ -485,7 +485,7 @@ public class ItemList {
 		addItem(fuelBucket, "Fueltonium Bucket");
 		addItem(chargiumBucket, "Chargium Bucket");
 		
-		MainHelper.Log("Items loaded, " + totalItems + " entries.");
+		ZollernHelper.Log("Items loaded, " + totalItems + " entries.");
 	}
 	
 	public static void addItem(Item item, String name) {

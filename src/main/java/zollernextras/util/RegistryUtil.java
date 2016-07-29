@@ -12,7 +12,7 @@ import net.minecraftforge.fluids.FluidContainerRegistry;
 import net.minecraftforge.fluids.FluidContainerRegistry.FluidContainerData;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
-import zollernextras.blocks.BlockList;
+import zollernextras.blocks.ZollernBlocks;
 import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 
@@ -20,7 +20,7 @@ public class RegistryUtil {
 	
 	public static void addToTERegistry(String id,
 			Class<? extends TileEntity> TEClass) {
-		BlockList.TERegistry.put(id, TEClass);
+		ZollernBlocks.TERegistry.put(id, TEClass);
 		GameRegistry.registerTileEntity(TEClass, id);
 	}
 	

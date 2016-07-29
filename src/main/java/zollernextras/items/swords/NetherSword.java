@@ -12,7 +12,7 @@ import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
 import zollernextras.lib.KeyHelper;
-import zollernextras.lib.MainHelper;
+import zollernextras.lib.ZollernHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -20,8 +20,8 @@ public class NetherSword extends ItemSword {
 	
 	public NetherSword(ToolMaterial p_i45347_1_) {
 		super(p_i45347_1_);
-		MainHelper.setTab(this);
-		MainHelper.setNameAndTexture(this, "nethersword");
+		ZollernHelper.setTab(this);
+		ZollernHelper.setNameAndTexture(this, "nethersword");
 	}
 	
 	@Override

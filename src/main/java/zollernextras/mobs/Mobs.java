@@ -7,7 +7,7 @@ import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.world.biome.BiomeGenBase;
 import zollernextras.biomes.BiomeList;
 import zollernextras.config.ZEConfig;
-import zollernextras.lib.MainHelper;
+import zollernextras.lib.ZollernHelper;
 import zollernextras.lib.ZollernModInfo;
 import zollernextras.lib.modhelper.ModHelperBase;
 import zollernextras.mobs.entities.EntityBabyDragon;
@@ -36,7 +36,7 @@ public class Mobs {
 	
 	public static void init() {
 		
-		MainHelper.Log("Registering entities..");
+		ZollernHelper.Log("Registering entities..");
 		
 		// Fish
 		registerEntity(EntityFish.class, "fish", 0x0099ff, 0x00008b);
@@ -251,13 +251,13 @@ public class Mobs {
 		registerEntity(EntityShadowAlien.class, "shadowalien", 0xeeeeee,
 				0xffffff);
 		
-		MainHelper.Log("Entities have been registered!");
+		ZollernHelper.Log("Entities have been registered!");
 	}
 	
 	public static void registerEntity(Class<? extends EntityLiving> entity,
 			String entityName, int entityPrimaryColor, int entitySecondaryColor) {
 		int uniqueEntityId = EntityRegistry.findGlobalUniqueEntityId();
-		MainHelper.Log("Loading entity '" + entityName + "' with ID "
+		ZollernHelper.Log("Loading entity '" + entityName + "' with ID "
 				+ uniqueEntityId);
 		EntityRegistry.registerGlobalEntityID(entity, ZollernModInfo.MODID + "_"
 				+ entityName, uniqueEntityId);

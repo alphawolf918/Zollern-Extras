@@ -5,7 +5,7 @@ import net.minecraft.block.Block;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
-import zollernextras.blocks.BlockList;
+import zollernextras.blocks.ZollernBlocks;
 
 public class WorldGenSugarCubes extends WorldGenerator {
 	/** The block ID of the ore to be placed using this generator. */
@@ -19,7 +19,7 @@ public class WorldGenSugarCubes extends WorldGenerator {
 	private final Block blockToReplace;
 	
 	public WorldGenSugarCubes(Block par1, int par2) {
-		this(par1, par2, BlockList.candyCubeWhite);
+		this(par1, par2, ZollernBlocks.candyCubeWhite);
 	}
 	
 	public WorldGenSugarCubes(Block par1, int par2, Block par3) {

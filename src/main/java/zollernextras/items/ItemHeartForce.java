@@ -11,7 +11,7 @@ import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.world.World;
 import zollernextras.creativetabs.ModTabs;
 import zollernextras.entity.ExtendedPlayer;
-import zollernextras.lib.MainHelper;
+import zollernextras.lib.ZollernHelper;
 import zollernextras.lib.ZollernModInfo;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -50,12 +50,12 @@ public class ItemHeartForce extends Item {
 				props.setMaxHealth(maxHealth);
 				par1ItemStack.damageItem(2, par2EntityPlayer);
 				if (!player.worldObj.isRemote) {
-					MainHelper.addChatMessage(player, EnumChatFormatting.GOLD + "+"
+					ZollernHelper.addChatMessage(player, EnumChatFormatting.GOLD + "+"
 							+ this.healthIncreaseAmount
 							+ " Max Health! Total: " + props.getMaxHealth());
 				}
 			} else {
-				MainHelper.addChatMessage(player, "Max health cannot exceed "
+				ZollernHelper.addChatMessage(player, "Max health cannot exceed "
 						+ dblMaxHealthLimit + ".");
 			}
 		}

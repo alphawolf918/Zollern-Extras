@@ -5,8 +5,8 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.Item;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
-import zollernextras.blocks.BlockList;
-import zollernextras.lib.MainHelper;
+import zollernextras.blocks.ZollernBlocks;
+import zollernextras.lib.ZollernHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -21,8 +21,8 @@ public class BlockPizza extends BlockCake {
 	
 	public BlockPizza() {
 		super();
-		MainHelper.setTab(this);
-		MainHelper.setNameAndTexture(this, "pizza");
+		ZollernHelper.setTab(this);
+		ZollernHelper.setNameAndTexture(this, "pizza");
 	}
 	
 	@Override
@@ -51,7 +51,7 @@ public class BlockPizza extends BlockCake {
 	@SideOnly(Side.CLIENT)
 	public Item getItem(World p_149694_1_, int p_149694_2_, int p_149694_3_,
 			int p_149694_4_) {
-		return Item.getItemFromBlock(BlockList.blockPizza);
+		return Item.getItemFromBlock(ZollernBlocks.blockPizza);
 	}
 	
 }

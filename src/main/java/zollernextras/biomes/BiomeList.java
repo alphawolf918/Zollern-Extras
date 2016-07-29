@@ -6,7 +6,7 @@ import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.BiomeManager.BiomeEntry;
 import net.minecraftforge.common.BiomeManager.BiomeType;
 import zollernextras.config.ZEConfig;
-import zollernextras.lib.MainHelper;
+import zollernextras.lib.ZollernHelper;
 
 public class BiomeList {
 	
@@ -47,7 +47,7 @@ public class BiomeList {
 	public static BiomeGenBase upsideDown = new BiomeGenUpsideDown(96);
 	
 	public static void init() {
-		MainHelper.Log("Preparing to load biomes..");
+		ZollernHelper.Log("Preparing to load biomes..");
 		addBiome(icyDesert, BiomeType.ICY, 15);
 		addBiome(slimeLands, BiomeType.WARM, 15);
 		addBiome(redShroomPlains, BiomeType.WARM, 24);
@@ -64,7 +64,7 @@ public class BiomeList {
 		addBiome(crystalOcean, BiomeType.WARM, 6);
 		addBiome(tropicalForest, BiomeType.WARM, 8);
 		addNoSpawnBiome(upsideDown, BiomeType.COOL, 0);
-		MainHelper.Log("Biomes loaded!");
+		ZollernHelper.Log("Biomes loaded!");
 	}
 	
 	public static void addBiome(BiomeGenBase biome, BiomeType biomeType,
@@ -74,7 +74,7 @@ public class BiomeList {
 		BiomeManager.addVillageBiome(biome, true);
 		BiomeManager.addStrongholdBiome(biome);
 		biomeGenList.add(biome);
-		MainHelper.Log("Loaded biome '" + biome.biomeName + "' with ID: "
+		ZollernHelper.Log("Loaded biome '" + biome.biomeName + "' with ID: "
 				+ biome.biomeID);
 	}
 	
@@ -83,7 +83,7 @@ public class BiomeList {
 		BiomeManager.addBiome(biomeType, new BiomeEntry(biome, biomeWeight));
 		BiomeManager.addVillageBiome(biome, true);
 		BiomeManager.addStrongholdBiome(biome);
-		MainHelper.Log("Loaded no-spawn biome \"" + biome.biomeName
+		ZollernHelper.Log("Loaded no-spawn biome \"" + biome.biomeName
 				+ "\" with ID: " + biome.biomeID);
 	}
 }

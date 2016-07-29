@@ -7,7 +7,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemStack;
 import zollernextras.creativetabs.ModTabs;
-import zollernextras.items.ItemList;
+import zollernextras.items.ZollernItems;
 import zollernextras.lib.ZollernModInfo;
 
 public class AmaranthShovel extends ItemSpade {
@@ -21,7 +21,7 @@ public class AmaranthShovel extends ItemSpade {
 	
 	@Override
 	public void getSubItems(Item item, CreativeTabs creativeTab, List items) {
-		ItemStack amaranthShovel = new ItemStack(ItemList.amaranthShovel, 1);
+		ItemStack amaranthShovel = new ItemStack(ZollernItems.amaranthShovel, 1);
 		amaranthShovel.addEnchantment(Enchantment.silkTouch, 1);
 		items.add(amaranthShovel);
 	}

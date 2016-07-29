@@ -8,19 +8,19 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import zollernextras.api.ores.IOre;
-import zollernextras.items.ItemList;
-import zollernextras.lib.MainHelper;
+import zollernextras.items.ZollernItems;
+import zollernextras.lib.ZollernHelper;
 
 public class SuperChargedCoalOre extends Block implements IOre {
 	
-	public Item droppedItem = ItemList.spcItem;
+	public Item droppedItem = ZollernItems.spcItem;
 	
 	public SuperChargedCoalOre() {
 		super(Material.rock);
-		MainHelper.setTab(this);
-		MainHelper.setName(this, "superchargedcoalore");
-		MainHelper.setTexture(this, "spc_coal_ore");
-		MainHelper.setHardResist(this, 1.4F, 9.2F);
+		ZollernHelper.setTab(this);
+		ZollernHelper.setName(this, "superchargedcoalore");
+		ZollernHelper.setTexture(this, "spc_coal_ore");
+		ZollernHelper.setHardResist(this, 1.4F, 9.2F);
 		this.setHarvestLevel("pickaxe", 3);
 	}
 	

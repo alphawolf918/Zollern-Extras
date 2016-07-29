@@ -7,7 +7,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemStack;
 import zollernextras.creativetabs.ModTabs;
-import zollernextras.items.ItemList;
+import zollernextras.items.ZollernItems;
 import zollernextras.lib.ZollernModInfo;
 
 public class AmaranthAxe extends ItemAxe {
@@ -21,7 +21,7 @@ public class AmaranthAxe extends ItemAxe {
 	
 	@Override
 	public void getSubItems(Item item, CreativeTabs creativeTab, List items) {
-		ItemStack amaranthAxe = new ItemStack(ItemList.amaranthAxe, 1);
+		ItemStack amaranthAxe = new ItemStack(ZollernItems.amaranthAxe, 1);
 		amaranthAxe.addEnchantment(Enchantment.efficiency, 2);
 		items.add(amaranthAxe);
 	}

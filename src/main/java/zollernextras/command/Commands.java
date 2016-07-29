@@ -2,7 +2,7 @@ package zollernextras.command;
 
 import net.minecraft.command.CommandBase;
 import zollernextras.config.ZEConfig;
-import zollernextras.lib.MainHelper;
+import zollernextras.lib.ZollernHelper;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 
 public class Commands {
@@ -22,6 +22,6 @@ public class Commands {
 			CommandBase command) {
 		String commandName = command.getCommandName();
 		event.registerServerCommand(command);
-		MainHelper.Log("Command Registered: /" + commandName);
+		ZollernHelper.Log("Command Registered: /" + commandName);
 	}
 }

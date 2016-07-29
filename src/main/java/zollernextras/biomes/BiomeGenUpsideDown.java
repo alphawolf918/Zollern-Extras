@@ -1,7 +1,7 @@
 package zollernextras.biomes;
 
 import net.minecraft.world.biome.BiomeGenBase;
-import zollernextras.blocks.BlockList;
+import zollernextras.blocks.ZollernBlocks;
 
 public class BiomeGenUpsideDown extends BiomeGenBase {
 	
@@ -14,7 +14,7 @@ public class BiomeGenUpsideDown extends BiomeGenBase {
 		setBiomeName("Upside-Down");
 		temperature = 1F;
 		setHeight(BiomeGenBase.height_HighPlateaus);
-		topBlock = BlockList.upsideDownSurfaceRock;
-		fillerBlock = BlockList.upsideDownRock;
+		topBlock = ZollernBlocks.upsideDownSurfaceRock;
+		fillerBlock = ZollernBlocks.upsideDownRock;
 	}
 }

@@ -8,15 +8,15 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import zollernextras.api.ores.IOre;
-import zollernextras.lib.MainHelper;
+import zollernextras.lib.ZollernHelper;
 
 public class ZollerniumOre extends Block implements IOre {
 	
 	public ZollerniumOre() {
 		super(Material.rock);
-		MainHelper.setTab(this);
-		MainHelper.setNameAndTexture(this, "zollerniumore");
-		MainHelper.setHardResist(this, 1.4F, 10F);
+		ZollernHelper.setTab(this);
+		ZollernHelper.setNameAndTexture(this, "zollerniumore");
+		ZollernHelper.setHardResist(this, 1.4F, 10F);
 		this.setHarvestLevel("pickaxe", 6);
 	}
 	

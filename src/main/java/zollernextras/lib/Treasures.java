@@ -9,28 +9,28 @@ import net.minecraft.tileentity.TileEntityChest;
 import net.minecraft.util.WeightedRandomChestContent;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ChestGenHooks;
-import zollernextras.items.ItemList;
+import zollernextras.items.ZollernItems;
 
 public final class Treasures {
 	
 	public static ArrayList<String> chestTypes = new ArrayList<String>();
 	
 	private static WeightedRandomChestContent item1 = new WeightedRandomChestContent(
-			new ItemStack(ItemList.spcItem), 4, 5, 6);
+			new ItemStack(ZollernItems.spcItem), 4, 5, 6);
 	private static WeightedRandomChestContent item2 = new WeightedRandomChestContent(
-			new ItemStack(ItemList.fuelonite), 1, 1, 2);
+			new ItemStack(ZollernItems.fuelonite), 1, 1, 2);
 	private static WeightedRandomChestContent item3 = new WeightedRandomChestContent(
-			new ItemStack(ItemList.amaranthIngot), 2, 4, 4);
+			new ItemStack(ZollernItems.amaranthIngot), 2, 4, 4);
 	private static WeightedRandomChestContent item4 = new WeightedRandomChestContent(
-			new ItemStack(ItemList.heart), 5, 10, 4);
+			new ItemStack(ZollernItems.heart), 5, 10, 4);
 	private static WeightedRandomChestContent item5 = new WeightedRandomChestContent(
 			new ItemStack(Items.gold_ingot), 35, 62, 10);
 	
 	public static final WeightedRandomChestContent[] CTChestContents = new WeightedRandomChestContent[] {
 		new WeightedRandomChestContent(
-					new ItemStack(ItemList.shiniumIngot), 5, 10, 15),
+					new ItemStack(ZollernItems.shiniumIngot), 5, 10, 15),
 				new WeightedRandomChestContent(new ItemStack(
-						ItemList.shinestoneIngot), 15, 20, 25) };
+						ZollernItems.shinestoneIngot), 15, 20, 25) };
 	
 	public static void init() {
 		ZEChestGenHooks.init();

@@ -7,7 +7,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.common.EnumPlantType;
-import zollernextras.lib.MainHelper;
+import zollernextras.lib.ZollernHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -19,8 +19,8 @@ public class FlowerBlock extends BlockBush {
 	
 	public FlowerBlock(String strTexture) {
 		super(Material.plants);
-		MainHelper.setTab(this);
-		MainHelper.setNameAndTexture(this, strTexture);
+		ZollernHelper.setTab(this);
+		ZollernHelper.setNameAndTexture(this, strTexture);
 		flowerTexture = strTexture;
 		setHardness(0.1F);
 		setResistance(0.0F);
@@ -31,7 +31,7 @@ public class FlowerBlock extends BlockBush {
 	protected boolean canPlaceBlockOn(Block p_149854_1_) {
 		return p_149854_1_ == Blocks.grass || p_149854_1_ == Blocks.dirt
 				|| p_149854_1_ == Blocks.farmland
-				|| p_149854_1_ == BlockList.betterGrass;
+				|| p_149854_1_ == ZollernBlocks.betterGrass;
 	}
 	
 	@Override

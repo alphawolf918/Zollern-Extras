@@ -21,7 +21,7 @@ public class ItemRadiance extends Gem {
 		if (!par3Entity.isPotionActive(ZollernPotionList.radiance)) {
 			par3Entity.addPotionEffect(new PotionEffect(
 					ZollernPotionList.radiance.id, 6000, 0));
-			par3Entity.inventory.consumeInventoryItem(ItemList.radiance);
+			par3Entity.inventory.consumeInventoryItem(ZollernItems.radiance);
 			ZollernExtrasMod.proxy.sendChatMessage(par3Entity,
 					"You are irradiated with a brilliant light.");
 		}

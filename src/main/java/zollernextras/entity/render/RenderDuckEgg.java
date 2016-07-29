@@ -8,7 +8,7 @@ import net.minecraft.util.IIcon;
 import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL12;
-import zollernextras.items.ItemList;
+import zollernextras.items.ZollernItems;
 import zollernextras.lib.ZollernModInfo;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -16,11 +16,11 @@ import cpw.mods.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class RenderDuckEgg extends Render {
 	
-	private Item field_94151_a = ItemList.duckEgg;
+	private Item field_94151_a = ZollernItems.duckEgg;
 	private int field_94150_f;
 	
 	public RenderDuckEgg(Item p_i1259_1_, int p_i1259_2_) {
-		this.field_94151_a = ItemList.duckEgg;
+		this.field_94151_a = ZollernItems.duckEgg;
 		this.field_94150_f = p_i1259_2_;
 	}
 	
@@ -40,7 +40,7 @@ public class RenderDuckEgg extends Render {
 	public void doRender(Entity p_76986_1_, double p_76986_2_,
 			double p_76986_4_, double p_76986_6_, float p_76986_8_,
 			float p_76986_9_) {
-		IIcon iicon = ItemList.duckEgg.getIconFromDamage(0);
+		IIcon iicon = ZollernItems.duckEgg.getIconFromDamage(0);
 		
 		if (iicon != null) {
 			GL11.glPushMatrix();

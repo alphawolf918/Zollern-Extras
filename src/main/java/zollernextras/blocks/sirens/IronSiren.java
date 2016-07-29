@@ -2,8 +2,8 @@ package zollernextras.blocks.sirens;
 
 import java.util.Random;
 import net.minecraft.world.World;
-import zollernextras.blocks.BlockList;
-import zollernextras.lib.MainHelper;
+import zollernextras.blocks.ZollernBlocks;
+import zollernextras.lib.ZollernHelper;
 import zollernextras.lib.ZollernModInfo;
 import zollernextras.lib.enums.State;
 
@@ -15,7 +15,7 @@ public class IronSiren extends SirenBlockBase {
 		super(state);
 		this.state = state;
 		this.setSirenBlockSound(sirenInfo);
-		MainHelper.setNameAndTexture(this, sirenInfo);
+		ZollernHelper.setNameAndTexture(this, sirenInfo);
 		this.setTickRandomly(true);
 		this.setHarvestLevel("pickaxe", 1);
 	}
@@ -31,15 +31,15 @@ public class IronSiren extends SirenBlockBase {
 					&& !par1World.isBlockIndirectlyGettingPowered(par2, par3,
 							par4)) {
 				par1World.scheduleBlockUpdate(par2, par3, par4, this, 0);
-				par1World.setBlock(par2, par3, par4, BlockList.ironSiren);
+				par1World.setBlock(par2, par3, par4, ZollernBlocks.ironSiren);
 			}
 		} else if (this.state == State.OFF
 				&& par1World.isBlockIndirectlyGettingPowered(par2, par3, par4)) {
-			par1World.setBlock(par2, par3, par4, BlockList.ironSirenON);
+			par1World.setBlock(par2, par3, par4, ZollernBlocks.ironSirenON);
 		}
 		if (this.state == State.OFF
 				&& !par1World.isBlockIndirectlyGettingPowered(par2, par3, par4)) {
-			par1World.setBlock(par2, par3, par4, BlockList.ironSiren);
+			par1World.setBlock(par2, par3, par4, ZollernBlocks.ironSiren);
 		}
 	}
 	

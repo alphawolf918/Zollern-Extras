@@ -14,8 +14,8 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
-import zollernextras.items.ItemList;
-import zollernextras.lib.MainHelper;
+import zollernextras.items.ZollernItems;
+import zollernextras.lib.ZollernHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -31,8 +31,8 @@ public class CropRadish extends BlockCrops {
 		float f = 0.5F;
 		this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, 0.35F, 0.5F + f);
 		this.setCreativeTab((CreativeTabs) null);
-		MainHelper.setName(this, "radish");
-		MainHelper.setTexture(this, "radish");
+		ZollernHelper.setName(this, "radish");
+		ZollernHelper.setTexture(this, "radish");
 		this.setTickRandomly(true);
 		this.disableStats();
 	}
@@ -241,11 +241,11 @@ public class CropRadish extends BlockCrops {
 	
 	@Override
 	public Item func_149866_i() {
-		return ItemList.radish;
+		return ZollernItems.radish;
 	}
 	
 	@Override
 	public Item func_149865_P() {
-		return ItemList.radish;
+		return ZollernItems.radish;
 	}
 }

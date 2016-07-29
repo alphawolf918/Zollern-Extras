@@ -10,15 +10,15 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.EnumPlantType;
 import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.common.util.ForgeDirection;
-import zollernextras.lib.MainHelper;
+import zollernextras.lib.ZollernHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class BetterGrass extends Block {
 	public BetterGrass() {
 		super(Material.glass);
-		MainHelper.setTab(this);
-		MainHelper.setNameAndTexture(this, "bettergrass", "bettergrass2");
+		ZollernHelper.setTab(this);
+		ZollernHelper.setNameAndTexture(this, "bettergrass", "bettergrass2");
 		this.setHarvestLevel("shovel", 0);
 		this.setTickRandomly(true);
 		this.setHardness(0.4F);

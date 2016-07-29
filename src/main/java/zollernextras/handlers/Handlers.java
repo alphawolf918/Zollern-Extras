@@ -1,15 +1,15 @@
 package zollernextras.handlers;
 
 import zollernextras.events.EventHandler;
-import zollernextras.lib.MainHelper;
+import zollernextras.lib.ZollernHelper;
 import zollernextras.managers.WorldGenManager;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class Handlers {
 	public static void init() {
-		MainHelper.Log("Initializing handlers..");
+		ZollernHelper.Log("Initializing handlers..");
 		GameRegistry.registerWorldGenerator(new WorldGenManager(), 40);
 		EventHandler.init();
-		MainHelper.Log("Handlers initialized.");
+		ZollernHelper.Log("Handlers initialized.");
 	}
 }

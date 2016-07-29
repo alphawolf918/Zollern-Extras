@@ -7,7 +7,7 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
-import zollernextras.blocks.BlockList;
+import zollernextras.blocks.ZollernBlocks;
 import zollernextras.creativetabs.ModTabs;
 import zollernextras.lib.ZollernModInfo;
 import zollernextras.worldgen.WorldGenFruitTree;
@@ -77,8 +77,8 @@ public class GuavaSapling extends BlockBush implements IGrowable {
 		random.nextInt(8);
 		
 		if (obj == null) {
-			obj = new WorldGenFruitTree(BlockList.guavaLog,
-					BlockList.guavaLeaves);
+			obj = new WorldGenFruitTree(ZollernBlocks.guavaLog,
+					ZollernBlocks.guavaLeaves);
 		}
 		
 		if (obj != null) {

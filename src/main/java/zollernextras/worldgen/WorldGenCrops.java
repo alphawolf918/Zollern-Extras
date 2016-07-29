@@ -5,13 +5,13 @@ import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
-import zollernextras.blocks.BlockList;
+import zollernextras.blocks.ZollernBlocks;
 
 public class WorldGenCrops extends WorldGenerator {
 	
 	protected Block[] GetValidSpawnBlocks() {
 		return new Block[] { Blocks.dirt, Blocks.grass, Blocks.sand,
-				Blocks.gravel, BlockList.swampClay, BlockList.betterGrass };
+				Blocks.gravel, ZollernBlocks.swampClay, ZollernBlocks.betterGrass };
 	}
 	
 	public Block blockCrop;

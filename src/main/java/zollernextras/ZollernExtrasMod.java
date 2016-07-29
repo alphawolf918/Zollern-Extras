@@ -2,7 +2,7 @@ package zollernextras;
 
 import java.io.File;
 import zollernextras.biomes.BiomeList;
-import zollernextras.blocks.BlockList;
+import zollernextras.blocks.ZollernBlocks;
 import zollernextras.command.Commands;
 import zollernextras.config.ZEConfig;
 import zollernextras.creativetabs.ModTabs;
@@ -10,9 +10,9 @@ import zollernextras.dimension.DimensionLoader;
 import zollernextras.entity.EntityDuckEgg;
 import zollernextras.handlers.FuelHandlers;
 import zollernextras.handlers.Handlers;
-import zollernextras.items.ItemList;
+import zollernextras.items.ZollernItems;
 import zollernextras.items.StackChange;
-import zollernextras.lib.MainHelper;
+import zollernextras.lib.ZollernHelper;
 import zollernextras.lib.OreDict;
 import zollernextras.lib.Treasures;
 import zollernextras.lib.ZollernModInfo;
@@ -55,15 +55,15 @@ public class ZollernExtrasMod {
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
-		MainHelper.Log("Beginning to load Zollern Extras v"
+		ZollernHelper.Log("Beginning to load Zollern Extras v"
 				+ ZollernModInfo.VERSION + "...");
 		ModHelperBase.detectMods();
-		this.filePath = MainHelper.getFilePath(event);
+		this.filePath = ZollernHelper.getFilePath(event);
 		ModTabs.init();
 		ZEConfig.init(event);
-		ItemList.init();
+		ZollernItems.init();
 		StackChange.init();
-		BlockList.init();
+		ZollernBlocks.init();
 		if (ModHelperBase.useBigReactors) {
 			BRTurbineHelper.init();
 		}
@@ -96,12 +96,12 @@ public class ZollernExtrasMod {
 			proxy.initGUI();
 		}
 		GameRegistry.registerFuelHandler(new FuelHandlers());
-		MainHelper.Log("Loaded Zollern Extras successfully!");
+		ZollernHelper.Log("Loaded Zollern Extras successfully!");
 	}
 	
 	@EventHandler
 	public void serverLoad(FMLServerStartingEvent event) {
 		Commands.init(event);
-		MainHelper.Log("Commands loaded.");
+		ZollernHelper.Log("Commands loaded.");
 	}
 }

@@ -5,19 +5,19 @@ import net.minecraft.entity.passive.EntityHorse;
 import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.biome.BiomeGenBase;
-import zollernextras.blocks.BlockList;
+import zollernextras.blocks.ZollernBlocks;
 
 public class BiomeGenFloweryField extends BiomeGenBase {
 	
 	public ArrayList<FlowerEntry> flowerList = new ArrayList<FlowerEntry>();
-	public static FlowerEntry flowerCosmos = new FlowerEntry(BlockList.cosmos,
+	public static FlowerEntry flowerCosmos = new FlowerEntry(ZollernBlocks.cosmos,
 			0, 24);
-	public static FlowerEntry flowerAster = new FlowerEntry(BlockList.aster, 0,
+	public static FlowerEntry flowerAster = new FlowerEntry(ZollernBlocks.aster, 0,
 			36);
-	public static FlowerEntry flowerLilac = new FlowerEntry(BlockList.lilac, 0,
+	public static FlowerEntry flowerLilac = new FlowerEntry(ZollernBlocks.lilac, 0,
 			11);
 	public static FlowerEntry flowerCrocosmia = new FlowerEntry(
-			BlockList.crocosmia, 0, 11);
+			ZollernBlocks.crocosmia, 0, 11);
 	
 	public BiomeGenFloweryField(int par1) {
 		super(par1);
@@ -41,6 +41,6 @@ public class BiomeGenFloweryField extends BiomeGenBase {
 		this.theBiomeDecorator.clayPerChunk = -999;
 		this.theBiomeDecorator.generateLakes = true;
 		this.topBlock = Blocks.grass;
-		this.fillerBlock = BlockList.betterGrass;
+		this.fillerBlock = ZollernBlocks.betterGrass;
 	}
 }

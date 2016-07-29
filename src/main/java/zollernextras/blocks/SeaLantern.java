@@ -3,7 +3,7 @@ package zollernextras.blocks;
 import java.util.Random;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
-import zollernextras.items.ItemList;
+import zollernextras.items.ZollernItems;
 
 public class SeaLantern extends GenericBlock {
 	
@@ -20,7 +20,7 @@ public class SeaLantern extends GenericBlock {
 	@Override
 	public Item getItemDropped(int p_149650_1_, Random p_149650_2_,
 			int p_149650_3_) {
-		return ItemList.prismarineCrystal;
+		return ZollernItems.prismarineCrystal;
 	}
 	
 	@Override

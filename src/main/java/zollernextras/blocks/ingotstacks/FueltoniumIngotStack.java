@@ -13,8 +13,8 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import zollernextras.blocks.tiles.TEBlockBase;
 import zollernextras.blocks.tiles.TEFueltoniumBlockIngot;
-import zollernextras.items.ItemList;
-import zollernextras.lib.MainHelper;
+import zollernextras.items.ZollernItems;
+import zollernextras.lib.ZollernHelper;
 
 public class FueltoniumIngotStack extends BlockContainer {
 	
@@ -22,9 +22,9 @@ public class FueltoniumIngotStack extends BlockContainer {
 	
 	public FueltoniumIngotStack(String strTexture) {
 		super(Material.iron);
-		MainHelper.setTab(this);
-		MainHelper.setName(this, "ingotBlock_" + strTexture);
-		MainHelper.setTexture(this, "fueltoniumblock");
+		ZollernHelper.setTab(this);
+		ZollernHelper.setName(this, "ingotBlock_" + strTexture);
+		ZollernHelper.setTexture(this, "fueltoniumblock");
 		this.setBlockBounds(0.125F, 0.0F, 0.125F, 1.0F - 0.125F,
 				boundingBoxMaxY, 1.0F - 0.125F);
 		this.setHardness(1.0F);
@@ -62,7 +62,7 @@ public class FueltoniumIngotStack extends BlockContainer {
 	
 	@Override
 	public Item getItemDropped(int meta, Random rand, int p_149650_3_) {
-		return ItemList.ingotFueltonium;
+		return ZollernItems.ingotFueltonium;
 	}
 	
 	private int blockMetadata;

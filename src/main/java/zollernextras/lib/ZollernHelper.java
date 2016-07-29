@@ -1,6 +1,7 @@
 package zollernextras.lib;
 
 import java.io.File;
+import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -11,7 +12,16 @@ import zollernextras.creativetabs.ModTabs;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.relauncher.FMLRelaunchLog;
 
-public class MainHelper {
+public class ZollernHelper {
+	
+	public static boolean getRNGChance(int min, int max) {
+		if (min >= max) {
+			ZollernHelper
+					.Log("Error: min chance was set to higher than max in RNG.");
+			return false;
+		}
+		return new Random().nextInt(max) <= min;
+	}
 	
 	public static void setTab(Block block) {
 		block.setCreativeTab(ModTabs.zTab);
@@ -66,7 +76,7 @@ public class MainHelper {
 	}
 	
 	public static void setHardResist(Block block, float hardResist) {
-		MainHelper.setHardResist(block, hardResist, hardResist);
+		ZollernHelper.setHardResist(block, hardResist, hardResist);
 	}
 	
 	public static boolean getConfig(Configuration config,

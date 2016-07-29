@@ -3,12 +3,12 @@ package zollernextras.items.crops;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemSeeds;
-import zollernextras.lib.MainHelper;
+import zollernextras.lib.ZollernHelper;
 
 public class Seed extends ItemSeeds {
 	public Seed(String strTexture, Block cropBlock) {
 		super(cropBlock, Blocks.farmland);
-		MainHelper.setTab(this);
-		MainHelper.setNameAndTexture(this, strTexture);
+		ZollernHelper.setTab(this);
+		ZollernHelper.setNameAndTexture(this, strTexture);
 	}
 }

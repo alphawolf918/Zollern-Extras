@@ -10,9 +10,9 @@ import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.EnumPlantType;
-import zollernextras.blocks.BlockList;
-import zollernextras.items.ItemList;
-import zollernextras.lib.MainHelper;
+import zollernextras.blocks.ZollernBlocks;
+import zollernextras.items.ZollernItems;
+import zollernextras.lib.ZollernHelper;
 import zollernextras.lib.ZollernModInfo;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -20,7 +20,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class BlockEnderReeds extends BlockReed {
 	
 	public BlockEnderReeds() {
-		MainHelper.setNameAndTexture(this, "enderreeds");
+		ZollernHelper.setNameAndTexture(this, "enderreeds");
 		this.setLightLevel(0.4F);
 		float f = 0.375F;
 		this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, 1.0F, 0.5F + f);
@@ -31,7 +31,7 @@ public class BlockEnderReeds extends BlockReed {
 	@Override
 	public void updateTick(World p_149674_1_, int p_149674_2_, int p_149674_3_,
 			int p_149674_4_, Random p_149674_5_) {
-		if (p_149674_1_.getBlock(p_149674_2_, p_149674_3_ - 1, p_149674_4_) == BlockList.enderReeds
+		if (p_149674_1_.getBlock(p_149674_2_, p_149674_3_ - 1, p_149674_4_) == ZollernBlocks.enderReeds
 				|| this.func_150170_e(p_149674_1_, p_149674_2_, p_149674_3_,
 						p_149674_4_)) {
 			if (p_149674_1_.isAirBlock(p_149674_2_, p_149674_3_ + 1,
@@ -64,7 +64,7 @@ public class BlockEnderReeds extends BlockReed {
 	@Override
 	public Item getItemDropped(int p_149650_1_, Random p_149650_2_,
 			int p_149650_3_) {
-		return ItemList.enderReeds;
+		return ZollernItems.enderReeds;
 	}
 	
 	@Override
@@ -72,8 +72,8 @@ public class BlockEnderReeds extends BlockReed {
 			int p_149742_3_, int p_149742_4_) {
 		Block block = p_149742_1_.getBlock(p_149742_2_, p_149742_3_ - 1,
 				p_149742_4_);
-		if (block == Blocks.end_stone || block == BlockList.enderReeds
-				|| block == BlockList.enderDirt) {
+		if (block == Blocks.end_stone || block == ZollernBlocks.enderReeds
+				|| block == ZollernBlocks.enderDirt) {
 			return true;
 		} else {
 			return false;
@@ -84,7 +84,7 @@ public class BlockEnderReeds extends BlockReed {
 	@SideOnly(Side.CLIENT)
 	public Item getItem(World p_149694_1_, int p_149694_2_, int p_149694_3_,
 			int p_149694_4_) {
-		return ItemList.enderReeds;
+		return ZollernItems.enderReeds;
 	}
 	
 	@Override

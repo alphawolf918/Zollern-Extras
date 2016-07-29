@@ -9,7 +9,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
-import zollernextras.blocks.BlockList;
+import zollernextras.blocks.ZollernBlocks;
 import zollernextras.creativetabs.ModTabs;
 import zollernextras.lib.ZollernModInfo;
 import zollernextras.worldgen.WorldGenEnderBerryTree;
@@ -80,8 +80,8 @@ public class EnderBerrySapling extends BlockBush implements IGrowable {
 		random.nextInt(8);
 		
 		if (obj == null) {
-			obj = new WorldGenEnderBerryTree(BlockList.enderBerryLog,
-					BlockList.enderBerryLeaves);
+			obj = new WorldGenEnderBerryTree(ZollernBlocks.enderBerryLog,
+					ZollernBlocks.enderBerryLeaves);
 		}
 		
 		if (obj != null) {
@@ -128,6 +128,6 @@ public class EnderBerrySapling extends BlockBush implements IGrowable {
 	
 	@Override
 	protected boolean canPlaceBlockOn(Block block) {
-		return block == Blocks.end_stone || block == BlockList.enderDirt;
+		return block == Blocks.end_stone || block == ZollernBlocks.enderDirt;
 	}
 }

@@ -20,7 +20,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.stats.AchievementList;
 import net.minecraft.world.World;
-import zollernextras.items.ItemList;
+import zollernextras.items.ZollernItems;
 
 public class EntityHog extends EntityPig {
 	/** AI task for player control. */
@@ -113,7 +113,7 @@ public class EntityHog extends EntityPig {
 	 */
 	@Override
 	protected Item getDropItem() {
-		return this.isBurning() ? ItemList.rawBacon : ItemList.cookedBacon;
+		return this.isBurning() ? ZollernItems.rawBacon : ZollernItems.cookedBacon;
 	}
 	
 	/**
@@ -127,9 +127,9 @@ public class EntityHog extends EntityPig {
 		
 		for (int k = 0; k < j; ++k) {
 			if (this.isBurning()) {
-				this.dropItem(ItemList.cookedBacon, 1);
+				this.dropItem(ZollernItems.cookedBacon, 1);
 			} else {
-				this.dropItem(ItemList.rawBacon, 1);
+				this.dropItem(ZollernItems.rawBacon, 1);
 			}
 		}
 		

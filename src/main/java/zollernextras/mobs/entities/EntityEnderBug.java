@@ -18,7 +18,7 @@ import net.minecraft.util.Facing;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import org.apache.commons.lang3.tuple.ImmutablePair;
-import zollernextras.blocks.BlockList;
+import zollernextras.blocks.ZollernBlocks;
 
 public class EntityEnderBug extends EntityMob {
 	
@@ -174,7 +174,7 @@ public class EntityEnderBug extends EntityMob {
 							for (int j1 = 0; !flag && j1 <= 10 && j1 >= -10; j1 = j1 <= 0 ? 1 - j1
 									: 0 - j1) {
 								if (this.worldObj.getBlock(i + i1, j + l, k
-										+ j1) == BlockList.purpurBlock) {
+										+ j1) == ZollernBlocks.purpurBlock) {
 									if (!this.worldObj.getGameRules()
 											.getGameRuleBooleanValue(
 													"mobGriefing")) {
@@ -198,7 +198,7 @@ public class EntityEnderBug extends EntityMob {
 												+ l, k + j1, false);
 									}
 									
-									BlockList.purpurBlock
+									ZollernBlocks.purpurBlock
 											.onBlockDestroyedByPlayer(
 													this.worldObj, i + i1, j
 															+ l, k + j1, 0);
@@ -232,7 +232,7 @@ public class EntityEnderBug extends EntityMob {
 					this.worldObj.setBlock(i + Facing.offsetsXForSide[l1], j
 							+ Facing.offsetsYForSide[l1], k
 							+ Facing.offsetsZForSide[l1],
-							BlockList.purpurBlock,
+							ZollernBlocks.purpurBlock,
 							BlockSilverfish.func_150195_a(block, i1), 3);
 					this.spawnExplosionParticle();
 					this.setDead();
@@ -252,7 +252,7 @@ public class EntityEnderBug extends EntityMob {
 	@Override
 	public float getBlockPathWeight(int p_70783_1_, int p_70783_2_,
 			int p_70783_3_) {
-		return this.worldObj.getBlock(p_70783_1_, p_70783_2_ - 1, p_70783_3_) == BlockList.purpurBlock ? 10.0F
+		return this.worldObj.getBlock(p_70783_1_, p_70783_2_ - 1, p_70783_3_) == ZollernBlocks.purpurBlock ? 10.0F
 				: super.getBlockPathWeight(p_70783_1_, p_70783_2_, p_70783_3_);
 	}
 	

@@ -4,7 +4,7 @@ import java.util.Random;
 import net.minecraft.entity.monster.EntitySlime;
 import net.minecraft.item.Item;
 import net.minecraft.world.biome.BiomeGenBase;
-import zollernextras.blocks.BlockList;
+import zollernextras.blocks.ZollernBlocks;
 
 public class BiomeGenSlimeLands extends BiomeGenBase {
 	public BiomeGenSlimeLands(int id) {
@@ -24,8 +24,8 @@ public class BiomeGenSlimeLands extends BiomeGenBase {
 		this.spawnableMonsterList.clear();
 		this.spawnableMonsterList.add(new SpawnListEntry(EntitySlime.class, 10,
 				8, 10));
-		this.topBlock = BlockList.slimeBlock;
-		this.fillerBlock = BlockList.slimeBlock;
+		this.topBlock = ZollernBlocks.slimeBlock;
+		this.fillerBlock = ZollernBlocks.slimeBlock;
 	}
 	
 	public Item getItemDropped(int p_149650_1_, Random p_149650_2_,

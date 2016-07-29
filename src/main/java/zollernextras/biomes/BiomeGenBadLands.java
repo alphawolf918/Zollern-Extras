@@ -1,7 +1,7 @@
 package zollernextras.biomes;
 
 import net.minecraft.world.biome.BiomeGenBase;
-import zollernextras.blocks.BlockList;
+import zollernextras.blocks.ZollernBlocks;
 
 public class BiomeGenBadLands extends BiomeGenBase {
 	public BiomeGenBadLands(int par1) {
@@ -12,7 +12,7 @@ public class BiomeGenBadLands extends BiomeGenBase {
 		setBiomeName("Bad Lands");
 		temperature = 8F;
 		setHeight(BiomeGenBase.height_LowHills);
-		topBlock = BlockList.badStone;
-		fillerBlock = BlockList.badStone;
+		topBlock = ZollernBlocks.badStone;
+		fillerBlock = ZollernBlocks.badStone;
 	}
 }

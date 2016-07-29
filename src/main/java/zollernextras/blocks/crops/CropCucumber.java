@@ -14,8 +14,8 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
-import zollernextras.items.ItemList;
-import zollernextras.lib.MainHelper;
+import zollernextras.items.ZollernItems;
+import zollernextras.lib.ZollernHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -31,8 +31,8 @@ public class CropCucumber extends BlockCrops {
 		float f = 0.5F;
 		this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, 0.35F, 0.5F + f);
 		this.setCreativeTab((CreativeTabs) null);
-		MainHelper.setName(this, "cucumber");
-		MainHelper.setTexture(this, "cucumber");
+		ZollernHelper.setName(this, "cucumber");
+		ZollernHelper.setTexture(this, "cucumber");
 		this.setTickRandomly(true);
 		this.disableStats();
 	}
@@ -241,11 +241,11 @@ public class CropCucumber extends BlockCrops {
 	
 	@Override
 	public Item func_149866_i() {
-		return ItemList.cucumberSeeds;
+		return ZollernItems.cucumberSeeds;
 	}
 	
 	@Override
 	public Item func_149865_P() {
-		return ItemList.cucumber;
+		return ZollernItems.cucumber;
 	}
 }

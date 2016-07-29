@@ -6,7 +6,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
-import zollernextras.blocks.BlockList;
+import zollernextras.blocks.ZollernBlocks;
 
 public class WorldGenMagmaRock extends WorldGenerator {
 	
@@ -19,7 +19,7 @@ public class WorldGenMagmaRock extends WorldGenerator {
 			return false;
 		} else {
 			p_76484_1_.setBlock(p_76484_3_, p_76484_4_, p_76484_5_,
-					BlockList.magmaBlock, 0, 2);
+					ZollernBlocks.magmaBlock, 0, 2);
 			
 			for (int l = 0; l < 1500; ++l) {
 				int i1 = p_76484_3_ + p_76484_2_.nextInt(8)
@@ -58,13 +58,13 @@ public class WorldGenMagmaRock extends WorldGenerator {
 							block = p_76484_1_.getBlock(i1, j1, k1 + 1);
 						}
 						
-						if (block == BlockList.magmaBlock) {
+						if (block == ZollernBlocks.magmaBlock) {
 							++l1;
 						}
 					}
 					
 					if (l1 == 1) {
-						p_76484_1_.setBlock(i1, j1, k1, BlockList.magmaBlock,
+						p_76484_1_.setBlock(i1, j1, k1, ZollernBlocks.magmaBlock,
 								0, 2);
 					}
 				}

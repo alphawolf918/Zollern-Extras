@@ -24,7 +24,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
-import zollernextras.items.ItemList;
+import zollernextras.items.ZollernItems;
 import zollernextras.lib.ZollernModInfo;
 
 public class EntityMummy extends EntityZombie {
@@ -109,7 +109,7 @@ public class EntityMummy extends EntityZombie {
 			
 			if (i == 0) {
 				this.setCurrentItemOrArmor(0, new ItemStack(
-						ItemList.amaranthSword));
+						ZollernItems.amaranthSword));
 			} else {
 				this.setCurrentItemOrArmor(0,
 						new ItemStack(Items.diamond_sword));

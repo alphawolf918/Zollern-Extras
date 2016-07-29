@@ -56,15 +56,15 @@ import zollernextras.ZollernExtrasMod;
 import zollernextras.api.ores.IOre;
 import zollernextras.biomes.BiomeList;
 import zollernextras.blocks.BabyDragonEgg;
-import zollernextras.blocks.BlockList;
+import zollernextras.blocks.ZollernBlocks;
 import zollernextras.config.ZEConfig;
 import zollernextras.entity.ExtendedPlayer;
-import zollernextras.items.ItemList;
+import zollernextras.items.ZollernItems;
 import zollernextras.items.armor.amaranth.AmaranthArmor;
 import zollernextras.items.armor.azurite.AzuriteArmor;
 import zollernextras.items.armor.zollernium.ZollerniumArmor;
 import zollernextras.lib.DSource;
-import zollernextras.lib.MainHelper;
+import zollernextras.lib.ZollernHelper;
 import zollernextras.mobs.entities.EntityBabyDragon;
 import zollernextras.mobs.entities.EntityEnderBug;
 import zollernextras.mobs.entities.EntityShadowSkeleton;
@@ -121,7 +121,7 @@ public class Events {
 				// the Player, protecting them from Shadow damage. However, it
 				// will only automatically use itself in the Upside-Down.
 				// Anywhere else, it must be used manually with a right-click.
-				Item lightItem = ItemList.radiance;
+				Item lightItem = ZollernItems.radiance;
 				InventoryPlayer playerInventory = player.inventory;
 				if (playerInventory.hasItem(lightItem)
 						&& !player.capabilities.isCreativeMode
@@ -184,9 +184,9 @@ public class Events {
 			EntityPlayer player = event.entityPlayer;
 			World world = event.entityPlayer.worldObj;
 			InventoryPlayer playerInventory = player.inventory;
-			if (playerInventory.hasItem(ItemList.quiver)) {
+			if (playerInventory.hasItem(ZollernItems.quiver)) {
 				// int quiverInventorySlot = playerInventory
-				// .func_146029_c(ItemList.quiver);
+				// .func_146029_c(ZollernItems.quiver);
 			}
 		}
 	}
@@ -261,10 +261,10 @@ public class Events {
 					Item seedToDrop;
 					switch (randInt) {
 					default:
-						seedToDrop = ItemList.tomatoSeeds;
+						seedToDrop = ZollernItems.tomatoSeeds;
 						break;
 					case 1:
-						seedToDrop = ItemList.cucumberSeeds;
+						seedToDrop = ZollernItems.cucumberSeeds;
 						break;
 					}
 					EntityItem seedItem = new EntityItem(world, event.x,
@@ -291,20 +291,20 @@ public class Events {
 	
 	private ItemStack attemptFill(World world, MovingObjectPosition p) {
 		Block id = world.getBlock(p.blockX, p.blockY, p.blockZ);
-		if (id == BlockList.blockChocolate) {
+		if (id == ZollernBlocks.blockChocolate) {
 			if (world.getBlockMetadata(p.blockX, p.blockY, p.blockZ) == 0) {
 				world.setBlock(p.blockX, p.blockY, p.blockZ, Blocks.air);
-				return new ItemStack(ItemList.chocolateBucket);
+				return new ItemStack(ZollernItems.chocolateBucket);
 			}
-		} else if (id == BlockList.blockFuel) {
+		} else if (id == ZollernBlocks.blockFuel) {
 			if (world.getBlockMetadata(p.blockX, p.blockY, p.blockZ) == 0) {
 				world.setBlock(p.blockX, p.blockY, p.blockZ, Blocks.air);
-				return new ItemStack(ItemList.fuelBucket);
+				return new ItemStack(ZollernItems.fuelBucket);
 			}
-		} else if (id == BlockList.blockChargium) {
+		} else if (id == ZollernBlocks.blockChargium) {
 			if (world.getBlockMetadata(p.blockX, p.blockY, p.blockZ) == 0) {
 				world.setBlock(p.blockX, p.blockY, p.blockZ, Blocks.air);
-				return new ItemStack(ItemList.chargiumBucket);
+				return new ItemStack(ZollernItems.chargiumBucket);
 			}
 		}
 		return null;
@@ -376,7 +376,7 @@ public class Events {
 							props.setMaxFallResistance(resist + incrAmnt);
 							String fullResist = "" + resist + incrAmnt;
 							String strIncrAmnt = "" + incrAmnt;
-							MainHelper.addChatMessage(
+							ZollernHelper.addChatMessage(
 									player,
 									EnumChatFormatting.GOLD + "+"
 											+ strIncrAmnt.substring(0, 3)
@@ -388,7 +388,7 @@ public class Events {
 											+ incrAmnt);
 									fullResist = props.getMaxJump() + incrAmnt
 											+ "";
-									MainHelper.addChatMessage(
+									ZollernHelper.addChatMessage(
 											player,
 											EnumChatFormatting.GOLD
 											+ "+"
@@ -435,7 +435,7 @@ public class Events {
 								props.setMaxFortune(fortune + blockFortune);
 								String strFortuneLevel = ""
 										+ props.getMaxFortune();
-								MainHelper.addChatMessage(
+								ZollernHelper.addChatMessage(
 										player,
 										EnumChatFormatting.GOLD
 										+ "+"
@@ -475,7 +475,7 @@ public class Events {
 			if (new Random().nextInt(100) <= 50) {
 				EntityItem item = new EntityItem(worldObj, theEntity.posX,
 						theEntity.posY, theEntity.posZ, new ItemStack(
-								ItemList.flour, 1));
+								ZollernItems.flour, 1));
 				worldObj.spawnEntityInWorld(item);
 			}
 		} else if (theEntity instanceof EntityBlaze) {
@@ -496,7 +496,7 @@ public class Events {
 		} else if (theEntity instanceof EntitySilverfish) {
 			EntityItem item = new EntityItem(worldObj, theEntity.posX,
 					theEntity.posY, theEntity.posZ, new ItemStack(
-							ItemList.silverNugget, 1));
+							ZollernItems.silverNugget, 1));
 			worldObj.spawnEntityInWorld(item);
 		} else if (theEntity instanceof EntityGhast) {
 			EntityItem item = new EntityItem(worldObj, theEntity.posX,
@@ -504,8 +504,8 @@ public class Events {
 							Items.ghast_tear, 1));
 			worldObj.spawnEntityInWorld(item);
 		} else if (theEntity instanceof EntitySheep) {
-			Item theItem = theEntity.isBurning() ? ItemList.cookedLamb
-					: ItemList.rawLamb;
+			Item theItem = theEntity.isBurning() ? ZollernItems.cookedLamb
+					: ZollernItems.rawLamb;
 			Random rand = new Random();
 			int numDropped = rand.nextInt(2);
 			numDropped = numDropped == 0 ? 1 : numDropped;
@@ -517,7 +517,7 @@ public class Events {
 			Random rand = new Random();
 			int randInt = rand.nextInt(100);
 			if (randInt <= 40) {
-				ItemStack itemStack = new ItemStack(ItemList.shadowEssence, 1);
+				ItemStack itemStack = new ItemStack(ZollernItems.shadowEssence, 1);
 				EntityItem itemEntity = new EntityItem(worldObj,
 						theEntity.posX, theEntity.posY, theEntity.posZ,
 						itemStack);
@@ -549,7 +549,7 @@ public class Events {
 		Block i1 = par3World.getBlock(par4, par5, par6);
 		boolean air = par3World.isAirBlock(par4, par5 + 1, par6);
 		
-		if (par7 != 0 && air && i1 == BlockList.betterGrass) {
+		if (par7 != 0 && air && i1 == ZollernBlocks.betterGrass) {
 			Block block = Block.getBlockById(60);
 			par3World.playSoundEffect(par4 + 0.5F, par5 + 0.5F, par6 + 0.5F,
 					block.stepSound.getBreakSound(),
@@ -572,7 +572,7 @@ public class Events {
 			Chunk chunk = event.world.getChunkFromChunkCoords(event.chunkX,
 					event.chunkZ);
 			Block fromBlock = Blocks.stone;
-			Block toBlock = BlockList.candyCubeBrown;
+			Block toBlock = ZollernBlocks.candyCubeBrown;
 			for (ExtendedBlockStorage storage : chunk.getBlockStorageArray()) {
 				if (storage != null) {
 					for (int x = 0; x < 16; ++x) {
@@ -582,48 +582,48 @@ public class Events {
 									Block theBlock = toBlock;
 									int rand = new Random().nextInt(34);
 									if (rand == 0) {
-										theBlock = BlockList.candyCubeWhite;
+										theBlock = ZollernBlocks.candyCubeWhite;
 									} else if (rand == 1) {
-										theBlock = BlockList.candyCubeBlue;
+										theBlock = ZollernBlocks.candyCubeBlue;
 									} else if (rand == 2) {
-										theBlock = BlockList.candyCubeRed;
+										theBlock = ZollernBlocks.candyCubeRed;
 									} else if (rand == 3) {
-										theBlock = BlockList.candyCubeCyan;
+										theBlock = ZollernBlocks.candyCubeCyan;
 									} else if (rand == 4) {
-										theBlock = BlockList.candyCubeOrange;
+										theBlock = ZollernBlocks.candyCubeOrange;
 									} else if (rand == 5) {
-										theBlock = BlockList.candyCubePurple;
+										theBlock = ZollernBlocks.candyCubePurple;
 									} else if (rand == 6) {
-										theBlock = BlockList.candyCubeGreen;
+										theBlock = ZollernBlocks.candyCubeGreen;
 									} else if (rand == 7) {
-										theBlock = BlockList.candyCubeBrown;
+										theBlock = ZollernBlocks.candyCubeBrown;
 									} else if (rand == 8) {
-										theBlock = BlockList.candyCubeYellow;
+										theBlock = ZollernBlocks.candyCubeYellow;
 									} else if (rand == 9) {
-										theBlock = BlockList.candyCubePurple;
+										theBlock = ZollernBlocks.candyCubePurple;
 									} else if (rand == 10) {
-										theBlock = BlockList.sugarCube;
+										theBlock = ZollernBlocks.sugarCube;
 									} else if (rand == 11) {
-										theBlock = BlockList.chocolateBlock;
+										theBlock = ZollernBlocks.chocolateBlock;
 									} else if (rand == 12) {
-										theBlock = BlockList.brownieBlock;
+										theBlock = ZollernBlocks.brownieBlock;
 									} else if (rand == 13) {
-										theBlock = BlockList.iceCreamSandwichBlock;
+										theBlock = ZollernBlocks.iceCreamSandwichBlock;
 									} else if (rand == 14) {
-										theBlock = BlockList.cookieBlock;
+										theBlock = ZollernBlocks.cookieBlock;
 									} else {
 										theBlock = toBlock;
 									}
 									storage.func_150818_a(x, y, z, theBlock);
 								} else if (storage.getBlockByExtId(x, y, z) == Blocks.dirt) {
 									storage.func_150818_a(x, y, z,
-											BlockList.candyCubeOrange);
+											ZollernBlocks.candyCubeOrange);
 								} else if (storage.getBlockByExtId(x, y, z) == Blocks.gravel) {
 									storage.func_150818_a(x, y, z,
-											BlockList.candyCubeGray);
+											ZollernBlocks.candyCubeGray);
 								} else if (storage.getBlockByExtId(x, y, z) == Blocks.clay) {
 									storage.func_150818_a(x, y, z,
-											BlockList.candyCubeBlack);
+											ZollernBlocks.candyCubeBlack);
 								}
 							}
 						}
@@ -635,7 +635,7 @@ public class Events {
 			Chunk chunk = event.world.getChunkFromChunkCoords(event.chunkX,
 					event.chunkZ);
 			Block fromBlock = Blocks.stone;
-			Block toBlock = BlockList.prismarine;
+			Block toBlock = ZollernBlocks.prismarine;
 			for (ExtendedBlockStorage storage : chunk.getBlockStorageArray()) {
 				if (storage != null) {
 					for (int x = 0; x < 16; ++x) {
@@ -665,7 +665,7 @@ public class Events {
 								} else if (storage.getBlockByExtId(x, y, z) == Blocks.planks
 										|| storage.getBlockByExtId(x, y, z) == Blocks.fence) {
 									storage.func_150818_a(x, y, z,
-											BlockList.upsideDownStone);
+											ZollernBlocks.upsideDownStone);
 								}
 							}
 						}

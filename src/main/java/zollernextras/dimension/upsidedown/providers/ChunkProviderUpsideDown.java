@@ -19,6 +19,7 @@ import net.minecraft.world.biome.BiomeGenBase.SpawnListEntry;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.ChunkProviderGenerate;
+import net.minecraft.world.gen.MapGenBase;
 import net.minecraft.world.gen.structure.MapGenMineshaft;
 import net.minecraft.world.gen.structure.MapGenScatteredFeature;
 import net.minecraft.world.gen.structure.MapGenVillage;
@@ -26,7 +27,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.terraingen.PopulateChunkEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
 import zollernextras.biomes.BiomeList;
-import zollernextras.blocks.BlockList;
+import zollernextras.blocks.ZollernBlocks;
 import zollernextras.dimension.upsidedown.MapGenCavesUpsideDown;
 import zollernextras.dimension.upsidedown.MapGenUpsideDownRavine;
 import zollernextras.dimension.upsidedown.WorldGenUpsideDownDungeons;
@@ -39,11 +40,11 @@ import zollernextras.mobs.entities.EntityShadowSkeleton;
 
 public class ChunkProviderUpsideDown extends ChunkProviderGenerate {
 	
-	final Block topBlockID = BlockList.upsideDownSurfaceRock;
+	final Block topBlockID = ZollernBlocks.upsideDownSurfaceRock;
 	final byte topBlockMeta = 5;
-	final Block fillBlockID = BlockList.upsideDownRock;
+	final Block fillBlockID = ZollernBlocks.upsideDownRock;
 	final byte fillBlockMeta = 3;
-	final Block lowerBlockID = BlockList.upsideDownStone;
+	final Block lowerBlockID = ZollernBlocks.upsideDownStone;
 	final byte lowerBlockMeta = 4;
 	
 	private final Random rand;
@@ -57,7 +58,7 @@ public class ChunkProviderUpsideDown extends ChunkProviderGenerate {
 	
 	private BiomeGenBase[] biomesForGeneration = { BiomeList.upsideDown };
 	
-	private MapGenCavesUpsideDown caveGenerator = new MapGenCavesUpsideDown();
+	private MapGenBase caveGenerator = new MapGenCavesUpsideDown();
 	
 	/** Holds Village Generator */
 	private MapGenVillage villageGenerator = new MapGenVillage();
@@ -201,7 +202,7 @@ public class ChunkProviderUpsideDown extends ChunkProviderGenerate {
 				this.biomesForGeneration);
 		this.caveGenerator.func_151539_a(this, this.worldObj, par1, par2, ids);
 		this.ravineGenerator
-		.func_151539_a(this, this.worldObj, par1, par2, ids);
+				.func_151539_a(this, this.worldObj, par1, par2, ids);
 		final Chunk var4 = new Chunk(this.worldObj, ids, meta, par1, par2);
 		var4.generateSkylightMap();
 		return var4;
@@ -261,8 +262,8 @@ public class ChunkProviderUpsideDown extends ChunkProviderGenerate {
 		this.dungeonGenerator.generate(worldObj, rand, var5, k, l);
 		flag = this.villageGenerator.generateStructuresInChunk(this.worldObj,
 				this.rand, par2, par3);
-		this.caveGenerator.func_151539_a(par1IChunkProvider, worldObj, par2,
-				par3, (Block[]) null);
+		// this.caveGenerator.func_151539_a(par1IChunkProvider, worldObj, par2,
+		// par3, (Block[]) null);
 		this.scatteredFeatureGenerator.generateStructuresInChunk(this.worldObj,
 				this.rand, par2, par3);
 		
@@ -355,6 +356,7 @@ public class ChunkProviderUpsideDown extends ChunkProviderGenerate {
 			monsters.add(new SpawnListEntry(EntityScorpion.class, 2, 2, 3));
 			return monsters;
 		} else {
+			// TODO
 			return null;
 		}
 	}
@@ -365,6 +367,7 @@ public class ChunkProviderUpsideDown extends ChunkProviderGenerate {
 		this.mineshaftGenerator.func_151539_a(this, this.worldObj, x, z,
 				(Block[]) null);
 		this.dungeonGenerator.generate(worldObj, rand, x, y, z);
-		this.caveGenerator.func_151539_a(null, worldObj, x, z, (Block[]) null);
+		// this.caveGenerator.func_151539_a(this, worldObj, x, z, (Block[])
+		// null);
 	}
 }

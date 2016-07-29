@@ -6,9 +6,9 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
-import zollernextras.blocks.BlockList;
+import zollernextras.blocks.ZollernBlocks;
 import zollernextras.config.ZEConfig;
-import zollernextras.items.ItemList;
+import zollernextras.items.ZollernItems;
 
 public class OreDict {
 	
@@ -16,221 +16,221 @@ public class OreDict {
 	
 	public static void init() {
 		
-		MainHelper.Log("Loading OreDictionary..");
+		ZollernHelper.Log("Loading OreDictionary..");
 		
 		/** <Trees> **/
 		
 		// Logs
-		registerOre("logWood", BlockList.bananaLog, BlockList.orangeLog,
-				BlockList.guavaLog, BlockList.lemonLog, BlockList.limeLog,
-				BlockList.limonLog, BlockList.cherryLog,
-				BlockList.grapefruitLog, BlockList.enderBerryLog);
+		registerOre("logWood", ZollernBlocks.bananaLog, ZollernBlocks.orangeLog,
+				ZollernBlocks.guavaLog, ZollernBlocks.lemonLog, ZollernBlocks.limeLog,
+				ZollernBlocks.limonLog, ZollernBlocks.cherryLog,
+				ZollernBlocks.grapefruitLog, ZollernBlocks.enderBerryLog);
 		
 		// Leaves
-		registerOre("treeLeaves", BlockList.bananaLeaves,
-				BlockList.orangeLeaves, BlockList.guavaLeaves,
-				BlockList.lemonLeaves, BlockList.limeLeaves,
-				BlockList.limonLeaves, BlockList.cherryLeaves,
-				BlockList.grapefruitLeaves, BlockList.enderBerryLeaves);
+		registerOre("treeLeaves", ZollernBlocks.bananaLeaves,
+				ZollernBlocks.orangeLeaves, ZollernBlocks.guavaLeaves,
+				ZollernBlocks.lemonLeaves, ZollernBlocks.limeLeaves,
+				ZollernBlocks.limonLeaves, ZollernBlocks.cherryLeaves,
+				ZollernBlocks.grapefruitLeaves, ZollernBlocks.enderBerryLeaves);
 		
 		// Saplings
-		registerOre("treeSapling", BlockList.bananaSapling,
-				BlockList.orangeSapling, BlockList.guavaSapling,
-				BlockList.lemonSapling, BlockList.limeSapling,
-				BlockList.limonSapling, BlockList.cherrySapling,
-				BlockList.grapefruitSapling, BlockList.enderBerrySapling);
+		registerOre("treeSapling", ZollernBlocks.bananaSapling,
+				ZollernBlocks.orangeSapling, ZollernBlocks.guavaSapling,
+				ZollernBlocks.lemonSapling, ZollernBlocks.limeSapling,
+				ZollernBlocks.limonSapling, ZollernBlocks.cherrySapling,
+				ZollernBlocks.grapefruitSapling, ZollernBlocks.enderBerrySapling);
 		
 		// Planks
-		registerOre("plankWood", BlockList.bananaPlanks,
-				BlockList.orangePlanks, BlockList.guavaPlanks,
-				BlockList.lemonPlanks, BlockList.limePlanks,
-				BlockList.limonPlanks, BlockList.cherryPlanks,
-				BlockList.grapefruitPlanks, BlockList.enderBerryPlanks);
+		registerOre("plankWood", ZollernBlocks.bananaPlanks,
+				ZollernBlocks.orangePlanks, ZollernBlocks.guavaPlanks,
+				ZollernBlocks.lemonPlanks, ZollernBlocks.limePlanks,
+				ZollernBlocks.limonPlanks, ZollernBlocks.cherryPlanks,
+				ZollernBlocks.grapefruitPlanks, ZollernBlocks.enderBerryPlanks);
 		
 		/** </Trees> **/
 		
 		// Ender Glow
-		registerOre("blockEnderGlowstone", BlockList.enderGlowstone);
-		registerOre("dustEnderGlowstone", BlockList.enderGlowstone);
+		registerOre("blockEnderGlowstone", ZollernBlocks.enderGlowstone);
+		registerOre("dustEnderGlowstone", ZollernBlocks.enderGlowstone);
 		
 		// Better Glass
 		if (ZEConfig.betterGlassIsGlass) {
-			registerOre("glass", BlockList.betterGlass);
-			registerOre("blockGlass", BlockList.betterGlass);
-			registerOre("blockGlassColorless", BlockList.betterGlass);
+			registerOre("glass", ZollernBlocks.betterGlass);
+			registerOre("blockGlass", ZollernBlocks.betterGlass);
+			registerOre("blockGlassColorless", ZollernBlocks.betterGlass);
 		}
 		
 		// Fueltonium
 		if (ZEConfig.fueltoniumIsYellorite) {
-			registerOre("ingotUranium", ItemList.ingotFueltonium);
-			registerOre("dustUranium", ItemList.fuelonite);
+			registerOre("ingotUranium", ZollernItems.ingotFueltonium);
+			registerOre("dustUranium", ZollernItems.fuelonite);
 		}
-		registerOre("ingotFueltonium", ItemList.ingotFueltonium);
-		registerOre("oreFueltonium", BlockList.fueltonium);
-		registerOre("oreNetherFueltonium", BlockList.fuelNetherOre);
-		registerOre("oreEnderFueltonium", BlockList.enderFnOre);
-		registerOre("dustFueltonium", ItemList.fuelonite);
-		registerOre("blockFueltonium", BlockList.fueltoniumBlock);
+		registerOre("ingotFueltonium", ZollernItems.ingotFueltonium);
+		registerOre("oreFueltonium", ZollernBlocks.fueltonium);
+		registerOre("oreNetherFueltonium", ZollernBlocks.fuelNetherOre);
+		registerOre("oreEnderFueltonium", ZollernBlocks.enderFnOre);
+		registerOre("dustFueltonium", ZollernItems.fuelonite);
+		registerOre("blockFueltonium", ZollernBlocks.fueltoniumBlock);
 		
 		// Shinium
 		if (ZEConfig.shiniumIsPlatinum) {
-			registerOre("ingotPlatinum", ItemList.shiniumIngot);
-			registerOre("dustPlatinum", ItemList.shiniumDust);
-			registerOre("blockPlatinum", BlockList.shiniumBlock);
+			registerOre("ingotPlatinum", ZollernItems.shiniumIngot);
+			registerOre("dustPlatinum", ZollernItems.shiniumDust);
+			registerOre("blockPlatinum", ZollernBlocks.shiniumBlock);
 		}
-		registerOre("ingotShinium", ItemList.shiniumIngot);
-		registerOre("dustShinium", ItemList.shiniumDust);
-		registerOre("blockShinium", BlockList.shiniumBlock);
+		registerOre("ingotShinium", ZollernItems.shiniumIngot);
+		registerOre("dustShinium", ZollernItems.shiniumDust);
+		registerOre("blockShinium", ZollernBlocks.shiniumBlock);
 		
 		// Zinc
-		registerOre("ingotZinc", ItemList.zincIngot);
-		registerOre("dustZinc", ItemList.zincDust);
-		registerOre("oreZinc", BlockList.zincOre);
-		registerOre("oreNetherZinc", BlockList.zincNetherOre);
-		registerOre("oreEnderZinc", BlockList.enderZincOre);
-		registerOre("blockZinc", BlockList.zincBlock);
+		registerOre("ingotZinc", ZollernItems.zincIngot);
+		registerOre("dustZinc", ZollernItems.zincDust);
+		registerOre("oreZinc", ZollernBlocks.zincOre);
+		registerOre("oreNetherZinc", ZollernBlocks.zincNetherOre);
+		registerOre("oreEnderZinc", ZollernBlocks.enderZincOre);
+		registerOre("blockZinc", ZollernBlocks.zincBlock);
 		
 		// Silver
-		registerOre("ingotSilver", ItemList.silverIngot);
-		registerOre("nuggetSilver", ItemList.silverNugget);
+		registerOre("ingotSilver", ZollernItems.silverIngot);
+		registerOre("nuggetSilver", ZollernItems.silverNugget);
 		
 		// Amaranth
-		registerOre("ingotAmaranth", ItemList.amaranthIngot);
-		registerOre("dustAmaranth", ItemList.amaranthDust);
-		registerOre("oreAmaranth", BlockList.amaranthOre);
-		registerOre("oreNetherAmaranth", BlockList.amaranthNetherOre);
-		registerOre("oreEnderAmaranth", BlockList.enderAmaranthOre);
-		registerOre("blockAmaranth", BlockList.amaranthBlock);
+		registerOre("ingotAmaranth", ZollernItems.amaranthIngot);
+		registerOre("dustAmaranth", ZollernItems.amaranthDust);
+		registerOre("oreAmaranth", ZollernBlocks.amaranthOre);
+		registerOre("oreNetherAmaranth", ZollernBlocks.amaranthNetherOre);
+		registerOre("oreEnderAmaranth", ZollernBlocks.enderAmaranthOre);
+		registerOre("blockAmaranth", ZollernBlocks.amaranthBlock);
 		
 		// Super Charged Coal
-		registerOre("dustSuperChargedCoal", ItemList.spcItem);
-		registerOre("oreSuperChargedCoal", BlockList.spcOre);
-		registerOre("oreNetherSuperChargedCoal", BlockList.spcNetherOre);
-		registerOre("oreEnderSuperChargedCoal", BlockList.enderSpcOre);
-		registerOre("blockSuperChargedCoal", BlockList.spcBlock);
+		registerOre("dustSuperChargedCoal", ZollernItems.spcItem);
+		registerOre("oreSuperChargedCoal", ZollernBlocks.spcOre);
+		registerOre("oreNetherSuperChargedCoal", ZollernBlocks.spcNetherOre);
+		registerOre("oreEnderSuperChargedCoal", ZollernBlocks.enderSpcOre);
+		registerOre("blockSuperChargedCoal", ZollernBlocks.spcBlock);
 		
 		// Zollernium
-		registerOre("ingotZollernium", ItemList.zollerniumIngot);
-		registerOre("dustZollernium", ItemList.zollerniumDust);
-		registerOre("blockZollernium", BlockList.zollerniumBlock);
-		registerOre("oreZollernium", BlockList.zollerniumOre);
+		registerOre("ingotZollernium", ZollernItems.zollerniumIngot);
+		registerOre("dustZollernium", ZollernItems.zollerniumDust);
+		registerOre("blockZollernium", ZollernBlocks.zollerniumBlock);
+		registerOre("oreZollernium", ZollernBlocks.zollerniumOre);
 		
 		// Ender Diamond
-		registerOre("gemEnderDiamond", ItemList.enderDiamond);
-		registerOre("oreEnderDiamond", BlockList.enderDiamondOre);
-		registerOre("blockEnderDiamond", BlockList.enderDiamondBlock);
+		registerOre("gemEnderDiamond", ZollernItems.enderDiamond);
+		registerOre("oreEnderDiamond", ZollernBlocks.enderDiamondOre);
+		registerOre("blockEnderDiamond", ZollernBlocks.enderDiamondBlock);
 		
 		// Azurite
-		registerOre("gemAzurite", ItemList.azurite);
-		registerOre("oreAzurite", BlockList.azuriteOre);
-		registerOre("blockAzurite", BlockList.azurite);
+		registerOre("gemAzurite", ZollernItems.azurite);
+		registerOre("oreAzurite", ZollernBlocks.azuriteOre);
+		registerOre("blockAzurite", ZollernBlocks.azurite);
 		
 		// Amber
-		registerOre("gemAmber", ItemList.amber);
-		registerOre("oreAmber", BlockList.amberOre);
-		registerOre("blockAmber", BlockList.amber);
+		registerOre("gemAmber", ZollernItems.amber);
+		registerOre("oreAmber", ZollernBlocks.amberOre);
+		registerOre("blockAmber", ZollernBlocks.amber);
 		
 		// Topaz
-		registerOre("gemTopaz", ItemList.topaz);
-		registerOre("oreTopaz", BlockList.topazOre);
-		registerOre("blockTopaz", BlockList.topaz);
+		registerOre("gemTopaz", ZollernItems.topaz);
+		registerOre("oreTopaz", ZollernBlocks.topazOre);
+		registerOre("blockTopaz", ZollernBlocks.topaz);
 		
 		// Aquamarine
-		registerOre("gemAquamarine", ItemList.aquamarine);
-		registerOre("oreAquamarine", BlockList.aquamarineOre);
-		registerOre("blockAquamarine", BlockList.aqua);
+		registerOre("gemAquamarine", ZollernItems.aquamarine);
+		registerOre("oreAquamarine", ZollernBlocks.aquamarineOre);
+		registerOre("blockAquamarine", ZollernBlocks.aqua);
 		
 		// Garnet
-		registerOre("gemGarnet", ItemList.garnet);
-		registerOre("oreGarnet", BlockList.garnetOre);
-		registerOre("blockGarnet", BlockList.garnet);
+		registerOre("gemGarnet", ZollernItems.garnet);
+		registerOre("oreGarnet", ZollernBlocks.garnetOre);
+		registerOre("blockGarnet", ZollernBlocks.garnet);
 		
 		// Opal
-		registerOre("gemOpal", ItemList.opal);
-		registerOre("oreOpal", BlockList.opalOre);
-		registerOre("blockOpal", BlockList.opal);
+		registerOre("gemOpal", ZollernItems.opal);
+		registerOre("oreOpal", ZollernBlocks.opalOre);
+		registerOre("blockOpal", ZollernBlocks.opal);
 		
 		// Enderite
-		registerOre("ingotEnderite", ItemList.enderite);
-		registerOre("oreEnderite", BlockList.enderiteOre);
-		registerOre("blockEnderite", BlockList.enderite);
+		registerOre("ingotEnderite", ZollernItems.enderite);
+		registerOre("oreEnderite", ZollernBlocks.enderiteOre);
+		registerOre("blockEnderite", ZollernBlocks.enderite);
 		
 		// Witherite
-		registerOre("oreWitherite", BlockList.witheriteOre);
-		registerOre("gemWitherite", ItemList.witherite);
-		registerOre("blockWitherite", BlockList.witheriteBlock);
+		registerOre("oreWitherite", ZollernBlocks.witheriteOre);
+		registerOre("gemWitherite", ZollernItems.witherite);
+		registerOre("blockWitherite", ZollernBlocks.witheriteBlock);
 		
 		// Ruby
-		registerOre("oreRuby", BlockList.rubyOre);
-		registerOre("blockRuby", BlockList.rubyBlock);
-		registerOre("gemRuby", ItemList.ruby);
+		registerOre("oreRuby", ZollernBlocks.rubyOre);
+		registerOre("blockRuby", ZollernBlocks.rubyBlock);
+		registerOre("gemRuby", ZollernItems.ruby);
 		
 		// Sapphire
-		registerOre("oreSapphire", BlockList.sapphireOre);
-		registerOre("blockSapphire", BlockList.sapphireBlock);
-		registerOre("gemSapphire", ItemList.sapphire);
+		registerOre("oreSapphire", ZollernBlocks.sapphireOre);
+		registerOre("blockSapphire", ZollernBlocks.sapphireBlock);
+		registerOre("gemSapphire", ZollernItems.sapphire);
 		
 		// Lapis
-		registerOre("ingotLapis", ItemList.lapisIngot);
+		registerOre("ingotLapis", ZollernItems.lapisIngot);
 		registerOre("dustLapis", new ItemStack(Items.dye, 1, 4).getItem());
 		
 		// Dye
-		registerOre("dyeGreen", ItemList.greenDye);
-		registerOre("dyePink", ItemList.enderReeds);
+		registerOre("dyeGreen", ZollernItems.greenDye);
+		registerOre("dyePink", ZollernItems.enderReeds);
 		
 		// Obsidian
-		registerOre("ingotObsidian", ItemList.obsidianIngot);
-		registerOre("dustObsidian", ItemList.obsidianDust);
+		registerOre("ingotObsidian", ZollernItems.obsidianIngot);
+		registerOre("dustObsidian", ZollernItems.obsidianDust);
 		
 		// Stone Registry
-		registerOre("blockStone", Blocks.stone, BlockList.andesite,
-				BlockList.diorite, BlockList.granite);
-		registerOre("blockAndesite", BlockList.andesite);
-		registerOre("blockDiorite", BlockList.diorite);
-		registerOre("blockGranite", BlockList.granite);
+		registerOre("blockStone", Blocks.stone, ZollernBlocks.andesite,
+				ZollernBlocks.diorite, ZollernBlocks.granite);
+		registerOre("blockAndesite", ZollernBlocks.andesite);
+		registerOre("blockDiorite", ZollernBlocks.diorite);
+		registerOre("blockGranite", ZollernBlocks.granite);
 		
 		// Grass Registry
-		registerOre("blockGrass", BlockList.betterGrass);
+		registerOre("blockGrass", ZollernBlocks.betterGrass);
 		
 		// Crop Registry
-		registerOre("cropBlueberry", ItemList.blueberry);
-		registerOre("cropBlackberry", ItemList.blackberry);
-		registerOre("cropStrawberry", ItemList.strawberry);
-		registerOre("cropGrape", ItemList.grape);
-		registerOre("cropRadish", ItemList.radish);
-		registerOre("cropGarlic", ItemList.garlic);
-		registerOre("cropOnion", ItemList.onion);
-		registerOre("cropCucumber", ItemList.cucumber);
-		registerOre("cropCorn", ItemList.corn);
-		registerOre("cropPeas", ItemList.peaPod);
-		registerOre("cropTomato", ItemList.tomato);
-		registerOre("cropBanana", ItemList.banana);
-		registerOre("cropOrange", ItemList.orange);
-		registerOre("cropGuava", ItemList.guava);
-		registerOre("cropLemon", ItemList.lemon);
-		registerOre("cropLime", ItemList.lime);
-		registerOre("cropLimon", ItemList.limon);
-		registerOre("cropCherry", ItemList.cherry);
-		registerOre("cropGrapefruit", ItemList.grapefruit);
+		registerOre("cropBlueberry", ZollernItems.blueberry);
+		registerOre("cropBlackberry", ZollernItems.blackberry);
+		registerOre("cropStrawberry", ZollernItems.strawberry);
+		registerOre("cropGrape", ZollernItems.grape);
+		registerOre("cropRadish", ZollernItems.radish);
+		registerOre("cropGarlic", ZollernItems.garlic);
+		registerOre("cropOnion", ZollernItems.onion);
+		registerOre("cropCucumber", ZollernItems.cucumber);
+		registerOre("cropCorn", ZollernItems.corn);
+		registerOre("cropPeas", ZollernItems.peaPod);
+		registerOre("cropTomato", ZollernItems.tomato);
+		registerOre("cropBanana", ZollernItems.banana);
+		registerOre("cropOrange", ZollernItems.orange);
+		registerOre("cropGuava", ZollernItems.guava);
+		registerOre("cropLemon", ZollernItems.lemon);
+		registerOre("cropLime", ZollernItems.lime);
+		registerOre("cropLimon", ZollernItems.limon);
+		registerOre("cropCherry", ZollernItems.cherry);
+		registerOre("cropGrapefruit", ZollernItems.grapefruit);
 		
 		// Chargium
-		registerOre("dustChargium", ItemList.chargiumDust);
-		registerOre("ingotChargium", ItemList.chargiumIngot);
-		registerOre("blockChargium", BlockList.chargiumBlock);
+		registerOre("dustChargium", ZollernItems.chargiumDust);
+		registerOre("ingotChargium", ZollernItems.chargiumIngot);
+		registerOre("blockChargium", ZollernBlocks.chargiumBlock);
 		
 		// Clay Registry
-		registerOre("itemClay", ItemList.swampClayBall);
-		registerOre("blockClay", BlockList.swampClay);
+		registerOre("itemClay", ZollernItems.swampClayBall);
+		registerOre("blockClay", ZollernBlocks.swampClay);
 		
 		// Fluid Registry
-		registerOre("fluidChocolate", BlockList.blockChocolate);
-		registerOre("fluidFueltonium", BlockList.blockFuel);
+		registerOre("fluidChocolate", ZollernBlocks.blockChocolate);
+		registerOre("fluidFueltonium", ZollernBlocks.blockFuel);
 		
 		// Bucket Registry
-		registerOre("bucketChocolate", ItemList.chocolateBucket);
-		registerOre("bucketFueltonium", ItemList.fuelBucket);
+		registerOre("bucketChocolate", ZollernItems.chocolateBucket);
+		registerOre("bucketFueltonium", ZollernItems.fuelBucket);
 		
-		MainHelper.Log("OreDictionary loaded: " + totalEntries + " entries.");
+		ZollernHelper.Log("OreDictionary loaded: " + totalEntries + " entries.");
 	}
 	
 	public static void registerOre(String strName, Item item) {

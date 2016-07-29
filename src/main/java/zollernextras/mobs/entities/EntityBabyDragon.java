@@ -35,7 +35,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.pathfinding.PathEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
-import zollernextras.items.ItemList;
+import zollernextras.items.ZollernItems;
 
 public class EntityBabyDragon extends EntityTameable {
 	
@@ -57,7 +57,7 @@ public class EntityBabyDragon extends EntityTameable {
 		this.tasks.addTask(4, new EntityAIMate(this, 1.0D));
 		this.tasks.addTask(5, new EntityAITempt(this, 1.2D, Items.ender_pearl,
 				false));
-		this.tasks.addTask(5, new EntityAITempt(this, 1.2D, ItemList.garnet,
+		this.tasks.addTask(5, new EntityAITempt(this, 1.2D, ZollernItems.garnet,
 				false));
 		this.tasks.addTask(6, new EntityAIFollowParent(this, 1.1D));
 		this.tasks.addTask(7, new EntityAIWander(this, 1.0D));
@@ -198,7 +198,7 @@ public class EntityBabyDragon extends EntityTameable {
 					this.setAttackTarget((EntityLivingBase) null);
 				}
 			} else if (itemstack != null
-					&& itemstack.getItem() == ItemList.garnet) {
+					&& itemstack.getItem() == ZollernItems.garnet) {
 				if (!p_70085_1_.capabilities.isCreativeMode) {
 					--itemstack.stackSize;
 				}
@@ -231,7 +231,7 @@ public class EntityBabyDragon extends EntityTameable {
 	
 	@Override
 	public boolean isBreedingItem(ItemStack p_70877_1_) {
-		return p_70877_1_ != null && p_70877_1_.getItem() == ItemList.garnet;
+		return p_70877_1_ != null && p_70877_1_.getItem() == ZollernItems.garnet;
 	}
 	
 	@Override

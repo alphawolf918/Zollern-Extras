@@ -243,6 +243,7 @@ tile.zollernextras_ud_sapphireore.name=Upside-Down Sapphire Ore
 tile.zollernextras_ud_fuelore.name=Upside-Down Fueltonium Ore
 tile.zollernextras_ud_spcore.name=Upside-Down Super Charged Coal Ore
 tile.zollernextras_ud_endershardore.name=Upside-Down Ender Shard Ore
+tile.zollernextras_ud_radianceore.name=Upside-Down Radiant Ore
 
 tile.zollernextras_chocolate.name=Melted Chocolate
 fluid.zollernextras_chocolate=Melted Chocolate

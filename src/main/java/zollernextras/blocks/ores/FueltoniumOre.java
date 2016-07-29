@@ -8,19 +8,19 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import zollernextras.api.ores.IOre;
-import zollernextras.items.ItemList;
-import zollernextras.lib.MainHelper;
+import zollernextras.items.ZollernItems;
+import zollernextras.lib.ZollernHelper;
 
 public class FueltoniumOre extends Block implements IOre {
 	
-	public Item droppedItem = ItemList.fuelonite;
+	public Item droppedItem = ZollernItems.fuelonite;
 	
 	public FueltoniumOre() {
 		super(Material.rock);
-		MainHelper.setTab(this);
-		MainHelper.setName(this, "fueltoniumore");
-		MainHelper.setTexture(this, "fueltonium");
-		MainHelper.setHardResist(this, 1.3F, 9.2F);
+		ZollernHelper.setTab(this);
+		ZollernHelper.setName(this, "fueltoniumore");
+		ZollernHelper.setTexture(this, "fueltonium");
+		ZollernHelper.setHardResist(this, 1.3F, 9.2F);
 		this.setHarvestLevel("pickaxe", 4);
 		this.setStepSound(soundTypePiston);
 	}

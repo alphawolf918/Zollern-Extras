@@ -7,7 +7,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemStack;
 import zollernextras.creativetabs.ModTabs;
-import zollernextras.items.ItemList;
+import zollernextras.items.ZollernItems;
 import zollernextras.items.tools.ToolMaterials;
 import zollernextras.lib.ZollernModInfo;
 
@@ -24,7 +24,7 @@ public class AmaranthPickaxe extends ItemPickaxe {
 	
 	@Override
 	public void getSubItems(Item item, CreativeTabs creativeTab, List items) {
-		ItemStack amaranthPickaxe = new ItemStack(ItemList.amaranthPickaxe, 1);
+		ItemStack amaranthPickaxe = new ItemStack(ZollernItems.amaranthPickaxe, 1);
 		amaranthPickaxe.addEnchantment(Enchantment.fortune, 2);
 		items.add(amaranthPickaxe);
 	}

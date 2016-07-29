@@ -4,13 +4,13 @@ import java.util.Random;
 import net.minecraft.item.Item;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
-import zollernextras.lib.MainHelper;
+import zollernextras.lib.ZollernHelper;
 
 public class ShadowGemOre extends GemOre {
 	
 	public ShadowGemOre(String strTexture, Item theItem) {
 		super(strTexture, theItem);
-		MainHelper.setHardResist(this, 1.4F);
+		ZollernHelper.setHardResist(this, 1.4F);
 		this.setHarvestLevel("pickaxe", 4);
 	}
 	

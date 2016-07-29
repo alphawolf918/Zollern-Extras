@@ -5,7 +5,7 @@ import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
-import zollernextras.blocks.BlockList;
+import zollernextras.blocks.ZollernBlocks;
 
 public class WorldGenCandyTree extends WorldGenerator {
 	
@@ -18,14 +18,14 @@ public class WorldGenCandyTree extends WorldGenerator {
 	}
 	
 	protected Block[] GetValidSpawnBlockList() {
-		return new Block[] { BlockList.candyCubeBlack, BlockList.candyCubeBlue,
-				BlockList.candyCubeBrown, BlockList.candyCubeCyan,
-				BlockList.candyCubeGray, BlockList.candyCubeGreen,
-				BlockList.candyCubeOrange, BlockList.candyCubePink,
-				BlockList.candyCubePurple, BlockList.candyCubeRed,
-				BlockList.candyCubeWhite, BlockList.candyCubeYellow,
-				BlockList.sugarCube, BlockList.cookieBlock,
-				BlockList.chocolateBlock };
+		return new Block[] { ZollernBlocks.candyCubeBlack, ZollernBlocks.candyCubeBlue,
+				ZollernBlocks.candyCubeBrown, ZollernBlocks.candyCubeCyan,
+				ZollernBlocks.candyCubeGray, ZollernBlocks.candyCubeGreen,
+				ZollernBlocks.candyCubeOrange, ZollernBlocks.candyCubePink,
+				ZollernBlocks.candyCubePurple, ZollernBlocks.candyCubeRed,
+				ZollernBlocks.candyCubeWhite, ZollernBlocks.candyCubeYellow,
+				ZollernBlocks.sugarCube, ZollernBlocks.cookieBlock,
+				ZollernBlocks.chocolateBlock };
 	}
 	
 	public boolean LocationIsValidSpawn(World world, int i, int j, int k) {

@@ -13,9 +13,9 @@ import net.minecraft.world.ColorizerFoliage;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.IShearable;
-import zollernextras.blocks.BlockList;
+import zollernextras.blocks.ZollernBlocks;
 import zollernextras.creativetabs.ModTabs;
-import zollernextras.items.ItemList;
+import zollernextras.items.ZollernItems;
 import zollernextras.lib.ZollernModInfo;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -229,16 +229,16 @@ public class GuavaLeaves extends BlockLeavesBase implements IShearable {
 		int dropCheck = new Random().nextInt(2);
 		switch (dropCheck) {
 		case 0:
-			droppedItem = ItemList.guava;
+			droppedItem = ZollernItems.guava;
 			break;
 		case 1:
-			droppedItem = Item.getItemFromBlock(BlockList.guavaSapling);
+			droppedItem = Item.getItemFromBlock(ZollernBlocks.guavaSapling);
 			break;
 		default:
-			droppedItem = Item.getItemFromBlock(BlockList.guavaSapling);
+			droppedItem = Item.getItemFromBlock(ZollernBlocks.guavaSapling);
 			break;
 		case 2:
-			droppedItem = ItemList.guava;
+			droppedItem = ZollernItems.guava;
 			break;
 		}
 		return droppedItem;

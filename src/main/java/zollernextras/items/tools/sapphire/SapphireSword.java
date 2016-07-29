@@ -2,13 +2,13 @@ package zollernextras.items.tools.sapphire;
 
 import zollernextras.items.tools.ItemZESword;
 import zollernextras.items.tools.ToolMaterials;
-import zollernextras.lib.MainHelper;
+import zollernextras.lib.ZollernHelper;
 
 public class SapphireSword extends ItemZESword {
 	
 	public SapphireSword() {
 		super(ToolMaterials.SAPPHIRE);
-		MainHelper.setNameAndTexture(this, "sapphiresword");
+		ZollernHelper.setNameAndTexture(this, "sapphiresword");
 	}
 	
 }

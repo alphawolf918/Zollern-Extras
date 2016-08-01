@@ -212,14 +212,14 @@ public class ZollernItems {
 	public static Item greenDye = new ModItem("greendye");
 	public static Item quiver = new ItemQuiver();
 	
-	public static Item blueberry = new SeedFood(2, 0.2F, ZollernBlocks.blueberry,
-			Blocks.farmland, "blueberry");
-	public static Item blackberry = new SeedFood(2, 0.2F, ZollernBlocks.blackberry,
-			Blocks.farmland, "blackberry");
+	public static Item blueberry = new SeedFood(2, 0.2F,
+			ZollernBlocks.blueberry, Blocks.farmland, "blueberry");
+	public static Item blackberry = new SeedFood(2, 0.2F,
+			ZollernBlocks.blackberry, Blocks.farmland, "blackberry");
 	public static Item grape = new SeedFood(2, 0.4F, ZollernBlocks.grape,
 			Blocks.farmland, "grape");
-	public static Item strawberry = new SeedFood(2, 0.6F, ZollernBlocks.strawberry,
-			Blocks.farmland, "strawberry");
+	public static Item strawberry = new SeedFood(2, 0.6F,
+			ZollernBlocks.strawberry, Blocks.farmland, "strawberry");
 	public static Item radish = new SeedFood(3, 0.4F, ZollernBlocks.radish,
 			Blocks.farmland, "radish");
 	public static Item garlic = new SeedFood(1, 0.2F, ZollernBlocks.garlic,
@@ -233,7 +233,8 @@ public class ZollernItems {
 	public static Item pea = new Seed("pea", ZollernBlocks.peas);
 	public static Item peaPod = new CropFood("peas", 2, 3);
 	public static Item tomato = new CropFood("tomato", 3, 3);
-	public static Item tomatoSeeds = new Seed("tomatoseeds", ZollernBlocks.tomatoes);
+	public static Item tomatoSeeds = new Seed("tomatoseeds",
+			ZollernBlocks.tomatoes);
 	public static Item cucumber = new CropFood("cucumber", 4, 4);
 	public static Item cucumberSeeds = new Seed("cucumberseeds",
 			ZollernBlocks.cucumbers);
@@ -298,6 +299,8 @@ public class ZollernItems {
 			ZollernBlocks.blockFuel);
 	public static Item chargiumBucket = new ZollernBucket("chargiumbucket",
 			ZollernBlocks.blockChargium);
+	public static Item whiteLavaBucket = new ZollernBucket("whitelavabucket",
+			ZollernBlocks.blockWhiteLava);
 	
 	public static void init() {
 		addItem(spcItem, "Super Charged Coal");
@@ -484,6 +487,7 @@ public class ZollernItems {
 		addItem(chocolateBucket, "Chocolate Bucket");
 		addItem(fuelBucket, "Fueltonium Bucket");
 		addItem(chargiumBucket, "Chargium Bucket");
+		addItem(whiteLavaBucket, "White Lava Bucket");
 		
 		ZollernHelper.Log("Items loaded, " + totalItems + " entries.");
 	}

@@ -22,9 +22,11 @@ import zollernextras.blocks.crops.CropTomato;
 import zollernextras.blocks.fluids.BlockFChargium;
 import zollernextras.blocks.fluids.BlockFChocolate;
 import zollernextras.blocks.fluids.BlockFFueltonium;
+import zollernextras.blocks.fluids.BlockFWhiteLava;
 import zollernextras.blocks.fluids.FluidChargium;
 import zollernextras.blocks.fluids.FluidChocolate;
 import zollernextras.blocks.fluids.FluidFueltonium;
+import zollernextras.blocks.fluids.FluidWhiteLava;
 import zollernextras.blocks.food.BlockPizza;
 import zollernextras.blocks.ingotstacks.AmaranthIngotStack;
 import zollernextras.blocks.ingotstacks.FueltoniumIngotStack;
@@ -417,6 +419,10 @@ public class ZollernBlocks {
 			"Conductive Chargium");
 	public static Block blockChargium = new BlockFChargium(fluidChargium);
 	
+	public static FluidWhiteLava fluidWhiteLava = new FluidWhiteLava(
+			"White Lava");
+	public static Block blockWhiteLava = new BlockFWhiteLava(fluidWhiteLava);
+	
 	public static HashMap<String, Class<? extends TileEntity>> TERegistry;
 	
 	public static void init() {
@@ -648,6 +654,7 @@ public class ZollernBlocks {
 		addBlock(blockChocolate, "Melted Chocolate");
 		addBlock(blockFuel, "Molten Fueltonium");
 		addBlock(blockChargium, "Conductive Chargium");
+		addBlock(blockWhiteLava, "White Lava");
 		
 		TERegistry = new HashMap<String, Class<? extends TileEntity>>();
 		ironBlockIngot = addIngotTile(new IronIngotStack("iron"), "iron",

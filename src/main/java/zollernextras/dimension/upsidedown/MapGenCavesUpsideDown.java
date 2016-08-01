@@ -75,12 +75,12 @@ public class MapGenCavesUpsideDown extends MapGenBase {
 				this.func_151541_a(random.nextLong(), p_151541_3_, p_151541_4_,
 						p_151541_5_, p_151541_6_, p_151541_8_, p_151541_10_,
 						random.nextFloat() * 0.5F + 0.5F, p_151541_13_
-								- (float) Math.PI / 2F, p_151541_14_ / 3.0F,
+						- (float) Math.PI / 2F, p_151541_14_ / 3.0F,
 						p_151541_15_, p_151541_16_, 1.0D);
 				this.func_151541_a(random.nextLong(), p_151541_3_, p_151541_4_,
 						p_151541_5_, p_151541_6_, p_151541_8_, p_151541_10_,
 						random.nextFloat() * 0.5F + 0.5F, p_151541_13_
-								+ (float) Math.PI / 2F, p_151541_14_ / 3.0F,
+						+ (float) Math.PI / 2F, p_151541_14_ / 3.0F,
 						p_151541_15_, p_151541_16_, 1.0D);
 				return;
 			}
@@ -179,7 +179,7 @@ public class MapGenCavesUpsideDown extends MapGenBase {
 										
 										if (d12 > -0.7D
 												&& d13 * d13 + d12 * d12 + d14
-														* d14 < 1.0D) {
+												* d14 < 1.0D) {
 											Block block1 = p_151541_5_[k3];
 											
 											if (isTopBlock(p_151541_5_, k3, k2,
@@ -253,24 +253,10 @@ public class MapGenCavesUpsideDown extends MapGenBase {
 				|| data[index] == Blocks.water;
 	}
 	
-	// Exception biomes to make sure we generate like vanilla
 	private boolean isExceptionBiome(BiomeGenBase biome) {
-		if (biome == BiomeGenBase.mushroomIsland) {
-			return true;
-		}
-		if (biome == BiomeGenBase.beach) {
-			return true;
-		}
-		if (biome == BiomeGenBase.desert) {
-			return true;
-		}
 		return false;
 	}
 	
-	// Determine if the block at the specified location is the top block for the
-	// biome, we take into account
-	// Vanilla bugs to make sure that we generate the map the same way vanilla
-	// does.
 	private boolean isTopBlock(Block[] data, int index, int x, int y, int z,
 			int chunkX, int chunkZ) {
 		BiomeGenBase biome = worldObj.getBiomeGenForCoords(x + chunkX * 16, z
@@ -279,30 +265,6 @@ public class MapGenCavesUpsideDown extends MapGenBase {
 				: data[index] == biome.topBlock;
 	}
 	
-	/**
-	 * Digs out the current block, default implementation removes stone, filler,
-	 * and top block Sets the block to lava if y is less then 10, and air other
-	 * wise. If setting to air, it also checks to see if we've broken the
-	 * surface and if so tries to make the floor the biome's top block
-	 * 
-	 * @param data
-	 *            Block data array
-	 * @param index
-	 *            Pre-calculated index into block data
-	 * @param x
-	 *            local X position
-	 * @param y
-	 *            local Y position
-	 * @param z
-	 *            local Z position
-	 * @param chunkX
-	 *            Chunk X position
-	 * @param chunkZ
-	 *            Chunk Y position
-	 * @param foundTop
-	 *            True if we've encountered the biome's top block. Ideally if
-	 *            we've broken the surface.
-	 */
 	protected void digBlock(Block[] data, int index, int x, int y, int z,
 			int chunkX, int chunkZ, boolean foundTop) {
 		BiomeGenBase biome = worldObj.getBiomeGenForCoords(x + chunkX * 16, z
@@ -316,7 +278,7 @@ public class MapGenCavesUpsideDown extends MapGenBase {
 		if (block == ZollernBlocks.upsideDownStone || block == filler
 				|| block == top) {
 			if (y < 5) {
-				data[index] = Blocks.lava;
+				data[index] = ZollernBlocks.blockWhiteLava;
 			} else {
 				data[index] = null;
 				

@@ -1,5 +1,6 @@
 package zollernextras.events;
 
+import java.util.List;
 import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockCrops;
@@ -110,9 +111,17 @@ public class Events {
 	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
 	public void onLivingUpdate(LivingUpdateEvent event) {
 		EntityLivingBase entity = event.entityLiving;
+		
+		// Let's make 100% certain that we're actually using a Player
+		// entity.
 		if (entity instanceof EntityPlayer) {
+			
+			// Now type-cast it so we can use the Player functionality.
 			EntityPlayer player = (EntityPlayer) entity;
+			
+			// Check to see if we're in the Upside-Down dimension.
 			if (player.dimension == ZEConfig.dimensionUpsideDownID) {
+				
 				// Hurt the Player every few ticks, unless they have the
 				// "Radiance" potion effect. What this does is it checks the
 				// Player's inventory for the Radiance item, and if it finds it,
@@ -121,28 +130,103 @@ public class Events {
 				// the Player, protecting them from Shadow damage. However, it
 				// will only automatically use itself in the Upside-Down.
 				// Anywhere else, it must be used manually with a right-click.
+				// All we're doing here is defining our item for easy access.
 				Item lightItem = ZollernItems.radiance;
+				
+				// Grab the inventory of the Player.
 				InventoryPlayer playerInventory = player.inventory;
+				
+				// Checks to see if the Player has the item in their inventory,
+				// if they're not in Creative Mode, and if the Radiance potion
+				// effect is not already active (we don't want it to constantly
+				// apply).
 				if (playerInventory.hasItem(lightItem)
 						&& !player.capabilities.isCreativeMode
 						&& !player.isPotionActive(ZollernPotionList.radiance)) {
+					
+					// 6000 should be right at 5 minutes. (1 second = 20 ticks)
 					player.addPotionEffect(new PotionEffect(
 							ZollernPotionList.radiance.id, 6000, 0));
+					
+					// We have to manually consume the item. The best way to do
+					// this is to make use of the method that we are given.
 					playerInventory.consumeInventoryItem(lightItem);
+					
+					// When sending a message to the Player, do it through your
+					// ClientProxy. That way the server doesn't have to bother
+					// with it.
 					ZollernExtrasMod.proxy.sendChatMessage(player,
 							"You are irradiated with a brilliant light.");
 				}
+				
+				// If the Player is not in Creative Mode, and does not have the
+				// Radiance potion effect, make the shadows attack them.
 				if (!player.capabilities.isCreativeMode
 						&& !player.isPotionActive(ZollernPotionList.radiance)) {
 					player.attackEntityFrom(DSource.deathShadows, 5.0f);
 				}
-				
 			}
+			
+			// This is where we handle the "spread" of the virus potion effect,
+			// called Infected. First, we check to see if the effect is active,
+			// which we can do with a simple player.isPotionActive check.
+			if (player.isPotionActive(ZollernPotionList.infected)) {
+				
+				// Grab the world we're in by calling the world that the Player
+				// is in.
+				World worldObj = player.worldObj;
+				
+				// Now is where things get a little complicated. What this
+				// method does is it searches for other Players within the
+				// infected Player's bounding box. They are then stored in our
+				// java.util.List. You can search for any entity class this way.
+				List playerList = worldObj.getEntitiesWithinAABB(
+						EntityPlayer.class, player.boundingBox.expand(
+								3 + Math.floor(player.ticksExisted / 50), 2,
+								3 + Math.floor(player.ticksExisted / 50)));
+				
+				// The Players are not returned as an instance of EntityPlayer,
+				// but rather an Object, which is the highest super-class of
+				// Java. Basically what we're doing here is just converting our
+				// List to an array.
+				Object[] playerArray = playerList.toArray();
+				
+				// Now we use an enhanced for loop to loop through every
+				// instance of our "Objects" (Players).
+				for (Object o : playerArray) {
+					
+					// Since we only searched for Players, this type-cast might
+					// seem redundant. However, remember that they are returned
+					// as Objects, not Players, so we have to cast them in order
+					// to use the EntityPlayer functionality.
+					EntityPlayer currentPlayer = (EntityPlayer) o;
+					
+					// Now just add the potion effect. Voila! This should infect
+					// any Players around the original infected Player.
+					// Pandemic!
+					currentPlayer.addPotionEffect(new PotionEffect(
+							ZollernPotionList.infected.id, 500, 1));
+				}
+			}
+			
+			// This is where the armor potion effects are applied. First, we
+			// just simply grab the ItemStack[] array of the Player's armor
+			// inventory (easy access!).
 			ItemStack[] armor = player.inventory.armorInventory;
+			
+			// These three indices are important. They will count how many armor
+			// pieces are worn for each specific set, to save us some
+			// complicated stuff.
 			int amArmorCount = 0;
 			int zArmorCount = 0;
 			int azArmorCount = 0;
+			
+			// Loop through each armor set.
 			for (ItemStack armorStack : armor) {
+				
+				// Each of these "if" statements checks the count for each
+				// specific set of armor, and increments it depending on what's
+				// in the slot.
 				if (armorStack != null
 						&& armorStack.getItem() instanceof AmaranthArmor) {
 					AmaranthArmor amaranthArmor = (AmaranthArmor) armorStack
@@ -160,6 +244,10 @@ public class Events {
 					azArmorCount++;
 				}
 			}
+			
+			// Now we loop through the indices as necessary, and apply the
+			// potion effect for each specific set of armor, so long as the
+			// count equals 4 (helmet, chestplate, leggings, and boots).
 			for (int i = 0; i < 4; ++i) {
 				if (amArmorCount == 4) {
 					player.addPotionEffect(new PotionEffect(
@@ -306,6 +394,11 @@ public class Events {
 				world.setBlock(p.blockX, p.blockY, p.blockZ, Blocks.air);
 				return new ItemStack(ZollernItems.chargiumBucket);
 			}
+		} else if (id == ZollernBlocks.blockWhiteLava) {
+			if (world.getBlockMetadata(p.blockX, p.blockY, p.blockZ) == 0) {
+				world.setBlock(p.blockX, p.blockY, p.blockZ, Blocks.air);
+				return new ItemStack(ZollernItems.whiteLavaBucket);
+			}
 		}
 		return null;
 	}
@@ -335,7 +428,7 @@ public class Events {
 		if (!player.capabilities.isCreativeMode) {
 			double maxHealth = props.getMaxHealth();
 			player.getEntityAttribute(SharedMonsterAttributes.maxHealth)
-			.setBaseValue(maxHealth);
+					.setBaseValue(maxHealth);
 		}
 	}
 	
@@ -391,12 +484,12 @@ public class Events {
 									ZollernHelper.addChatMessage(
 											player,
 											EnumChatFormatting.GOLD
-											+ "+"
-											+ strIncrAmnt.substring(0,
-													3)
+													+ "+"
+													+ strIncrAmnt.substring(0,
+															3)
 													+ " Jump Height! Total: "
 													+ fullResist
-													.substring(0, 3));
+															.substring(0, 3));
 								}
 							}
 						}
@@ -438,11 +531,11 @@ public class Events {
 								ZollernHelper.addChatMessage(
 										player,
 										EnumChatFormatting.GOLD
-										+ "+"
-										+ blockFortune
-										+ " Fortune! Total: "
-										+ strFortuneLevel.substring(0,
-												3));
+												+ "+"
+												+ blockFortune
+												+ " Fortune! Total: "
+												+ strFortuneLevel.substring(0,
+														3));
 							}
 							if (new Random().nextInt(5) <= 2) {
 								int numDropped = 0;
@@ -517,7 +610,8 @@ public class Events {
 			Random rand = new Random();
 			int randInt = rand.nextInt(100);
 			if (randInt <= 40) {
-				ItemStack itemStack = new ItemStack(ZollernItems.shadowEssence, 1);
+				ItemStack itemStack = new ItemStack(ZollernItems.shadowEssence,
+						1);
 				EntityItem itemEntity = new EntityItem(worldObj,
 						theEntity.posX, theEntity.posY, theEntity.posZ,
 						itemStack);
@@ -665,7 +759,7 @@ public class Events {
 								} else if (storage.getBlockByExtId(x, y, z) == Blocks.planks
 										|| storage.getBlockByExtId(x, y, z) == Blocks.fence) {
 									storage.func_150818_a(x, y, z,
-											ZollernBlocks.upsideDownStone);
+											ZollernBlocks.upsideDownStoneBricks);
 								}
 							}
 						}

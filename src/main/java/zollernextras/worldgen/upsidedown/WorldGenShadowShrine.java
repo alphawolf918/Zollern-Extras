@@ -834,20 +834,13 @@ public class WorldGenShadowShrine extends WorldGenerator {
 		if (!world.isRemote) {
 			int spawnX = i + 8;
 			int spawnY = j + 2;
-			int spawnZ = k + 4;
+			int spawnZ = k + 8;
 			String spawnString = spawnX + " " + spawnY + " " + spawnZ;
 			EntityShadowAlien shadowAlien = new EntityShadowAlien(world);
 			shadowAlien.setLocationAndAngles(spawnX, spawnY, spawnZ, 0, 0);
-			if (world.spawnEntityInWorld(shadowAlien)) {
-				if (ZEConfig.enableDebugMode) {
-					ZollernHelper
-					.Log("Shadow Alien spawned at: " + spawnString);
-				}
-			} else {
-				if (ZEConfig.enableDebugMode) {
-					ZollernHelper.Log("Could not spawn Shadow Alien at: "
-							+ spawnString);
-				}
+			world.spawnEntityInWorld(shadowAlien);
+			if (ZEConfig.enableDebugMode) {
+				ZollernHelper.Log("Shadow Alien spawned at: " + spawnString);
 			}
 		}
 		

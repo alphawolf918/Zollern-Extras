@@ -257,6 +257,10 @@ tile.zollernextras_chargiumfluid.name=Conductive Chargium
 fluid.zollernextras_chargium=Conductive Chargium
 zollernextras_chargium=Conductive Chargium
 
+tile.zollernextras_whitelava.name=White Lava
+fluid.zollernextras_whitelava=White Lava
+zollernextras_whitelava=White Lava
+
 item.zollernextras_superchargedcoal.name=Super Charged Coal
 item.zollernextras_shinedust.name=Shinedust
 item.zollernextras_fuelonite.name=Fuelonite
@@ -452,11 +456,12 @@ item.zollernextras_enderdiamond.name=Ender Diamond
 item.zollernextras_enderglowstonedust.name=Ender Glow Dust
 item.zollernextras_chargiumdust.name=Chargium Dust
 item.zollernextras_chargiumingot.name=Chargium Ingot
-item.zollernextras_radiance.name=Radiance
+item.zollernextras_radiance.name=Radium
 
 item.zollernextras_bucket_chocolate.name=Chocolate Bucket
 item.zollernextras_fuelbucket.name=Molten Fueltonium Bucket
 item.zollernextras_chargiumbucket.name=Chargium Bucket
+item.zollernextras_whitelavabucket.name=White Lava Bucket
 
 entity.zollernextras_fish.name=Fish
 entity.zollernextras_jellyfish.name=Jellyfish

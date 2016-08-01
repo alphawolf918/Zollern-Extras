@@ -5,6 +5,7 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
+import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackOnCollide;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
@@ -103,11 +104,11 @@ public class EntityShadowAlien extends EntityMob implements IBossDisplayData {
 				this.worldObj.spawnEntityInWorld(scorpion);
 			}
 		}
-		if (this.getHealth() <= this.getMaxHealth() / 4
-				&& rand.nextInt(1000) <= 20) {
+		if (this.getHealth() <= 250 && rand.nextInt(1000) <= 10) {
 			double atkDmg = this.getEntityAttribute(
 					SharedMonsterAttributes.attackDamage).getBaseValue();
-			if (atkDmg < this.attackDamage * 2) {
+			double maxAtkDmg = this.attackDamage * 2;
+			if (atkDmg < maxAtkDmg) {
 				this.attackDamage += 0.5D;
 				this.getEntityAttribute(SharedMonsterAttributes.attackDamage)
 						.setBaseValue(this.attackDamage);
@@ -149,7 +150,7 @@ public class EntityShadowAlien extends EntityMob implements IBossDisplayData {
 	
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
-		return EnumCreatureAttribute.UNDEFINED;
+		return EnumCreatureAttribute.ARTHROPOD;
 	}
 	
 	@Override
@@ -167,17 +168,18 @@ public class EntityShadowAlien extends EntityMob implements IBossDisplayData {
 	@Override
 	public void addRandomArmor() {
 		super.addRandomArmor();
+		Random rand = new Random();
 		ItemStack witherSword = new ItemStack(ZollernItems.witherSword);
 		if (ZollernHelper.getRNGChance(5, 10)) {
 			witherSword.addEnchantment(Enchantment.power, 5);
 		}
-		if (ZollernHelper.getRNGChance(5, 10)) {
+		if (ZollernHelper.getRNGChance(5, 15)) {
 			witherSword.addEnchantment(Enchantment.unbreaking, 3);
 		}
-		if (ZollernHelper.getRNGChance(5, 10)) {
+		if (ZollernHelper.getRNGChance(5, 20)) {
 			witherSword.addEnchantment(Enchantment.looting, 3);
 		}
-		if (ZollernHelper.getRNGChance(5, 10)) {
+		if (ZollernHelper.getRNGChance(5, 15)) {
 			witherSword.addEnchantment(Enchantment.sharpness, 5);
 		}
 		this.setCurrentItemOrArmor(0, witherSword);
@@ -190,8 +192,7 @@ public class EntityShadowAlien extends EntityMob implements IBossDisplayData {
 	
 	@Override
 	public boolean getCanSpawnHere() {
-		return this.worldObj.difficultySetting != EnumDifficulty.PEACEFUL
-				&& this.isValidLightLevel();// && super.getCanSpawnHere();
+		return this.worldObj.difficultySetting != EnumDifficulty.PEACEFUL;
 	}
 	
 	@Override
@@ -201,7 +202,7 @@ public class EntityShadowAlien extends EntityMob implements IBossDisplayData {
 	
 	@Override
 	protected void dropRareDrop(int par1) {
-		// TODO
+		this.entityDropItem(new ItemStack(ZollernItems.heartForce), 0.0f);
 	}
 	
 	@Override
@@ -211,6 +212,14 @@ public class EntityShadowAlien extends EntityMob implements IBossDisplayData {
 			int randInt = new Random().nextInt(50);
 			this.setHealth(this.maxHealth / 2 + randInt);
 		}
+	}
+	
+	@Override
+	public IEntityLivingData onSpawnWithEgg(
+			IEntityLivingData par1EntityLivingData) {
+		par1EntityLivingData = super.onSpawnWithEgg(par1EntityLivingData);
+		this.addRandomArmor();
+		return par1EntityLivingData;
 	}
 	
 }

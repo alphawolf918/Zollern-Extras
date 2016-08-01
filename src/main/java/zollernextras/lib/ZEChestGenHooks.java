@@ -66,7 +66,7 @@ public class ZEChestGenHooks extends ChestGenHooks {
 		hasInit = true;
 		
 		addInfo(ENDER_TOWER, CTChestContents, 8, 16);
-		addInfo(SHADOW_SHRINE, SSChestContents, 8, 16);
+		addInfo(SHADOW_SHRINE, SSChestContents, 4, 8);
 		
 		ItemStack book = new ItemStack(Items.enchanted_book, 1, 0);
 		WeightedRandomChestContent tmp = new WeightedRandomChestContent(book,
@@ -84,7 +84,7 @@ public class ZEChestGenHooks extends ChestGenHooks {
 		
 		for (WeightedRandomChestContent chestContent : SSChestContents) {
 			ItemStack item = chestContent.theItemId;
-			addDungeonLoot(new ZEChestGenHooks("shadowShine"), item, 50, 40, 80);
+			addDungeonLoot(new ZEChestGenHooks("shadowShine"), item, 50, 10, 20);
 		}
 		
 		ItemStack witherSword = new ItemStack(ZollernItems.witherSword);

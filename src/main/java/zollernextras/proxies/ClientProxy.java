@@ -30,6 +30,7 @@ import zollernextras.entity.EntityDuckEgg;
 import zollernextras.entity.render.RenderDuckEgg;
 import zollernextras.gui.GuiBiomeType;
 import zollernextras.items.ZollernItems;
+import zollernextras.lib.DSource;
 import zollernextras.lib.ZollernHelper;
 import zollernextras.lib.modhelper.ModHelperBase;
 import zollernextras.mobs.entities.EntityBabyDragon;
@@ -85,6 +86,7 @@ import zollernextras.mobs.renders.RenderShadowSkeleton;
 import zollernextras.mobs.renders.RenderShark;
 import zollernextras.mobs.renders.RenderShrimp;
 import zollernextras.mobs.renders.boss.RenderShadowAlien;
+import zollernextras.potions.ZollernPotionList;
 import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.network.simpleimpl.MessageContext;
@@ -184,9 +186,19 @@ public class ClientProxy extends CommonProxy {
 	
 	@Override
 	public void doPotionEffect(EntityPlayer player, int potionId) {
-		float playerWalkSpeed = player.capabilities.getWalkSpeed();
-		if (playerWalkSpeed < 2.0f) {
-			player.capabilities.setPlayerWalkSpeed(playerWalkSpeed + 1.0f);
+		if (potionId == ZollernPotionList.radiance.id) {
+			float playerWalkSpeed = player.capabilities.getWalkSpeed();
+			if (playerWalkSpeed < 3.0f) {
+				float playerNewWalkSpeed = playerWalkSpeed + 1.0f;
+				player.capabilities.setPlayerWalkSpeed(playerNewWalkSpeed);
+			}
+		}
+		
+		// Do NOT use an "else if" here! There is a possibility that the Player
+		// could have both, and if we did an "else if" clause, then they would
+		// only get one or the other - we want them to get both.
+		if (potionId == ZollernPotionList.infected.id) {
+			player.attackEntityFrom(DSource.deathInfection, 5.0f);
 		}
 	}
 	

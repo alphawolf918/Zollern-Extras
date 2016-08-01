@@ -6,10 +6,10 @@ import zollernextras.ZollernExtrasMod;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class PotionRadiance extends ZollernPotion {
+public class PotionInfected extends ZollernPotion {
 	
-	public PotionRadiance(int par1, boolean par2, int par3) {
-		super("radiance", par1, par2, par3);
+	public PotionInfected(int par1, boolean par2, int par3) {
+		super("infected", par1, par2, par3);
 	}
 	
 	@Override
@@ -22,7 +22,7 @@ public class PotionRadiance extends ZollernPotion {
 	
 	@Override
 	public int getLiquidColor() {
-		return 0xeeee00;
+		return 0x000000;
 	}
 	
 	@Override

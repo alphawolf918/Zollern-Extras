@@ -25,3 +25,6 @@
 
 * Eggs that spawn Spiderlings when broken.
     * Spiderlings can then lay more eggs.
+* Shadow Trees.
+    * Fancy, tree-like structures that generate in the world.
+    * Sometimes have a chest inside them.

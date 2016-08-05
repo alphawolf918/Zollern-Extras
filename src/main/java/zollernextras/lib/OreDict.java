@@ -53,7 +53,7 @@ public class OreDict {
 		
 		// Ender Glow
 		registerOre("blockEnderGlowstone", ZollernBlocks.enderGlowstone);
-		registerOre("dustEnderGlowstone", ZollernBlocks.enderGlowstone);
+		registerOre("dustEnderGlowstone", ZollernItems.enderGlowstoneDust);
 		
 		// Better Glass
 		if (ZEConfig.betterGlassIsGlass) {
@@ -136,26 +136,31 @@ public class OreDict {
 		// Amber
 		registerOre("gemAmber", ZollernItems.amber);
 		registerOre("oreAmber", ZollernBlocks.amberOre);
+		registerOre("oreUpsideDownAmber", ZollernBlocks.upsideDownAmberOre);
 		registerOre("blockAmber", ZollernBlocks.amber);
 		
 		// Topaz
 		registerOre("gemTopaz", ZollernItems.topaz);
 		registerOre("oreTopaz", ZollernBlocks.topazOre);
+		registerOre("oreUpsideDownTopaz", ZollernBlocks.upsideDownTopazOre);
 		registerOre("blockTopaz", ZollernBlocks.topaz);
 		
 		// Aquamarine
 		registerOre("gemAquamarine", ZollernItems.aquamarine);
 		registerOre("oreAquamarine", ZollernBlocks.aquamarineOre);
+		registerOre("oreUpsideDownAquamarine", ZollernBlocks.upsideDownAquaOre);
 		registerOre("blockAquamarine", ZollernBlocks.aqua);
 		
 		// Garnet
 		registerOre("gemGarnet", ZollernItems.garnet);
 		registerOre("oreGarnet", ZollernBlocks.garnetOre);
+		registerOre("oreUpsideDownGarnet", ZollernBlocks.upsideDownGarnetOre);
 		registerOre("blockGarnet", ZollernBlocks.garnet);
 		
 		// Opal
 		registerOre("gemOpal", ZollernItems.opal);
 		registerOre("oreOpal", ZollernBlocks.opalOre);
+		registerOre("oreUpsideDownOpal", ZollernBlocks.upsideDownOpalOre);
 		registerOre("blockOpal", ZollernBlocks.opal);
 		
 		// Enderite

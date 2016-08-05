@@ -5,7 +5,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import zollernextras.entity.EntityDuckEgg;
 
-public class ItemDuckEgg extends ModItem {
+public class ItemDuckEgg extends GenericItem {
 	
 	public ItemDuckEgg() {
 		super("duckegg");

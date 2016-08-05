@@ -6,11 +6,11 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.world.World;
 import zollernextras.ZollernExtrasMod;
-import zollernextras.items.ModItem;
+import zollernextras.items.GenericItem;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemQuiver extends ModItem {
+public class ItemQuiver extends GenericItem {
 	public ItemQuiver() {
 		super("quiver");
 		this.setMaxDamage(0);

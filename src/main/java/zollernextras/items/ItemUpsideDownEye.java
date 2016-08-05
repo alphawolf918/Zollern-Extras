@@ -11,7 +11,7 @@ import zollernextras.network.PacketDispatcher;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemUpsideDownEye extends ModItem {
+public class ItemUpsideDownEye extends GenericItem {
 	
 	private static int dimensionId = DimensionLoader.getDimID();
 	

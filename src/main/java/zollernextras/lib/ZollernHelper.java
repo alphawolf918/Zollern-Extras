@@ -17,10 +17,15 @@ public class ZollernHelper {
 	public static boolean getRNGChance(int min, int max) {
 		if (min >= max) {
 			ZollernHelper
-					.Log("Error: min chance was set to higher than max in RNG.");
+			.Log("Error: min chance was set to higher than max in RNG.");
 			return false;
 		}
-		return new Random().nextInt(max) <= min;
+		Random rand = new Random();
+		int randInt = rand.nextInt(max);
+		if (randInt <= min) {
+			return true;
+		}
+		return false;
 	}
 	
 	public static void setTab(Block block) {
@@ -97,14 +102,32 @@ public class ZollernHelper {
 				+ "ZollernExtras/");
 	}
 	
+	/**
+	 * Send a chat message to the Player. Call this from your ClientProxy!
+	 * 
+	 * @param player
+	 * @param text
+	 */
 	public static void addChatMessage(EntityPlayer player, String text) {
 		player.addChatMessage(new ChatComponentText(text));
 	}
 	
+	/**
+	 * Log a message to the console.
+	 * 
+	 * @param str
+	 *            The message to log.
+	 */
 	public static void echo(String str) {
 		FMLRelaunchLog.log(ZollernModInfo.OFFICIAL_NAME, Level.INFO, str);
 	}
 	
+	/**
+	 * Log a message to the console.
+	 * 
+	 * @param str
+	 *            The message to log.
+	 */
 	public static void Log(String str) {
 		echo(str);
 	}

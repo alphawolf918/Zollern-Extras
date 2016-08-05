@@ -71,7 +71,7 @@ import zollernextras.mobs.entities.EntityEnderBug;
 import zollernextras.mobs.entities.EntityShadowSkeleton;
 import zollernextras.network.PacketDispatcher;
 import zollernextras.network.client.SyncPlayerPropsMessage;
-import zollernextras.potions.ZollernPotionList;
+import zollernextras.potions.ZollernPotion;
 import zollernextras.proxies.CommonProxy;
 import cpw.mods.fml.common.eventhandler.Event.Result;
 import cpw.mods.fml.common.eventhandler.EventPriority;
@@ -126,10 +126,11 @@ public class Events {
 				// "Radiance" potion effect. What this does is it checks the
 				// Player's inventory for the Radiance item, and if it finds it,
 				// it automatically uses its potion effect (which consumes the
-				// item) to apply Radiance to
-				// the Player, protecting them from Shadow damage. However, it
-				// will only automatically use itself in the Upside-Down.
-				// Anywhere else, it must be used manually with a right-click.
+				// item) to apply Radiance to the Player, protecting them from
+				// Shadow damage. However, it will only automatically use itself
+				// in the Upside-Down. Anywhere else, it must be used manually
+				// with a right-click.
+				
 				// All we're doing here is defining our item for easy access.
 				Item lightItem = ZollernItems.radiance;
 				
@@ -142,11 +143,12 @@ public class Events {
 				// apply).
 				if (playerInventory.hasItem(lightItem)
 						&& !player.capabilities.isCreativeMode
-						&& !player.isPotionActive(ZollernPotionList.radiance)) {
+						&& !player.isPotionActive(ZollernPotion.radiance)) {
 					
 					// 6000 should be right at 5 minutes. (1 second = 20 ticks)
 					player.addPotionEffect(new PotionEffect(
-							ZollernPotionList.radiance.id, 6000, 0));
+							ZollernPotion.radiance.id,
+							ZollernPotion.radianceTime, 0));
 					
 					// We have to manually consume the item. The best way to do
 					// this is to make use of the method that we are given.
@@ -162,15 +164,19 @@ public class Events {
 				// If the Player is not in Creative Mode, and does not have the
 				// Radiance potion effect, make the shadows attack them.
 				if (!player.capabilities.isCreativeMode
-						&& !player.isPotionActive(ZollernPotionList.radiance)) {
-					player.attackEntityFrom(DSource.deathShadows, 5.0f);
+						&& !player.isPotionActive(ZollernPotion.radiance)) {
+					player.attackEntityFrom(DSource.deathShadows,
+							ZollernPotion.shadowDamage);
 				}
 			}
 			
 			// This is where we handle the "spread" of the virus potion effect,
 			// called Infected. First, we check to see if the effect is active,
 			// which we can do with a simple player.isPotionActive check.
-			if (player.isPotionActive(ZollernPotionList.infected)) {
+			if (player.isPotionActive(ZollernPotion.infected)) {
+				
+				// Cause pain!
+				ZollernPotion.infected.performEffect(player, 1);
 				
 				// Grab the world we're in by calling the world that the Player
 				// is in.
@@ -201,12 +207,23 @@ public class Events {
 					// to use the EntityPlayer functionality.
 					EntityPlayer currentPlayer = (EntityPlayer) o;
 					
-					// Now just add the potion effect. Voila! This should infect
-					// any Players around the original infected Player.
-					// Pandemic!
-					currentPlayer.addPotionEffect(new PotionEffect(
-							ZollernPotionList.infected.id, 500, 1));
+					// Make sure they don't already have the effect, otherwise
+					// it's just redundant..
+					if (!currentPlayer.isPotionActive(ZollernPotion.infected)) {
+						
+						// Now just add the potion effect. Voila! This should
+						// infect any Players around the original infected
+						// Player. Pandemic!
+						currentPlayer.addPotionEffect(new PotionEffect(
+								ZollernPotion.infected.getId(),
+								ZollernPotion.infectionTime, 1));
+					}
 				}
+			}
+			
+			// Perform the Radiance potion effect.
+			if (player.isPotionActive(ZollernPotion.radiance)) {
+				ZollernPotion.radiance.performEffect(player, 1);
 			}
 			
 			// This is where the armor potion effects are applied. First, we
@@ -428,7 +445,7 @@ public class Events {
 		if (!player.capabilities.isCreativeMode) {
 			double maxHealth = props.getMaxHealth();
 			player.getEntityAttribute(SharedMonsterAttributes.maxHealth)
-					.setBaseValue(maxHealth);
+			.setBaseValue(maxHealth);
 		}
 	}
 	
@@ -484,12 +501,12 @@ public class Events {
 									ZollernHelper.addChatMessage(
 											player,
 											EnumChatFormatting.GOLD
-													+ "+"
-													+ strIncrAmnt.substring(0,
-															3)
+											+ "+"
+											+ strIncrAmnt.substring(0,
+													3)
 													+ " Jump Height! Total: "
 													+ fullResist
-															.substring(0, 3));
+													.substring(0, 3));
 								}
 							}
 						}
@@ -531,11 +548,11 @@ public class Events {
 								ZollernHelper.addChatMessage(
 										player,
 										EnumChatFormatting.GOLD
-												+ "+"
-												+ blockFortune
-												+ " Fortune! Total: "
-												+ strFortuneLevel.substring(0,
-														3));
+										+ "+"
+										+ blockFortune
+										+ " Fortune! Total: "
+										+ strFortuneLevel.substring(0,
+												3));
 							}
 							if (new Random().nextInt(5) <= 2) {
 								int numDropped = 0;

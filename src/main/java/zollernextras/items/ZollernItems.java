@@ -60,15 +60,15 @@ public class ZollernItems {
 	
 	public static int totalItems = 0;
 	
-	public static Item spcItem = new ModItem("superchargedcoal");
-	public static Item shinedust = new ModItem("shinedust");
-	public static Item fuelonite = new ModItem("fuelonite");
-	public static Item ingotFueltonium = new ModItem("fueltoniumingot");
-	public static Item enderShard = new ModItem("endershard");
-	public static Item amaranthIngot = new ModItem("amaranthingot");
-	public static Item amaranthDust = new ModItem("amaranthdust");
-	public static Item zollerniumIngot = new ModItem("zollerniumingot");
-	public static Item zollerniumDust = new ModItem("zollerniumdust");
+	public static Item spcItem = new GenericItem("superchargedcoal");
+	public static Item shinedust = new GenericItem("shinedust");
+	public static Item fuelonite = new GenericItem("fuelonite");
+	public static Item ingotFueltonium = new GenericItem("fueltoniumingot");
+	public static Item enderShard = new GenericItem("endershard");
+	public static Item amaranthIngot = new GenericItem("amaranthingot");
+	public static Item amaranthDust = new GenericItem("amaranthdust");
+	public static Item zollerniumIngot = new GenericItem("zollerniumingot");
+	public static Item zollerniumDust = new GenericItem("zollerniumdust");
 	
 	public static Item amaranthPickaxe = new AmaranthPickaxe(
 			ToolMaterials.AMARANTH);
@@ -161,13 +161,13 @@ public class ZollernItems {
 	public static Item cherry = new TreeFood("cherry", 2, 2);
 	public static Item grapefruit = new TreeFood("grapefruit", 5, 5);
 	
-	public static Item swampClayBall = new ModItem("swampclayball");
-	public static Item zincIngot = new ModItem("zincingot");
-	public static Item zincDust = new ModItem("zincdust");
-	public static Item shinestoneIngot = new ModItem("shinestoneingot");
-	public static Item shiniumIngot = new ModItem("shinium");
-	public static Item shiniumDust = new ModItem("shiniumdust");
-	public static Item flour = new ModItem("flour");
+	public static Item swampClayBall = new GenericItem("swampclayball");
+	public static Item zincIngot = new GenericItem("zincingot");
+	public static Item zincDust = new GenericItem("zincdust");
+	public static Item shinestoneIngot = new GenericItem("shinestoneingot");
+	public static Item shiniumIngot = new GenericItem("shinium");
+	public static Item shiniumDust = new GenericItem("shiniumdust");
+	public static Item flour = new GenericItem("flour");
 	public static Item heartForce = new ItemHeartForce();
 	public static Item heart = new ItemHeart();
 	public static Item amber = new Gem("amber");
@@ -203,13 +203,13 @@ public class ZollernItems {
 	public static Item cookedBacon = new CookedFood("cookedbacon");
 	public static Item boiledEgg = new CookedFood("boiledegg");
 	public static Item duckEgg = new ItemDuckEgg();
-	public static Item duckFeather = new ModItem("duckfeather");
-	public static Item shadowBone = new ModItem("shadowbone");
-	public static Item marbleStick = new ModItem("marblestick");
-	public static Item blackMarbleStick = new ModItem("blackmarblestick");
-	public static Item lapisStick = new ModItem("lapisstick");
-	public static Item powerStick = new ModItem("powerrod");
-	public static Item greenDye = new ModItem("greendye");
+	public static Item duckFeather = new GenericItem("duckfeather");
+	public static Item shadowBone = new GenericItem("shadowbone");
+	public static Item marbleStick = new GenericItem("marblestick");
+	public static Item blackMarbleStick = new GenericItem("blackmarblestick");
+	public static Item lapisStick = new GenericItem("lapisstick");
+	public static Item powerStick = new GenericItem("powerrod");
+	public static Item greenDye = new GenericItem("greendye");
 	public static Item quiver = new ItemQuiver();
 	
 	public static Item blueberry = new SeedFood(2, 0.2F,
@@ -239,16 +239,16 @@ public class ZollernItems {
 	public static Item cucumberSeeds = new Seed("cucumberseeds",
 			ZollernBlocks.cucumbers);
 	
-	public static Item obsidianDust = new ModItem("obsidiandust");
-	public static Item silverNugget = new ModItem("silvernugget");
-	public static Item silverIngot = new ModItem("silveringot");
-	public static Item obsidianIngot = new ModItem("obsidianingot");
+	public static Item obsidianDust = new GenericItem("obsidiandust");
+	public static Item silverNugget = new GenericItem("silvernugget");
+	public static Item silverIngot = new GenericItem("silveringot");
+	public static Item obsidianIngot = new GenericItem("obsidianingot");
 	public static Item rawLamb = new RawFood("rawlamb");
 	public static Item cookedLamb = new CookedFood("cookedlamb", true);
-	public static Item prismarineShard = new ModItem("prismarineshard");
-	public static Item prismarineCrystal = new ModItem("prismarinecrystal");
-	public static Item rawChocolate = new ModItem("rawchocolate");
-	public static Item creamBall = new ModItem("creamball");
+	public static Item prismarineShard = new GenericItem("prismarineshard");
+	public static Item prismarineCrystal = new GenericItem("prismarinecrystal");
+	public static Item rawChocolate = new GenericItem("rawchocolate");
+	public static Item creamBall = new GenericItem("creamball");
 	public static Item chocolateBar = new SweetFood("chocolatebar",
 			Potion.jump.id);
 	public static Item brownie = new SweetFood("brownie", Potion.resistance.id);
@@ -259,8 +259,8 @@ public class ZollernItems {
 			Potion.damageBoost.id);
 	public static Item chocolateStrawberry = new SweetFood(
 			"strawberry_chocolate", Potion.damageBoost.id);
-	public static Item sharkLeather = new ModItem("shagreen");
-	public static Item sharkTooth = new ModItem("sharktooth");
+	public static Item sharkLeather = new GenericItem("shagreen");
+	public static Item sharkTooth = new GenericItem("sharktooth");
 	
 	// Colored Bricks
 	public static Item bricksBrown = new ColoredBrick("brown");
@@ -284,14 +284,14 @@ public class ZollernItems {
 	public static Item netherEye = new ItemNetherEye();
 	public static Item upsideDownEye = new ItemUpsideDownEye();
 	public static Item enderReeds = new ItemEnderReed();
-	public static Item dough = new ModItem("dough");
-	public static Item cookedDough = new ModItem("cookeddough");
+	public static Item dough = new GenericItem("dough");
+	public static Item cookedDough = new GenericItem("cookeddough");
 	public static Item tomatoPaste = new ZollernBottle("tomatopaste");
 	public static Item enderBerry = new TreeFood("enderberry", 2, 5);
-	public static Item enderGlowstoneDust = new ModItem("enderglowstonedust");
-	public static Item chargiumDust = new ModItem("chargiumdust");
-	public static Item chargiumIngot = new ModItem("chargiumingot");
-	public static Item radiance = new ModItem("radiance");
+	public static Item enderGlowstoneDust = new GenericItem("enderglowstonedust");
+	public static Item chargiumDust = new GenericItem("chargiumdust");
+	public static Item chargiumIngot = new GenericItem("chargiumingot");
+	public static Item radiance = new GenericItem("radiance");
 	
 	public static Item chocolateBucket = new ZollernBucket("bucket_chocolate",
 			ZollernBlocks.blockChocolate);

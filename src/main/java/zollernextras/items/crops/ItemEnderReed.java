@@ -7,9 +7,9 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import zollernextras.blocks.ZollernBlocks;
-import zollernextras.items.ModItem;
+import zollernextras.items.GenericItem;
 
-public class ItemEnderReed extends ModItem {
+public class ItemEnderReed extends GenericItem {
 	
 	private Block field_150935_a;
 	

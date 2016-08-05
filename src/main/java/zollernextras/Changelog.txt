@@ -1,7 +1,7 @@
 [3.1 - The Upside-Down Update]
 * Added the "Upside-Down" dimension.
     * Inspired by the show "Stranger Things."
-    * Entirely black dimension with over 15 different ores.
+    * Entirely black, very dark dimension with over 20 different ores.
         * Zanium from Zane's Extras will also generate here if that mod is loaded.
     * Only ZE mobs spawn here.
     * The only way to get there is via the Upside-Down Gateway Eye.
@@ -36,6 +36,13 @@
 * Caves, ravines, mineshafts and dungeons now generate in the Upside-Down.
 * Added the White Lava liquid.
 * Registered more blocks and items with the Ore Dictionary.
+* The spawn rate of each biome can now be controlled via the config.
+    * 95% of them have had their spawn chance lowered as well.
+* Potion IDs for this mod can now be controlled in the config.
+* Netherized Obsidian can now be harvested using an Iron Pickaxe.
+    * Was originally set to Diamond.
+* Canyon Rock can now be crafted into Canyon Bricks.
+* Vastly improved and cleaned-up block and item registration.
 
 
 -- FIXES --

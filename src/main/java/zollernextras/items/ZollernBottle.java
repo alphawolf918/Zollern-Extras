@@ -3,7 +3,7 @@ package zollernextras.items;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 
-public class ZollernBottle extends ModItem {
+public class ZollernBottle extends GenericItem {
 	
 	public ZollernBottle(String strTexture) {
 		super(strTexture);

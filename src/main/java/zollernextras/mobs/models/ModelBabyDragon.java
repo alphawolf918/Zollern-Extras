@@ -145,7 +145,7 @@ public class ModelBabyDragon extends ModelBase {
 		wingbase22.setTextureSize(256, 256);
 		wingbase22.mirror = true;
 		setRotation(wingbase22, 0F, 0F, 0F);
-		// head.addChild(nose);
+		// bipedHead.addChild(nose);
 	}
 	
 	@Override

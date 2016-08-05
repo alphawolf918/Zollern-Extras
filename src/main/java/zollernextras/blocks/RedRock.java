@@ -1,19 +1,13 @@
 package zollernextras.blocks;
 
 import java.util.Random;
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
-import zollernextras.lib.ZollernHelper;
 
-public class RedRock extends Block {
+public class RedRock extends GenericBlock {
+	
 	public RedRock() {
-		super(Material.rock);
-		ZollernHelper.setTab(this);
-		this.setHardness(1.4F);
-		this.setResistance(10F);
-		ZollernHelper.setNameAndTexture(this, "redrock");
-		this.setStepSound(Block.soundTypeStone);
+		super("redrock", 1.4F);
+		this.setHardResist(1.4F, 10F);
 		this.setHarvestLevel("pickaxe", 1);
 	}
 	

@@ -3,7 +3,7 @@ package zollernextras.items;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 
-public class ZollernContainer extends ModItem {
+public class ZollernContainer extends GenericItem {
 	
 	public static Item itemContainer = Items.glass_bottle;
 	

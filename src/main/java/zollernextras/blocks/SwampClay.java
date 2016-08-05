@@ -1,18 +1,15 @@
 package zollernextras.blocks;
 
 import java.util.Random;
-import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import zollernextras.items.ZollernItems;
-import zollernextras.lib.ZollernHelper;
 
-public class SwampClay extends Block {
+public class SwampClay extends GenericBlock {
+	
 	public SwampClay() {
-		super(Material.clay);
-		ZollernHelper.setTab(this);
-		ZollernHelper.setNameAndTexture(this, "swampclay");
-		this.setHardness(1.0F);
+		super("swampclay", 0.8F);
+		this.setMaterial(Material.clay);
 		this.setResistance(0.1F);
 		this.setHarvestLevel("shovel", 0);
 		this.setStepSound(this.soundTypeGravel);

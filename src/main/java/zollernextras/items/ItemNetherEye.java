@@ -10,7 +10,7 @@ import zollernextras.network.PacketDispatcher;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemNetherEye extends ModItem {
+public class ItemNetherEye extends GenericItem {
 	
 	public ItemNetherEye() {
 		super("nethereye");

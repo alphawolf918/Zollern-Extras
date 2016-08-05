@@ -37,24 +37,12 @@ import zollernextras.blocks.ingotstacks.ShinestoneIngotStack;
 import zollernextras.blocks.ingotstacks.ShiniumIngotStack;
 import zollernextras.blocks.ingotstacks.ZincIngotStack;
 import zollernextras.blocks.ingotstacks.ZollerniumIngotStack;
-import zollernextras.blocks.ores.AmaranthOre;
-import zollernextras.blocks.ores.EnderShardOre;
-import zollernextras.blocks.ores.FueltoniumOre;
 import zollernextras.blocks.ores.GemOre;
-import zollernextras.blocks.ores.PrismarineOre;
+import zollernextras.blocks.ores.GenericBlockOre;
+import zollernextras.blocks.ores.GenericEnderOre;
+import zollernextras.blocks.ores.GenericNetherOre;
+import zollernextras.blocks.ores.GenericUpsideDownOre;
 import zollernextras.blocks.ores.ShadowGemOre;
-import zollernextras.blocks.ores.SuperChargedCoalOre;
-import zollernextras.blocks.ores.ZincOre;
-import zollernextras.blocks.ores.ZollerniumOre;
-import zollernextras.blocks.ores.ender.EnderAmaranthOre;
-import zollernextras.blocks.ores.ender.EnderFueltoniumOre;
-import zollernextras.blocks.ores.ender.EnderSpcOre;
-import zollernextras.blocks.ores.ender.EnderZincOre;
-import zollernextras.blocks.ores.nether.NetherAmaranthOre;
-import zollernextras.blocks.ores.nether.NetherEnderShardOre;
-import zollernextras.blocks.ores.nether.NetherFueltoniumOre;
-import zollernextras.blocks.ores.nether.NetherSPCOre;
-import zollernextras.blocks.ores.nether.NetherZincOre;
 import zollernextras.blocks.sirens.DiamondSiren;
 import zollernextras.blocks.sirens.EmeraldSiren;
 import zollernextras.blocks.sirens.GoldSiren;
@@ -109,31 +97,48 @@ public class ZollernBlocks {
 	public static int totalBlocks = 0;
 	
 	public static Block betterGlass = new BetterGlass();
-	public static Block spcOre = new SuperChargedCoalOre();
 	public static Block shinestone = new Shinestone();
-	public static Block fueltonium = new FueltoniumOre();
 	public static Block barrier = new BarrierBlock();
 	public static Block icySand = new IcySand();
 	public static Block icyStone = new IcySandstone();
-	public static Block enderShardOre = new EnderShardOre();
-	public static Block amaranthOre = new AmaranthOre();
+	public static Block spcOre = new GemOre("superchargedcoalore",
+			ZollernItems.spcItem);
+	public static Block fueltonium = new GemOre("fueltoniumore",
+			ZollernItems.fuelonite).setHardness(1.8F);
+	public static Block enderShardOre = new GemOre("endershardore",
+			ZollernItems.enderShard);
+	public static Block amaranthOre = new GenericBlockOre("amaranthore", 1.4F)
+	.setBlockHarvestLevel("pickaxe", 3);
 	public static Block slimeBlock = new SlimeBlock();
-	public static Block redShroomBlock = new RedshroomBlock();
-	public static Block redShroomStem = new RedshroomStem();
+	public static Block redShroomBlock = new GenericBlock("redshroomblock",
+			0.6F);
+	public static Block redShroomStem = new GenericBlock("redshroomstem", 0.8F);
 	public static Block redRock = new RedRock();
-	public static Block redRockCobble = new RedRockCobble();
-	public static Block redRockBrick = new RedRockBricks();
+	public static Block redRockCobble = new GenericBlock("redrockcobble", 0.4F);
+	public static Block redRockBrick = new GenericBlock("redrockbricks", 1.0F)
+	.setBlockHarvestLevel("pickaxe", 0);
 	public static Block betterGrass = new BetterGrass();
 	public static Block swampClay = new SwampClay();
-	public static Block canyonRock = new CanyonRock();
-	public static Block badStone = new BadStone();
-	public static Block amaranthBlock = new AmaranthBlock();
-	public static Block spcBlock = new SPCBlock();
-	public static Block fueltoniumBlock = new FueltoniumBlock();
-	public static Block zincOre = new ZincOre();
-	public static Block zincBlock = new ZincBlock();
-	public static Block zollerniumBlock = new ZollerniumBlock();
-	public static Block seaLamp = new SeaLamp();
+	public static Block canyonRock = new GenericBlock("canyonrock", 1.1F)
+	.setBlockHarvestLevel("pickaxe", 0);
+	public static Block canyonRockBricks = new GenericBlock("canyonrockbricks",
+			1.1F);
+	public static Block badStone = new GenericBlock("badstone", 1.5F)
+	.setBlockHarvestLevel("pickaxe", 1);
+	public static Block amaranthBlock = new GenericBlock("amaranthblock", 1.0F)
+	.setBlockHarvestLevel("pickaxe", 2);
+	public static Block spcBlock = new GenericBlock("spcblock", 1.4F)
+	.setBlockHarvestLevel("pickaxe", 2);
+	public static Block fueltoniumBlock = new GenericBlock("fueltoniumblock",
+			1.6F).setBlockHarvestLevel("pickaxe", 2);
+	public static Block zincOre = new GenericBlockOre("zincore", 1.4F)
+	.setBlockHarvestLevel("pickaxe", 4);
+	public static Block zincBlock = new GenericBlock("zincblock", 1.6F)
+	.setBlockHarvestLevel("pickaxe", 2);
+	public static Block zollerniumBlock = new GenericBlock("zollerniumblock",
+			1.8F).setBlockHarvestLevel("pickaxe", 2);
+	public static Block seaLamp = new GenericBlock("sealamp", 0.5F)
+	.setBlockHarvestLevel("pickaxe", 1).setLightLevel(1.0F);
 	public static Block ironSiren = new IronSiren(State.OFF);
 	public static Block ironSirenON = new IronSiren(State.ON);
 	public static Block goldSiren = new GoldSiren(State.OFF);
@@ -142,13 +147,22 @@ public class ZollernBlocks {
 	public static Block diamondSirenON = new DiamondSiren(State.ON);
 	public static Block emeraldSiren = new EmeraldSiren(State.OFF);
 	public static Block emeraldSirenON = new EmeraldSiren(State.ON);
-	public static Block shinestoneCrystal = new ShinestoneCrystal();
-	public static Block shinestoneBricks = new ShinestoneBricks();
-	public static Block fuelNetherOre = new NetherFueltoniumOre();
-	public static Block spcNetherOre = new NetherSPCOre();
-	public static Block amaranthNetherOre = new NetherAmaranthOre();
-	public static Block zincNetherOre = new NetherZincOre();
-	public static Block enderShardNetherOre = new NetherEnderShardOre();
+	public static Block shinestoneCrystal = new GenericBlock(
+			"shinestonecrystal", 1.2F).setBlockHarvestLevel("pickaxe", 2)
+			.setLightLevel(1.0F);
+	public static Block shinestoneBricks = new GenericBlock("crystalbricks",
+			1.2F);
+	
+	public static Block fuelNetherOre = new GenericNetherOre(
+			"netherfueltoniumore", 1.6F);
+	public static Block spcNetherOre = new GenericNetherOre("netherspcore",
+			1.4F);
+	public static Block amaranthNetherOre = new GenericNetherOre(
+			"netheramaranthore", 1.2F);
+	public static Block zincNetherOre = new GenericNetherOre("netherzincore",
+			1.4F);
+	public static Block enderShardNetherOre = new GenericNetherOre(
+			"netherendershardore", 1.1F);
 	
 	public static Block amberOre = new GemOre("amberore", ZollernItems.amber);
 	public static Block azuriteOre = new GemOre("azuriteore",
@@ -168,15 +182,21 @@ public class ZollernBlocks {
 	public static Block enderDiamondOre = new GemOre("enderdiamondore",
 			ZollernItems.enderDiamond);
 	
-	public static Block caveMarbleWhite = new CaveMarble("marble");
-	public static Block caveMarbleBlack = new CaveMarble("blackmarble");
+	public static Block caveMarbleWhite = new GenericBlock("marble", 1.0F)
+	.setBlockMaterial(Material.iron).setStepSound(Block.soundTypeMetal);
+	public static Block caveMarbleBlack = new GenericBlock("blackmarble", 1.0F)
+	.setBlockMaterial(Material.iron).setStepSound(Block.soundTypeMetal);
 	public static Block brimStone = new Brimstone();
-	public static Block netherDirt = new NetherDirt();
+	public static Block netherDirt = ((GenericBlock) new GenericBlock(
+			"netherdirt", 0.2F).setBlockHarvestLevel("shovel", 1))
+			.setBlockMaterial(Material.grass).setStepSound(
+					Block.soundTypeGravel);
 	
-	public static Block enderAmaranthOre = new EnderAmaranthOre();
-	public static Block enderFnOre = new EnderFueltoniumOre();
-	public static Block enderSpcOre = new EnderSpcOre();
-	public static Block enderZincOre = new EnderZincOre();
+	public static Block enderAmaranthOre = new GenericEnderOre(
+			"amaranthenderore", 1.4F);
+	public static Block enderFnOre = new GenericEnderOre("enderfnore", 1.8F);
+	public static Block enderSpcOre = new GenericEnderOre("enderspcore", 1.6F);
+	public static Block enderZincOre = new GenericEnderOre("enderzincore", 1.4F);
 	
 	public static Block garnet = new GemBlock("garnet");
 	public static Block fireGarnet = new GemBlock("firegarnet");
@@ -245,27 +265,42 @@ public class ZollernBlocks {
 	
 	public static Block sugarCube = new SugarCube();
 	
-	public static Block andesite = new Andesite();
-	public static Block polishedAndesite = new PolishedAndesite();
-	public static Block diorite = new Diorite();
-	public static Block polishedDiorite = new PolishedDiorite();
-	public static Block granite = new Granite();
-	public static Block polishedGranite = new PolishedGranite();
+	public static Block andesite = new GenericBlock("andesite", 0.8F)
+	.setBlockHarvestLevel("pickaxe", 1);
+	public static Block polishedAndesite = new GenericBlock("polishedandesite",
+			1.0F).setBlockHarvestLevel("pickaxe", 2);
+	public static Block diorite = new GenericBlock("diorite", 1.0F)
+			.setBlockHarvestLevel("pickaxe", 1);
+	public static Block polishedDiorite = new GenericBlock("polisheddiorite",
+			1.0F).setBlockHarvestLevel("pickaxe", 2);
+	public static Block granite = new GenericBlock("granite", 1.0F)
+	.setBlockHarvestLevel("pickaxe", 1);
+	public static Block polishedGranite = new GenericBlock("polishedgranite",
+			1.0F).setBlockHarvestLevel("pickaxe", 1);
 	
-	public static Block prismarine = new Prismarine();
-	public static Block darkPrismarine = new DarkPrismarine();
-	public static Block prismarineBricks = new PrismarineBricks();
-	public static Block prismarineOre = new PrismarineOre();
+	public static Block prismarine = new GenericBlock("prismarine", 1.0F)
+	.setBlockHarvestLevel("pickaxe", 1);
+	public static Block darkPrismarine = new GenericBlock("darkprismarine",
+			1.0F).setBlockHarvestLevel("pickaxe", 1);
+	public static Block prismarineBricks = new GenericBlock("prismarinebricks",
+			0.6F);
+	public static Block prismarineOre = new GemOre("prismarineore",
+			ZollernItems.prismarineCrystal);
 	
-	public static Block polishedCrystal = new PolishedCrystal();
+	public static Block polishedCrystal = new GenericBlock("polishedcrystal",
+			1.2F).setBlockHarvestLevel("pickaxe", 1);
 	
 	public static Block seaLantern = new SeaLantern();
 	
 	public static Block cookieBlock = new CookieBlock();
-	public static Block chocolateBlock = new ChocolateBlock();
-	public static Block brownieBlock = new BrownieBlock();
+	public static Block chocolateBlock = new GenericBlock("chocolateblock",
+			1.2F);
+	public static Block brownieBlock = new GenericBlock("brownieblock", 0.9F)
+	.setBlockMaterial(Material.cloth)
+	.setStepSound(Block.soundTypeCloth);
 	public static Block iceCreamSandwichBlock = new IceCreamSandwichBlock();
-	public static Block chocolateBricks = new ChocolateBricks();
+	public static Block chocolateBricks = new GenericBlock("chocolatebricks",
+			1.2F);
 	
 	// Trees (Banana)
 	public static Block bananaLog = new BananaLog();
@@ -323,7 +358,8 @@ public class ZollernBlocks {
 	
 	public static Block shinetorch = new Shinetorch();
 	public static Block enderPearlBlock = new BlockEnderPearl();
-	public static Block netherizedObsidian = new NetherizedObsidian();
+	public static Block netherizedObsidian = new GenericBlock(
+			"netherizedobsidian", 2.0F).setBlockHarvestLevel("pickaxe", 2);
 	
 	// Colored Bricks
 	public static Block bricksBlack = new ColoredBricks("black");
@@ -344,9 +380,12 @@ public class ZollernBlocks {
 	public static Block bricksPurple = new ColoredBricks("purple");
 	public static Block bricksMud = new ColoredBricks("mud");
 	
-	public static Block zollerniumOre = new ZollerniumOre();
+	public static Block zollerniumOre = new GenericBlockOre("zollerniumore",
+			1.6F).setBlockHarvestLevel("pickaxe", 6);
 	public static Block enderReeds = new BlockEnderReeds();
-	public static Block enderDirt = new EnderDirt();
+	public static Block enderDirt = ((GenericBlock) new GenericBlock(
+			"enderdirt", 0.6F).setBlockMaterial(Material.grass).setStepSound(
+					Block.soundTypeGravel)).setBlockHarvestLevel("shovel", 0);
 	public static Block magmaBlock = new BlockMagma();
 	public static Block boneBlock = new GenericBlock("boneblock", 1.6F);
 	public static Block endStoneBricks = new GenericBlock("endstonebricks",
@@ -355,7 +394,8 @@ public class ZollernBlocks {
 			1.2F);
 	public static Block netherWartBlock = new GenericBlock("netherwartblock",
 			0.8F);
-	public static Block redObsidian = new RedObsidian();
+	public static Block redObsidian = new GenericBlock("redobsidian", 10F)
+			.setBlockHarvestLevel("pickaxe", 3).setLightLevel(1.0F);
 	public static Block blockPizza = new BlockPizza();
 	public static Block purpurBlock = new BlockPurpur();
 	public static Block purpurPillar = new PurpurPillar();
@@ -377,18 +417,18 @@ public class ZollernBlocks {
 			"ud_dirt", 0.5F).setStepSound(Block.soundTypeGravel))
 			.setBlockHarvestLevel("shovel", 0))
 			.setBlockMaterial(Material.grass);
-	public static Block upsideDownIronOre = new GenericBlockOre("ud_ironore",
-			1.6F);
-	public static Block upsideDownGoldOre = new GenericBlockOre("ud_goldore",
-			1.4F);
+	public static Block upsideDownIronOre = new GenericUpsideDownOre(
+			"ud_ironore", 1.6F);
+	public static Block upsideDownGoldOre = new GenericUpsideDownOre(
+			"ud_goldore", 1.4F);
 	public static Block upsideDownDiamondOre = new ShadowGemOre(
 			"ud_diamondore", Items.diamond);
 	public static Block upsideDownEmeraldOre = new ShadowGemOre(
 			"ud_emeraldore", Items.emerald);
-	public static Block upsideDownAmaranthOre = new GenericBlockOre(
+	public static Block upsideDownAmaranthOre = new GenericUpsideDownOre(
 			"ud_amaranthore", 1.4F);
-	public static Block upsideDownZincOre = new GenericBlockOre("ud_zincore",
-			1.4F);
+	public static Block upsideDownZincOre = new GenericUpsideDownOre(
+			"ud_zincore", 1.4F);
 	public static Block upsideDownRubyOre = new ShadowGemOre("ud_rubyore",
 			ZollernItems.ruby);
 	public static Block upsideDownSapphireOre = new ShadowGemOre(
@@ -405,6 +445,16 @@ public class ZollernBlocks {
 			"ud_endershardore", ZollernItems.enderShard);
 	public static Block upsideDownRadianceOre = new ShadowGemOre(
 			"ud_radianceore", ZollernItems.radiance);
+	public static Block upsideDownGarnetOre = new ShadowGemOre("ud_garnetore",
+			ZollernItems.garnet);
+	public static Block upsideDownAquaOre = new ShadowGemOre("ud_aquaore",
+			ZollernItems.aquamarine);
+	public static Block upsideDownTopazOre = new ShadowGemOre("ud_topazore",
+			ZollernItems.topaz);
+	public static Block upsideDownAmberOre = new ShadowGemOre("ud_amberore",
+			ZollernItems.amber);
+	public static Block upsideDownOpalOre = new ShadowGemOre("ud_opalore",
+			ZollernItems.opal);
 	
 	public static FluidChocolate fluidChocolate = new FluidChocolate(
 			ZollernModInfo.MODID + "_chocolate");
@@ -471,6 +521,7 @@ public class ZollernBlocks {
 		addBlock(betterGrass, "Better Grass");
 		addBlock(swampClay, "Swamp Clay");
 		addBlock(canyonRock, "Canyon Rock");
+		addBlock(canyonRockBricks, "Canyon Bricks");
 		addBlock(badStone, "Bad Stone");
 		addBlock(seaLamp, "Sea Lamp");
 		addBlock(ironSiren, "Iron Siren");
@@ -650,6 +701,11 @@ public class ZollernBlocks {
 		addBlock(upsideDownRedstoneOre, "UD Redstone Ore");
 		addBlock(upsideDownEnderShardOre, "UD Ender Shard Ore");
 		addBlock(upsideDownRadianceOre, "UD Radiance Ore");
+		addBlock(upsideDownGarnetOre, "UD Garnet Ore");
+		addBlock(upsideDownAquaOre, "UD Aquamarine Ore");
+		addBlock(upsideDownTopazOre, "UD Topaz Ore");
+		addBlock(upsideDownAmberOre, "UD Amber Ore");
+		addBlock(upsideDownOpalOre, "UD Opal Ore");
 		
 		addBlock(blockChocolate, "Melted Chocolate");
 		addBlock(blockFuel, "Molten Fueltonium");

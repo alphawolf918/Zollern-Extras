@@ -48,21 +48,30 @@ public class BiomeList {
 	
 	public static void init() {
 		ZollernHelper.Log("Preparing to load biomes..");
-		addBiome(icyDesert, BiomeType.ICY, 15);
-		addBiome(slimeLands, BiomeType.WARM, 15);
-		addBiome(redShroomPlains, BiomeType.WARM, 24);
-		addBiome(redRockMountains, BiomeType.WARM, 16);
-		addBiome(mushroomForest, BiomeType.COOL, 8);
-		addBiome(mudSwamp, BiomeType.WARM, 14);
-		addBiome(floweryField, BiomeType.WARM, 32);
-		addBiome(grandCanyon, BiomeType.DESERT, 14);
-		addBiome(iceMountains, BiomeType.ICY, 14);
-		addBiome(coalHills, BiomeType.WARM, 8);
-		addBiome(badLands, BiomeType.DESERT, 17);
-		addBiome(minersLand, BiomeType.WARM, 5);
-		addBiome(candyLand, BiomeType.WARM, 5);
-		addBiome(crystalOcean, BiomeType.WARM, 6);
-		addBiome(tropicalForest, BiomeType.WARM, 8);
+		addBiome(icyDesert, BiomeType.ICY, ZEConfig.biomeIcyDesertSpawnRate);
+		addBiome(slimeLands, BiomeType.WARM, ZEConfig.biomeSlimeLandsSpawnRate);
+		addBiome(redShroomPlains, BiomeType.WARM,
+				ZEConfig.biomeRedshroomPlainsSpawnRate);
+		addBiome(redRockMountains, BiomeType.WARM,
+				ZEConfig.biomeRedrockMountainsSpawnRate);
+		addBiome(mushroomForest, BiomeType.COOL,
+				ZEConfig.biomeMushroomForestSpawnRate);
+		addBiome(mudSwamp, BiomeType.WARM, ZEConfig.biomeMudSwampSpawnRate);
+		addBiome(floweryField, BiomeType.WARM,
+				ZEConfig.biomeFloweryFieldSpawnRate);
+		addBiome(grandCanyon, BiomeType.DESERT,
+				ZEConfig.biomeGrandCanyonSpawnRate);
+		addBiome(iceMountains, BiomeType.ICY,
+				ZEConfig.biomeIceMountainsSpawnRate);
+		addBiome(coalHills, BiomeType.WARM, ZEConfig.biomeCoalHillsSpawnRate);
+		addBiome(badLands, BiomeType.DESERT, ZEConfig.biomeBadLandsSpawnRate);
+		addBiome(minersLand, BiomeType.WARM, ZEConfig.biomeMinersLandSpawnRate);
+		addBiome(candyLand, BiomeType.WARM, ZEConfig.biomeCandyLandSpawnRate);
+		addBiome(crystalOcean, BiomeType.WARM,
+				ZEConfig.biomeCrystalOceanSpawnRate);
+		addBiome(tropicalForest, BiomeType.WARM,
+				ZEConfig.biomeTropicalForestSpawnRate);
+		
 		addNoSpawnBiome(upsideDown, BiomeType.COOL, 0);
 		ZollernHelper.Log("Biomes loaded!");
 	}

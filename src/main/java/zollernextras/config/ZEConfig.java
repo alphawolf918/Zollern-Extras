@@ -21,6 +21,7 @@ public class ZEConfig {
 	public static String CATEGORY_IMPROVEMENTS = "Improvements";
 	public static String CATEGORY_MOBS = "Mobs";
 	public static String CATEGORY_ORES = "Ores";
+	public static String CATEGORY_POTIONS = "Potions";
 	
 	// Config2
 	public static String CATEGORY_HOMES = "Homes";
@@ -35,7 +36,7 @@ public class ZEConfig {
 	public static boolean enableDebugMode;
 	public static int worldGenerationWeight;
 	
-	// Biomes
+	// Biomes (IDs)
 	public static int biomeIcyDesertID;
 	public static int biomeSlimeLandsID;
 	public static int biomeRedshroomPlainsID;
@@ -52,6 +53,23 @@ public class ZEConfig {
 	public static int biomeCrystalOceanID;
 	public static int biomeTropicalForestID;
 	
+	// Biomes (Weights)
+	public static int biomeIcyDesertSpawnRate;
+	public static int biomeSlimeLandsSpawnRate;
+	public static int biomeRedshroomPlainsSpawnRate;
+	public static int biomeRedrockMountainsSpawnRate;
+	public static int biomeMushroomForestSpawnRate;
+	public static int biomeMudSwampSpawnRate;
+	public static int biomeFloweryFieldSpawnRate;
+	public static int biomeGrandCanyonSpawnRate;
+	public static int biomeIceMountainsSpawnRate;
+	public static int biomeCoalHillsSpawnRate;
+	public static int biomeBadLandsSpawnRate;
+	public static int biomeMinersLandSpawnRate;
+	public static int biomeCandyLandSpawnRate;
+	public static int biomeCrystalOceanSpawnRate;
+	public static int biomeTropicalForestSpawnRate;
+	
 	// Commands
 	public static boolean commandEnableWarpTp;
 	public static boolean commandEnableWp;
@@ -62,7 +80,7 @@ public class ZEConfig {
 	// GUI
 	public static boolean biomeDisplaysOnHUD;
 	
-	// mobs
+	// Mobs
 	public static int mobDuckSpawnRate;
 	public static int mobFishSpawnRate;
 	public static int mobSharkSpawnRate;
@@ -94,6 +112,10 @@ public class ZEConfig {
 	public static int oreWitheriteSpawnRate;
 	public static int oreRubySpawnRate;
 	public static int oreSapphireSpawnRate;
+	
+	// Potions
+	public static int potionRadianceID;
+	public static int potionInfectedID;
 	
 	public static void init(FMLPreInitializationEvent event) {
 		config = new Configuration(new File(event
@@ -127,19 +149,19 @@ public class ZEConfig {
 						"fueltoniumActsAsYellorite",
 						true,
 						"If enabled, Fueltonium Ingots will do the same as Yellorium Ingots in BigReactors, and can be used in their place.")
-				.getBoolean();
+						.getBoolean();
 		shiniumIsPlatinum = config
 				.get(config.CATEGORY_GENERAL,
 						"shiniumIsPlatinum",
 						true,
 						"If enabled, Shinium Ingots and Precious Shinium will function as Platinum Ingots and Platinum Dust, respectively (Thermal Foundation, Metallurgy, etc).")
-				.getBoolean();
+						.getBoolean();
 		betterGlassIsGlass = config
 				.get(config.CATEGORY_GENERAL,
 						"betterGlassIsGlass",
 						true,
 						"If enabled, Better Glass can be used in place of regular glass. Useful if you have a lot of gravel.")
-				.getBoolean();
+						.getBoolean();
 		rottenFleshCooksIntoLeather = config.get(CATEGORY_IMPROVEMENTS,
 				"rottenFleshCooksIntoLeather", true,
 				"If enabled, rotten flesh can be smelted into leather.")
@@ -149,17 +171,17 @@ public class ZEConfig {
 		vanillaItemsAreCraftable = config
 				.get(CATEGORY_IMPROVEMENTS, "vanillaItemsAreCraftable", true,
 						"If enabled, normally uncraftable vanilla items will be craftable.")
-				.getBoolean();
+						.getBoolean();
 		horseArmorIsCraftable = config
 				.get(CATEGORY_IMPROVEMENTS,
 						"horseArmorIsCraftable",
 						true,
 						"If enabled, horse armor may be crafted using its respective material and obsidian. (This is separate from the above on purpose.)")
-				.getBoolean();
+						.getBoolean();
 		biomeDisplaysOnHUD = config
 				.get(CATEGORY_GUI, "biomeDisplaysOnHUD", true,
 						"Disable this if you don't want the current biome to show on your HUD.")
-				.getBoolean();
+						.getBoolean();
 		enableDebugMode = config.get(config.CATEGORY_GENERAL,
 				"Enable Debug Mode", false,
 				"Prints out detailed information to the console when enabled.")
@@ -169,9 +191,9 @@ public class ZEConfig {
 						"World Generation Weight",
 						40,
 						"Determines the priority of world generation for this mod. Higher numbers = lower generation.")
-				.getInt();
+						.getInt();
 		
-		// Biomes
+		// Biomes (IDs)
 		biomeIcyDesertID = config.get(CATEGORY_BIOMES, "biomeIcyDesertID", 67)
 				.getInt();
 		biomeSlimeLandsID = config
@@ -203,19 +225,51 @@ public class ZEConfig {
 		biomeTropicalForestID = config.get(CATEGORY_BIOMES,
 				"biomeTropicalForestID", 81).getInt();
 		
+		// Biomes (Weights)
+		biomeIcyDesertSpawnRate = config.get(CATEGORY_BIOMES,
+				"biomeIcyDesertSpawnRate", 15).getInt();
+		biomeSlimeLandsSpawnRate = config.get(CATEGORY_BIOMES,
+				"biomeSlimeLandsSpawnRate", 10).getInt();
+		biomeRedshroomPlainsSpawnRate = config.get(CATEGORY_BIOMES,
+				"biomeRedshroomPlainsSpawnRate", 16).getInt();
+		biomeRedrockMountainsSpawnRate = config.get(CATEGORY_BIOMES,
+				"biomeRedrockMountainsSpawnRate", 20).getInt();
+		biomeMushroomForestSpawnRate = config.get(CATEGORY_BIOMES,
+				"biomeMushroomForestSpawnRate", 8).getInt();
+		biomeMudSwampSpawnRate = config.get(CATEGORY_BIOMES,
+				"biomeMudSwampSpawnRate", 10).getInt();
+		biomeFloweryFieldSpawnRate = config.get(CATEGORY_BIOMES,
+				"biomeFloweryFieldSpawnRate", 24).getInt();
+		biomeGrandCanyonSpawnRate = config.get(CATEGORY_BIOMES,
+				"biomeGrandCanyonSpawnRate", 6).getInt();
+		biomeIceMountainsSpawnRate = config.get(CATEGORY_BIOMES,
+				"biomeIceMountainsSpawnRate", 4).getInt();
+		biomeCoalHillsSpawnRate = config.get(CATEGORY_BIOMES,
+				"biomeCoalHillsSpawnRate", 8).getInt();
+		biomeBadLandsSpawnRate = config.get(CATEGORY_BIOMES,
+				"biomeBadLandsSpawnRate", 14).getInt();
+		biomeMinersLandSpawnRate = config.get(CATEGORY_BIOMES,
+				"biomeMinersLandSpawnRate", 4).getInt();
+		biomeCandyLandSpawnRate = config.get(CATEGORY_BIOMES,
+				"biomeCandyLandSpawnRate", 6).getInt();
+		biomeCrystalOceanSpawnRate = config.get(CATEGORY_BIOMES,
+				"biomeCrystalOceanSpawnRate", 4).getInt();
+		biomeTropicalForestSpawnRate = config.get(CATEGORY_BIOMES,
+				"biomeTropicalForestSpawnRate", 6).getInt();
+		
 		// Commands
 		commandEnableWarpTp = config
 				.get(CATEGORY_COMMANDS,
 						"Enable WarpTP command",
 						false,
 						"Allow or disallow any player, Op or not, to teleport to any coordinates. Default: false")
-				.getBoolean();
+						.getBoolean();
 		commandEnableWp = config
 				.get(CATEGORY_COMMANDS,
 						"Enable WP command",
 						false,
 						"Allow or disallow any player to instantly warp to any other player. Default: false")
-				.getBoolean();
+						.getBoolean();
 		
 		// Dimensions
 		dimensionUpsideDownID = config.get(CATEGORY_DIMENSIONS,
@@ -283,6 +337,12 @@ public class ZEConfig {
 				.getInt();
 		oreSapphireSpawnRate = config.get(CATEGORY_ORES,
 				"oreSapphireSpawnRate", 4).getInt();
+		
+		// Potions
+		potionRadianceID = config.get(CATEGORY_POTIONS, "potionRadianceID", 30)
+				.getInt();
+		potionInfectedID = config.get(CATEGORY_POTIONS, "potionInfectedID", 31)
+				.getInt();
 		
 		config.save();
 		

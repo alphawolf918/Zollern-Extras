@@ -1,27 +1,22 @@
 package zollernextras.blocks.ores;
 
 import java.util.Random;
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
-import zollernextras.api.ores.IOre;
-import zollernextras.lib.ZollernHelper;
 
-public class GemOre extends Block implements IOre {
+public class GemOre extends GenericBlockOre {
 	
 	protected Item dropItem;
 	
 	public GemOre(String name, Item itemToDrop) {
-		super(Material.rock);
-		ZollernHelper.setTab(this);
-		ZollernHelper.setNameAndTexture(this, name);
-		ZollernHelper.setHardResist(this, 1.5F, 4.2F);
+		super(name, 1.6F);
 		this.dropItem = itemToDrop;
 		this.setHarvestLevel("pickaxe", 3);
 		this.setStepSound(soundTypePiston);
+		this.setFortune(.06D);
+		this.setMaxDropIncrease(6);
 	}
 	
 	@Override
@@ -52,16 +47,6 @@ public class GemOre extends Block implements IOre {
 			return j1;
 		}
 		return 0;
-	}
-	
-	@Override
-	public double getFortune() {
-		return 0.04D;
-	}
-	
-	@Override
-	public int getMaxDropIncrease() {
-		return 4;
 	}
 	
 	@Override

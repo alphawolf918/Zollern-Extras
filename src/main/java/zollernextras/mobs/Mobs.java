@@ -20,6 +20,7 @@ import zollernextras.mobs.entities.EntityHellDuck;
 import zollernextras.mobs.entities.EntityHog;
 import zollernextras.mobs.entities.EntityHogZombie;
 import zollernextras.mobs.entities.EntityJellyfish;
+import zollernextras.mobs.entities.EntityKrull;
 import zollernextras.mobs.entities.EntityMegaCreeper;
 import zollernextras.mobs.entities.EntityMummy;
 import zollernextras.mobs.entities.EntityPigshroom;
@@ -251,6 +252,9 @@ public class Mobs {
 		registerEntity(EntityShadowAlien.class, "shadowalien", 0xeeeeee,
 				0xffffff);
 		
+		// Krull
+		registerEntity(EntityKrull.class, "krull", 0xf5eeb3, 0x444444);
+		
 		ZollernHelper.Log("Entities have been registered!");
 	}
 	
@@ -259,8 +263,8 @@ public class Mobs {
 		int uniqueEntityId = EntityRegistry.findGlobalUniqueEntityId();
 		ZollernHelper.Log("Loading entity '" + entityName + "' with ID "
 				+ uniqueEntityId);
-		EntityRegistry.registerGlobalEntityID(entity, ZollernModInfo.MODID + "_"
-				+ entityName, uniqueEntityId);
+		EntityRegistry.registerGlobalEntityID(entity, ZollernModInfo.MODID
+				+ "_" + entityName, uniqueEntityId);
 		registerEntityEgg(entity, entityPrimaryColor, entitySecondaryColor);
 	}
 	

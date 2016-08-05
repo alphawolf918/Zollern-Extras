@@ -4,14 +4,15 @@ import java.util.Random;
 import net.minecraft.item.Item;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
-import zollernextras.lib.ZollernHelper;
 
 public class ShadowGemOre extends GemOre {
 	
 	public ShadowGemOre(String strTexture, Item theItem) {
 		super(strTexture, theItem);
-		ZollernHelper.setHardResist(this, 1.4F);
+		this.setHardResist(1.4F);
 		this.setHarvestLevel("pickaxe", 4);
+		this.setFortune(.08D);
+		this.setMaxDropIncrease(8);
 	}
 	
 	@Override
@@ -31,11 +32,10 @@ public class ShadowGemOre extends GemOre {
 		if (this.getItemDropped(p_149690_5_, rand, p_149690_7_) != Item
 				.getItemFromBlock(this)) {
 			int j1 = 0;
-			j1 = MathHelper.getRandomIntegerInRange(rand, 10, 14);
+			j1 = MathHelper.getRandomIntegerInRange(rand, 15, 20);
 			
 			return j1;
 		}
 		return 0;
 	}
-	
 }

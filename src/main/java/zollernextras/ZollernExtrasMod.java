@@ -10,11 +10,11 @@ import zollernextras.dimension.DimensionLoader;
 import zollernextras.entity.EntityDuckEgg;
 import zollernextras.handlers.FuelHandlers;
 import zollernextras.handlers.Handlers;
-import zollernextras.items.ZollernItems;
 import zollernextras.items.StackChange;
-import zollernextras.lib.ZollernHelper;
+import zollernextras.items.ZollernItems;
 import zollernextras.lib.OreDict;
 import zollernextras.lib.Treasures;
+import zollernextras.lib.ZollernHelper;
 import zollernextras.lib.ZollernModInfo;
 import zollernextras.lib.modhelper.AE2Helper;
 import zollernextras.lib.modhelper.BRTurbineHelper;
@@ -23,7 +23,7 @@ import zollernextras.lib.modhelper.TreeCapHelper;
 import zollernextras.lib.recipes.RecipeManager;
 import zollernextras.mobs.Mobs;
 import zollernextras.network.PacketDispatcher;
-import zollernextras.potions.ZollernPotionList;
+import zollernextras.potions.ZollernPotion;
 import zollernextras.proxies.CommonProxy;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -37,7 +37,7 @@ import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 @Mod(modid = ZollernModInfo.MODID, name = ZollernModInfo.NAME,
-version = ZollernModInfo.VERSION)
+		version = ZollernModInfo.VERSION)
 public class ZollernExtrasMod {
 	
 	@Mod.Instance(ZollernModInfo.MODID)
@@ -70,7 +70,7 @@ public class ZollernExtrasMod {
 		if (ModHelperBase.useAppliedEnergistics2) {
 			AE2Helper.init();
 		}
-		ZollernPotionList.init();
+		ZollernPotion.init();
 		TreeCapHelper.init();
 		Mobs.init();
 		Treasures.init();

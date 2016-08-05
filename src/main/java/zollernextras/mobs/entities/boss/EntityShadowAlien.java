@@ -39,7 +39,7 @@ public class EntityShadowAlien extends EntityMob implements IBossDisplayData {
 	
 	public EntityShadowAlien(World world) {
 		super(world);
-		this.setSize(this.width, this.height);
+		this.setSize(this.width * .5f, this.height * .5f);
 		this.tasks.addTask(1, new EntityAISwimming(this));
 		this.tasks.addTask(2, new EntityAIWander(this, 1.0D));
 		this.tasks.addTask(3, new EntityAIWatchClosest(this,
@@ -111,7 +111,7 @@ public class EntityShadowAlien extends EntityMob implements IBossDisplayData {
 			if (atkDmg < maxAtkDmg) {
 				this.attackDamage += 0.5D;
 				this.getEntityAttribute(SharedMonsterAttributes.attackDamage)
-						.setBaseValue(this.attackDamage);
+				.setBaseValue(this.attackDamage);
 			}
 		}
 		super.onLivingUpdate();
@@ -134,13 +134,13 @@ public class EntityShadowAlien extends EntityMob implements IBossDisplayData {
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.followRange)
-				.setBaseValue(45.0D);
+		.setBaseValue(45.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.maxHealth)
-				.setBaseValue(1000);
+		.setBaseValue(1000);
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed)
-				.setBaseValue(0.2D);
+		.setBaseValue(0.2D);
 		this.getEntityAttribute(SharedMonsterAttributes.attackDamage)
-				.setBaseValue(this.attackDamage);
+		.setBaseValue(this.attackDamage);
 	}
 	
 	@Override

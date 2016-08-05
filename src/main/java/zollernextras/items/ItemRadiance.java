@@ -7,7 +7,7 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 import zollernextras.ZollernExtrasMod;
 import zollernextras.items.ingots.Gem;
-import zollernextras.potions.ZollernPotionList;
+import zollernextras.potions.ZollernPotion;
 
 public class ItemRadiance extends Gem {
 	
@@ -15,12 +15,14 @@ public class ItemRadiance extends Gem {
 		super("radiance");
 	}
 	
+	// Here we just call the exact same thing that we called in the Events file.
+	// Refer there for a more in depth explanation.
 	@Override
 	public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World,
 			EntityPlayer par3Entity) {
-		if (!par3Entity.isPotionActive(ZollernPotionList.radiance)) {
+		if (!par3Entity.isPotionActive(ZollernPotion.radiance)) {
 			par3Entity.addPotionEffect(new PotionEffect(
-					ZollernPotionList.radiance.id, 6000, 0));
+					ZollernPotion.radiance.id, ZollernPotion.radianceTime, 0));
 			par3Entity.inventory.consumeInventoryItem(ZollernItems.radiance);
 			ZollernExtrasMod.proxy.sendChatMessage(par3Entity,
 					"You are irradiated with a brilliant light.");

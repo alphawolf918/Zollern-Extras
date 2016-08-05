@@ -2,7 +2,6 @@ package zollernextras.blocks;
 
 import java.util.Random;
 import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import net.minecraft.world.ColorizerGrass;
 import net.minecraft.world.IBlockAccess;
@@ -10,19 +9,17 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.EnumPlantType;
 import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.common.util.ForgeDirection;
-import zollernextras.lib.ZollernHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BetterGrass extends Block {
+public class BetterGrass extends GenericBlock {
+	
 	public BetterGrass() {
-		super(Material.glass);
-		ZollernHelper.setTab(this);
-		ZollernHelper.setNameAndTexture(this, "bettergrass", "bettergrass2");
+		super("bettergrass", 0.4F);
+		this.setNameAndTexture("bettergrass", "bettergrass2");
 		this.setHarvestLevel("shovel", 0);
 		this.setTickRandomly(true);
-		this.setHardness(0.4F);
-		this.setResistance(0.0F);
+		this.setHardResist(0.4F, 0.0F);
 		this.setLightOpacity(255);
 		this.setStepSound(soundTypeGrass);
 	}
@@ -95,8 +92,8 @@ public class BetterGrass extends Block {
 				int i2 = par1IBlockAccess.getBiomeGenForCoords(par2 + l1,
 						par4 + k1).getBiomeGrassColor(l, i1, j1);
 				l += (i2 & 16711680) >> 16;
-			i1 += (i2 & 65280) >> 8;
-							j1 += i2 & 255;
+				i1 += (i2 & 65280) >> 8;
+				j1 += i2 & 255;
 			}
 		}
 		

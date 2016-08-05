@@ -672,6 +672,30 @@ public class WorldGenManager implements IWorldGenerator {
 					random, x, z, 16, 16, 2 + random.nextInt(2), 8, 10, 22);
 		}
 		
+		// Azurite Ore
+		addUpsideDownOreSpawn(ZollernBlocks.azuriteOre, world, random, x, z,
+				16, 16, 6 + random.nextInt(8), 16, 8, 36);
+		
+		// Garnet Ore
+		addUpsideDownOreSpawn(ZollernBlocks.upsideDownGarnetOre, world, random,
+				x, z, 16, 16, 6 + random.nextInt(8), 14, 8, 36);
+		
+		// Aquamarine Ore
+		addUpsideDownOreSpawn(ZollernBlocks.upsideDownAquaOre, world, random,
+				x, z, 16, 16, 6 + random.nextInt(8), 14, 8, 36);
+		
+		// Topaz Ore
+		addUpsideDownOreSpawn(ZollernBlocks.upsideDownTopazOre, world, random,
+				x, z, 16, 16, 6 + random.nextInt(8), 14, 8, 36);
+		
+		// Amber Ore
+		addUpsideDownOreSpawn(ZollernBlocks.upsideDownAmberOre, world, random,
+				x, z, 16, 16, 6 + random.nextInt(8), 14, 8, 36);
+		
+		// Opal Ore
+		addUpsideDownOreSpawn(ZollernBlocks.upsideDownOpalOre, world, random,
+				x, z, 16, 16, 6 + random.nextInt(8), 14, 8, 36);
+		
 		int y = world.getHeightValue(x, z);
 		
 		// Shadow Shrine
@@ -687,7 +711,7 @@ public class WorldGenManager implements IWorldGenerator {
 		}
 		
 		// Dirt
-		if (random.nextInt(300) <= 15) {
+		if (random.nextInt(500) <= 15) {
 			new WorldGenLakes(ZollernBlocks.upsideDownDirt).generate(world,
 					random, x, y, z);
 		}

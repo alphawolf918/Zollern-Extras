@@ -43,6 +43,7 @@ import zollernextras.mobs.entities.EntityHellDuck;
 import zollernextras.mobs.entities.EntityHog;
 import zollernextras.mobs.entities.EntityHogZombie;
 import zollernextras.mobs.entities.EntityJellyfish;
+import zollernextras.mobs.entities.EntityKrull;
 import zollernextras.mobs.entities.EntityMegaCreeper;
 import zollernextras.mobs.entities.EntityMummy;
 import zollernextras.mobs.entities.EntityPigshroom;
@@ -60,6 +61,7 @@ import zollernextras.mobs.models.ModelFish;
 import zollernextras.mobs.models.ModelHog;
 import zollernextras.mobs.models.ModelHogZombie;
 import zollernextras.mobs.models.ModelJellyfish;
+import zollernextras.mobs.models.ModelKrull;
 import zollernextras.mobs.models.ModelMegaCreeper;
 import zollernextras.mobs.models.ModelMummy;
 import zollernextras.mobs.models.ModelPigshroom;
@@ -78,6 +80,7 @@ import zollernextras.mobs.renders.RenderHellDuck;
 import zollernextras.mobs.renders.RenderHog;
 import zollernextras.mobs.renders.RenderHogZombie;
 import zollernextras.mobs.renders.RenderJellyfish;
+import zollernextras.mobs.renders.RenderKrull;
 import zollernextras.mobs.renders.RenderMegaCreeper;
 import zollernextras.mobs.renders.RenderMummy;
 import zollernextras.mobs.renders.RenderPigshroom;
@@ -86,7 +89,7 @@ import zollernextras.mobs.renders.RenderShadowSkeleton;
 import zollernextras.mobs.renders.RenderShark;
 import zollernextras.mobs.renders.RenderShrimp;
 import zollernextras.mobs.renders.boss.RenderShadowAlien;
-import zollernextras.potions.ZollernPotionList;
+import zollernextras.potions.ZollernPotion;
 import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.network.simpleimpl.MessageContext;
@@ -159,6 +162,9 @@ public class ClientProxy extends CommonProxy {
 				EntityShadowAlien.class, new RenderShadowAlien(
 						new ModelShadowAlien(), 0.5F));
 		
+		RenderingRegistry.registerEntityRenderingHandler(EntityKrull.class,
+				new RenderKrull(new ModelKrull(), 0.5F));
+		
 		addTile(TEIronBlockIngot.class, new TESRIronIngotStack());
 		addTile(TEGoldBlockIngot.class, new TESRGoldIngotStack());
 		addTile(TEFueltoniumBlockIngot.class, new TESRFueltoniumIngotStack());
@@ -186,19 +192,13 @@ public class ClientProxy extends CommonProxy {
 	
 	@Override
 	public void doPotionEffect(EntityPlayer player, int potionId) {
-		if (potionId == ZollernPotionList.radiance.id) {
-			float playerWalkSpeed = player.capabilities.getWalkSpeed();
-			if (playerWalkSpeed < 3.0f) {
-				float playerNewWalkSpeed = playerWalkSpeed + 1.0f;
-				player.capabilities.setPlayerWalkSpeed(playerNewWalkSpeed);
-			}
-		}
 		
 		// Do NOT use an "else if" here! There is a possibility that the Player
-		// could have both, and if we did an "else if" clause, then they would
-		// only get one or the other - we want them to get both.
-		if (potionId == ZollernPotionList.infected.id) {
-			player.attackEntityFrom(DSource.deathInfection, 5.0f);
+		// could have more than one effect, and if we did an "else if" clause,
+		// then they would only get one or the other - we want them to get both.
+		if (potionId == ZollernPotion.infected.id) {
+			player.attackEntityFrom(DSource.deathInfection,
+					ZollernPotion.infectionDamage);
 		}
 	}
 	

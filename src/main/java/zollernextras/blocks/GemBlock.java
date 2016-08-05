@@ -1,16 +1,13 @@
 package zollernextras.blocks;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import zollernextras.lib.ZollernHelper;
 
-public class GemBlock extends Block {
+public class GemBlock extends GenericBlock {
+	
 	public GemBlock(String strTexture) {
-		super(Material.iron);
-		ZollernHelper.setTab(this);
-		ZollernHelper.setNameAndTexture(this, strTexture);
+		super(strTexture, 1.2F);
 		this.setResistance(2F);
-		this.setHardness(1.2F);
+		this.setMaterial(Material.iron);
 		this.setStepSound(soundTypeMetal);
 		this.setHarvestLevel("pickaxe", 2);
 	}

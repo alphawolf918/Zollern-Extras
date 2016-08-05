@@ -1,16 +1,16 @@
 package zollernextras.items.ingots;
 
-import zollernextras.items.ModItem;
+import zollernextras.items.GenericItem;
 import zollernextras.lib.ZollernHelper;
 
 /**
  * Right now there's really no reason to have this extra class, but I have it
- * separate from ModItem just in case I decide to do something special with the
+ * separate from GenericItem just in case I decide to do something special with the
  * Gem items some day.
  * 
  * @author Zollern Wolf
  */
-public class Gem extends ModItem {
+public class Gem extends GenericItem {
 	
 	public Gem(String name) {
 		super(name);

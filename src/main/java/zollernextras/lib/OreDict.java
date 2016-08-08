@@ -25,14 +25,16 @@ public class OreDict {
 				ZollernBlocks.orangeLog, ZollernBlocks.guavaLog,
 				ZollernBlocks.lemonLog, ZollernBlocks.limeLog,
 				ZollernBlocks.limonLog, ZollernBlocks.cherryLog,
-				ZollernBlocks.grapefruitLog, ZollernBlocks.enderBerryLog);
+				ZollernBlocks.grapefruitLog, ZollernBlocks.enderBerryLog,
+				ZollernBlocks.shadeLog);
 		
 		// Leaves
 		registerOre("treeLeaves", ZollernBlocks.bananaLeaves,
 				ZollernBlocks.orangeLeaves, ZollernBlocks.guavaLeaves,
 				ZollernBlocks.lemonLeaves, ZollernBlocks.limeLeaves,
 				ZollernBlocks.limonLeaves, ZollernBlocks.cherryLeaves,
-				ZollernBlocks.grapefruitLeaves, ZollernBlocks.enderBerryLeaves);
+				ZollernBlocks.grapefruitLeaves, ZollernBlocks.enderBerryLeaves,
+				ZollernBlocks.shadeLeaves);
 		
 		// Saplings
 		registerOre("treeSapling", ZollernBlocks.bananaSapling,
@@ -40,14 +42,15 @@ public class OreDict {
 				ZollernBlocks.lemonSapling, ZollernBlocks.limeSapling,
 				ZollernBlocks.limonSapling, ZollernBlocks.cherrySapling,
 				ZollernBlocks.grapefruitSapling,
-				ZollernBlocks.enderBerrySapling);
+				ZollernBlocks.enderBerrySapling, ZollernBlocks.shadeLeaves);
 		
 		// Planks
 		registerOre("plankWood", ZollernBlocks.bananaPlanks,
 				ZollernBlocks.orangePlanks, ZollernBlocks.guavaPlanks,
 				ZollernBlocks.lemonPlanks, ZollernBlocks.limePlanks,
 				ZollernBlocks.limonPlanks, ZollernBlocks.cherryPlanks,
-				ZollernBlocks.grapefruitPlanks, ZollernBlocks.enderBerryPlanks);
+				ZollernBlocks.grapefruitPlanks, ZollernBlocks.enderBerryPlanks,
+				ZollernBlocks.shadePlanks);
 		
 		/** </Trees> **/
 		

@@ -12,7 +12,6 @@ public class BiomeList {
 	
 	public static int biomeColor = 1204859;
 	public static ArrayList<BiomeGenBase> biomeGenList = new ArrayList<BiomeGenBase>();
-	public static int biomeStartId = 67;
 	
 	public static BiomeGenBase icyDesert = new BiomeGenIcyDesert(
 			ZEConfig.biomeIcyDesertID);
@@ -44,7 +43,8 @@ public class BiomeList {
 			ZEConfig.biomeCrystalOceanID);
 	public static BiomeGenBase tropicalForest = new BiomeTropicalForest(
 			ZEConfig.biomeTropicalForestID);
-	public static BiomeGenBase upsideDown = new BiomeGenUpsideDown(96);
+	public static BiomeGenBase upsideDown = new BiomeGenUpsideDown(
+			ZEConfig.biomeUpsideDownID);
 	
 	public static void init() {
 		ZollernHelper.Log("Preparing to load biomes..");

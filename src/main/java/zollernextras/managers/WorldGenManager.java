@@ -36,7 +36,9 @@ import zollernextras.worldgen.WorldGenSugarCubes;
 import zollernextras.worldgen.WorldGenSwampClay;
 import zollernextras.worldgen.WorldGenTreasureChest;
 import zollernextras.worldgen.upsidedown.WorldGenCrater;
+import zollernextras.worldgen.upsidedown.WorldGenShadeTree;
 import zollernextras.worldgen.upsidedown.WorldGenShadowShrine;
+import zollernextras.worldgen.upsidedown.WorldGenSpiderEgg;
 import cpw.mods.fml.common.IWorldGenerator;
 import erogenousbeef.bigreactors.common.BigReactors;
 
@@ -189,7 +191,7 @@ public class WorldGenManager implements IWorldGenerator {
 		// Treasure Chests
 		if ((currentBiome.isEqualTo(BiomeGenBase.deepOcean)
 				|| currentBiome.equals(BiomeGenBase.ocean) || currentBiome
-				.equals(BiomeList.crystalOcean)) && y <= 44) {
+					.equals(BiomeList.crystalOcean)) && y <= 44) {
 			spawnStructure(80, 200, world, random, x, y, z,
 					new WorldGenTreasureChest());
 		}
@@ -481,7 +483,7 @@ public class WorldGenManager implements IWorldGenerator {
 		// Nether Ender Shard Ore
 		if (randGen <= 22) {
 			new WorldGenNetherOre(ZollernBlocks.enderShardNetherOre, 6)
-					.generate(world, random, Xcoord, Ycoord, Zcoord);
+			.generate(world, random, Xcoord, Ycoord, Zcoord);
 		}
 		
 		// Azurite
@@ -535,7 +537,7 @@ public class WorldGenManager implements IWorldGenerator {
 		
 		// Ender Amaranth Ore
 		new WorldGenEnderMinable(ZollernBlocks.enderAmaranthOre, 6, 8)
-				.generate(world, random, Xcoord, Ycoord, Zcoord);
+		.generate(world, random, Xcoord, Ycoord, Zcoord);
 		
 		// Ender Zinc Ore
 		new WorldGenEnderMinable(ZollernBlocks.enderZincOre, 6, 8).generate(
@@ -545,7 +547,7 @@ public class WorldGenManager implements IWorldGenerator {
 		new WorldGenEnderMinable(ZollernBlocks.enderiteOre,
 				ZEConfig.oreEnderiteSpawnRate,
 				ZEConfig.oreEnderiteSpawnRate + 6).generate(world, random,
-						Xcoord, Ycoord, Zcoord);
+				Xcoord, Ycoord, Zcoord);
 		
 		// Ender Diamond Ore
 		new WorldGenEnderMinable(ZollernBlocks.enderDiamondOre, 6, 8).generate(
@@ -699,13 +701,13 @@ public class WorldGenManager implements IWorldGenerator {
 		int y = world.getHeightValue(x, z);
 		
 		// Shadow Shrine
-		if (random.nextInt(1500) <= 5) {
-			this.spawnStructure(5, 10, world, random, x, y, z,
+		if (random.nextInt(1800) <= 10) {
+			this.spawnStructure(6, 10, world, random, x, y, z,
 					new WorldGenShadowShrine());
 		}
 		
 		// Crater
-		if (random.nextInt(240) <= 60) {
+		if (random.nextInt(540) <= 40) {
 			this.spawnStructure(8, 10, world, random, x, y, z,
 					new WorldGenCrater());
 		}
@@ -716,6 +718,17 @@ public class WorldGenManager implements IWorldGenerator {
 					random, x, y, z);
 		}
 		
+		// Spiderling Egg
+		if (random.nextInt(500) <= 10) {
+			this.spawnStructure(6, 10, world, random, x, y, z,
+					new WorldGenSpiderEgg());
+		}
+		
+		// Shade Tree
+		if (random.nextInt(1000) <= 20) {
+			this.spawnStructure(5, 10, world, random, x, y, z,
+					new WorldGenShadeTree());
+		}
 	}
 	
 	/**

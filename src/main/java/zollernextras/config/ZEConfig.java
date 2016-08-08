@@ -52,6 +52,7 @@ public class ZEConfig {
 	public static int biomeCandyLandID;
 	public static int biomeCrystalOceanID;
 	public static int biomeTropicalForestID;
+	public static int biomeUpsideDownID;
 	
 	// Biomes (Weights)
 	public static int biomeIcyDesertSpawnRate;
@@ -224,6 +225,8 @@ public class ZEConfig {
 				"biomeCrystalOceanID", 80).getInt();
 		biomeTropicalForestID = config.get(CATEGORY_BIOMES,
 				"biomeTropicalForestID", 81).getInt();
+		biomeUpsideDownID = config
+				.get(CATEGORY_BIOMES, "biomeUpsidedOWNid", 96).getInt();
 		
 		// Biomes (Weights)
 		biomeIcyDesertSpawnRate = config.get(CATEGORY_BIOMES,

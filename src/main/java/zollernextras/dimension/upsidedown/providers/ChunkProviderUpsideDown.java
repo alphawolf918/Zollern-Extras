@@ -33,8 +33,6 @@ import zollernextras.dimension.upsidedown.MapGenUpsideDownRavine;
 import zollernextras.dimension.upsidedown.WorldGenUpsideDownDungeons;
 import zollernextras.lib.noise.Gradient;
 import zollernextras.lib.noise.NoiseModule;
-import zollernextras.mobs.entities.EntityMegaCreeper;
-import zollernextras.mobs.entities.EntityMummy;
 import zollernextras.mobs.entities.EntityScorpion;
 import zollernextras.mobs.entities.EntityShadowSkeleton;
 
@@ -350,9 +348,7 @@ public class ChunkProviderUpsideDown extends ChunkProviderGenerate {
 			int i, int j, int k) {
 		if (par1EnumCreatureType == EnumCreatureType.monster) {
 			final List monsters = new ArrayList();
-			monsters.add(new SpawnListEntry(EntityMegaCreeper.class, 2, 2, 3));
 			monsters.add(new SpawnListEntry(EntityShadowSkeleton.class, 2, 2, 3));
-			monsters.add(new SpawnListEntry(EntityMummy.class, 2, 2, 3));
 			monsters.add(new SpawnListEntry(EntityScorpion.class, 2, 2, 3));
 			return monsters;
 		} else {

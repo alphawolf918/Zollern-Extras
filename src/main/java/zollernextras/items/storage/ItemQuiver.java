@@ -11,6 +11,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemQuiver extends GenericItem {
+	
 	public ItemQuiver() {
 		super("quiver");
 		this.setMaxDamage(0);
@@ -32,7 +33,7 @@ public class ItemQuiver extends GenericItem {
 	
 	@Override
 	public int getMaxItemUseDuration(ItemStack stack) {
-		return 10; // return any value greater than zero
+		return 10;
 	}
 	
 	@Override

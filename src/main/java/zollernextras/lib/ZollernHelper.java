@@ -8,6 +8,7 @@ import net.minecraft.item.Item;
 import net.minecraft.util.ChatComponentText;
 import net.minecraftforge.common.config.Configuration;
 import org.apache.logging.log4j.Level;
+import zollernextras.config.ZEConfig;
 import zollernextras.creativetabs.ModTabs;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.relauncher.FMLRelaunchLog;
@@ -130,5 +131,11 @@ public class ZollernHelper {
 	 */
 	public static void Log(String str) {
 		echo(str);
+	}
+	
+	public static void debugLog(String str) {
+		if (ZEConfig.enableDebugMode) {
+			FMLRelaunchLog.log(ZollernModInfo.OFFICIAL_NAME, Level.DEBUG, str);
+		}
 	}
 }

@@ -2,6 +2,7 @@ package zollernextras.proxies;
 
 import java.util.HashMap;
 import java.util.Map;
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.nbt.NBTTagCompound;
@@ -30,6 +31,10 @@ public class CommonProxy implements IGuiHandler {
 	
 	public void initGUI() {
 		
+	}
+	
+	public Minecraft getMinecraft() {
+		return null;
 	}
 	
 	public void sendChatMessage(EntityPlayer player, String message) {

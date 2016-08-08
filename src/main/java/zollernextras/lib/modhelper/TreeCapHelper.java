@@ -53,6 +53,10 @@ public class TreeCapHelper {
 		String enderBerryLog = blockName(ZollernBlocks.enderBerryLog);
 		String enderBerryLeaves = blockName(ZollernBlocks.enderBerryLeaves);
 		
+		// Shadewood
+		String shadeLog = blockName(ZollernBlocks.shadeLog);
+		String shadeLeaves = blockName(ZollernBlocks.shadeLeaves);
+		
 		tpModCfg.setString("modID", ZollernModInfo.MODID);
 		
 		// Banana Tree
@@ -133,6 +137,15 @@ public class TreeCapHelper {
 				enderBerryLog, enderBerryLog, enderBerryLog));
 		tree.setString("leaves", String.format("%s, 0; %s, 8",
 				enderBerryLeaves, enderBerryLeaves));
+		tree.setBoolean("requireLeafDecayCheck", false);
+		treeList.appendTag(tree);
+		
+		// Shadewood Tree
+		tree.setString("treeName", "shadewood");
+		tree.setString("logs", String.format("%s, 0; %s, 4; %s, 8", shadeLog,
+				shadeLog, shadeLog));
+		tree.setString("leaves",
+				String.format("%s, 0; %s, 8", shadeLeaves, shadeLeaves));
 		tree.setBoolean("requireLeafDecayCheck", false);
 		treeList.appendTag(tree);
 		

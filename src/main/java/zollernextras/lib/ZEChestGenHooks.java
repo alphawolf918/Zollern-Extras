@@ -50,6 +50,17 @@ public class ZEChestGenHooks extends ChestGenHooks {
 										new WeightedRandomChestContent(
 												new ItemStack(ZollernItems.radiance), 5, 20, 25) };
 	
+	public static final String SHADE_TREE = "shadeTree";
+	public static final WeightedRandomChestContent[] STChestContents = new WeightedRandomChestContent[] {
+		new WeightedRandomChestContent(new ItemStack(Items.diamond), 8, 16,
+				30),
+				new WeightedRandomChestContent(
+						new ItemStack(ZollernItems.radiance), 5, 10, 5),
+			new WeightedRandomChestContent(new ItemStack(
+					ZollernItems.prismarineCrystal), 5, 10, 15),
+								new WeightedRandomChestContent(new ItemStack(
+										ZollernItems.prismarineShard), 5, 10, 15) };
+	
 	private static final HashMap<String, ZEChestGenHooks> chestInfo = new HashMap<String, ZEChestGenHooks>();
 	
 	private static boolean hasInit = false;
@@ -67,6 +78,7 @@ public class ZEChestGenHooks extends ChestGenHooks {
 		
 		addInfo(ENDER_TOWER, CTChestContents, 8, 16);
 		addInfo(SHADOW_SHRINE, SSChestContents, 4, 8);
+		addInfo(SHADE_TREE, STChestContents, 2, 4);
 		
 		ItemStack book = new ItemStack(Items.enchanted_book, 1, 0);
 		WeightedRandomChestContent tmp = new WeightedRandomChestContent(book,
@@ -85,6 +97,11 @@ public class ZEChestGenHooks extends ChestGenHooks {
 		for (WeightedRandomChestContent chestContent : SSChestContents) {
 			ItemStack item = chestContent.theItemId;
 			addDungeonLoot(new ZEChestGenHooks("shadowShine"), item, 50, 10, 20);
+		}
+		
+		for (WeightedRandomChestContent chestContent : STChestContents) {
+			ItemStack item = chestContent.theItemId;
+			addDungeonLoot(new ZEChestGenHooks("shadeTree"), item, 25, 5, 10);
 		}
 		
 		ItemStack witherSword = new ItemStack(ZollernItems.witherSword);

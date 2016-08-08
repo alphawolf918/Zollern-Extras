@@ -8,12 +8,12 @@ public class FluidWhiteLava extends Fluid {
 	
 	public FluidWhiteLava(String fluidName) {
 		super(fluidName);
-		this.setDensity(180);
+		this.setDensity(200);
 		this.setViscosity(800);
-		this.setLuminosity(20);
+		this.setLuminosity(100);
 		this.setUnlocalizedName(ZollernModInfo.MODID + "_whitelava");
 		this.setGaseous(true);
-		this.setTemperature(100);
+		this.setTemperature(200);
 		this.rarity = rarity.epic;
 		FluidRegistry.registerFluid(this);
 	}

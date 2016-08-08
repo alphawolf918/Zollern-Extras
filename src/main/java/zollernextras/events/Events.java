@@ -763,28 +763,29 @@ public class Events {
 				}
 			}
 			chunk.isModified = true;
-		} else if (biome.isEqualTo(BiomeList.upsideDown)) {
-			Chunk chunk = event.world.getChunkFromChunkCoords(event.chunkX,
-					event.chunkZ);
-			for (ExtendedBlockStorage storage : chunk.getBlockStorageArray()) {
-				if (storage != null) {
-					for (int x = 0; x < 16; ++x) {
-						for (int y = 0; y < 16; ++y) {
-							for (int z = 0; z < 16; ++z) {
-								if (storage.getBlockByExtId(x, y, z) == Blocks.water) {
-									storage.func_150818_a(x, y, z, Blocks.air);
-								} else if (storage.getBlockByExtId(x, y, z) == Blocks.planks
-										|| storage.getBlockByExtId(x, y, z) == Blocks.fence) {
-									storage.func_150818_a(x, y, z,
-											ZollernBlocks.upsideDownStoneBricks);
-								}
-							}
-						}
-					}
-				}
-			}
-			chunk.isModified = true;
 		}
+		// else if (biome.isEqualTo(BiomeList.upsideDown)) {
+		// Chunk chunk = event.world.getChunkFromChunkCoords(event.chunkX,
+		// event.chunkZ);
+		// for (ExtendedBlockStorage storage : chunk.getBlockStorageArray()) {
+		// if (storage != null) {
+		// for (int x = 0; x < 16; ++x) {
+		// for (int y = 0; y < 16; ++y) {
+		// for (int z = 0; z < 16; ++z) {
+		// if (storage.getBlockByExtId(x, y, z) == Blocks.water) {
+		// storage.func_150818_a(x, y, z, Blocks.air);
+		// } else if (storage.getBlockByExtId(x, y, z) == Blocks.planks
+		// || storage.getBlockByExtId(x, y, z) == Blocks.fence) {
+		// storage.func_150818_a(x, y, z,
+		// ZollernBlocks.upsideDownStoneBricks);
+		// }
+		// }
+		// }
+		// }
+		// }
+		// }
+		// chunk.isModified = true;
+		// }
 	}
 	
 	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)

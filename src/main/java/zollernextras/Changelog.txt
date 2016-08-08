@@ -22,7 +22,7 @@
             * Guaranteed a Mortem (Wither) sword, with RNG setup for varying enchantments.
         * Message sends to the Player that struck the final blow.
     * When the Shadow Alien kills another entity (Players included), it heals for half of its health.
-    * At and under 250 health, has a 20/1000 chance every tick to increase attack damage by .5.
+    * At and under 250 health, has a 20/1000 chance every tick to increase attack damage by .1.
         * However, will not exceed double its original attack damage, in this case, 8.
 * While in the Upside-Down, the Player will take "shadow" damage.
     * Has a custom death message.
@@ -43,6 +43,14 @@
     * Was originally set to Diamond.
 * Canyon Rock can now be crafted into Canyon Bricks.
 * Vastly improved and cleaned-up block and item registration.
+* The Upside-Down now has a custom sky image.
+* Added the Spiderling mob.
+    * After a certain amount of time, has a chance to lay a Spiderling Eggsac.
+        * Can hatch into other Spiderlings.
+             * Heartbeat sounds usually plays right before they hatch.
+    * Tiny, poisonous spiders that blend in with the Upside-Down Surface Rock blocks.
+        * This is their national defense to conceal themselves and attack their prey.
+* Spiderling Eggsacs now spawn in the Upside-Down, surrounded by cobwebs.
 
 
 -- FIXES --

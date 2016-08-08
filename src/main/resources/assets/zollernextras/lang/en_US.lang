@@ -207,6 +207,11 @@ tile.zollernextras_enderberrylog.name=Ender Berry Log
 tile.zollernextras_enderberryleaves.name=Ender Berry Leaves
 tile.zollernextras_enderberryplanks.name=Ender Berry Planks
 
+tile.zollernextras_shadesapling.name=Shadewood Sapling
+tile.zollernextras_shadelog.name=Shadewood Log
+tile.zollernextras_shadeleaves.name=Shadewood Leaves
+tile.zollernextras_shadeplanks.name=Shadewood Planks
+
 tile.zollernextras_zollerniumore.name=Zollernium Ore
 tile.zollernextras_enderreeds.name=Ender Cane
 tile.zollernextras_enderdirt.name=Ender Dirt
@@ -250,6 +255,8 @@ tile.zollernextras_ud_aquaore.name=Upside-Down Aquamarine Ore
 tile.zollernextras_ud_topazore.name=Upside-Down Topaz Ore
 tile.zollernextras_ud_amberore.name=Upside-Down Amber Ore
 tile.zollernextras_ud_opalore.name=Upside-Down Opal Ore
+
+tile.zollernextras_spideregg.name=Spiderling Eggsac
 
 tile.zollernextras_chocolate.name=Melted Chocolate
 fluid.zollernextras_chocolate=Melted Chocolate
@@ -499,6 +506,7 @@ entity.zollernextras_endercreeper.name=Ender Creeper
 entity.zollernextras_enderbug.name=Ender Bug
 entity.zollernextras_shadowalien.name=Shadow God
 entity.zollernextras_krull.name=Krull
+entity.zollernextras_spiderling.name=Spiderling
 
 death.attack.fueltonium=%1$s was submerged in fueltonium.
 death.attack.fueltonium.player=%1$s was submerged in fueltonium by %2$s.

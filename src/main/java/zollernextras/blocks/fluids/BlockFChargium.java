@@ -26,16 +26,7 @@ public class BlockFChargium extends BlockFluidClassic {
 		super(fluid, Material.water);
 		ZollernHelper.setName(this, "chargiumfluid");
 		this.setLightLevel(1.0F);
-		// this.setTickRandomly(true);
 	}
-	
-	// @Override
-	// public void updateTick(World world, int x, int y, int z, Random rand) {
-	// super.updateTick(world, x, y, z, rand);
-	// if (world.getBlock(x, y + 1, z) == Blocks.fire) {
-	// world.createExplosion(null, x, y, z, 20, true);
-	// }
-	// }
 	
 	@Override
 	public boolean isFlammable(IBlockAccess world, int x, int y, int z,
@@ -71,8 +62,10 @@ public class BlockFChargium extends BlockFluidClassic {
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerBlockIcons(IIconRegister iir) {
-		stillIcon = iir.registerIcon(ZollernModInfo.MODID + ":" + "chargiumfluid");
-		flowingIcon = iir.registerIcon(ZollernModInfo.MODID + ":" + "chargiumfluid");
+		stillIcon = iir.registerIcon(ZollernModInfo.MODID + ":"
+				+ "chargiumfluid");
+		flowingIcon = iir.registerIcon(ZollernModInfo.MODID + ":"
+				+ "chargiumfluid");
 		this.getFluid().setStillIcon(
 				iir.registerIcon(ZollernModInfo.MODID + ":chargiumfluid"));
 		this.getFluid().setFlowingIcon(

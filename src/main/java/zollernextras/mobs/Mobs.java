@@ -28,6 +28,7 @@ import zollernextras.mobs.entities.EntityScorpion;
 import zollernextras.mobs.entities.EntityShadowSkeleton;
 import zollernextras.mobs.entities.EntityShark;
 import zollernextras.mobs.entities.EntityShrimp;
+import zollernextras.mobs.entities.EntitySpiderling;
 import zollernextras.mobs.entities.boss.EntityShadowAlien;
 import cpw.mods.fml.common.registry.EntityRegistry;
 
@@ -254,6 +255,9 @@ public class Mobs {
 		
 		// Krull
 		registerEntity(EntityKrull.class, "krull", 0xf5eeb3, 0x444444);
+		
+		// Spiderling
+		registerEntity(EntitySpiderling.class, "spiderling", 0x000000, 0xff8b00);
 		
 		ZollernHelper.Log("Entities have been registered!");
 	}

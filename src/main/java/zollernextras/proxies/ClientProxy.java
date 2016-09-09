@@ -6,14 +6,12 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraftforge.common.MinecraftForge;
 import zollernextras.blocks.tiles.TEAmaranthBlockIngot;
 import zollernextras.blocks.tiles.TEBlockBase;
-import zollernextras.blocks.tiles.TECandySphereRed;
 import zollernextras.blocks.tiles.TEFueltoniumBlockIngot;
 import zollernextras.blocks.tiles.TEGoldBlockIngot;
 import zollernextras.blocks.tiles.TEIronBlockIngot;
 import zollernextras.blocks.tiles.TELapisBlockIngot;
 import zollernextras.blocks.tiles.TEShinestoneBlockIngot;
 import zollernextras.blocks.tiles.TEShiniumBlockIngot;
-import zollernextras.blocks.tiles.TESphereBase;
 import zollernextras.blocks.tiles.TEZincBlockIngot;
 import zollernextras.blocks.tiles.TEZollerniumBlockIngot;
 import zollernextras.blocks.tiles.renders.TESRAmaranthIngotStack;
@@ -23,7 +21,6 @@ import zollernextras.blocks.tiles.renders.TESRIronIngotStack;
 import zollernextras.blocks.tiles.renders.TESRLapisIngotStack;
 import zollernextras.blocks.tiles.renders.TESRShinestoneIngotStack;
 import zollernextras.blocks.tiles.renders.TESRShiniumIngotStack;
-import zollernextras.blocks.tiles.renders.TESRSphereRed;
 import zollernextras.blocks.tiles.renders.TESRZincIngotStack;
 import zollernextras.blocks.tiles.renders.TESRZollerniumIngotStack;
 import zollernextras.entity.EntityDuckEgg;
@@ -161,9 +158,8 @@ public class ClientProxy extends CommonProxy {
 		RenderingRegistry.registerEntityRenderingHandler(EntityHellDuck.class,
 				new RenderHellDuck(new ModelDuck(), 0.5F));
 		
-		RenderingRegistry.registerEntityRenderingHandler(
-				EntityShadowAlien.class, new RenderShadowAlien(
-						new ModelShadowAlien(), 0.5F));
+		RenderingRegistry.registerEntityRenderingHandler(EntityShadowAlien.class,
+				new RenderShadowAlien(new ModelShadowAlien(), 0.5F));
 		
 		RenderingRegistry.registerEntityRenderingHandler(EntityKrull.class,
 				new RenderKrull(new ModelKrull(), 0.5F));
@@ -181,8 +177,6 @@ public class ClientProxy extends CommonProxy {
 		addTile(TELapisBlockIngot.class, new TESRLapisIngotStack());
 		addTile(TEShinestoneBlockIngot.class, new TESRShinestoneIngotStack());
 		addTile(TEShiniumBlockIngot.class, new TESRShiniumIngotStack());
-		
-		addSphere(TECandySphereRed.class, new TESRSphereRed());
 		
 		RenderingRegistry.registerEntityRenderingHandler(EntityDuckEgg.class,
 				new RenderDuckEgg(ZollernItems.duckEgg));
@@ -221,11 +215,6 @@ public class ClientProxy extends CommonProxy {
 	}
 	
 	public void addTile(Class<? extends TEBlockBase> TEClass,
-			TileEntitySpecialRenderer TESR) {
-		ClientRegistry.bindTileEntitySpecialRenderer(TEClass, TESR);
-	}
-	
-	public void addSphere(Class<? extends TESphereBase> TEClass,
 			TileEntitySpecialRenderer TESR) {
 		ClientRegistry.bindTileEntitySpecialRenderer(TEClass, TESR);
 	}

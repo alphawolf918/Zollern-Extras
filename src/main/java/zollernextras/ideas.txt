@@ -1,9 +1,9 @@
 * Add new horse armor: Emerald & Amaranth. (?)
-    * Work with Jon and figure out how to make them render.
+    * Work with Zane and figure out how to make them render.
 * Hell Ducks.
     * Have them make a "Quack" sound, similar to how Hellcows make a "moo" sound.
 * Zinc Armor and Tools.
-* Add Enchantments to Zinc tools.
+    * Add Enchantments to Zinc tools.
 * Create tools and armor for amber, topaz, garnet, ruby, sapphire, opal, and aquamarine gems.
     * Maybe do the same thing for Witherium too.
 * Helletons.
@@ -23,8 +23,5 @@
 [Ideas for the dimension.]
 ==========================
 
-* Eggs that spawn Spiderlings when broken.
-    * Spiderlings can then lay more eggs.
-* Shadow Trees.
-    * Fancy, tree-like structures that generate in the world.
-    * Sometimes have a chest inside them.
+* Always night?
+    * Maybe make night last longer.

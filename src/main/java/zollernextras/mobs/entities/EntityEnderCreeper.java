@@ -2,7 +2,6 @@ package zollernextras.mobs.entities;
 
 import java.util.List;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackOnCollide;
 import net.minecraft.entity.ai.EntityAIAvoidEntity;
@@ -13,7 +12,6 @@ import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
-import net.minecraft.entity.boss.EntityDragon;
 import net.minecraft.entity.monster.EntityCreeper;
 import net.minecraft.entity.passive.EntityOcelot;
 import net.minecraft.entity.player.EntityPlayer;
@@ -117,21 +115,19 @@ public class EntityEnderCreeper extends EntityCreeper {
 							this.posZ, "mob.endermen.portal", 2.0F,
 							this.worldObj.rand.nextFloat() * 0.1F + 0.9F);
 					List players = worldObj.getEntitiesWithinAABB(
-							EntityLivingBase.class, this.boundingBox.expand(
+							EntityPlayer.class, this.boundingBox.expand(
 									3 + Math.floor(this.ticksExisted / 50), 2,
 									3 + Math.floor(this.ticksExisted / 50)));
 					Object[] playerArray = players.toArray();
 					for (Object o : playerArray) {
-						EntityLivingBase e = (EntityLivingBase) o;
-						if (!(e instanceof EntityDragon)) {
-							int entityId = e.getEntityId();
-							if (!this.worldObj.isRemote) {
-								PacketDispatcher.getSimpleNetworkWrapper()
-								.sendToServer(
-										new MessageTeleportToDimension(
-												e.dimension == 0 ? 1
-																: 0, entityId));
-							}
+						EntityPlayer e = (EntityPlayer) o;
+						int entityId = e.getEntityId();
+						if (!this.worldObj.isRemote) {
+							int dimensionId = e.dimension == 0 ? 1 : 0;
+							PacketDispatcher.getSimpleNetworkWrapper()
+							.sendToServer(
+									new MessageTeleportToDimension(
+													dimensionId, entityId));
 						}
 					}
 					this.setDead();

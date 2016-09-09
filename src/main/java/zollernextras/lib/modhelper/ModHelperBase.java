@@ -11,6 +11,7 @@ public class ModHelperBase {
 	public static boolean useMineFactoryReloaded = false;
 	public static boolean useThermalFoundation = false;
 	public static boolean useAppliedEnergistics2 = false;
+	public static boolean usePlayerAPI = false;
 	
 	public static void detectMods() {
 		useCofh = isModLoaded("CoFHCore");
@@ -19,6 +20,7 @@ public class ModHelperBase {
 		useMineFactoryReloaded = isModLoaded("MineFactoryReloaded");
 		useThermalFoundation = isModLoaded("ThermalFoundation");
 		useAppliedEnergistics2 = isModLoaded("appliedenergistics2");
+		usePlayerAPI = isModLoaded("PlayerAPI");
 	}
 	
 	public static boolean isModLoaded(String modName) {

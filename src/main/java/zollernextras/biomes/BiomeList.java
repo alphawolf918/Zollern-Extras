@@ -1,6 +1,5 @@
 package zollernextras.biomes;
 
-import java.util.ArrayList;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.BiomeManager.BiomeEntry;
@@ -10,8 +9,9 @@ import zollernextras.lib.ZollernHelper;
 
 public class BiomeList {
 	
+	public static int totalEntries = 0;
+	
 	public static int biomeColor = 1204859;
-	public static ArrayList<BiomeGenBase> biomeGenList = new ArrayList<BiomeGenBase>();
 	
 	public static BiomeGenBase icyDesert = new BiomeGenIcyDesert(
 			ZEConfig.biomeIcyDesertID);
@@ -73,26 +73,45 @@ public class BiomeList {
 				ZEConfig.biomeTropicalForestSpawnRate);
 		
 		addNoSpawnBiome(upsideDown, BiomeType.COOL, 0);
-		ZollernHelper.Log("Biomes loaded!");
+		ZollernHelper.Log("Biomes loaded: " + totalEntries);
 	}
 	
 	public static void addBiome(BiomeGenBase biome, BiomeType biomeType,
 			int biomeWeight) {
-		BiomeManager.addBiome(biomeType, new BiomeEntry(biome, biomeWeight));
-		BiomeManager.addSpawnBiome(biome);
-		BiomeManager.addVillageBiome(biome, true);
-		BiomeManager.addStrongholdBiome(biome);
-		biomeGenList.add(biome);
-		ZollernHelper.Log("Loaded biome '" + biome.biomeName + "' with ID: "
-				+ biome.biomeID);
+		if (BiomeGenBase.getBiome(biome.biomeID) != null) {
+			BiomeManager
+			.addBiome(biomeType, new BiomeEntry(biome, biomeWeight));
+			BiomeManager.addSpawnBiome(biome);
+			BiomeManager.addVillageBiome(biome, true);
+			BiomeManager.addStrongholdBiome(biome);
+			totalEntries++;
+			ZollernHelper.Log("Loaded biome '" + biome.biomeName
+					+ "' with ID: " + biome.biomeID);
+		} else {
+			BiomeGenBase otherBiome = BiomeGenBase.getBiome(biome.biomeID);
+			ZollernHelper.Log("Failed to load biome '" + biome.biomeName
+					+ "': biome ID " + biome.biomeID
+					+ " is already in use by '" + otherBiome.biomeName
+					+ "'. Change the ID in the config.");
+		}
 	}
 	
 	public static void addNoSpawnBiome(BiomeGenBase biome, BiomeType biomeType,
 			int biomeWeight) {
-		BiomeManager.addBiome(biomeType, new BiomeEntry(biome, biomeWeight));
-		BiomeManager.addVillageBiome(biome, true);
-		BiomeManager.addStrongholdBiome(biome);
-		ZollernHelper.Log("Loaded no-spawn biome \"" + biome.biomeName
-				+ "\" with ID: " + biome.biomeID);
+		if (BiomeGenBase.getBiome(biome.biomeID) != null) {
+			BiomeManager
+					.addBiome(biomeType, new BiomeEntry(biome, biomeWeight));
+			BiomeManager.addVillageBiome(biome, true);
+			BiomeManager.addStrongholdBiome(biome);
+			totalEntries++;
+			ZollernHelper.Log("Loaded no-spawn biome \"" + biome.biomeName
+					+ "\" with ID: " + biome.biomeID);
+		} else {
+			BiomeGenBase otherBiome = BiomeGenBase.getBiome(biome.biomeID);
+			ZollernHelper.Log("Failed to load biome '" + biome.biomeName
+					+ "': biome ID " + biome.biomeID
+					+ " is already in use by '" + otherBiome.biomeName
+					+ "'. Change the ID in the config.");
+		}
 	}
 }

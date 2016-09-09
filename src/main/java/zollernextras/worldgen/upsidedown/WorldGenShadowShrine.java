@@ -5,9 +5,6 @@ import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import zollernextras.blocks.ZollernBlocks;
-import zollernextras.config.ZEConfig;
-import zollernextras.lib.ZollernHelper;
-import zollernextras.mobs.entities.boss.EntityShadowAlien;
 
 public class WorldGenShadowShrine extends WorldGenerator {
 	
@@ -830,19 +827,7 @@ public class WorldGenShadowShrine extends WorldGenerator {
 		world.setBlock(i + 18, j + 0, k + 15, ZollernBlocks.netherizedObsidian);
 		world.setBlock(i + 18, j + 0, k + 16, ZollernBlocks.netherizedObsidian);
 		world.setBlock(i + 18, j + 0, k + 17, ZollernBlocks.netherizedObsidian);
-		
-		if (!world.isRemote) {
-			int spawnX = i + 8;
-			int spawnY = j + 2;
-			int spawnZ = k + 8;
-			String spawnString = spawnX + " " + spawnY + " " + spawnZ;
-			EntityShadowAlien shadowAlien = new EntityShadowAlien(world);
-			shadowAlien.setLocationAndAngles(spawnX, spawnY, spawnZ, 0, 0);
-			world.spawnEntityInWorld(shadowAlien);
-			if (ZEConfig.enableDebugMode) {
-				ZollernHelper.Log("Shadow Alien spawned at: " + spawnString);
-			}
-		}
+		world.setBlock(i + 6, j + 2, k + 8, ZollernBlocks.shadowBossSpawner);
 		
 		return true;
 	}

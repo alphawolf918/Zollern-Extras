@@ -17,8 +17,7 @@ public class WorldProviderUpsideDown extends WorldProvider {
 	@Override
 	public void registerWorldChunkManager() {
 		this.worldChunkMgr = new WorldChunkManagerHell(BiomeList.upsideDown,
-				0.1F);
-		// this.hasNoSky = true;
+				0.0F);
 		this.dimensionId = DimensionLoader.getDimID();
 	}
 	
@@ -39,7 +38,7 @@ public class WorldProviderUpsideDown extends WorldProvider {
 	
 	@Override
 	public String getWelcomeMessage() {
-		return "Entering Upside-Down..";
+		return "Entering Sheol..";
 	}
 	
 	@Override
@@ -49,7 +48,7 @@ public class WorldProviderUpsideDown extends WorldProvider {
 	
 	@Override
 	public String getDepartMessage() {
-		return "Leaving Upside-Down..";
+		return "Leaving Sheol..";
 	}
 	
 	@Override
@@ -81,19 +80,40 @@ public class WorldProviderUpsideDown extends WorldProvider {
 	}
 	
 	@Override
+	public double getMovementFactor() {
+		if (this instanceof WorldProviderUpsideDown) {
+			return 5.0;
+		}
+		return 1.0;
+	}
+	
+	@Override
 	public boolean isSurfaceWorld() {
 		return false;
 	}
 	
 	@Override
 	public String getDimensionName() {
-		return "Upside-Down";
+		return "Sheol";
 	}
 	
 	@Override
 	@SideOnly(Side.CLIENT)
 	public IRenderHandler getSkyRenderer() {
 		return new SkyProviderUpsideDown(ZollernExtrasMod.proxy.getMinecraft());
+	}
+	
+	@Override
+	public boolean canDoLightning(Chunk chunk) {
+		return false;
+	}
+	
+	@Override
+	public void resetRainAndThunder() {
+		worldObj.getWorldInfo().setRainTime(0);
+		worldObj.getWorldInfo().setRaining(false);
+		worldObj.getWorldInfo().setThunderTime(0);
+		worldObj.getWorldInfo().setThundering(false);
 	}
 	
 }

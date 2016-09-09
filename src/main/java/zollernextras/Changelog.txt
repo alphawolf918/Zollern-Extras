@@ -1,4 +1,19 @@
+[3.2 - Hotfix for crafting recipes + Minor tweaks]
+
+* Reduced bounding box reach of Krull entity for "Infected" potion effect.
+* Implemented config option for stack change improvements.
+* Implemented a biome ID check when adding new biomes.
+    * If a biome with the specified ID is found, that biome is not loaded.
+        * This should prevent future biome ID conflicts.
+
+---- FIXES ----
+* Fixed Ender Berry Logs and Shadewood Logs not turning into their respective planks.
+* Fixed slight memory leak from BiomeGenBase ArrayList.
+    * This has been removed as it was not even being used.
+---------------
+
 [3.1 - The Upside-Down Update]
+
 * Added the "Upside-Down" dimension.
     * Inspired by the show "Stranger Things."
     * Entirely black, very dark dimension with over 20 different ores.
@@ -49,9 +64,22 @@
         * Can hatch into other Spiderlings.
              * Heartbeat sounds usually plays right before they hatch.
     * Tiny, poisonous spiders that blend in with the Upside-Down Surface Rock blocks.
-        * This is their national defense to conceal themselves and attack their prey.
+        * This is their natural defense to conceal themselves and attack their prey.
 * Spiderling Eggsacs now spawn in the Upside-Down, surrounded by cobwebs.
-
+* Shadewood Trees now generate throughout the Upside-Down.
+    * Have a high chance to spawn a loot chest inside of them.
+    * Sometimes the Krull mob will spawn next to them.
+        * Strange, alien creature that hurts the Player, and infects them with a virus.
+            * Any other Players that the infected Player comes into contact with will also be infected.
+* Whole nests of Spiderling Eggsacs generate in the Upside-Down, composed of up to 9 eggs and 72 cobwebs.
+* Radiance and Gateway Eye are now craftable.
+    * The Gateway Eye must be charged after it is crafted.
+        * If Thermal Foundation is found in the mod list, Chargium must be used. Otherwise it is a crafting recipe.
+* Added a Shadow Spawner that, when right-clicked while holding a Shade Key, spawns the Shadow Alien boss mob.
+* Reduced the "Infected" potion effect's bounding box.
+* Renamed the Upside-Down to "Sheol."
+    * A form of "Limbo" from the Hebrew Bible, which in itself is believed to be "the edge of Hell."
+    * The biome name was kept as "Upside-Down" to keep the reference to Stranger Things.
 
 -- FIXES --
 * Fixed block of Super Charged Coal not giving right amount of Conductive Chargium liquid.

@@ -188,8 +188,8 @@ public class Events {
 				// java.util.List. You can search for any entity class this way.
 				List playerList = worldObj.getEntitiesWithinAABB(
 						EntityPlayer.class, player.boundingBox.expand(
-								3 + Math.floor(player.ticksExisted / 50), 2,
-								3 + Math.floor(player.ticksExisted / 50)));
+								1 + Math.floor(player.ticksExisted / 50), 2,
+								1 + Math.floor(player.ticksExisted / 50)));
 				
 				// The Players are not returned as an instance of EntityPlayer,
 				// but rather an Object, which is the highest super-class of
@@ -292,6 +292,7 @@ public class Events {
 			if (playerInventory.hasItem(ZollernItems.quiver)) {
 				// int quiverInventorySlot = playerInventory
 				// .func_146029_c(ZollernItems.quiver);
+				// TODO
 			}
 		}
 	}

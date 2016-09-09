@@ -39,7 +39,7 @@ public class SpiderlingEgg extends BlockDragonEgg {
 			this.ticksEggExisted = 0;
 			par1World.setBlock(par2, par3, par4, Blocks.air);
 		} else {
-			this.ticksEggExisted += 5;
+			this.ticksEggExisted += 10;
 		}
 	}
 	
@@ -66,7 +66,7 @@ public class SpiderlingEgg extends BlockDragonEgg {
 	public void hatchSpider(World par1World, int par2x, int par3y, int par4z) {
 		int randInt = new Random().nextInt(4);
 		randInt = randInt == 0 ? 1 : randInt;
-		for (int i = 1; i < randInt; i++) {
+		for (int i = 0; i < randInt; i++) {
 			if (!par1World.isRemote) {
 				EntitySpiderling spiderling = new EntitySpiderling(par1World);
 				spiderling.setLocationAndAngles(par2x + i, par3y + i,
@@ -80,7 +80,9 @@ public class SpiderlingEgg extends BlockDragonEgg {
 	public boolean onBlockActivated(World par1World, int par2, int par3,
 			int par4, EntityPlayer par5EntityPlayer, int par6, float par7,
 			float par8, float par9) {
-		this.ticksEggExisted += 2;
+		super.onBlockActivated(par1World, par2, par3, par4, par5EntityPlayer,
+				par6, par7, par8, par9);
+		this.ticksEggExisted += 5;
 		return true;
 	}
 	

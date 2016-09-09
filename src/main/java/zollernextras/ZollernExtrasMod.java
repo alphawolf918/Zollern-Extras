@@ -37,7 +37,7 @@ import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 @Mod(modid = ZollernModInfo.MODID, name = ZollernModInfo.NAME,
-		version = ZollernModInfo.VERSION)
+version = ZollernModInfo.VERSION)
 public class ZollernExtrasMod {
 	
 	@Mod.Instance(ZollernModInfo.MODID)
@@ -62,7 +62,9 @@ public class ZollernExtrasMod {
 		ModTabs.init();
 		ZEConfig.init(event);
 		ZollernItems.init();
-		StackChange.init();
+		if (ZEConfig.enableStackChanges) {
+			StackChange.init();
+		}
 		ZollernBlocks.init();
 		if (ModHelperBase.useBigReactors) {
 			BRTurbineHelper.init();

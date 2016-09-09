@@ -31,6 +31,8 @@ public class ZollernPotion extends Potion {
 	public static final int infectionTime = 200;
 	public static final float infectionDamage = 2.0F;
 	
+	public static int totalEntries = 0;
+	
 	// The color of our Potion's liquid. Included here for convenience.
 	protected int potionColor = 0xffffff;
 	
@@ -57,27 +59,32 @@ public class ZollernPotion extends Potion {
 		// compatibility issues.
 		this.setPotionName(ZollernModInfo.MODID + "_" + potionName);
 		
+		// Apply the specified liquid color.
+		this.setLiquidColor(potionLiquidColor);
+		
 		// This part is probably pointless, considering we tell it not to use an
 		// icon at all. But let's play it safe.
 		this.setIconIndex(0, 0);
+		this.totalEntries++;
 	}
 	
 	public static void init() {
 		ZollernHelper.Log("Initializing new Potion effects..");
 		
-		// Now let's actually initialize them (just to make 100% sure that they
-		// get loaded).
+		// Now let's actually initialize them.
 		radiance = new ZollernPotion("radiance", ZEConfig.potionRadianceID,
 				false, 13458603, 0xeeee00);
 		infected = new ZollernPotion("infected", ZEConfig.potionInfectedID,
 				true, 13615421, 0x000000);
 		
-		ZollernHelper.Log("Successfully loaded new Potion effects.");
+		ZollernHelper.Log("Successfully loaded " + totalEntries
+				+ " new Potion effects.");
 	}
 	
 	// This is where we actually program the 'effect' for the Potion. Note: We
 	// must call this manually! I do it through the LivingUpdate event in the
-	// Minecraft Forge event bus.
+	// Minecraft Forge event bus. Note that I call this through the proxy,
+	// just to be on the safe side.
 	@Override
 	public void performEffect(EntityLivingBase par1LivingBase, int par2Amplifier) {
 		if (par1LivingBase instanceof EntityPlayer) {
@@ -98,7 +105,6 @@ public class ZollernPotion extends Potion {
 	 * Sets the liquid color for the Potion.
 	 * 
 	 * @param par1PotionColor
-	 * @return
 	 */
 	public Potion setLiquidColor(int par1PotionColor) {
 		this.potionColor = par1PotionColor;

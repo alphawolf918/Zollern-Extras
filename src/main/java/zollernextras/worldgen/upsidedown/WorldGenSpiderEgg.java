@@ -46,35 +46,47 @@ public class WorldGenSpiderEgg extends WorldGenerator {
 		return false;
 	}
 	
+	public void failedToSpawn(String strMessage) {
+		ZollernHelper.debugLog("Failed to spawn structure: " + strMessage);
+	}
+	
+	public void generateNest(World world, Random random, int x, int y, int z) {
+		this.generate(world, random, x, y, z);
+		this.generate(world, random, x + 3, y, z);
+		this.generate(world, random, x - 3, y, z);
+		this.generate(world, random, x + 3, y, z + 3);
+		this.generate(world, random, x - 3, y, z - 3);
+		this.generate(world, random, x, y, z + 3);
+		this.generate(world, random, x, y, z - 3);
+		this.generate(world, random, x - 3, y, z + 3);
+		this.generate(world, random, x + 3, y, z - 3);
+	}
+	
 	@Override
 	public boolean generate(World world, Random random, int x, int y, int z) {
 		
 		if (!LocationIsValidSpawn(world, x, y, z)) {
-			ZollernHelper.Log("Location was not valid spawn.");
+			this.failedToSpawn("Location was not valid spawn.");
 			return false;
 		}
 		
 		if (world.getBlock(x, y - 1, z) == Blocks.air) {
-			ZollernHelper.Log("The block below was air.");
+			this.failedToSpawn("The block below was air.");
 			return false;
 		}
 		
 		if (world.getBlock(x, y + 1, z) != Blocks.air) {
-			ZollernHelper.Log("The block above was NOT air.");
+			this.failedToSpawn("The block above was NOT air.");
 			return false;
 		}
 		
 		world.setBlock(x, y, z, ZollernBlocks.spiderlingEgg);
-		
 		world.setBlock(x + 1, y, z, Blocks.web);
 		world.setBlock(x - 1, y, z, Blocks.web);
-		
 		world.setBlock(x + 1, y, z + 1, Blocks.web);
 		world.setBlock(x - 1, y, z - 1, Blocks.web);
-		
 		world.setBlock(x, y, z + 1, Blocks.web);
 		world.setBlock(x, y, z - 1, Blocks.web);
-		
 		world.setBlock(x - 1, y, z + 1, Blocks.web);
 		world.setBlock(x + 1, y, z - 1, Blocks.web);
 		

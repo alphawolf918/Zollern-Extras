@@ -39,7 +39,7 @@ public class EntityShadowAlien extends EntityMob implements IBossDisplayData {
 	
 	public EntityShadowAlien(World world) {
 		super(world);
-		this.setSize(this.width * .5f, this.height * .5f);
+		this.setSize(this.width * 1.4f, this.height * 1.4f);
 		this.tasks.addTask(1, new EntityAISwimming(this));
 		this.tasks.addTask(2, new EntityAIWander(this, 1.0D));
 		this.tasks.addTask(3, new EntityAIWatchClosest(this,
@@ -48,9 +48,9 @@ public class EntityShadowAlien extends EntityMob implements IBossDisplayData {
 				8.0F));
 		this.tasks.addTask(4, new EntityAILookIdle(this));
 		this.tasks.addTask(5, new EntityAIAttackOnCollide(this,
-				EntityPlayer.class, 2.0D, false));
+				EntityPlayer.class, 2.5D, false));
 		this.tasks.addTask(5, new EntityAIAttackOnCollide(this,
-				EntityIronGolem.class, 4.0D, false));
+				EntityIronGolem.class, 4.5D, false));
 		this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
 		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this,
 				EntityPlayer.class, 10, true));
@@ -91,8 +91,7 @@ public class EntityShadowAlien extends EntityMob implements IBossDisplayData {
 		if (randInt <= 10) {
 			double health = this.getHealth();
 			if (health < maxHealth && health > 0 && !this.isDead) {
-				int randHealthInt = rand.nextInt(10) >= 5 ? 10 : 20;
-				health += randHealthInt;
+				health += rand.nextInt(10) >= 5 ? 10 : 20;
 				this.setHealth((float) health);
 			}
 		}
@@ -111,7 +110,7 @@ public class EntityShadowAlien extends EntityMob implements IBossDisplayData {
 			if (atkDmg < maxAtkDmg) {
 				this.attackDamage += 0.1D;
 				this.getEntityAttribute(SharedMonsterAttributes.attackDamage)
-						.setBaseValue(this.attackDamage);
+				.setBaseValue(this.attackDamage);
 			}
 		}
 		super.onLivingUpdate();
@@ -134,13 +133,13 @@ public class EntityShadowAlien extends EntityMob implements IBossDisplayData {
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.followRange)
-				.setBaseValue(45.0D);
+		.setBaseValue(45.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.maxHealth)
-				.setBaseValue(1000);
+		.setBaseValue(1000);
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed)
-				.setBaseValue(0.2D);
+		.setBaseValue(0.2D);
 		this.getEntityAttribute(SharedMonsterAttributes.attackDamage)
-				.setBaseValue(this.attackDamage);
+		.setBaseValue(this.attackDamage);
 	}
 	
 	@Override

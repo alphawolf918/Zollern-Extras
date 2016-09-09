@@ -34,6 +34,7 @@ public class ZEConfig {
 	public static boolean vanillaItemsAreCraftable;
 	public static boolean horseArmorIsCraftable;
 	public static boolean enableDebugMode;
+	public static boolean enableStackChanges;
 	public static int worldGenerationWeight;
 	
 	// Biomes (IDs)
@@ -129,7 +130,8 @@ public class ZEConfig {
 		
 		config.addCustomCategoryComment(config.CATEGORY_GENERAL,
 				"General settings for the mod.");
-		config.addCustomCategoryComment(CATEGORY_BIOMES, "IDs for ZE biomes.");
+		config.addCustomCategoryComment(CATEGORY_BIOMES,
+				"IDs and spawn rates for ZE biomes.");
 		config.addCustomCategoryComment(CATEGORY_COMMANDS,
 				"Enable or disable special commands.");
 		config.addCustomCategoryComment(CATEGORY_DIMENSIONS,
@@ -167,6 +169,12 @@ public class ZEConfig {
 				"rottenFleshCooksIntoLeather", true,
 				"If enabled, rotten flesh can be smelted into leather.")
 				.getBoolean();
+		enableStackChanges = config
+				.get(CATEGORY_IMPROVEMENTS,
+						"Enable Stack Changes",
+						true,
+						"Enables saddles, ender pearls, snow balls and buckets to be stackable up to 64.")
+						.getBoolean();
 		
 		// Improvements
 		vanillaItemsAreCraftable = config
@@ -226,7 +234,7 @@ public class ZEConfig {
 		biomeTropicalForestID = config.get(CATEGORY_BIOMES,
 				"biomeTropicalForestID", 81).getInt();
 		biomeUpsideDownID = config
-				.get(CATEGORY_BIOMES, "biomeUpsidedOWNid", 96).getInt();
+				.get(CATEGORY_BIOMES, "biomeUpsideDownID", 96).getInt();
 		
 		// Biomes (Weights)
 		biomeIcyDesertSpawnRate = config.get(CATEGORY_BIOMES,

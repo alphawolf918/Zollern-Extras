@@ -39,11 +39,11 @@ import zollernextras.mobs.entities.EntityShadowSkeleton;
 public class ChunkProviderUpsideDown extends ChunkProviderGenerate {
 	
 	final Block topBlockID = ZollernBlocks.upsideDownSurfaceRock;
-	final byte topBlockMeta = 5;
+	final byte topBlockMeta = 0;
 	final Block fillBlockID = ZollernBlocks.upsideDownRock;
-	final byte fillBlockMeta = 3;
+	final byte fillBlockMeta = 0;
 	final Block lowerBlockID = ZollernBlocks.upsideDownStone;
-	final byte lowerBlockMeta = 4;
+	final byte lowerBlockMeta = 0;
 	
 	private final Random rand;
 	
@@ -200,7 +200,7 @@ public class ChunkProviderUpsideDown extends ChunkProviderGenerate {
 				this.biomesForGeneration);
 		this.caveGenerator.func_151539_a(this, this.worldObj, par1, par2, ids);
 		this.ravineGenerator
-				.func_151539_a(this, this.worldObj, par1, par2, ids);
+		.func_151539_a(this, this.worldObj, par1, par2, ids);
 		final Chunk var4 = new Chunk(this.worldObj, ids, meta, par1, par2);
 		var4.generateSkylightMap();
 		return var4;
@@ -260,8 +260,6 @@ public class ChunkProviderUpsideDown extends ChunkProviderGenerate {
 		this.dungeonGenerator.generate(worldObj, rand, var5, k, l);
 		flag = this.villageGenerator.generateStructuresInChunk(this.worldObj,
 				this.rand, par2, par3);
-		// this.caveGenerator.func_151539_a(par1IChunkProvider, worldObj, par2,
-		// par3, (Block[]) null);
 		this.scatteredFeatureGenerator.generateStructuresInChunk(this.worldObj,
 				this.rand, par2, par3);
 		
@@ -275,10 +273,6 @@ public class ChunkProviderUpsideDown extends ChunkProviderGenerate {
 			k1 = var4 + this.rand.nextInt(16) + 8;
 			l1 = this.rand.nextInt(256);
 			i2 = var5 + this.rand.nextInt(16) + 8;
-			// new WorldGenLakes(Blocks.water).generate(this.worldObj,
-			// this.rand,
-			// k1, l1, i2);
-			// TODO
 		}
 		
 		if (TerrainGen.populate(par1IChunkProvider, worldObj, rand, par2, par3,
@@ -301,12 +295,6 @@ public class ChunkProviderUpsideDown extends ChunkProviderGenerate {
 		BiomeGenBase biomegenbase = this.worldObj.getBiomeGenForCoords(k + 16,
 				l + 16);
 		biomegenbase.decorate(this.worldObj, this.rand, k, l);
-		// if (TerrainGen.populate(par1IChunkProvider, worldObj, rand, par2,
-		// par3,
-		// flag, ANIMALS)) {
-		// SpawnerAnimals.performWorldGenSpawning(this.worldObj, biomegenbase,
-		// k + 8, l + 8, 16, 16, this.rand);
-		// }
 		k += 8;
 		l += 8;
 		
@@ -348,8 +336,8 @@ public class ChunkProviderUpsideDown extends ChunkProviderGenerate {
 			int i, int j, int k) {
 		if (par1EnumCreatureType == EnumCreatureType.monster) {
 			final List monsters = new ArrayList();
-			monsters.add(new SpawnListEntry(EntityShadowSkeleton.class, 2, 2, 3));
-			monsters.add(new SpawnListEntry(EntityScorpion.class, 2, 2, 3));
+			monsters.add(new SpawnListEntry(EntityShadowSkeleton.class, 1, 0, 1));
+			monsters.add(new SpawnListEntry(EntityScorpion.class, 1, 0, 1));
 			return monsters;
 		} else {
 			// TODO
@@ -363,7 +351,5 @@ public class ChunkProviderUpsideDown extends ChunkProviderGenerate {
 		this.mineshaftGenerator.func_151539_a(this, this.worldObj, x, z,
 				(Block[]) null);
 		this.dungeonGenerator.generate(worldObj, rand, x, y, z);
-		// this.caveGenerator.func_151539_a(this, worldObj, x, z, (Block[])
-		// null);
 	}
 }

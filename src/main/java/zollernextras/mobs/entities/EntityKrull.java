@@ -23,7 +23,7 @@ public class EntityKrull extends EntityMob {
 	
 	public EntityKrull(World par1World) {
 		super(par1World);
-		this.setSize(this.width * 1.4f, this.height * 1.4f);
+		this.setSize(this.width * 0.5f, this.height * 0.5f);
 		this.getNavigator().setBreakDoors(true);
 		this.tasks.addTask(0, new EntityAISwimming(this));
 		this.tasks.addTask(1, new EntityAIBreakDoor(this));
@@ -46,8 +46,8 @@ public class EntityKrull extends EntityMob {
 	@Override
 	public void onLivingUpdate() {
 		List playerList = worldObj.getEntitiesWithinAABB(EntityPlayer.class,
-				this.boundingBox.expand(3 + Math.floor(this.ticksExisted / 50),
-						2, 3 + Math.floor(this.ticksExisted / 50)));
+				this.boundingBox.expand(1 + Math.floor(this.ticksExisted / 60),
+						2, 1 + Math.floor(this.ticksExisted / 60)));
 		Object[] players = playerList.toArray();
 		for (Object o : players) {
 			EntityPlayer currentPlayer = (EntityPlayer) o;

@@ -1,27 +1,15 @@
 package zollernextras.api.helpers;
 
 import net.minecraft.block.Block;
-import net.minecraft.item.Item;
-import zollernextras.creativetabs.ModTabs;
-import zollernextras.lib.ZollernHelper;
-import zollernextras.lib.ZollernModInfo;
 
 public class BlockHelper {
 	
-	public static void setTab(Block block) {
-		block.setCreativeTab(ModTabs.zTab);
-	}
-	
-	public static void setTab(Item item) {
-		item.setCreativeTab(ModTabs.zTab);
-	}
-	
 	public static void setName(Block block, String strName) {
-		block.setBlockName(ZollernModInfo.MODID + "_" + strName);
+		block.setBlockName("_" + strName);
 	}
 	
 	public static void setTexture(Block block, String strTexture) {
-		block.setBlockTextureName(ZollernModInfo.MODID + ":" + strTexture);
+		block.setBlockTextureName(":" + strTexture);
 	}
 	
 	public static void setNameAndTexture(Block block, String strName,
@@ -42,7 +30,6 @@ public class BlockHelper {
 	}
 	
 	public static void setHardResist(Block block, float hardResist) {
-		ZollernHelper.setHardResist(block, hardResist, hardResist);
+		BlockHelper.setHardResist(block, hardResist, hardResist);
 	}
-	
 }

@@ -282,16 +282,21 @@ public class ZollernItems {
 	public static Item bricksMud = new ColoredBrick("mud");
 	
 	public static Item netherEye = new ItemNetherEye();
+	public static Item upsideDownEyeUncharged = new GenericItem(
+			"upsidedowneye_uncharged");
 	public static Item upsideDownEye = new ItemUpsideDownEye();
 	public static Item enderReeds = new ItemEnderReed();
 	public static Item dough = new GenericItem("dough");
 	public static Item cookedDough = new GenericItem("cookeddough");
 	public static Item tomatoPaste = new ZollernBottle("tomatopaste");
 	public static Item enderBerry = new TreeFood("enderberry", 2, 5);
-	public static Item enderGlowstoneDust = new GenericItem("enderglowstonedust");
+	public static Item enderGlowstoneDust = new GenericItem(
+			"enderglowstonedust");
 	public static Item chargiumDust = new GenericItem("chargiumdust");
 	public static Item chargiumIngot = new GenericItem("chargiumingot");
 	public static Item radiance = new GenericItem("radiance");
+	public static Item shadeKey = new GenericItem("shadekey")
+			.setDetails("Unlocks the Shadow Spawner.");
 	
 	public static Item chocolateBucket = new ZollernBucket("bucket_chocolate",
 			ZollernBlocks.blockChocolate);
@@ -472,6 +477,7 @@ public class ZollernItems {
 		addItem(bricksMud, "Mud Brick Ingot");
 		
 		addItem(netherEye, "Nether Eye");
+		addItem(upsideDownEyeUncharged, "Upside-Down Eye Uncharged");
 		addItem(upsideDownEye, "Upside-Down Eye");
 		addItem(enderReeds, "Ender Cane");
 		addItem(dough, "Dough");
@@ -483,6 +489,7 @@ public class ZollernItems {
 		addItem(chargiumDust, "Chargium Dust");
 		addItem(chargiumIngot, "Chargium Ingot");
 		addItem(radiance, "Radiance");
+		addItem(shadeKey, "Shade Key");
 		
 		addItem(chocolateBucket, "Chocolate Bucket");
 		addItem(fuelBucket, "Fueltonium Bucket");

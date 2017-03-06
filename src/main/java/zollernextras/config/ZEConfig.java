@@ -114,6 +114,7 @@ public class ZEConfig {
 	public static int oreWitheriteSpawnRate;
 	public static int oreRubySpawnRate;
 	public static int oreSapphireSpawnRate;
+	public static int oreSteelSpawnRate;
 	
 	// Potions
 	public static int potionRadianceID;
@@ -348,6 +349,8 @@ public class ZEConfig {
 				.getInt();
 		oreSapphireSpawnRate = config.get(CATEGORY_ORES,
 				"oreSapphireSpawnRate", 4).getInt();
+		oreSteelSpawnRate = config.get(CATEGORY_ORES, "oreSteelSpawnRate", 2)
+				.getInt();
 		
 		// Potions
 		potionRadianceID = config.get(CATEGORY_POTIONS, "potionRadianceID", 30)

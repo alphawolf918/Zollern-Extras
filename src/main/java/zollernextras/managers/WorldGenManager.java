@@ -148,6 +148,10 @@ public class WorldGenManager implements IWorldGenerator {
 		addOreSpawn(ZollernBlocks.sapphireOre, world, random, x, z, 16, 16,
 				2 + random.nextInt(2), ZEConfig.oreSapphireSpawnRate, 12, 16);
 		
+		// Steel Ore
+		addOreSpawn(ZollernBlocks.steelOre, world, random, x, z, 16, 16,
+				1 + random.nextInt(4), ZEConfig.oreSteelSpawnRate, 10, 14);
+		
 		// Grab Biome
 		currentBiome = world.getBiomeGenForCoords(x, z);
 		
@@ -309,6 +313,11 @@ public class WorldGenManager implements IWorldGenerator {
 				spawnStructure(8, 100, world, random, x, y, z,
 						new WorldGenFruitTree(ZollernBlocks.grapefruitLog,
 								ZollernBlocks.grapefruitLeaves));
+				
+				// PERCHES
+				spawnStructure(4, 100, world, random, x, y, z,
+						new WorldGenFruitTree(ZollernBlocks.peachLog,
+								ZollernBlocks.peachLeaves));
 			}
 		}
 		
@@ -447,6 +456,11 @@ public class WorldGenManager implements IWorldGenerator {
 			spawnStructure(25, 30, world, random, x, y, z,
 					new WorldGenFruitTree(ZollernBlocks.grapefruitLog,
 							ZollernBlocks.grapefruitLeaves));
+			
+			// PERCHES
+			spawnStructure(4, 100, world, random, x, y, z,
+					new WorldGenFruitTree(ZollernBlocks.peachLog,
+							ZollernBlocks.peachLeaves));
 		}
 	}
 	

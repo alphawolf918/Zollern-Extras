@@ -33,6 +33,10 @@ public class RecipeManager {
 		public static void init() {
 			ToolArmorRecipes.init();
 			
+			// Steel Block
+			RecipeHelper.fullBlockCraft(ZollernBlocks.steelBlock,
+					ZollernItems.steelIngot);
+			
 			// Shade Key
 			GameRegistry.addRecipe(new ItemStack(ZollernItems.shadeKey, 1),
 					new Object[] { "MSM", " T ", " T ", 'M',
@@ -840,6 +844,8 @@ public class RecipeManager {
 					ZollernBlocks.enderBerryPlanks);
 			RecipeHelper.addLogPlanks(ZollernBlocks.shadeLog,
 					ZollernBlocks.shadePlanks);
+			RecipeHelper.addLogPlanks(ZollernBlocks.peachLog,
+					ZollernBlocks.peachPlanks);
 			
 			// Quiver
 			GameRegistry.addRecipe(new ItemStack(ZollernItems.quiver, 1),
@@ -921,6 +927,10 @@ public class RecipeManager {
 					ZollernItems.bricksMud, 0.2F);
 			RecipeHelper.addSmelting(ZollernItems.dough,
 					ZollernItems.cookedDough, 0.4F);
+			RecipeHelper.addSmelting(ZollernBlocks.steelOre,
+					ZollernItems.steelIngot, 1.0F);
+			RecipeHelper.addSmelting(ZollernItems.steelDust,
+					ZollernItems.steelIngot, 0.5F);
 			
 			// Upside-Down
 			RecipeHelper.addSmelting(ZollernBlocks.upsideDownAmaranthOre,

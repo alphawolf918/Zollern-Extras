@@ -49,6 +49,10 @@ public class TreeCapHelper {
 		String grapefruitLog = blockName(ZollernBlocks.grapefruitLog);
 		String grapefruitLeaves = blockName(ZollernBlocks.grapefruitLeaves);
 		
+		// Peach
+		String peachLog = blockName(ZollernBlocks.peachLog);
+		String peachLeaves = blockName(ZollernBlocks.peachLeaves);
+		
 		// Ender Berry
 		String enderBerryLog = blockName(ZollernBlocks.enderBerryLog);
 		String enderBerryLeaves = blockName(ZollernBlocks.enderBerryLeaves);
@@ -128,6 +132,15 @@ public class TreeCapHelper {
 				grapefruitLog, grapefruitLog, grapefruitLog));
 		tree.setString("leaves", String.format("%s, 0; %s, 8",
 				grapefruitLeaves, grapefruitLeaves));
+		tree.setBoolean("requireLeafDecayCheck", false);
+		treeList.appendTag(tree);
+		
+		// Peach Tree
+		tree.setString("treeName", "peachwood");
+		tree.setString("logs", String.format("%s, 0; %s, 4; %s, 8", peachLog,
+				peachLog, peachLog));
+		tree.setString("leaves",
+				String.format("%s, 0; %s, 8", peachLeaves, peachLeaves));
 		tree.setBoolean("requireLeafDecayCheck", false);
 		treeList.appendTag(tree);
 		

@@ -84,6 +84,9 @@ import zollernextras.blocks.trees.limon.LimonSapling;
 import zollernextras.blocks.trees.orange.OrangeLeaves;
 import zollernextras.blocks.trees.orange.OrangeLog;
 import zollernextras.blocks.trees.orange.OrangeSapling;
+import zollernextras.blocks.trees.peach.PeachLeaves;
+import zollernextras.blocks.trees.peach.PeachLog;
+import zollernextras.blocks.trees.peach.PeachSapling;
 import zollernextras.blocks.trees.shade.ShadeLeaves;
 import zollernextras.blocks.trees.shade.ShadeLog;
 import zollernextras.blocks.trees.shade.ShadeSapling;
@@ -91,6 +94,7 @@ import zollernextras.blocks.upsidedown.ShadowBossSpawner;
 import zollernextras.blocks.upsidedown.SpiderlingEgg;
 import zollernextras.blocks.upsidedown.UpsideDownStone;
 import zollernextras.items.ZollernItems;
+import zollernextras.items.tools.ToolMaterials;
 import zollernextras.lib.ZollernHelper;
 import zollernextras.lib.ZollernModInfo;
 import zollernextras.lib.enums.State;
@@ -355,6 +359,12 @@ public class ZollernBlocks {
 	public static Block grapefruitLeaves = new GrapefruitLeaves();
 	public static Block grapefruitSapling = new GrapefruitSapling();
 	
+	// Trees (Peach)
+	public static Block peachLog = new PeachLog();
+	public static Block peachPlanks = new ZollernPlanks("peachplanks");
+	public static Block peachLeaves = new PeachLeaves();
+	public static Block peachSapling = new PeachSapling();
+	
 	// Trees (Ender)
 	public static Block enderBerryLog = new EnderBerryLog();
 	public static Block enderBerryPlanks = new ZollernPlanks("enderberryplanks");
@@ -414,6 +424,12 @@ public class ZollernBlocks {
 			0.6F).setLightLevel(1.0F).setStepSound(Block.soundTypeGlass);
 	public static Block chargiumBlock = new GenericBlock("chargiumblock", 1.6F)
 	.setLightLevel(1.0F).setStepSound(Block.soundTypeGlass);
+	public static Block steelOre = new GenericBlockOre("steelore", 1.8f)
+			.setBlockHarvestLevel("pickaxe",
+					ToolMaterials.ZOLLERNIUM.getHarvestLevel());
+	public static Block steelBlock = new GenericBlock("steelblock", 1.6f)
+	.setBlockHarvestLevel("pickaxe", 2).setStepSound(
+					Block.soundTypeMetal);
 	
 	// Upside-Down
 	public static Block upsideDownSurfaceRock = new GenericBlock(
@@ -674,6 +690,11 @@ public class ZollernBlocks {
 		addBlock(grapefruitPlanks, "Grapefruit Planks");
 		addBlock(grapefruitLeaves, "Grapefruit Leaves");
 		
+		addBlock(peachSapling, "Peach Sapling");
+		addBlock(peachLog, "Peach Log");
+		addBlock(peachPlanks, "Peach Planks");
+		addBlock(peachLeaves, "Peach Leaves");
+		
 		addBlock(enderBerryLog, "Ender Berry Log");
 		addBlock(enderBerryPlanks, "Ender Berry Planks");
 		addBlock(enderBerryLeaves, "Ender Berry Leaves");
@@ -700,6 +721,8 @@ public class ZollernBlocks {
 		addBlock(enderDiamondOre, "Ender Diamond Ore");
 		addBlock(enderDiamondBlock, "Ender Diamond Block");
 		addBlock(chargiumBlock, "Chargium Block");
+		addBlock(steelOre, "Steel Ore");
+		addBlock(steelBlock, "Steel Block");
 		
 		// Upside Down
 		addBlock(upsideDownSurfaceRock, "UD SurfRock");

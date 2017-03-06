@@ -1,8 +1,11 @@
 package zollernextras.items.teleporter;
 
 import io.netty.buffer.ByteBuf;
+import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.init.Blocks;
+import net.minecraft.world.World;
 import cpw.mods.fml.common.network.simpleimpl.IMessage;
 import cpw.mods.fml.common.network.simpleimpl.IMessageHandler;
 import cpw.mods.fml.common.network.simpleimpl.MessageContext;
@@ -33,7 +36,7 @@ public class MessageTeleportToDimension implements IMessage {
 	}
 	
 	public static class TeleportHandler implements
-			IMessageHandler<MessageTeleportToDimension, IMessage> {
+	IMessageHandler<MessageTeleportToDimension, IMessage> {
 		@Override
 		public IMessage onMessage(MessageTeleportToDimension message,
 				MessageContext ctx) {
@@ -43,10 +46,45 @@ public class MessageTeleportToDimension implements IMessage {
 				EntityPlayerMP player = (EntityPlayerMP) ent;
 				player.mcServer.getConfigurationManager()
 				.transferPlayerToDimension(
-								player,
-								message.dim,
+						player,
+						message.dim,
 						new CustomTeleporter(player.mcServer
 								.worldServerForDimension(message.dim)));
+				
+				int x = (int) player.posX;
+				int y = (int) player.posY;
+				int z = (int) player.posZ;
+				
+				World worldObj = player.worldObj;
+				Block blockAir = Blocks.air;
+				
+				worldObj.setBlock(x, y, z, blockAir);
+				worldObj.setBlock(x, y + 1, z, blockAir);
+				
+				worldObj.setBlock(x + 1, y, z + 1, blockAir);
+				worldObj.setBlock(x + 1, y + 1, z + 1, blockAir);
+				
+				worldObj.setBlock(x - 1, y, z - 1, blockAir);
+				worldObj.setBlock(x - 1, y + 1, z - 1, blockAir);
+				
+				worldObj.setBlock(x + 1, y, z - 1, blockAir);
+				worldObj.setBlock(x + 1, y + 1, z - 1, blockAir);
+				
+				worldObj.setBlock(x - 1, y, z + 1, blockAir);
+				worldObj.setBlock(x - 1, y + 1, z + 1, blockAir);
+				
+				worldObj.setBlock(x - 1, y, z, blockAir);
+				worldObj.setBlock(x - 1, y + 1, z, blockAir);
+				
+				worldObj.setBlock(x, y, z - 1, blockAir);
+				worldObj.setBlock(x, y + 1, z - 1, blockAir);
+				
+				worldObj.setBlock(x + 1, y, z, blockAir);
+				worldObj.setBlock(x + 1, y + 1, z, blockAir);
+				
+				worldObj.setBlock(x, y, z + 1, blockAir);
+				worldObj.setBlock(x, y + 1, z + 1, blockAir);
+				
 				player.fallDistance = 0.0f;
 			}
 			return message;

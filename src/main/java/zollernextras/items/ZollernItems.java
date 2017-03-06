@@ -24,6 +24,7 @@ import zollernextras.items.ingots.Gem;
 import zollernextras.items.storage.ItemQuiver;
 import zollernextras.items.swords.EnderSword;
 import zollernextras.items.swords.IceSword;
+import zollernextras.items.swords.LightSword;
 import zollernextras.items.swords.NetherSword;
 import zollernextras.items.swords.ThunderSword;
 import zollernextras.items.swords.WitherSword;
@@ -160,6 +161,7 @@ public class ZollernItems {
 	public static Item limon = new TreeFood("limon", 3, 3);
 	public static Item cherry = new TreeFood("cherry", 2, 2);
 	public static Item grapefruit = new TreeFood("grapefruit", 5, 5);
+	public static Item peach = new TreeFood("peach", 4, 6);
 	
 	public static Item swampClayBall = new GenericItem("swampclayball");
 	public static Item zincIngot = new GenericItem("zincingot");
@@ -194,6 +196,7 @@ public class ZollernItems {
 	public static Item diabloSword = new NetherSword(ToolMaterials.POWER);
 	public static Item iceSword = new IceSword(ToolMaterials.POWER);
 	public static Item witherSword = new WitherSword(ToolMaterials.POWER);
+	public static Item lightSword = new LightSword(ToolMaterials.POWER);
 	
 	public static Item rawShrimp = new RawFood("rawshrimp");
 	public static Item cookedShrimp = new CookedFood("cookedshrimp");
@@ -296,7 +299,9 @@ public class ZollernItems {
 	public static Item chargiumIngot = new GenericItem("chargiumingot");
 	public static Item radiance = new GenericItem("radiance");
 	public static Item shadeKey = new GenericItem("shadekey")
-			.setDetails("Unlocks the Shadow Spawner.");
+	.setDetails("Unlocks the Shadow Spawner.");
+	public static Item steelIngot = new GenericItem("steelingot");
+	public static Item steelDust = new GenericItem("steeldust");
 	
 	public static Item chocolateBucket = new ZollernBucket("bucket_chocolate",
 			ZollernBlocks.blockChocolate);
@@ -394,6 +399,7 @@ public class ZollernItems {
 		addItem(diabloSword, "Nether Sword");
 		addItem(iceSword, "Ice Sword");
 		addItem(witherSword, "Wither Sword");
+		addItem(lightSword, "Light Sword");
 		
 		addItem(rawShrimp, "Raw Shrimp");
 		addItem(cookedShrimp, "Cooked Shrimp");
@@ -436,6 +442,7 @@ public class ZollernItems {
 		addItem(limon, "Limon");
 		addItem(cherry, "Cherry");
 		addItem(grapefruit, "Grapefruit");
+		addItem(peach, "Peach");
 		
 		addItem(rawBacon, "Raw Bacon");
 		addItem(cookedBacon, "Cooked Bacon");
@@ -490,6 +497,8 @@ public class ZollernItems {
 		addItem(chargiumIngot, "Chargium Ingot");
 		addItem(radiance, "Radiance");
 		addItem(shadeKey, "Shade Key");
+		addItem(steelIngot, "Steel Ingot");
+		addItem(steelDust, "Steel Dust");
 		
 		addItem(chocolateBucket, "Chocolate Bucket");
 		addItem(fuelBucket, "Fueltonium Bucket");

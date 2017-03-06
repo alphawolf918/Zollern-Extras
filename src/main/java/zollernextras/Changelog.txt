@@ -1,3 +1,16 @@
+[3.3 - The Random Stuff and Things Update]
+
+* Made signs stackable up to 64.
+* Made the Lucent (light) sword.
+    * Applies Radiance effect to Player upon right-click, which damages the blade for 5 points.
+    * Left-clicking an undead entity will kill it instantly, but it has no effect on anything else.
+* Charged Gateway Eye now spawns a 3x3 room of air blocks when teleporting.
+* Added colorful peach trees.
+    * Spawn at similar rates to the rest of the fruit trees.
+* Added peaches.
+    * Dropped from peach trees.
+* 
+
 [3.2 - Hotfix for crafting recipes + Minor tweaks]
 
 * Reduced bounding box reach of Krull entity for "Infected" potion effect.

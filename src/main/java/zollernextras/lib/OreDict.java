@@ -25,23 +25,23 @@ public class OreDict {
 				ZollernBlocks.orangeLog, ZollernBlocks.guavaLog,
 				ZollernBlocks.lemonLog, ZollernBlocks.limeLog,
 				ZollernBlocks.limonLog, ZollernBlocks.cherryLog,
-				ZollernBlocks.grapefruitLog, ZollernBlocks.enderBerryLog,
-				ZollernBlocks.shadeLog);
+				ZollernBlocks.grapefruitLog, ZollernBlocks.peachLog,
+				ZollernBlocks.enderBerryLog, ZollernBlocks.shadeLog);
 		
 		// Leaves
 		registerOre("treeLeaves", ZollernBlocks.bananaLeaves,
 				ZollernBlocks.orangeLeaves, ZollernBlocks.guavaLeaves,
 				ZollernBlocks.lemonLeaves, ZollernBlocks.limeLeaves,
 				ZollernBlocks.limonLeaves, ZollernBlocks.cherryLeaves,
-				ZollernBlocks.grapefruitLeaves, ZollernBlocks.enderBerryLeaves,
-				ZollernBlocks.shadeLeaves);
+				ZollernBlocks.grapefruitLeaves, ZollernBlocks.peachLeaves,
+				ZollernBlocks.enderBerryLeaves, ZollernBlocks.shadeLeaves);
 		
 		// Saplings
 		registerOre("treeSapling", ZollernBlocks.bananaSapling,
 				ZollernBlocks.orangeSapling, ZollernBlocks.guavaSapling,
 				ZollernBlocks.lemonSapling, ZollernBlocks.limeSapling,
 				ZollernBlocks.limonSapling, ZollernBlocks.cherrySapling,
-				ZollernBlocks.grapefruitSapling,
+				ZollernBlocks.grapefruitSapling, ZollernBlocks.peachSapling,
 				ZollernBlocks.enderBerrySapling, ZollernBlocks.shadeLeaves);
 		
 		// Planks
@@ -49,8 +49,8 @@ public class OreDict {
 				ZollernBlocks.orangePlanks, ZollernBlocks.guavaPlanks,
 				ZollernBlocks.lemonPlanks, ZollernBlocks.limePlanks,
 				ZollernBlocks.limonPlanks, ZollernBlocks.cherryPlanks,
-				ZollernBlocks.grapefruitPlanks, ZollernBlocks.enderBerryPlanks,
-				ZollernBlocks.shadePlanks);
+				ZollernBlocks.grapefruitPlanks, ZollernBlocks.peachPlanks,
+				ZollernBlocks.enderBerryPlanks, ZollernBlocks.shadePlanks);
 		
 		/** </Trees> **/
 		
@@ -96,6 +96,12 @@ public class OreDict {
 		registerOre("oreEnderZinc", ZollernBlocks.enderZincOre);
 		registerOre("oreUpsideDownZinc", ZollernBlocks.upsideDownZincOre);
 		registerOre("blockZinc", ZollernBlocks.zincBlock);
+		
+		// Steel
+		registerOre("ingotSteel", ZollernItems.steelIngot);
+		registerOre("dustSteel", ZollernItems.steelDust);
+		registerOre("oreSteel", ZollernBlocks.steelOre);
+		registerOre("blockSteel", ZollernBlocks.steelBlock);
 		
 		// Silver
 		registerOre("ingotSilver", ZollernItems.silverIngot);
@@ -260,6 +266,7 @@ public class OreDict {
 		registerOre("cropLimon", ZollernItems.limon);
 		registerOre("cropCherry", ZollernItems.cherry);
 		registerOre("cropGrapefruit", ZollernItems.grapefruit);
+		registerOre("cropPeach", ZollernItems.peach);
 		
 		// Chargium
 		registerOre("dustChargium", ZollernItems.chargiumDust);

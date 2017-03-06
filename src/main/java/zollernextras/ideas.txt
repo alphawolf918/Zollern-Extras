@@ -8,6 +8,8 @@
     * Maybe do the same thing for Witherium too.
 * Helletons.
     * Nether Skeletons that use the Enderman model but behave like Skeletons.
+* Lilypad Plants.
+    * Have a way to grow Lilypads.
 
 == ENDER STUFF ===================
 [Ideas for how to revamp The End.]
@@ -15,6 +17,7 @@
 
 * Ender Spider.
     * Behave the same way the Enderman does.
+    
 * Find a way to make The End terrain bigger.
     * Perhaps use a structure gen for End Stone to increase its land.
     * Find out if there is a way to "stretch" or otherwise "increase" The End size.

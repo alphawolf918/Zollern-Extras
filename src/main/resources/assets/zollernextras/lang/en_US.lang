@@ -202,6 +202,11 @@ tile.zollernextras_grapefruitlog.name=Grapefruit Log
 tile.zollernextras_grapefruitleaves.name=Grapefruit Leaves
 tile.zollernextras_grapefruitplanks.name=Grapefruit Planks
 
+tile.zollernextras_peachsapling.name=Peach Sapling
+tile.zollernextras_peachlog.name=Peach Log
+tile.zollernextras_peachleaves.name=Peach Leaves
+tile.zollernextras_peaceplanks.name=Peach Planks
+
 tile.zollernextras_enderberrysapling.name=Ender Berry Sapling
 tile.zollernextras_enderberrylog.name=Ender Berry Log
 tile.zollernextras_enderberryleaves.name=Ender Berry Leaves
@@ -228,6 +233,8 @@ tile.zollernextras_enderglowstone.name=Ender Glow
 tile.zollernextras_enderdiamondblock.name=Ender Diamond
 tile.zollernextras_enderdiamondore.name=Ender Diamond Ore
 tile.zollernextras_chargiumblock.name=Chargium Block
+tile.zollernextras_steelore.name=Steel Ore
+tile.zollernextras_steelblock.name=Steel Block
 
 tile.zollernextras_ud_surfacerock.name=Sheol Surface Rock
 tile.zollernextras_ud_rock.name=Sheol Subrock
@@ -371,6 +378,7 @@ item.zollernextras_endersword.name=Ender
 item.zollernextras_icesword.name=Glacies
 item.zollernextras_nethersword.name=Diablo
 item.zollernextras_withersword.name=Mortem
+item.zollernextras_lightsword.name=Lucent
 
 item.zollernextras_rawshrimp.name=Raw Shrimp
 item.zollernextras_cookedshrimp.name=Cooked Shrimp
@@ -396,6 +404,7 @@ item.zollernextras_limon.name=Limon
 item.zollernextras_grapefruit.name=Grapefruit
 item.zollernextras_guava.name=Guava
 item.zollernextras_cherry.name=Cherry
+item.zollernextras_peach.name=Peach
 item.zollernextras_peas.name=Peas
 item.zollernextras_pea.name=Pea Seed
 item.zollernextras_cucumber.name=Cucumber
@@ -439,6 +448,8 @@ item.zollernextras_sharktooth.name=Shark Tooth
 item.zollernextras_transporter.name=Dimensional Transporter
 item.zollernextras_gemextractor.name=Gem Extractor
 item.zollernextras_popcornbowl.name=Popcorn Bowl
+item.zollernextras_steelingot.name=Steel Ingot
+item.zollernextras_steeldust.name=Steel Dust
 
 item.zollernextras_brickingot_brown.name=Brown Brick Ingot
 item.zollernextras_brickingot_lime.name=Lime Brick Ingot

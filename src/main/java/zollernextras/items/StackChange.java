@@ -9,6 +9,7 @@ public class StackChange {
 		Items.ender_pearl.setMaxStackSize(64);
 		Items.bucket.setMaxStackSize(64);
 		Items.snowball.setMaxStackSize(64);
+		Items.sign.setMaxStackSize(64);
 	}
 	
 }

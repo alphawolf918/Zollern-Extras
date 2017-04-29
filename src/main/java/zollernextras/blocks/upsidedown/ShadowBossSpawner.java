@@ -35,7 +35,13 @@ public class ShadowBossSpawner extends GenericBlock {
 			if (heldItem != null && heldItem == ZollernItems.shadeKey) {
 				this.spawnShadowBoss(par1World, par2, par3, par4,
 						par5EntityPlayer);
+			} else {
+				ZollernExtrasMod.proxy.sendChatMessage(par5EntityPlayer,
+						"You need a Shade Key to spawn this boss!");
 			}
+		} else {
+			ZollernExtrasMod.proxy.sendChatMessage(par5EntityPlayer,
+					"You need a Shade Key to spawn this boss!");
 		}
 		return true;
 	}

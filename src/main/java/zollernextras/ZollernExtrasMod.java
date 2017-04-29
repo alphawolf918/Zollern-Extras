@@ -1,6 +1,7 @@
 package zollernextras;
 
 import java.io.File;
+import zollernextras.achievements.ZollernAchievements;
 import zollernextras.biomes.BiomeList;
 import zollernextras.blocks.ZollernBlocks;
 import zollernextras.command.Commands;
@@ -37,7 +38,7 @@ import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 @Mod(modid = ZollernModInfo.MODID, name = ZollernModInfo.NAME,
-version = ZollernModInfo.VERSION)
+		version = ZollernModInfo.VERSION)
 public class ZollernExtrasMod {
 	
 	@Mod.Instance(ZollernModInfo.MODID)
@@ -61,18 +62,19 @@ public class ZollernExtrasMod {
 		this.filePath = ZollernHelper.getFilePath(event);
 		ModTabs.init();
 		ZEConfig.init(event);
+		ZollernPotion.init();
 		ZollernItems.init();
+		ZollernBlocks.init();
+		ZollernAchievements.init();
 		if (ZEConfig.enableStackChanges) {
 			StackChange.init();
 		}
-		ZollernBlocks.init();
 		if (ModHelperBase.useBigReactors) {
 			BRTurbineHelper.init();
 		}
 		if (ModHelperBase.useAppliedEnergistics2) {
 			AE2Helper.init();
 		}
-		ZollernPotion.init();
 		TreeCapHelper.init();
 		Mobs.init();
 		Treasures.init();

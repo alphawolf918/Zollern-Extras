@@ -195,7 +195,7 @@ public class WorldGenManager implements IWorldGenerator {
 		// Treasure Chests
 		if ((currentBiome.isEqualTo(BiomeGenBase.deepOcean)
 				|| currentBiome.equals(BiomeGenBase.ocean) || currentBiome
-				.equals(BiomeList.crystalOcean)) && y <= 44) {
+					.equals(BiomeList.crystalOcean)) && y <= 44) {
 			spawnStructure(80, 200, world, random, x, y, z,
 					new WorldGenTreasureChest());
 		}
@@ -497,7 +497,7 @@ public class WorldGenManager implements IWorldGenerator {
 		// Nether Ender Shard Ore
 		if (randGen <= 22) {
 			new WorldGenNetherOre(ZollernBlocks.enderShardNetherOre, 6)
-					.generate(world, random, Xcoord, Ycoord, Zcoord);
+			.generate(world, random, Xcoord, Ycoord, Zcoord);
 		}
 		
 		// Azurite
@@ -551,7 +551,7 @@ public class WorldGenManager implements IWorldGenerator {
 		
 		// Ender Amaranth Ore
 		new WorldGenEnderMinable(ZollernBlocks.enderAmaranthOre, 6, 8)
-				.generate(world, random, Xcoord, Ycoord, Zcoord);
+		.generate(world, random, Xcoord, Ycoord, Zcoord);
 		
 		// Ender Zinc Ore
 		new WorldGenEnderMinable(ZollernBlocks.enderZincOre, 6, 8).generate(
@@ -561,7 +561,7 @@ public class WorldGenManager implements IWorldGenerator {
 		new WorldGenEnderMinable(ZollernBlocks.enderiteOre,
 				ZEConfig.oreEnderiteSpawnRate,
 				ZEConfig.oreEnderiteSpawnRate + 6).generate(world, random,
-						Xcoord, Ycoord, Zcoord);
+				Xcoord, Ycoord, Zcoord);
 		
 		// Ender Diamond Ore
 		new WorldGenEnderMinable(ZollernBlocks.enderDiamondOre, 6, 8).generate(
@@ -715,13 +715,13 @@ public class WorldGenManager implements IWorldGenerator {
 		int y = world.getHeightValue(x, z);
 		
 		// Shadow Shrine
-		if (random.nextInt(1800) <= 10) {
+		if (random.nextInt(2000) <= 5) {
 			this.spawnStructure(6, 10, world, random, x, y, z,
 					new WorldGenShadowShrine());
 		}
 		
 		// Crater
-		if (random.nextInt(540) <= 40) {
+		if (random.nextInt(1040) <= 20) {
 			this.spawnStructure(8, 10, world, random, x, y, z,
 					new WorldGenCrater());
 		}
@@ -733,18 +733,18 @@ public class WorldGenManager implements IWorldGenerator {
 		}
 		
 		// Spiderling Egg
-		if (random.nextInt(500) <= 10) {
+		if (random.nextInt(800) <= 5) {
 			this.spawnStructure(6, 10, world, random, x, y, z,
 					new WorldGenSpiderEgg());
 		}
 		
 		// Spiderling Nest
-		if (random.nextInt(1000) <= 5) {
+		if (random.nextInt(5000) <= 5) {
 			new WorldGenSpiderEgg().generateNest(world, random, x, y, z);
 		}
 		
 		// Shade Tree
-		if (random.nextInt(1000) <= 20) {
+		if (random.nextInt(1000) <= 5) {
 			this.spawnStructure(5, 10, world, random, x, y, z,
 					new WorldGenShadeTree());
 		}

@@ -36,7 +36,7 @@ public class MessageTeleportToDimension implements IMessage {
 	}
 	
 	public static class TeleportHandler implements
-	IMessageHandler<MessageTeleportToDimension, IMessage> {
+			IMessageHandler<MessageTeleportToDimension, IMessage> {
 		@Override
 		public IMessage onMessage(MessageTeleportToDimension message,
 				MessageContext ctx) {
@@ -45,11 +45,11 @@ public class MessageTeleportToDimension implements IMessage {
 			if (ent instanceof EntityPlayerMP) {
 				EntityPlayerMP player = (EntityPlayerMP) ent;
 				player.mcServer.getConfigurationManager()
-				.transferPlayerToDimension(
-						player,
-						message.dim,
-						new CustomTeleporter(player.mcServer
-								.worldServerForDimension(message.dim)));
+						.transferPlayerToDimension(
+								player,
+								message.dim,
+								new CustomTeleporter(player.mcServer
+										.worldServerForDimension(message.dim)));
 				
 				int x = (int) player.posX;
 				int y = (int) player.posY;
@@ -57,6 +57,18 @@ public class MessageTeleportToDimension implements IMessage {
 				
 				World worldObj = player.worldObj;
 				Block blockAir = Blocks.air;
+				
+				if (worldObj.getBlock(x, y - 1, z) == blockAir) {
+					worldObj.setBlock(x, y - 1, z, Blocks.stone);
+					worldObj.setBlock(x + 1, y - 1, z + 1, Blocks.stone);
+					worldObj.setBlock(x - 1, y - 1, z - 1, Blocks.stone);
+					worldObj.setBlock(x + 1, y - 1, z - 1, Blocks.stone);
+					worldObj.setBlock(x - 1, y - 1, z + 1, Blocks.stone);
+					worldObj.setBlock(x - 1, y - 1, z, Blocks.stone);
+					worldObj.setBlock(x, y - 1, z - 1, Blocks.stone);
+					worldObj.setBlock(x + 1, y - 1, z, Blocks.stone);
+					worldObj.setBlock(x, y - 1, z + 1, Blocks.stone);
+				}
 				
 				worldObj.setBlock(x, y, z, blockAir);
 				worldObj.setBlock(x, y + 1, z, blockAir);

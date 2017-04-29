@@ -10,6 +10,8 @@ public class KeyBindings {
 	public static KeyBinding thunderPower;
 	public static KeyBinding netherPower;
 	public static KeyBinding enderPower;
+	public static KeyBinding witherPower;
+	public static KeyBinding lightPower;
 	
 	public static void init() {
 		icePower = new KeyBinding("key.icepower", Keyboard.KEY_NUMPAD8,
@@ -20,9 +22,15 @@ public class KeyBindings {
 				"key.categories.zollernextras.superpowers");
 		enderPower = new KeyBinding("key.enderpower", Keyboard.KEY_NUMPAD6,
 				"key.categories.zollernextras.superpowers");
+		witherPower = new KeyBinding("key.witherpower", Keyboard.KEY_NUMPAD5,
+				"key.categories.zollernextras.superpowers");
+		lightPower = new KeyBinding("key.lightpower", Keyboard.KEY_NUMPAD7,
+				"key.categories.zollernextras.superpowers");
 		ClientRegistry.registerKeyBinding(icePower);
 		ClientRegistry.registerKeyBinding(thunderPower);
 		ClientRegistry.registerKeyBinding(netherPower);
 		ClientRegistry.registerKeyBinding(enderPower);
+		ClientRegistry.registerKeyBinding(witherPower);
+		ClientRegistry.registerKeyBinding(lightPower);
 	}
 }

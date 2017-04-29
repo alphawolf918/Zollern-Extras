@@ -4,11 +4,22 @@
 * Made the Lucent (light) sword.
     * Applies Radiance effect to Player upon right-click, which damages the blade for 5 points.
     * Left-clicking an undead entity will kill it instantly, but it has no effect on anything else.
-* Charged Gateway Eye now spawns a 3x3 room of air blocks when teleporting.
+    * Crafted using Radium, Static Amber and Steel Stick.
+* Charged Gateway Eye and Nether Eye now spawn a 2-layer 3x3 room of air blocks when teleporting.
+    * Spawns a platform of stone below the Player if air is not the block directly underneath them.
 * Added colorful peach trees.
     * Spawn at similar rates to the rest of the fruit trees.
 * Added peaches.
     * Dropped from peach trees.
+* Shadow Alien Boss Spawner block now sends a message to the Player if they try to activate it without a key.
+* Better Grass now drops when being broken with hand.
+    * Originally needed at least a wooden shovel.
+    * Drops dirt.
+* Hell Ducks now make a "Quack" sound similar to how Hell Cows from Ars Magica make a "Moo" sound.
+* Bumped up health for Hell Ducks.
+* Hell Ducks now aim for Iron Golems.
+* Lowered some of the generation rates in the Upside-Down dimension.
+* Added a Jump potion.
 * 
 
 [3.2 - Hotfix for crafting recipes + Minor tweaks]

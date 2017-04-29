@@ -55,6 +55,7 @@ import zollernextras.items.tools.zollernium.ZollerniumPickaxe;
 import zollernextras.items.tools.zollernium.ZollerniumShovel;
 import zollernextras.items.tools.zollernium.ZollerniumSword;
 import zollernextras.lib.ZollernHelper;
+import zollernextras.potions.ZollernPotion;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ZollernItems {
@@ -299,9 +300,10 @@ public class ZollernItems {
 	public static Item chargiumIngot = new GenericItem("chargiumingot");
 	public static Item radiance = new GenericItem("radiance");
 	public static Item shadeKey = new GenericItem("shadekey")
-	.setDetails("Unlocks the Shadow Spawner.");
+			.setDetails("Unlocks the Shadow Spawner.");
 	public static Item steelIngot = new GenericItem("steelingot");
 	public static Item steelDust = new GenericItem("steeldust");
+	public static Item steelStick = new GenericItem("steelstick");
 	
 	public static Item chocolateBucket = new ZollernBucket("bucket_chocolate",
 			ZollernBlocks.blockChocolate);
@@ -311,6 +313,11 @@ public class ZollernItems {
 			ZollernBlocks.blockChargium);
 	public static Item whiteLavaBucket = new ZollernBucket("whitelavabucket",
 			ZollernBlocks.blockWhiteLava);
+	
+	public static Item radiancePotion = new ZollernPotionItem("radiancepotion",
+			ZollernPotion.radiance);
+	public static Item jumpPotion = new ZollernPotionItem("jumppotion",
+			Potion.jump);
 	
 	public static void init() {
 		addItem(spcItem, "Super Charged Coal");
@@ -499,11 +506,15 @@ public class ZollernItems {
 		addItem(shadeKey, "Shade Key");
 		addItem(steelIngot, "Steel Ingot");
 		addItem(steelDust, "Steel Dust");
+		addItem(steelStick, "Steel Stick");
 		
 		addItem(chocolateBucket, "Chocolate Bucket");
 		addItem(fuelBucket, "Fueltonium Bucket");
 		addItem(chargiumBucket, "Chargium Bucket");
 		addItem(whiteLavaBucket, "White Lava Bucket");
+		
+		addItem(radiancePotion, "radiance potion");
+		addItem(jumpPotion, "jump potion");
 		
 		ZollernHelper.Log("Items loaded, " + totalItems + " entries.");
 	}

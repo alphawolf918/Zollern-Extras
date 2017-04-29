@@ -33,6 +33,14 @@ public class RecipeManager {
 		public static void init() {
 			ToolArmorRecipes.init();
 			
+			// Power Stick (Ender Cane)
+			GameRegistry.addRecipe(new ItemStack(ZollernItems.steelStick, 4),
+					new Object[] { " E ", " E ", "   ", 'E',
+							ZollernItems.steelStick });
+			GameRegistry.addRecipe(new ItemStack(ZollernItems.steelStick, 4),
+					new Object[] { "   ", " E ", " E ", 'E',
+							ZollernItems.steelStick });
+			
 			// Steel Block
 			RecipeHelper.fullBlockCraft(ZollernBlocks.steelBlock,
 					ZollernItems.steelIngot);
@@ -40,40 +48,40 @@ public class RecipeManager {
 			// Shade Key
 			GameRegistry.addRecipe(new ItemStack(ZollernItems.shadeKey, 1),
 					new Object[] { "MSM", " T ", " T ", 'M',
-							ZollernBlocks.caveMarbleWhite, 'S',
-							ZollernItems.shadowEssence, 'T',
-							ZollernItems.marbleStick });
+				ZollernBlocks.caveMarbleWhite, 'S',
+				ZollernItems.shadowEssence, 'T',
+				ZollernItems.marbleStick });
 			
 			// Uncharged Gateway Eye (Upside-Down)
 			GameRegistry.addRecipe(new ItemStack(
 					ZollernItems.upsideDownEyeUncharged, 1), new Object[] {
-				"NEN", "ANA", "NRN", 'N', ZollernBlocks.netheridiumBlock,
-				'E', ZollernBlocks.enderDiamondBlock, 'A',
-				ZollernBlocks.azurite, 'R', Items.ender_eye });
+					"NEN", "ANA", "NRN", 'N', ZollernBlocks.netheridiumBlock,
+					'E', ZollernBlocks.enderDiamondBlock, 'A',
+					ZollernBlocks.azurite, 'R', Items.ender_eye });
 			
 			// Charged Gateway Eye (Upside-Down)
 			if (ModHelperBase.useThermalFoundation) {
 				ThermalExpansionHelper.addSmelterRecipe(10000, new ItemStack(
 						ZollernItems.upsideDownEyeUncharged), new ItemStack(
-								ZollernItems.chargiumIngot, 2), new ItemStack(
-										ZollernItems.upsideDownEye));
+						ZollernItems.chargiumIngot, 2), new ItemStack(
+						ZollernItems.upsideDownEye));
 			} else {
 				GameRegistry.addShapelessRecipe(new ItemStack(
 						ZollernItems.upsideDownEye), new Object[] {
-					ZollernItems.radiance, ZollernItems.spcItem,
-					ZollernItems.upsideDownEyeUncharged });
+						ZollernItems.radiance, ZollernItems.spcItem,
+						ZollernItems.upsideDownEyeUncharged });
 			}
 			
 			// Radiance (Item)
 			if (ModHelperBase.useZaneExtras) {
 				GameRegistry.addShapelessRecipe(new ItemStack(
 						ZollernItems.radiance, 4), new Object[] {
-						ZollernItems.spcItem, ItemList.staria });
+					ZollernItems.spcItem, ItemList.staria });
 			} else {
 				GameRegistry.addRecipe(new ItemStack(ZollernItems.radiance, 2),
 						new Object[] { "GSG", "GAG", "GSG", 'G',
-								Blocks.gold_block, 'S', ZollernBlocks.spcBlock,
-								'A', ZollernBlocks.azurite });
+					Blocks.gold_block, 'S', ZollernBlocks.spcBlock,
+					'A', ZollernBlocks.azurite });
 			}
 			
 			// Radiance (Block)
@@ -91,9 +99,9 @@ public class RecipeManager {
 			// Chargium Dust
 			GameRegistry.addRecipe(new ItemStack(ZollernItems.chargiumDust, 8),
 					new Object[] { "SS ", "ZZ ", "F  ", 'S',
-							ZollernItems.shiniumDust, 'Z',
-							ZollernItems.zollerniumDust, 'F',
-							ZollernItems.chargiumBucket });
+				ZollernItems.shiniumDust, 'Z',
+				ZollernItems.zollerniumDust, 'F',
+				ZollernItems.chargiumBucket });
 			
 			// Chargium Block
 			RecipeHelper.fullBlockCraft(ZollernBlocks.chargiumBlock,
@@ -102,10 +110,10 @@ public class RecipeManager {
 			// Power Stick (Ender Cane)
 			GameRegistry.addRecipe(new ItemStack(ZollernItems.powerStick, 4),
 					new Object[] { " E ", " E ", "   ", 'E',
-				ZollernItems.enderReeds });
+							ZollernItems.enderReeds });
 			GameRegistry.addRecipe(new ItemStack(ZollernItems.powerStick, 4),
 					new Object[] { "   ", " E ", " E ", 'E',
-				ZollernItems.enderReeds });
+							ZollernItems.enderReeds });
 			
 			// Mud Bricks
 			RecipeHelper.addBricks(ZollernItems.bricksMud,
@@ -126,20 +134,20 @@ public class RecipeManager {
 			// Tomato Paste
 			GameRegistry.addShapelessRecipe(new ItemStack(
 					ZollernItems.tomatoPaste, 1), new Object[] {
-					ZollernItems.tomato, Items.glass_bottle });
+				ZollernItems.tomato, Items.glass_bottle });
 			
 			// Dough
 			GameRegistry.addShapelessRecipe(
 					new ItemStack(ZollernItems.dough, 2), new Object[] {
-							ZollernItems.flour, Items.egg, Items.milk_bucket });
+						ZollernItems.flour, Items.egg, Items.milk_bucket });
 			
 			// IMC w/ Zane Extras
 			if (ModHelperBase.useZaneExtras) {
 				// Pizza
 				GameRegistry.addShapelessRecipe(new ItemStack(
 						ZollernBlocks.blockPizza, 1), new Object[] {
-					ZollernItems.tomatoPaste, ZollernItems.cookedDough,
-					zaneextras.items.ItemList.cheese });
+						ZollernItems.tomatoPaste, ZollernItems.cookedDough,
+						zaneextras.items.ItemList.cheese });
 			}
 			
 			// Cold Smoothstone
@@ -150,7 +158,7 @@ public class RecipeManager {
 			// Popcorn Bowl
 			GameRegistry.addRecipe(new ItemStack(ZollernItems.popcornBowl, 1),
 					new Object[] { "PPP", "PBP", "PPP", 'P',
-							ZollernItems.popcorn, 'B', Items.bowl });
+				ZollernItems.popcorn, 'B', Items.bowl });
 			
 			// Red Rock
 			ItemStack rrb = new ItemStack(ZollernBlocks.redRockBrick, 4);
@@ -160,22 +168,22 @@ public class RecipeManager {
 			// Silver
 			GameRegistry.addRecipe(new ItemStack(ZollernItems.silverIngot, 1),
 					new Object[] { "NNN", "NNN", "NNN", 'N',
-							ZollernItems.silverNugget });
+				ZollernItems.silverNugget });
 			
 			if (ZEConfig.vanillaItemsAreCraftable) {
 				// Name Tag
 				GameRegistry.addRecipe(
 						new ItemStack(Item.getItemById(421), 2),
 						new Object[] { "  I", " S ", "S  ", 'S',
-								ZollernItems.swampClayBall, 'I',
-								Item.getItemById(265) });
+							ZollernItems.swampClayBall, 'I',
+							Item.getItemById(265) });
 				
 				// Saddle
 				GameRegistry.addRecipe(
 						new ItemStack(Items.saddle, 1),
 						new Object[] { "LLL", "L L", "I I", 'L',
-								Item.getItemById(334), 'I',
-								Item.getItemById(265) });
+							Item.getItemById(334), 'I',
+							Item.getItemById(265) });
 				
 				// Turn Nether Quartz Block back into Nether Quartz Item
 				GameRegistry.addShapelessRecipe(
@@ -199,19 +207,19 @@ public class RecipeManager {
 				// Red Nether Bricks
 				GameRegistry.addRecipe(new ItemStack(
 						ZollernBlocks.redNetherBricks, 2), new Object[] {
-						"NB ", "BN ", "   ", 'B', Items.netherbrick, 'N',
-						Items.nether_wart });
+					"NB ", "BN ", "   ", 'B', Items.netherbrick, 'N',
+					Items.nether_wart });
 			}
 			
 			// Ender Shards to Ender Pearl
 			GameRegistry.addRecipe(new ItemStack(Item.getItemById(368), 1),
 					new Object[] { "RRR", "R R", "RRR", 'R',
-							ZollernItems.enderShard });
+				ZollernItems.enderShard });
 			
 			// Ender Pearl to Ender Shards
 			GameRegistry.addShapelessRecipe(new ItemStack(
 					ZollernItems.enderShard, 8), new Object[] { Item
-					.getItemById(368) });
+				.getItemById(368) });
 			
 			// Amaranth
 			RecipeHelper.fullBlockCraft(ZollernBlocks.amaranthBlock,
@@ -224,10 +232,10 @@ public class RecipeManager {
 			// Torches
 			GameRegistry.addRecipe(new ItemStack(Block.getBlockById(50), 8),
 					new Object[] { "G  ", "S  ", 'G', ZollernItems.spcItem,
-							'S', Items.stick });
+				'S', Items.stick });
 			GameRegistry.addRecipe(new ItemStack(Block.getBlockById(50), 8),
 					new Object[] { " G ", " S ", 'G', ZollernItems.spcItem,
-							'S', Items.stick });
+				'S', Items.stick });
 			
 			// Zinc Ingot (to block)
 			RecipeHelper.fullBlockCraft(ZollernBlocks.zincBlock,
@@ -241,56 +249,56 @@ public class RecipeManager {
 			GameRegistry.addRecipe(
 					new ItemStack(ZollernBlocks.ironSiren, 1),
 					new Object[] { "OIO", "IRI", "OIO", 'O',
-							Block.getBlockById(49), 'I', Item.getItemById(265),
-							'R', Item.getItemById(331) });
+						Block.getBlockById(49), 'I', Item.getItemById(265),
+						'R', Item.getItemById(331) });
 			GameRegistry.addRecipe(
 					new ItemStack(ZollernBlocks.goldSiren, 1),
 					new Object[] { "OIO", "IRI", "OIO", 'O',
-							Block.getBlockById(49), 'I', Item.getItemById(266),
-							'R', Item.getItemById(331) });
+						Block.getBlockById(49), 'I', Item.getItemById(266),
+						'R', Item.getItemById(331) });
 			GameRegistry.addRecipe(
 					new ItemStack(ZollernBlocks.diamondSiren, 1),
 					new Object[] { "OIO", "IRI", "OIO", 'O',
-							Block.getBlockById(49), 'I', Item.getItemById(264),
-							'R', Item.getItemById(331) });
+						Block.getBlockById(49), 'I', Item.getItemById(264),
+						'R', Item.getItemById(331) });
 			GameRegistry.addRecipe(
 					new ItemStack(ZollernBlocks.emeraldSiren, 1),
 					new Object[] { "OIO", "IRI", "OIO", 'O',
-							Block.getBlockById(49), 'I', Item.getItemById(388),
-							'R', Item.getItemById(331) });
+						Block.getBlockById(49), 'I', Item.getItemById(388),
+						'R', Item.getItemById(331) });
 			
 			// Black Cave Marble Block
 			GameRegistry.addRecipe(new ItemStack(ZollernBlocks.caveMarbleBlack,
 					8), new Object[] { "III", "IMI", "III", 'I',
-					new ItemStack(Item.getItemById(351), 1, 0), 'M',
-					ZollernBlocks.caveMarbleWhite });
+				new ItemStack(Item.getItemById(351), 1, 0), 'M',
+				ZollernBlocks.caveMarbleWhite });
 			
 			// Blaze Rod
 			GameRegistry.addRecipe(new ItemStack(Items.blaze_rod, 1),
 					new Object[] { " B ", "BSB", " B ", 'B',
-							Items.blaze_powder, 'S',
-							ZollernItems.blackMarbleStick });
+				Items.blaze_powder, 'S',
+				ZollernItems.blackMarbleStick });
 			
 			// Healing Heart
 			GameRegistry.addRecipe(
 					new ItemStack(ZollernItems.heart),
 					new Object[] { "AZA", "AOA", "ARA", 'A',
-							ZollernItems.amaranthIngot, 'O',
-							ZollernItems.zollerniumIngot, 'R',
-							Item.getItemById(331) });
+						ZollernItems.amaranthIngot, 'O',
+						ZollernItems.zollerniumIngot, 'R',
+						Item.getItemById(331) });
 			
 			// Health Upgrade
 			GameRegistry.addRecipe(new ItemStack(ZollernItems.heartForce),
 					new Object[] { "ZSZ", "ZHZ", "ZZZ", 'Z',
-							ZollernItems.zincIngot, 'S',
-							ZollernItems.zollerniumIngot, 'H',
-							ZollernItems.heart });
+				ZollernItems.zincIngot, 'S',
+				ZollernItems.zollerniumIngot, 'H',
+				ZollernItems.heart });
 			
 			// Sea Lamps
 			GameRegistry.addRecipe(new ItemStack(ZollernBlocks.seaLamp),
 					new Object[] { "L L", " S ", "L L", 'L',
-							ZollernItems.lapisIngot, 'S',
-							ZollernBlocks.shinestone });
+				ZollernItems.lapisIngot, 'S',
+				ZollernBlocks.shinestone });
 			
 			// SPC Block
 			RecipeHelper.fullBlockCraft(ZollernBlocks.spcBlock,
@@ -303,59 +311,59 @@ public class RecipeManager {
 			// Firey Garnet (Gem Form)
 			GameRegistry.addRecipe(new ItemStack(ZollernItems.fireGarnet, 1),
 					new Object[] { "BLB", "RGR", "BLB", 'B',
-							Items.blaze_powder, 'G', ZollernBlocks.garnet, 'R',
-							Items.redstone, 'L', Items.blaze_rod });
+				Items.blaze_powder, 'G', ZollernBlocks.garnet, 'R',
+				Items.redstone, 'L', Items.blaze_rod });
 			
 			// Icy Aqua (Gem Form)
 			GameRegistry.addRecipe(new ItemStack(ZollernItems.icyAqua, 1),
 					new Object[] { "SDS", "ZAZ", "AAA", 'S',
-							ZollernItems.shiniumIngot, 'Z',
-							ZollernItems.shinedust, 'A', ZollernBlocks.aqua,
-							'D', Items.diamond });
+				ZollernItems.shiniumIngot, 'Z',
+				ZollernItems.shinedust, 'A', ZollernBlocks.aqua,
+				'D', Items.diamond });
 			
 			// Static Amber (Gem Form)
 			GameRegistry.addRecipe(new ItemStack(ZollernItems.staticAmber, 1),
 					new Object[] { "GTG", "UAU", "ZTZ", 'G', Items.gold_ingot,
-							'T', ZollernItems.topaz, 'A', ZollernBlocks.amber,
-							'Z', ZollernItems.zincIngot, 'U',
-							ZollernItems.azurite });
+				'T', ZollernItems.topaz, 'A', ZollernBlocks.amber,
+				'Z', ZollernItems.zincIngot, 'U',
+				ZollernItems.azurite });
 			
 			// Ender Opal (Gem Form)
 			GameRegistry.addRecipe(new ItemStack(ZollernItems.enderOpal, 1),
 					new Object[] { "FPF", "EOE", "EME", 'F', Items.ender_eye,
-							'P', ZollernItems.enderDiamond, 'E',
-							ZollernItems.enderite, 'O', ZollernBlocks.opal,
-							'M', Items.emerald });
+				'P', ZollernItems.enderDiamond, 'E',
+				ZollernItems.enderite, 'O', ZollernBlocks.opal,
+				'M', Items.emerald });
 			
 			// Netheridium (Gem Form)
 			GameRegistry.addRecipe(new ItemStack(ZollernItems.netheridium, 1),
 					new Object[] { "BSB", "LXL", "VAV", 'B',
-							ZollernItems.shadowEssence, 'S',
-							ZollernItems.spcItem, 'V', ZollernItems.garnet,
-							'X', ZollernBlocks.witheriteBlock, 'V',
-							Items.blaze_powder, 'A', ZollernItems.shadowBone });
+				ZollernItems.shadowEssence, 'S',
+				ZollernItems.spcItem, 'V', ZollernItems.garnet,
+				'X', ZollernBlocks.witheriteBlock, 'V',
+				Items.blaze_powder, 'A', ZollernItems.shadowBone });
 			
 			// Shinium
 			GameRegistry.addRecipe(new ItemStack(ZollernItems.shiniumIngot, 1),
 					new Object[] { "DLD", "DSD", "DLD", 'D', Items.diamond,
-							'S', ZollernItems.shinestoneIngot, 'L',
-							ZollernItems.lapisIngot });
+				'S', ZollernItems.shinestoneIngot, 'L',
+				ZollernItems.lapisIngot });
 			
 			// Glowing Obsidian
 			GameRegistry
-					.addRecipe(new ItemStack(ZollernBlocks.redObsidian, 2),
-							new Object[] { "BN ", "NB ", "   ", 'B',
-									ZollernBlocks.netherWartBlock, 'N',
-									Blocks.obsidian });
+			.addRecipe(new ItemStack(ZollernBlocks.redObsidian, 2),
+					new Object[] { "BN ", "NB ", "   ", 'B',
+				ZollernBlocks.netherWartBlock, 'N',
+				Blocks.obsidian });
 			
 			// Netherized Obsidian
 			GameRegistry.addRecipe(new ItemStack(
 					ZollernBlocks.netherizedObsidian, 1),
 					new Object[] { "WNW", "NON", "SNS", 'N',
-							ZollernBlocks.netheridiumBlock, 'W',
-							ZollernBlocks.witheriteBlock, 'O',
-							ZollernBlocks.redObsidian, 'S',
-							ZollernItems.shadowEssence });
+				ZollernBlocks.netheridiumBlock, 'W',
+				ZollernBlocks.witheriteBlock, 'O',
+				ZollernBlocks.redObsidian, 'S',
+				ZollernItems.shadowEssence });
 			
 			// Garnet
 			RecipeHelper.fullBlockCraft(ZollernBlocks.garnet,
@@ -367,14 +375,14 @@ public class RecipeManager {
 			
 			// Amber
 			RecipeHelper
-					.fullBlockCraft(ZollernBlocks.amber, ZollernItems.amber);
+			.fullBlockCraft(ZollernBlocks.amber, ZollernItems.amber);
 			
 			// Opal
 			RecipeHelper.fullBlockCraft(ZollernBlocks.opal, ZollernItems.opal);
 			
 			// Topaz
 			RecipeHelper
-					.fullBlockCraft(ZollernBlocks.topaz, ZollernItems.topaz);
+			.fullBlockCraft(ZollernBlocks.topaz, ZollernItems.topaz);
 			
 			// Enderite
 			RecipeHelper.fullBlockCraft(ZollernBlocks.enderite,
@@ -442,7 +450,7 @@ public class RecipeManager {
 			// Obsidian
 			GameRegistry.addRecipe(new ItemStack(Blocks.obsidian, 1),
 					new Object[] { "OOO", "O O", "OOO", 'O',
-							ZollernItems.obsidianIngot });
+				ZollernItems.obsidianIngot });
 			GameRegistry.addShapelessRecipe(new ItemStack(
 					ZollernItems.obsidianIngot, 8),
 					new Object[] { Blocks.obsidian });
@@ -450,75 +458,82 @@ public class RecipeManager {
 			// White Cave Marble Stick
 			GameRegistry.addRecipe(new ItemStack(ZollernItems.marbleStick, 2),
 					new Object[] { "B  ", "B  ", "   ", 'B',
-							ZollernBlocks.caveMarbleWhite });
+				ZollernBlocks.caveMarbleWhite });
 			
 			// Black Cave Marble Stick
 			GameRegistry.addRecipe(new ItemStack(ZollernItems.blackMarbleStick,
 					2), new Object[] { "B  ", "B  ", "   ", 'B',
-					ZollernBlocks.caveMarbleBlack });
+				ZollernBlocks.caveMarbleBlack });
 			
 			// The End Portal Stone Thingy
 			GameRegistry.addRecipe(new ItemStack(Blocks.end_portal_frame, 1),
 					new Object[] { "EOE", "RNR", "TAT", 'E',
-							ZollernBlocks.enderPearlBlock, 'O',
-							ZollernBlocks.opal, 'R', Items.ender_eye, 'N',
-							ZollernBlocks.netherizedObsidian, 'T',
-							Blocks.glowstone, 'A', ZollernBlocks.staticAmber });
+				ZollernBlocks.enderPearlBlock, 'O',
+				ZollernBlocks.opal, 'R', Items.ender_eye, 'N',
+				ZollernBlocks.netherizedObsidian, 'T',
+				Blocks.glowstone, 'A', ZollernBlocks.staticAmber });
 			
 			// Lapis Stick
 			GameRegistry.addRecipe(new ItemStack(ZollernItems.lapisStick, 1),
 					new Object[] { " L ", " L ", "   ", 'L',
-							ZollernItems.lapisIngot });
+				ZollernItems.lapisIngot });
 			
 			// Power Stick
 			GameRegistry.addRecipe(new ItemStack(ZollernItems.powerStick, 1),
 					new Object[] { "LBL", "ASA", "ABA", 'L',
-							ZollernItems.lapisIngot, 'B',
-							ZollernBlocks.caveMarbleBlack, 'A',
-							ZollernItems.amaranthIngot, 'S',
-							ZollernItems.lapisStick });
+				ZollernItems.lapisIngot, 'B',
+				ZollernBlocks.caveMarbleBlack, 'A',
+				ZollernItems.amaranthIngot, 'S',
+				ZollernItems.lapisStick });
 			
 			// Diablo
 			GameRegistry.addRecipe(new ItemStack(ZollernItems.diabloSword, 1),
 					new Object[] { " F ", " F ", "GPG", 'F',
-							ZollernBlocks.fireGarnet, 'G', ZollernItems.garnet,
-							'P', ZollernItems.powerStick });
+				ZollernBlocks.fireGarnet, 'G', ZollernItems.garnet,
+				'P', ZollernItems.powerStick });
 			
 			// Glacies
 			GameRegistry.addRecipe(new ItemStack(ZollernItems.iceSword, 1),
 					new Object[] { " I ", " I ", "APA", 'I',
-							ZollernBlocks.icyAqua, 'A',
-							ZollernItems.aquamarine, 'P',
-							ZollernItems.powerStick });
+				ZollernBlocks.icyAqua, 'A',
+				ZollernItems.aquamarine, 'P',
+				ZollernItems.powerStick });
 			
 			// Thor
 			GameRegistry.addRecipe(new ItemStack(ZollernItems.thorSword, 1),
 					new Object[] { " S ", " S ", "APA", 'S',
-							ZollernBlocks.staticAmber, 'A', ZollernItems.amber,
-							'P', ZollernItems.powerStick });
+				ZollernBlocks.staticAmber, 'A', ZollernItems.amber,
+				'P', ZollernItems.powerStick });
 			
 			// Ender
 			GameRegistry
-					.addRecipe(new ItemStack(ZollernItems.enderSword, 1),
-							new Object[] { " E ", " E ", "OPM", 'E',
-									ZollernBlocks.enderOpal, 'O',
-									ZollernBlocks.enderDiamondBlock, 'M',
-									ZollernItems.enderite, 'P',
-									ZollernItems.powerStick });
+			.addRecipe(new ItemStack(ZollernItems.enderSword, 1),
+					new Object[] { " E ", " E ", "OPM", 'E',
+				ZollernBlocks.enderOpal, 'O',
+				ZollernBlocks.enderDiamondBlock, 'M',
+				ZollernItems.enderite, 'P',
+				ZollernItems.powerStick });
 			
 			// Mortem
 			GameRegistry.addRecipe(new ItemStack(ZollernItems.witherSword, 1),
 					new Object[] { " W ", " W ", "RAX", 'W',
-							ZollernBlocks.netheridiumBlock, 'R',
-							ZollernItems.witherite, 'A',
-							ZollernItems.powerStick, 'X',
-							ZollernItems.shadowEssence });
+				ZollernBlocks.netheridiumBlock, 'R',
+				ZollernItems.witherite, 'A',
+				ZollernItems.powerStick, 'X',
+				ZollernItems.shadowEssence });
+			
+			// Lucent
+			GameRegistry.addRecipe(new ItemStack(ZollernItems.lightSword),
+					new Object[] { " L ", " L ", "TST", 'L',
+				ZollernItems.radiance, 'T',
+				ZollernItems.staticAmber, 'S',
+				ZollernItems.steelStick });
 			
 			// Baby Ender Dragon Egg
 			GameRegistry.addRecipe(new ItemStack(
 					ZollernBlocks.babyEnderDragonEgg, 1), new Object[] { "A A",
-					" B ", "A A", 'A', ZollernBlocks.azurite, 'B',
-					Blocks.dragon_egg });
+				" B ", "A A", 'A', ZollernBlocks.azurite, 'B',
+				Blocks.dragon_egg });
 			
 			// Ingot Stacks
 			addIngotStack(Items.iron_ingot, ZollernBlocks.ironBlockIngot);
@@ -576,74 +591,74 @@ public class RecipeManager {
 			// Blue
 			GameRegistry.addShapelessRecipe(new ItemStack(
 					ZollernItems.bricksBlue, 1), new Object[] { Items.brick,
-				new ItemStack(Items.dye, 1, 4) // 4
-			});
+					new ItemStack(Items.dye, 1, 4) // 4
+					});
 			// Red
 			GameRegistry.addShapelessRecipe(new ItemStack(
 					ZollernItems.bricksRed, 1), new Object[] { Items.brick,
-					new ItemStack(Items.dye, 1, 1) // 1
-					});
+				new ItemStack(Items.dye, 1, 1) // 1
+			});
 			// Green
 			GameRegistry.addShapelessRecipe(new ItemStack(
 					ZollernItems.bricksGreen, 1), new Object[] { Items.brick,
-				new ItemStack(Items.dye, 1, 2) // 2
-			});
+					new ItemStack(Items.dye, 1, 2) // 2
+					});
 			// Purple
 			GameRegistry.addShapelessRecipe(new ItemStack(
 					ZollernItems.bricksPurple, 1), new Object[] { Items.brick,
-				new ItemStack(Items.dye, 1, 5) // 5
-			});
+					new ItemStack(Items.dye, 1, 5) // 5
+					});
 			// Cyan
 			GameRegistry.addShapelessRecipe(new ItemStack(
 					ZollernItems.bricksCyan, 1), new Object[] { Items.brick,
-				new ItemStack(Items.dye, 1, 6) // 6
-			});
+					new ItemStack(Items.dye, 1, 6) // 6
+					});
 			// Pink
 			GameRegistry.addShapelessRecipe(new ItemStack(
 					ZollernItems.bricksPink, 1), new Object[] { Items.brick,
-				new ItemStack(Items.dye, 1, 9) // 9
-			});
+					new ItemStack(Items.dye, 1, 9) // 9
+					});
 			// Yellow
 			GameRegistry.addShapelessRecipe(new ItemStack(
 					ZollernItems.bricksYellow, 1), new Object[] { Items.brick,
-				new ItemStack(Items.dye, 1, 11) // 11
-			});
+					new ItemStack(Items.dye, 1, 11) // 11
+					});
 			// Black
 			GameRegistry.addShapelessRecipe(new ItemStack(
 					ZollernItems.bricksBlack, 1), new Object[] { Items.brick,
-				new ItemStack(Items.dye, 1, 0) });
+					new ItemStack(Items.dye, 1, 0) });
 			// White
 			GameRegistry.addShapelessRecipe(new ItemStack(
 					ZollernItems.bricksWhite, 1), new Object[] { Items.brick,
-				new ItemStack(Items.dye, 1, 15) });
+					new ItemStack(Items.dye, 1, 15) });
 			// Lime
 			GameRegistry.addShapelessRecipe(new ItemStack(
 					ZollernItems.bricksLime, 1), new Object[] { Items.brick,
-				new ItemStack(Items.dye, 1, 10) });
+					new ItemStack(Items.dye, 1, 10) });
 			// Brown
 			GameRegistry.addShapelessRecipe(new ItemStack(
 					ZollernItems.bricksBrown, 1), new Object[] { Items.brick,
-				new ItemStack(Items.dye, 1, 3) });
+					new ItemStack(Items.dye, 1, 3) });
 			// Magenta
 			GameRegistry.addShapelessRecipe(new ItemStack(
 					ZollernItems.bricksMagenta, 1), new Object[] { Items.brick,
-				new ItemStack(Items.dye, 1, 13) });
+					new ItemStack(Items.dye, 1, 13) });
 			// Light Blue
 			GameRegistry.addShapelessRecipe(new ItemStack(
 					ZollernItems.bricksLightBlue, 1), new Object[] {
-					Items.brick, new ItemStack(Items.dye, 1, 12) });
+				Items.brick, new ItemStack(Items.dye, 1, 12) });
 			// Light Gray
 			GameRegistry.addShapelessRecipe(new ItemStack(
 					ZollernItems.bricksLightGray, 1), new Object[] {
-					Items.brick, new ItemStack(Items.dye, 1, 7) });
+				Items.brick, new ItemStack(Items.dye, 1, 7) });
 			// Orange
 			GameRegistry.addShapelessRecipe(new ItemStack(
 					ZollernItems.bricksOrange, 1), new Object[] { Items.brick,
-				new ItemStack(Items.dye, 1, 14) });
+					new ItemStack(Items.dye, 1, 14) });
 			// Gray
 			GameRegistry.addShapelessRecipe(new ItemStack(
 					ZollernItems.bricksGray, 1), new Object[] { Items.brick,
-				new ItemStack(Items.dye, 1, 8) });
+					new ItemStack(Items.dye, 1, 8) });
 			
 			// Other Stuff
 			RecipeHelper.addBricks(ZollernItems.shinedust,
@@ -659,17 +674,17 @@ public class RecipeManager {
 			// Andesite
 			GameRegistry.addShapelessRecipe(new ItemStack(
 					ZollernBlocks.andesite, 2), new Object[] {
-					ZollernBlocks.diorite, Blocks.cobblestone });
+				ZollernBlocks.diorite, Blocks.cobblestone });
 			
 			// Granite
 			GameRegistry.addShapelessRecipe(new ItemStack(
 					ZollernBlocks.granite, 2), new Object[] {
-					ZollernBlocks.diorite, Items.quartz });
+				ZollernBlocks.diorite, Items.quartz });
 			
 			// Diorite
 			GameRegistry.addRecipe(new ItemStack(ZollernBlocks.diorite, 2),
 					new Object[] { "NC ", "NC ", "   ", 'N', Items.quartz, 'C',
-							Blocks.cobblestone });
+				Blocks.cobblestone });
 			
 			// Prismarine
 			RecipeHelper.addOneWayBricks(ZollernItems.prismarineShard,
@@ -678,76 +693,76 @@ public class RecipeManager {
 			// Prismarine Bricks
 			GameRegistry.addRecipe(new ItemStack(
 					ZollernBlocks.prismarineBricks, 1), new Object[] { "PPP",
-					"PPP", "PPP", 'P', ZollernItems.prismarineShard });
+				"PPP", "PPP", 'P', ZollernItems.prismarineShard });
 			
 			// Dark Prismarine
 			GameRegistry.addRecipe(new ItemStack(ZollernBlocks.darkPrismarine,
 					1), new Object[] { "PPP", "PIP", "PPP", 'P',
-					ZollernItems.prismarineShard, 'I',
-					new ItemStack(Items.dye, 1, 0) });
+				ZollernItems.prismarineShard, 'I',
+				new ItemStack(Items.dye, 1, 0) });
 			
 			// Sea Lantern
 			GameRegistry.addRecipe(new ItemStack(ZollernBlocks.seaLantern, 1),
 					new Object[] { "PCP", "CCC", "PCP", 'P',
-							ZollernItems.prismarineShard, 'C',
-							ZollernItems.prismarineCrystal });
+				ZollernItems.prismarineShard, 'C',
+				ZollernItems.prismarineCrystal });
 			
 			// Polished Crystal
 			GameRegistry.addRecipe(new ItemStack(ZollernBlocks.polishedCrystal,
 					1), new Object[] { "PCP", "SZS", "ICI", 'P',
-					ZollernItems.prismarineShard, 'C',
-					ZollernItems.prismarineCrystal, 'S',
-					ZollernItems.shinedust, 'Z',
-					ZollernBlocks.shinestoneCrystal, 'I',
-					ZollernItems.shinestoneIngot });
+				ZollernItems.prismarineShard, 'C',
+				ZollernItems.prismarineCrystal, 'S',
+				ZollernItems.shinedust, 'Z',
+				ZollernBlocks.shinestoneCrystal, 'I',
+				ZollernItems.shinestoneIngot });
 			
 			// Raw Chocolate
 			GameRegistry.addRecipe(new ItemStack(ZollernItems.rawChocolate, 3),
 					new Object[] { "CCC", "CEC", "CCC", 'C',
-							new ItemStack(Items.dye, 1, 3), 'E', Items.egg });
+				new ItemStack(Items.dye, 1, 3), 'E', Items.egg });
 			GameRegistry.addRecipe(new ItemStack(ZollernItems.rawChocolate, 3),
 					new Object[] { "CCC", "CEC", "CCC", 'C',
-							new ItemStack(Items.dye, 1, 3), 'E',
-							ZollernItems.duckEgg });
+				new ItemStack(Items.dye, 1, 3), 'E',
+				ZollernItems.duckEgg });
 			
 			// Brownie
 			GameRegistry.addRecipe(new ItemStack(ZollernItems.brownie, 4),
 					new Object[] { "CC ", "CC ", "   ", 'C',
-							ZollernItems.rawChocolate });
+				ZollernItems.rawChocolate });
 			
 			// Candy Apple
 			GameRegistry.addShapelessRecipe(new ItemStack(
 					ZollernItems.candyApple, 1), new Object[] { Items.apple,
-					ZollernItems.rawChocolate });
+				ZollernItems.rawChocolate });
 			
 			// Cream Ball
 			GameRegistry.addShapelessRecipe(new ItemStack(
 					ZollernItems.creamBall, 3), new Object[] {
-					Items.milk_bucket, Items.sugar });
+				Items.milk_bucket, Items.sugar });
 			
 			// Ice Cream
 			GameRegistry.addShapelessRecipe(new ItemStack(
 					ZollernItems.iceCream, 1), new Object[] {
-					ZollernItems.creamBall, Items.bowl, Items.snowball });
+				ZollernItems.creamBall, Items.bowl, Items.snowball });
 			GameRegistry.addShapelessRecipe(new ItemStack(
 					ZollernItems.iceCream, 1), new Object[] {
-					ZollernItems.creamBall, Items.bowl, Blocks.ice });
+				ZollernItems.creamBall, Items.bowl, Blocks.ice });
 			
 			// Ice Cream Sandwich
 			GameRegistry.addRecipe(new ItemStack(ZollernItems.iceCreamSandwich,
 					1), new Object[] { "B  ", "C  ", "B  ", 'B',
-					ZollernItems.brownie, 'C', ZollernItems.creamBall });
+				ZollernItems.brownie, 'C', ZollernItems.creamBall });
 			GameRegistry.addRecipe(new ItemStack(ZollernItems.iceCreamSandwich,
 					1), new Object[] { " B ", " C ", " B ", 'B',
-					ZollernItems.brownie, 'C', ZollernItems.creamBall });
+				ZollernItems.brownie, 'C', ZollernItems.creamBall });
 			GameRegistry.addRecipe(new ItemStack(ZollernItems.iceCreamSandwich,
 					1), new Object[] { "  B", "  C", "  B", 'B',
-					ZollernItems.brownie, 'C', ZollernItems.creamBall });
+				ZollernItems.brownie, 'C', ZollernItems.creamBall });
 			
 			// Cookie Block
 			GameRegistry.addRecipe(new ItemStack(ZollernBlocks.cookieBlock, 1),
 					new Object[] { "CCC", "CHC", "CCC", 'C', Items.cookie, 'H',
-							ZollernBlocks.chocolateBlock });
+				ZollernBlocks.chocolateBlock });
 			
 			// ICSW Block
 			RecipeHelper.fullBlockCraft(ZollernBlocks.iceCreamSandwichBlock,
@@ -760,7 +775,7 @@ public class RecipeManager {
 			// Chocolate Bricks
 			GameRegistry.addRecipe(new ItemStack(ZollernBlocks.chocolateBricks,
 					4), new Object[] { "H H", " B ", "H H", 'H',
-					ZollernBlocks.chocolateBlock, 'B', Blocks.brick_block });
+				ZollernBlocks.chocolateBlock, 'B', Blocks.brick_block });
 			
 			// Chocolate Block
 			RecipeHelper.fullBlockCraft(ZollernBlocks.chocolateBlock,
@@ -801,27 +816,27 @@ public class RecipeManager {
 			// Chocolate Strawberry
 			GameRegistry.addShapelessRecipe(new ItemStack(
 					ZollernItems.chocolateStrawberry, 1), new Object[] {
-					ZollernItems.strawberry, ZollernItems.rawChocolate });
+				ZollernItems.strawberry, ZollernItems.rawChocolate });
 			
 			// Limon Sapling
 			GameRegistry.addShapelessRecipe(new ItemStack(
 					ZollernBlocks.limonSapling, 1), new Object[] {
-					ZollernBlocks.lemonSapling, ZollernBlocks.limeSapling });
+				ZollernBlocks.lemonSapling, ZollernBlocks.limeSapling });
 			
 			// Shine Torch
 			GameRegistry.addRecipe(new ItemStack(ZollernBlocks.shinetorch, 4),
 					new Object[] { "G  ", "S  ", 'G', ZollernItems.shinedust,
-							'S', Items.stick });
+				'S', Items.stick });
 			GameRegistry.addRecipe(new ItemStack(ZollernBlocks.shinetorch, 4),
 					new Object[] { " G ", " S ", 'G', ZollernItems.shinedust,
-							'S', Items.stick });
+				'S', Items.stick });
 			
 			// Nether Eye
 			GameRegistry.addRecipe(new ItemStack(ZollernItems.netherEye, 1),
 					new Object[] { "NBN", "WEW", "IOI", 'N',
-							ZollernItems.netheridium, 'B', Items.blaze_powder,
-							'W', ZollernItems.witherite, 'E', Items.ender_eye,
-							'O', Blocks.obsidian });
+				ZollernItems.netheridium, 'B', Items.blaze_powder,
+				'W', ZollernItems.witherite, 'E', Items.ender_eye,
+				'O', Blocks.obsidian });
 			
 			// Logs -> Planks
 			RecipeHelper.addLogPlanks(ZollernBlocks.bananaLog,
@@ -850,12 +865,12 @@ public class RecipeManager {
 			// Quiver
 			GameRegistry.addRecipe(new ItemStack(ZollernItems.quiver, 1),
 					new Object[] { " F ", " S ", " L ", 'F', Items.feather,
-				'S', Items.string, 'L', Items.leather });
+							'S', Items.string, 'L', Items.leather });
 		}
 		
 		private static void addIngotStack(Item ingot, Block ingotStack) {
 			GameRegistry.addRecipe(new ItemStack(ingotStack, 1), new Object[] {
-					" I ", "I I", "III", 'I', ingot });
+				" I ", "I I", "III", 'I', ingot });
 		}
 		
 	}

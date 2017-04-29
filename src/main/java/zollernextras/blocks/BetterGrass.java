@@ -17,7 +17,6 @@ public class BetterGrass extends GenericBlock {
 	public BetterGrass() {
 		super("bettergrass", 0.4F);
 		this.setNameAndTexture("bettergrass", "bettergrass2");
-		this.setHarvestLevel("shovel", 0);
 		this.setTickRandomly(true);
 		this.setHardResist(0.4F, 0.0F);
 		this.setLightOpacity(255);

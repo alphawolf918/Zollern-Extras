@@ -1,7 +1,5 @@
 * Add new horse armor: Emerald & Amaranth. (?)
     * Work with Zane and figure out how to make them render.
-* Hell Ducks.
-    * Have them make a "Quack" sound, similar to how Hellcows make a "moo" sound.
 * Zinc Armor and Tools.
     * Add Enchantments to Zinc tools.
 * Create tools and armor for amber, topaz, garnet, ruby, sapphire, opal, and aquamarine gems.
@@ -10,6 +8,10 @@
     * Nether Skeletons that use the Enderman model but behave like Skeletons.
 * Lilypad Plants.
     * Have a way to grow Lilypads.
+* Achievements.
+* Reduce lag in Sheol dimension (Upside-Down).
+* Potion-infused arrows.
+* More potions.
 
 == ENDER STUFF ===================
 [Ideas for how to revamp The End.]
@@ -17,6 +19,7 @@
 
 * Ender Spider.
     * Behave the same way the Enderman does.
+    * Small chance to spawn an Ender Bug when they teleport.
     
 * Find a way to make The End terrain bigger.
     * Perhaps use a structure gen for End Stone to increase its land.

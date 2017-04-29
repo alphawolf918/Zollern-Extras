@@ -68,6 +68,8 @@ public class ZollernPotion extends Potion {
 		this.totalEntries++;
 	}
 	
+	// Make sure you call this init BEFORE your items or it will crash when you
+	// use a custom potion!
 	public static void init() {
 		ZollernHelper.Log("Initializing new Potion effects..");
 		
@@ -81,10 +83,12 @@ public class ZollernPotion extends Potion {
 				+ " new Potion effects.");
 	}
 	
-	// This is where we actually program the 'effect' for the Potion. Note: We
-	// must call this manually! I do it through the LivingUpdate event in the
-	// Minecraft Forge event bus. Note that I call this through the proxy,
-	// just to be on the safe side.
+	/**
+	 * This is where we actually program the 'effect' for the Potion. Note: We
+	 * must call this manually! I do it through the LivingUpdate event in the
+	 * Minecraft Forge event bus. Note that I call this through the proxy, just
+	 * to be on the safe side.
+	 */
 	@Override
 	public void performEffect(EntityLivingBase par1LivingBase, int par2Amplifier) {
 		if (par1LivingBase instanceof EntityPlayer) {

@@ -145,7 +145,7 @@ public class Events {
 						&& !player.capabilities.isCreativeMode
 						&& !player.isPotionActive(ZollernPotion.radiance)) {
 					
-					// 6000 should be right at 5 minutes. (1 second = 20 ticks)
+					// (1 second = 20 ticks)
 					player.addPotionEffect(new PotionEffect(
 							ZollernPotion.radiance.id,
 							ZollernPotion.radianceTime, 0));
@@ -281,6 +281,11 @@ public class Events {
 		}
 	}
 	
+	// The idea of the two below functions is that I wanted to be able to tell
+	// if the Player has arrows inside of a quiver that's in their inventory,
+	// and if they do, then the bow will use arrows from that, without Players
+	// having to get them out manually.
+	
 	// Began using a bow
 	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
 	public void onPlayerStartedUsingBow(ArrowNockEvent event) {
@@ -322,19 +327,13 @@ public class Events {
 		} else if (username.toLowerCase().equals("applepiec00kie")) {
 			event.displayname = EnumChatFormatting.LIGHT_PURPLE + "Queen Apple"
 					+ EnumChatFormatting.WHITE;
-		} else if (username.toLowerCase().equals("takumikomeiji")) {
-			event.displayname = EnumChatFormatting.RED + "Red"
-					+ EnumChatFormatting.WHITE;
 		} else if (username.toLowerCase().equals("lazy_logic")) {
 			event.displayname = EnumChatFormatting.AQUA + "Logic"
-					+ EnumChatFormatting.WHITE;
-		} else if (username.toLowerCase().equals("cryokor")) {
-			event.displayname = EnumChatFormatting.DARK_AQUA + "Ice Lady"
 					+ EnumChatFormatting.WHITE;
 		} else if (username.toLowerCase().equals("master_zane")) {
 			event.displayname = EnumChatFormatting.GOLD + "Master Zane"
 					+ EnumChatFormatting.WHITE;
-		} else if (username.toLowerCase().equals("asylumneeds")) {
+		} else if (username.toLowerCase().equals("chronoxshift")) {
 			event.displayname = EnumChatFormatting.BLACK + "ChronoxShift"
 					+ EnumChatFormatting.WHITE;
 		}

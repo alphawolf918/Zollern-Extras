@@ -45,6 +45,28 @@
 		"duck/die"
 	]
   },
+  "hellduck.say": {
+	"category": "master",
+	"sounds": [
+		"hellduck/say1",
+		"hellduck/say2",
+		"hellduck/say3",
+		"hellduck/say4"
+	]
+  },
+  "hellduck.hurt": {
+	"category": "master",
+	"sounds": [
+		"hellduck/hurt1",
+		"hellduck/hurt2"
+	]
+  },
+  "hellduck.die": {
+	"category": "master",
+	"sounds": [
+		"hellduck/die"
+	]
+  },
   "mummy.say": {
 	"category": "master",
 	"sounds": [

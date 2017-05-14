@@ -6,6 +6,7 @@ import net.minecraftforge.common.BiomeManager.BiomeEntry;
 import net.minecraftforge.common.BiomeManager.BiomeType;
 import zollernextras.config.ZEConfig;
 import zollernextras.lib.ZollernHelper;
+import zollernextras.lib.modhelper.ModHelperBase;
 
 public class BiomeList {
 	
@@ -45,6 +46,7 @@ public class BiomeList {
 			ZEConfig.biomeTropicalForestID);
 	public static BiomeGenBase upsideDown = new BiomeGenUpsideDown(
 			ZEConfig.biomeUpsideDownID);
+	public static BiomeGenBase cheesePlains;
 	
 	public static void init() {
 		ZollernHelper.Log("Preparing to load biomes..");
@@ -71,6 +73,12 @@ public class BiomeList {
 				ZEConfig.biomeCrystalOceanSpawnRate);
 		addBiome(tropicalForest, BiomeType.WARM,
 				ZEConfig.biomeTropicalForestSpawnRate);
+		if (ModHelperBase.useZaneExtras) {
+			cheesePlains = new BiomeGenCheesePlains(
+					ZEConfig.biomeCheesePlainsID);
+			addBiome(cheesePlains, BiomeType.WARM,
+					ZEConfig.biomeCheesePlainsSpawnRate);
+		}
 		
 		addNoSpawnBiome(upsideDown, BiomeType.COOL, 0);
 		ZollernHelper.Log("Biomes loaded: " + totalEntries);

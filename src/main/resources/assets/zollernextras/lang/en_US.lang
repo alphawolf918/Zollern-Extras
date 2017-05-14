@@ -525,6 +525,7 @@ entity.zollernextras_enderbug.name=Ender Bug
 entity.zollernextras_shadowalien.name=Shadow God
 entity.zollernextras_krull.name=Krull
 entity.zollernextras_spiderling.name=Spiderling
+entity.zollernextras_helleton.name=Helleton
 
 death.attack.fueltonium=%1$s was submerged in fueltonium.
 death.attack.fueltonium.player=%1$s was submerged in fueltonium by %2$s.

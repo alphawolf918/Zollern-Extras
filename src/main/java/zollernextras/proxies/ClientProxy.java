@@ -37,6 +37,7 @@ import zollernextras.mobs.entities.EntityEnderCreeper;
 import zollernextras.mobs.entities.EntityEnderSkeleton;
 import zollernextras.mobs.entities.EntityFish;
 import zollernextras.mobs.entities.EntityHellDuck;
+import zollernextras.mobs.entities.EntityHelleton;
 import zollernextras.mobs.entities.EntityHog;
 import zollernextras.mobs.entities.EntityHogZombie;
 import zollernextras.mobs.entities.EntityJellyfish;
@@ -56,6 +57,7 @@ import zollernextras.mobs.models.ModelEnderBug;
 import zollernextras.mobs.models.ModelEnderCreeper;
 import zollernextras.mobs.models.ModelEnderSkeleton;
 import zollernextras.mobs.models.ModelFish;
+import zollernextras.mobs.models.ModelHelleton;
 import zollernextras.mobs.models.ModelHog;
 import zollernextras.mobs.models.ModelHogZombie;
 import zollernextras.mobs.models.ModelJellyfish;
@@ -76,6 +78,7 @@ import zollernextras.mobs.renders.RenderEnderCreeper;
 import zollernextras.mobs.renders.RenderEnderSkeleton;
 import zollernextras.mobs.renders.RenderFish;
 import zollernextras.mobs.renders.RenderHellDuck;
+import zollernextras.mobs.renders.RenderHelleton;
 import zollernextras.mobs.renders.RenderHog;
 import zollernextras.mobs.renders.RenderHogZombie;
 import zollernextras.mobs.renders.RenderJellyfish;
@@ -158,8 +161,9 @@ public class ClientProxy extends CommonProxy {
 		RenderingRegistry.registerEntityRenderingHandler(EntityHellDuck.class,
 				new RenderHellDuck(new ModelDuck(), 0.5F));
 		
-		RenderingRegistry.registerEntityRenderingHandler(EntityShadowAlien.class,
-				new RenderShadowAlien(new ModelShadowAlien(), 0.5F));
+		RenderingRegistry.registerEntityRenderingHandler(
+				EntityShadowAlien.class, new RenderShadowAlien(
+						new ModelShadowAlien(), 0.5F));
 		
 		RenderingRegistry.registerEntityRenderingHandler(EntityKrull.class,
 				new RenderKrull(new ModelKrull(), 0.5F));
@@ -167,6 +171,9 @@ public class ClientProxy extends CommonProxy {
 		RenderingRegistry.registerEntityRenderingHandler(
 				EntitySpiderling.class, new RenderSpiderling(
 						new ModelSpiderling(), 0.5F));
+		
+		RenderingRegistry.registerEntityRenderingHandler(EntityHelleton.class,
+				new RenderHelleton(new ModelHelleton(), 0.5F));
 		
 		addTile(TEIronBlockIngot.class, new TESRIronIngotStack());
 		addTile(TEGoldBlockIngot.class, new TESRGoldIngotStack());

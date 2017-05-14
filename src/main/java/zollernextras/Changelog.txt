@@ -1,9 +1,21 @@
+[3.4 - Misc Update]
+
+* Better Grass will now drop dirt when harvested with a Stone Shovel or above.
+    * Fixed since last update.
+* Reduced armor potions effects a bit more.
+* Added the Helleton mob.
+    * Basically just a super-strong Skeleton that spawns in the Nether.
+* Copper, Tin, Silver and Lead Ores from Thermal Foundation now spawn in Miner's Land when the mod is detected.
+* Zane Extra's ores now spawn in the Miner's Land when that mod is detected.
+* Replaced Power enchantment with Unbreaking on Amaranth Shovel.
+* 
+
 [3.3 - The Random Stuff and Things Update]
 
 * Made signs stackable up to 64.
 * Made the Lucent (light) sword.
     * Applies Radiance effect to Player upon right-click, which damages the blade for 5 points.
-    * Left-clicking an undead entity will kill it instantly, but it has no effect on anything else.
+    * Left-clicking an undead entity will kill it instantly.
     * Crafted using Radium, Static Amber and Steel Stick.
 * Charged Gateway Eye and Nether Eye now spawn a 2-layer 3x3 room of air blocks when teleporting.
     * Spawns a platform of stone below the Player if air is not the block directly underneath them.
@@ -18,9 +30,14 @@
 * Hell Ducks now make a "Quack" sound similar to how Hell Cows from Ars Magica make a "Moo" sound.
 * Bumped up health for Hell Ducks.
 * Hell Ducks now aim for Iron Golems.
-* Lowered some of the generation rates in the Upside-Down dimension.
+* Lowered a lot of the generation rates in the Upside-Down dimension.
 * Added a Jump potion.
-* 
+* Started work on achievements.
+
+---- FIXES ----
+* Fixed unintended 'invincibility' and 'super strength' armor buffs.
+* Fixed inability to craft azurite armor chestplate.
+---------------
 
 [3.2 - Hotfix for crafting recipes + Minor tweaks]
 

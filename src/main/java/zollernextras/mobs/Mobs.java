@@ -17,6 +17,7 @@ import zollernextras.mobs.entities.EntityEnderCreeper;
 import zollernextras.mobs.entities.EntityEnderSkeleton;
 import zollernextras.mobs.entities.EntityFish;
 import zollernextras.mobs.entities.EntityHellDuck;
+import zollernextras.mobs.entities.EntityHelleton;
 import zollernextras.mobs.entities.EntityHog;
 import zollernextras.mobs.entities.EntityHogZombie;
 import zollernextras.mobs.entities.EntityJellyfish;
@@ -258,6 +259,11 @@ public class Mobs {
 		
 		// Spiderling
 		registerEntity(EntitySpiderling.class, "spiderling", 0x000000, 0xff8b00);
+		
+		// Helleton
+		registerEntity(EntityHelleton.class, "helleton", 0x000000, 0x8b0000);
+		EntityRegistry.addSpawn(EntityHelleton.class, 25, 2, 4,
+				EnumCreatureType.monster, BiomeGenBase.hell);
 		
 		ZollernHelper.Log("Entities have been registered!");
 	}

@@ -268,13 +268,13 @@ public class Events {
 			for (int i = 0; i < 4; ++i) {
 				if (amArmorCount == 4) {
 					player.addPotionEffect(new PotionEffect(
-							Potion.resistance.id, 5, 4));
+							Potion.resistance.id, 2, 1));
 				} else if (azArmorCount == 4) {
 					player.addPotionEffect(new PotionEffect(
-							Potion.damageBoost.id, 5, 4));
+							Potion.damageBoost.id, 2, 1));
 				} else if (zArmorCount == 4) {
 					player.addPotionEffect(new PotionEffect(
-							Potion.fireResistance.id, 5, 4));
+							Potion.fireResistance.id, 2, 1));
 					player.stepHeight = 2F;
 				}
 			}

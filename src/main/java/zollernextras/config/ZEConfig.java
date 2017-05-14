@@ -53,6 +53,7 @@ public class ZEConfig {
 	public static int biomeCandyLandID;
 	public static int biomeCrystalOceanID;
 	public static int biomeTropicalForestID;
+	public static int biomeCheesePlainsID;
 	public static int biomeUpsideDownID;
 	
 	// Biomes (Weights)
@@ -71,6 +72,7 @@ public class ZEConfig {
 	public static int biomeCandyLandSpawnRate;
 	public static int biomeCrystalOceanSpawnRate;
 	public static int biomeTropicalForestSpawnRate;
+	public static int biomeCheesePlainsSpawnRate;
 	
 	// Commands
 	public static boolean commandEnableWarpTp;
@@ -153,19 +155,19 @@ public class ZEConfig {
 						"fueltoniumActsAsYellorite",
 						true,
 						"If enabled, Fueltonium Ingots will do the same as Yellorium Ingots in BigReactors, and can be used in their place.")
-						.getBoolean();
+				.getBoolean();
 		shiniumIsPlatinum = config
 				.get(config.CATEGORY_GENERAL,
 						"shiniumIsPlatinum",
 						true,
 						"If enabled, Shinium Ingots and Precious Shinium will function as Platinum Ingots and Platinum Dust, respectively (Thermal Foundation, Metallurgy, etc).")
-						.getBoolean();
+				.getBoolean();
 		betterGlassIsGlass = config
 				.get(config.CATEGORY_GENERAL,
 						"betterGlassIsGlass",
 						true,
 						"If enabled, Better Glass can be used in place of regular glass. Useful if you have a lot of gravel.")
-						.getBoolean();
+				.getBoolean();
 		rottenFleshCooksIntoLeather = config.get(CATEGORY_IMPROVEMENTS,
 				"rottenFleshCooksIntoLeather", true,
 				"If enabled, rotten flesh can be smelted into leather.")
@@ -175,23 +177,23 @@ public class ZEConfig {
 						"Enable Stack Changes",
 						true,
 						"Enables saddles, ender pearls, snow balls and buckets to be stackable up to 64.")
-						.getBoolean();
+				.getBoolean();
 		
 		// Improvements
 		vanillaItemsAreCraftable = config
 				.get(CATEGORY_IMPROVEMENTS, "vanillaItemsAreCraftable", true,
 						"If enabled, normally uncraftable vanilla items will be craftable.")
-						.getBoolean();
+				.getBoolean();
 		horseArmorIsCraftable = config
 				.get(CATEGORY_IMPROVEMENTS,
 						"horseArmorIsCraftable",
 						true,
 						"If enabled, horse armor may be crafted using its respective material and obsidian. (This is separate from the above on purpose.)")
-						.getBoolean();
+				.getBoolean();
 		biomeDisplaysOnHUD = config
 				.get(CATEGORY_GUI, "biomeDisplaysOnHUD", true,
 						"Disable this if you don't want the current biome to show on your HUD.")
-						.getBoolean();
+				.getBoolean();
 		enableDebugMode = config.get(config.CATEGORY_GENERAL,
 				"Enable Debug Mode", false,
 				"Prints out detailed information to the console when enabled.")
@@ -201,7 +203,7 @@ public class ZEConfig {
 						"World Generation Weight",
 						40,
 						"Determines the priority of world generation for this mod. Higher numbers = lower generation.")
-						.getInt();
+				.getInt();
 		
 		// Biomes (IDs)
 		biomeIcyDesertID = config.get(CATEGORY_BIOMES, "biomeIcyDesertID", 67)
@@ -234,6 +236,8 @@ public class ZEConfig {
 				"biomeCrystalOceanID", 80).getInt();
 		biomeTropicalForestID = config.get(CATEGORY_BIOMES,
 				"biomeTropicalForestID", 81).getInt();
+		biomeCheesePlainsID = config.get(CATEGORY_BIOMES,
+				"biomeCheesePlainsID", 82).getInt();
 		biomeUpsideDownID = config
 				.get(CATEGORY_BIOMES, "biomeUpsideDownID", 96).getInt();
 		
@@ -268,6 +272,8 @@ public class ZEConfig {
 				"biomeCrystalOceanSpawnRate", 4).getInt();
 		biomeTropicalForestSpawnRate = config.get(CATEGORY_BIOMES,
 				"biomeTropicalForestSpawnRate", 6).getInt();
+		biomeCheesePlainsSpawnRate = config.get(CATEGORY_BIOMES,
+				"biomeCheesePlainsSpawnRate", 8).getInt();
 		
 		// Commands
 		commandEnableWarpTp = config
@@ -275,13 +281,13 @@ public class ZEConfig {
 						"Enable WarpTP command",
 						false,
 						"Allow or disallow any player, Op or not, to teleport to any coordinates. Default: false")
-						.getBoolean();
+				.getBoolean();
 		commandEnableWp = config
 				.get(CATEGORY_COMMANDS,
 						"Enable WP command",
 						false,
 						"Allow or disallow any player to instantly warp to any other player. Default: false")
-						.getBoolean();
+				.getBoolean();
 		
 		// Dimensions
 		dimensionUpsideDownID = config.get(CATEGORY_DIMENSIONS,

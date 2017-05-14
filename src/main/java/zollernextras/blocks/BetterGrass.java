@@ -2,6 +2,7 @@ package zollernextras.blocks;
 
 import java.util.Random;
 import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.world.ColorizerGrass;
 import net.minecraft.world.IBlockAccess;
@@ -18,9 +19,10 @@ public class BetterGrass extends GenericBlock {
 		super("bettergrass", 0.4F);
 		this.setNameAndTexture("bettergrass", "bettergrass2");
 		this.setTickRandomly(true);
-		this.setHardResist(0.4F, 0.0F);
+		this.setHardResist(0.2F, 0.0F);
 		this.setLightOpacity(255);
 		this.setStepSound(soundTypeGrass);
+		this.setHarvestLevel("shovel", 1);
 	}
 	
 	@Override
@@ -40,7 +42,7 @@ public class BetterGrass extends GenericBlock {
 		if (!par1World.isRemote) {
 			if (par1World.getBlockLightValue(par2, par3 + 1, par4) < 4
 					&& par1World.getBlockLightOpacity(par2, par3 + 1, par4) > 2) {
-				par1World.setBlock(par2, par3, par4, Block.getBlockById(3));
+				par1World.setBlock(par2, par3, par4, Blocks.dirt);
 			} else if (par1World.getBlockLightValue(par2, par3 + 1, par4) >= 9) {
 				for (int l = 0; l < 4; ++l) {
 					int i1 = par2 + par5Random.nextInt(3) - 1;
@@ -48,7 +50,7 @@ public class BetterGrass extends GenericBlock {
 					int k1 = par4 + par5Random.nextInt(3) - 1;
 					Block l1 = par1World.getBlock(i1, j1 + 1, k1);
 					
-					if (par1World.getBlock(i1, j1, k1) == Block.getBlockById(3)
+					if (par1World.getBlock(i1, j1, k1) == Blocks.dirt
 							&& par1World.getBlockLightValue(i1, j1 + 1, k1) >= 4
 							&& par1World.getBlockLightOpacity(i1, j1 + 1, k1) <= 2) {
 						par1World.setBlock(i1, j1, k1, this);
@@ -61,7 +63,7 @@ public class BetterGrass extends GenericBlock {
 	@Override
 	public Item getItemDropped(int p_149650_1_, Random p_149650_2_,
 			int p_149650_3_) {
-		return Item.getItemFromBlock(Block.getBlockById(3));
+		return Item.getItemFromBlock(Blocks.dirt);
 	}
 	
 	@Override
@@ -91,8 +93,8 @@ public class BetterGrass extends GenericBlock {
 				int i2 = par1IBlockAccess.getBiomeGenForCoords(par2 + l1,
 						par4 + k1).getBiomeGrassColor(l, i1, j1);
 				l += (i2 & 16711680) >> 16;
-				i1 += (i2 & 65280) >> 8;
-				j1 += i2 & 255;
+			i1 += (i2 & 65280) >> 8;
+							j1 += i2 & 255;
 			}
 		}
 		

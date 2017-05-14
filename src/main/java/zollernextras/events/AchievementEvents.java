@@ -12,7 +12,7 @@ public class AchievementEvents {
 	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
 	public void onItemCrafted(PlayerEvent.ItemCraftedEvent event) {
 		Item craftedItem = event.crafting.getItem();
-		if (craftedItem == ZollernItems.radiance) {
+		if (craftedItem.equals(ZollernItems.radiance)) {
 			event.player.addStat(
 					ZollernAchievements.radianceCraftedAchievement, 1);
 		}

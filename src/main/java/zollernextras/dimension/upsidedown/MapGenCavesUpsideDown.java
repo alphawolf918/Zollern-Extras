@@ -75,12 +75,12 @@ public class MapGenCavesUpsideDown extends MapGenBase {
 				this.func_151541_a(random.nextLong(), p_151541_3_, p_151541_4_,
 						p_151541_5_, p_151541_6_, p_151541_8_, p_151541_10_,
 						random.nextFloat() * 0.5F + 0.5F, p_151541_13_
-						- (float) Math.PI / 2F, p_151541_14_ / 3.0F,
+								- (float) Math.PI / 2F, p_151541_14_ / 3.0F,
 						p_151541_15_, p_151541_16_, 1.0D);
 				this.func_151541_a(random.nextLong(), p_151541_3_, p_151541_4_,
 						p_151541_5_, p_151541_6_, p_151541_8_, p_151541_10_,
 						random.nextFloat() * 0.5F + 0.5F, p_151541_13_
-						+ (float) Math.PI / 2F, p_151541_14_ / 3.0F,
+								+ (float) Math.PI / 2F, p_151541_14_ / 3.0F,
 						p_151541_15_, p_151541_16_, 1.0D);
 				return;
 			}
@@ -179,7 +179,7 @@ public class MapGenCavesUpsideDown extends MapGenBase {
 										
 										if (d12 > -0.7D
 												&& d13 * d13 + d12 * d12 + d14
-												* d14 < 1.0D) {
+														* d14 < 1.0D) {
 											Block block1 = p_151541_5_[k3];
 											
 											if (isTopBlock(p_151541_5_, k3, k2,
@@ -261,7 +261,7 @@ public class MapGenCavesUpsideDown extends MapGenBase {
 			int chunkX, int chunkZ) {
 		BiomeGenBase biome = worldObj.getBiomeGenForCoords(x + chunkX * 16, z
 				+ chunkZ * 16);
-		return isExceptionBiome(biome) ? data[index] == Blocks.grass
+		return isExceptionBiome(biome) ? data[index] == ZollernBlocks.upsideDownSurfaceRock
 				: data[index] == biome.topBlock;
 	}
 	

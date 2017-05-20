@@ -2,6 +2,7 @@ package zollernextras.blocks.upsidedown;
 
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -33,6 +34,11 @@ public class ShadowBossSpawner extends GenericBlock {
 			ItemStack heldItemStack = par5EntityPlayer.getHeldItem();
 			Item heldItem = heldItemStack.getItem();
 			if (heldItem != null && heldItem == ZollernItems.shadeKey) {
+				InventoryPlayer playerInventory = par5EntityPlayer.inventory;
+				if (playerInventory.hasItem(ZollernItems.shadeKey)
+						&& !par5EntityPlayer.capabilities.isCreativeMode) {
+					playerInventory.consumeInventoryItem(ZollernItems.shadeKey);
+				}
 				this.spawnShadowBoss(par1World, par2, par3, par4,
 						par5EntityPlayer);
 			} else {

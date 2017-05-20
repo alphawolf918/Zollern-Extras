@@ -6,7 +6,6 @@ import net.minecraftforge.common.BiomeManager.BiomeEntry;
 import net.minecraftforge.common.BiomeManager.BiomeType;
 import zollernextras.config.ZEConfig;
 import zollernextras.lib.ZollernHelper;
-import zollernextras.lib.modhelper.ModHelperBase;
 
 public class BiomeList {
 	
@@ -73,12 +72,12 @@ public class BiomeList {
 				ZEConfig.biomeCrystalOceanSpawnRate);
 		addBiome(tropicalForest, BiomeType.WARM,
 				ZEConfig.biomeTropicalForestSpawnRate);
-		if (ModHelperBase.useZaneExtras) {
-			cheesePlains = new BiomeGenCheesePlains(
-					ZEConfig.biomeCheesePlainsID);
-			addBiome(cheesePlains, BiomeType.WARM,
-					ZEConfig.biomeCheesePlainsSpawnRate);
-		}
+		// if (ModHelperBase.useZaneExtras) {
+		// cheesePlains = new BiomeGenCheesePlains(
+		// ZEConfig.biomeCheesePlainsID);
+		// addBiome(cheesePlains, BiomeType.WARM,
+		// ZEConfig.biomeCheesePlainsSpawnRate);
+		// }
 		
 		addNoSpawnBiome(upsideDown, BiomeType.COOL, 0);
 		ZollernHelper.Log("Biomes loaded: " + totalEntries);
@@ -88,7 +87,7 @@ public class BiomeList {
 			int biomeWeight) {
 		if (BiomeGenBase.getBiome(biome.biomeID) != null) {
 			BiomeManager
-			.addBiome(biomeType, new BiomeEntry(biome, biomeWeight));
+					.addBiome(biomeType, new BiomeEntry(biome, biomeWeight));
 			BiomeManager.addSpawnBiome(biome);
 			BiomeManager.addVillageBiome(biome, true);
 			BiomeManager.addStrongholdBiome(biome);

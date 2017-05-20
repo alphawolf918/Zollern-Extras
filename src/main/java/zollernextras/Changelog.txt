@@ -1,3 +1,8 @@
+[3.4.1 - Fixes & Other Little Things]
+
+* Shade Key is now consumed when spawning a Shadow God boss.
+* 
+
 [3.4 - Misc Update]
 
 * Better Grass will now drop dirt when harvested with a Stone Shovel or above.
@@ -8,7 +13,8 @@
 * Copper, Tin, Silver and Lead Ores from Thermal Foundation now spawn in Miner's Land when the mod is detected.
 * Zane Extra's ores now spawn in the Miner's Land when that mod is detected.
 * Replaced Power enchantment with Unbreaking on Amaranth Shovel.
-* 
+* Added achievements.
+* Fixed a few things.
 
 [3.3 - The Random Stuff and Things Update]
 

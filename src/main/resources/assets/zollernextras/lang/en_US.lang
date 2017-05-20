@@ -540,8 +540,8 @@ death.attack.shadows=%1$s was swallowed whole by the shadow realm.
 death.attack.shadows.player=%1$s was swallowed whole by the shadow realm due to the actions of %2$s.
 death.attack.shadows.item=%1$s was swallowed whole by the shadow realm, due to the actions of %2$s using %3$s.
 death.attack.infection=%1$s perished from viral infection.
-death.attack.shadows.player=%1$s perished to viral infection by %2$s.
-death.attack.shadows.item=%1$s perished to viral infection by %2$s using %3$s.
+death.attack.infection.player=%1$s perished to viral infection by %2$s.
+death.attack.infection.item=%1$s perished to viral infection by %2$s using %3$s.
 
 zollernextras_commands.heal.usage=/heal [player]
 zollernextras_commands.stats.usage=/stats
@@ -551,5 +551,16 @@ zollernextras_commands.wp.usage=/wp <player>
 
 zollernextras_infected=Infected
 zollernextras_radiance=Radiance
+
+achievement.zollernextras_radiancecrafted=I Found The Light!
+achievement.zollernextras_radiancecrafted.desc=Crafted your first set of Radium
+achievement.zollernextras_foundamaranthore=Purpley Goodness
+achievement.zollernextras_foundamaranthore.desc=Find your first Amaranth Ore
+achievement.zollernextras_smeltedamaranth=Hot & Purple
+achievement.zollernextras_smeltedamaranth.desc=Smelted your first Amaranth Ingot
+achievement.zollernextras_craftedamaranthpickaxe=Whoa, It Glows!
+achievement.zollernextras_craftedamaranthpickaxe.desc=Crafted an Amaranth Pickaxe
+achievement.zollernextras_craftedamaranthsword=Purple Power
+achievement.zollernextras_craftedamaranthsword.desc=Crafted your first Amaranth Sword
 
 itemGroup.Zollern Extras=Zollern Extras

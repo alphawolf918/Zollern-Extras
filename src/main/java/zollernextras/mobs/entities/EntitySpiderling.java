@@ -3,16 +3,23 @@ package zollernextras.mobs.entities;
 import java.util.Random;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.monster.EntityCaveSpider;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
+import zaneextras.interfaces.ILightEntity;
 import zollernextras.blocks.ZollernBlocks;
+import zollernextras.lib.modhelper.ModHelperBase;
 
-public class EntitySpiderling extends EntityCaveSpider {
+public class EntitySpiderling extends EntityCaveSpider implements IShadeEntity {
 	
 	public EntitySpiderling(World par1World) {
 		super(par1World);
 		this.setSize(this.width / 0.4f, this.height / 0.4f);
+		if (ModHelperBase.useZaneExtras && this.shouldAttackLightEntity()) {
+			this.targetTasks.addTask(1, new EntityAINearestAttackableTarget(
+					this, ILightEntity.class, 10, false));
+		}
 	}
 	
 	@Override
@@ -63,5 +70,10 @@ public class EntitySpiderling extends EntityCaveSpider {
 	@Override
 	protected float getSoundVolume() {
 		return 2.15F;
+	}
+	
+	@Override
+	public boolean shouldAttackLightEntity() {
+		return true;
 	}
 }

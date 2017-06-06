@@ -3,12 +3,16 @@ package zollernextras.mobs.entities;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.monster.EntityCaveSpider;
 import net.minecraft.item.Item;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
+import zaneextras.interfaces.ILightEntity;
+import zollernextras.lib.modhelper.ModHelperBase;
 
-public class EntityScorpion extends EntityCaveSpider {
+public class EntityScorpion extends EntityCaveSpider implements IShadeEntity {
+	
 	public EntityScorpion(World par1World) {
 		super(par1World);
 		this.setSize(1.2F, 0.9F);
@@ -17,6 +21,10 @@ public class EntityScorpion extends EntityCaveSpider {
 		this.experienceValue = 80;
 		this.scoreValue = 450;
 		this.stepHeight = 2F;
+		if (ModHelperBase.useZaneExtras && this.shouldAttackLightEntity()) {
+			this.targetTasks.addTask(1, new EntityAINearestAttackableTarget(
+					this, ILightEntity.class, 10, false));
+		}
 	}
 	
 	/**
@@ -153,5 +161,10 @@ public class EntityScorpion extends EntityCaveSpider {
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
 		return EnumCreatureAttribute.ARTHROPOD;
+	}
+	
+	@Override
+	public boolean shouldAttackLightEntity() {
+		return true;
 	}
 }

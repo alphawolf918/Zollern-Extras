@@ -279,7 +279,7 @@ public class ZollernBlocks {
 	public static Block polishedAndesite = new GenericBlock("polishedandesite",
 			1.0F).setBlockHarvestLevel("pickaxe", 2);
 	public static Block diorite = new GenericBlock("diorite", 1.0F)
-	.setBlockHarvestLevel("pickaxe", 1);
+			.setBlockHarvestLevel("pickaxe", 1);
 	public static Block polishedDiorite = new GenericBlock("polisheddiorite",
 			1.0F).setBlockHarvestLevel("pickaxe", 2);
 	public static Block granite = new GenericBlock("granite", 1.0F)
@@ -402,13 +402,15 @@ public class ZollernBlocks {
 	public static Block bricksMud = new ColoredBricks("mud");
 	
 	public static Block zollerniumOre = new GenericBlockOre("zollerniumore",
-			1.6F).setBlockHarvestLevel("pickaxe", 6);
+			1.6F).setBlockHarvestLevel("pickaxe", 5);
 	public static Block enderReeds = new BlockEnderReeds();
 	public static Block enderDirt = ((GenericBlock) new GenericBlock(
 			"enderdirt", 0.6F).setBlockMaterial(Material.grass).setStepSound(
 			Block.soundTypeGravel)).setBlockHarvestLevel("shovel", 0);
 	public static Block magmaBlock = new BlockMagma();
 	public static Block boneBlock = new GenericBlock("boneblock", 1.6F);
+	public static Block shadowBoneBlock = new GenericBlock("shadowboneblock",
+			1.6F);
 	public static Block endStoneBricks = new GenericBlock("endstonebricks",
 			1.4F);
 	public static Block redNetherBricks = new GenericBlock("rednetherbricks",
@@ -416,7 +418,7 @@ public class ZollernBlocks {
 	public static Block netherWartBlock = new GenericBlock("netherwartblock",
 			0.8F);
 	public static Block redObsidian = new GenericBlock("redobsidian", 10F)
-	.setBlockHarvestLevel("pickaxe", 3).setLightLevel(1.0F);
+			.setBlockHarvestLevel("pickaxe", 3).setLightLevel(1.0F);
 	public static Block blockPizza = new BlockPizza();
 	public static Block purpurBlock = new BlockPurpur();
 	public static Block purpurPillar = new PurpurPillar();
@@ -425,11 +427,11 @@ public class ZollernBlocks {
 	public static Block chargiumBlock = new GenericBlock("chargiumblock", 1.6F)
 			.setLightLevel(1.0F).setStepSound(Block.soundTypeGlass);
 	public static Block steelOre = new GenericBlockOre("steelore", 1.8f)
-	.setBlockHarvestLevel("pickaxe",
-			ToolMaterials.ZOLLERNIUM.getHarvestLevel());
+			.setBlockHarvestLevel("pickaxe",
+					ToolMaterials.ZOLLERNIUM.getHarvestLevel());
 	public static Block steelBlock = new GenericBlock("steelblock", 1.6f)
 			.setBlockHarvestLevel("pickaxe", 2).setStepSound(
-			Block.soundTypeMetal);
+					Block.soundTypeMetal);
 	
 	// Upside-Down
 	public static Block upsideDownSurfaceRock = new GenericBlock(
@@ -484,9 +486,11 @@ public class ZollernBlocks {
 			ZollernItems.opal);
 	public static Block radiantBlock = ((GenericBlock) new GenericBlock(
 			"radiantblock", 1.5F).setLightLevel(1.0F)).setBlockHarvestLevel(
-					"pickaxe", 2);
+			"pickaxe", 2);
 	public static Block spiderlingEgg = new SpiderlingEgg();
 	public static Block shadowBossSpawner = new ShadowBossSpawner();
+	
+	public static Block diamondSkull = new BlockDiamondSkull();
 	
 	public static FluidChocolate fluidChocolate = new FluidChocolate(
 			ZollernModInfo.MODID + "_chocolate");
@@ -710,6 +714,7 @@ public class ZollernBlocks {
 		addBlock(enderDirt, "Ender Dirt");
 		addBlock(magmaBlock, "Magma Block");
 		addBlock(boneBlock, "Bone Rock");
+		addBlock(shadowBoneBlock, "Shadow Bone Rock");
 		addBlock(endStoneBricks, "Endstone Bricks");
 		addBlock(redNetherBricks, "Red Nether Bricks");
 		addBlock(netherWartBlock, "Nether Wart Block");
@@ -753,6 +758,7 @@ public class ZollernBlocks {
 		addBlock(radiantBlock, "Radiant Block");
 		addBlock(spiderlingEgg, "Spider Egg");
 		addBlock(shadowBossSpawner, "Shadow Spawner");
+		addBlock(diamondSkull, "Diamond Skull");
 		
 		addBlock(blockChocolate, "Melted Chocolate");
 		addBlock(blockFuel, "Molten Fueltonium");

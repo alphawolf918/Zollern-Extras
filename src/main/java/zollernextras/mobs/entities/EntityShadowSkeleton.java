@@ -15,9 +15,12 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
+import zaneextras.interfaces.ILightEntity;
 import zollernextras.items.ZollernItems;
+import zollernextras.lib.modhelper.ModHelperBase;
 
-public class EntityShadowSkeleton extends EntitySkeleton {
+public class EntityShadowSkeleton extends EntitySkeleton implements
+		IShadeEntity {
 	
 	private final EntityAIArrowAttack aiArrowAttack = new EntityAIArrowAttack(
 			this, 2.0D, 20, 60, 15.0F);
@@ -35,6 +38,10 @@ public class EntityShadowSkeleton extends EntitySkeleton {
 		this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
 		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this,
 				EntityPlayer.class, 0, true));
+		if (ModHelperBase.useZaneExtras && this.shouldAttackLightEntity()) {
+			this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(
+					this, ILightEntity.class, 10, false));
+		}
 		
 		if (par1World != null && !par1World.isRemote) {
 			this.setCombatTask();
@@ -45,7 +52,7 @@ public class EntityShadowSkeleton extends EntitySkeleton {
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.maxHealth)
-		.setBaseValue(25.0D);
+				.setBaseValue(25.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed)
 				.setBaseValue(0.3D);
 	}
@@ -167,5 +174,10 @@ public class EntityShadowSkeleton extends EntitySkeleton {
 	@Override
 	public double getYOffset() {
 		return super.getYOffset() - 0.4D;
+	}
+	
+	@Override
+	public boolean shouldAttackLightEntity() {
+		return true;
 	}
 }

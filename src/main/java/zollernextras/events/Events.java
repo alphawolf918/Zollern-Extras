@@ -53,6 +53,7 @@ import net.minecraftforge.event.entity.player.UseHoeEvent;
 import net.minecraftforge.event.terraingen.PopulateChunkEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.event.world.BlockEvent.BreakEvent;
+import zaneextras.blocks.BlockList;
 import zollernextras.ZollernExtrasMod;
 import zollernextras.api.ores.IOre;
 import zollernextras.biomes.BiomeList;
@@ -68,7 +69,7 @@ import zollernextras.lib.DSource;
 import zollernextras.lib.ZollernHelper;
 import zollernextras.mobs.entities.EntityBabyDragon;
 import zollernextras.mobs.entities.EntityEnderBug;
-import zollernextras.mobs.entities.EntityShadowSkeleton;
+import zollernextras.mobs.entities.IShadeEntity;
 import zollernextras.network.PacketDispatcher;
 import zollernextras.network.client.SyncPlayerPropsMessage;
 import zollernextras.potions.ZollernPotion;
@@ -445,7 +446,7 @@ public class Events {
 		if (!player.capabilities.isCreativeMode) {
 			double maxHealth = props.getMaxHealth();
 			player.getEntityAttribute(SharedMonsterAttributes.maxHealth)
-			.setBaseValue(maxHealth);
+					.setBaseValue(maxHealth);
 		}
 	}
 	
@@ -501,12 +502,12 @@ public class Events {
 									ZollernHelper.addChatMessage(
 											player,
 											EnumChatFormatting.GOLD
-											+ "+"
-											+ strIncrAmnt.substring(0,
-													3)
+													+ "+"
+													+ strIncrAmnt.substring(0,
+															3)
 													+ " Jump Height! Total: "
 													+ fullResist
-													.substring(0, 3));
+															.substring(0, 3));
 								}
 							}
 						}
@@ -548,11 +549,11 @@ public class Events {
 								ZollernHelper.addChatMessage(
 										player,
 										EnumChatFormatting.GOLD
-										+ "+"
-										+ blockFortune
-										+ " Fortune! Total: "
-										+ strFortuneLevel.substring(0,
-												3));
+												+ "+"
+												+ blockFortune
+												+ " Fortune! Total: "
+												+ strFortuneLevel.substring(0,
+														3));
 							}
 							if (new Random().nextInt(5) <= 2) {
 								int numDropped = 0;
@@ -623,10 +624,10 @@ public class Events {
 					theEntity.posY, theEntity.posZ, new ItemStack(theItem,
 							numDropped));
 			worldObj.spawnEntityInWorld(item);
-		} else if (theEntity instanceof EntityShadowSkeleton) {
+		} else if (theEntity instanceof IShadeEntity) {
 			Random rand = new Random();
 			int randInt = rand.nextInt(100);
-			if (randInt <= 40) {
+			if (randInt <= 60) {
 				ItemStack itemStack = new ItemStack(ZollernItems.shadowEssence,
 						1);
 				EntityItem itemEntity = new EntityItem(worldObj,
@@ -763,29 +764,49 @@ public class Events {
 				}
 			}
 			chunk.isModified = true;
+		} else if (biome.isEqualTo(BiomeList.cheesePlains)) {
+			Chunk chunk = event.world.getChunkFromChunkCoords(event.chunkX,
+					event.chunkZ);
+			Block fromBlock = Blocks.stone;
+			Block toBlock = BlockList.cheeseBlock;
+			for (ExtendedBlockStorage storage : chunk.getBlockStorageArray()) {
+				if (storage != null) {
+					for (int x = 0; x < 16; ++x) {
+						for (int y = 0; y < 16; ++y) {
+							for (int z = 0; z < 16; ++z) {
+								if (storage.getBlockByExtId(x, y, z) == fromBlock
+										|| storage.getBlockByExtId(x, y, z) == Blocks.dirt
+										|| storage.getBlockByExtId(x, y, z) == Blocks.gravel) {
+									Block theBlock = toBlock;
+									storage.func_150818_a(x, y, z, toBlock);
+								}
+							}
+						}
+					}
+				}
+			}
+			chunk.isModified = true;
+		} else if (biome.isEqualTo(BiomeList.upsideDown)) {
+			Chunk chunk = event.world.getChunkFromChunkCoords(event.chunkX,
+					event.chunkZ);
+			Block fromBlock = Blocks.dirt;
+			Block toBlock = ZollernBlocks.upsideDownDirt;
+			for (ExtendedBlockStorage storage : chunk.getBlockStorageArray()) {
+				if (storage != null) {
+					for (int x = 0; x < 16; ++x) {
+						for (int y = 0; y < 16; ++y) {
+							for (int z = 0; z < 16; ++z) {
+								if (storage.getBlockByExtId(x, y, z) == fromBlock) {
+									Block theBlock = toBlock;
+									storage.func_150818_a(x, y, z, toBlock);
+								}
+							}
+						}
+					}
+				}
+			}
+			chunk.isModified = true;
 		}
-		// else if (biome.isEqualTo(BiomeList.upsideDown)) {
-		// Chunk chunk = event.world.getChunkFromChunkCoords(event.chunkX,
-		// event.chunkZ);
-		// for (ExtendedBlockStorage storage : chunk.getBlockStorageArray()) {
-		// if (storage != null) {
-		// for (int x = 0; x < 16; ++x) {
-		// for (int y = 0; y < 16; ++y) {
-		// for (int z = 0; z < 16; ++z) {
-		// if (storage.getBlockByExtId(x, y, z) == Blocks.water) {
-		// storage.func_150818_a(x, y, z, Blocks.air);
-		// } else if (storage.getBlockByExtId(x, y, z) == Blocks.planks
-		// || storage.getBlockByExtId(x, y, z) == Blocks.fence) {
-		// storage.func_150818_a(x, y, z,
-		// ZollernBlocks.upsideDownStoneBricks);
-		// }
-		// }
-		// }
-		// }
-		// }
-		// }
-		// chunk.isModified = true;
-		// }
 	}
 	
 	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)

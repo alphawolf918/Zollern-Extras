@@ -9,8 +9,7 @@ public class BiomeGenCheesePlains extends BiomeGenBase {
 		this.temperature = 4F;
 		this.setBiomeName("Cheese Plains");
 		this.setColor(BiomeList.biomeColor);
-		this.setHeight(height_MidPlains);
-		this.heightVariation = 1F;
+		this.setHeight(this.height_LowPlains);
 		this.createMutation();
 		this.theBiomeDecorator.flowersPerChunk = -999;
 		this.theBiomeDecorator.treesPerChunk = -999;

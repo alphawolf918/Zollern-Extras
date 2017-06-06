@@ -5,8 +5,6 @@ import net.minecraft.world.WorldProvider;
 import net.minecraft.world.biome.WorldChunkManagerHell;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.IChunkProvider;
-import net.minecraftforge.client.IRenderHandler;
-import zollernextras.ZollernExtrasMod;
 import zollernextras.biomes.BiomeList;
 import zollernextras.dimension.DimensionLoader;
 import cpw.mods.fml.relauncher.Side;
@@ -19,6 +17,7 @@ public class WorldProviderUpsideDown extends WorldProvider {
 		this.worldChunkMgr = new WorldChunkManagerHell(BiomeList.upsideDown,
 				0.0F);
 		this.dimensionId = DimensionLoader.getDimID();
+		this.hasNoSky = true;
 	}
 	
 	@SideOnly(Side.CLIENT)
@@ -37,8 +36,24 @@ public class WorldProviderUpsideDown extends WorldProvider {
 	}
 	
 	@Override
+	public float calculateCelestialAngle(long p_76563_1_, float p_76563_3_) {
+		return 0.4F;
+	}
+	
+	@Override
+	protected void generateLightBrightnessTable() {
+		float f = 0.2F;
+		
+		for (int i = 0; i <= 15; ++i) {
+			float f1 = 1.0F - i / 15.0F;
+			this.lightBrightnessTable[i] = (1.0F - f1) / (f1 * 3.0F + 1.0F)
+					* (1.0F - f) + f;
+		}
+	}
+	
+	@Override
 	public String getWelcomeMessage() {
-		return "Entering Sheol..";
+		return "Entering Upside-Down..";
 	}
 	
 	@Override
@@ -48,7 +63,7 @@ public class WorldProviderUpsideDown extends WorldProvider {
 	
 	@Override
 	public String getDepartMessage() {
-		return "Leaving Sheol..";
+		return "Leaving Upside-Down..";
 	}
 	
 	@Override
@@ -94,14 +109,14 @@ public class WorldProviderUpsideDown extends WorldProvider {
 	
 	@Override
 	public String getDimensionName() {
-		return "Sheol";
+		return "Upside-Down";
 	}
 	
-	@Override
-	@SideOnly(Side.CLIENT)
-	public IRenderHandler getSkyRenderer() {
-		return new SkyProviderUpsideDown(ZollernExtrasMod.proxy.getMinecraft());
-	}
+	// @Override
+	// @SideOnly(Side.CLIENT)
+	// public IRenderHandler getSkyRenderer() {
+	// return new SkyProviderUpsideDown(ZollernExtrasMod.proxy.getMinecraft());
+	// }
 	
 	@Override
 	public boolean canDoLightning(Chunk chunk) {

@@ -1,8 +1,6 @@
 package zollernextras.mobs.entities;
 
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
-import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackOnCollide;
 import net.minecraft.entity.ai.EntityAIBreakDoor;
@@ -14,14 +12,12 @@ import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
-import net.minecraft.entity.ai.attributes.IAttribute;
-import net.minecraft.entity.ai.attributes.RangedAttribute;
 import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.MathHelper;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 import zaneextras.interfaces.ILightEntity;
@@ -29,13 +25,11 @@ import zollernextras.items.ZollernItems;
 import zollernextras.lib.ZollernModInfo;
 import zollernextras.lib.modhelper.ModHelperBase;
 
-public class EntityMummy extends EntityZombie implements IShadeEntity {
+public class EntityShade extends EntityZombie implements IShadeEntity {
 	
-	protected static final IAttribute field_110186_bp = new RangedAttribute(
-			"zombie.spawnReinforcements", 0.0D, 0.0D, 1.0D);
-	
-	public EntityMummy(World par1World) {
+	public EntityShade(World par1World) {
 		super(par1World);
+		this.setCanPickUpLoot(true);
 		this.getNavigator().setBreakDoors(true);
 		this.tasks.addTask(0, new EntityAISwimming(this));
 		this.tasks.addTask(1, new EntityAIBreakDoor(this));
@@ -52,13 +46,31 @@ public class EntityMummy extends EntityZombie implements IShadeEntity {
 		this.tasks.addTask(7, new EntityAILookIdle(this));
 		this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, true));
 		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this,
-				EntityPlayer.class, 10, true));
+				EntityPlayer.class, 0, true));
 		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this,
-				EntityVillager.class, 10, false));
+				EntityVillager.class, 0, false));
 		if (ModHelperBase.useZaneExtras && this.shouldAttackLightEntity()) {
 			this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(
 					this, ILightEntity.class, 10, false));
 		}
+	}
+	
+	@Override
+	protected void applyEntityAttributes() {
+		super.applyEntityAttributes();
+		this.getEntityAttribute(SharedMonsterAttributes.followRange)
+				.setBaseValue(45.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.maxHealth)
+				.setBaseValue(40.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed)
+				.setBaseValue(0.31D);
+		this.getEntityAttribute(SharedMonsterAttributes.attackDamage)
+				.setBaseValue(10.0D);
+	}
+	
+	@Override
+	public EnumCreatureAttribute getCreatureAttribute() {
+		return EnumCreatureAttribute.UNDEAD;
 	}
 	
 	@Override
@@ -74,36 +86,17 @@ public class EntityMummy extends EntityZombie implements IShadeEntity {
 	
 	@Override
 	protected String getLivingSound() {
-		return ZollernModInfo.MODID + ":mummy.say";
+		return ZollernModInfo.MODID + ":shade.say";
 	}
 	
 	@Override
 	protected String getHurtSound() {
-		return ZollernModInfo.MODID + ":mummy.hurt";
+		return ZollernModInfo.MODID + ":shade.hurt";
 	}
 	
 	@Override
 	protected String getDeathSound() {
-		return ZollernModInfo.MODID + ":mummy.die";
-	}
-	
-	@Override
-	public EnumCreatureAttribute getCreatureAttribute() {
-		return EnumCreatureAttribute.UNDEAD;
-	}
-	
-	@Override
-	protected void dropRareDrop(int par1) {
-		switch (this.rand.nextInt(3)) {
-		case 0:
-			this.dropItem(Items.gold_ingot, 1);
-			break;
-		case 1:
-			this.dropItem(Items.paper, 1);
-			break;
-		case 2:
-			this.dropItem(Items.potato, 1);
-		}
+		return ZollernModInfo.MODID + ":shade.die";
 	}
 	
 	@Override
@@ -124,39 +117,50 @@ public class EntityMummy extends EntityZombie implements IShadeEntity {
 	}
 	
 	@Override
-	protected Item getDropItem() {
-		return Items.rotten_flesh;
-	}
-	
-	@Override
-	protected boolean isAIEnabled() {
+	public boolean isAIEnabled() {
 		return true;
 	}
 	
 	@Override
-	protected void applyEntityAttributes() {
-		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.followRange)
-				.setBaseValue(45.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed)
-				.setBaseValue(0.2D);
-		this.getEntityAttribute(SharedMonsterAttributes.attackDamage)
-				.setBaseValue(5.0D);
+	public void setFire(int par1) {
+		// nothing
 	}
 	
 	@Override
-	public void onKillEntity(EntityLivingBase par1EntityLivingBase) {
-		super.onKillEntity(par1EntityLivingBase);
-		
-		if (this.worldObj.difficultySetting == EnumDifficulty.NORMAL
-				&& par1EntityLivingBase instanceof EntityVillager) {
-			EntityMummy entitymummy = new EntityMummy(this.worldObj);
-			entitymummy.copyLocationAndAnglesFrom(par1EntityLivingBase);
-			this.worldObj.removeEntity(par1EntityLivingBase);
-			entitymummy.onSpawnWithEgg((IEntityLivingData) null);
-			this.worldObj.spawnEntityInWorld(entitymummy);
-			this.worldObj.playAuxSFXAtEntity((EntityPlayer) null, 1016,
-					(int) this.posX, (int) this.posY, (int) this.posZ, 0);
+	public void onLivingUpdate() {
+		super.onLivingUpdate();
+		if (this.worldObj.isDaytime() && !this.worldObj.isRemote) {
+			float f = this.getBrightness(1.0F);
+			
+			if (f > 0.5F
+					&& this.rand.nextFloat() * 30.0F < (f - 0.4F) * 2.0F
+					&& this.worldObj.canBlockSeeTheSky(
+							MathHelper.floor_double(this.posX),
+							MathHelper.floor_double(this.posY),
+							MathHelper.floor_double(this.posZ))) {
+				boolean flag = true;
+				ItemStack itemstack = this.getEquipmentInSlot(4);
+				
+				if (itemstack != null) {
+					if (itemstack.isItemStackDamageable()) {
+						itemstack.setItemDamage(itemstack
+								.getItemDamageForDisplay()
+								+ this.rand.nextInt(2));
+						
+						if (itemstack.getItemDamageForDisplay() >= itemstack
+								.getMaxDamage()) {
+							this.renderBrokenItemStack(itemstack);
+							this.setCurrentItemOrArmor(4, (ItemStack) null);
+						}
+					}
+					
+					flag = false;
+				}
+				
+				if (flag) {
+					// nothing
+				}
+			}
 		}
 	}
 	
@@ -164,4 +168,5 @@ public class EntityMummy extends EntityZombie implements IShadeEntity {
 	public boolean shouldAttackLightEntity() {
 		return true;
 	}
+	
 }

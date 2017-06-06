@@ -22,7 +22,7 @@ public class BetterGrass extends GenericBlock {
 		this.setHardResist(0.2F, 0.0F);
 		this.setLightOpacity(255);
 		this.setStepSound(soundTypeGrass);
-		this.setHarvestLevel("shovel", 1);
+		this.setHarvestLevel("shovel", 0);
 	}
 	
 	@Override
@@ -93,8 +93,8 @@ public class BetterGrass extends GenericBlock {
 				int i2 = par1IBlockAccess.getBiomeGenForCoords(par2 + l1,
 						par4 + k1).getBiomeGrassColor(l, i1, j1);
 				l += (i2 & 16711680) >> 16;
-			i1 += (i2 & 65280) >> 8;
-							j1 += i2 & 255;
+				i1 += (i2 & 65280) >> 8;
+				j1 += i2 & 255;
 			}
 		}
 		

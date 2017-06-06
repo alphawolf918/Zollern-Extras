@@ -20,6 +20,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class EntityMegaCreeper extends EntityCreeper {
+	
 	/**
 	 * Time when this creeper was last in an active state (Messed up code here,
 	 * probably causes creeper animation to go weird)
@@ -56,9 +57,9 @@ public class EntityMegaCreeper extends EntityCreeper {
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed)
-		.setBaseValue(0.28D);
+				.setBaseValue(0.28D);
 		this.getEntityAttribute(SharedMonsterAttributes.maxHealth)
-		.setBaseValue(20.0D);
+				.setBaseValue(20.0D);
 	}
 	
 	/**

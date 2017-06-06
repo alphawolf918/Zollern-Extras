@@ -4,14 +4,14 @@
     * Add Enchantments to Zinc tools.
 * Create tools and armor for amber, topaz, garnet, ruby, sapphire, opal, and aquamarine gems.
     * Maybe do the same thing for Witherium too.
-* Helletons.
-    * Nether Skeletons that use the Enderman model but behave like Skeletons.
 * Lilypad Plants.
     * Have a way to grow Lilypads.
 * Achievements.
 * Reduce lag in Sheol dimension (Upside-Down).
 * Potion-infused arrows.
 * More potions.
+* More golems.
+* Growable animals.
 
 == ENDER STUFF ===================
 [Ideas for how to revamp The End.]

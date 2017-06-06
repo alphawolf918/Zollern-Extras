@@ -33,7 +33,9 @@ import zollernextras.dimension.upsidedown.MapGenUpsideDownRavine;
 import zollernextras.dimension.upsidedown.WorldGenUpsideDownDungeons;
 import zollernextras.lib.noise.Gradient;
 import zollernextras.lib.noise.NoiseModule;
+import zollernextras.mobs.entities.EntityKrull;
 import zollernextras.mobs.entities.EntityScorpion;
+import zollernextras.mobs.entities.EntityShade;
 import zollernextras.mobs.entities.EntityShadowSkeleton;
 
 public class ChunkProviderUpsideDown extends ChunkProviderGenerate {
@@ -200,7 +202,7 @@ public class ChunkProviderUpsideDown extends ChunkProviderGenerate {
 				this.biomesForGeneration);
 		this.caveGenerator.func_151539_a(this, this.worldObj, par1, par2, ids);
 		this.ravineGenerator
-		.func_151539_a(this, this.worldObj, par1, par2, ids);
+				.func_151539_a(this, this.worldObj, par1, par2, ids);
 		final Chunk var4 = new Chunk(this.worldObj, ids, meta, par1, par2);
 		var4.generateSkylightMap();
 		return var4;
@@ -336,8 +338,10 @@ public class ChunkProviderUpsideDown extends ChunkProviderGenerate {
 			int i, int j, int k) {
 		if (par1EnumCreatureType == EnumCreatureType.monster) {
 			final List monsters = new ArrayList();
-			monsters.add(new SpawnListEntry(EntityShadowSkeleton.class, 1, 0, 1));
-			monsters.add(new SpawnListEntry(EntityScorpion.class, 1, 0, 1));
+			monsters.add(new SpawnListEntry(EntityShadowSkeleton.class, 5, 2, 4));
+			monsters.add(new SpawnListEntry(EntityScorpion.class, 5, 2, 4));
+			monsters.add(new SpawnListEntry(EntityShade.class, 5, 2, 4));
+			monsters.add(new SpawnListEntry(EntityKrull.class, 1, 0, 1));
 			return monsters;
 		} else {
 			// TODO

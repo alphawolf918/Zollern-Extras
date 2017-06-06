@@ -21,8 +21,6 @@ public class GenericBlock extends Block {
 		this.setStepSound(soundType);
 		if (harvestLevel > 0) {
 			this.setHarvestLevel(harvestTool, harvestLevel);
-		} else {
-			this.setHarvestLevel("pickaxe", 0);
 		}
 	}
 	

@@ -13,6 +13,14 @@ public class AchievementEvents {
 	public void onItemCrafted(PlayerEvent.ItemCraftedEvent event) {
 		if (event.crafting.getItem().equals(ZollernItems.amaranthPickaxe)) {
 			event.player.addStat(ZollernAchievements.craftedAmaranthPickaxe, 1);
+		} else if (event.crafting.getItem().equals(ZollernItems.amaranthSword)) {
+			event.player.addStat(ZollernAchievements.craftedAmaranthSword, 1);
+		} else if (event.crafting.getItem().equals(ZollernItems.amaranthAxe)) {
+			event.player.addStat(ZollernAchievements.craftedAmaranthAxe, 1);
+		} else if (event.crafting.getItem().equals(ZollernItems.amaranthShovel)) {
+			event.player.addStat(ZollernAchievements.craftedAmaranthShovel, 1);
+		} else if (event.crafting.getItem().equals(ZollernItems.amaranthHoe)) {
+			event.player.addStat(ZollernAchievements.craftedAmaranthHoe, 1);
 		}
 	}
 	
@@ -28,6 +36,9 @@ public class AchievementEvents {
 		ItemStack itemPickedUp = event.pickedUp.getEntityItem();
 		if (itemPickedUp.isItemEqual(new ItemStack(ZollernBlocks.amaranthOre))) {
 			event.player.addStat(ZollernAchievements.foundAmaranthOre, 1);
+		} else if (itemPickedUp
+				.isItemEqual(new ItemStack(ZollernItems.spcItem))) {
+			event.player.addStat(ZollernAchievements.superCharged, 1);
 		}
 	}
 }

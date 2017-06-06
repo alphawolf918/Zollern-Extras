@@ -17,9 +17,12 @@ import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
+import zaneextras.interfaces.ILightEntity;
+import zollernextras.lib.ZollernModInfo;
+import zollernextras.lib.modhelper.ModHelperBase;
 import zollernextras.potions.ZollernPotion;
 
-public class EntityKrull extends EntityMob {
+public class EntityKrull extends EntityMob implements IShadeEntity {
 	
 	public EntityKrull(World par1World) {
 		super(par1World);
@@ -36,6 +39,10 @@ public class EntityKrull extends EntityMob {
 		this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, true));
 		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this,
 				EntityPlayer.class, 10, true));
+		if (ModHelperBase.useZaneExtras && this.shouldAttackLightEntity()) {
+			this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(
+					this, ILightEntity.class, 10, false));
+		}
 		this.setCanPickUpLoot(true);
 	}
 	
@@ -58,6 +65,21 @@ public class EntityKrull extends EntityMob {
 			}
 		}
 		super.onLivingUpdate();
+	}
+	
+	@Override
+	protected String getLivingSound() {
+		return ZollernModInfo.MODID + ":krull.say";
+	}
+	
+	@Override
+	protected String getHurtSound() {
+		return ZollernModInfo.MODID + ":krull.hurt";
+	}
+	
+	@Override
+	protected String getDeathSound() {
+		return ZollernModInfo.MODID + ":krull.die";
 	}
 	
 	// This just cancels fall damage. It's an interdimensional being, so gravity
@@ -100,17 +122,22 @@ public class EntityKrull extends EntityMob {
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.followRange)
-		.setBaseValue(55.0D);
+				.setBaseValue(55.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.maxHealth)
-		.setBaseValue(20);
+				.setBaseValue(20);
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed)
-		.setBaseValue(0.24D);
+				.setBaseValue(0.24D);
 		this.getEntityAttribute(SharedMonsterAttributes.attackDamage)
-		.setBaseValue(1.0D);
+				.setBaseValue(1.0D);
 	}
 	
 	@Override
 	public boolean isAIEnabled() {
+		return true;
+	}
+	
+	@Override
+	public boolean shouldAttackLightEntity() {
 		return true;
 	}
 }

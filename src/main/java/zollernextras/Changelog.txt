@@ -1,7 +1,32 @@
+[3.5 - Untitled Update]
+
+* Set Zollernium Ore harvest level to 5.
+* Modified Ender Pearl Block texture.
+* Added API support for Balkon's Weapon Mod.
+* Added the Diamond Golem.
+    * Built using the Diamond Skull and Diamond blocks.
+* Added the Cheese Plains biome.
+    * Only loads if Zane's Xtras is detected.
+* Modified generation spawn rates in the Upside-Down.
+* Increased the chance of shade entities dropping Shadow Essence.
+* Added the Shade entity to the Upside-Down dimension.
+* Krulls now spawn in the Upside-Down dimension.
+* Shades and Krulls now have sounds.
+* Shades, Krulls, Shadow Skeletons, Spiderlings, Mummies and Scorpions now all implement an IShadeEntity interface.
+    * If Zane's Xtras is present, they will target any ILightEntity they find.
+* 
+
+---- FIXES -----
+* Fixed being unable to harvest ZoE planks with an axe.
+* Fixed Better Grass being unable to be harvested with your hand (freakin' finally).
+* Fixed Steel Stick recipe issue.
+* Fixed extreme lag in Upside-Down dimension that made it unplayable (FINALLY!!!!).
+----------------
+
 [3.4.1 - Fixes & Other Little Things]
 
 * Shade Key is now consumed when spawning a Shadow God boss.
-* 
+* Added a few more achievements.
 
 [3.4 - Misc Update]
 

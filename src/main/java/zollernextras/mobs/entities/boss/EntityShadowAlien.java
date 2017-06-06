@@ -23,15 +23,19 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
+import zaneextras.interfaces.ILightEntity;
 import zollernextras.ZollernExtrasMod;
 import zollernextras.items.ZollernItems;
 import zollernextras.lib.Treasures;
 import zollernextras.lib.ZEChestGenHooks;
 import zollernextras.lib.ZollernHelper;
 import zollernextras.lib.ZollernModInfo;
+import zollernextras.lib.modhelper.ModHelperBase;
 import zollernextras.mobs.entities.EntityScorpion;
+import zollernextras.mobs.entities.IShadeEntity;
 
-public class EntityShadowAlien extends EntityMob implements IBossDisplayData {
+public class EntityShadowAlien extends EntityMob implements IBossDisplayData,
+		IShadeEntity {
 	
 	private int maxHealth = 1000;
 	private int xp = 2000;
@@ -54,6 +58,10 @@ public class EntityShadowAlien extends EntityMob implements IBossDisplayData {
 		this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
 		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this,
 				EntityPlayer.class, 10, true));
+		if (ModHelperBase.useZaneExtras && this.shouldAttackLightEntity()) {
+			this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(
+					this, ILightEntity.class, 0, false));
+		}
 		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this,
 				EntityGolem.class, 10, true));
 		this.experienceValue = this.xp;
@@ -110,7 +118,7 @@ public class EntityShadowAlien extends EntityMob implements IBossDisplayData {
 			if (atkDmg < maxAtkDmg) {
 				this.attackDamage += 0.1D;
 				this.getEntityAttribute(SharedMonsterAttributes.attackDamage)
-				.setBaseValue(this.attackDamage);
+						.setBaseValue(this.attackDamage);
 			}
 		}
 		super.onLivingUpdate();
@@ -133,13 +141,13 @@ public class EntityShadowAlien extends EntityMob implements IBossDisplayData {
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.followRange)
-		.setBaseValue(45.0D);
+				.setBaseValue(45.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.maxHealth)
-		.setBaseValue(1000);
+				.setBaseValue(1000);
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed)
-		.setBaseValue(0.2D);
+				.setBaseValue(0.2D);
 		this.getEntityAttribute(SharedMonsterAttributes.attackDamage)
-		.setBaseValue(this.attackDamage);
+				.setBaseValue(this.attackDamage);
 	}
 	
 	@Override
@@ -219,6 +227,11 @@ public class EntityShadowAlien extends EntityMob implements IBossDisplayData {
 		par1EntityLivingData = super.onSpawnWithEgg(par1EntityLivingData);
 		this.addRandomArmor();
 		return par1EntityLivingData;
+	}
+	
+	@Override
+	public boolean shouldAttackLightEntity() {
+		return true;
 	}
 	
 }

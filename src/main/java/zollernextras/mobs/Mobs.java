@@ -11,10 +11,12 @@ import zollernextras.lib.ZollernHelper;
 import zollernextras.lib.ZollernModInfo;
 import zollernextras.lib.modhelper.ModHelperBase;
 import zollernextras.mobs.entities.EntityBabyDragon;
+import zollernextras.mobs.entities.EntityDiamondGolem;
 import zollernextras.mobs.entities.EntityDuck;
 import zollernextras.mobs.entities.EntityEnderBug;
 import zollernextras.mobs.entities.EntityEnderCreeper;
 import zollernextras.mobs.entities.EntityEnderSkeleton;
+import zollernextras.mobs.entities.EntityEnderSpider;
 import zollernextras.mobs.entities.EntityFish;
 import zollernextras.mobs.entities.EntityHellDuck;
 import zollernextras.mobs.entities.EntityHelleton;
@@ -26,6 +28,7 @@ import zollernextras.mobs.entities.EntityMegaCreeper;
 import zollernextras.mobs.entities.EntityMummy;
 import zollernextras.mobs.entities.EntityPigshroom;
 import zollernextras.mobs.entities.EntityScorpion;
+import zollernextras.mobs.entities.EntityShade;
 import zollernextras.mobs.entities.EntityShadowSkeleton;
 import zollernextras.mobs.entities.EntityShark;
 import zollernextras.mobs.entities.EntityShrimp;
@@ -68,7 +71,7 @@ public class Mobs {
 		registerEntity(EntityMegaCreeper.class, "megacreeper", 0xee00ee,
 				0x00ee00);
 		EntityRegistry.addSpawn(EntityMegaCreeper.class,
-				ZEConfig.mobMegaCreeperSpawnRate, 1, 6,
+				ZEConfig.mobMegaCreeperSpawnRate, 2, 6,
 				EnumCreatureType.monster, BiomeGenBase.plains,
 				BiomeGenBase.forest, BiomeGenBase.desert,
 				BiomeGenBase.extremeHills, BiomeGenBase.jungle,
@@ -247,7 +250,13 @@ public class Mobs {
 		// Ender Creeper
 		registerEntity(EntityEnderCreeper.class, "endercreeper", 0x008b00,
 				0x000000);
-		EntityRegistry.addSpawn(EntityEnderSkeleton.class, 14, 1, 1,
+		EntityRegistry.addSpawn(EntityEnderSkeleton.class, 8, 1, 1,
+				EnumCreatureType.monster, BiomeGenBase.sky);
+		
+		// Ender Spider
+		registerEntity(EntityEnderSpider.class, "enderspider", 0x000000,
+				0xdd008b);
+		EntityRegistry.addSpawn(EntityEnderSpider.class, 8, 1, 1,
 				EnumCreatureType.monster, BiomeGenBase.sky);
 		
 		// Shadow Alien
@@ -257,6 +266,9 @@ public class Mobs {
 		// Krull
 		registerEntity(EntityKrull.class, "krull", 0xf5eeb3, 0x444444);
 		
+		// Shade
+		registerEntity(EntityShade.class, "shade", 0x000000, 0xffffff);
+		
 		// Spiderling
 		registerEntity(EntitySpiderling.class, "spiderling", 0x000000, 0xff8b00);
 		
@@ -264,6 +276,9 @@ public class Mobs {
 		registerEntity(EntityHelleton.class, "helleton", 0x000000, 0x8b0000);
 		EntityRegistry.addSpawn(EntityHelleton.class, 25, 2, 4,
 				EnumCreatureType.monster, BiomeGenBase.hell);
+		
+		// Diamond Golem
+		registerEntity(EntityDiamondGolem.class, "diamondgolem", 0x09f, 0x03f);
 		
 		ZollernHelper.Log("Entities have been registered!");
 	}

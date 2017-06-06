@@ -31,10 +31,12 @@ import zollernextras.lib.DSource;
 import zollernextras.lib.ZollernHelper;
 import zollernextras.lib.modhelper.ModHelperBase;
 import zollernextras.mobs.entities.EntityBabyDragon;
+import zollernextras.mobs.entities.EntityDiamondGolem;
 import zollernextras.mobs.entities.EntityDuck;
 import zollernextras.mobs.entities.EntityEnderBug;
 import zollernextras.mobs.entities.EntityEnderCreeper;
 import zollernextras.mobs.entities.EntityEnderSkeleton;
+import zollernextras.mobs.entities.EntityEnderSpider;
 import zollernextras.mobs.entities.EntityFish;
 import zollernextras.mobs.entities.EntityHellDuck;
 import zollernextras.mobs.entities.EntityHelleton;
@@ -46,16 +48,19 @@ import zollernextras.mobs.entities.EntityMegaCreeper;
 import zollernextras.mobs.entities.EntityMummy;
 import zollernextras.mobs.entities.EntityPigshroom;
 import zollernextras.mobs.entities.EntityScorpion;
+import zollernextras.mobs.entities.EntityShade;
 import zollernextras.mobs.entities.EntityShadowSkeleton;
 import zollernextras.mobs.entities.EntityShark;
 import zollernextras.mobs.entities.EntityShrimp;
 import zollernextras.mobs.entities.EntitySpiderling;
 import zollernextras.mobs.entities.boss.EntityShadowAlien;
 import zollernextras.mobs.models.ModelBabyDragon;
+import zollernextras.mobs.models.ModelDiamondGolem;
 import zollernextras.mobs.models.ModelDuck;
 import zollernextras.mobs.models.ModelEnderBug;
 import zollernextras.mobs.models.ModelEnderCreeper;
 import zollernextras.mobs.models.ModelEnderSkeleton;
+import zollernextras.mobs.models.ModelEnderSpider;
 import zollernextras.mobs.models.ModelFish;
 import zollernextras.mobs.models.ModelHelleton;
 import zollernextras.mobs.models.ModelHog;
@@ -66,16 +71,19 @@ import zollernextras.mobs.models.ModelMegaCreeper;
 import zollernextras.mobs.models.ModelMummy;
 import zollernextras.mobs.models.ModelPigshroom;
 import zollernextras.mobs.models.ModelScorpion;
+import zollernextras.mobs.models.ModelShade;
 import zollernextras.mobs.models.ModelShadowSkeleton;
 import zollernextras.mobs.models.ModelShark;
 import zollernextras.mobs.models.ModelShrimp;
 import zollernextras.mobs.models.ModelSpiderling;
 import zollernextras.mobs.models.boss.ModelShadowAlien;
 import zollernextras.mobs.renders.RenderBabyDragon;
+import zollernextras.mobs.renders.RenderDiamondGolem;
 import zollernextras.mobs.renders.RenderDuck;
 import zollernextras.mobs.renders.RenderEnderBug;
 import zollernextras.mobs.renders.RenderEnderCreeper;
 import zollernextras.mobs.renders.RenderEnderSkeleton;
+import zollernextras.mobs.renders.RenderEnderSpider;
 import zollernextras.mobs.renders.RenderFish;
 import zollernextras.mobs.renders.RenderHellDuck;
 import zollernextras.mobs.renders.RenderHelleton;
@@ -87,6 +95,7 @@ import zollernextras.mobs.renders.RenderMegaCreeper;
 import zollernextras.mobs.renders.RenderMummy;
 import zollernextras.mobs.renders.RenderPigshroom;
 import zollernextras.mobs.renders.RenderScorpion;
+import zollernextras.mobs.renders.RenderShade;
 import zollernextras.mobs.renders.RenderShadowSkeleton;
 import zollernextras.mobs.renders.RenderShark;
 import zollernextras.mobs.renders.RenderShrimp;
@@ -146,6 +155,10 @@ public class ClientProxy extends CommonProxy {
 				EntityEnderCreeper.class, new RenderEnderCreeper(
 						new ModelEnderCreeper(), 0.5F));
 		
+		RenderingRegistry.registerEntityRenderingHandler(
+				EntityEnderSpider.class, new RenderEnderSpider(
+						new ModelEnderSpider(), 0.5F));
+		
 		RenderingRegistry.registerEntityRenderingHandler(EntityMummy.class,
 				new RenderMummy(new ModelMummy(), 0.5F));
 		
@@ -174,6 +187,13 @@ public class ClientProxy extends CommonProxy {
 		
 		RenderingRegistry.registerEntityRenderingHandler(EntityHelleton.class,
 				new RenderHelleton(new ModelHelleton(), 0.5F));
+		
+		RenderingRegistry.registerEntityRenderingHandler(
+				EntityDiamondGolem.class, new RenderDiamondGolem(
+						new ModelDiamondGolem(), 0.5F));
+		
+		RenderingRegistry.registerEntityRenderingHandler(EntityShade.class,
+				new RenderShade(new ModelShade(), 0.5F));
 		
 		addTile(TEIronBlockIngot.class, new TESRIronIngotStack());
 		addTile(TEGoldBlockIngot.class, new TESRGoldIngotStack());

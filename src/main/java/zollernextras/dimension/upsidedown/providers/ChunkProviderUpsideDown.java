@@ -34,9 +34,12 @@ import zollernextras.dimension.upsidedown.WorldGenUpsideDownDungeons;
 import zollernextras.lib.noise.Gradient;
 import zollernextras.lib.noise.NoiseModule;
 import zollernextras.mobs.entities.EntityKrull;
+import zollernextras.mobs.entities.EntityMummy;
 import zollernextras.mobs.entities.EntityScorpion;
 import zollernextras.mobs.entities.EntityShade;
+import zollernextras.mobs.entities.EntityShadowFish;
 import zollernextras.mobs.entities.EntityShadowSkeleton;
+import zollernextras.mobs.entities.EntitySpiderling;
 
 public class ChunkProviderUpsideDown extends ChunkProviderGenerate {
 	
@@ -72,7 +75,7 @@ public class ChunkProviderUpsideDown extends ChunkProviderGenerate {
 	
 	private WorldGenUpsideDownDungeons dungeonGenerator = new WorldGenUpsideDownDungeons();
 	
-	private static final int MID_HEIGHT = 63;
+	private static final int MID_HEIGHT = 72;
 	private static final int CHUNK_SIZE_X = 16;
 	private static final int CHUNK_SIZE_Y = 128;
 	private static final int CHUNK_SIZE_Z = 16;
@@ -338,10 +341,14 @@ public class ChunkProviderUpsideDown extends ChunkProviderGenerate {
 			int i, int j, int k) {
 		if (par1EnumCreatureType == EnumCreatureType.monster) {
 			final List monsters = new ArrayList();
-			monsters.add(new SpawnListEntry(EntityShadowSkeleton.class, 5, 2, 4));
-			monsters.add(new SpawnListEntry(EntityScorpion.class, 5, 2, 4));
-			monsters.add(new SpawnListEntry(EntityShade.class, 5, 2, 4));
-			monsters.add(new SpawnListEntry(EntityKrull.class, 1, 0, 1));
+			monsters.add(new SpawnListEntry(EntityShadowSkeleton.class, 20, 2,
+					2));
+			monsters.add(new SpawnListEntry(EntityScorpion.class, 6, 0, 2));
+			monsters.add(new SpawnListEntry(EntityShade.class, 10, 0, 2));
+			monsters.add(new SpawnListEntry(EntityMummy.class, 8, 0, 2));
+			monsters.add(new SpawnListEntry(EntityKrull.class, 2, 0, 1));
+			monsters.add(new SpawnListEntry(EntitySpiderling.class, 2, 0, 1));
+			monsters.add(new SpawnListEntry(EntityShadowFish.class, 1, 0, 1));
 			return monsters;
 		} else {
 			// TODO

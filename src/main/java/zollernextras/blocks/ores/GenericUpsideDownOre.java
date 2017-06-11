@@ -6,6 +6,7 @@ public class GenericUpsideDownOre extends GenericBlockOre {
 		super(strTexture, hardResist);
 		this.setFortune(1.6D);
 		this.setMaxDropIncrease(10);
+		this.setHarvestLevel("pickaxe", 4);
 	}
 	
 }

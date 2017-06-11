@@ -13,7 +13,9 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class ZollernPotion extends Potion {
 	
 	/**
-	 * Protects the Player from Shadow damage.
+	 * Protects the Player from Shadow damage. Also applied to an entity when
+	 * whacked with a weapon enchanted with the custom Enlightened enchantment,
+	 * which will damage shadow (Upside-Down) mobs.
 	 */
 	public static Potion radiance;
 	

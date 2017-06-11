@@ -8,12 +8,32 @@
 * Added the Cheese Plains biome.
     * Only loads if Zane's Xtras is detected.
 * Modified generation spawn rates in the Upside-Down.
-* Increased the chance of shade entities dropping Shadow Essence.
-* Added the Shade entity to the Upside-Down dimension.
+* Increased the chance of shadow entities dropping Shadow Essence.
+* Added the Shade mob to the Upside-Down dimension.
 * Krulls now spawn in the Upside-Down dimension.
 * Shades and Krulls now have sounds.
 * Shades, Krulls, Shadow Skeletons, Spiderlings, Mummies and Scorpions now all implement an IShadeEntity interface.
     * If Zane's Xtras is present, they will target any ILightEntity they find.
+* Added the Shadow Bone block.
+    * Crafted with 9 Shadow Bones.
+        * Can be crafted back to bones.
+* Structures made of the new Shadow Bone block spawn in the Overworld and in the Upside-Down.
+    * Although these structures generate in both dimensions, there is a much higher chance of them generating in the Upside-Down.
+    * Treasure chests have a 95% chance to spawn on top of these structures, containing multiple shadow items.
+* Mummies now spawn in the Upside-Down.
+    * They are now considered to be "shadow" entities.
+* Added the Creepstone and Creepdirt blocks.
+    * Purely decorative blocks that generate in the Upside-Down.
+        * Creepstone generates in layers 32 and below, and Creepdirt generates layers 22 and below.
+* Added the Enlightened enchantment for weapons.
+    * When a Shadow entity is attacked with a weapon that has this enchantment,
+      they will suffer "light" damage from the Radiance potion effect.
+          * If they are not a Shadow entity, they will not be affected by this.
+    * Can be applied to books as well.
+* Added Ferrous Ore and Platinum ore generation (Thermal Expansion) to the Miner's Land biome.
+* All Upside-Down ores now require an Amaranth Pickaxe or greater to mine.
+* Added Upside-Down versions of Thermal Expansion ores.
+* Renamed Shadow God to Shadow Demon.
 * 
 
 ---- FIXES -----
@@ -21,6 +41,7 @@
 * Fixed Better Grass being unable to be harvested with your hand (freakin' finally).
 * Fixed Steel Stick recipe issue.
 * Fixed extreme lag in Upside-Down dimension that made it unplayable (FINALLY!!!!).
+    * It was the freakin' sky image.
 ----------------
 
 [3.4.1 - Fixes & Other Little Things]

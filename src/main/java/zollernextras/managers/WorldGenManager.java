@@ -37,6 +37,7 @@ import zollernextras.worldgen.WorldGenSugarCubes;
 import zollernextras.worldgen.WorldGenSwampClay;
 import zollernextras.worldgen.WorldGenTreasureChest;
 import zollernextras.worldgen.upsidedown.WorldGenCrater;
+import zollernextras.worldgen.upsidedown.WorldGenShadeMonument;
 import zollernextras.worldgen.upsidedown.WorldGenShadeTree;
 import zollernextras.worldgen.upsidedown.WorldGenShadowShrine;
 import zollernextras.worldgen.upsidedown.WorldGenSpiderEgg;
@@ -420,6 +421,10 @@ public class WorldGenManager implements IWorldGenerator {
 						.getItem());
 				Block leadOre = Block.getBlockFromItem(BlockOre.oreLead
 						.getItem());
+				Block ferrousOre = Block.getBlockFromItem(BlockOre.oreNickel
+						.getItem());
+				Block platinumOre = Block.getBlockFromItem(BlockOre.orePlatinum
+						.getItem());
 				
 				addOreSpawn(copperOre, world, random, x, z, 16, 16,
 						4 + random.nextInt(8), 60, 2, 256);
@@ -428,6 +433,10 @@ public class WorldGenManager implements IWorldGenerator {
 				addOreSpawn(silverOre, world, random, x, z, 16, 16,
 						4 + random.nextInt(8), 60, 2, 256);
 				addOreSpawn(leadOre, world, random, x, z, 16, 16,
+						4 + random.nextInt(8), 60, 2, 256);
+				addOreSpawn(ferrousOre, world, random, x, z, 16, 16,
+						4 + random.nextInt(8), 60, 2, 256);
+				addOreSpawn(platinumOre, world, random, x, z, 16, 16,
 						4 + random.nextInt(8), 60, 2, 256);
 			}
 			
@@ -512,6 +521,12 @@ public class WorldGenManager implements IWorldGenerator {
 			spawnStructure(4, 100, world, random, x, y, z,
 					new WorldGenFruitTree(ZollernBlocks.peachLog,
 							ZollernBlocks.peachLeaves));
+		}
+		
+		// Shade Monument
+		if (random.nextInt(5000) <= 20) {
+			this.spawnStructure(5, 10, world, random, x, y, z,
+					new WorldGenShadeMonument());
 		}
 	}
 	
@@ -763,6 +778,40 @@ public class WorldGenManager implements IWorldGenerator {
 		addUpsideDownOreSpawn(ZollernBlocks.upsideDownOpalOre, world, random,
 				x, z, 16, 16, 6 + random.nextInt(8), 8, 8, 36);
 		
+		// Creepstone
+		addUpsideDownOreSpawn(ZollernBlocks.creepStone, world, random, x, z,
+				16, 16, 15 + random.nextInt(20), 20, 1, 32);
+		
+		// Creepdirt
+		addUpsideDownOreSpawn(ZollernBlocks.creepDirt, world, random, x, z, 16,
+				16, 15 + random.nextInt(15), 16, 1, 22);
+		
+		if (ModHelperBase.useThermalExpansion) {
+			// Copper Ore
+			addUpsideDownOreSpawn(ZollernBlocks.upsideDownCopperOre, world,
+					random, x, z, 16, 16, 4 + random.nextInt(2), 10, 4, 55);
+			
+			// Tin Ore
+			addUpsideDownOreSpawn(ZollernBlocks.upsideDownTinOre, world,
+					random, x, z, 16, 16, 4 + random.nextInt(2), 10, 4, 55);
+			
+			// Lead Ore
+			addUpsideDownOreSpawn(ZollernBlocks.upsideDownLeadOre, world,
+					random, x, z, 16, 16, 4 + random.nextInt(2), 10, 4, 55);
+			
+			// Silver Ore
+			addUpsideDownOreSpawn(ZollernBlocks.upsideDownSilverOre, world,
+					random, x, z, 16, 16, 4 + random.nextInt(2), 10, 4, 55);
+			
+			// Ferrous Ore
+			addUpsideDownOreSpawn(ZollernBlocks.upsideDownFerrousOre, world,
+					random, x, z, 16, 16, 4 + random.nextInt(2), 10, 4, 55);
+		}
+		
+		// Shinium Ore
+		addUpsideDownOreSpawn(ZollernBlocks.upsideDownShiniumOre, world,
+				random, x, z, 16, 16, 4 + random.nextInt(2), 6, 4, 55);
+		
 		int y = world.getHeightValue(x, z);
 		
 		// Shadow Shrine
@@ -784,7 +833,7 @@ public class WorldGenManager implements IWorldGenerator {
 		}
 		
 		// Spiderling Egg
-		if (random.nextInt(800) <= 10 && random.nextInt(800) <= 4) {
+		if (random.nextInt(800) <= 10) {
 			this.spawnStructure(6, 10, world, random, x, y, z,
 					new WorldGenSpiderEgg());
 		}
@@ -795,9 +844,15 @@ public class WorldGenManager implements IWorldGenerator {
 		}
 		
 		// Shade Tree
-		if (random.nextInt(1000) <= 20) {
+		if (random.nextInt(900) <= 20) {
 			this.spawnStructure(8, 10, world, random, x, y, z,
 					new WorldGenShadeTree());
+		}
+		
+		// Shade Monument
+		if (random.nextInt(6000) <= 10) {
+			this.spawnStructure(8, 10, world, random, x, y, z,
+					new WorldGenShadeMonument());
 		}
 	}
 	

@@ -90,6 +90,7 @@ import zollernextras.blocks.trees.peach.PeachSapling;
 import zollernextras.blocks.trees.shade.ShadeLeaves;
 import zollernextras.blocks.trees.shade.ShadeLog;
 import zollernextras.blocks.trees.shade.ShadeSapling;
+import zollernextras.blocks.upsidedown.Bloodstone;
 import zollernextras.blocks.upsidedown.ShadowBossSpawner;
 import zollernextras.blocks.upsidedown.SpiderlingEgg;
 import zollernextras.blocks.upsidedown.UpsideDownStone;
@@ -446,6 +447,12 @@ public class ZollernBlocks {
 			"ud_dirt", 0.5F).setStepSound(Block.soundTypeGravel))
 			.setBlockHarvestLevel("shovel", 0))
 			.setBlockMaterial(Material.grass);
+	public static Block creepStone = new GenericBlock("creepstone", 1.2F);
+	public static Block creepDirt = ((GenericBlock) ((GenericBlock) new GenericBlock(
+			"creepdirt", 0.5F).setStepSound(Block.soundTypeGravel))
+			.setBlockHarvestLevel("shovel", 0))
+			.setBlockMaterial(Material.grass);
+	public static Block bloodStone = new Bloodstone();
 	public static Block upsideDownIronOre = new GenericUpsideDownOre(
 			"ud_ironore", 1.6F);
 	public static Block upsideDownGoldOre = new GenericUpsideDownOre(
@@ -484,6 +491,18 @@ public class ZollernBlocks {
 			ZollernItems.amber);
 	public static Block upsideDownOpalOre = new ShadowGemOre("ud_opalore",
 			ZollernItems.opal);
+	public static Block upsideDownCopperOre = new GenericUpsideDownOre(
+			"ud_copperore", 1.6F);
+	public static Block upsideDownTinOre = new GenericUpsideDownOre(
+			"ud_tinore", 1.0F);
+	public static Block upsideDownLeadOre = new GenericUpsideDownOre(
+			"ud_leadore", 1.8F);
+	public static Block upsideDownSilverOre = new GenericUpsideDownOre(
+			"ud_silverore", 1.5F);
+	public static Block upsideDownFerrousOre = new GenericUpsideDownOre(
+			"ud_ferrousore", 1.4F);
+	public static Block upsideDownShiniumOre = new GenericUpsideDownOre(
+			"ud_shiniumore", 1.9F);
 	public static Block radiantBlock = ((GenericBlock) new GenericBlock(
 			"radiantblock", 1.5F).setLightLevel(1.0F)).setBlockHarvestLevel(
 			"pickaxe", 2);
@@ -730,31 +749,40 @@ public class ZollernBlocks {
 		addBlock(steelBlock, "Steel Block");
 		
 		// Upside Down
-		addBlock(upsideDownSurfaceRock, "UD SurfRock");
-		addBlock(upsideDownRock, "UD Rock");
-		addBlock(upsideDownStone, "UD Stone");
-		addBlock(upsideDownCobble, "UD Cobblestone");
-		addBlock(upsideDownStoneBricks, "UD Stone Bricks");
-		addBlock(upsideDownDirt, "UD Dirt");
-		addBlock(upsideDownIronOre, "UD Iron Ore");
-		addBlock(upsideDownGoldOre, "UD Gold Ore");
-		addBlock(upsideDownDiamondOre, "UD Diamond Ore");
-		addBlock(upsideDownEmeraldOre, "UD Emerald Ore");
-		addBlock(upsideDownAmaranthOre, "UD Amaranth Ore");
-		addBlock(upsideDownZincOre, "UD Zinc Ore");
-		addBlock(upsideDownRubyOre, "UD Ruby Ore");
-		addBlock(upsideDownSapphireOre, "UD Sapphire Ore");
-		addBlock(upsideDownSpcOre, "UD SPC Ore");
-		addBlock(upsideDownFuelOre, "UD Fuel Ore");
-		addBlock(upsideDownLapisOre, "UD Lapis Ore");
-		addBlock(upsideDownRedstoneOre, "UD Redstone Ore");
-		addBlock(upsideDownEnderShardOre, "UD Ender Shard Ore");
-		addBlock(upsideDownRadianceOre, "UD Radiance Ore");
-		addBlock(upsideDownGarnetOre, "UD Garnet Ore");
-		addBlock(upsideDownAquaOre, "UD Aquamarine Ore");
-		addBlock(upsideDownTopazOre, "UD Topaz Ore");
-		addBlock(upsideDownAmberOre, "UD Amber Ore");
-		addBlock(upsideDownOpalOre, "UD Opal Ore");
+		addBlock(upsideDownSurfaceRock, "Upside-Down SurfRock");
+		addBlock(upsideDownRock, "Upside-Down Rock");
+		addBlock(upsideDownStone, "Upside-Down Stone");
+		addBlock(upsideDownCobble, "Upside-Down Cobblestone");
+		addBlock(upsideDownStoneBricks, "Upside-Down Stone Bricks");
+		addBlock(upsideDownDirt, "Upside-Down Dirt");
+		addBlock(creepStone, "Creep Stone");
+		addBlock(creepDirt, "Creep Dirt");
+		addBlock(bloodStone, "Blood Stone");
+		addBlock(upsideDownIronOre, "Upside-Down Iron Ore");
+		addBlock(upsideDownGoldOre, "Upside-Down Gold Ore");
+		addBlock(upsideDownDiamondOre, "Upside-Down Diamond Ore");
+		addBlock(upsideDownEmeraldOre, "Upside-Down Emerald Ore");
+		addBlock(upsideDownAmaranthOre, "Upside-Down Amaranth Ore");
+		addBlock(upsideDownZincOre, "Upside-Down Zinc Ore");
+		addBlock(upsideDownRubyOre, "Upside-Down Ruby Ore");
+		addBlock(upsideDownSapphireOre, "Upside-Down Sapphire Ore");
+		addBlock(upsideDownSpcOre, "Upside-Down SPC Ore");
+		addBlock(upsideDownFuelOre, "Upside-Down Fuel Ore");
+		addBlock(upsideDownLapisOre, "Upside-Down Lapis Ore");
+		addBlock(upsideDownRedstoneOre, "Upside-Down Redstone Ore");
+		addBlock(upsideDownEnderShardOre, "Upside-Down Ender Shard Ore");
+		addBlock(upsideDownRadianceOre, "Upside-Down Radiance Ore");
+		addBlock(upsideDownGarnetOre, "Upside-Down Garnet Ore");
+		addBlock(upsideDownAquaOre, "Upside-Down Aquamarine Ore");
+		addBlock(upsideDownTopazOre, "Upside-Down Topaz Ore");
+		addBlock(upsideDownAmberOre, "Upside-Down Amber Ore");
+		addBlock(upsideDownOpalOre, "Upside-Down Opal Ore");
+		addBlock(upsideDownCopperOre, "Upside-Down Copper Ore");
+		addBlock(upsideDownTinOre, "Upside-Down Tin Ore");
+		addBlock(upsideDownLeadOre, "Upside-Down Lead Ore");
+		addBlock(upsideDownSilverOre, "Upside-Down Silver Ore");
+		addBlock(upsideDownFerrousOre, "Upside-Down Ferrous Ore");
+		addBlock(upsideDownShiniumOre, "Upside-Down Shinium Ore");
 		addBlock(radiantBlock, "Radiant Block");
 		addBlock(spiderlingEgg, "Spider Egg");
 		addBlock(shadowBossSpawner, "Shadow Spawner");

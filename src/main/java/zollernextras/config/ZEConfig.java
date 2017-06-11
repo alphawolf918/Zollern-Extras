@@ -17,6 +17,7 @@ public class ZEConfig {
 	public static String CATEGORY_BIOMES = "Biomes";
 	public static String CATEGORY_COMMANDS = "Commands";
 	public static String CATEGORY_DIMENSIONS = "Dimensions";
+	public static String CATEGORY_ENCHANTMENTS = "Enchantments";
 	public static String CATEGORY_GUI = "GUI";
 	public static String CATEGORY_IMPROVEMENTS = "Improvements";
 	public static String CATEGORY_MOBS = "Mobs";
@@ -80,6 +81,9 @@ public class ZEConfig {
 	
 	// Dimensions
 	public static int dimensionUpsideDownID;
+	
+	// Enchantments
+	public static int enchantmentEnlightenedID;
 	
 	// GUI
 	public static boolean biomeDisplaysOnHUD;
@@ -293,6 +297,11 @@ public class ZEConfig {
 		dimensionUpsideDownID = config.get(CATEGORY_DIMENSIONS,
 				"Upside Down Dimension ID", -96,
 				"Set the ID for the Upside Down dimension.").getInt();
+		
+		// Enchantments
+		enchantmentEnlightenedID = config.get(CATEGORY_ENCHANTMENTS,
+				"Enchantment Enlightened ID", 81,
+				"The ID for the Enlightened Enchantment for weapons.").getInt();
 		
 		// Mobs
 		mobFishSpawnRate = config.get(CATEGORY_MOBS, "mobFishSpawnRate", 70)

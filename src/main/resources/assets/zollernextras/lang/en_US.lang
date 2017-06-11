@@ -243,6 +243,9 @@ tile.zollernextras_ud_stone.name=Upside-Down Stone
 tile.zollernextras_ud_cobblestone.name=Upside-Down Cobblestone
 tile.zollernextras_ud_stonebricks.name=Upside-Down Stone Bricks
 tile.zollernextras_ud_dirt.name=Upside-Down Dirt
+tile.zollernextras_creepdirt.name=Creepdirt
+tile.zollernextras_creepstone.name=Creepstone
+tile.zollernextras_bloodstone.name=Bloodstone
 tile.zollernextras_ud_ironore.name=Upside-Down Iron Ore
 tile.zollernextras_ud_goldore.name=Upside-Down Gold Ore
 tile.zollernextras_ud_lapisore.name=Upside-Down Lapis Lazuli Ore
@@ -524,11 +527,12 @@ entity.zollernextras_babydragon.name=Baby Ender Dragon
 entity.zollernextras_enderspider.name=Ender Spider
 entity.zollernextras_endercreeper.name=Ender Creeper
 entity.zollernextras_enderbug.name=Ender Bug
-entity.zollernextras_shadowalien.name=Shadow God
+entity.zollernextras_shadowalien.name=Shadow Demon
 entity.zollernextras_krull.name=Krull
 entity.zollernextras_shade.name=Shade
 entity.zollernextras_spiderling.name=Spiderling
 entity.zollernextras_helleton.name=Helleton
+entity.zollernextras_shadowfish.name=Bloodfish
 
 death.attack.fueltonium=%1$s was submerged in fueltonium.
 death.attack.fueltonium.player=%1$s was submerged in fueltonium by %2$s.
@@ -545,6 +549,9 @@ death.attack.shadows.item=%1$s was swallowed whole by the shadow realm, due to t
 death.attack.infection=%1$s perished from viral infection.
 death.attack.infection.player=%1$s perished to viral infection by %2$s.
 death.attack.infection.item=%1$s perished to viral infection by %2$s using %3$s.
+death.attack.light=%1$s was blinded by the light.
+death.attack.light.player=%1$s was blinded by the light by %2$s.
+death.attack.light.item=%1$s was blinded by the light by %2$s using %3$s.
 
 zollernextras_commands.heal.usage=/heal [player]
 zollernextras_commands.stats.usage=/stats
@@ -554,6 +561,8 @@ zollernextras_commands.wp.usage=/wp <player>
 
 zollernextras_infected=Infected
 zollernextras_radiance=Radiance
+
+enchantment.zollernextras_enlightened=Enlightened
 
 achievement.zollernextras_radiancecrafted=I Found The Light!
 achievement.zollernextras_radiancecrafted.desc=Crafted your first set of Radium
@@ -573,5 +582,7 @@ achievement.zollernextras_craftedamaranthhoe=Hoe Hoe Hoe!
 achievement.zollernextras_craftedamaranthhoe.desc=Crafted your first Amaranth Hoe
 achievement.zollernextras_supercharged=Super Charged
 achievement.zollernextras_supercharged.desc=Found your first piece of Super Charged Coal
+achievement.zollernextras_upsidedownarrived=The Flea and The Acrobat
+achievement.zollernextras_upsidedownarrived.desc=You found the chocolate pudding. Or, you know, entered the Upside-Down.
 
 itemGroup.Zollern Extras=Zollern Extras

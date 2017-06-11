@@ -29,6 +29,7 @@ import zollernextras.mobs.entities.EntityMummy;
 import zollernextras.mobs.entities.EntityPigshroom;
 import zollernextras.mobs.entities.EntityScorpion;
 import zollernextras.mobs.entities.EntityShade;
+import zollernextras.mobs.entities.EntityShadowFish;
 import zollernextras.mobs.entities.EntityShadowSkeleton;
 import zollernextras.mobs.entities.EntityShark;
 import zollernextras.mobs.entities.EntityShrimp;
@@ -271,6 +272,9 @@ public class Mobs {
 		
 		// Spiderling
 		registerEntity(EntitySpiderling.class, "spiderling", 0x000000, 0xff8b00);
+		
+		// Shadowfish
+		registerEntity(EntityShadowFish.class, "shadowfish", 0x000000, 0x8b0000);
 		
 		// Helleton
 		registerEntity(EntityHelleton.class, "helleton", 0x000000, 0x8b0000);

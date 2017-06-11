@@ -8,6 +8,7 @@ import zollernextras.command.Commands;
 import zollernextras.config.ZEConfig;
 import zollernextras.creativetabs.ModTabs;
 import zollernextras.dimension.DimensionLoader;
+import zollernextras.enchantments.EnchantmentList;
 import zollernextras.entity.EntityDuckEgg;
 import zollernextras.handlers.FuelHandlers;
 import zollernextras.handlers.Handlers;
@@ -63,6 +64,7 @@ public class ZollernExtrasMod {
 		ModTabs.init();
 		ZEConfig.init(event);
 		ZollernPotion.init();
+		EnchantmentList.init();
 		ZollernItems.init();
 		ZollernBlocks.init();
 		ZollernAchievements.init();

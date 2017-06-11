@@ -60,6 +60,7 @@ import zollernextras.biomes.BiomeList;
 import zollernextras.blocks.BabyDragonEgg;
 import zollernextras.blocks.ZollernBlocks;
 import zollernextras.config.ZEConfig;
+import zollernextras.enchantments.EnchantmentEnlightened;
 import zollernextras.entity.ExtendedPlayer;
 import zollernextras.items.ZollernItems;
 import zollernextras.items.armor.amaranth.AmaranthArmor;
@@ -280,6 +281,16 @@ public class Events {
 				}
 			}
 		}
+		
+		// If the entity (mob) is an IShadeEntity (shadow) mob, and they have
+		// the Radiance potion effect (applied by the Enlightened enchantment on
+		// weapons), cause damage. Shadow entities being murdered by light!
+		if (entity instanceof IShadeEntity) {
+			if (entity.isPotionActive(ZollernPotion.radiance.id)) {
+				entity.attackEntityFrom(DSource.deathLight,
+						EnchantmentEnlightened.lightDamageBase);
+			}
+		}
 	}
 	
 	// The idea of the two below functions is that I wanted to be able to tell
@@ -306,7 +317,7 @@ public class Events {
 	// Stopped using a bow
 	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
 	public void onPlayerStoppedUsingBow(ArrowLooseEvent event) {
-		
+		// TODO
 	}
 	
 	// @SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)

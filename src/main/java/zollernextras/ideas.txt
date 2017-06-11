@@ -12,6 +12,8 @@
 * More potions.
 * More golems.
 * Growable animals.
+* Add a configurable option to turn off Mega Creeper explosions.
+    * They could still hurt the Player, but not the terrain.
 
 == ENDER STUFF ===================
 [Ideas for how to revamp The End.]
@@ -25,9 +27,16 @@
     * Perhaps use a structure gen for End Stone to increase its land.
     * Find out if there is a way to "stretch" or otherwise "increase" The End size.
 
+* Fix the stupid Ender Creeper.
+
 == UPSIDE DOWN ===========
 [Ideas for the dimension.]
 ==========================
 
-* Always night?
-    * Maybe make night last longer.
+* Make all Upside-Down ores pulverizable.
+    * Give 6 of the respective product each.
+* Add armor made out of Radium.
+    * Would automatically have Enlightened enchantment when crafted.
+* Build and generate a couple more structures to add some "life" to the Upside-Down.
+* Make a Shadow Essence block.
+* 

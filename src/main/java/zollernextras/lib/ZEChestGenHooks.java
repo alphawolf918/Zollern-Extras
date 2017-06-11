@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Random;
 import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -20,46 +21,48 @@ public class ZEChestGenHooks extends ChestGenHooks {
 	
 	public static final String ENDER_TOWER = "enderTower";
 	public static final WeightedRandomChestContent[] CTChestContents = new WeightedRandomChestContent[] {
-		new WeightedRandomChestContent(new ItemStack(
-				ZollernItems.shiniumIngot), 5, 10, 15),
-				new WeightedRandomChestContent(new ItemStack(
-						ZollernItems.shinestoneIngot), 15, 20, 25),
-						new WeightedRandomChestContent(new ItemStack(
-								ZollernItems.enderShard), 15, 20, 25),
-								new WeightedRandomChestContent(new ItemStack(
-										ZollernItems.amaranthIngot), 15, 20, 25),
-										new WeightedRandomChestContent(
-												new ItemStack(ZollernItems.enderite), 15, 20, 25),
-												new WeightedRandomChestContent(new ItemStack(Items.ender_pearl),
-														15, 20, 25),
-														new WeightedRandomChestContent(new ItemStack(
-																ZollernItems.chargiumDust), 5, 10, 15),
-																new WeightedRandomChestContent(new ItemStack(
-																		ZollernItems.enderDiamond), 5, 10, 15) };
+			new WeightedRandomChestContent(new ItemStack(
+					ZollernItems.shiniumIngot), 5, 10, 15),
+			new WeightedRandomChestContent(new ItemStack(
+					ZollernItems.shinestoneIngot), 15, 20, 25),
+			new WeightedRandomChestContent(new ItemStack(
+					ZollernItems.enderShard), 15, 20, 25),
+			new WeightedRandomChestContent(new ItemStack(
+					ZollernItems.amaranthIngot), 15, 20, 25),
+			new WeightedRandomChestContent(
+					new ItemStack(ZollernItems.enderite), 15, 20, 25),
+			new WeightedRandomChestContent(new ItemStack(Items.ender_pearl),
+					15, 20, 25),
+			new WeightedRandomChestContent(new ItemStack(
+					ZollernItems.chargiumDust), 5, 10, 15),
+			new WeightedRandomChestContent(new ItemStack(
+					ZollernItems.enderDiamond), 5, 10, 15) };
 	
 	public static final String SHADOW_SHRINE = "shadowShrine";
 	public static final WeightedRandomChestContent[] SSChestContents = new WeightedRandomChestContent[] {
-		new WeightedRandomChestContent(new ItemStack(
-				ZollernItems.chargiumDust), 32, 64, 50),
-				new WeightedRandomChestContent(new ItemStack(
-						ZollernItems.shiniumIngot), 32, 64, 50),
+			new WeightedRandomChestContent(new ItemStack(
+					ZollernItems.chargiumDust), 32, 64, 50),
+			new WeightedRandomChestContent(new ItemStack(
+					ZollernItems.shiniumIngot), 32, 64, 50),
 			new WeightedRandomChestContent(new ItemStack(Items.diamond), 32,
 					64, 60),
 			new WeightedRandomChestContent(new ItemStack(Items.nether_star), 1,
 					5, 100),
-										new WeightedRandomChestContent(
-												new ItemStack(ZollernItems.radiance), 5, 20, 25) };
+			new WeightedRandomChestContent(
+					new ItemStack(ZollernItems.radiance), 5, 20, 25) };
 	
 	public static final String SHADE_TREE = "shadeTree";
 	public static final WeightedRandomChestContent[] STChestContents = new WeightedRandomChestContent[] {
-		new WeightedRandomChestContent(new ItemStack(Items.diamond), 8, 16,
-				30),
-				new WeightedRandomChestContent(
-						new ItemStack(ZollernItems.radiance), 5, 10, 5),
+			new WeightedRandomChestContent(new ItemStack(Items.diamond), 8, 16,
+					30),
+			new WeightedRandomChestContent(
+					new ItemStack(ZollernItems.radiance), 5, 10, 5),
 			new WeightedRandomChestContent(new ItemStack(
 					ZollernItems.prismarineCrystal), 5, 10, 15),
-								new WeightedRandomChestContent(new ItemStack(
-										ZollernItems.prismarineShard), 5, 10, 15) };
+			new WeightedRandomChestContent(new ItemStack(
+					ZollernItems.prismarineShard), 5, 10, 15),
+			new WeightedRandomChestContent(new ItemStack(
+					ZollernItems.shadowEssence), 5, 20, 25) };
 	
 	private static final HashMap<String, ZEChestGenHooks> chestInfo = new HashMap<String, ZEChestGenHooks>();
 	
@@ -78,12 +81,14 @@ public class ZEChestGenHooks extends ChestGenHooks {
 		
 		addInfo(ENDER_TOWER, CTChestContents, 8, 16);
 		addInfo(SHADOW_SHRINE, SSChestContents, 4, 8);
-		addInfo(SHADE_TREE, STChestContents, 2, 4);
+		addInfo(SHADE_TREE, STChestContents, 4, 6);
 		
 		ItemStack book = new ItemStack(Items.enchanted_book, 1, 0);
+		EnchantmentHelper.addRandomEnchantment(new Random(), book, 30);
 		WeightedRandomChestContent tmp = new WeightedRandomChestContent(book,
-				1, 1, 1);
+				5, 10, 4);
 		getInfo(ENDER_TOWER).addItem(tmp);
+		getInfo(SHADE_TREE).addItem(tmp);
 		
 		getInfo(ENDER_TOWER).addItem(
 				new WeightedRandomChestContent(ZollernItems.spcItem, 4, 25, 50,

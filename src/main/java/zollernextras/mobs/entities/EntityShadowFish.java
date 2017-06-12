@@ -17,7 +17,9 @@ import net.minecraft.util.Facing;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import org.apache.commons.lang3.tuple.ImmutablePair;
+import zaneextras.interfaces.ILightEntity;
 import zollernextras.blocks.ZollernBlocks;
+import zollernextras.lib.modhelper.ModHelperBase;
 
 public class EntityShadowFish extends EntityMob implements IShadeEntity {
 	
@@ -31,10 +33,14 @@ public class EntityShadowFish extends EntityMob implements IShadeEntity {
 		super(p_i1740_1_);
 		this.setSize(this.width, this.height);
 		this.tasks.addTask(1, new EntityAIAttackOnCollide(this,
-				EntityPlayer.class, 1.4D, false));
+				EntityPlayer.class, 2.4D, false));
 		this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
 		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this,
 				EntityPlayer.class, 0, true));
+		if (ModHelperBase.useZaneExtras && this.shouldAttackLightEntity()) {
+			this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(
+					this, ILightEntity.class, 10, false));
+		}
 	}
 	
 	@Override
@@ -44,8 +50,6 @@ public class EntityShadowFish extends EntityMob implements IShadeEntity {
 				.setBaseValue(28.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed)
 				.setBaseValue(0.6500000238418579D);
-		this.getEntityAttribute(SharedMonsterAttributes.attackDamage)
-				.setBaseValue(2.4D);
 	}
 	
 	/**

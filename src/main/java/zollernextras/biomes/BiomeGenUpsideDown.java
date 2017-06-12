@@ -11,7 +11,6 @@ public class BiomeGenUpsideDown extends BiomeGenBase {
 		super(par1);
 		this.waterColorMultiplier = 0x000;
 		this.setColor(BiomeList.biomeColor);
-		this.rootHeight = 2F;
 		this.theBiomeDecorator.generateLakes = false;
 		this.setDisableRain();
 		this.setBiomeName("Upside-Down");
@@ -27,7 +26,7 @@ public class BiomeGenUpsideDown extends BiomeGenBase {
 	
 	@Override
 	public float getSpawningChance() {
-		return 2.0F;
+		return 1.0F;
 	}
 	
 	@Override

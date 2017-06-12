@@ -13,6 +13,7 @@ import zollernextras.items.ZollernItems;
 import zollernextras.lib.ZollernHelper;
 import zollernextras.lib.modhelper.ModHelperBase;
 import zollernextras.lib.modhelper.ThermalExpansionHelper;
+import cofh.thermalfoundation.item.TFItems;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class RecipeManager {
@@ -983,6 +984,20 @@ public class RecipeManager {
 					new ItemStack(ZollernItems.zollerniumIngot, 1), 0.5F);
 			RecipeHelper.addSmelting(ZollernBlocks.upsideDownCobble,
 					ZollernBlocks.upsideDownStone, 0.5F);
+			if (ModHelperBase.useThermalFoundation) {
+				RecipeHelper.addSmelting(ZollernBlocks.upsideDownCopperOre,
+						TFItems.ingotCopper.getItem(), 0.5F);
+				RecipeHelper.addSmelting(ZollernBlocks.upsideDownTinOre,
+						TFItems.ingotTin.getItem(), 0.5F);
+				RecipeHelper.addSmelting(ZollernBlocks.upsideDownLeadOre,
+						TFItems.ingotLead.getItem(), 0.5F);
+				RecipeHelper.addSmelting(ZollernBlocks.upsideDownSilverOre,
+						TFItems.ingotSilver.getItem(), 0.5F);
+				RecipeHelper.addSmelting(ZollernBlocks.upsideDownFerrousOre,
+						TFItems.ingotNickel.getItem(), 0.5F);
+			}
+			RecipeHelper.addSmelting(ZollernBlocks.upsideDownShiniumOre,
+					ZollernItems.shiniumDust, 0.5F);
 			
 		}
 	}

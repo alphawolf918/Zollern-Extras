@@ -1,4 +1,4 @@
-[3.5 - Untitled Update]
+[3.5 - Shadow Update]
 
 * Set Zollernium Ore harvest level to 5.
 * Modified Ender Pearl Block texture.
@@ -34,6 +34,10 @@
 * All Upside-Down ores now require an Amaranth Pickaxe or greater to mine.
 * Added Upside-Down versions of Thermal Expansion ores.
 * Renamed Shadow God to Shadow Demon.
+* Spiderlings now spawn naturally in the Upside-Down.
+* Added the Bloodfish mob and Bloodstone block.
+    * Used for certain structures.
+    * The behavior of this block with the Bloodfish mob is identical to how the Ender Bug mob behaves with the Purpur block.
 * 
 
 ---- FIXES -----

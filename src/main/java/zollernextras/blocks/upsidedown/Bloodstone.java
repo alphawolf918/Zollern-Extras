@@ -8,7 +8,7 @@ import zollernextras.mobs.entities.EntityShadowFish;
 public class Bloodstone extends GenericBlock {
 	
 	public Bloodstone() {
-		super("purpurblock", 1.2F);
+		super("bloodstone", 1.6F);
 		this.setHarvestLevel("pickaxe", 3);
 	}
 	

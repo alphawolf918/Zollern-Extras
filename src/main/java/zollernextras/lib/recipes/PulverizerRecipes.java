@@ -6,9 +6,12 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import zollernextras.blocks.ZollernBlocks;
 import zollernextras.items.ZollernItems;
+import zollernextras.lib.modhelper.ModHelperBase;
 import zollernextras.lib.modhelper.ThermalExpansionHelper;
+import cofh.thermalfoundation.item.TFItems;
 
 public class PulverizerRecipes {
+	
 	public static void init() {
 		
 		/**
@@ -26,6 +29,9 @@ public class PulverizerRecipes {
 		ThermalExpansionHelper.addPulverizerRecipe(3600, new ItemStack(
 				ZollernBlocks.enderSpcOre, 1), new ItemStack(
 				ZollernItems.spcItem, 8), new ItemStack(Items.coal), 90);
+		ThermalExpansionHelper.addPulverizerRecipe(3600, new ItemStack(
+				ZollernBlocks.upsideDownSpcOre, 1), new ItemStack(
+				ZollernItems.spcItem, 10), new ItemStack(Items.coal), 95);
 		
 		// FN Ore
 		ThermalExpansionHelper.addPulverizerRecipe(3200, new ItemStack(
@@ -37,6 +43,9 @@ public class PulverizerRecipes {
 		ThermalExpansionHelper.addPulverizerRecipe(7200, new ItemStack(
 				ZollernBlocks.enderFnOre, 1), new ItemStack(
 				ZollernItems.fuelonite, 8));
+		ThermalExpansionHelper.addPulverizerRecipe(7200, new ItemStack(
+				ZollernBlocks.upsideDownFuelOre, 1), new ItemStack(
+				ZollernItems.fuelonite, 10));
 		
 		// Shard Ore
 		ThermalExpansionHelper.addPulverizerRecipe(3200, new ItemStack(
@@ -45,6 +54,9 @@ public class PulverizerRecipes {
 		ThermalExpansionHelper.addPulverizerRecipe(4200, new ItemStack(
 				ZollernBlocks.enderShardNetherOre, 1), new ItemStack(
 				ZollernItems.enderShard, 4));
+		ThermalExpansionHelper.addPulverizerRecipe(4200, new ItemStack(
+				ZollernBlocks.upsideDownEnderShardOre, 1), new ItemStack(
+				ZollernItems.enderShard, 6));
 		
 		// Amaranth Ore
 		ThermalExpansionHelper.addPulverizerRecipe(3200, new ItemStack(
@@ -56,6 +68,9 @@ public class PulverizerRecipes {
 		ThermalExpansionHelper.addPulverizerRecipe(5200, new ItemStack(
 				ZollernBlocks.enderAmaranthOre, 1), new ItemStack(
 				ZollernItems.amaranthDust, 8));
+		ThermalExpansionHelper.addPulverizerRecipe(5200, new ItemStack(
+				ZollernBlocks.upsideDownAmaranthOre, 1), new ItemStack(
+				ZollernItems.amaranthDust, 10));
 		
 		// Zinc Ore
 		ThermalExpansionHelper.addPulverizerRecipe(4500, new ItemStack(
@@ -67,6 +82,63 @@ public class PulverizerRecipes {
 		ThermalExpansionHelper.addPulverizerRecipe(5500, new ItemStack(
 				ZollernBlocks.enderZincOre, 1), new ItemStack(
 				ZollernItems.zincDust, 4));
+		ThermalExpansionHelper.addPulverizerRecipe(5500, new ItemStack(
+				ZollernBlocks.upsideDownZincOre, 1), new ItemStack(
+				ZollernItems.zincDust, 10));
+		
+		// Iron Ore
+		if (ModHelperBase.useThermalFoundation) {
+			ThermalExpansionHelper.addPulverizerRecipe(5500, new ItemStack(
+					ZollernBlocks.upsideDownIronOre, 1), new ItemStack(
+					TFItems.dustIron.getItem(), 6));
+		} else {
+			ThermalExpansionHelper.addPulverizerRecipe(5500, new ItemStack(
+					ZollernBlocks.upsideDownIronOre, 1), new ItemStack(
+					Blocks.iron_ore, 3));
+		}
+		
+		// Gold Ore
+		if (ModHelperBase.useThermalFoundation) {
+			ThermalExpansionHelper.addPulverizerRecipe(5500, new ItemStack(
+					ZollernBlocks.upsideDownGoldOre, 1), new ItemStack(
+					TFItems.dustGold.getItem(), 6));
+		} else {
+			ThermalExpansionHelper.addPulverizerRecipe(5500, new ItemStack(
+					ZollernBlocks.upsideDownIronOre, 1), new ItemStack(
+					Blocks.gold_ore, 3));
+		}
+		
+		if (ModHelperBase.useThermalFoundation) {
+			// Copper
+			ThermalExpansionHelper.addPulverizerRecipe(5500, new ItemStack(
+					ZollernBlocks.upsideDownCopperOre, 1), new ItemStack(
+					TFItems.dustCopper.getItem(), 6));
+			
+			// Tin
+			ThermalExpansionHelper.addPulverizerRecipe(5500, new ItemStack(
+					ZollernBlocks.upsideDownTinOre, 1), new ItemStack(
+					TFItems.dustTin.getItem(), 6));
+			
+			// Lead
+			ThermalExpansionHelper.addPulverizerRecipe(5500, new ItemStack(
+					ZollernBlocks.upsideDownLeadOre, 1), new ItemStack(
+					TFItems.dustLead.getItem(), 6));
+			
+			// Silver
+			ThermalExpansionHelper.addPulverizerRecipe(5500, new ItemStack(
+					ZollernBlocks.upsideDownSilverOre, 1), new ItemStack(
+					TFItems.dustSilver.getItem(), 6));
+			
+			// Ferrous
+			ThermalExpansionHelper.addPulverizerRecipe(5500, new ItemStack(
+					ZollernBlocks.upsideDownFerrousOre, 1), new ItemStack(
+					TFItems.dustNickel.getItem(), 6));
+		}
+		
+		// Shinium
+		ThermalExpansionHelper.addPulverizerRecipe(5500, new ItemStack(
+				ZollernBlocks.upsideDownShiniumOre, 1), new ItemStack(
+				ZollernItems.shiniumDust, 6));
 		
 		// Steel Ore
 		ThermalExpansionHelper.addPulverizerRecipe(6500, new ItemStack(

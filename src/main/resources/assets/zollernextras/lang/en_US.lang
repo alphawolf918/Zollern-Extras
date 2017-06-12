@@ -266,6 +266,13 @@ tile.zollernextras_ud_aquaore.name=Upside-Down Aquamarine Ore
 tile.zollernextras_ud_topazore.name=Upside-Down Topaz Ore
 tile.zollernextras_ud_amberore.name=Upside-Down Amber Ore
 tile.zollernextras_ud_opalore.name=Upside-Down Opal Ore
+tile.zollernextras_ud_copperore.name=Upside-Down Copper Ore
+tile.zollernextras_ud_tinore.name=Upside-Down Tin Ore
+tile.zollernextras_ud_leadore.name=Upside-Down Lead Ore
+tile.zollernextras_ud_silverore.name=Upside-Down Silver Ore
+tile.zollernextras_ud_ferrousore.name=Upside-Down Ferrous Ore
+tile.zollernextras_ud_shiniumore.name=Upside-Down Shinium Ore
+
 tile.zollernextras_radiantblock.name=Radium Block
 tile.zollernextras_spideregg.name=Spiderling Eggsac
 tile.zollernextras_shadowspawner.name=Shadow Spawner

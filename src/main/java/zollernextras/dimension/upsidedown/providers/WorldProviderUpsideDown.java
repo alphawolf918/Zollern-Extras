@@ -32,7 +32,7 @@ public class WorldProviderUpsideDown extends WorldProvider {
 	}
 	
 	public int getSkyColorByTemp(float f) {
-		return 0x000;
+		return 0x44aa44;
 	}
 	
 	@Override
@@ -42,7 +42,7 @@ public class WorldProviderUpsideDown extends WorldProvider {
 	
 	@Override
 	protected void generateLightBrightnessTable() {
-		float f = 0.3F;
+		float f = 0.2F;
 		
 		for (int i = 0; i <= 15; ++i) {
 			float f1 = 1.0F - i / 15.0F;

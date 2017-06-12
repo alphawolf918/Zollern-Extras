@@ -18,9 +18,9 @@ public class ShadowGemOre extends GemOre {
 	@Override
 	public int quantityDropped(Random p_149745_1_) {
 		if (p_149745_1_.nextInt(10) <= 5) {
-			return 4;
+			return 6;
 		} else {
-			return 2;
+			return 4;
 		}
 	}
 	

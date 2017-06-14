@@ -85,10 +85,10 @@ public class WorldGenUpsideDownDungeons extends WorldGenerator {
 							if (l1 == p_76484_4_ - 1
 									&& p_76484_2_.nextInt(4) != 0) {
 								p_76484_1_.setBlock(k1, l1, i2,
-										ZollernBlocks.upsideDownRock, 0, 2);
+										ZollernBlocks.upsideDownCobble, 0, 2);
 							} else {
 								p_76484_1_.setBlock(k1, l1, i2,
-										ZollernBlocks.upsideDownSurfaceRock, 0,
+										ZollernBlocks.upsideDownCobbleMossy, 0,
 										2);
 							}
 						}
@@ -191,7 +191,7 @@ public class WorldGenUpsideDownDungeons extends WorldGenerator {
 	 */
 	private String pickMobSpawner(Random rand) {
 		String defaultMob = ZollernModInfo.MODID + "_shadowskeleton";
-		int rm = rand.nextInt(6);
+		int rm = rand.nextInt(8);
 		if (rm == 0) {
 			return ZollernModInfo.MODID + "_mummy";
 		} else if (rm == 1) {
@@ -202,6 +202,8 @@ public class WorldGenUpsideDownDungeons extends WorldGenerator {
 			return ZollernModInfo.MODID + "_scorpion";
 		} else if (rm == 4) {
 			return ZollernModInfo.MODID + "_spiderling";
+		} else if (rm == 5) {
+			return ZollernModInfo.MODID + "_shadowfish";
 		} else {
 			return defaultMob;
 		}

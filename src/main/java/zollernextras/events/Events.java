@@ -65,6 +65,7 @@ import zollernextras.entity.ExtendedPlayer;
 import zollernextras.items.ZollernItems;
 import zollernextras.items.armor.amaranth.AmaranthArmor;
 import zollernextras.items.armor.azurite.AzuriteArmor;
+import zollernextras.items.armor.radium.RadiumArmor;
 import zollernextras.items.armor.zollernium.ZollerniumArmor;
 import zollernextras.lib.DSource;
 import zollernextras.lib.ZollernHelper;
@@ -233,12 +234,13 @@ public class Events {
 			// inventory (easy access!).
 			ItemStack[] armor = player.inventory.armorInventory;
 			
-			// These three indices are important. They will count how many armor
+			// These four indices are important. They will count how many armor
 			// pieces are worn for each specific set, to save us some
 			// complicated stuff.
 			int amArmorCount = 0;
 			int zArmorCount = 0;
 			int azArmorCount = 0;
+			int rArmorCount = 0;
 			
 			// Loop through each armor set.
 			for (ItemStack armorStack : armor) {
@@ -261,6 +263,11 @@ public class Events {
 					AzuriteArmor azuriteArmor = (AzuriteArmor) armorStack
 							.getItem();
 					azArmorCount++;
+				} else if (armorStack != null
+						&& armorStack.getItem() instanceof RadiumArmor) {
+					RadiumArmor radiumArmor = (RadiumArmor) armorStack
+							.getItem();
+					rArmorCount++;
 				}
 			}
 			
@@ -278,6 +285,13 @@ public class Events {
 					player.addPotionEffect(new PotionEffect(
 							Potion.fireResistance.id, 2, 1));
 					player.stepHeight = 2F;
+				} else if (rArmorCount == 4) {
+					player.capabilities.allowFlying = true;
+				} else {
+					player.stepHeight = 0.5F;
+					if (!player.capabilities.isCreativeMode) {
+						player.capabilities.allowFlying = false;
+					}
 				}
 			}
 		}

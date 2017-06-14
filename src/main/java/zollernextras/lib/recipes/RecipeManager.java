@@ -34,6 +34,10 @@ public class RecipeManager {
 		public static void init() {
 			ToolArmorRecipes.init();
 			
+			// Shadow Essence
+			RecipeHelper.fullBlockCraft(ZollernBlocks.shadowEssence,
+					ZollernItems.shadowEssence);
+			
 			// Shadow Bone
 			GameRegistry.addShapelessRecipe(new ItemStack(
 					ZollernItems.shadowBone), new Object[] {

@@ -821,13 +821,13 @@ public class WorldGenManager implements IWorldGenerator {
 		}
 		
 		// Crater
-		if (random.nextInt(1040) <= 15 && random.nextInt(800) <= 8) {
+		if (random.nextInt(1040) <= 25) {
 			this.spawnStructure(8, 10, world, random, x, y, z,
 					new WorldGenCrater());
 		}
 		
 		// Dirt
-		if (random.nextInt(1200) <= 40) {
+		if (random.nextInt(1200) <= 20) {
 			new WorldGenLakes(ZollernBlocks.upsideDownDirt).generate(world,
 					random, x, y, z);
 		}
@@ -844,7 +844,7 @@ public class WorldGenManager implements IWorldGenerator {
 		}
 		
 		// Shade Tree
-		if (random.nextInt(900) <= 20) {
+		if (random.nextInt(1200) <= 10) {
 			this.spawnStructure(8, 10, world, random, x, y, z,
 					new WorldGenShadeTree());
 		}

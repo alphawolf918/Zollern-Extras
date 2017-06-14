@@ -33,8 +33,6 @@
 [Ideas for the dimension.]
 ==========================
 
-* Make all Upside-Down ores pulverizable.
-    * Give 6 of the respective product each.
 * Add armor made out of Radium.
     * Would automatically have Enlightened enchantment when crafted.
 * Build and generate a couple more structures to add some "life" to the Upside-Down.

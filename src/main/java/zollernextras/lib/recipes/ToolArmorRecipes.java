@@ -150,6 +150,8 @@ public class ToolArmorRecipes {
 					"helmet");
 			addArmorSet(ZollernItems.woodHelmet, Blocks.planks, "helmet");
 			addArmorSet(ZollernItems.stoneHelmet, Blocks.stone, "helmet");
+			addArmorSet(ZollernItems.radiantHelmet, ZollernItems.radiance,
+					"helmet");
 			
 			// Chestplate
 			addArmorSet(ZollernItems.amaranthChestplate,
@@ -164,6 +166,8 @@ public class ToolArmorRecipes {
 					"chestplate");
 			addArmorSet(ZollernItems.stoneChestplate, Blocks.stone,
 					"chestplate");
+			addArmorSet(ZollernItems.radiantChestplate, ZollernItems.radiance,
+					"chestplate");
 			
 			// Leggings
 			addArmorSet(ZollernItems.amaranthLeggings,
@@ -174,6 +178,8 @@ public class ToolArmorRecipes {
 					"leggings");
 			addArmorSet(ZollernItems.woodLeggings, Blocks.planks, "leggings");
 			addArmorSet(ZollernItems.stoneLeggings, Blocks.stone, "leggings");
+			addArmorSet(ZollernItems.radiantLeggings, ZollernItems.radiance,
+					"leggings");
 			
 			// Boots
 			addArmorSet(ZollernItems.amaranthBoots, ZollernItems.amaranthIngot,
@@ -184,6 +190,8 @@ public class ToolArmorRecipes {
 					"boots");
 			addArmorSet(ZollernItems.woodBoots, Blocks.planks, "boots");
 			addArmorSet(ZollernItems.stoneBoots, Blocks.stone, "boots");
+			addArmorSet(ZollernItems.radiantBoots, ZollernItems.radiance,
+					"boots");
 		}
 		
 		private static void addArmorSet(Item itemOutput, Block blockOutput,
@@ -221,21 +229,21 @@ public class ToolArmorRecipes {
 			// Helmet
 			if (armorType.equals("helmet")) {
 				GameRegistry.addRecipe(new ItemStack(itemOutput), new Object[] {
-					"ZZZ", "Z Z", "   ", 'Z', itemIngot });
+						"ZZZ", "Z Z", "   ", 'Z', itemIngot });
 				// Chestplate
 			} else if (armorType.equals("chestplate")) {
 				GameRegistry.addRecipe(new ItemStack(itemOutput), new Object[] {
-					"Z Z", "ZZZ", "ZZZ", 'Z', itemIngot });
+						"Z Z", "ZZZ", "ZZZ", 'Z', itemIngot });
 				// Leggings
 			} else if (armorType.equals("leggings")) {
 				GameRegistry.addRecipe(new ItemStack(itemOutput), new Object[] {
-					"ZZZ", "Z Z", "Z Z", 'Z', itemIngot });
+						"ZZZ", "Z Z", "Z Z", 'Z', itemIngot });
 				// Boots
 			} else if (armorType.equals("boots")) {
 				GameRegistry.addRecipe(new ItemStack(itemOutput), new Object[] {
-					"   ", "Z Z", "Z Z", 'Z', itemIngot });
+						"   ", "Z Z", "Z Z", 'Z', itemIngot });
 				GameRegistry.addRecipe(new ItemStack(itemOutput), new Object[] {
-					"Z Z", "Z Z", "   ", 'Z', itemIngot });
+						"Z Z", "Z Z", "   ", 'Z', itemIngot });
 			}
 		}
 	}

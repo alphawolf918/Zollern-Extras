@@ -441,6 +441,8 @@ public class ZollernBlocks {
 	public static Block upsideDownStone = new UpsideDownStone();
 	public static Block upsideDownCobble = new GenericBlock("ud_cobblestone",
 			0.8F);
+	public static Block upsideDownCobbleMossy = new GenericBlock(
+			"ud_cobble_mossy", 0.9F);
 	public static Block upsideDownStoneBricks = new GenericBlock(
 			"ud_stonebricks", 1.0F);
 	public static Block upsideDownDirt = ((GenericBlock) ((GenericBlock) new GenericBlock(
@@ -453,6 +455,8 @@ public class ZollernBlocks {
 			.setBlockHarvestLevel("shovel", 0))
 			.setBlockMaterial(Material.grass);
 	public static Block bloodStone = new Bloodstone();
+	public static Block shadowEssence = new GenericBlock("shadowessenceblock",
+			1.6F);
 	public static Block upsideDownIronOre = new GenericUpsideDownOre(
 			"ud_ironore", 1.6F);
 	public static Block upsideDownGoldOre = new GenericUpsideDownOre(
@@ -753,11 +757,13 @@ public class ZollernBlocks {
 		addBlock(upsideDownRock, "Upside-Down Rock");
 		addBlock(upsideDownStone, "Upside-Down Stone");
 		addBlock(upsideDownCobble, "Upside-Down Cobblestone");
+		addBlock(upsideDownCobbleMossy, "Upside-Down Mossy Cobblestone");
 		addBlock(upsideDownStoneBricks, "Upside-Down Stone Bricks");
 		addBlock(upsideDownDirt, "Upside-Down Dirt");
 		addBlock(creepStone, "Creep Stone");
 		addBlock(creepDirt, "Creep Dirt");
 		addBlock(bloodStone, "Blood Stone");
+		addBlock(shadowEssence, "Shadow Essence Block");
 		addBlock(upsideDownIronOre, "Upside-Down Iron Ore");
 		addBlock(upsideDownGoldOre, "Upside-Down Gold Ore");
 		addBlock(upsideDownDiamondOre, "Upside-Down Diamond Ore");

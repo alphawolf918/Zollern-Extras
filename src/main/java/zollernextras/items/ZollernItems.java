@@ -7,6 +7,7 @@ import zollernextras.blocks.ZollernBlocks;
 import zollernextras.items.armor.ArmorMaterials;
 import zollernextras.items.armor.amaranth.AmaranthArmor;
 import zollernextras.items.armor.azurite.AzuriteArmor;
+import zollernextras.items.armor.radium.RadiumArmor;
 import zollernextras.items.armor.stone.StoneArmor;
 import zollernextras.items.armor.wood.WoodArmor;
 import zollernextras.items.armor.zollernium.ZollerniumArmor;
@@ -108,6 +109,15 @@ public class ZollernItems {
 			ArmorMaterials.ZOLLERNIUM, "zollerniumleggings", 2);
 	public static Item zollerniumBoots = new ZollerniumArmor(
 			ArmorMaterials.ZOLLERNIUM, "zollerniumboots", 3);
+	
+	public static Item radiantHelmet = new RadiumArmor(ArmorMaterials.RADIANT,
+			"radiumhelmet", 0);
+	public static Item radiantChestplate = new RadiumArmor(
+			ArmorMaterials.RADIANT, "radiumchestplate", 1);
+	public static Item radiantLeggings = new RadiumArmor(
+			ArmorMaterials.RADIANT, "radiumleggings", 2);
+	public static Item radiantBoots = new RadiumArmor(ArmorMaterials.RADIANT,
+			"radiumboots", 3);
 	
 	public static Item azuritePickaxe = new AzuritePickaxe();
 	public static Item azuriteAxe = new AzuriteAxe();
@@ -350,6 +360,11 @@ public class ZollernItems {
 		addItem(zollerniumChestplate, "Zollernium Chestplate");
 		addItem(zollerniumLeggings, "Zollernium Leggings");
 		addItem(zollerniumBoots, "Zollernium Boots");
+		addItem(radiantHelmet, "Radiant Helmet");
+		addItem(radiantChestplate, "Radiant Chestplate");
+		addItem(radiantLeggings, "Radiant Leggings");
+		addItem(radiantBoots, "Radiant Boots");
+		
 		addItem(azuritePickaxe, "Azurite Pickaxe");
 		addItem(azuriteAxe, "Azurite Axe");
 		addItem(azuriteHoe, "Azurite Hoe");

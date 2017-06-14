@@ -1,3 +1,14 @@
+[ -- Hotfix + Minor Update 3.5.1 -- ]
+
+* Added the Radiant armor set.
+    * Crafted out of Radiance.
+    * When a full set is worn, the Player can fly - even in survival mode.
+
+---- FIXES ----
+* Fixed Shadow Essence being registered twice, sorry!
+* Fixed step height persisting even after Zollernium Armor was removed.
+---------------
+
 [3.5 - Shadow Update]
 
 * Set Zollernium Ore harvest level to 5.
@@ -38,9 +49,10 @@
 * Added the Bloodfish mob and Bloodstone block.
     * Used for certain structures.
     * The behavior of this block with the Bloodfish mob is identical to how the Ender Bug mob behaves with the Purpur block.
-* 
+* Added a Shadow Essence block.
+    * It does exactly what you think it does.
 
----- FIXES -----
+---- FIXES ----
 * Fixed being unable to harvest ZoE planks with an axe.
 * Fixed Better Grass being unable to be harvested with your hand (freakin' finally).
 * Fixed Steel Stick recipe issue.

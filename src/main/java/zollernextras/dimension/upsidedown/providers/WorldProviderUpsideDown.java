@@ -32,7 +32,7 @@ public class WorldProviderUpsideDown extends WorldProvider {
 	}
 	
 	public int getSkyColorByTemp(float f) {
-		return 0x44aa44;
+		return 0x00aa00;
 	}
 	
 	@Override
@@ -95,14 +95,6 @@ public class WorldProviderUpsideDown extends WorldProvider {
 	}
 	
 	@Override
-	public double getMovementFactor() {
-		if (this instanceof WorldProviderUpsideDown) {
-			return 5.0;
-		}
-		return 1.0;
-	}
-	
-	@Override
 	public boolean isSurfaceWorld() {
 		return false;
 	}
@@ -121,14 +113,6 @@ public class WorldProviderUpsideDown extends WorldProvider {
 	@Override
 	public boolean canDoLightning(Chunk chunk) {
 		return false;
-	}
-	
-	@Override
-	public void resetRainAndThunder() {
-		worldObj.getWorldInfo().setRainTime(0);
-		worldObj.getWorldInfo().setRaining(false);
-		worldObj.getWorldInfo().setThunderTime(0);
-		worldObj.getWorldInfo().setThundering(false);
 	}
 	
 }

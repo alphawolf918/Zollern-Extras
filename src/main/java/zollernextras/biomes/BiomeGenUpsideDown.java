@@ -5,7 +5,7 @@ import zollernextras.blocks.ZollernBlocks;
 
 public class BiomeGenUpsideDown extends BiomeGenBase {
 	
-	public int foliageColor = 0x55aa55;
+	private int biomeFoliageColor = 0x004400;
 	
 	public BiomeGenUpsideDown(int par1) {
 		super(par1);
@@ -15,7 +15,7 @@ public class BiomeGenUpsideDown extends BiomeGenBase {
 		this.setDisableRain();
 		this.setBiomeName("Upside-Down");
 		this.setHeight(new Height(2.0F, 1.9F));
-		this.temperature = 1F;
+		this.temperature = 0.2F;
 		this.topBlock = ZollernBlocks.upsideDownSurfaceRock;
 		this.fillerBlock = ZollernBlocks.upsideDownRock;
 		this.spawnableCaveCreatureList.clear();
@@ -25,22 +25,17 @@ public class BiomeGenUpsideDown extends BiomeGenBase {
 	}
 	
 	@Override
-	public float getSpawningChance() {
-		return 1.0F;
-	}
-	
-	@Override
 	public int getBiomeFoliageColor(int original, int par2, int par3) {
-		return this.foliageColor;
+		return this.biomeFoliageColor;
 	}
 	
 	@Override
 	public int getBiomeGrassColor(int par1, int par2, int par3) {
-		return this.foliageColor;
+		return this.biomeFoliageColor;
 	}
 	
 	@Override
 	public int getSkyColorByTemp(float par1) {
-		return 0x44aa44;
+		return 0x00aa00;
 	}
 }

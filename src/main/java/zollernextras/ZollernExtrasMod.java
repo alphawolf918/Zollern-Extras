@@ -14,6 +14,7 @@ import zollernextras.handlers.FuelHandlers;
 import zollernextras.handlers.Handlers;
 import zollernextras.items.StackChange;
 import zollernextras.items.ZollernItems;
+import zollernextras.items.teleporter.MessageTeleportToDimension;
 import zollernextras.lib.OreDict;
 import zollernextras.lib.Treasures;
 import zollernextras.lib.ZollernHelper;
@@ -35,12 +36,16 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
+import cpw.mods.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.relauncher.Side;
 
 @Mod(modid = ZollernModInfo.MODID, name = ZollernModInfo.NAME,
 		version = ZollernModInfo.VERSION)
 public class ZollernExtrasMod {
+	
+	public static SimpleNetworkWrapper snw;
 	
 	@Mod.Instance(ZollernModInfo.MODID)
 	public static ZollernExtrasMod INSTANCE;
@@ -61,6 +66,9 @@ public class ZollernExtrasMod {
 				+ ZollernModInfo.VERSION + "...");
 		ModHelperBase.detectMods();
 		this.filePath = ZollernHelper.getFilePath(event);
+		snw = NetworkRegistry.INSTANCE.newSimpleChannel(ZollernModInfo.MODID);
+		snw.registerMessage(MessageTeleportToDimension.TeleportHandler.class,
+				MessageTeleportToDimension.class, 1, Side.SERVER);
 		ModTabs.init();
 		ZEConfig.init(event);
 		ZollernPotion.init();

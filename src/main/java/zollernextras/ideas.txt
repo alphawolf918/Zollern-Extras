@@ -6,9 +6,8 @@
     * Maybe do the same thing for Witherium too.
 * Lilypad Plants.
     * Have a way to grow Lilypads.
-* Achievements.
-* Reduce lag in Sheol dimension (Upside-Down).
 * Potion-infused arrows.
+* More achievements.
 * More potions.
 * More golems.
 * Growable animals.
@@ -19,22 +18,21 @@
 [Ideas for how to revamp The End.]
 ==================================
 
-* Ender Spider.
-    * Behave the same way the Enderman does.
-    * Small chance to spawn an Ender Bug when they teleport.
-    
 * Find a way to make The End terrain bigger.
     * Perhaps use a structure gen for End Stone to increase its land.
     * Find out if there is a way to "stretch" or otherwise "increase" The End size.
-
 * Fix the stupid Ender Creeper.
+* Fix the stupid Ender Spider.
 
 == UPSIDE DOWN ===========
 [Ideas for the dimension.]
 ==========================
 
-* Add armor made out of Radium.
-    * Would automatically have Enlightened enchantment when crafted.
-* Build and generate a couple more structures to add some "life" to the Upside-Down.
-* Make a Shadow Essence block.
-* 
+* Add a Corruption layer.
+    * All "Corrupt" blocks would extend parent corrupt blocks.
+    * Corrupt blocks would cause damage to the Player unless they have a specific item in their inventory.
+    * Corruption blocks would have the chance to corrupt other blocks around them, regardless of what they are.
+        * Corrupt Stone would turn anything else into Corrupt Stone, same for Corrupt Grass, etc.
+    * Special mobs would spawn on and only on this specific layer.
+    * Liquid Corruption could take the place of lava.
+    

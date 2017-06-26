@@ -1,11 +1,22 @@
+[3.6 - Corruption Update]
+
+* 
+
+[ -- Hotfix 2 -- ]
+* Fixed the Upside-Down dimension for real this time (so sorry).
+    * The problem was something to do with networking when teleporting with the Upside-Down Eye item.
+ 
+
 [ -- Hotfix + Minor Update 3.5.1 -- ]
 
 * Added the Radiant armor set.
     * Crafted out of Radiance.
     * When a full set is worn, the Player can fly - even in survival mode.
+        * Also applies the Radiance potion effect.
+* Added an achievement for reaching the Upside-Down.
 
 ---- FIXES ----
-* Fixed Shadow Essence being registered twice, sorry!
+* Fixed Shadow Essence being registered twice.
 * Fixed step height persisting even after Zollernium Armor was removed.
 ---------------
 

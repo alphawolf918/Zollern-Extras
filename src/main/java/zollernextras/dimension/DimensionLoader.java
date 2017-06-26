@@ -7,7 +7,7 @@ import zollernextras.lib.ZollernHelper;
 
 public class DimensionLoader {
 	
-	private static int dimId = ZEConfig.dimensionUpsideDownID;
+	public static int dimId = ZEConfig.dimensionUpsideDownID;
 	
 	public static void init() {
 		ZollernHelper.Log("Loading dimensions..");

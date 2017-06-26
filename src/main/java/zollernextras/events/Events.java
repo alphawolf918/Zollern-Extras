@@ -6,6 +6,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockCrops;
 import net.minecraft.block.BlockTallGrass;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.item.EntityItem;
@@ -283,9 +284,11 @@ public class Events {
 							Potion.damageBoost.id, 2, 1));
 				} else if (zArmorCount == 4) {
 					player.addPotionEffect(new PotionEffect(
-							Potion.fireResistance.id, 2, 1));
+							Potion.fireResistance.id, 1, 1));
 					player.stepHeight = 2F;
 				} else if (rArmorCount == 4) {
+					player.addPotionEffect(new PotionEffect(
+							ZollernPotion.radiance.id, 1, 1));
 					player.capabilities.allowFlying = true;
 				} else {
 					player.stepHeight = 0.5F;
@@ -304,6 +307,12 @@ public class Events {
 				entity.attackEntityFrom(DSource.deathLight,
 						EnchantmentEnlightened.lightDamageBase);
 			}
+		}
+		
+		if (entity instanceof EntityLiving && !(entity instanceof EntityPlayer)
+				&& !(entity instanceof IShadeEntity)) {
+			entity.attackEntityFrom(DSource.deathShadows,
+					ZollernPotion.shadowDamage);
 		}
 	}
 	

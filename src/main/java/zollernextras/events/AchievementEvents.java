@@ -3,6 +3,7 @@ package zollernextras.events;
 import net.minecraft.item.ItemStack;
 import zollernextras.achievements.ZollernAchievements;
 import zollernextras.blocks.ZollernBlocks;
+import zollernextras.config.ZEConfig;
 import zollernextras.items.ZollernItems;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent;
@@ -39,6 +40,13 @@ public class AchievementEvents {
 		} else if (itemPickedUp
 				.isItemEqual(new ItemStack(ZollernItems.spcItem))) {
 			event.player.addStat(ZollernAchievements.superCharged, 1);
+		}
+	}
+	
+	@SubscribeEvent
+	public void onDimensionChanged(PlayerEvent.PlayerChangedDimensionEvent event) {
+		if (event.toDim == ZEConfig.dimensionUpsideDownID) {
+			event.player.addStat(ZollernAchievements.upsideDownArrived, 1);
 		}
 	}
 }

@@ -205,7 +205,7 @@ tile.zollernextras_grapefruitplanks.name=Grapefruit Planks
 tile.zollernextras_peachsapling.name=Peach Sapling
 tile.zollernextras_peachlog.name=Peach Log
 tile.zollernextras_peachleaves.name=Peach Leaves
-tile.zollernextras_peaceplanks.name=Peach Planks
+tile.zollernextras_peachplanks.name=Peach Planks
 
 tile.zollernextras_enderberrysapling.name=Ender Berry Sapling
 tile.zollernextras_enderberrylog.name=Ender Berry Log
@@ -578,7 +578,7 @@ zollernextras_radiance=Radiance
 enchantment.zollernextras_enlightened=Enlightened
 
 achievement.zollernextras_radiancecrafted=I Found The Light!
-achievement.zollernextras_radiancecrafted.desc=Crafted your first set of Radium
+achievement.zollernextras_radiancecrafted.desc=Crafted your first set of Radiance
 achievement.zollernextras_foundamaranthore=Purpley Goodness
 achievement.zollernextras_foundamaranthore.desc=Find your first Amaranth Ore
 achievement.zollernextras_smeltedamaranth=Hot & Purple
@@ -596,6 +596,6 @@ achievement.zollernextras_craftedamaranthhoe.desc=Crafted your first Amaranth Ho
 achievement.zollernextras_supercharged=Super Charged
 achievement.zollernextras_supercharged.desc=Found your first piece of Super Charged Coal
 achievement.zollernextras_upsidedownarrived=The Flea and The Acrobat
-achievement.zollernextras_upsidedownarrived.desc=You found the chocolate pudding. Or, you know, entered the Upside-Down.
+achievement.zollernextras_upsidedownarrived.desc=You found the chocolate pudding! Or, you know, entered the Upside-Down.
 
 itemGroup.Zollern Extras=Zollern Extras

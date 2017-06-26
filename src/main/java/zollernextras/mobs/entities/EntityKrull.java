@@ -124,11 +124,11 @@ public class EntityKrull extends EntityMob implements IShadeEntity {
 		this.getEntityAttribute(SharedMonsterAttributes.followRange)
 				.setBaseValue(55.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.maxHealth)
-				.setBaseValue(20);
+				.setBaseValue(50);
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed)
 				.setBaseValue(0.24D);
 		this.getEntityAttribute(SharedMonsterAttributes.attackDamage)
-				.setBaseValue(1.0D);
+				.setBaseValue(2.5D);
 	}
 	
 	@Override

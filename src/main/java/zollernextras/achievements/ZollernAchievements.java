@@ -14,6 +14,7 @@ public class ZollernAchievements {
 	public static Achievement craftedAmaranthAxe;
 	public static Achievement craftedAmaranthShovel;
 	public static Achievement craftedAmaranthHoe;
+	public static Achievement upsideDownArrived;
 	
 	public static Achievement superCharged;
 	
@@ -54,10 +55,17 @@ public class ZollernAchievements {
 				"zollernextras_supercharged", -2, -2, ZollernItems.spcItem,
 				(Achievement) null).registerStat();
 		
+		upsideDownArrived = new Achievement(
+				"achievement.zollernextras_upsidedownarrived",
+				"zollernextras_upsidedownarrived", 6, -4,
+				ZollernItems.upsideDownEye, (Achievement) null).setSpecial()
+				.registerStat();
+		
 		zollernAchievementPage = new AchievementPage("Zollern Extras",
 				foundAmaranthOre, smeltedAmaranth, craftedAmaranthPickaxe,
 				craftedAmaranthSword, craftedAmaranthAxe,
-				craftedAmaranthShovel, craftedAmaranthHoe, superCharged);
+				craftedAmaranthShovel, craftedAmaranthHoe, superCharged,
+				upsideDownArrived);
 		
 		AchievementPage.registerAchievementPage(zollernAchievementPage);
 	}

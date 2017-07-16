@@ -24,6 +24,18 @@ public class ZollernHelper {
 		return false;
 	}
 	
+	public static int rngNumber(int min, int max) {
+		if (min >= max) {
+			return 0;
+		}
+		Random rand = new Random();
+		int randInt = rand.nextInt(max);
+		if (randInt < min) {
+			randInt = min;
+		}
+		return randInt;
+	}
+	
 	public static void setTab(Block block) {
 		block.setCreativeTab(ModTabs.zTab);
 	}

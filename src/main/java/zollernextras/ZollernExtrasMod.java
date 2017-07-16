@@ -9,10 +9,9 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 import zollernextras.config.ZEConfig;
 import zollernextras.creativetabs.ModTabs;
-import zollernextras.handlers.FuelHandler;
+import zollernextras.handlers.Handlers;
 import zollernextras.lib.ZollernHelper;
 import zollernextras.lib.ZollernModInfo;
 import zollernextras.proxies.CommonProxy;
@@ -54,7 +53,7 @@ public class ZollernExtrasMod {
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
 		instance().proxy.init(event);
-		GameRegistry.registerFuelHandler(new FuelHandler());
+		Handlers.init();
 		NetworkRegistry.INSTANCE.registerGuiHandler(this, new CommonProxy());
 	}
 	

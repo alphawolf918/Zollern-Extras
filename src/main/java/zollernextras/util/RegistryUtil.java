@@ -14,7 +14,8 @@ import zollernextras.items.ZollernItems;
 public class RegistryUtil {
 	
 	public static void registerAll(FMLPreInitializationEvent event) {
-		registerBlocks(event, ZollernBlocks.superChargedCoalBlock);
+		registerBlocks(event, ZollernBlocks.superChargedCoalBlock,
+				ZollernBlocks.superChargedCoalOre);
 		registerItems(event, ZollernItems.superChargedCoal);
 	}
 	

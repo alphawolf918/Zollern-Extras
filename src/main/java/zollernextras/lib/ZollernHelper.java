@@ -5,20 +5,14 @@ import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
-import net.minecraft.util.ChatComponentText;
+import net.minecraft.util.text.TextComponentString;
 import net.minecraftforge.common.config.Configuration;
-import org.apache.logging.log4j.Level;
-import zollernextras.config.ZEConfig;
-import zollernextras.creativetabs.ModTabs;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.relauncher.FMLRelaunchLog;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 public class ZollernHelper {
 	
 	public static boolean getRNGChance(int min, int max) {
 		if (min >= max) {
-			ZollernHelper
-			.Log("Error: min chance was set to higher than max in RNG.");
 			return false;
 		}
 		Random rand = new Random();
@@ -30,27 +24,27 @@ public class ZollernHelper {
 	}
 	
 	public static void setTab(Block block) {
-		block.setCreativeTab(ModTabs.zTab);
+		// block.setCreativeTab(ModTabs.zTab);
 	}
 	
 	public static void setTab(Item item) {
-		item.setCreativeTab(ModTabs.zTab);
+		// item.setCreativeTab(ModTabs.zTab);
 	}
 	
 	public static void setName(Block block, String strName) {
-		block.setBlockName(ZollernModInfo.MODID + "_" + strName);
+		block.setRegistryName(ZollernModInfo.modId + "_" + strName);
 	}
 	
 	public static void setName(Item item, String strName) {
-		item.setUnlocalizedName(ZollernModInfo.MODID + "_" + strName);
+		item.setUnlocalizedName(ZollernModInfo.modId + "_" + strName);
 	}
 	
 	public static void setTexture(Block block, String strTexture) {
-		block.setBlockTextureName(ZollernModInfo.MODID + ":" + strTexture);
+		// block.set(ZollernModInfo.modId + ":" + strTexture);
 	}
 	
 	public static void setTexture(Item item, String strTexture) {
-		item.setTextureName(ZollernModInfo.MODID + ":" + strTexture);
+		// item.setTextureName(ZollernModInfo.modId + ":" + strTexture);
 	}
 	
 	public static void setNameAndTexture(Block block, String strName,
@@ -110,32 +104,6 @@ public class ZollernHelper {
 	 * @param text
 	 */
 	public static void addChatMessage(EntityPlayer player, String text) {
-		player.addChatMessage(new ChatComponentText(text));
-	}
-	
-	/**
-	 * Log a message to the console.
-	 * 
-	 * @param str
-	 *            The message to log.
-	 */
-	public static void echo(String str) {
-		FMLRelaunchLog.log(ZollernModInfo.OFFICIAL_NAME, Level.INFO, str);
-	}
-	
-	/**
-	 * Log a message to the console.
-	 * 
-	 * @param str
-	 *            The message to log.
-	 */
-	public static void Log(String str) {
-		echo(str);
-	}
-	
-	public static void debugLog(String str) {
-		if (ZEConfig.enableDebugMode) {
-			FMLRelaunchLog.log(ZollernModInfo.OFFICIAL_NAME, Level.DEBUG, str);
-		}
+		player.sendMessage(new TextComponentString(text));
 	}
 }

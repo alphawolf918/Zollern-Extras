@@ -3,9 +3,8 @@ package zollernextras.config;
 import java.io.File;
 import java.util.ArrayList;
 import net.minecraftforge.common.config.Configuration;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import zollernextras.ZollernExtrasMod;
-import zollernextras.lib.ZollernHelper;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 public class ZEConfig {
 	
@@ -130,7 +129,7 @@ public class ZEConfig {
 		config = new Configuration(new File(event
 				.getModConfigurationDirectory().getAbsolutePath()
 				+ "/ZollernExtras/ZollernExtras.cfg"));
-		ZollernExtrasMod.INSTANCE.filePath = new File(event
+		ZollernExtrasMod.instance().filePath = new File(event
 				.getModConfigurationDirectory().getAbsolutePath()
 				+ "/ZollernExtras/");
 		config.load();
@@ -379,7 +378,6 @@ public class ZEConfig {
 				.getModConfigurationDirectory().getAbsolutePath()
 				+ "/ZollernExtras/Homes.cfg"));
 		config2.load();
-		ZollernHelper.Log("Config2 loaded.");
 		
 		config2.addCustomCategoryComment(
 				CATEGORY_HOMES,

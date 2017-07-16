@@ -13,7 +13,7 @@ public class KeyHelper {
 	public static boolean isCtrlKeyDown() {
 		boolean isCtrlKeyDown = Keyboard.isKeyDown(Keyboard.KEY_LCONTROL)
 				|| Keyboard.isKeyDown(Keyboard.KEY_RCONTROL);
-		if (!isCtrlKeyDown && Minecraft.isRunningOnMac) {
+		if (!isCtrlKeyDown && Minecraft.IS_RUNNING_ON_MAC) {
 			isCtrlKeyDown = Keyboard.isKeyDown(Keyboard.KEY_LMETA)
 					|| Keyboard.isKeyDown(Keyboard.KEY_RMETA);
 		}

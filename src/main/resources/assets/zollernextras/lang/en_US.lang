@@ -280,6 +280,15 @@ tile.zollernextras_spideregg.name=Spiderling Eggsac
 tile.zollernextras_shadowspawner.name=Shadow Spawner
 tile.zollernextras_diamondskull.name=Diamond Skull
 
+tile.zollernextras_corruptcobble.name=Corrupt Cobblestone
+tile.zollernextras_corruptstone.name=Corrupt Stone
+tile.zollernextras_corruptstonebricks.name=Corrupt Stone Bricks
+tile.zollernextras_corruptcreepstone.name=Corrupt Creepstone
+tile.zollernextras_corruptrock.name=Corrupt Rock
+tile.zollernextras_corruptchargiumore.name=Corrupt Chargium Ore
+tile.zollernextras_corruptetriumore.name=Corrupt Etrium Ore
+tile.zollernextras_endrock.name=Endrock
+
 tile.zollernextras_chocolate.name=Melted Chocolate
 fluid.zollernextras_chocolate=Melted Chocolate
 zollernextras_chocolate=Melted Chocolate
@@ -512,6 +521,9 @@ item.zollernextras_whitelavabucket.name=White Lava Bucket
 item.zollernextras_radiancepotion.name=Potion of Radiance
 item.zollernextras_jumppotion.name=Potion of Leaping
 
+item.zollernextras_etrium.name=Etrium
+item.zollernextras_crushedetrium.name=Crushed Etrium
+
 entity.zollernextras_fish.name=Fish
 entity.zollernextras_jellyfish.name=Jellyfish
 entity.zollernextras_megacreeper.name=Mega Creeper
@@ -565,6 +577,9 @@ death.attack.infection.item=%1$s perished to viral infection by %2$s using %3$s.
 death.attack.light=%1$s was blinded by the light.
 death.attack.light.player=%1$s was blinded by the light by %2$s.
 death.attack.light.item=%1$s was blinded by the light by %2$s using %3$s.
+death.attack.corruption=%1$s was corrupted.
+death.attack.corruption.player=%1$s was corrupted by %2$s.
+death.attack.corruption.item=%1$s was corrupted by %2$s using %3$s.
 
 zollernextras_commands.heal.usage=/heal [player]
 zollernextras_commands.stats.usage=/stats

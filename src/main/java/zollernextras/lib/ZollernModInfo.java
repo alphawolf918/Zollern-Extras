@@ -1,16 +1,19 @@
 package zollernextras.lib;
 
 public class ZollernModInfo {
-	public static final String MODID = "zollernextras";
-	public static final String NAME = "Zollern Extras";
-	public static final String OFFICIAL_NAME = NAME;
-	public static final String MINECRAFT_VERSION = "1.7.10";
-	public static final String MAJOR = "3";
-	public static final String MINOR = "5";
-	public static final String BUILD = "2";
-	public static final String VERSION = MAJOR + "." + MINOR + "." + BUILD
-			+ "-" + MINECRAFT_VERSION;
-	public static final String CHANNEL = MODID;
-	public static final String PROXY_LOCATION = ZollernModInfo.MODID
-			+ ".proxies";
+	
+	public static final String modId = "zollernextras";
+	public static final String majorVersion = "1";
+	public static final String minorVersion = "0";
+	public static final String buildVersion = "0";
+	public static final String modVersion = majorVersion + "." + minorVersion
+			+ "." + buildVersion;
+	public static final String minecraftVersion = "1.11.2";
+	public static final String officialName = "Zollern Extras";
+	public static final String name = officialName;
+	public static final String proxyLocation = "zollernextras.proxies.";
+	public static final String proxyClient = proxyLocation + "ClientProxy";
+	public static final String proxyServer = proxyLocation + "CommonProxy";
+	public static final String channel = modId;
+	
 }

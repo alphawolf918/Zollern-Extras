@@ -34,9 +34,11 @@ public class ZollernHelper {
 	
 	public static void setName(Block block, String strName) {
 		block.setRegistryName(ZollernModInfo.modId + "_" + strName);
+		block.setUnlocalizedName(ZollernModInfo.modId + "_" + strName);
 	}
 	
 	public static void setName(Item item, String strName) {
+		item.setRegistryName(ZollernModInfo.modId + "_" + strName);
 		item.setUnlocalizedName(ZollernModInfo.modId + "_" + strName);
 	}
 	

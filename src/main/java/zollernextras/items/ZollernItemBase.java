@@ -8,6 +8,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollernextras.lib.KeyHelper;
 import zollernextras.lib.ZollernHelper;
+import zollernextras.lib.ZollernModInfo;
 import com.mojang.realmsclient.gui.ChatFormatting;
 
 public class ZollernItemBase extends Item {
@@ -16,8 +17,8 @@ public class ZollernItemBase extends Item {
 	
 	public ZollernItemBase(String itemName) {
 		this.setTab();
-		this.setRegistryName(itemName);
-		this.setUnlocalizedName(itemName);
+		this.setRegistryName(ZollernModInfo.modId + "_" + itemName);
+		this.setUnlocalizedName(ZollernModInfo.modId + "_" + itemName);
 	}
 	
 	public Item setTab() {

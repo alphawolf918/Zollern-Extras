@@ -27,7 +27,7 @@ public class RegistryUtil {
 				GameRegistry.register(itemBlock, block.getRegistryName());
 				ModelLoader.setCustomModelResourceLocation(Item
 						.getItemFromBlock(block), 0, new ModelResourceLocation(
-						block.getRegistryName(), "inventory"));
+						block.getRegistryName(), "normal"));
 			}
 		}
 	}
@@ -39,7 +39,7 @@ public class RegistryUtil {
 				GameRegistry.register(item);
 				ModelLoader.setCustomModelResourceLocation(item, 0,
 						new ModelResourceLocation(item.getRegistryName(),
-								"inventory"));
+								"normal"));
 			}
 		}
 	}

@@ -3,6 +3,7 @@ package zollernextras.lib;
 import java.io.File;
 import java.util.Random;
 import net.minecraft.block.Block;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.util.text.TextComponentString;
@@ -24,11 +25,11 @@ public class ZollernHelper {
 	}
 	
 	public static void setTab(Block block) {
-		// block.setCreativeTab(ModTabs.zTab);
+		block.setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
 	}
 	
 	public static void setTab(Item item) {
-		// item.setCreativeTab(ModTabs.zTab);
+		item.setCreativeTab(CreativeTabs.MATERIALS);
 	}
 	
 	public static void setName(Block block, String strName) {
@@ -37,36 +38,6 @@ public class ZollernHelper {
 	
 	public static void setName(Item item, String strName) {
 		item.setUnlocalizedName(ZollernModInfo.modId + "_" + strName);
-	}
-	
-	public static void setTexture(Block block, String strTexture) {
-		// block.set(ZollernModInfo.modId + ":" + strTexture);
-	}
-	
-	public static void setTexture(Item item, String strTexture) {
-		// item.setTextureName(ZollernModInfo.modId + ":" + strTexture);
-	}
-	
-	public static void setNameAndTexture(Block block, String strName,
-			String strTexture) {
-		setName(block, strName);
-		setTexture(block, strTexture);
-	}
-	
-	public static void setNameAndTexture(Item item, String strName,
-			String strTexture) {
-		setName(item, strName);
-		setTexture(item, strTexture);
-	}
-	
-	public static void setNameAndTexture(Block block, String strBoth) {
-		setName(block, strBoth);
-		setTexture(block, strBoth);
-	}
-	
-	public static void setNameAndTexture(Item item, String strBoth) {
-		setName(item, strBoth);
-		setTexture(item, strBoth);
 	}
 	
 	public static void setHardResist(Block block, float hardness,

@@ -14,9 +14,10 @@ public class ZollernItemBase extends Item {
 	
 	protected String itemDetails;
 	
-	public ZollernItemBase(String strTexture) {
+	public ZollernItemBase(String itemName) {
 		this.setTab();
-		this.setNameAndTexture(strTexture);
+		this.setRegistryName(itemName);
+		this.setUnlocalizedName(itemName);
 	}
 	
 	public Item setTab() {
@@ -26,21 +27,6 @@ public class ZollernItemBase extends Item {
 	
 	public Item setName(String strName) {
 		ZollernHelper.setName(this, strName);
-		return this;
-	}
-	
-	public Item setTexture(String strTexture) {
-		ZollernHelper.setTexture(this, strTexture);
-		return this;
-	}
-	
-	public Item setNameAndTexture(String strNameTexture) {
-		ZollernHelper.setNameAndTexture(this, strNameTexture);
-		return this;
-	}
-	
-	public Item setNameAndTexture(String strName, String strTexture) {
-		ZollernHelper.setNameAndTexture(this, strName, strTexture);
 		return this;
 	}
 	

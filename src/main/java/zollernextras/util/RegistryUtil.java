@@ -35,7 +35,12 @@ public class RegistryUtil {
 	public static void registerItems(FMLPreInitializationEvent event,
 			Item... items) {
 		for (Item item : items) {
-			
+			if (event.getSide() == Side.CLIENT) {
+				GameRegistry.register(item);
+				ModelLoader.setCustomModelResourceLocation(item, 0,
+						new ModelResourceLocation(item.getRegistryName(),
+								"inventory"));
+			}
 		}
 	}
 	

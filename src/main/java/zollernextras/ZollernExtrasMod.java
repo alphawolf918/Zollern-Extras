@@ -16,6 +16,7 @@ import zollernextras.lib.ZollernHelper;
 import zollernextras.lib.ZollernModInfo;
 import zollernextras.proxies.CommonProxy;
 import zollernextras.proxies.IProxy;
+import zollernextras.util.RegistryUtil;
 
 @Mod(modid = ZollernModInfo.modId, version = ZollernModInfo.modVersion,
 		name = ZollernModInfo.name)
@@ -44,6 +45,7 @@ public class ZollernExtrasMod {
 		snw = NetworkRegistry.INSTANCE.newSimpleChannel(ZollernModInfo.modId);
 		this.filePath = ZollernHelper.getFilePath(event);
 		ZEConfig.init(event);
+		RegistryUtil.registerAll(event);
 		instance().proxy.preInit(event);
 	}
 	

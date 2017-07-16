@@ -5,19 +5,20 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
+import zollernextras.blocks.ZollernBlocks;
+import zollernextras.items.ZollernItems;
 
 public class RegistryUtil {
 	
 	public static void registerAll(FMLPreInitializationEvent event) {
-		
+		registerBlocks(event, ZollernBlocks.superChargedCoalBlock);
+		registerItems(event, ZollernItems.superChargedCoal);
 	}
 	
-	public static void registerBlocks(FMLInitializationEvent event,
+	public static void registerBlocks(FMLPreInitializationEvent event,
 			Block... blocks) {
 		for (Block block : blocks) {
 			final ItemBlock itemBlock = new ItemBlock(block);
@@ -31,7 +32,7 @@ public class RegistryUtil {
 		}
 	}
 	
-	public static void registerItems(FMLPostInitializationEvent event,
+	public static void registerItems(FMLPreInitializationEvent event,
 			Item... items) {
 		for (Item item : items) {
 			

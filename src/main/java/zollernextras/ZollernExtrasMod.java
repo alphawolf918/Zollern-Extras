@@ -11,6 +11,7 @@ import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import zollernextras.config.ZEConfig;
+import zollernextras.creativetabs.ModTabs;
 import zollernextras.handlers.FuelHandler;
 import zollernextras.lib.ZollernHelper;
 import zollernextras.lib.ZollernModInfo;
@@ -42,8 +43,9 @@ public class ZollernExtrasMod {
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
-		snw = NetworkRegistry.INSTANCE.newSimpleChannel(ZollernModInfo.modId);
+		snw = NetworkRegistry.INSTANCE.newSimpleChannel(ZollernModInfo.channel);
 		this.filePath = ZollernHelper.getFilePath(event);
+		ModTabs.init();
 		ZEConfig.init(event);
 		RegistryUtil.registerAll(event);
 		instance().proxy.preInit(event);

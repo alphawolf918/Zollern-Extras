@@ -17,28 +17,6 @@ public class CommonRegisterHelper {
 	
 	public static int entityIDs = 0;
 	
-	// public static void registerBlock(Block block,
-	// Class<? extends ItemBlock> itemBlock) {
-	// GameRegistry.registerBlock(block, itemBlock, block.getUnlocalizedName()
-	// .substring(5));
-	// }
-	
-	// public static void registerBlock(Block block,
-	// Class<? extends ItemBlock> itemBlock, Object... objectFromItemBlock) {
-	// GameRegistry.registerBlock(block, itemBlock, block.getUnlocalizedName()
-	// .substring(5), objectFromItemBlock);
-	// }
-	
-	// public static void registerBlock(Block block) {
-	// GameRegistry.registerBlock(block,
-	// block.getUnlocalizedName().substring(5));
-	// }
-	
-	// public static void registerItem(Item item) {
-	// GameRegistry.reg.registerItem(item,
-	// item.getUnlocalizedName().substring(5));
-	// }
-	
 	public static void registerFluid(Fluid fluid) {
 		FluidRegistry.registerFluid(fluid);
 	}
@@ -58,11 +36,6 @@ public class CommonRegisterHelper {
 	
 	public static void setBlockHarvestLevel(Block block, String tool, int level) {
 		block.setHarvestLevel(tool, level);
-	}
-	
-	public static void setBlockHarvestLevel(Block block, String tool,
-			int level, int meta) {
-		block.setHarvestLevel(tool, level, block.getStateFromMeta(meta));
 	}
 	
 	public static void setToolHarvestLevel(Item item, String tool, int level) {

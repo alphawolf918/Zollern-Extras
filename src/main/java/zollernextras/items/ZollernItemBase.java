@@ -1,11 +1,13 @@
 package zollernextras.items;
 
 import java.util.List;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import zollernextras.creativetabs.ModTabs;
 import zollernextras.lib.KeyHelper;
 import zollernextras.lib.ZollernHelper;
 import zollernextras.lib.ZollernModInfo;
@@ -24,6 +26,12 @@ public class ZollernItemBase extends Item {
 	public Item setTab() {
 		ZollernHelper.setTab(this);
 		return this;
+	}
+	
+	@Override
+	@SideOnly(Side.CLIENT)
+	public CreativeTabs getCreativeTab() {
+		return ModTabs.zTab;
 	}
 	
 	public Item setName(String strName) {

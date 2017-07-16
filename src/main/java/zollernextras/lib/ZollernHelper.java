@@ -3,12 +3,12 @@ package zollernextras.lib;
 import java.io.File;
 import java.util.Random;
 import net.minecraft.block.Block;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import zollernextras.creativetabs.ModTabs;
 
 public class ZollernHelper {
 	
@@ -25,11 +25,11 @@ public class ZollernHelper {
 	}
 	
 	public static void setTab(Block block) {
-		block.setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
+		block.setCreativeTab(ModTabs.zTab);
 	}
 	
 	public static void setTab(Item item) {
-		item.setCreativeTab(CreativeTabs.MATERIALS);
+		item.setCreativeTab(ModTabs.zTab);
 	}
 	
 	public static void setName(Block block, String strName) {

@@ -5,14 +5,15 @@ import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import zollernextras.lib.ZollernModInfo;
+import zollernextras.creativetabs.ModTabs;
+import zollernextras.lib.ZollernHelper;
 
 public class ZollernBlockBase extends Block {
 	
 	public ZollernBlockBase(String blockName, float hardResist) {
 		super(Material.ROCK);
-		this.setRegistryName(ZollernModInfo.modId + "_" + blockName);
-		this.setUnlocalizedName(ZollernModInfo.modId + "_" + blockName);
+		ZollernHelper.setName(this, blockName);
+		ZollernHelper.setTab(this);
 		this.setHardness(hardResist);
 		this.setResistance(hardResist);
 	}
@@ -20,6 +21,6 @@ public class ZollernBlockBase extends Block {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public CreativeTabs getCreativeTabToDisplayOn() {
-		return CreativeTabs.BUILDING_BLOCKS;
+		return ModTabs.zTab;
 	}
 }

@@ -2,15 +2,17 @@ package zollernextras.blocks;
 
 import net.minecraft.block.Block;
 import zollernextras.items.ZollernItems;
-import zollernextras.lib.ZollernHelper;
 
 public class ZollernBlocks {
 	
 	public static final Block superChargedCoalBlock = new ZollernBlockBase(
 			"superchargedcoalblock", 1.0F);
-	public static final Block superChargedCoalOre = ((ZollernBlockOre) new ZollernBlockOre(
+	public static final Block superChargedCoalOre = ((ZollernGemOre) new ZollernGemOre(
 			"superchargedcoalore", 1.5F)
-			.setItemDropped(ZollernItems.superChargedCoal))
-			.setAmountDropped(ZollernHelper.rngNumber(2, 4));
+			.setItemDropped(ZollernItems.superChargedCoal)).setMinMaxDropped(1,
+			4);
+	public static final Block netherSuperChargedCoalOre = ((new ZollernGemOre(
+			"nethersuperchargedcoalore", 1.8F))
+			.setItemDropped(ZollernItems.superChargedCoal));
 	
 }

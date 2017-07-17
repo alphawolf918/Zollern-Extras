@@ -5,4 +5,18 @@
     * Mod configs.
     * Fuel handler.
     * Damage sources.
-    * 
+    * Super Charged Coal Ore:
+        * Variants:
+            * Overworld
+            * Nether
+            *
+            *
+            * 
+        * Generates in:
+            * Overworld
+            * Nether
+    * Super Charged Coal
+        * Can be used as a fuel source.
+* Mechanical changes:
+    * Ore blocks will now come in "variants" - each variant will have special functionality.
+        * Current variants are Overworld, Nether, End, Upside-Down and Promised-Land.

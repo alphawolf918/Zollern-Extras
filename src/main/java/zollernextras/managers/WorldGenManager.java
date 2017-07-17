@@ -43,7 +43,14 @@ public class WorldGenManager implements IWorldGenerator {
 	}
 	
 	private void generateNether(World world, Random random, int x, int z) {
+		int Xcoord = x + random.nextInt(16);
+		int Ycoord = 10 + random.nextInt(128);
+		int Zcoord = z + random.nextInt(16);
 		
+		// Super Charged Coal Ore
+		addNetherOreSpawn(ZollernBlocks.netherSuperChargedCoalOre, world,
+				random, Xcoord, Zcoord, 16, 16, 4 + random.nextInt(10),
+				ZEConfig.oreSuperCoalSpawnRate + 10, 4, 98);
 	}
 	
 	private void generateEnd(World world, Random random, int x, int z) {

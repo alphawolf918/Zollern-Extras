@@ -44,7 +44,6 @@ public class WorldGenManager implements IWorldGenerator {
 	
 	private void generateNether(World world, Random random, int x, int z) {
 		int Xcoord = x + random.nextInt(16);
-		int Ycoord = 10 + random.nextInt(128);
 		int Zcoord = z + random.nextInt(16);
 		
 		// Super Charged Coal Ore
@@ -54,7 +53,13 @@ public class WorldGenManager implements IWorldGenerator {
 	}
 	
 	private void generateEnd(World world, Random random, int x, int z) {
+		int Xcoord = x + random.nextInt(16);
+		int Zcoord = z + random.nextInt(16);
 		
+		// Super Charged Coal Ore
+		addEnderOreSpawn(ZollernBlocks.enderSuperChargedCoalOre, world, random,
+				Xcoord, Zcoord, 16, 16, 4 + random.nextInt(10),
+				ZEConfig.oreSuperCoalSpawnRate + 10, 4, 110);
 	}
 	
 	private void generateUpsideDown(World world, Random random, int x, int z) {
@@ -121,26 +126,6 @@ public class WorldGenManager implements IWorldGenerator {
 		}
 	}
 	
-	/**
-	 * Spawns a structure in the world
-	 *
-	 * @author Zollern Wolf
-	 * @param minChance
-	 *            The minimum chance that the structure has to spawn.
-	 * @param maxChance
-	 *            The maximum chance that the structure has to spawn.
-	 * @param world
-	 *            The world for the structure to spawn in.
-	 * @param random
-	 *            Needed for randomization and comparison.
-	 * @param x
-	 *            The X coordinate to spawn in at.
-	 * @param y
-	 *            The Y coordinate to spawn in at.
-	 * @param z
-	 * @param wg
-	 *            The structure.
-	 */
 	public static void spawnStructure(int minChance, int maxChance,
 			World world, Random random, int x, int y, int z, WorldGenerator wg) {
 		if (random.nextInt(maxChance) <= minChance) {

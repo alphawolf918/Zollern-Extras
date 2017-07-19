@@ -13,11 +13,17 @@ public class ZollernBlockOre extends ZollernBlockBase {
 	
 	protected static Item itemDropped;
 	protected EnumBlockVariant oreVariant = EnumBlockVariant.OVERWORLD;
+	protected static ZollernBlockOre instance;
 	
 	public ZollernBlockOre(String strName, float hardResist) {
 		super(strName, hardResist);
+		instance = this;
 		this.itemDropped = Item.getItemFromBlock(this);
 		this.setHarvestLevel("pickaxe", 3);
+	}
+	
+	public static ZollernBlockOre instance() {
+		return instance;
 	}
 	
 	public EnumBlockVariant getBlockVariant() {

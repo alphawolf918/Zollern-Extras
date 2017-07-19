@@ -16,7 +16,8 @@ public class RegistryUtil {
 	public static void registerAll(FMLPreInitializationEvent event) {
 		registerBlocks(event, ZollernBlocks.superChargedCoalBlock,
 				ZollernBlocks.superChargedCoalOre,
-				ZollernBlocks.netherSuperChargedCoalOre);
+				ZollernBlocks.netherSuperChargedCoalOre,
+				ZollernBlocks.enderSuperChargedCoalOre);
 		registerItems(event, ZollernItems.superChargedCoal);
 	}
 	

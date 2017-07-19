@@ -2,6 +2,7 @@ package zollernextras.blocks;
 
 import net.minecraft.block.Block;
 import zollernextras.items.ZollernItems;
+import zollernextras.lib.EnumBlockVariant;
 
 public class ZollernBlocks {
 	
@@ -11,8 +12,13 @@ public class ZollernBlocks {
 			"superchargedcoalore", 1.5F)
 			.setItemDropped(ZollernItems.superChargedCoal)).setMinMaxDropped(1,
 			4);
-	public static final Block netherSuperChargedCoalOre = ((new ZollernGemOre(
+	public static final Block netherSuperChargedCoalOre = ((ZollernBlockOre) (new ZollernGemOre(
 			"nethersuperchargedcoalore", 1.8F))
-			.setItemDropped(ZollernItems.superChargedCoal));
+			.setItemDropped(ZollernItems.superChargedCoal))
+			.setBlockVariant(EnumBlockVariant.NETHER);
+	public static final Block enderSuperChargedCoalOre = ((ZollernGemOre) new ZollernGemOre(
+			"endersuperchargedcoalore", 2.1F)
+			.setItemDropped(ZollernItems.superChargedCoal))
+			.setBlockVariant(EnumBlockVariant.END);
 	
 }

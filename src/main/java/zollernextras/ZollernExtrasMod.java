@@ -9,6 +9,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
+import zollernextras.biomes.BiomeList;
 import zollernextras.config.ZEConfig;
 import zollernextras.creativetabs.ModTabs;
 import zollernextras.handlers.Handlers;
@@ -47,6 +48,7 @@ public class ZollernExtrasMod {
 		ModTabs.init();
 		ZEConfig.init(event);
 		RegistryUtil.registerAll(event);
+		BiomeList.init();
 		instance().proxy.preInit(event);
 	}
 	

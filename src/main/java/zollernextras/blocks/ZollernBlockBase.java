@@ -10,12 +10,19 @@ import zollernextras.lib.ZollernHelper;
 
 public class ZollernBlockBase extends Block {
 	
+	protected static ZollernBlockBase instance;
+	
 	public ZollernBlockBase(String blockName, float hardResist) {
 		super(Material.ROCK);
+		instance = this;
 		ZollernHelper.setName(this, blockName);
 		ZollernHelper.setTab(this);
 		this.setHardness(hardResist);
 		this.setResistance(hardResist);
+	}
+	
+	public static ZollernBlockBase instance() {
+		return instance;
 	}
 	
 	@Override

@@ -15,6 +15,8 @@ import zollernextras.creativetabs.ModTabs;
 import zollernextras.handlers.Handlers;
 import zollernextras.lib.ZollernHelper;
 import zollernextras.lib.ZollernModInfo;
+import zollernextras.lib.modhelper.ModHelperBase;
+import zollernextras.lib.recipes.RecipeManager;
 import zollernextras.proxies.CommonProxy;
 import zollernextras.proxies.IProxy;
 import zollernextras.util.RegistryUtil;
@@ -45,6 +47,7 @@ public class ZollernExtrasMod {
 	public void preInit(FMLPreInitializationEvent event) {
 		snw = NetworkRegistry.INSTANCE.newSimpleChannel(ZollernModInfo.channel);
 		this.filePath = ZollernHelper.getFilePath(event);
+		ModHelperBase.detectMods();
 		ModTabs.init();
 		ZEConfig.init(event);
 		RegistryUtil.registerAll(event);
@@ -55,7 +58,9 @@ public class ZollernExtrasMod {
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
 		instance().proxy.init(event);
+		BiomeList.init();
 		Handlers.init();
+		RecipeManager.init();
 		NetworkRegistry.INSTANCE.registerGuiHandler(this, new CommonProxy());
 	}
 	

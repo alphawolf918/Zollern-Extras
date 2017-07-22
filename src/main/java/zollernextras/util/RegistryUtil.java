@@ -17,8 +17,15 @@ public class RegistryUtil {
 		registerBlocks(event, ZollernBlocks.superChargedCoalBlock,
 				ZollernBlocks.superChargedCoalOre,
 				ZollernBlocks.netherSuperChargedCoalOre,
-				ZollernBlocks.enderSuperChargedCoalOre);
-		registerItems(event, ZollernItems.superChargedCoal);
+				ZollernBlocks.enderSuperChargedCoalOre,
+				ZollernBlocks.amaranthBlock, ZollernBlocks.amaranthOre,
+				ZollernBlocks.netherAmaranthOre,
+				ZollernBlocks.enderAmaranthOre, ZollernBlocks.azuriteBlock,
+				ZollernBlocks.azuriteOre);
+		
+		registerItems(event, ZollernItems.superChargedCoal,
+				ZollernItems.amaranthIngot, ZollernItems.amaranthDust,
+				ZollernItems.azurite);
 	}
 	
 	public static void registerBlocks(FMLPreInitializationEvent event,

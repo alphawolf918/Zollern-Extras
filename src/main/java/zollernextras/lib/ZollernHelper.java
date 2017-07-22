@@ -2,15 +2,19 @@ package zollernextras.lib;
 
 import java.io.File;
 import java.util.Random;
+import java.util.logging.Logger;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import zollernextras.config.ZEConfig;
 import zollernextras.creativetabs.ModTabs;
 
 public class ZollernHelper {
+	
+	public static final Logger LOGGER = Logger.getLogger(ZollernModInfo.modId);
 	
 	public static boolean getRNGChance(int min, int max) {
 		if (min >= max) {
@@ -90,5 +94,15 @@ public class ZollernHelper {
 	 */
 	public static void addChatMessage(EntityPlayer player, String text) {
 		player.sendMessage(new TextComponentString(text));
+	}
+	
+	public static void logInfo(String str) {
+		LOGGER.info("[" + ZollernModInfo.modId + "] " + str);
+	}
+	
+	public static void logDebug(String str) {
+		if (ZEConfig.enableDebugMode) {
+			logInfo("[DEBUG]" + str);
+		}
 	}
 }

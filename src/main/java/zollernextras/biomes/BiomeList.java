@@ -1,6 +1,7 @@
 package zollernextras.biomes;
 
 import net.minecraft.world.biome.Biome;
+import zollernextras.config.ZEConfig;
 
 public class BiomeList {
 	
@@ -10,6 +11,8 @@ public class BiomeList {
 			new Biome.BiomeProperties("Miner's Land"));
 	
 	public static void init() {
+		Biome.registerBiome(ZEConfig.biomeMinersLandID, "miners_land",
+				biomeMinersLand);
 		
 	}
 	

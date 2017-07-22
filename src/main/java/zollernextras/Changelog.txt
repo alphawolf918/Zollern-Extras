@@ -1,22 +1,14 @@
 [Zollern Extras - Initial Migration - to 1.11.2 - v1.0.0]
 
-* Added:
-    * Biome GUI overlay.
-    * Mod configs.
-    * Fuel handler.
-    * Damage sources.
-    * Super Charged Coal Ore:
-        * Variants:
-            * Overworld
-            * Nether
-            *
-            *
-            * 
-        * Generates in:
-            * Overworld
-            * Nether
-    * Super Charged Coal
-        * Can be used as a fuel source.
-* Mechanical changes:
-    * Ore blocks will now come in "variants" - each variant will have special functionality.
-        * Current variants are Overworld, Nether, End, Upside-Down and Promised-Land.
+* Most things are being ported over. Some stuff may have to be left behind to make way for new things and new
+  functionality. This will be a slow, grueling process, but it will be well worth it. I thank everyone for
+  their continued patience.
+
+* Changes:
+    * Revamped some block textures.
+    * Nether and Ender ore gen should now be more fluid (and natural).
+    * Super Charged Coal now cooks much less items than it used to.
+        * It cooks 16 items now (it used to be 512), as opposed to the 8 of regular coal.
+            * Super Charged Coal Blocks cook 9x this.
+        * It's a painful nerf, but a necessary one. It was too common and it just made things too easy.
+    * 

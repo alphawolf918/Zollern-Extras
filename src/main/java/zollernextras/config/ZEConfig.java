@@ -4,7 +4,6 @@ import java.io.File;
 import java.util.ArrayList;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import zollernextras.ZollernExtrasMod;
 
 public class ZEConfig {
 	
@@ -129,9 +128,6 @@ public class ZEConfig {
 		config = new Configuration(new File(event
 				.getModConfigurationDirectory().getAbsolutePath()
 				+ "/ZollernExtras/ZollernExtras.cfg"));
-		ZollernExtrasMod.instance().filePath = new File(event
-				.getModConfigurationDirectory().getAbsolutePath()
-				+ "/ZollernExtras/");
 		config.load();
 		
 		config.addCustomCategoryComment(config.CATEGORY_GENERAL,

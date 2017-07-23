@@ -76,6 +76,10 @@ public class WorldGenManager implements IWorldGenerator {
 		addOreSpawn(ZollernBlocks.zincOre, world, random, x, z, 16, 16,
 				4 + random.nextInt(2), ZEConfig.oreZincSpawnRate, 4, 32);
 		
+		// Steel Ore
+		addOreSpawn(ZollernBlocks.steelOre, world, random, x, z, 16, 16,
+				2 + random.nextInt(2), ZEConfig.oreSteelSpawnRate, 4, 32);
+		
 		// Garnet Ore
 		addOreSpawn(ZollernBlocks.garnetOre, world, random, x, z, 16, 16,
 				4 + random.nextInt(2), ZEConfig.oreGarnetSpawnRate, 4, 42);
@@ -87,13 +91,29 @@ public class WorldGenManager implements IWorldGenerator {
 		// Aquamarine Ore
 		addOreSpawn(ZollernBlocks.aquamarineOre, world, random, x, z, 16, 16,
 				4 + random.nextInt(2), ZEConfig.oreAquamarineSpawnRate, 4, 42);
+		
+		// Ruby Ore
+		addOreSpawn(ZollernBlocks.rubyOre, world, random, x, z, 16, 16,
+				4 + random.nextInt(2), ZEConfig.oreRubySpawnRate, 4, 42);
+		
+		// Sapphire Ore
+		addOreSpawn(ZollernBlocks.sapphireOre, world, random, x, z, 16, 16,
+				4 + random.nextInt(2), ZEConfig.oreSapphireSpawnRate, 4, 42);
+		
+		// Topaz Ore
+		addOreSpawn(ZollernBlocks.topazOre, world, random, x, z, 16, 16,
+				4 + random.nextInt(2), ZEConfig.oreTopazSpawnRate, 4, 42);
+		
+		// Opal Ore
+		addOreSpawn(ZollernBlocks.opalOre, world, random, x, z, 16, 16,
+				4 + random.nextInt(2), ZEConfig.oreOpalSpawnRate, 4, 42);
 	}
 	
 	private void generateNether(World world, Random random, int x, int z) {
 		int Xcoord = x + random.nextInt(16);
 		int Zcoord = z + random.nextInt(16);
 		
-		// Super Charged Coal Ore
+		// Nether Super Charged Coal Ore
 		addNetherOreSpawn(ZollernBlocks.netherSuperChargedCoalOre, world,
 				random, Xcoord, Zcoord, 16, 16, 4 + random.nextInt(10),
 				ZEConfig.oreSuperCoalSpawnRate + 10, 2, 128);
@@ -105,34 +125,39 @@ public class WorldGenManager implements IWorldGenerator {
 		
 		// Obsidian (needed for Azurite Ore gen)
 		addNetherOreSpawn(Blocks.OBSIDIAN, world, random, x, z, 16, 16,
-				10 + random.nextInt(5), 62, 1, 92);
+				10 + random.nextInt(5), 62, 1, 128);
 		
 		// Azurite Ore
 		addObsidianOreSpawn(ZollernBlocks.azuriteOre, world, random, x, z, 16,
 				16, 10 + random.nextInt(5), ZEConfig.oreAzuriteSpawnRate + 30,
-				1, 92);
+				1, 128);
 		
-		// Ender Shard Ore
+		// Nether Ender Shard Ore
 		addNetherOreSpawn(ZollernBlocks.netherEnderShardOre, world, random, x,
 				z, 16, 16, 2 + random.nextInt(4),
-				ZEConfig.oreEnderShardSpawnRate + 10, 4, 92);
+				ZEConfig.oreEnderShardSpawnRate + 10, 4, 128);
 		
-		// Fueltonium Ore
+		// Nether Fueltonium Ore
 		addNetherOreSpawn(ZollernBlocks.netherFueltoniumOre, world, random, x,
 				z, 16, 16, 2 + random.nextInt(4),
-				ZEConfig.oreFueltoniumSpawnRate + 10, 4, 92);
+				ZEConfig.oreFueltoniumSpawnRate + 10, 4, 128);
 		
-		// Zinc Ore
+		// Nether Zinc Ore
 		addNetherOreSpawn(ZollernBlocks.netherZincOre, world, random, x, z, 16,
 				16, 4 + random.nextInt(2), ZEConfig.oreZincSpawnRate + 10, 4,
-				32);
+				128);
+		
+		// Nether Steel Ore
+		addNetherOreSpawn(ZollernBlocks.netherSteelOre, world, random, x, z,
+				16, 16, 4 + random.nextInt(2), ZEConfig.oreSteelSpawnRate + 10,
+				4, 128);
 	}
 	
 	private void generateEnd(World world, Random random, int x, int z) {
-		int Xcoord = x + random.nextInt(16);
-		int Zcoord = z + random.nextInt(16);
+		int Xcoord = x;// + random.nextInt(16);
+		int Zcoord = z;// + random.nextInt(16);
 		
-		// Super Charged Coal Ore
+		// Ender Super Charged Coal Ore
 		addEnderOreSpawn(ZollernBlocks.enderSuperChargedCoalOre, world, random,
 				Xcoord, Zcoord, 16, 16, 4 + random.nextInt(2),
 				ZEConfig.oreSuperCoalSpawnRate + 5, 4, 110);
@@ -144,16 +169,29 @@ public class WorldGenManager implements IWorldGenerator {
 		
 		// Azurite Ore
 		addObsidianOreSpawn(ZollernBlocks.azuriteOre, world, random, x, z, 16,
-				16, 4 + random.nextInt(2), ZEConfig.oreAzuriteSpawnRate, 1, 72);
+				16, 4 + random.nextInt(2), ZEConfig.oreAzuriteSpawnRate + 10,
+				1, 210);
 		
-		// Fueltonium Ore
-		addEnderOreSpawn(ZollernBlocks.fueltoniumOre, world, random, x, z, 16,
-				16, 4 + random.nextInt(2), ZEConfig.oreFueltoniumSpawnRate, 1,
-				72);
+		// Ender Fueltonium Ore
+		addEnderOreSpawn(ZollernBlocks.enderFueltoniumOre, world, random, x, z,
+				16, 16, 4 + random.nextInt(2),
+				ZEConfig.oreFueltoniumSpawnRate + 5, 1, 110);
 		
-		// Zinc Ore
+		// Ender Zinc Ore
 		addEnderOreSpawn(ZollernBlocks.enderZincOre, world, random, x, z, 16,
-				16, 4 + random.nextInt(2), ZEConfig.oreZincSpawnRate + 5, 4, 32);
+				16, 4 + random.nextInt(2), ZEConfig.oreZincSpawnRate + 5, 4,
+				110);
+		
+		// Ender Steel Ore
+		addEnderOreSpawn(ZollernBlocks.enderSteelOre, world, random, x, z, 16,
+				16, 4 + random.nextInt(2), ZEConfig.oreSteelSpawnRate + 5, 4,
+				110);
+		
+		// Enderite Ore
+		addEnderOreSpawn(ZollernBlocks.enderiteOre, world, random, x, z, 16,
+				16, 4 + random.nextInt(2), ZEConfig.oreEnderiteSpawnRate + 5,
+				4, 110);
+		
 	}
 	
 	private void generateUpsideDown(World world, Random random, int x, int z) {

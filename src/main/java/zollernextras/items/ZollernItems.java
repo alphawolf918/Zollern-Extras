@@ -31,4 +31,9 @@ public class ZollernItems {
 	public static final Item garnet = new ZollernItemBase("garnet");
 	public static final Item topaz = new ZollernItemBase("topaz");
 	public static final Item sapphire = new ZollernItemBase("sapphire");
+	public static final Item steelIngot = new ZollernItemBase("steelingot");
+	public static final Item steelDust = new ZollernItemBase("steeldust");
+	public static final Item enderiteIngot = new ZollernItemBase(
+			"enderiteingot");
+	public static final Item enderiteDust = new ZollernItemBase("enderitedust");
 }

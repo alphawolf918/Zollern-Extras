@@ -34,9 +34,9 @@ public class ZollernBlocks {
 	
 	// Azurite
 	public static final Block azuriteBlock = new ZollernBlockMetal(
-			"azuriteblock").setLightLevel(5.0F);
+			"azuriteblock").setLightLevel(1.0F);
 	public static final Block azuriteOre = ((ZollernBlockOre) new ZollernGemOre(
-			"azuriteore", 3.2F).setLightLevel(1.5F))
+			"azuriteore", 3.2F).setLightLevel(0.6F))
 			.setItemDropped(ZollernItems.azurite);
 	
 	// Ender Shard
@@ -85,13 +85,26 @@ public class ZollernBlocks {
 	public static final Block enderZincOre = new ZollernBlockOre(
 			"enderzincore", 3.2F).setBlockVariant(EnumBlockVariant.END);
 	
-	// Ruby
+	// Topaz
+	public static final Block topazBlock = new ZollernBlockMetal("topazblock");
+	public static final Block topazOre = new ZollernGemOre("topazore", 1.2F)
+			.setItemDropped(ZollernItems.topaz);
 	
-	// Emerald
+	// Ruby
+	public static final Block rubyBlock = new ZollernBlockMetal("rubyblock");
+	public static final Block rubyOre = new ZollernGemOre("rubyore", 1.2F)
+			.setItemDropped(ZollernItems.ruby);
 	
 	// Sapphire
+	public static final Block sapphireBlock = new ZollernBlockMetal(
+			"sapphireblock");
+	public static final Block sapphireOre = new ZollernGemOre("sapphireore",
+			1.2F).setItemDropped(ZollernItems.sapphire);
 	
 	// Opal
+	public static final Block opalBlock = new ZollernBlockMetal("opalblock");
+	public static final Block opalOre = new ZollernGemOre("opalore", 1.2F)
+			.setItemDropped(ZollernItems.opal);
 	
 	// Witherite
 	public static final Block witheriteBlock = new ZollernBlockMetal(
@@ -104,6 +117,20 @@ public class ZollernBlocks {
 			"zollerniumblock");
 	public static final Block zollerniumOre = new ZollernBlockOre(
 			"zollerniumore", 5.0F);
+	
+	// Steel
+	public static final Block steelBlock = new ZollernBlockMetal("steelblock");
+	public static final Block steelOre = new ZollernBlockOre("steelore", 4.5F);
+	public static final Block netherSteelOre = new ZollernBlockOre(
+			"nethersteelore", 4.6F).setBlockVariant(EnumBlockVariant.NETHER);
+	public static final Block enderSteelOre = new ZollernBlockOre(
+			"endersteelore", 4.7F).setBlockVariant(EnumBlockVariant.END);
+	
+	// Enderite
+	public static final Block enderiteBlock = new ZollernBlockMetal(
+			"enderiteblock");
+	public static final Block enderiteOre = new ZollernBlockOre("enderiteore",
+			2.4F).setBlockVariant(EnumBlockVariant.END);
 	
 	// Etrium
 	

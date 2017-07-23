@@ -73,8 +73,31 @@ public class RecipeManager {
 			// Aquamarine -> Aquamarine Block
 			RecipeHelper.fullBlockCraft(ZollernBlocks.aquamarineBlock,
 					ZollernItems.aquamarine);
+			
+			// Ruby -> Ruby Block
+			RecipeHelper.fullBlockCraft(ZollernBlocks.rubyBlock,
+					ZollernItems.ruby);
+			
+			// Sapphire -> Sapphire Block
+			RecipeHelper.fullBlockCraft(ZollernBlocks.sapphireBlock,
+					ZollernItems.sapphire);
+			
+			// Topaz -> Topaz Block
+			RecipeHelper.fullBlockCraft(ZollernBlocks.topazBlock,
+					ZollernItems.topaz);
+			
+			// Opal -> Opal Block
+			RecipeHelper.fullBlockCraft(ZollernBlocks.opalBlock,
+					ZollernItems.opal);
+			
+			// Steel Ingot -> Steel Block
+			RecipeHelper.fullBlockCraft(ZollernBlocks.steelBlock,
+					ZollernItems.steelIngot);
+			
+			// Enderite Ingot -> Enderite Block
+			RecipeHelper.fullBlockCraft(ZollernBlocks.enderiteBlock,
+					ZollernItems.enderiteIngot);
 		}
-		
 	}
 	
 	static class Smelting {
@@ -130,6 +153,30 @@ public class RecipeManager {
 			// Zinc Dust -> Zinc Ingot
 			RecipeHelper.addSmelting(ZollernItems.zincDust,
 					ZollernItems.zincIngot, 1.2F);
+			
+			// Steel Ore -> Steel Ingot
+			RecipeHelper.addSmelting(ZollernBlocks.steelOre,
+					ZollernItems.steelIngot, 0.6F);
+			
+			// Nether Steel Ore -> Steel Ingot
+			RecipeHelper.addSmelting(ZollernBlocks.netherSteelOre,
+					new ItemStack(ZollernItems.steelIngot, 2), 0.6F);
+			
+			// Ender Steel Ore -> Steel Ingot
+			RecipeHelper.addSmelting(ZollernBlocks.enderSteelOre,
+					new ItemStack(ZollernItems.steelIngot, 3), 0.6F);
+			
+			// Steel Dust -> Steel Ingot
+			RecipeHelper.addSmelting(ZollernItems.steelDust,
+					ZollernItems.steelIngot, 0.4F);
+			
+			// Enderite Ore -> Enderite Ingot
+			RecipeHelper.addSmelting(ZollernBlocks.enderiteOre,
+					ZollernItems.enderiteIngot, 1.2F);
+			
+			// Enderite Dust -> Enderite Ingot
+			RecipeHelper.addSmelting(ZollernItems.enderiteDust,
+					ZollernItems.enderiteIngot, 1.0F);
 		}
 		
 	}

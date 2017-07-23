@@ -13,12 +13,12 @@ public class ModHelperBase {
 	public static boolean useExtremeReactors = false;
 	
 	public static void detectMods() {
-		useCofh = isModLoaded("CoFHCore");
-		useThermalExpansion = isModLoaded("ThermalExpansion");
-		useThermalFoundation = isModLoaded("ThermalFoundation");
-		useThermalDynamics = isModLoaded("ThermalDynamics");
+		useCofh = isModLoaded("cofhcore");
+		useThermalExpansion = isModLoaded("thermalexpansion");
+		useThermalFoundation = isModLoaded("thermalfoundation");
+		useThermalDynamics = isModLoaded("thermaldynamics");
 		useZaneExtras = isModLoaded("zanextras");
-		useExtremeReactors = isModLoaded("ExtremeReactors");
+		useExtremeReactors = isModLoaded("extremereactors");
 	}
 	
 	public static boolean isModLoaded(String modId) {

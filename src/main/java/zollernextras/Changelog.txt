@@ -11,4 +11,8 @@
         * It cooks 16 items now (it used to be 512), as opposed to the 8 of regular coal.
             * Super Charged Coal Blocks cook 9x this.
         * It's a painful nerf, but a necessary one. It was too common and it just made things too easy.
-    * 
+    * Azurite Ore now requires Obsidian blocks to spawn, so there's considerably less of it.
+        * Obsidian veins now spawn in all three dimensions by default.
+            * When the Upside-Down is added, it will spawn there too.
+        * Azurite Ore is one of only three ores to use the same Variant in all dimensions.
+            * The only others are Zollernium Ore and Witherite Ore.

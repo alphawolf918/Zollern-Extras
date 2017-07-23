@@ -21,11 +21,28 @@ public class RegistryUtil {
 				ZollernBlocks.amaranthBlock, ZollernBlocks.amaranthOre,
 				ZollernBlocks.netherAmaranthOre,
 				ZollernBlocks.enderAmaranthOre, ZollernBlocks.azuriteBlock,
-				ZollernBlocks.azuriteOre);
+				ZollernBlocks.azuriteOre, ZollernBlocks.enderShardOre,
+				ZollernBlocks.enderPearlBlock,
+				ZollernBlocks.netherEnderShardOre,
+				ZollernBlocks.zollerniumBlock, ZollernBlocks.zollerniumOre,
+				ZollernBlocks.witheriteBlock, ZollernBlocks.witheriteOre,
+				ZollernBlocks.fueltoniumBlock, ZollernBlocks.fueltoniumOre,
+				ZollernBlocks.zincBlock, ZollernBlocks.zincOre,
+				ZollernBlocks.netherZincOre, ZollernBlocks.enderZincOre,
+				ZollernBlocks.garnetBlock, ZollernBlocks.garnetOre,
+				ZollernBlocks.amberBlock, ZollernBlocks.amberOre,
+				ZollernBlocks.aquamarineBlock, ZollernBlocks.aquamarineOre);
 		
 		registerItems(event, ZollernItems.superChargedCoal,
 				ZollernItems.amaranthIngot, ZollernItems.amaranthDust,
-				ZollernItems.azurite);
+				ZollernItems.azurite, ZollernItems.enderShard,
+				ZollernItems.zollerniumDust, ZollernItems.zollerniumIngot,
+				ZollernItems.obsidianIngot, ZollernItems.obsidianDust,
+				ZollernItems.witherite, ZollernItems.fuelonite,
+				ZollernItems.fueltoniumIngot, ZollernItems.zincIngot,
+				ZollernItems.zincDust, ZollernItems.garnet, ZollernItems.opal,
+				ZollernItems.aquamarine, ZollernItems.topaz, ZollernItems.ruby,
+				ZollernItems.sapphire, ZollernItems.amber);
 	}
 	
 	public static void registerBlocks(FMLPreInitializationEvent event,

@@ -343,18 +343,18 @@ public class ZEConfig {
 				.getInt();
 		oreDiamondIncreaseSpawnRate = config.get(CATEGORY_ORES,
 				"oreDiamondIncreaseSpawnRate", 13).getInt();
-		oreOpalSpawnRate = config.get(CATEGORY_ORES, "oreOpalSpawnRate", 2)
+		oreOpalSpawnRate = config.get(CATEGORY_ORES, "oreOpalSpawnRate", 6)
 				.getInt();
-		oreAmberSpawnRate = config.get(CATEGORY_ORES, "oreAmberSpawnRate", 2)
+		oreAmberSpawnRate = config.get(CATEGORY_ORES, "oreAmberSpawnRate", 6)
 				.getInt();
-		oreGarnetSpawnRate = config.get(CATEGORY_ORES, "oreGarnetSpawnRate", 2)
+		oreGarnetSpawnRate = config.get(CATEGORY_ORES, "oreGarnetSpawnRate", 6)
 				.getInt();
 		oreAquamarineSpawnRate = config.get(CATEGORY_ORES,
-				"oreAquamarineSpawnRate", 2).getInt();
-		oreTopazSpawnRate = config.get(CATEGORY_ORES, "oreTopazSpawnRate", 2)
+				"oreAquamarineSpawnRate", 6).getInt();
+		oreTopazSpawnRate = config.get(CATEGORY_ORES, "oreTopazSpawnRate", 6)
 				.getInt();
 		oreAzuriteSpawnRate = config.get(CATEGORY_ORES, "oreAzuriteSpawnRate",
-				2).getInt();
+				4).getInt();
 		oreEnderiteSpawnRate = config.get(CATEGORY_ORES,
 				"oreEnderiteSpawnRate", 4).getInt();
 		oreWitheriteSpawnRate = config.get(CATEGORY_ORES,
@@ -363,7 +363,7 @@ public class ZEConfig {
 				.getInt();
 		oreSapphireSpawnRate = config.get(CATEGORY_ORES,
 				"oreSapphireSpawnRate", 4).getInt();
-		oreSteelSpawnRate = config.get(CATEGORY_ORES, "oreSteelSpawnRate", 2)
+		oreSteelSpawnRate = config.get(CATEGORY_ORES, "oreSteelSpawnRate", 4)
 				.getInt();
 		
 		// Potions
@@ -373,21 +373,5 @@ public class ZEConfig {
 				.getInt();
 		
 		config.save();
-		
-		config2 = new Configuration(new File(event
-				.getModConfigurationDirectory().getAbsolutePath()
-				+ "/ZollernExtras/Homes.cfg"));
-		config2.load();
-		
-		config2.addCustomCategoryComment(
-				CATEGORY_HOMES,
-				"These are the coordinates of the homes set for each Player. Changing this would indeed be amusing, but also not advised.");
-		String[] str = {};
-		for (int i = 0; i < homeList.size(); i++) {
-			str[i] = config2.get(CATEGORY_HOMES,
-					homeList.get(i).split("=")[0] + "Home",
-					homeList.get(i).split("=")[1]).getString();
-		}
-		config2.save();
 	}
 }

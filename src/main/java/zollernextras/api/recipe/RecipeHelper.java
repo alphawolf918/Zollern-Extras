@@ -23,6 +23,17 @@ public class RecipeHelper {
 	}
 	
 	/**
+	 * @param itemInput
+	 * @param itemOutput
+	 */
+	public static void fullItemCraft(Item itemInput, Item itemOutput) {
+		GameRegistry.addRecipe(new ItemStack(itemInput, 1), new Object[] {
+				"RRR", "RRR", "RRR", 'R', itemOutput });
+		GameRegistry.addShapelessRecipe(new ItemStack(itemOutput, 9),
+				new Object[] { itemInput });
+	}
+	
+	/**
 	 * Add a crop-to-seeds converter.
 	 * 
 	 * @param crop

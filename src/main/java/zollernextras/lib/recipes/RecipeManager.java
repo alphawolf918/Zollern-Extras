@@ -7,14 +7,17 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import zollernextras.api.recipe.RecipeHelper;
 import zollernextras.blocks.ZollernBlocks;
 import zollernextras.items.ZollernItems;
+import zollernextras.lib.modhelper.ModHelperBase;
 
 public class RecipeManager {
 	
 	public static void init() {
 		Crafting.init();
 		Smelting.init();
-		PulverizerRecipes.init();
-		InductionSmelterRecipes.init();
+		if (ModHelperBase.useThermalFoundation) {
+			PulverizerRecipes.init();
+			InductionSmelterRecipes.init();
+		}
 	}
 	
 	static class Crafting {

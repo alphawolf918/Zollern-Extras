@@ -12,9 +12,7 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.fml.common.IWorldGenerator;
 import zollernextras.blocks.ZollernBlocks;
 import zollernextras.config.ZEConfig;
-import zollernextras.worldgen.minable.WorldGenEnderMinable;
-import zollernextras.worldgen.minable.WorldGenNetherMinable;
-import zollernextras.worldgen.minable.WorldGenObsidianMinable;
+import zollernextras.worldgen.minable.ZollernMinable;
 
 public class WorldGenManager implements IWorldGenerator {
 	
@@ -237,8 +235,9 @@ public class WorldGenManager implements IWorldGenerator {
 			int posX = blockXPos + random.nextInt(maxX);
 			int posY = minY + random.nextInt(diffBtwnMinMaxY);
 			int posZ = blockZPos + random.nextInt(maxZ);
-			new WorldGenObsidianMinable(block.getDefaultState(), maxVeinSize)
-					.generate(world, random, new BlockPos(posX, posY, posZ));
+			new ZollernMinable(block.getDefaultState(), maxVeinSize,
+					Blocks.OBSIDIAN).generate(world, random, new BlockPos(posX,
+					posY, posZ));
 		}
 	}
 	
@@ -257,8 +256,9 @@ public class WorldGenManager implements IWorldGenerator {
 			int posX = blockXPos + random.nextInt(maxX);
 			int posY = minY + random.nextInt(diffBtwnMinMaxY);
 			int posZ = blockZPos + random.nextInt(maxZ);
-			new WorldGenNetherMinable(block.getDefaultState(), maxVeinSize)
-					.generate(world, random, new BlockPos(posX, posY, posZ));
+			new ZollernMinable(block.getDefaultState(), maxVeinSize,
+					Blocks.NETHERRACK).generate(world, random, new BlockPos(
+					posX, posY, posZ));
 		}
 	}
 	
@@ -277,8 +277,9 @@ public class WorldGenManager implements IWorldGenerator {
 			int posX = blockXPos + random.nextInt(maxX);
 			int posY = minY + random.nextInt(diffBtwnMinMaxY);
 			int posZ = blockZPos + random.nextInt(maxZ);
-			new WorldGenEnderMinable(block.getDefaultState(), maxVeinSize)
-					.generate(world, random, new BlockPos(posX, posY, posZ));
+			new ZollernMinable(block.getDefaultState(), maxVeinSize,
+					Blocks.END_STONE).generate(world, random, new BlockPos(
+					posX, posY, posZ));
 		}
 	}
 	

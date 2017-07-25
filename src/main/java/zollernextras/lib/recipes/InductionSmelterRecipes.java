@@ -12,6 +12,7 @@ public class InductionSmelterRecipes {
 				ZollernItems.amaranthIngot, 2), new ItemStack(
 				ZollernItems.zincIngot, 1), new ItemStack(
 				ZollernItems.zollerniumIngot));
+		
 		// 2 Amaranth + 1 Zinc = 1 Zollernium (Dusts)
 		TEHelper.addSmelterRecipe(3500, new ItemStack(
 				ZollernItems.amaranthDust, 2), new ItemStack(

@@ -192,6 +192,10 @@ public class WorldGenManager implements IWorldGenerator {
 				16, 4 + random.nextInt(2), ZEConfig.oreEnderiteSpawnRate + 5,
 				4, 110);
 		
+		// Ender Diamond Ore
+		addEnderOreSpawn(ZollernBlocks.enderDiamondOre, world, random, x, z,
+				16, 16, 2 + random.nextInt(2), 26, 4, 110);
+		
 	}
 	
 	private void generateUpsideDown(World world, Random random, int x, int z) {

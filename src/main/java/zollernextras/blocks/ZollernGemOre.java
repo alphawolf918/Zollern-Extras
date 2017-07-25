@@ -13,9 +13,17 @@ public class ZollernGemOre extends ZollernBlockOre {
 	
 	protected int minDropped = 2;
 	protected int maxDropped = 4;
+	protected Item itemToDrop;
 	
-	public ZollernGemOre(String blockName, float hardResist) {
+	public ZollernGemOre(String blockName, float hardResist, Item gemItem) {
 		super(blockName, hardResist);
+		this.itemToDrop = gemItem;
+	}
+	
+	@Override
+	public Item getItemDropped(IBlockState par1BlockState, Random rand,
+			int fortune) {
+		return this.itemToDrop;
 	}
 	
 	public Block setMinMaxDropped(int minD, int maxD) {

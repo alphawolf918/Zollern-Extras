@@ -40,7 +40,8 @@ public class RegistryUtil {
 				ZollernBlocks.opalOre, ZollernBlocks.steelBlock,
 				ZollernBlocks.steelOre, ZollernBlocks.netherSteelOre,
 				ZollernBlocks.enderSteelOre, ZollernBlocks.enderiteBlock,
-				ZollernBlocks.enderiteOre);
+				ZollernBlocks.enderiteOre, ZollernBlocks.enderDiamondBlock,
+				ZollernBlocks.enderDiamondOre);
 		
 		registerItems(event, ZollernItems.superChargedCoal,
 				ZollernItems.amaranthIngot, ZollernItems.amaranthDust,
@@ -53,7 +54,8 @@ public class RegistryUtil {
 				ZollernItems.aquamarine, ZollernItems.topaz, ZollernItems.ruby,
 				ZollernItems.sapphire, ZollernItems.amber,
 				ZollernItems.steelIngot, ZollernItems.steelDust,
-				ZollernItems.enderiteIngot, ZollernItems.enderiteDust);
+				ZollernItems.enderiteIngot, ZollernItems.enderiteDust,
+				ZollernItems.enderDiamond);
 	}
 	
 	public static void registerBlocks(FMLPreInitializationEvent event,

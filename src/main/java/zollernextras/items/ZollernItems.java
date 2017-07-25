@@ -36,4 +36,5 @@ public class ZollernItems {
 	public static final Item enderiteIngot = new ZollernItemBase(
 			"enderiteingot");
 	public static final Item enderiteDust = new ZollernItemBase("enderitedust");
+	public static final Item enderDiamond = new ZollernItemBase("enderdiamond");
 }

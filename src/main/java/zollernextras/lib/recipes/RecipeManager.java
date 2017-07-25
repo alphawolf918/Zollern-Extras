@@ -100,6 +100,10 @@ public class RecipeManager {
 			// Enderite Ingot -> Enderite Block
 			RecipeHelper.fullBlockCraft(ZollernBlocks.enderiteBlock,
 					ZollernItems.enderiteIngot);
+			
+			// Ender Diamond -> Ender Diamond Block
+			RecipeHelper.fullBlockCraft(ZollernBlocks.enderDiamondBlock,
+					ZollernItems.enderDiamond);
 		}
 	}
 	

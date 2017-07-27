@@ -14,9 +14,8 @@ public class RecipeManager {
 	public static void init() {
 		Crafting.init();
 		Smelting.init();
-		if (ModHelperBase.useThermalFoundation) {
-			PulverizerRecipes.init();
-			InductionSmelterRecipes.init();
+		if (ModHelperBase.useThermalExpansion) {
+			ZollernTERecipes.init();
 		}
 	}
 	

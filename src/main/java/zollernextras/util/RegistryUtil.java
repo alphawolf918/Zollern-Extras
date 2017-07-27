@@ -43,6 +43,10 @@ public class RegistryUtil {
 				ZollernBlocks.enderiteOre, ZollernBlocks.enderDiamondBlock,
 				ZollernBlocks.enderDiamondOre);
 		
+		// Upside-Down Blocks
+		registerBlocks(event, ZollernBlocks.upsideDownSurfaceRock,
+				ZollernBlocks.upsideDownSubRock);
+		
 		registerItems(event, ZollernItems.superChargedCoal,
 				ZollernItems.amaranthIngot, ZollernItems.amaranthDust,
 				ZollernItems.azurite, ZollernItems.enderShard,

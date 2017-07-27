@@ -9,13 +9,12 @@ public class BiomeMinersLand extends ZollernBiome {
 	public BiomeMinersLand(Biome.BiomeProperties props) {
 		super(props);
 		props.setTemperature(6.2F);
-		props.setRainfall(0.0F);
-		props.setRainDisabled();
 		props.setBaseHeight(1.0F);
 		props.setHeightVariation(0.05F);
+		this.clearAllSpawning();
+		this.setNoRain(props);
 		this.setTempCategory(TempCategory.WARM);
-		this.topBlock = Blocks.STONE.getDefaultState();
-		this.fillerBlock = Blocks.STONE.getDefaultState();
+		this.setBlocks(Blocks.STONE);
 	}
 	
 }

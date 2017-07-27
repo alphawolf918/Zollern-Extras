@@ -152,8 +152,8 @@ public class WorldGenManager implements IWorldGenerator {
 	}
 	
 	private void generateEnd(World world, Random random, int x, int z) {
-		int Xcoord = x;// + random.nextInt(16);
-		int Zcoord = z;// + random.nextInt(16);
+		int Xcoord = x + random.nextInt(1000);
+		int Zcoord = z + random.nextInt(1000);
 		
 		// Ender Super Charged Coal Ore
 		addEnderOreSpawn(ZollernBlocks.enderSuperChargedCoalOre, world, random,

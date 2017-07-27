@@ -147,6 +147,12 @@ public class ZollernBlocks {
 	 * Upside-Down
 	 */
 	
+	// World blocks
+	public static final Block upsideDownSurfaceRock = new ZollernBlockBase(
+			"ud_surfacerock", 1.6F);
+	public static final Block upsideDownSubRock = new ZollernBlockBase(
+			"ud_rock", 1.4F);
+	
 	// Radium
 	
 	// Etrium

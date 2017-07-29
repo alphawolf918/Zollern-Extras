@@ -9,8 +9,8 @@ public class BiomeMinersLand extends ZollernBiome {
 	public BiomeMinersLand(Biome.BiomeProperties props) {
 		super(props);
 		props.setTemperature(6.2F);
-		props.setBaseHeight(1.0F);
-		props.setHeightVariation(0.05F);
+		props.setBaseHeight(2.0F);
+		props.setHeightVariation(0.5F);
 		this.clearAllSpawning();
 		this.setNoRain(props);
 		this.setTempCategory(TempCategory.WARM);

@@ -144,6 +144,16 @@ public class ZollernBlocks {
 			.setBlockVariant(EnumBlockVariant.END);
 	
 	/*
+	 * Biome & General Blocks
+	 */
+	
+	public static final Block badStone = new ZollernBlockBase("badstone", 0.6F);
+	public static final Block redshroomBlock = new ZollernBlockBase(
+			"redshroomblock", 0.5F);
+	public static final Block redshroomStem = new ZollernBlockBase(
+			"redshroomstem", 0.4F);
+	
+	/*
 	 * Upside-Down
 	 */
 	

@@ -41,7 +41,7 @@ public class RegistryUtil {
 				ZollernBlocks.steelOre, ZollernBlocks.netherSteelOre,
 				ZollernBlocks.enderSteelOre, ZollernBlocks.enderiteBlock,
 				ZollernBlocks.enderiteOre, ZollernBlocks.enderDiamondBlock,
-				ZollernBlocks.enderDiamondOre);
+				ZollernBlocks.enderDiamondOre, ZollernBlocks.badStone);
 		
 		// Upside-Down Blocks
 		registerBlocks(event, ZollernBlocks.upsideDownSurfaceRock,

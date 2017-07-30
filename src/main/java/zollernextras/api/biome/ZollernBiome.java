@@ -5,10 +5,22 @@ import net.minecraft.world.biome.Biome;
 
 public abstract class ZollernBiome extends Biome {
 	
-	protected TempCategory tempBiomeCtg = (TempCategory.MEDIUM);
+	protected TempCategory tempBiomeCtg = TempCategory.MEDIUM;
+	protected boolean hasMutation = false;
 	
 	public ZollernBiome(BiomeProperties properties) {
 		super(properties);
+		// this.setRegistryName(ZollernModInfo.modId, this.getBiomeName());
+	}
+	
+	@Override
+	public boolean isMutation() {
+		return hasMutation;
+	}
+	
+	public Biome setHasMutation(boolean isMutated) {
+		this.hasMutation = isMutated;
+		return this;
 	}
 	
 	public Biome clearAllSpawning() {
@@ -62,6 +74,10 @@ public abstract class ZollernBiome extends Biome {
 	@Override
 	public TempCategory getTempCategory() {
 		return this.tempBiomeCtg;
+	}
+	
+	public static enum Type {
+		NORMAL, EXTRA_TREES, MUTATED;
 	}
 	
 }

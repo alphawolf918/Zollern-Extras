@@ -1,6 +1,7 @@
 package zollernextras.blocks;
 
 import net.minecraft.block.Block;
+import net.minecraft.init.Items;
 import net.minecraft.init.MobEffects;
 import zollernextras.items.ZollernItems;
 import zollernextras.lib.EnumBlockVariant;
@@ -142,6 +143,71 @@ public class ZollernBlocks {
 			"enderdiamondore", 3.6F, ZollernItems.enderDiamond)
 			.setShouldGivePotionEffect(true, MobEffects.NAUSEA))
 			.setBlockVariant(EnumBlockVariant.END);
+	
+	// Iron
+	public static final Block netherIronOre = ((ZollernBlockOre) new ZollernBlockOre(
+			"netherironore", 3.2F).setBlockVariant(EnumBlockVariant.NETHER))
+			.setShouldExplode(true);
+	
+	// Gold
+	public static final Block netherGoldOre = ((ZollernBlockOre) new ZollernBlockOre(
+			"nethergoldore", 3.4F).setBlockVariant(EnumBlockVariant.NETHER))
+			.setShouldExplode(true);
+	
+	// Diamond
+	public static final Block netherDiamondOre = ((ZollernGemOre) new ZollernGemOre(
+			"netherdiamondore", 3.6F, Items.DIAMOND)
+			.setBlockVariant(EnumBlockVariant.NETHER)).setShouldExplode(true);
+	
+	// Emerald
+	public static final Block netherEmeraldOre = ((ZollernGemOre) new ZollernGemOre(
+			"netheremeraldore", 3.8F, Items.EMERALD)
+			.setBlockVariant(EnumBlockVariant.NETHER)).setShouldExplode(true);
+	
+	// Redstone
+	public static final Block netherRedstoneOre = ((ZollernGemOre) ((ZollernBlockOre) new ZollernGemOre(
+			"netherredstoneore", 3.0F, Items.REDSTONE)
+			.setBlockVariant(EnumBlockVariant.NETHER)).setShouldExplode(true))
+			.setMinMaxDropped(4, 6);
+	
+	// Road Blocks
+	// Asphalt
+	public static final Block asphaltBlack = new ZollernBlockBase("asphalt",
+			3.2F);
+	public static final Block asphaltGray = new ZollernBlockBase(
+			"asphalt_gray", 3.2F);
+	public static final Block asphaltStripeLeft = new ZollernBlockBase(
+			"asphalt_stripe_left", 3.2F);
+	public static final Block asphaltStripeRight = new ZollernBlockBase(
+			"asphalt_stripe_right", 3.2F);
+	
+	// Lapis
+	// TODO
+	
+	// Copper
+	public static final Block netherCopperOre = ((ZollernBlockOre) new ZollernBlockOre(
+			"nethercopperore", 3.4F).setBlockVariant(EnumBlockVariant.NETHER))
+			.setShouldExplode(true);
+	
+	// Lead
+	public static final Block netherLeadOre = ((ZollernBlockOre) new ZollernBlockOre(
+			"netherleadore", 3.4F).setBlockVariant(EnumBlockVariant.NETHER))
+			.setShouldExplode(true);
+	
+	// Tin
+	public static final Block netherTinOre = ((ZollernBlockOre) new ZollernBlockOre(
+			"nethertinore", 3.4F).setBlockVariant(EnumBlockVariant.NETHER))
+			.setShouldExplode(true);
+	
+	// Silver
+	public static final Block netherSilverOre = ((ZollernBlockOre) new ZollernBlockOre(
+			"nethersilverore", 3.4F).setBlockVariant(EnumBlockVariant.NETHER))
+			.setShouldExplode(true);
+	
+	// Nickle
+	public static final Block netherNickleOre = ((ZollernBlockOre) new ZollernBlockOre(
+			"nethernickleore", 3.4F).setBlockVariant(EnumBlockVariant.NETHER))
+			.setShouldExplode(true);
 	
 	/*
 	 * Biome & General Blocks

@@ -4,8 +4,9 @@ import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import zollernextras.lib.modhelper.ModHelperBase;
+import cofh.api.util.ThermalExpansionHelper;
 
 public class RecipeHelper {
 	
@@ -168,8 +169,10 @@ public class RecipeHelper {
 	 */
 	public static void addSmelting(ItemStack input, ItemStack output, float xp) {
 		GameRegistry.addSmelting(input, output, xp);
-		FurnaceRecipes.instance().addSmeltingRecipe(input, output, xp);
-		// ThermalExpansionHelper.addFurnaceRecipe(500, input, output);
+		// FurnaceRecipes.instance().addSmeltingRecipe(input, output, xp);
+		if (ModHelperBase.useThermalExpansion) {
+			ThermalExpansionHelper.addFurnaceRecipe(500, input, output);
+		}
 	}
 	
 	/**
@@ -192,10 +195,12 @@ public class RecipeHelper {
 	 */
 	public static void addSmelting(Item input, ItemStack output, float xp) {
 		GameRegistry.addSmelting(input, output, xp);
-		FurnaceRecipes.instance().addSmeltingRecipe(new ItemStack(input, 1),
-				output, xp);
-		// ThermalExpansionHelper.addFurnaceRecipe(500, new ItemStack(input, 1),
-		// output);
+		// FurnaceRecipes.instance().addSmeltingRecipe(new ItemStack(input, 1),
+		// output, xp);
+		if (ModHelperBase.useThermalExpansion) {
+			ThermalExpansionHelper.addFurnaceRecipe(1500, new ItemStack(input,
+					1), output);
+		}
 	}
 	
 	/**
@@ -218,10 +223,12 @@ public class RecipeHelper {
 	 */
 	public static void addSmelting(Block input, ItemStack output, float xp) {
 		GameRegistry.addSmelting(input, output, xp);
-		FurnaceRecipes.instance().addSmeltingRecipe(new ItemStack(input, 1),
-				output, xp);
-		// ThermalExpansionHelper.addFurnaceRecipe(500, new ItemStack(input, 1),
-		// output);
+		// FurnaceRecipes.instance().addSmeltingRecipe(new ItemStack(input, 1),
+		// output, xp);
+		if (ModHelperBase.useThermalExpansion) {
+			ThermalExpansionHelper.addFurnaceRecipe(1500, new ItemStack(input,
+					1), output);
+		}
 	}
 	
 	/**

@@ -5,14 +5,20 @@ import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.IChunkGenerator;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.fml.common.IWorldGenerator;
+import zanextras.blocks.ZaneBlocks;
+import zollernextras.biomes.BiomeList;
 import zollernextras.blocks.ZollernBlocks;
 import zollernextras.config.ZEConfig;
+import zollernextras.lib.modhelper.ModHelperBase;
 import zollernextras.worldgen.minable.ZollernMinable;
+import cofh.thermalfoundation.block.BlockOre;
+import erogenousbeef.bigreactors.init.BrBlocks;
 
 public class WorldGenManager implements IWorldGenerator {
 	
@@ -105,6 +111,143 @@ public class WorldGenManager implements IWorldGenerator {
 		// Opal Ore
 		addOreSpawn(ZollernBlocks.opalOre, world, random, x, z, 16, 16,
 				4 + random.nextInt(2), ZEConfig.oreOpalSpawnRate, 4, 42);
+		
+		int y = world.getHeight();
+		
+		Biome currentBiome = world.getBiome(new BlockPos(x, y, z));
+		
+		if (currentBiome.equals(BiomeList.biomeMinersLand)) {
+			// Super Charged Coal Ore
+			addOreSpawn(ZollernBlocks.superChargedCoalOre, world, random, x, z,
+					16, 16, 6 + random.nextInt(4), 30, 1, 256);
+			
+			// Amaranth Ore
+			addOreSpawn(ZollernBlocks.amaranthOre, world, random, x, z, 16, 16,
+					6 + random.nextInt(4), 30, 1, 2562);
+			
+			// Obsidian (needed for Azurite Ore gen)
+			addOreSpawn(Blocks.OBSIDIAN, world, random, x, z, 16, 16,
+					15 + random.nextInt(4), 30, 1, 256);
+			
+			// Azurite Ore
+			addObsidianOreSpawn(ZollernBlocks.azuriteOre, world, random, x, z,
+					16, 16, 6 + random.nextInt(4), 30, 1, 256);
+			
+			// Ender Shard Ore
+			addOreSpawn(ZollernBlocks.enderShardOre, world, random, x, z, 16,
+					16, 6 + random.nextInt(4), 30, 1, 256);
+			
+			// Zollernium Ore
+			addOreSpawn(ZollernBlocks.zollerniumOre, world, random, x, z, 16,
+					16, 6 + random.nextInt(4), 30, 1, 256);
+			
+			// Witherite Ore
+			addOreSpawn(ZollernBlocks.witheriteOre, world, random, x, z, 16,
+					16, 4 + random.nextInt(2), ZEConfig.oreWitheriteSpawnRate,
+					1, 44);
+			
+			// Fueltonium Ore
+			addOreSpawn(ZollernBlocks.fueltoniumOre, world, random, x, z, 16,
+					16, 6 + random.nextInt(4), 30, 1, 256);
+			
+			// Zinc Ore
+			addOreSpawn(ZollernBlocks.zincOre, world, random, x, z, 16, 16,
+					6 + random.nextInt(4), 30, 1, 256);
+			
+			// Steel Ore
+			addOreSpawn(ZollernBlocks.steelOre, world, random, x, z, 16, 16,
+					6 + random.nextInt(4), 30, 1, 256);
+			
+			// Garnet Ore
+			addOreSpawn(ZollernBlocks.garnetOre, world, random, x, z, 16, 16,
+					6 + random.nextInt(4), 30, 1, 256);
+			
+			// Amber Ore
+			addOreSpawn(ZollernBlocks.amberOre, world, random, x, z, 16, 16,
+					6 + random.nextInt(4), 30, 1, 256);
+			
+			// Aquamarine Ore
+			addOreSpawn(ZollernBlocks.aquamarineOre, world, random, x, z, 16,
+					16, 6 + random.nextInt(4), 30, 1, 256);
+			
+			// Ruby Ore
+			addOreSpawn(ZollernBlocks.rubyOre, world, random, x, z, 16, 16,
+					6 + random.nextInt(4), 30, 1, 256);
+			
+			// Sapphire Ore
+			addOreSpawn(ZollernBlocks.sapphireOre, world, random, x, z, 16, 16,
+					6 + random.nextInt(4), 30, 1, 256);
+			
+			// Topaz Ore
+			addOreSpawn(ZollernBlocks.topazOre, world, random, x, z, 16, 16,
+					6 + random.nextInt(4), 30, 1, 256);
+			
+			// Opal Ore
+			addOreSpawn(ZollernBlocks.opalOre, world, random, x, z, 16, 16,
+					6 + random.nextInt(4), 30, 1, 256);
+			
+			// Thermal Expansion Ores
+			if (ModHelperBase.useThermalExpansion) {
+				// Copper Ore
+				addOreSpawn(
+						Block.getBlockFromItem(BlockOre.oreCopper.getItem()),
+						world, random, x, z, 16, 16, 6 + random.nextInt(4), 30,
+						1, 256);
+				
+				// Tin Ore
+				addOreSpawn(Block.getBlockFromItem(BlockOre.oreTin.getItem()),
+						world, random, x, z, 16, 16, 6 + random.nextInt(4), 30,
+						1, 256);
+				
+				// Silver Ore
+				addOreSpawn(
+						Block.getBlockFromItem(BlockOre.oreSilver.getItem()),
+						world, random, x, z, 16, 16, 6 + random.nextInt(4), 30,
+						1, 256);
+				
+				// Lead Ore
+				addOreSpawn(Block.getBlockFromItem(BlockOre.oreLead.getItem()),
+						world, random, x, z, 16, 16, 6 + random.nextInt(4), 30,
+						1, 256);
+				
+				// Nickel Ore
+				addOreSpawn(
+						Block.getBlockFromItem(BlockOre.oreNickel.getItem()),
+						world, random, x, z, 16, 16, 6 + random.nextInt(4), 30,
+						1, 256);
+			}
+			
+			// ZaneXtras Ores
+			if (ModHelperBase.useZaneExtras) {
+				// Butter Ore
+				addOreSpawn(ZaneBlocks.butterOre, world, random, x, z, 16, 16,
+						6 + random.nextInt(4), 30, 1, 256);
+				
+				// Radite Ore
+				addOreSpawn(ZaneBlocks.raditeOre, world, random, x, z, 16, 16,
+						6 + random.nextInt(4), 30, 1, 256);
+				
+				// Zogite Ore
+				addOreSpawn(ZaneBlocks.zogiteOre, world, random, x, z, 16, 16,
+						6 + random.nextInt(4), 30, 1, 256);
+				
+				// Staria
+				addOreSpawn(ZaneBlocks.stariaOre, world, random, x, z, 16, 16,
+						6 + random.nextInt(4), 30, 1, 256);
+				
+				// Skyium
+				addOreSpawn(ZaneBlocks.skyiumOre, world, random, x, z, 16, 16,
+						6 + random.nextInt(4), 5, 1, 256);
+			}
+			
+			// Extreme Reactors Ores
+			if (ModHelperBase.useExtremeReactors) {
+				// Yellorite Ore
+				addOreSpawn(BrBlocks.brOre, world, random, x, z, 16, 16,
+						6 + random.nextInt(4), 5, 1, 256);
+			}
+		}
+		
 	}
 	
 	private void generateNether(World world, Random random, int x, int z) {
@@ -149,6 +292,49 @@ public class WorldGenManager implements IWorldGenerator {
 		addNetherOreSpawn(ZollernBlocks.netherSteelOre, world, random, x, z,
 				16, 16, 4 + random.nextInt(2), ZEConfig.oreSteelSpawnRate + 10,
 				4, 128);
+		
+		// Nether Iron Ore
+		addNetherOreSpawn(ZollernBlocks.netherIronOre, world, random, x, z, 16,
+				16, 4 + random.nextInt(2), 22, 4, 128);
+		
+		// Nether Gold Ore
+		addNetherOreSpawn(ZollernBlocks.netherGoldOre, world, random, x, z, 16,
+				16, 4 + random.nextInt(2), 12, 4, 128);
+		
+		// Nether Diamond Ore
+		addNetherOreSpawn(ZollernBlocks.netherDiamondOre, world, random, x, z,
+				16, 16, 4 + random.nextInt(2), 10, 4, 128);
+		
+		// Nether Emerald Ore
+		addNetherOreSpawn(ZollernBlocks.netherEmeraldOre, world, random, x, z,
+				16, 16, 4 + random.nextInt(2), 5, 4, 128);
+		
+		// Nether Redstone Ore
+		addNetherOreSpawn(ZollernBlocks.netherRedstoneOre, world, random, x, z,
+				16, 16, 4 + random.nextInt(2), 8, 4, 128);
+		
+		// Nether Lapis Ore
+		// TODO
+		
+		// Nether Copper Ore
+		addNetherOreSpawn(ZollernBlocks.netherCopperOre, world, random, x, z,
+				16, 16, 4 + random.nextInt(2), 21, 4, 128);
+		
+		// Nether Lead Ore
+		addNetherOreSpawn(ZollernBlocks.netherLeadOre, world, random, x, z, 16,
+				16, 4 + random.nextInt(2), 18, 4, 128);
+		
+		// Nether Silver Ore
+		addNetherOreSpawn(ZollernBlocks.netherSilverOre, world, random, x, z,
+				16, 16, 4 + random.nextInt(2), 11, 4, 128);
+		
+		// Nether Tin Ore
+		addNetherOreSpawn(ZollernBlocks.netherTinOre, world, random, x, z, 16,
+				16, 4 + random.nextInt(2), 24, 4, 128);
+		
+		// Nether Nickel Ore
+		addNetherOreSpawn(ZollernBlocks.netherNickleOre, world, random, x, z,
+				16, 16, 4 + random.nextInt(2), 8, 4, 128);
 	}
 	
 	private void generateEnd(World world, Random random, int x, int z) {

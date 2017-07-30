@@ -16,5 +16,4 @@ public class BiomeMinersLand extends ZollernBiome {
 		this.setTempCategory(TempCategory.WARM);
 		this.setBlocks(Blocks.STONE);
 	}
-	
 }

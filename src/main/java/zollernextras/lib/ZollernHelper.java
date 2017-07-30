@@ -96,7 +96,8 @@ public class ZollernHelper {
 	}
 	
 	public static void log(Level level, String strMessage) {
-		FMLLog.log(ZollernModInfo.modId, level, String.valueOf(strMessage));
+		FMLLog.log(ZollernModInfo.officialName, level,
+				String.valueOf(strMessage));
 	}
 	
 	public static void logInfo(String str) {
@@ -105,7 +106,7 @@ public class ZollernHelper {
 	
 	public static void logDebug(String str) {
 		if (ZEConfig.enableDebugMode) {
-			logInfo("[DEBUG]" + str);
+			log(Level.DEBUG, str);
 		}
 	}
 }

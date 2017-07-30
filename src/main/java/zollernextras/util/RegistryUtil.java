@@ -41,7 +41,16 @@ public class RegistryUtil {
 				ZollernBlocks.steelOre, ZollernBlocks.netherSteelOre,
 				ZollernBlocks.enderSteelOre, ZollernBlocks.enderiteBlock,
 				ZollernBlocks.enderiteOre, ZollernBlocks.enderDiamondBlock,
-				ZollernBlocks.enderDiamondOre, ZollernBlocks.badStone);
+				ZollernBlocks.enderDiamondOre, ZollernBlocks.badStone,
+				ZollernBlocks.redshroomBlock, ZollernBlocks.redshroomStem,
+				ZollernBlocks.netherIronOre, ZollernBlocks.netherGoldOre,
+				ZollernBlocks.netherDiamondOre, ZollernBlocks.netherEmeraldOre,
+				ZollernBlocks.netherRedstoneOre, ZollernBlocks.netherCopperOre,
+				ZollernBlocks.netherTinOre, ZollernBlocks.netherLeadOre,
+				ZollernBlocks.netherNickleOre, ZollernBlocks.netherSilverOre,
+				ZollernBlocks.asphaltBlack, ZollernBlocks.asphaltGray,
+				ZollernBlocks.asphaltStripeLeft,
+				ZollernBlocks.asphaltStripeRight);
 		
 		// Upside-Down Blocks
 		registerBlocks(event, ZollernBlocks.upsideDownSurfaceRock,

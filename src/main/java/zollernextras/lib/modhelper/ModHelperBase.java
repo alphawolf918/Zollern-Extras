@@ -18,7 +18,7 @@ public class ModHelperBase {
 		useThermalFoundation = isModLoaded("thermalfoundation");
 		useThermalDynamics = isModLoaded("thermaldynamics");
 		useZaneExtras = isModLoaded("zanextras");
-		useExtremeReactors = isModLoaded("extremereactors");
+		useExtremeReactors = isModLoaded("bigreactors");
 	}
 	
 	public static boolean isModLoaded(String modId) {

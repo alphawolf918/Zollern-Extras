@@ -14,7 +14,6 @@ public class BiomeList {
 			new Biome.BiomeProperties("Miner's Land"));
 	public static Biome biomeSlimeLands = new BiomeSlimeLands(
 			new Biome.BiomeProperties("Slime Lands"));
-	public static Biome biomeCheesePlains;
 	public static Biome biomeBadLands = new BiomeBadLands(
 			new Biome.BiomeProperties("Bad Lands"));
 	public static Biome biomeRedshroomField = new BiomeRedshroomField(
@@ -24,24 +23,17 @@ public class BiomeList {
 			new Biome.BiomeProperties("Upside-Down"));
 	
 	public static void init() {
-		addBiome(biomeMinersLand, ZEConfig.biomeMinersLandID, "Miner's Land",
+		addBiome(biomeMinersLand, ZEConfig.biomeMinersLandID, "miners_land",
 				ZEConfig.biomeMinersLandSpawnRate, BiomeType.WARM);
-		addBiome(biomeSlimeLands, ZEConfig.biomeSlimeLandsID, "Slime Land",
+		addBiome(biomeSlimeLands, ZEConfig.biomeSlimeLandsID, "slime_lands",
 				ZEConfig.biomeSlimeLandsSpawnRate, BiomeType.WARM);
-		// if (ModHelperBase.useZaneExtras) {
-		// biomeCheesePlains = new BiomeCheesePlains(
-		// new Biome.BiomeProperties("Cheese Plains"));
-		// addBiome(biomeCheesePlains, ZEConfig.biomeCheesePlainsID,
-		// "Cheese Plains", ZEConfig.biomeCheesePlainsSpawnRate,
-		// BiomeType.WARM);
-		// }
-		addBiome(biomeBadLands, ZEConfig.biomeBadLandsID, "Bad Lands",
+		addBiome(biomeBadLands, ZEConfig.biomeBadLandsID, "bad_lands",
 				ZEConfig.biomeBadLandsSpawnRate, BiomeType.DESERT);
 		addBiome(biomeRedshroomField, ZEConfig.biomeRedshroomPlainsID,
-				"Redshroom Plains", ZEConfig.biomeRedshroomPlainsSpawnRate,
+				"redshroom_plains", ZEConfig.biomeRedshroomPlainsSpawnRate,
 				BiomeType.WARM);
 		
-		addBiome(biomeUpsideDown, ZEConfig.biomeUpsideDownID, "Upside-Down", 0,
+		addBiome(biomeUpsideDown, ZEConfig.biomeUpsideDownID, "upside_down", 0,
 				BiomeType.ICY);
 	}
 	

@@ -36,11 +36,6 @@ tile.zollernextras_sealamp.name=Sea Lamp
 tile.zollernextras_shinestonecrystal.name=Shinestone Crystal
 tile.zollernextras_polishedcrystal.name=Polished Shinestone Crystal
 tile.zollernextras_crystalbricks.name=Crystal Bricks
-tile.zollernextras_netherfueltoniumore.name=Nether Fueltonium Ore
-tile.zollernextras_nethersuperchargedcoalore.name=Nether Super Charged Coal Ore
-tile.zollernextras_netheramaranthore.name=Nether Amaranth Ore
-tile.zollernextras_netherzincore.name=Nether Zinc Ore
-tile.zollernextras_netherendershardore.name=Nether Ender Shard Ore
 tile.zollernextras_brimstone.name=Brimstone
 tile.zollernextras_netherdirt.name=Nether Dirt
 tile.zollernextras_marble.name=White Cave Marble
@@ -127,6 +122,23 @@ tile.zollernextras_shinetorch.name=Shine Torch
 tile.zollernextras_enderpearlblock.name=Ender Pearl Block
 tile.zollernextras_netherizedobsidian.name=Netherized Obsidian
 tile.zollernextras_garlic.name=Garlic
+
+tile.zollernextras_netherironore.name=Nether Iron Ore
+tile.zollernextras_nethergoldore.name=Nether Gold Ore
+tile.zollernextras_netherdiamondore.name=Nether Diamond Ore
+tile.zollernextras_netheremeraldore.name=Nether Emerald Ore
+tile.zollernextras_netherredstoneore.name=Nether Redstone Ore
+tile.zollernextras_netherlapisore.name=Nether Lapis Lazuli Ore
+tile.zollernextras_nethercopperore.name=Nether Copper Ore
+tile.zollernextras_nethertinore.name=Nether Tin Ore
+tile.zollernextras_netherleadore.name=Nether Lead Ore
+tile.zollernextras_nethersilverore.name=Nether Silver Ore
+tile.zollernextras_nethernickleore.name=Nether Nickel Ore
+tile.zollernextras_netherfueltoniumore.name=Nether Fueltonium Ore
+tile.zollernextras_nethersuperchargedcoalore.name=Nether Super Charged Coal Ore
+tile.zollernextras_netheramaranthore.name=Nether Amaranth Ore
+tile.zollernextras_netherzincore.name=Nether Zinc Ore
+tile.zollernextras_netherendershardore.name=Nether Ender Shard Ore
 
 tile.zollernextras_brick_black.name=Black Colored Bricks
 tile.zollernextras_brick_lime.name=Lime Green Colored Bricks
@@ -273,6 +285,11 @@ tile.zollernextras_corruptrock.name=Corrupt Rock
 tile.zollernextras_corruptchargiumore.name=Corrupt Chargium Ore
 tile.zollernextras_corruptetriumore.name=Corrupt Etrium Ore
 tile.zollernextras_endrock.name=Endrock
+
+tile.zollernextras_asphalt.name=Asphalt
+tile.zollernextras_asphalt_gray.name=Concrete
+tile.zollernextras_asphalt_stripe_left.name=Asphalt Striped Left
+tile.zollernextras_asphalt_stripe_right.name=Asphalt Striped Right
 
 tile.zollernextras_chocolate.name=Melted Chocolate
 fluid.zollernextras_chocolate=Melted Chocolate

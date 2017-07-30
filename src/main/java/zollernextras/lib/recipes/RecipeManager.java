@@ -8,6 +8,7 @@ import zollernextras.api.recipe.RecipeHelper;
 import zollernextras.blocks.ZollernBlocks;
 import zollernextras.items.ZollernItems;
 import zollernextras.lib.modhelper.ModHelperBase;
+import cofh.thermalfoundation.block.BlockOre;
 
 public class RecipeManager {
 	
@@ -183,6 +184,34 @@ public class RecipeManager {
 			// Enderite Dust -> Enderite Ingot
 			RecipeHelper.addSmelting(ZollernItems.enderiteDust,
 					ZollernItems.enderiteIngot, 1.0F);
+			
+			if (ModHelperBase.useThermalExpansion) {
+				// Nether Copper Ore -> Copper Ore
+				RecipeHelper
+						.addSmelting(ZollernBlocks.netherCopperOre,
+								new ItemStack(BlockOre.oreCopper.getItem(), 2,
+										0), 2.5F);
+				
+				// Nether Tin Ore -> Tin Ore
+				RecipeHelper.addSmelting(ZollernBlocks.netherTinOre,
+						new ItemStack(BlockOre.oreTin.getItem(), 2, 1), 2.5F);
+				
+				// Nether Lead Ore -> Lead Ore
+				RecipeHelper.addSmelting(ZollernBlocks.netherLeadOre,
+						new ItemStack(BlockOre.oreLead.getItem(), 2, 3), 2.5F);
+				
+				// Nether Silver Ore -> Silver Ore
+				RecipeHelper
+						.addSmelting(ZollernBlocks.netherSilverOre,
+								new ItemStack(BlockOre.oreSilver.getItem(), 2,
+										2), 2.5F);
+				
+				// Nether Nickel Ore -> Nickel Ore
+				RecipeHelper
+						.addSmelting(ZollernBlocks.netherNickleOre,
+								new ItemStack(BlockOre.oreNickel.getItem(), 2,
+										5), 2.5F);
+			}
 		}
 		
 	}

@@ -12,8 +12,7 @@ public class BiomeCheesePlains extends ZollernBiome {
 		props.setBaseHeight(1.0F);
 		props.setHeightVariation(0.05F);
 		this.setTempCategory(TempCategory.WARM);
-		this.topBlock = ZaneBlocks.cheeseBlock.getDefaultState();
-		this.fillerBlock = ZaneBlocks.cheeseBlock.getDefaultState();
+		this.setBlocks(ZaneBlocks.cheeseBlock);
 	}
 	
 }

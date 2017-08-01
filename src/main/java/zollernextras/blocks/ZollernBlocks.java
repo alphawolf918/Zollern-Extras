@@ -218,6 +218,9 @@ public class ZollernBlocks {
 			"redshroomblock", 0.5F);
 	public static final Block redshroomStem = new ZollernBlockBase(
 			"redshroomstem", 0.4F);
+	public static final Block coldSand = new ZollernSand("coldsand", 0.8F);
+	public static final Block coldSandSmooth = new ZollernBlockBase(
+			"coldsandsmooth", 1.2F);
 	
 	/*
 	 * Upside-Down

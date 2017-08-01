@@ -10,7 +10,6 @@ public abstract class ZollernBiome extends Biome {
 	
 	public ZollernBiome(BiomeProperties properties) {
 		super(properties);
-		// this.setRegistryName(ZollernModInfo.modId, this.getBiomeName());
 	}
 	
 	@Override

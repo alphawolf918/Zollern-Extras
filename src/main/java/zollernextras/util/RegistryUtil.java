@@ -50,7 +50,8 @@ public class RegistryUtil {
 				ZollernBlocks.netherNickleOre, ZollernBlocks.netherSilverOre,
 				ZollernBlocks.asphaltBlack, ZollernBlocks.asphaltGray,
 				ZollernBlocks.asphaltStripeLeft,
-				ZollernBlocks.asphaltStripeRight);
+				ZollernBlocks.asphaltStripeRight, ZollernBlocks.coldSand,
+				ZollernBlocks.coldSandSmooth);
 		
 		// Upside-Down Blocks
 		registerBlocks(event, ZollernBlocks.upsideDownSurfaceRock,

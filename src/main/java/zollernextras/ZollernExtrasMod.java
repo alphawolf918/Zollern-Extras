@@ -53,7 +53,6 @@ public class ZollernExtrasMod {
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
 		instance().proxy.init(event);
-		BiomeList.init();
 		Handlers.init();
 		RecipeManager.init();
 		NetworkRegistry.INSTANCE.registerGuiHandler(this, new CommonProxy());

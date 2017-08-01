@@ -21,6 +21,7 @@ public class ZollernBlockBase extends Block {
 		ZollernHelper.setTab(this);
 		this.setHardness(hardResist);
 		this.setResistance(hardResist);
+		this.setHarvestLevel("pickaxe", 1);
 	}
 	
 	public Block setMaterial(Material material) {

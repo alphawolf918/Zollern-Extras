@@ -1,15 +1,63 @@
 package zollernextras.items;
 
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
+import zollernextras.items.armor.ZollernArmor;
+import zollernextras.items.armor.ZollernArmorMaterials;
+import zollernextras.items.tools.ZollernAxe;
+import zollernextras.items.tools.ZollernHoe;
+import zollernextras.items.tools.ZollernPickaxe;
+import zollernextras.items.tools.ZollernShovel;
+import zollernextras.items.tools.ZollernSword;
+import zollernextras.items.tools.ZollernToolMaterials;
 
 public class ZollernItems {
 	
 	public static final Item superChargedCoal = new ZollernItemBase(
 			"superchargedcoal");
+	
+	// Amaranth
 	public static final Item amaranthIngot = new ZollernItemBase(
 			"amaranthingot");
 	public static final Item amaranthDust = new ZollernItemBase("amaranthdust");
+	public static final Item amaranthBoots = new ZollernArmor(
+			ZollernArmorMaterials.AMARANTH, 1, EntityEquipmentSlot.FEET,
+			"amaranthboots");
+	public static final Item amaranthLegs = new ZollernArmor(
+			ZollernArmorMaterials.AMARANTH, 2, EntityEquipmentSlot.LEGS,
+			"amaranthleggings");
+	public static final Item amaranthChest = new ZollernArmor(
+			ZollernArmorMaterials.AMARANTH, 1, EntityEquipmentSlot.CHEST,
+			"amaranthchestplate");
+	public static final Item amaranthHelm = new ZollernArmor(
+			ZollernArmorMaterials.AMARANTH, 1, EntityEquipmentSlot.HEAD,
+			"amaranthhelmet");
+	public static final Item amaranthSword = new ZollernSword(
+			ZollernToolMaterials.AMARANTH, "amaranthsword");
+	public static final Item amaranthAxe = new ZollernAxe(
+			ZollernToolMaterials.AMARANTH, "amaranthaxe", -3.0F);
+	public static final Item amaranthPickaxe = new ZollernPickaxe(
+			ZollernToolMaterials.AMARANTH, "amaranthpickaxe");
+	public static final Item amaranthShovel = new ZollernShovel(
+			ZollernToolMaterials.AMARANTH, "amaranthshovel");
+	public static final Item amaranthHoe = new ZollernHoe(
+			ZollernToolMaterials.AMARANTH, "amaranthhoe");
+	
+	// Azurite
 	public static final Item azurite = new ZollernItemBase("azurite");
+	public static final Item azuriteBoots = new ZollernArmor(
+			ZollernArmorMaterials.AZURITE, 1, EntityEquipmentSlot.FEET,
+			"azuriteboots");
+	public static final Item azuriteLegs = new ZollernArmor(
+			ZollernArmorMaterials.AZURITE, 2, EntityEquipmentSlot.LEGS,
+			"azuriteleggings");
+	public static final Item azuriteChest = new ZollernArmor(
+			ZollernArmorMaterials.AZURITE, 1, EntityEquipmentSlot.CHEST,
+			"azuritechestplate");
+	public static final Item azuriteHelm = new ZollernArmor(
+			ZollernArmorMaterials.AZURITE, 1, EntityEquipmentSlot.HEAD,
+			"azuritehelmet");
+	
 	public static final Item enderShard = new ZollernItemBase("endershard");
 	public static final Item zollerniumIngot = new ZollernItemBase(
 			"zollerniumingot");
@@ -37,4 +85,5 @@ public class ZollernItems {
 			"enderiteingot");
 	public static final Item enderiteDust = new ZollernItemBase("enderitedust");
 	public static final Item enderDiamond = new ZollernItemBase("enderdiamond");
+	public static final Item flour = new ZollernItemBase("flour");
 }

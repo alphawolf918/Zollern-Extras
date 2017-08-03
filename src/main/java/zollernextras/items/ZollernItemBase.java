@@ -7,7 +7,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import zollernextras.creativetabs.ModTabs;
+import zollernextras.creativetabs.ZollernTabs;
 import zollernextras.lib.KeyHelper;
 import zollernextras.lib.ZollernHelper;
 import zollernextras.lib.ZollernModInfo;
@@ -31,7 +31,7 @@ public class ZollernItemBase extends Item {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public CreativeTabs getCreativeTab() {
-		return ModTabs.zTab;
+		return ZollernTabs.zTab;
 	}
 	
 	public Item setName(String strName) {

@@ -211,6 +211,9 @@ public class RecipeManager {
 						.addSmelting(ZollernBlocks.netherNickleOre,
 								new ItemStack(BlockOre.oreNickel.getItem(), 2,
 										5), 2.5F);
+				
+				// Flour -> Bread
+				RecipeHelper.addSmelting(ZollernItems.flour, Items.BREAD, 0.2F);
 			}
 		}
 		

@@ -11,7 +11,7 @@ import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import org.apache.logging.log4j.Level;
 import zollernextras.config.ZEConfig;
-import zollernextras.creativetabs.ModTabs;
+import zollernextras.creativetabs.ZollernTabs;
 
 public class ZollernHelper {
 	
@@ -40,11 +40,11 @@ public class ZollernHelper {
 	}
 	
 	public static void setTab(Block block) {
-		block.setCreativeTab(ModTabs.zTab);
+		block.setCreativeTab(ZollernTabs.zTab);
 	}
 	
 	public static void setTab(Item item) {
-		item.setCreativeTab(ModTabs.zTab);
+		item.setCreativeTab(ZollernTabs.zTab);
 	}
 	
 	public static void setName(Block block, String strName) {

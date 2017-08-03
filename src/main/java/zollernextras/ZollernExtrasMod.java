@@ -10,7 +10,7 @@ import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import zollernextras.biomes.BiomeList;
 import zollernextras.config.ZEConfig;
-import zollernextras.creativetabs.ModTabs;
+import zollernextras.creativetabs.ZollernTabs;
 import zollernextras.handlers.Handlers;
 import zollernextras.lib.ZollernModInfo;
 import zollernextras.lib.modhelper.ModHelperBase;
@@ -44,7 +44,7 @@ public class ZollernExtrasMod {
 		snw = NetworkRegistry.INSTANCE.newSimpleChannel(ZollernModInfo.channel);
 		ModHelperBase.detectMods();
 		Handlers.init();
-		ModTabs.init();
+		ZollernTabs.init();
 		ZEConfig.init(event);
 		RegistryUtil.registerAll(event);
 		BiomeList.init();

@@ -1,5 +1,6 @@
 package zollernextras.lib.recipes;
 
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import zollernextras.blocks.ZollernBlocks;
 import zollernextras.items.ZollernItems;
@@ -154,6 +155,10 @@ public class PulverizerRecipes {
 		ThermalExpansionHelper.addPulverizerRecipe(1800, new ItemStack(
 				ZollernItems.enderiteIngot), new ItemStack(
 				ZollernItems.enderiteDust, 1));
+		
+		// Wheat -> Flour
+		ThermalExpansionHelper.addPulverizerRecipe(400, new ItemStack(
+				Items.WHEAT), new ItemStack(ZollernItems.flour, 2));
 	}
 	
 }

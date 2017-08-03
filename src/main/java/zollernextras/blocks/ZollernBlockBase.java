@@ -6,7 +6,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import zollernextras.creativetabs.ModTabs;
+import zollernextras.creativetabs.ZollernTabs;
 import zollernextras.lib.ZollernHelper;
 
 public class ZollernBlockBase extends Block {
@@ -41,6 +41,6 @@ public class ZollernBlockBase extends Block {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public CreativeTabs getCreativeTabToDisplayOn() {
-		return ModTabs.zTab;
+		return ZollernTabs.zTab;
 	}
 }

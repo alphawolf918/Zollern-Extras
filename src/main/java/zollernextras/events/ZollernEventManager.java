@@ -22,6 +22,7 @@ import net.minecraftforge.event.entity.player.PlayerEvent.NameFormat;
 import net.minecraftforge.event.world.BlockEvent.BreakEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import zollernextras.items.ZollernItems;
 
 public class ZollernEventManager {
 	
@@ -75,11 +76,10 @@ public class ZollernEventManager {
 		World worldObj = theEntity.world;
 		if (theEntity instanceof EntityZombie) {
 			if (new Random().nextInt(100) <= 50) {
-				// EntityItem item = new EntityItem(worldObj, theEntity.posX,
-				// theEntity.posY, theEntity.posZ, new ItemStack(
-				// ZollernItems.flour, 1));
-				// worldObj.spawnEntityInWorld(item);
-				// TODO
+				EntityItem item = new EntityItem(worldObj, theEntity.posX,
+						theEntity.posY, theEntity.posZ, new ItemStack(
+								ZollernItems.flour, 1));
+				worldObj.spawnEntity(theEntity);
 			}
 		} else if (theEntity instanceof EntityBlaze) {
 			EntityItem item = new EntityItem(worldObj, theEntity.posX,

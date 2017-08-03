@@ -5,7 +5,7 @@ import net.minecraft.item.ItemStack;
 import zollernextras.common.CommonRegisterHelper;
 import zollernextras.items.ZollernItems;
 
-public class ModTabs {
+public class ZollernTabs {
 	
 	public static CreativeTabs zTab;
 	

@@ -69,7 +69,14 @@ public class RegistryUtil {
 				ZollernItems.sapphire, ZollernItems.amber,
 				ZollernItems.steelIngot, ZollernItems.steelDust,
 				ZollernItems.enderiteIngot, ZollernItems.enderiteDust,
-				ZollernItems.enderDiamond);
+				ZollernItems.enderDiamond, ZollernItems.flour,
+				ZollernItems.amaranthHelm, ZollernItems.amaranthChest,
+				ZollernItems.amaranthLegs, ZollernItems.amaranthBoots,
+				ZollernItems.amaranthSword, ZollernItems.amaranthAxe,
+				ZollernItems.amaranthPickaxe, ZollernItems.amaranthShovel,
+				ZollernItems.amaranthHoe, ZollernItems.azuriteHelm,
+				ZollernItems.azuriteChest, ZollernItems.azuriteLegs,
+				ZollernItems.azuriteBoots);
 	}
 	
 	public static void registerBlocks(FMLPreInitializationEvent event,

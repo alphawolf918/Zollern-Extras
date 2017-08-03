@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "zollernextras:items/amaranth_axe"
+        "layer0": "zollernextras:items/flour"
     }
 }

@@ -43,6 +43,7 @@ public class ZollernExtrasMod {
 	public void preInit(FMLPreInitializationEvent event) {
 		snw = NetworkRegistry.INSTANCE.newSimpleChannel(ZollernModInfo.channel);
 		ModHelperBase.detectMods();
+		Handlers.init();
 		ModTabs.init();
 		ZEConfig.init(event);
 		RegistryUtil.registerAll(event);
@@ -53,7 +54,6 @@ public class ZollernExtrasMod {
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
 		instance().proxy.init(event);
-		Handlers.init();
 		RecipeManager.init();
 		NetworkRegistry.INSTANCE.registerGuiHandler(this, new CommonProxy());
 	}

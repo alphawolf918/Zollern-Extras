@@ -116,7 +116,7 @@ public class ZollernEventManager {
 		// EntityItem itemEntity = new EntityItem(worldObj,
 		// theEntity.posX, theEntity.posY, theEntity.posZ,
 		// itemStack);
-		// worldObj.spawnEntityInWorld(itemEntity);
+		// worldObj.spawnEntityInWorld(itemEntity);2
 		// }
 		// }
 	}
@@ -125,35 +125,28 @@ public class ZollernEventManager {
 	// @SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
 	// public void onChunkPreLoadEvent(PopulateChunkEvent.Pre event) {
 	// World world = event.getWorld();
-	// int worldY = world.getHeight();
+	// int worldY = world.getHeight(event.getChunkX(), event.getChunkZ());
 	// Biome currentBiome = world.getBiome(new BlockPos(
 	// event.getChunkX() * 16, worldY, event.getChunkZ() * 16));
 	// Chunk chunk = event.getWorld().getChunkFromChunkCoords(
-	// event.getChunkX(), event.getChunkZ());
+	// event.getChunkX() * 16, event.getChunkZ() * 16);
 	// if (currentBiome == BiomeList.biomeIceDesert) {
 	// for (ExtendedBlockStorage storage : chunk.getBlockStorageArray()) {
-	// for (int x = 0; x < 16; ++x) {
-	// for (int y = 0; y < 16; ++y) {
-	// for (int z = 0; z < 16; ++z) {
-	// try {
-	// IBlockState cbState = storage.get(x,
-	// storage.getYLocation(), z);
-	// if (cbState == Blocks.WATER.getDefaultState()) {
-	// storage.set(x, storage.getYLocation(), z,
+	// for (int x = 0; x < 16; x++) {
+	// for (int y = 0; y < 16; y++) {
+	// for (int z = 0; z < 16; z++) {
+	// IBlockState blockState = storage.get(x, y, z)
+	// .getActualState(world,
+	// new BlockPos(x, y, z));
+	// if (blockState == Blocks.WATER.getDefaultState()) {
+	// storage.set(x, y, z,
 	// Blocks.ICE.getDefaultState());
 	// }
-	// } catch (NullPointerException ex) {
-	// ex.printStackTrace();
 	// }
 	// }
 	// }
-	// }
-	// }
-	// // ZollernHelper.logInfo("am in biome lol");
-	// } else {
-	// // ZollernHelper.logInfo("nope, am in " +
-	// // currentBiome.getBiomeName());
 	// }
 	// chunk.setModified(true);
+	// }
 	// }
 }

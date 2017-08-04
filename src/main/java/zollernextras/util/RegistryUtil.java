@@ -58,13 +58,14 @@ public class RegistryUtil {
 				ZollernBlocks.upsideDownSubRock);
 		
 		registerItems(event, ZollernItems.superChargedCoal,
-				ZollernItems.amaranthIngot, ZollernItems.amaranthDust,
-				ZollernItems.azurite, ZollernItems.enderShard,
-				ZollernItems.zollerniumDust, ZollernItems.zollerniumIngot,
-				ZollernItems.obsidianIngot, ZollernItems.obsidianDust,
-				ZollernItems.witherite, ZollernItems.fuelonite,
-				ZollernItems.fueltoniumIngot, ZollernItems.zincIngot,
-				ZollernItems.zincDust, ZollernItems.garnet, ZollernItems.opal,
+				ZollernItems.amaranthIngot, ZollernItems.amaranthNugget,
+				ZollernItems.amaranthDust, ZollernItems.azurite,
+				ZollernItems.enderShard, ZollernItems.zollerniumDust,
+				ZollernItems.zollerniumIngot, ZollernItems.obsidianIngot,
+				ZollernItems.obsidianDust, ZollernItems.witherite,
+				ZollernItems.fuelonite, ZollernItems.fueltoniumIngot,
+				ZollernItems.zincIngot, ZollernItems.zincDust,
+				ZollernItems.garnet, ZollernItems.opal,
 				ZollernItems.aquamarine, ZollernItems.topaz, ZollernItems.ruby,
 				ZollernItems.sapphire, ZollernItems.amber,
 				ZollernItems.steelIngot, ZollernItems.steelDust,
@@ -76,7 +77,17 @@ public class RegistryUtil {
 				ZollernItems.amaranthPickaxe, ZollernItems.amaranthShovel,
 				ZollernItems.amaranthHoe, ZollernItems.azuriteHelm,
 				ZollernItems.azuriteChest, ZollernItems.azuriteLegs,
-				ZollernItems.azuriteBoots);
+				ZollernItems.azuriteBoots, ZollernItems.azuriteSword,
+				ZollernItems.azuriteAxe, ZollernItems.azuritePickaxe,
+				ZollernItems.azuriteShovel, ZollernItems.azuriteHoe,
+				ZollernItems.zollerniumHelm, ZollernItems.zollerniumChest,
+				ZollernItems.zollerniumLegs, ZollernItems.zollerniumBoots,
+				ZollernItems.zollerniumSword, ZollernItems.zollerniumAxe,
+				ZollernItems.zollerniumPickaxe, ZollernItems.zollerniumShovel,
+				ZollernItems.zollerniumHoe, ZollernItems.radiantHelm,
+				ZollernItems.radiantChest, ZollernItems.radiantLegs,
+				ZollernItems.radiantBoots, ZollernItems.chargiumIngot,
+				ZollernItems.chargiumDust);
 	}
 	
 	public static void registerBlocks(FMLPreInitializationEvent event,

@@ -159,6 +159,10 @@ public class PulverizerRecipes {
 		// Wheat -> Flour
 		ThermalExpansionHelper.addPulverizerRecipe(400, new ItemStack(
 				Items.WHEAT), new ItemStack(ZollernItems.flour, 2));
+		
+		// Chargium (Ingot -> Dust)
+		ThermalExpansionHelper.addPulverizerRecipe(800, new ItemStack(
+				ZollernItems.chargiumIngot), new ItemStack(
+				ZollernItems.chargiumDust, 1));
 	}
-	
 }

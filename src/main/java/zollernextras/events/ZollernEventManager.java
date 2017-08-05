@@ -3,6 +3,7 @@ package zollernextras.events;
 import java.util.Random;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.monster.EntityBlaze;
 import net.minecraft.entity.monster.EntityEnderman;
@@ -11,20 +12,79 @@ import net.minecraft.entity.monster.EntitySilverfish;
 import net.minecraft.entity.monster.EntitySkeleton;
 import net.minecraft.entity.monster.EntitySlime;
 import net.minecraft.entity.monster.EntityZombie;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.init.MobEffects;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.PotionEffect;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
+import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent.NameFormat;
 import net.minecraftforge.event.world.BlockEvent.BreakEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import zollernextras.items.ZollernItems;
+import zollernextras.items.armor.ZollernArmor;
+import zollernextras.items.armor.ZollernArmorMaterials;
 
 public class ZollernEventManager {
+	
+	@SubscribeEvent(priority = EventPriority.HIGH, receiveCanceled = true)
+	public void onLivingUpdateEvent(LivingUpdateEvent event) {
+		EntityLivingBase entity = event.getEntityLiving();
+		if (entity instanceof EntityPlayer) {
+			EntityPlayer player = (EntityPlayer) entity;
+			NonNullList<ItemStack> armorInventory = player.inventory.armorInventory;
+			
+			int amArmorCount = 0;
+			int zArmorCount = 0;
+			int azArmorCount = 0;
+			int rArmorCount = 0;
+			
+			for (ItemStack armorStack : armorInventory) {
+				if (armorStack != null) {
+					if (armorStack.getItem() instanceof ZollernArmor) {
+						ZollernArmor armorItem = (ZollernArmor) armorStack
+								.getItem();
+						if (armorItem.getArmorMaterial() == ZollernArmorMaterials.AMARANTH) {
+							amArmorCount++;
+						} else if (armorItem.getArmorMaterial() == ZollernArmorMaterials.ZOLLERNIUM) {
+							zArmorCount++;
+						} else if (armorItem.getArmorMaterial() == ZollernArmorMaterials.AZURITE) {
+							azArmorCount++;
+						} else if (armorItem.getArmorMaterial() == ZollernArmorMaterials.RADIUM) {
+							rArmorCount++;
+						}
+					}
+				}
+			}
+			
+			for (int i = 0; i < 4; ++i) {
+				if (amArmorCount == 4) {
+					player.addPotionEffect(new PotionEffect(
+							MobEffects.RESISTANCE, 2, 1));
+				} else if (zArmorCount == 4) {
+					player.addPotionEffect(new PotionEffect(
+							MobEffects.FIRE_RESISTANCE, 0, 1));
+					player.stepHeight = 2F;
+				} else if (azArmorCount == 4) {
+					player.addPotionEffect(new PotionEffect(
+							MobEffects.STRENGTH, 2, 1));
+				} else if (rArmorCount == 4) {
+					// TODO
+					player.capabilities.allowFlying = true;
+				} else {
+					player.stepHeight = 0.5F;
+					player.capabilities.allowFlying = false;
+				}
+			}
+		}
+	}
 	
 	// Modifies names for Patrons and my friends.
 	@SubscribeEvent(priority = EventPriority.HIGH, receiveCanceled = true)

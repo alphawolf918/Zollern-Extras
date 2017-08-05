@@ -112,7 +112,11 @@ public class WorldGenManager implements IWorldGenerator {
 		addOreSpawn(ZollernBlocks.opalOre, world, random, x, z, 16, 16,
 				4 + random.nextInt(2), ZEConfig.oreOpalSpawnRate, 4, 42);
 		
-		int y = world.getHeight();
+		// Shinestone
+		addOreSpawn(ZollernBlocks.shinestone, world, random, x, z, 16, 16,
+				5 + random.nextInt(10), 14, 14, 42);
+		
+		int y = world.getHeight(x, z);
 		
 		Biome currentBiome = world.getBiome(new BlockPos(x, y, z));
 		

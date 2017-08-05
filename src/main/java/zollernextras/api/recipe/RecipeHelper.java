@@ -2,6 +2,7 @@ package zollernextras.api.recipe;
 
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -169,7 +170,6 @@ public class RecipeHelper {
 	 */
 	public static void addSmelting(ItemStack input, ItemStack output, float xp) {
 		GameRegistry.addSmelting(input, output, xp);
-		// FurnaceRecipes.instance().addSmeltingRecipe(input, output, xp);
 		if (ModHelperBase.useThermalExpansion) {
 			ThermalExpansionHelper.addFurnaceRecipe(500, input, output);
 		}
@@ -195,8 +195,6 @@ public class RecipeHelper {
 	 */
 	public static void addSmelting(Item input, ItemStack output, float xp) {
 		GameRegistry.addSmelting(input, output, xp);
-		// FurnaceRecipes.instance().addSmeltingRecipe(new ItemStack(input, 1),
-		// output, xp);
 		if (ModHelperBase.useThermalExpansion) {
 			ThermalExpansionHelper.addFurnaceRecipe(1500, new ItemStack(input,
 					1), output);
@@ -223,8 +221,6 @@ public class RecipeHelper {
 	 */
 	public static void addSmelting(Block input, ItemStack output, float xp) {
 		GameRegistry.addSmelting(input, output, xp);
-		// FurnaceRecipes.instance().addSmeltingRecipe(new ItemStack(input, 1),
-		// output, xp);
 		if (ModHelperBase.useThermalExpansion) {
 			ThermalExpansionHelper.addFurnaceRecipe(1500, new ItemStack(input,
 					1), output);
@@ -240,5 +236,105 @@ public class RecipeHelper {
 	 */
 	public static void addSmelting(Block input, Block output, float xp) {
 		addSmelting(input, new ItemStack(output, 1), xp);
+	}
+	
+	public static void addArmorSet(Item itemOutput, Block blockOutput,
+			String armorType) {
+		armorType = armorType.toLowerCase();
+		// Helmet
+		if (armorType.equals("helmet")) {
+			GameRegistry.addRecipe(new ItemStack(itemOutput), new Object[] {
+					"ZZZ", "Z Z", "   ", 'Z', new ItemStack(blockOutput, 1) });
+			// Chestplate
+		} else if (armorType.equals("chest")) {
+			GameRegistry.addRecipe(new ItemStack(itemOutput), new Object[] {
+					"Z Z", "ZZZ", "ZZZ", 'Z', new ItemStack(blockOutput, 1) });
+			// Leggings
+		} else if (armorType.equals("legs")) {
+			GameRegistry.addRecipe(new ItemStack(itemOutput), new Object[] {
+					"ZZZ", "Z Z", "Z Z", 'Z', new ItemStack(blockOutput, 1) });
+			// Boots
+		} else if (armorType.equals("boots")) {
+			GameRegistry.addRecipe(new ItemStack(itemOutput), new Object[] {
+					"   ", "Z Z", "Z Z", 'Z', new ItemStack(blockOutput, 1) });
+			GameRegistry.addRecipe(new ItemStack(itemOutput), new Object[] {
+					"Z Z", "Z Z", "   ", 'Z', new ItemStack(blockOutput, 1) });
+		}
+	}
+	
+	/**
+	 * Adds an armor set easily.
+	 * 
+	 * @param itemOutput
+	 *            The armor to be crafted.
+	 * @param itemIngot
+	 *            The metal that the armor is made of.
+	 * @param armorType
+	 *            A string of what type of armor it is (helmet, chestplate,
+	 *            leggings or boots).
+	 */
+	public static void addArmorSet(Item itemOutput, Item itemIngot,
+			String armorType) {
+		armorType = armorType.toLowerCase();
+		// Helmet
+		if (armorType.equals("helmet")) {
+			GameRegistry.addRecipe(new ItemStack(itemOutput), new Object[] {
+					"ZZZ", "Z Z", "   ", 'Z', itemIngot });
+			// Chestplate
+		} else if (armorType.equals("chest")) {
+			GameRegistry.addRecipe(new ItemStack(itemOutput), new Object[] {
+					"Z Z", "ZZZ", "ZZZ", 'Z', itemIngot });
+			// Leggings
+		} else if (armorType.equals("legs")) {
+			GameRegistry.addRecipe(new ItemStack(itemOutput), new Object[] {
+					"ZZZ", "Z Z", "Z Z", 'Z', itemIngot });
+			// Boots
+		} else if (armorType.equals("boots")) {
+			GameRegistry.addRecipe(new ItemStack(itemOutput), new Object[] {
+					"   ", "Z Z", "Z Z", 'Z', itemIngot });
+			GameRegistry.addRecipe(new ItemStack(itemOutput), new Object[] {
+					"Z Z", "Z Z", "   ", 'Z', itemIngot });
+		}
+	}
+	
+	/**
+	 * Adds a tool recipe easily.
+	 * 
+	 * @param itemOutput
+	 *            The ItemStack to be returned as a crafting result.
+	 * @param itemIngot
+	 *            The metal ingot used as what the tools are made of.
+	 * @param toolType
+	 *            The type of tool to be returned (accepts pickaxe, shovel, axe,
+	 *            hoe, and sword).
+	 */
+	public static void addToolSet(ItemStack itemOutput, Item itemIngot,
+			String toolType) {
+		toolType = toolType.toLowerCase();
+		// Pickaxe
+		if (toolType.equals("pickaxe")) {
+			GameRegistry.addRecipe(itemOutput, new Object[] { "RRR", " S ",
+					" S ", 'R', itemIngot, 'S', Items.STICK });
+			// Shovel
+		} else if (toolType.equals("shovel")) {
+			GameRegistry.addRecipe(itemOutput, new Object[] { " R ", " S ",
+					" S ", 'R', itemIngot, 'S', Items.STICK });
+			// Axe
+		} else if (toolType.equals("axe")) {
+			GameRegistry.addRecipe(itemOutput, new Object[] { " RR", " SR",
+					" S ", 'R', itemIngot, 'S', Items.STICK });
+			GameRegistry.addRecipe(itemOutput, new Object[] { "RR ", "RS ",
+					" S ", 'R', itemIngot, 'S', Items.STICK });
+			// Hoe
+		} else if (toolType.equals("hoe")) {
+			GameRegistry.addRecipe(itemOutput, new Object[] { "RR ", " S ",
+					" S ", 'R', itemIngot, 'S', Items.STICK });
+			GameRegistry.addRecipe(itemOutput, new Object[] { " RR", " S ",
+					" S ", 'R', itemIngot, 'S', Items.STICK });
+			// Sword
+		} else if (toolType.equals("sword")) {
+			GameRegistry.addRecipe(itemOutput, new Object[] { " R ", " R ",
+					" S ", 'R', itemIngot, 'S', Items.STICK });
+		}
 	}
 }

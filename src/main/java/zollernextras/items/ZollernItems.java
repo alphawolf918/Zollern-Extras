@@ -98,6 +98,32 @@ public class ZollernItems {
 	public static final Item zollerniumHoe = new ZollernHoe(
 			ZollernToolMaterials.ZOLLERNIUM, "zollerniumhoe");
 	
+	// Ruby
+	public static final Item ruby = new ZollernItemBase("ruby");
+	public static final Item rubySword = new ZollernSword(
+			ZollernToolMaterials.RUBY, "rubysword");
+	public static final Item rubyAxe = new ZollernAxe(
+			ZollernToolMaterials.RUBY, "rubyaxe", -4.2F);
+	public static final Item rubyPickaxe = new ZollernPickaxe(
+			ZollernToolMaterials.RUBY, "rubypickaxe");
+	public static final Item rubyShovel = new ZollernShovel(
+			ZollernToolMaterials.RUBY, "rubyshovel");
+	public static final Item rubyHoe = new ZollernHoe(
+			ZollernToolMaterials.RUBY, "rubyhoe");
+	
+	// Sapphire
+	public static final Item sapphire = new ZollernItemBase("sapphire");
+	public static final Item sapphireSword = new ZollernSword(
+			ZollernToolMaterials.SAPPHIRE, "sapphiresword");
+	public static final Item sapphireAxe = new ZollernAxe(
+			ZollernToolMaterials.SAPPHIRE, "sapphireaxe", -4.1F);
+	public static final Item sapphirePickaxe = new ZollernPickaxe(
+			ZollernToolMaterials.SAPPHIRE, "sapphirepickaxe");
+	public static final Item sapphireShovel = new ZollernShovel(
+			ZollernToolMaterials.SAPPHIRE, "sapphireshovel");
+	public static final Item sapphireHoe = new ZollernHoe(
+			ZollernToolMaterials.SAPPHIRE, "sapphirehoe");
+	
 	// Radium
 	public static final Item radium = new ZollernItemBase("radiance");
 	// TODO: Apply custom potion effect on right-click
@@ -128,11 +154,8 @@ public class ZollernItems {
 	public static final Item amber = new ZollernItemBase("amber");
 	public static final Item opal = new ZollernItemBase("opal");
 	
-	public static final Item ruby = new ZollernItemBase("ruby");
-	
 	public static final Item garnet = new ZollernItemBase("garnet");
 	public static final Item topaz = new ZollernItemBase("topaz");
-	public static final Item sapphire = new ZollernItemBase("sapphire");
 	public static final Item steelIngot = new ZollernItemBase("steelingot");
 	public static final Item steelDust = new ZollernItemBase("steeldust");
 	public static final Item enderiteIngot = new ZollernItemBase(
@@ -145,5 +168,14 @@ public class ZollernItems {
 	public static final Item chargiumIngot = new ZollernItemBase(
 			"chargiumingot");
 	public static final Item chargiumDust = new ZollernItemBase("chargiumdust");
+	
+	// Shinestone
+	public static final Item shinestoneIngot = new ZollernItemBase(
+			"shinestoneingot");
+	public static final Item shinestoneDust = new ZollernItemBase("shinedust");
+	
+	// Shinium
+	public static final Item shiniumIngot = new ZollernItemBase("shiniumingot");
+	public static final Item shiniumDust = new ZollernItemBase("shiniumdust");
 	
 }

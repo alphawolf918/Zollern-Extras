@@ -164,5 +164,10 @@ public class PulverizerRecipes {
 		ThermalExpansionHelper.addPulverizerRecipe(800, new ItemStack(
 				ZollernItems.chargiumIngot), new ItemStack(
 				ZollernItems.chargiumDust, 1));
+		
+		// Shinium (Ingot -> Dust)
+		ThermalExpansionHelper.addPulverizerRecipe(1600, new ItemStack(
+				ZollernItems.shiniumIngot), new ItemStack(
+				ZollernItems.shiniumDust));
 	}
 }

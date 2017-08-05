@@ -14,6 +14,7 @@ public class RecipeManager {
 	
 	public static void init() {
 		Crafting.init();
+		ZETARecipes.init();
 		Smelting.init();
 		if (ModHelperBase.useThermalExpansion) {
 			ZollernTERecipes.init();
@@ -104,6 +105,18 @@ public class RecipeManager {
 			// Ender Diamond -> Ender Diamond Block
 			RecipeHelper.fullBlockCraft(ZollernBlocks.enderDiamondBlock,
 					ZollernItems.enderDiamond);
+			
+			// Chargium -> Chargium Block
+			RecipeHelper.fullBlockCraft(ZollernBlocks.chargiumBlock,
+					ZollernItems.chargiumIngot);
+			
+			// Shinium -> Shinium Block
+			RecipeHelper.fullBlockCraft(ZollernBlocks.shiniumBlock,
+					ZollernItems.shiniumIngot);
+			
+			// Shinedust -> Shinestone Block
+			RecipeHelper.addBricks(ZollernItems.shinestoneDust,
+					ZollernBlocks.shinestone);
 		}
 	}
 	
@@ -211,12 +224,23 @@ public class RecipeManager {
 						.addSmelting(ZollernBlocks.netherNickleOre,
 								new ItemStack(BlockOre.oreNickel.getItem(), 2,
 										5), 2.5F);
-				
-				// Flour -> Bread
-				RecipeHelper.addSmelting(ZollernItems.flour, Items.BREAD, 0.2F);
 			}
+			
+			// Flour -> Bread
+			RecipeHelper.addSmelting(ZollernItems.flour, Items.BREAD, 0.2F);
+			
+			// Shinium (Dust -> Ingot)
+			RecipeHelper.addSmelting(ZollernItems.shinestoneDust,
+					ZollernItems.shinestoneIngot, 1.6F);
 		}
 		
 	}
 	
+	static class ZETARecipes {
+		
+		public static void init() {
+			ToolRecipes.init();
+			ArmorRecipes.init();
+		}
+	}
 }

@@ -209,6 +209,17 @@ public class ZollernBlocks {
 			"nethernickleore", 3.4F).setBlockVariant(EnumBlockVariant.NETHER))
 			.setShouldExplode(true);
 	
+	// Chargium
+	public static final Block chargiumBlock = new ZollernBlockMetal(
+			"chargiumblock").setLightLevel(1.0F);
+	
+	// Shinium (Platinum)
+	public static final Block shiniumBlock = new ZollernBlockMetal(
+			"shiniumblock").setLightLevel(1.0F);
+	
+	// Shinestone
+	public static final Block shinestone = new BlockShinestone();
+	
 	/*
 	 * Biome & General Blocks
 	 */

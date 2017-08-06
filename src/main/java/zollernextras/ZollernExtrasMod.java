@@ -17,7 +17,7 @@ import zollernextras.lib.modhelper.ModHelperBase;
 import zollernextras.lib.recipes.RecipeManager;
 import zollernextras.proxies.CommonProxy;
 import zollernextras.proxies.IProxy;
-import zollernextras.util.RegistryUtil;
+import zollernextras.util.ZollernRegistry;
 
 @Mod(modid = ZollernModInfo.modId, version = ZollernModInfo.modVersion,
 		name = ZollernModInfo.name)
@@ -46,7 +46,7 @@ public class ZollernExtrasMod {
 		Handlers.init();
 		ZollernTabs.init();
 		ZEConfig.init(event);
-		RegistryUtil.registerAll(event);
+		ZollernRegistry.registerAll(event);
 		BiomeList.init();
 		instance().proxy.preInit(event);
 	}

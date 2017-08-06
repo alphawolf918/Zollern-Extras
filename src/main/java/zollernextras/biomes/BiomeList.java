@@ -11,6 +11,7 @@ public class BiomeList {
 	
 	public static int biomeColor = 1204859;
 	
+	//
 	public static Biome biomeMinersLand = new BiomeMinersLand(
 			new Biome.BiomeProperties("Miner's Land"));
 	public static Biome biomeSlimeLands = new BiomeSlimeLands(
@@ -21,9 +22,21 @@ public class BiomeList {
 			new Biome.BiomeProperties("Redshroom Field"));
 	public static Biome biomeIceDesert = new BiomeIceDesert(
 			new Biome.BiomeProperties("Ice Sand Desert"));
+	public static Biome biomeCoalHills = new BiomeCoalHills(
+			new Biome.BiomeProperties("Coal Hills"));
+	public static Biome biomeGrandCanyon = new BiomeGrandCanyon(
+			new Biome.BiomeProperties("Grand Canyon"));
+	public static Biome biomeIceMountains = new BiomeIceMountains(
+			new Biome.BiomeProperties("Ice Mountains"));
+	public static Biome biomeMudSwamp = new BiomeMudSwamp(
+			new Biome.BiomeProperties("Mud Swamp"));
+	//
 	
+	// Dimension Biomes
 	public static Biome biomeUpsideDown = new BiomeUpsideDown(
 			new Biome.BiomeProperties("Upside-Down"));
+	
+	//
 	
 	public static void init() {
 		addBiome(biomeMinersLand, ZEConfig.biomeMinersLandID, "miners_land",
@@ -41,6 +54,20 @@ public class BiomeList {
 		addBiome(biomeIceDesert, ZEConfig.biomeIcyDesertID, "ice_desert",
 				ZEConfig.biomeIcyDesertSpawnRate + 60, BiomeType.DESERT,
 				BiomeDictionary.Type.SNOWY);
+		addBiome(biomeCoalHills, ZEConfig.biomeCoalHillsID, "coal_hills",
+				ZEConfig.biomeCoalHillsSpawnRate, BiomeType.DESERT,
+				BiomeDictionary.Type.WASTELAND);
+		addBiome(biomeGrandCanyon, ZEConfig.biomeGrandCanyonID, "grand_canyon",
+				ZEConfig.biomeGrandCanyonSpawnRate, BiomeType.DESERT,
+				BiomeDictionary.Type.MOUNTAIN);
+		addBiome(biomeIceMountains, ZEConfig.biomeIceMountainsID,
+				"icey_mountains", ZEConfig.biomeIceMountainsSpawnRate,
+				BiomeType.ICY, BiomeDictionary.Type.SNOWY);
+		addBiome(biomeMudSwamp, ZEConfig.biomeMudSwampID, "mud_swamp",
+				ZEConfig.biomeMudSwampSpawnRate, BiomeType.WARM,
+				BiomeDictionary.Type.SWAMP);
+		
+		// Dimension Biomes
 		addBiome(biomeUpsideDown, ZEConfig.biomeUpsideDownID, "upside_down", 0,
 				BiomeType.ICY, BiomeDictionary.Type.DEAD);
 	}

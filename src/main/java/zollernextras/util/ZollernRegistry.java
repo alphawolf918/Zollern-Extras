@@ -11,9 +11,10 @@ import net.minecraftforge.fml.relauncher.Side;
 import zollernextras.blocks.ZollernBlocks;
 import zollernextras.items.ZollernItems;
 
-public class RegistryUtil {
+public class ZollernRegistry {
 	
 	public static void registerAll(FMLPreInitializationEvent event) {
+		// Blocks
 		registerBlocks(event, ZollernBlocks.superChargedCoalBlock,
 				ZollernBlocks.superChargedCoalOre,
 				ZollernBlocks.netherSuperChargedCoalOre,
@@ -52,12 +53,16 @@ public class RegistryUtil {
 				ZollernBlocks.asphaltStripeLeft,
 				ZollernBlocks.asphaltStripeRight, ZollernBlocks.coldSand,
 				ZollernBlocks.coldSandSmooth, ZollernBlocks.chargiumBlock,
-				ZollernBlocks.shiniumBlock, ZollernBlocks.shinestone);
+				ZollernBlocks.shiniumBlock, ZollernBlocks.shinestone,
+				ZollernBlocks.caveMarble, ZollernBlocks.blackCaveMarble,
+				ZollernBlocks.canyonRock, ZollernBlocks.canyonRockBricks,
+				ZollernBlocks.swampClay, ZollernBlocks.bricksMud);
 		
 		// Upside-Down Blocks
 		registerBlocks(event, ZollernBlocks.upsideDownSurfaceRock,
 				ZollernBlocks.upsideDownSubRock);
 		
+		// Items
 		registerItems(event, ZollernItems.superChargedCoal,
 				ZollernItems.amaranthIngot, ZollernItems.amaranthNugget,
 				ZollernItems.amaranthDust, ZollernItems.azurite,
@@ -95,7 +100,11 @@ public class RegistryUtil {
 				ZollernItems.sapphireAxe, ZollernItems.sapphirePickaxe,
 				ZollernItems.sapphireShovel, ZollernItems.sapphireHoe,
 				ZollernItems.shinestoneIngot, ZollernItems.shinestoneDust,
-				ZollernItems.shiniumIngot, ZollernItems.shiniumDust);
+				ZollernItems.shiniumIngot, ZollernItems.shiniumDust,
+				ZollernItems.swampClayBall, ZollernItems.brickMud);
+		
+		// Power Swords
+		registerItems(event, ZollernItems.DIABLO, ZollernItems.ENDER);
 	}
 	
 	public static void registerBlocks(FMLPreInitializationEvent event,

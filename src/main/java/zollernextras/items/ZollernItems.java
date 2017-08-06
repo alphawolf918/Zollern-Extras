@@ -10,9 +10,12 @@ import zollernextras.items.tools.ZollernPickaxe;
 import zollernextras.items.tools.ZollernShovel;
 import zollernextras.items.tools.ZollernSword;
 import zollernextras.items.tools.ZollernToolMaterials;
+import zollernextras.items.tools.powerswords.SwordDiablo;
+import zollernextras.items.tools.powerswords.SwordEnder;
 
 public class ZollernItems {
 	
+	// Super Charged Coal
 	public static final Item superChargedCoal = new ZollernItemBase(
 			"superchargedcoal");
 	
@@ -126,7 +129,6 @@ public class ZollernItems {
 	
 	// Radium
 	public static final Item radium = new ZollernItemBase("radiance");
-	// TODO: Apply custom potion effect on right-click
 	public static final Item radiantBoots = new ZollernArmor(
 			ZollernArmorMaterials.RADIUM, 1, EntityEquipmentSlot.FEET,
 			"radiumboots");
@@ -140,29 +142,59 @@ public class ZollernItems {
 			ZollernArmorMaterials.RADIUM, 1, EntityEquipmentSlot.HEAD,
 			"radiumhelmet");
 	
+	// Ender Shards
 	public static final Item enderShard = new ZollernItemBase("endershard");
+	
+	// Obsidian
 	public static final Item obsidianIngot = new ZollernItemBase(
 			"obsidianingot");
 	public static final Item obsidianDust = new ZollernItemBase("obsidiandust");
+	
+	// Witherium
 	public static final Item witherite = new ZollernItemBase("witherite");
+	
+	// Fueltonium
 	public static final Item fuelonite = new ZollernItemBase("fuelonite");
 	public static final Item fueltoniumIngot = new ZollernItemBase(
 			"fueltoniumingot");
+	
+	// Zinc
 	public static final Item zincIngot = new ZollernItemBase("zincingot");
 	public static final Item zincDust = new ZollernItemBase("zincdust");
+	
+	// Aquamarine
 	public static final Item aquamarine = new ZollernItemBase("aquamarine");
+	
+	// Amber
 	public static final Item amber = new ZollernItemBase("amber");
+	
+	// Opal
 	public static final Item opal = new ZollernItemBase("opal");
 	
+	// Garnet
 	public static final Item garnet = new ZollernItemBase("garnet");
+	
+	// Topaz
 	public static final Item topaz = new ZollernItemBase("topaz");
+	
+	// Steel
 	public static final Item steelIngot = new ZollernItemBase("steelingot");
 	public static final Item steelDust = new ZollernItemBase("steeldust");
+	
+	// Enderite
 	public static final Item enderiteIngot = new ZollernItemBase(
 			"enderiteingot");
 	public static final Item enderiteDust = new ZollernItemBase("enderitedust");
+	
+	// Ender Diamond
 	public static final Item enderDiamond = new ZollernItemBase("enderdiamond");
+	
+	// Flour
 	public static final Item flour = new ZollernItemBase("flour");
+	
+	// Swamp Clay
+	public static final Item swampClayBall = new ZollernItemBase(
+			"swampclayball");
 	
 	// Chargium
 	public static final Item chargiumIngot = new ZollernItemBase(
@@ -177,5 +209,12 @@ public class ZollernItems {
 	// Shinium
 	public static final Item shiniumIngot = new ZollernItemBase("shiniumingot");
 	public static final Item shiniumDust = new ZollernItemBase("shiniumdust");
+	
+	// Bricks
+	public static final Item brickMud = new ZollernItemBase("brickingot_mud");
+	
+	// Power Swords
+	public static final Item DIABLO = new SwordDiablo();
+	public static final Item ENDER = new SwordEnder();
 	
 }

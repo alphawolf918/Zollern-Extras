@@ -116,6 +116,14 @@ public class WorldGenManager implements IWorldGenerator {
 		addOreSpawn(ZollernBlocks.shinestone, world, random, x, z, 16, 16,
 				5 + random.nextInt(10), 14, 14, 42);
 		
+		// Cave Marble
+		addOreSpawn(ZollernBlocks.caveMarble, world, random, x, z, 16, 16,
+				5 + random.nextInt(10), 15, 14, 26);
+		
+		// Black Cave Marble
+		addOreSpawn(ZollernBlocks.blackCaveMarble, world, random, x, z, 16, 16,
+				5 + random.nextInt(10), 10, 4, 20);
+		
 		int y = world.getHeight(x, z);
 		
 		Biome currentBiome = world.getBiome(new BlockPos(x, y, z));
@@ -320,6 +328,12 @@ public class WorldGenManager implements IWorldGenerator {
 		// Nether Lapis Ore
 		// TODO
 		
+		// Nether Coal Ore
+		// TODO
+		
+		// Nether Platinum Ore
+		// TODO
+		
 		// Nether Copper Ore
 		addNetherOreSpawn(ZollernBlocks.netherCopperOre, world, random, x, z,
 				16, 16, 4 + random.nextInt(2), 21, 4, 128);
@@ -387,7 +401,7 @@ public class WorldGenManager implements IWorldGenerator {
 	}
 	
 	private void generateUpsideDown(World world, Random random, int x, int z) {
-		
+		// TODO
 	}
 	
 	public void addOreSpawn(Block block, World world, Random random,

@@ -1,15 +1,84 @@
 package zollernextras.api.biome;
 
 import net.minecraft.block.Block;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
 
 public abstract class ZollernBiome extends Biome {
 	
 	protected TempCategory tempBiomeCtg = TempCategory.MEDIUM;
 	protected boolean hasMutation = false;
+	protected boolean enableSnow = false;
+	protected int waterColor = 0x0000ff;
+	protected int foliageColor = 0x00ff00;
+	protected int grassColor = 0x00ff00;
+	protected int skyColor = 0x0099ff;
 	
 	public ZollernBiome(BiomeProperties properties) {
 		super(properties);
+	}
+	
+	public Biome setSkyColor(int par1SkyColor) {
+		this.skyColor = par1SkyColor;
+		return this;
+	}
+	
+	@Override
+	public int getSkyColorByTemp(float temp) {
+		return this.skyColor;
+	}
+	
+	public Biome setGrassAndFoliageColor(int par1FoliageGrassColor) {
+		this.setFoliageColor(par1FoliageGrassColor);
+		this.setGrassColor(par1FoliageGrassColor);
+		return this;
+	}
+	
+	public Biome setGrassAndFoliageColor(int par1FoliageColor,
+			int par2GrassColor) {
+		this.setFoliageColor(par1FoliageColor);
+		this.setGrassColor(par2GrassColor);
+		return this;
+	}
+	
+	public Biome setGrassColor(int par1GrassColor) {
+		this.grassColor = par1GrassColor;
+		return this;
+	}
+	
+	@Override
+	public int getGrassColorAtPos(BlockPos pos) {
+		return this.grassColor;
+	}
+	
+	public Biome setFoliageColor(int par1FoliageColor) {
+		this.foliageColor = par1FoliageColor;
+		return this;
+	}
+	
+	@Override
+	public int getFoliageColorAtPos(BlockPos pos) {
+		return this.foliageColor;
+	}
+	
+	public Biome setEnableSnow(boolean shouldSnow) {
+		this.enableSnow = shouldSnow;
+		return this;
+	}
+	
+	@Override
+	public boolean getEnableSnow() {
+		return this.enableSnow;
+	}
+	
+	public Biome setWaterColor(int par1WaterColor) {
+		this.waterColor = par1WaterColor;
+		return this;
+	}
+	
+	@Override
+	public int getWaterColorMultiplier() {
+		return this.waterColor;
 	}
 	
 	@Override

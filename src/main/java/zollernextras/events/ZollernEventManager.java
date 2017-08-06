@@ -67,20 +67,22 @@ public class ZollernEventManager {
 			for (int i = 0; i < 4; ++i) {
 				if (amArmorCount == 4) {
 					player.addPotionEffect(new PotionEffect(
-							MobEffects.RESISTANCE, 2, 1));
+							MobEffects.RESISTANCE, 20, 1));
 				} else if (zArmorCount == 4) {
 					player.addPotionEffect(new PotionEffect(
-							MobEffects.FIRE_RESISTANCE, 0, 1));
+							MobEffects.FIRE_RESISTANCE, 20, 1));
 					player.stepHeight = 2F;
 				} else if (azArmorCount == 4) {
 					player.addPotionEffect(new PotionEffect(
-							MobEffects.STRENGTH, 2, 1));
+							MobEffects.STRENGTH, 20, 1));
 				} else if (rArmorCount == 4) {
 					// TODO
 					player.capabilities.allowFlying = true;
 				} else {
 					player.stepHeight = 0.5F;
-					player.capabilities.allowFlying = false;
+					if (!player.capabilities.isCreativeMode) {
+						player.capabilities.allowFlying = false;
+					}
 				}
 			}
 		}

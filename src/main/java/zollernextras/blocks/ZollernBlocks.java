@@ -217,13 +217,19 @@ public class ZollernBlocks {
 	public static final Block shiniumBlock = new ZollernBlockMetal(
 			"shiniumblock").setLightLevel(1.0F);
 	
-	// Shinestone
+	// Cave Blocks
 	public static final Block shinestone = new BlockShinestone();
+	public static final Block caveMarble = new ZollernBlockBase("marble", 1.4F)
+			.setBlockHarvestLevel("pickaxe", 2).setLightLevel(0.6F);
+	public static final Block blackCaveMarble = new ZollernBlockBase(
+			"blackmarble", 1.4F).setBlockHarvestLevel("pickaxe", 3)
+			.setLightLevel(0.5F);
 	
+	//
 	/*
 	 * Biome & General Blocks
 	 */
-	
+	//
 	public static final Block badStone = new ZollernBlockBase("badstone", 0.6F);
 	public static final Block redshroomBlock = new ZollernBlockBase(
 			"redshroomblock", 0.5F);
@@ -232,6 +238,11 @@ public class ZollernBlocks {
 	public static final Block coldSand = new ZollernSand("coldsand", 0.8F);
 	public static final Block coldSandSmooth = new ZollernBlockBase(
 			"coldsandsmooth", 1.2F);
+	public static final Block canyonRock = new ZollernBlockBase("canyonrock",
+			1.6F);
+	public static final Block canyonRockBricks = new ZollernBlockBase(
+			"canyonrockbricks", 1.2F);
+	public static final Block swampClay = new BlockSwampClay();
 	
 	/*
 	 * Upside-Down
@@ -248,5 +259,9 @@ public class ZollernBlocks {
 	// Etrium
 	
 	// Zucrite
+	
+	// Bricks
+	public static final Block bricksMud = new ZollernBlockBase("bricks_mud",
+			1.2F);
 	
 }

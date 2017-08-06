@@ -337,4 +337,15 @@ public class RecipeHelper {
 					" S ", 'R', itemIngot, 'S', Items.STICK });
 		}
 	}
+	
+	/**
+	 * Add ingots that craft into an ingot stack.
+	 * 
+	 * @param ingot
+	 * @param ingotStack
+	 */
+	private static void addIngotStack(Item ingot, Block ingotStack) {
+		GameRegistry.addRecipe(new ItemStack(ingotStack, 1), new Object[] {
+				" I ", "I I", "III", 'I', ingot });
+	}
 }

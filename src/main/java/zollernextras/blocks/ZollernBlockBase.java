@@ -24,6 +24,11 @@ public class ZollernBlockBase extends Block {
 		this.setHarvestLevel("pickaxe", 1);
 	}
 	
+	public Block setBlockHarvestLevel(String toolClass, int level) {
+		this.setHarvestLevel(toolClass, level);
+		return this;
+	}
+	
 	public Block setMaterial(Material material) {
 		blockMaterial = material;
 		return this;

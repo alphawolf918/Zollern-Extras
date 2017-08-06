@@ -6,6 +6,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import zollernextras.api.recipe.RecipeHelper;
 import zollernextras.blocks.ZollernBlocks;
+import zollernextras.config.ZEConfig;
 import zollernextras.items.ZollernItems;
 import zollernextras.lib.modhelper.ModHelperBase;
 import cofh.thermalfoundation.block.BlockOre;
@@ -117,6 +118,64 @@ public class RecipeManager {
 			// Shinedust -> Shinestone Block
 			RecipeHelper.addBricks(ZollernItems.shinestoneDust,
 					ZollernBlocks.shinestone);
+			
+			// Canyon Rock -> Canyon Bricks
+			RecipeHelper.addBricks(ZollernBlocks.canyonRock,
+					ZollernBlocks.canyonRockBricks);
+			
+			// Cold Smoothstone
+			ItemStack css = new ItemStack(ZollernBlocks.coldSandSmooth, 4);
+			GameRegistry.addRecipe(css, new Object[] { "CC ", "CC ", "   ",
+					'C', ZollernBlocks.coldSand });
+			
+			if (ZEConfig.vanillaItemsAreCraftable) {
+				// Name Tag
+				GameRegistry.addRecipe(new ItemStack(Items.NAME_TAG, 2),
+						new Object[] { "  I", " S ", "S  ", 'S',
+								ZollernItems.swampClayBall, 'I',
+								Items.IRON_INGOT });
+				
+				// Saddle
+				GameRegistry.addRecipe(new ItemStack(Items.SADDLE, 1),
+						new Object[] { "LLL", "L L", "I I", 'L', Items.LEATHER,
+								'I', Items.IRON_INGOT });
+				
+				// Turn Nether Quartz Block back into Nether Quartz Item
+				GameRegistry.addShapelessRecipe(new ItemStack(Items.QUARTZ, 9),
+						new Object[] { Blocks.QUARTZ_BLOCK });
+				
+				if (ZEConfig.horseArmorIsCraftable) {
+					// Iron
+					RecipeHelper.addHorseArmor(Items.IRON_HORSE_ARMOR,
+							Blocks.IRON_BLOCK);
+					
+					// Gold
+					RecipeHelper.addHorseArmor(Items.GOLDEN_HORSE_ARMOR,
+							Blocks.GOLD_BLOCK);
+					
+					// Diamond
+					RecipeHelper.addHorseArmor(Items.DIAMOND_HORSE_ARMOR,
+							Blocks.DIAMOND_BLOCK);
+				}
+			}
+			
+			// Torches
+			GameRegistry.addRecipe(new ItemStack(Blocks.TORCH, 8),
+					new Object[] { "G  ", "S  ", 'G',
+							ZollernItems.superChargedCoal, 'S', Items.STICK });
+			GameRegistry.addRecipe(new ItemStack(Blocks.TORCH, 8),
+					new Object[] { " G ", " S ", 'G',
+							ZollernItems.superChargedCoal, 'S', Items.STICK });
+			
+			// Black Cave Marble Block
+			GameRegistry.addRecipe(new ItemStack(ZollernBlocks.blackCaveMarble,
+					8), new Object[] { "III", "IMI", "III", 'I',
+					new ItemStack(Items.DYE, 1, 0), 'M',
+					ZollernBlocks.caveMarble });
+			
+			// Mud Brick Ingots -> Mud Brick Block
+			RecipeHelper.addOneWayBricks(ZollernItems.brickMud,
+					ZollernBlocks.bricksMud);
 		}
 	}
 	
@@ -232,6 +291,10 @@ public class RecipeManager {
 			// Shinium (Dust -> Ingot)
 			RecipeHelper.addSmelting(ZollernItems.shinestoneDust,
 					ZollernItems.shinestoneIngot, 1.6F);
+			
+			// Swamp Clay -> Mud Brick
+			RecipeHelper.addSmelting(ZollernItems.swampClayBall,
+					ZollernItems.brickMud, 0.2F);
 		}
 		
 	}

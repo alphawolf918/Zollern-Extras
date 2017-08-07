@@ -54,6 +54,7 @@ public class SwordEnder extends ZollernSword {
 		if (!playerIn.capabilities.isCreativeMode) {
 			itemstack.damageItem(5, playerIn);
 		}
+		playerIn.swingArm(handIn);
 		return new ActionResult(EnumActionResult.PASS,
 				playerIn.getHeldItem(handIn));
 	}

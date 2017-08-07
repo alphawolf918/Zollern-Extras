@@ -12,8 +12,7 @@ public class BlockSwampClay extends ZollernBlockBase {
 	public BlockSwampClay() {
 		super("swampclay", 0.6F);
 		this.setMaterial(Material.CLAY);
-		this.setLightLevel(1.0F);
-		this.setSoundType(SoundType.SNOW);
+		this.setSoundType(SoundType.GROUND);
 		this.setHarvestLevel("shovel", 0);
 	}
 	

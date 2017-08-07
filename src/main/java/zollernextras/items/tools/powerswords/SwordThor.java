@@ -1,15 +1,17 @@
 package zollernextras.items.tools.powerswords;
 
 import java.util.List;
-import net.minecraft.entity.Entity;
+import java.util.Random;
+import net.minecraft.entity.effect.EntityLightningBolt;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.projectile.EntityLargeFireball;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
@@ -19,29 +21,39 @@ import zollernextras.items.tools.ZollernSword;
 import zollernextras.items.tools.ZollernToolMaterials;
 import zollernextras.lib.KeyHelper;
 
-public class SwordDiablo extends ZollernSword {
+public class SwordThor extends ZollernSword {
 	
-	public SwordDiablo() {
-		super(ZollernToolMaterials.POWER, "nethersword");
+	private Random rand = new Random();
+	
+	public SwordThor() {
+		super(ZollernToolMaterials.POWER, "thorsword");
 	}
 	
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(World worldIn,
 			EntityPlayer playerIn, EnumHand handIn) {
 		super.onItemRightClick(worldIn, playerIn, handIn);
-		if (!worldIn.isRemote) {
-			ItemStack par1ItemStack = playerIn.getHeldItem(handIn);
-			Vec3d look = playerIn.getLookVec();
-			EntityLargeFireball fireball = new EntityLargeFireball(worldIn);
-			fireball.setPosition(playerIn.posX + look.xCoord * 5, playerIn.posY
-					+ 1 + look.yCoord * 5, playerIn.posZ + look.zCoord * 5);
-			fireball.accelerationX = look.xCoord * 0.1;
-			fireball.accelerationY = look.yCoord * 0.1;
-			fireball.accelerationZ = look.zCoord * 0.1;
-			worldIn.spawnEntity(fireball);
-			if (!playerIn.capabilities.isCreativeMode) {
-				par1ItemStack.damageItem(5, playerIn);
-			}
+		ItemStack itemstack = playerIn.getHeldItem(handIn);
+		int length = 100;
+		Vec3d startPos = new Vec3d(playerIn.posX, playerIn.posY
+				+ playerIn.getEyeHeight(), playerIn.posZ);
+		Vec3d endPos = startPos.add(new Vec3d(playerIn.getLookVec().xCoord
+				* length, playerIn.getLookVec().yCoord * length, playerIn
+				.getLookVec().zCoord * length));
+		RayTraceResult mop = worldIn.rayTraceBlocks(startPos, endPos);
+		if (mop == null) {
+			return new ActionResult(EnumActionResult.PASS,
+					playerIn.getHeldItem(handIn));
+		}
+		BlockPos vecPos = new BlockPos(mop.getBlockPos());
+		BlockPos spawnPos = new BlockPos(vecPos.getX(), vecPos.getY(),
+				vecPos.getZ());
+		for (int l = 0; l < 4; l += 4) {
+			worldIn.spawnEntity(new EntityLightningBolt(worldIn, vecPos.getX(),
+					vecPos.getY(), vecPos.getZ() + l, false));
+		}
+		if (!playerIn.capabilities.isCreativeMode) {
+			itemstack.damageItem(5, playerIn);
 		}
 		playerIn.swingArm(handIn);
 		return new ActionResult(EnumActionResult.PASS,
@@ -59,21 +71,13 @@ public class SwordDiablo extends ZollernSword {
 	}
 	
 	@Override
-	public boolean onLeftClickEntity(ItemStack par1ItemStack,
-			EntityPlayer par2EntityPlayer, Entity entity) {
-		super.onLeftClickEntity(par1ItemStack, par2EntityPlayer, entity);
-		entity.setFire(60);
-		return false;
-	}
-	
-	@Override
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack p_77624_1_, EntityPlayer p_77624_2_,
 			List list, boolean p_77624_4_) {
 		if (KeyHelper.isCtrlKeyDown() || KeyHelper.isShiftKeyDown()) {
-			list.add(TextFormatting.ITALIC
-					+ "A sword of fire, said to match the");
-			list.add(TextFormatting.ITALIC + "power of the Nether itself.");
+			list.add(TextFormatting.ITALIC + "Whosoever holds this blade,");
+			list.add(TextFormatting.ITALIC + "should he be worthy,");
+			list.add(TextFormatting.ITALIC + "shall possess the power of Thor.");
 		} else {
 			list.add("Hold SHIFT for");
 			list.add("more information.");

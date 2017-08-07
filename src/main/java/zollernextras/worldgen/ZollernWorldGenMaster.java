@@ -50,4 +50,26 @@ public abstract class ZollernWorldGenMaster extends WorldGenerator {
 		this.setBlock(world, pos.add(x, y, z), block);
 	}
 	
+	/**
+	 * Gets the block at the specified coordinates.
+	 * 
+	 * @param world
+	 *            The world that you're searching in.
+	 * @param pos
+	 *            The block position to check.
+	 * @return The block at that position.
+	 */
+	protected Block getBlock(World world, BlockPos pos) {
+		return world.getBlockState(pos).getBlock();
+	}
+	
+	/**
+	 * @param pos
+	 * @return
+	 */
+	protected String getSpawnedAtString(BlockPos pos) {
+		return "Spawned at: " + pos.getX() + " " + pos.getY() + " "
+				+ pos.getZ();
+	}
+	
 }

@@ -104,7 +104,8 @@ public class ZollernRegistry {
 				ZollernItems.swampClayBall, ZollernItems.brickMud);
 		
 		// Power Swords
-		registerItems(event, ZollernItems.DIABLO, ZollernItems.ENDER);
+		registerItems(event, ZollernItems.DIABLO, ZollernItems.ENDER,
+				ZollernItems.THOR);
 	}
 	
 	public static void registerBlocks(FMLPreInitializationEvent event,

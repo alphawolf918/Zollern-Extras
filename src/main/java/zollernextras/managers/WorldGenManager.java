@@ -16,6 +16,7 @@ import zollernextras.biomes.BiomeList;
 import zollernextras.blocks.ZollernBlocks;
 import zollernextras.config.ZEConfig;
 import zollernextras.lib.modhelper.ModHelperBase;
+import zollernextras.worldgen.WorldGenEnderTower;
 import zollernextras.worldgen.minable.ZollernMinable;
 import cofh.thermalfoundation.block.BlockOre;
 import erogenousbeef.bigreactors.init.BrBlocks;
@@ -359,6 +360,8 @@ public class WorldGenManager implements IWorldGenerator {
 		int Xcoord = x;
 		int Zcoord = z;
 		
+		int y = world.getHeight(x, z);
+		
 		// Ender Super Charged Coal Ore
 		addEnderOreSpawn(ZollernBlocks.enderSuperChargedCoalOre, world, random,
 				Xcoord, Zcoord, 16, 16, 4 + random.nextInt(2),
@@ -397,6 +400,11 @@ public class WorldGenManager implements IWorldGenerator {
 		// Ender Diamond Ore
 		addEnderOreSpawn(ZollernBlocks.enderDiamondOre, world, random, x, z,
 				16, 16, 2 + random.nextInt(2), 26, 4, 110);
+		
+		if (random.nextInt(500) <= 5) {
+			(new WorldGenEnderTower()).generate(world, random, new BlockPos(x,
+					y, z));
+		}
 		
 	}
 	

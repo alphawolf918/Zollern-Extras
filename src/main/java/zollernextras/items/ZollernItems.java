@@ -12,6 +12,7 @@ import zollernextras.items.tools.ZollernSword;
 import zollernextras.items.tools.ZollernToolMaterials;
 import zollernextras.items.tools.powerswords.SwordDiablo;
 import zollernextras.items.tools.powerswords.SwordEnder;
+import zollernextras.items.tools.powerswords.SwordThor;
 
 public class ZollernItems {
 	
@@ -216,5 +217,6 @@ public class ZollernItems {
 	// Power Swords
 	public static final Item DIABLO = new SwordDiablo();
 	public static final Item ENDER = new SwordEnder();
+	public static final Item THOR = new SwordThor();
 	
 }

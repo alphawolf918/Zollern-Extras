@@ -14,38 +14,23 @@ public class WorldGenEnderTower extends ZollernWorldGenMaster {
 		return new Block[] { Blocks.END_STONE };
 	}
 	
-	public boolean LocationIsValidSpawn(World world, int i, int j, int k) {
-		int distanceToAir = 0;
-		Block checkID = world.getBlockState(new BlockPos(i, j, k)).getBlock();
+	protected boolean isValidSpawn(World world, BlockPos pos) {
+		int i = pos.getX();
+		int j = pos.getY();
+		int k = pos.getZ();
 		
-		while (checkID != Blocks.AIR) {
-			distanceToAir++;
-			checkID = world
-					.getBlockState(new BlockPos(i, j + distanceToAir, k))
-					.getBlock();
-		}
+		Block blockBelow = world.getBlockState(new BlockPos(i, j - 1, k))
+				.getBlock();
 		
-		if (distanceToAir > 3) {
+		if (blockBelow == Blocks.AIR) {
 			return false;
 		}
-		j += distanceToAir - 1;
 		
-		Block blockID = world.getBlockState(new BlockPos(i, j, k)).getBlock();
-		Block blockIDAbove = world.getBlockState(new BlockPos(i, j + 1, k))
-				.getBlock();
-		Block blockIDBelow = world.getBlockState(new BlockPos(i, j - 1, k))
-				.getBlock();
-		for (Block x : GetValidSpawnBlocks()) {
-			if (blockIDAbove != Blocks.AIR) {
-				return false;
-			}
-			if (blockID == x) {
-				return true;
-			} else if (blockID == Blocks.END_STONE && blockIDBelow == x) {
-				return true;
-			}
+		if (blockBelow != Blocks.END_STONE) {
+			return false;
 		}
-		return false;
+		
+		return true;
 	}
 	
 	@Override
@@ -57,7 +42,9 @@ public class WorldGenEnderTower extends ZollernWorldGenMaster {
 		
 		j -= 10;
 		
-		if (world.getBlockState(new BlockPos(i, j + 1, k)) == Blocks.AIR) {
+		pos = new BlockPos(i, j, k);
+		
+		if (!this.isValidSpawn(world, new BlockPos(i, j, k))) {
 			return false;
 		}
 		

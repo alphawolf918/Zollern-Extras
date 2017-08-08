@@ -3,6 +3,7 @@ package zollernextras.blocks;
 import net.minecraft.block.Block;
 import net.minecraft.init.Items;
 import net.minecraft.init.MobEffects;
+import zollernextras.blocks.crops.ZollernCrops;
 import zollernextras.items.ZollernItems;
 import zollernextras.lib.EnumBlockVariant;
 
@@ -41,7 +42,7 @@ public class ZollernBlocks {
 	
 	// Ender Shard
 	public static final Block enderPearlBlock = new ZollernBlockMetal(
-			"enderpearlblock").setLightLevel(2.0F);
+			"enderpearlblock").setLightLevel(0.5F);
 	public static final Block enderShardOre = new ZollernGemOre(
 			"endershardore", 2.5F, ZollernItems.enderShard);
 	public static final Block netherEnderShardOre = (((ZollernBlockOre) new ZollernGemOre(
@@ -263,5 +264,9 @@ public class ZollernBlocks {
 	// Bricks
 	public static final Block bricksMud = new ZollernBlockBase("bricks_mud",
 			1.2F);
+	
+	// Croppies
+	public static final Block garlicCrop = new ZollernCrops("garliccrop", 1, 4,
+			ZollernItems.garlicSeeds, ZollernItems.garlic);
 	
 }

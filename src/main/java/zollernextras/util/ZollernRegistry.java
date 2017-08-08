@@ -56,7 +56,8 @@ public class ZollernRegistry {
 				ZollernBlocks.shiniumBlock, ZollernBlocks.shinestone,
 				ZollernBlocks.caveMarble, ZollernBlocks.blackCaveMarble,
 				ZollernBlocks.canyonRock, ZollernBlocks.canyonRockBricks,
-				ZollernBlocks.swampClay, ZollernBlocks.bricksMud);
+				ZollernBlocks.swampClay, ZollernBlocks.bricksMud,
+				ZollernBlocks.garlicCrop);
 		
 		// Upside-Down Blocks
 		registerBlocks(event, ZollernBlocks.upsideDownSurfaceRock,
@@ -101,7 +102,8 @@ public class ZollernRegistry {
 				ZollernItems.sapphireShovel, ZollernItems.sapphireHoe,
 				ZollernItems.shinestoneIngot, ZollernItems.shinestoneDust,
 				ZollernItems.shiniumIngot, ZollernItems.shiniumDust,
-				ZollernItems.swampClayBall, ZollernItems.brickMud);
+				ZollernItems.swampClayBall, ZollernItems.brickMud,
+				ZollernItems.garlic, ZollernItems.garlicSeeds);
 		
 		// Power Swords
 		registerItems(event, ZollernItems.DIABLO, ZollernItems.ENDER,

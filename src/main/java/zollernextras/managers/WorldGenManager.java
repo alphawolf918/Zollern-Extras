@@ -34,7 +34,7 @@ public class WorldGenManager implements IWorldGenerator {
 			this.generateNether(world, random, chunkX * 16, chunkZ * 16);
 			break;
 		case 1:
-			this.generateEnd(world, random, chunkX * 16, chunkX * 16);
+			this.generateEnd(world, random, chunkX * 16, chunkZ * 16);
 			break;
 		}
 		if (world.provider.getDimension() == ZEConfig.dimensionUpsideDownID) {
@@ -357,8 +357,8 @@ public class WorldGenManager implements IWorldGenerator {
 	}
 	
 	private void generateEnd(World world, Random random, int x, int z) {
-		int Xcoord = x;
-		int Zcoord = z;
+		int Xcoord = x + random.nextInt(16);
+		int Zcoord = z + random.nextInt(16);
 		
 		int y = world.getHeight(x, z);
 		
@@ -401,7 +401,7 @@ public class WorldGenManager implements IWorldGenerator {
 		addEnderOreSpawn(ZollernBlocks.enderDiamondOre, world, random, x, z,
 				16, 16, 2 + random.nextInt(2), 26, 4, 110);
 		
-		if (random.nextInt(500) <= 5) {
+		if (random.nextInt(250) <= 2) {
 			(new WorldGenEnderTower()).generate(world, random, new BlockPos(x,
 					y, z));
 		}

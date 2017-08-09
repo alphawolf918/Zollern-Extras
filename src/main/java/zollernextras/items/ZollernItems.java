@@ -216,14 +216,19 @@ public class ZollernItems {
 	public static final Item brickMud = new ZollernItemBase("brickingot_mud");
 	
 	// Croppies
-	public static final Item garlic = new ZollernItemFood("garlic", 1, 1.5F,
+	public static final Item garlic = new ZollernSeedFood(
+			ZollernBlocks.garlicCrop, "garlic", 0, 2, 0.2F);
+	public static final Item tomato = new ZollernItemFood("tomato", 1, 1.5F,
 			false);
-	public static final Item garlicSeeds = new ZollernSeed(
-			ZollernBlocks.garlicCrop, "garlicseeds", garlic, 0);
+	public static final Item tomatoSeeds = new ZollernSeed(
+			ZollernBlocks.tomatoCrop, "tomatoseeds", tomato, 0);
 	
 	// Power Swords
 	public static final Item DIABLO = new SwordDiablo();
 	public static final Item ENDER = new SwordEnder();
 	public static final Item THOR = new SwordThor();
+	public static Item GLACIES;
+	public static Item MORTEM;
+	public static Item LUCENT;
 	
 }

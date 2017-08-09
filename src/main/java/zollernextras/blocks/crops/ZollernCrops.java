@@ -28,6 +28,16 @@ public class ZollernCrops extends BlockCrops {
 		ZollernHelper.setName(this, blockName);
 	}
 	
+	public ZollernCrops(String blockName, int minDropAmount, int addDropAmount,
+			Item seedFood) {
+		this.setCreativeTab((CreativeTabs) null);
+		this.minDropAmount = minDropAmount;
+		this.addDropAmount = addDropAmount;
+		this.seedItem = seedFood;
+		this.returnItem = seedFood;
+		ZollernHelper.setName(this, blockName);
+	}
+	
 	public void doStuff(Item seedItem, Item returnItem, int returnMeta) {
 		this.seedItem = seedItem;
 		this.returnItem = returnItem;

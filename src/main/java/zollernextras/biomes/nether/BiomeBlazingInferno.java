@@ -9,7 +9,7 @@ public class BiomeBlazingInferno extends ZollernNetherBiome {
 	public BiomeBlazingInferno() {
 		super(new Biome.BiomeProperties("Blazing Inferno"), "blazing_inferno");
 		this.setBlocks(ZollernBlocks.blazeRock);
-		this.setBiomeWeight(5);
+		this.setBiomeWeight(2);
 	}
 	
 }

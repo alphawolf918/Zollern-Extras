@@ -394,8 +394,8 @@ public class ChunkHellProvider extends ChunkProviderHell {
 	public Chunk provideChunk(int chunkX, int chunkZ) {
 		ChunkPrimer primer = new ChunkPrimer();
 		rand.setSeed(chunkX * 341873128712L + chunkZ * 132897987541L);
-		biomesForGen = world.getBiomeProvider().getBiomes(null, chunkX * 16,
-				chunkZ * 16, 16, 16);
+		biomesForGen = world.getBiomeProvider().getBiomes(biomesForGen,
+				chunkX * 16, chunkZ * 16, 16, 16);
 		prepareHeights(chunkX, chunkZ, primer);
 		buildSurfaces(chunkX, chunkZ, primer);
 		netherCaves.generate(world, chunkX, chunkZ, primer);

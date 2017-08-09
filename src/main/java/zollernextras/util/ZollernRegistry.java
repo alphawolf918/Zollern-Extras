@@ -57,7 +57,7 @@ public class ZollernRegistry {
 				ZollernBlocks.caveMarble, ZollernBlocks.blackCaveMarble,
 				ZollernBlocks.canyonRock, ZollernBlocks.canyonRockBricks,
 				ZollernBlocks.swampClay, ZollernBlocks.bricksMud,
-				ZollernBlocks.garlicCrop);
+				ZollernBlocks.garlicCrop, ZollernBlocks.tomatoCrop);
 		
 		// New Hell Blocks
 		registerBlocks(event, ZollernBlocks.blazeRock);
@@ -106,7 +106,8 @@ public class ZollernRegistry {
 				ZollernItems.shinestoneIngot, ZollernItems.shinestoneDust,
 				ZollernItems.shiniumIngot, ZollernItems.shiniumDust,
 				ZollernItems.swampClayBall, ZollernItems.brickMud,
-				ZollernItems.garlic, ZollernItems.garlicSeeds);
+				ZollernItems.garlic, ZollernItems.tomato,
+				ZollernItems.tomatoSeeds);
 		
 		// Power Swords
 		registerItems(event, ZollernItems.DIABLO, ZollernItems.ENDER,

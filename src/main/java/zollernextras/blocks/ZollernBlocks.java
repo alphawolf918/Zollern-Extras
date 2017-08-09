@@ -271,7 +271,9 @@ public class ZollernBlocks {
 			1.2F);
 	
 	// Croppies
-	public static final Block garlicCrop = new ZollernCrops("garliccrop", 1, 4,
-			ZollernItems.garlicSeeds, ZollernItems.garlic);
+	public static final Block garlicCrop = new ZollernCrops("garliccrop", 1, 3,
+			ZollernItems.garlic);
+	public static final Block tomatoCrop = new ZollernCrops("tomatocrop", 1, 3,
+			ZollernItems.tomatoSeeds, ZollernItems.tomato);
 	
 }

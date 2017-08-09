@@ -244,6 +244,11 @@ public class ZollernBlocks {
 	public static final Block canyonRockBricks = new ZollernBlockBase(
 			"canyonrockbricks", 1.2F);
 	public static final Block swampClay = new BlockSwampClay();
+	//
+	// Nether Biome Blocks
+	//
+	public static final Block blazeRock = new ZollernBlockBase("blazerock",
+			2.5F);
 	
 	/*
 	 * Upside-Down

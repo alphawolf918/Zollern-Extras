@@ -99,6 +99,13 @@ public abstract class ZollernBiome extends Biome {
 		return this;
 	}
 	
+	public Biome clearAllNonMonsterSpawning() {
+		this.spawnableCreatureList.clear();
+		this.spawnableCaveCreatureList.clear();
+		this.spawnableWaterCreatureList.clear();
+		return this;
+	}
+	
 	public Biome setNoRain(Biome.BiomeProperties props) {
 		props.setRainfall(0.0F);
 		props.setRainDisabled();

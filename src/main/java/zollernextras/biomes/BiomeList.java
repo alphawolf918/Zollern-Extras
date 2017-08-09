@@ -33,6 +33,8 @@ public class BiomeList {
 	//
 	
 	// Dimension Biomes
+	//
+	// Upside-Down
 	public static Biome biomeUpsideDown = new BiomeUpsideDown(
 			new Biome.BiomeProperties("Upside-Down"));
 	
@@ -68,6 +70,8 @@ public class BiomeList {
 				BiomeDictionary.Type.SWAMP);
 		
 		// Dimension Biomes
+		//
+		// Upside-Down
 		addBiome(biomeUpsideDown, ZEConfig.biomeUpsideDownID, "upside_down", 0,
 				BiomeType.ICY, BiomeDictionary.Type.DEAD);
 	}

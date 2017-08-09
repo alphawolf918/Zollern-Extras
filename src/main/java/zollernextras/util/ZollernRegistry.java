@@ -59,6 +59,9 @@ public class ZollernRegistry {
 				ZollernBlocks.swampClay, ZollernBlocks.bricksMud,
 				ZollernBlocks.garlicCrop);
 		
+		// New Hell Blocks
+		registerBlocks(event, ZollernBlocks.blazeRock);
+		
 		// Upside-Down Blocks
 		registerBlocks(event, ZollernBlocks.upsideDownSurfaceRock,
 				ZollernBlocks.upsideDownSubRock);

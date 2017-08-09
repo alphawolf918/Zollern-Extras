@@ -11,6 +11,7 @@ import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import zollernextras.biomes.BiomeList;
 import zollernextras.config.ZEConfig;
 import zollernextras.creativetabs.ZollernTabs;
+import zollernextras.dimensions.HellRegistry;
 import zollernextras.handlers.Handlers;
 import zollernextras.lib.ZollernModInfo;
 import zollernextras.lib.modhelper.ModHelperBase;
@@ -47,7 +48,6 @@ public class ZollernExtrasMod {
 		ZollernTabs.init();
 		ZEConfig.init(event);
 		ZollernRegistry.registerAll(event);
-		BiomeList.init();
 		instance().proxy.preInit(event);
 	}
 	
@@ -55,6 +55,7 @@ public class ZollernExtrasMod {
 	public void init(FMLInitializationEvent event) {
 		instance().proxy.init(event);
 		RecipeManager.init();
+		BiomeList.init();
 		NetworkRegistry.INSTANCE.registerGuiHandler(this, new CommonProxy());
 	}
 	
@@ -64,5 +65,6 @@ public class ZollernExtrasMod {
 		if (ZEConfig.biomeDisplaysOnHUD) {
 			instance().proxy.initGUI();
 		}
+		HellRegistry.postInit();
 	}
 }

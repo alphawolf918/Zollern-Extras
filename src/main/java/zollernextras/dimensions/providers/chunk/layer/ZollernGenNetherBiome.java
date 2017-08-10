@@ -1,13 +1,13 @@
 package zollernextras.dimensions.providers.chunk.layer;
 
-import java.util.Random;
+import java.util.List;
+import net.minecraft.util.WeightedRandom;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.layer.IntCache;
-import zollernextras.util.ZollernUtils;
+import net.minecraftforge.common.BiomeManager;
+import zollernextras.dimensions.HellRegistry;
 
 public class ZollernGenNetherBiome extends ZollernGenLayer {
-	
-	Biome mainBiome = null;
 	
 	public ZollernGenNetherBiome(long seed) {
 		super(seed);
@@ -20,26 +20,19 @@ public class ZollernGenNetherBiome extends ZollernGenLayer {
 		for (int z = 0; z < areaHeight; z++) {
 			for (int x = 0; x < areaWidth; x++) {
 				initChunkSeed(x + areaX, z + areaZ);
-				Biome currentBiome = (mainBiome == null) ? ZollernUtils
-						.getRandomBiome() : mainBiome;
-				Biome nextBiome = null;
-				if (nextBiome == null) {
-					Random rand = new Random();
-					int randInt = rand.nextInt(200);
-					if (randInt <= 5) {
-						nextBiome = ZollernUtils.getRandomBiome();
-					} else {
-						nextBiome = currentBiome;
-					}
-					mainBiome = nextBiome;
-				}
-				currentBiome = (mainBiome == null) ? ZollernUtils
-						.getRandomBiome() : mainBiome;
-				outputs[x + z * areaWidth] = Biome.getIdForBiome(currentBiome);
+				
+				outputs[x + z * areaWidth] = Biome
+						.getIdForBiome(getWeightedBiomeEntry(HellRegistry
+								.getBiomeEntries()).biome);
 			}
 		}
 		
 		return outputs;
 	}
 	
+	private BiomeManager.BiomeEntry getWeightedBiomeEntry(
+			List<BiomeManager.BiomeEntry> biomeEntries) {
+		return WeightedRandom.getRandomItem(biomeEntries,
+				nextInt(WeightedRandom.getTotalWeight(biomeEntries)));
+	}
 }

@@ -2,6 +2,7 @@ package zollernextras.dimensions.providers.world;
 
 import net.minecraft.world.DimensionType;
 import net.minecraft.world.WorldProviderHell;
+import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.IChunkGenerator;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -14,6 +15,7 @@ public class WorldHellProvider extends WorldProviderHell {
 	public void init() {
 		this.biomeProvider = new BiomeHellProvider(this.world);
 		this.doesWaterVaporize = true;
+		this.resetRainAndThunder();
 	}
 	
 	@Override
@@ -30,6 +32,16 @@ public class WorldHellProvider extends WorldProviderHell {
 	@Override
 	public DimensionType getDimensionType() {
 		return DimensionType.NETHER;
+	}
+	
+	@Override
+	public boolean isSurfaceWorld() {
+		return false;
+	}
+	
+	@Override
+	public boolean canDoRainSnowIce(Chunk chunk) {
+		return false;
 	}
 	
 }

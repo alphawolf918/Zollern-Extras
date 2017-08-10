@@ -221,7 +221,7 @@ public class ZollernItems {
 	public static final Item tomato = new ZollernItemFood("tomato", 1, 1.5F,
 			false);
 	public static final Item tomatoSeeds = new ZollernSeed(
-			ZollernBlocks.tomatoCrop, "tomatoseeds", tomato, 0);
+			ZollernBlocks.tomatoCrop, "tomatoseeds", ZollernItems.tomato, 0);
 	
 	// Power Swords
 	public static final Item DIABLO = new SwordDiablo();

@@ -14,57 +14,6 @@ import zollernextras.items.ZollernItems;
 public class ZollernRegistry {
 	
 	public static void registerAll(FMLPreInitializationEvent event) {
-		// Blocks
-		registerBlocks(event, ZollernBlocks.superChargedCoalBlock,
-				ZollernBlocks.superChargedCoalOre,
-				ZollernBlocks.netherSuperChargedCoalOre,
-				ZollernBlocks.enderSuperChargedCoalOre,
-				ZollernBlocks.amaranthBlock, ZollernBlocks.amaranthOre,
-				ZollernBlocks.netherAmaranthOre,
-				ZollernBlocks.enderAmaranthOre, ZollernBlocks.azuriteBlock,
-				ZollernBlocks.azuriteOre, ZollernBlocks.enderShardOre,
-				ZollernBlocks.enderPearlBlock,
-				ZollernBlocks.netherEnderShardOre,
-				ZollernBlocks.zollerniumBlock, ZollernBlocks.zollerniumOre,
-				ZollernBlocks.witheriteBlock, ZollernBlocks.witheriteOre,
-				ZollernBlocks.fueltoniumBlock, ZollernBlocks.fueltoniumOre,
-				ZollernBlocks.netherFueltoniumOre,
-				ZollernBlocks.enderFueltoniumOre, ZollernBlocks.zincBlock,
-				ZollernBlocks.zincOre, ZollernBlocks.netherZincOre,
-				ZollernBlocks.enderZincOre, ZollernBlocks.garnetBlock,
-				ZollernBlocks.garnetOre, ZollernBlocks.amberBlock,
-				ZollernBlocks.amberOre, ZollernBlocks.aquamarineBlock,
-				ZollernBlocks.aquamarineOre, ZollernBlocks.rubyBlock,
-				ZollernBlocks.rubyOre, ZollernBlocks.sapphireBlock,
-				ZollernBlocks.sapphireOre, ZollernBlocks.topazBlock,
-				ZollernBlocks.topazOre, ZollernBlocks.opalBlock,
-				ZollernBlocks.opalOre, ZollernBlocks.steelBlock,
-				ZollernBlocks.steelOre, ZollernBlocks.netherSteelOre,
-				ZollernBlocks.enderSteelOre, ZollernBlocks.enderiteBlock,
-				ZollernBlocks.enderiteOre, ZollernBlocks.enderDiamondBlock,
-				ZollernBlocks.enderDiamondOre, ZollernBlocks.badStone,
-				ZollernBlocks.redshroomBlock, ZollernBlocks.redshroomStem,
-				ZollernBlocks.netherIronOre, ZollernBlocks.netherGoldOre,
-				ZollernBlocks.netherDiamondOre, ZollernBlocks.netherEmeraldOre,
-				ZollernBlocks.netherRedstoneOre, ZollernBlocks.netherCopperOre,
-				ZollernBlocks.netherTinOre, ZollernBlocks.netherLeadOre,
-				ZollernBlocks.netherNickleOre, ZollernBlocks.netherSilverOre,
-				ZollernBlocks.asphaltBlack, ZollernBlocks.asphaltGray,
-				ZollernBlocks.asphaltStripeLeft,
-				ZollernBlocks.asphaltStripeRight, ZollernBlocks.coldSand,
-				ZollernBlocks.coldSandSmooth, ZollernBlocks.chargiumBlock,
-				ZollernBlocks.shiniumBlock, ZollernBlocks.shinestone,
-				ZollernBlocks.caveMarble, ZollernBlocks.blackCaveMarble,
-				ZollernBlocks.canyonRock, ZollernBlocks.canyonRockBricks,
-				ZollernBlocks.swampClay, ZollernBlocks.bricksMud,
-				ZollernBlocks.garlicCrop, ZollernBlocks.tomatoCrop);
-		
-		// New Hell Blocks
-		registerBlocks(event, ZollernBlocks.blazeRock);
-		
-		// Upside-Down Blocks
-		registerBlocks(event, ZollernBlocks.upsideDownSurfaceRock,
-				ZollernBlocks.upsideDownSubRock);
 		
 		// Items
 		registerItems(event, ZollernItems.superChargedCoal,
@@ -112,6 +61,59 @@ public class ZollernRegistry {
 		// Power Swords
 		registerItems(event, ZollernItems.DIABLO, ZollernItems.ENDER,
 				ZollernItems.THOR);
+		
+		// Blocks
+		registerBlocks(event, ZollernBlocks.superChargedCoalBlock,
+				ZollernBlocks.superChargedCoalOre,
+				ZollernBlocks.netherSuperChargedCoalOre,
+				ZollernBlocks.enderSuperChargedCoalOre,
+				ZollernBlocks.amaranthBlock, ZollernBlocks.amaranthOre,
+				ZollernBlocks.netherAmaranthOre,
+				ZollernBlocks.enderAmaranthOre, ZollernBlocks.azuriteBlock,
+				ZollernBlocks.azuriteOre, ZollernBlocks.enderShardOre,
+				ZollernBlocks.enderPearlBlock,
+				ZollernBlocks.netherEnderShardOre,
+				ZollernBlocks.zollerniumBlock, ZollernBlocks.zollerniumOre,
+				ZollernBlocks.witheriteBlock, ZollernBlocks.witheriteOre,
+				ZollernBlocks.fueltoniumBlock, ZollernBlocks.fueltoniumOre,
+				ZollernBlocks.netherFueltoniumOre,
+				ZollernBlocks.enderFueltoniumOre, ZollernBlocks.zincBlock,
+				ZollernBlocks.zincOre, ZollernBlocks.netherZincOre,
+				ZollernBlocks.enderZincOre, ZollernBlocks.garnetBlock,
+				ZollernBlocks.garnetOre, ZollernBlocks.amberBlock,
+				ZollernBlocks.amberOre, ZollernBlocks.aquamarineBlock,
+				ZollernBlocks.aquamarineOre, ZollernBlocks.rubyBlock,
+				ZollernBlocks.rubyOre, ZollernBlocks.sapphireBlock,
+				ZollernBlocks.sapphireOre, ZollernBlocks.topazBlock,
+				ZollernBlocks.topazOre, ZollernBlocks.opalBlock,
+				ZollernBlocks.opalOre, ZollernBlocks.steelBlock,
+				ZollernBlocks.steelOre, ZollernBlocks.netherSteelOre,
+				ZollernBlocks.enderSteelOre, ZollernBlocks.enderiteBlock,
+				ZollernBlocks.enderiteOre, ZollernBlocks.enderDiamondBlock,
+				ZollernBlocks.enderDiamondOre, ZollernBlocks.badStone,
+				ZollernBlocks.redshroomBlock, ZollernBlocks.redshroomStem,
+				ZollernBlocks.netherIronOre, ZollernBlocks.netherGoldOre,
+				ZollernBlocks.netherDiamondOre, ZollernBlocks.netherEmeraldOre,
+				ZollernBlocks.netherRedstoneOre, ZollernBlocks.netherCopperOre,
+				ZollernBlocks.netherTinOre, ZollernBlocks.netherLeadOre,
+				ZollernBlocks.netherNickleOre, ZollernBlocks.netherSilverOre,
+				ZollernBlocks.asphaltBlack, ZollernBlocks.asphaltGray,
+				ZollernBlocks.asphaltStripeLeft,
+				ZollernBlocks.asphaltStripeRight, ZollernBlocks.coldSand,
+				ZollernBlocks.coldSandSmooth, ZollernBlocks.chargiumBlock,
+				ZollernBlocks.shiniumBlock, ZollernBlocks.shinestone,
+				ZollernBlocks.caveMarble, ZollernBlocks.blackCaveMarble,
+				ZollernBlocks.canyonRock, ZollernBlocks.canyonRockBricks,
+				ZollernBlocks.swampClay, ZollernBlocks.bricksMud,
+				ZollernBlocks.garlicCrop, ZollernBlocks.tomatoCrop);
+		
+		// New Hell Blocks
+		registerBlocks(event, ZollernBlocks.blazeRock, ZollernBlocks.netherDirt);
+		
+		// Upside-Down Blocks
+		registerBlocks(event, ZollernBlocks.upsideDownSurfaceRock,
+				ZollernBlocks.upsideDownSubRock);
+		
 	}
 	
 	public static void registerBlocks(FMLPreInitializationEvent event,

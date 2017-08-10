@@ -10,6 +10,8 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import zollernextras.biomes.nether.BiomeBlazingInferno;
 import zollernextras.biomes.nether.BiomeNewHell;
+import zollernextras.biomes.nether.BiomeScorchedMeadow;
+import zollernextras.biomes.nether.BiomeSoulDesert;
 import zollernextras.dimensions.providers.world.WorldHellProvider;
 import zollernextras.lib.ZollernModInfo;
 import com.google.common.collect.ImmutableList;
@@ -27,7 +29,8 @@ public class HellRegistry {
 		@SubscribeEvent
 		public static void onRegisterBiomes(RegistryEvent.Register<Biome> event) {
 			event.getRegistry().registerAll(new BiomeNewHell(),
-					new BiomeBlazingInferno());
+					new BiomeBlazingInferno(), new BiomeScorchedMeadow(),
+					new BiomeSoulDesert());
 		}
 	}
 	

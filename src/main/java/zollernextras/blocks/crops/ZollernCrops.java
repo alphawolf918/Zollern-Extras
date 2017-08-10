@@ -15,8 +15,8 @@ public class ZollernCrops extends BlockCrops {
 	private final int minDropAmount;
 	private final int addDropAmount;
 	public Item seedItem;
-	private Item returnItem;
-	private int returnMeta;
+	protected Item returnItem;
+	protected int returnMeta;
 	
 	public ZollernCrops(String blockName, int minDropAmount, int addDropAmount,
 			Item seed, Item food) {

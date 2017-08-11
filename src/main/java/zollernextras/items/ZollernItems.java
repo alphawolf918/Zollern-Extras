@@ -227,8 +227,8 @@ public class ZollernItems {
 	public static final Item DIABLO = new SwordDiablo();
 	public static final Item ENDER = new SwordEnder();
 	public static final Item THOR = new SwordThor();
-	public static Item GLACIES;
-	public static Item MORTEM;
-	public static Item LUCENT;
+	// public static Item GLACIES;
+	// public static Item MORTEM;
+	// public static Item LUCENT;
 	
 }

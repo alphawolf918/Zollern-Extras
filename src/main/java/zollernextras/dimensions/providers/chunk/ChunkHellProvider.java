@@ -197,26 +197,18 @@ public class ChunkHellProvider extends ChunkProviderHell {
 	public List<Biome.SpawnListEntry> getPossibleCreatures(
 			EnumCreatureType creatureType, BlockPos pos) {
 		if (creatureType == EnumCreatureType.MONSTER) {
-			if (this.genNetherBridge.isInsideStructure(pos)) {
-				this.spawnList.add(new Biome.SpawnListEntry(EntityBlaze.class,
-						10, 2, 3));
-				this.spawnList.add(new Biome.SpawnListEntry(
-						EntityPigZombie.class, 5, 4, 4));
-				this.spawnList.add(new Biome.SpawnListEntry(
-						EntityWitherSkeleton.class, 8, 5, 5));
-				this.spawnList.add(new Biome.SpawnListEntry(
-						EntitySkeleton.class, 2, 5, 5));
-				this.spawnList.add(new Biome.SpawnListEntry(
-						EntityMagmaCube.class, 3, 4, 4));
-				return this.spawnList;
-			}
-			
-			if (this.genNetherBridge.isPositionInStructure(this.world, pos)
-					&& this.world.getBlockState(pos.down()).getBlock() == Blocks.NETHER_BRICK) {
-				return this.genNetherBridge.getSpawnList();
-			}
+			this.spawnList.add(new Biome.SpawnListEntry(EntityBlaze.class, 10,
+					2, 3));
+			this.spawnList.add(new Biome.SpawnListEntry(EntityPigZombie.class,
+					5, 4, 4));
+			this.spawnList.add(new Biome.SpawnListEntry(
+					EntityWitherSkeleton.class, 8, 5, 5));
+			this.spawnList.add(new Biome.SpawnListEntry(EntitySkeleton.class,
+					2, 5, 5));
+			this.spawnList.add(new Biome.SpawnListEntry(EntityMagmaCube.class,
+					3, 4, 4));
+			return this.spawnList;
 		}
-		
 		Biome biome = this.world.getBiome(pos);
 		return biome.getSpawnableList(creatureType);
 	}

@@ -8,6 +8,7 @@ import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import zollernextras.biomes.nether.BiomeBlackMountain;
 import zollernextras.biomes.nether.BiomeBlazingInferno;
 import zollernextras.biomes.nether.BiomeNewHell;
 import zollernextras.biomes.nether.BiomeScorchedMeadow;
@@ -30,7 +31,7 @@ public class HellRegistry {
 		public static void onRegisterBiomes(RegistryEvent.Register<Biome> event) {
 			event.getRegistry().registerAll(new BiomeNewHell(),
 					new BiomeBlazingInferno(), new BiomeScorchedMeadow(),
-					new BiomeSoulDesert());
+					new BiomeSoulDesert(), new BiomeBlackMountain());
 		}
 	}
 	

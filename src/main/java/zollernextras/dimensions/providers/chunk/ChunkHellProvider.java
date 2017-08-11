@@ -298,7 +298,10 @@ public class ChunkHellProvider extends ChunkProviderHell {
 						} else {
 							i1 = -1;
 						}
-						if (y <= 32 && y > 0) {
+						if (y <= 15
+								&& y > 0
+								&& primer.getBlockState(x, y, z) != Blocks.AIR
+										.getDefaultState()) {
 							primer.setBlockState(x, y, z,
 									Blocks.NETHERRACK.getDefaultState());
 						}

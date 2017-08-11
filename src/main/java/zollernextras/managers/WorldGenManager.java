@@ -17,6 +17,7 @@ import zollernextras.blocks.ZollernBlocks;
 import zollernextras.config.ZEConfig;
 import zollernextras.lib.modhelper.ModHelperBase;
 import zollernextras.worldgen.WorldGenEnderTower;
+import zollernextras.worldgen.WorldGenShinestone;
 import zollernextras.worldgen.minable.ZollernMinable;
 import cofh.thermalfoundation.block.BlockOre;
 import erogenousbeef.bigreactors.init.BrBlocks;
@@ -126,6 +127,13 @@ public class WorldGenManager implements IWorldGenerator {
 				5 + random.nextInt(10), 10, 4, 20);
 		
 		int y = world.getHeight(x, z);
+		
+		if (random.nextInt(500) <= 5) {
+			if (y <= 36) {
+				(new WorldGenShinestone()).generate(world, random,
+						new BlockPos(x, y, z));
+			}
+		}
 		
 		Biome currentBiome = world.getBiome(new BlockPos(x, y, z));
 		

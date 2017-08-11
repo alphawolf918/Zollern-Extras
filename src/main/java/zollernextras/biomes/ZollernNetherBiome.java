@@ -29,7 +29,7 @@ public class ZollernNetherBiome extends ZollernBiome {
 		this.setBlocks(Blocks.NETHERRACK);
 		this.setTempCategory(TempCategory.WARM);
 		this.setNoRain(props);
-		this.setSkyColor(0x8b0000);
+		this.setSkyColor(0x8b008b);
 		this.setRegistryName(ZollernModInfo.modId + ":" + name);
 		props.setTemperature(10.0F);
 	}

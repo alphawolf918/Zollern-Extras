@@ -28,9 +28,11 @@ import net.minecraftforge.event.entity.player.PlayerEvent.NameFormat;
 import net.minecraftforge.event.world.BlockEvent.BreakEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import zollernextras.blocks.ZollernBlocks;
 import zollernextras.items.ZollernItems;
 import zollernextras.items.armor.ZollernArmor;
 import zollernextras.items.armor.ZollernArmorMaterials;
+import zollernextras.mobs.entities.EntityHellFish;
 
 public class ZollernEventManager {
 	
@@ -127,6 +129,17 @@ public class ZollernEventManager {
 					slime.setLocationAndAngles(blockPos.getX(),
 							blockPos.getY(), blockPos.getZ(), 0, 0);
 					world.spawnEntity(slime);
+				}
+			}
+		} else if (brokenBlock == ZollernBlocks.netherrack.getDefaultState()) {
+			if (!world.isRemote) {
+				Random rand = new Random();
+				int randInt = rand.nextInt(10);
+				if (randInt <= 5) {
+					EntityHellFish hellFish = new EntityHellFish(world);
+					hellFish.setLocationAndAngles(blockPos.getX(),
+							blockPos.getY(), blockPos.getZ(), 0, 0);
+					world.spawnEntity(hellFish);
 				}
 			}
 		}

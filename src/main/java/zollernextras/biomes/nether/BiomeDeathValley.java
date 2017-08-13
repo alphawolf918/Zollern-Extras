@@ -5,10 +5,10 @@ import zollernextras.biomes.ZollernNetherBiome;
 import zollernextras.blocks.ZollernBlocks;
 import zollernextras.dimensions.HellRegistry;
 
-public class BiomeScorchedMeadow extends ZollernNetherBiome {
+public class BiomeDeathValley extends ZollernNetherBiome {
 	
-	public BiomeScorchedMeadow() {
-		super(new Biome.BiomeProperties("Scorched Meadow"), "scorched_meadow");
+	public BiomeDeathValley() {
+		super(new Biome.BiomeProperties("Death Valley"), "death_valley");
 		this.setBlocks(ZollernBlocks.netherDirt);
 		this.setBiomeWeight(21);
 		HellRegistry.addBiome(this, this.getBiomeWeight());

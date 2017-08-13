@@ -16,6 +16,7 @@ import zollernextras.handlers.Handlers;
 import zollernextras.lib.ZollernModInfo;
 import zollernextras.lib.modhelper.ModHelperBase;
 import zollernextras.lib.recipes.RecipeManager;
+import zollernextras.mobs.MobRegistry;
 import zollernextras.proxies.CommonProxy;
 import zollernextras.proxies.IProxy;
 import zollernextras.util.ZollernRegistry;
@@ -44,10 +45,11 @@ public class ZollernExtrasMod {
 	public void preInit(FMLPreInitializationEvent event) {
 		snw = NetworkRegistry.INSTANCE.newSimpleChannel(ZollernModInfo.channel);
 		ModHelperBase.detectMods();
-		Handlers.init();
-		ZollernTabs.init();
 		ZEConfig.init(event);
 		ZollernRegistry.registerAll(event);
+		MobRegistry.init();
+		Handlers.init();
+		ZollernTabs.init();
 		instance().proxy.preInit(event);
 	}
 	

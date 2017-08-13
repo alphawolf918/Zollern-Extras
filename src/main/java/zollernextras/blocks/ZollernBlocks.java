@@ -3,7 +3,7 @@ package zollernextras.blocks;
 import net.minecraft.block.Block;
 import net.minecraft.init.Items;
 import net.minecraft.init.MobEffects;
-import zollernextras.blocks.crops.ZollernCrops;
+import zollernextras.blocks.upsidedown.UpsideDownStone;
 import zollernextras.items.ZollernItems;
 import zollernextras.lib.EnumBlockVariant;
 
@@ -251,6 +251,8 @@ public class ZollernBlocks {
 	public static final Block blazeRock = new ZollernBlockBase("blazerock",
 			2.5F);
 	public static final Block netherDirt = new ZollernDirt("netherdirt", 0.6F);
+	public static final Block netherrack = new ZollernBlockBase("netherrack",
+			1.5F);
 	
 	/*
 	 * Upside-Down
@@ -261,6 +263,17 @@ public class ZollernBlocks {
 			"ud_surfacerock", 1.6F);
 	public static final Block upsideDownSubRock = new ZollernBlockBase(
 			"ud_rock", 1.4F);
+	public static final Block upsideDownCobble = new ZollernBlockBase(
+			"ud_cobblestone", 1.2F);
+	public static final Block upsideDownStone = new UpsideDownStone();
+	public static final Block witherrack = new ZollernBlockBase("witherrack",
+			1.6F);
+	
+	// Upside-Down Ores
+	// TODO
+	
+	// Upside-Down Corruption Layer
+	// TODO
 	
 	// Radium
 	
@@ -271,11 +284,5 @@ public class ZollernBlocks {
 	// Bricks
 	public static final Block bricksMud = new ZollernBlockBase("bricks_mud",
 			1.2F);
-	
-	// Croppies
-	public static final Block garlicCrop = new ZollernCrops("garliccrop", 1, 3,
-			ZollernItems.garlic);
-	public static final Block tomatoCrop = new ZollernCrops("tomatocrop", 1, 3,
-			ZollernItems.tomatoSeeds, ZollernItems.tomato);
 	
 }

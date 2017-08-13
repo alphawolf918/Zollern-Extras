@@ -8,11 +8,13 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.IChunkGenerator;
 import net.minecraft.world.chunk.IChunkProvider;
+import net.minecraft.world.gen.feature.WorldGenLakes;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.fml.common.IWorldGenerator;
 import zanextras.blocks.ZaneBlocks;
 import zollernextras.biomes.BiomeList;
+import zollernextras.biomes.nether.BiomeNetherMinersLand;
 import zollernextras.blocks.ZollernBlocks;
 import zollernextras.config.ZEConfig;
 import zollernextras.lib.modhelper.ModHelperBase;
@@ -362,6 +364,104 @@ public class WorldGenManager implements IWorldGenerator {
 		// Nether Nickel Ore
 		addNetherOreSpawn(ZollernBlocks.netherNickleOre, world, random, x, z,
 				16, 16, 4 + random.nextInt(2), 8, 4, 128);
+		
+		// Fake Netherrack
+		addNetherOreSpawn(ZollernBlocks.netherrack, world, random, x, z, 16,
+				16, 8 + random.nextInt(8), 60, 1, 128);
+		
+		int y = world.getHeight(x, z);
+		Biome currentBiome = world.getBiome(new BlockPos(x, y, z));
+		if (currentBiome instanceof BiomeNetherMinersLand) {
+			// Nether Super Charged Coal Ore
+			addNetherOreSpawn(ZollernBlocks.netherSuperChargedCoalOre, world,
+					random, Xcoord, Zcoord, 16, 16, 4 + random.nextInt(10), 30,
+					2, 128);
+			
+			// Nether Amaranth Ore
+			addNetherOreSpawn(ZollernBlocks.netherAmaranthOre, world, random,
+					x, z, 16, 16, 4 + random.nextInt(2), 30, 2, 128);
+			
+			// Obsidian (needed for Azurite Ore gen)
+			addNetherOreSpawn(Blocks.OBSIDIAN, world, random, x, z, 16, 16,
+					10 + random.nextInt(5), 62, 1, 128);
+			
+			// Azurite Ore
+			addObsidianOreSpawn(ZollernBlocks.azuriteOre, world, random, x, z,
+					16, 16, 10 + random.nextInt(5),
+					ZEConfig.oreAzuriteSpawnRate + 30, 1, 128);
+			
+			// Nether Ender Shard Ore
+			addNetherOreSpawn(ZollernBlocks.netherEnderShardOre, world, random,
+					x, z, 16, 16, 2 + random.nextInt(4), 30, 4, 128);
+			
+			// Nether Fueltonium Ore
+			addNetherOreSpawn(ZollernBlocks.netherFueltoniumOre, world, random,
+					x, z, 16, 16, 2 + random.nextInt(4), 30, 4, 128);
+			
+			// Nether Zinc Ore
+			addNetherOreSpawn(ZollernBlocks.netherZincOre, world, random, x, z,
+					16, 16, 4 + random.nextInt(2), 30, 4, 128);
+			
+			// Nether Steel Ore
+			addNetherOreSpawn(ZollernBlocks.netherSteelOre, world, random, x,
+					z, 16, 16, 4 + random.nextInt(2), 30, 4, 128);
+			
+			// Nether Iron Ore
+			addNetherOreSpawn(ZollernBlocks.netherIronOre, world, random, x, z,
+					16, 16, 4 + random.nextInt(2), 30, 4, 128);
+			
+			// Nether Gold Ore
+			addNetherOreSpawn(ZollernBlocks.netherGoldOre, world, random, x, z,
+					16, 16, 4 + random.nextInt(2), 30, 4, 128);
+			
+			// Nether Diamond Ore
+			addNetherOreSpawn(ZollernBlocks.netherDiamondOre, world, random, x,
+					z, 16, 16, 4 + random.nextInt(2), 30, 4, 128);
+			
+			// Nether Emerald Ore
+			addNetherOreSpawn(ZollernBlocks.netherEmeraldOre, world, random, x,
+					z, 16, 16, 4 + random.nextInt(2), 30, 4, 128);
+			
+			// Nether Redstone Ore
+			addNetherOreSpawn(ZollernBlocks.netherRedstoneOre, world, random,
+					x, z, 16, 16, 4 + random.nextInt(2), 30, 4, 128);
+			
+			// Nether Lapis Ore
+			// TODO
+			
+			// Nether Coal Ore
+			// TODO
+			
+			// Nether Platinum Ore
+			// TODO
+			
+			// Nether Copper Ore
+			addNetherOreSpawn(ZollernBlocks.netherCopperOre, world, random, x,
+					z, 16, 16, 4 + random.nextInt(2), 21, 4, 128);
+			
+			// Nether Lead Ore
+			addNetherOreSpawn(ZollernBlocks.netherLeadOre, world, random, x, z,
+					16, 16, 4 + random.nextInt(2), 18, 4, 128);
+			
+			// Nether Silver Ore
+			addNetherOreSpawn(ZollernBlocks.netherSilverOre, world, random, x,
+					z, 16, 16, 4 + random.nextInt(2), 11, 4, 128);
+			
+			// Nether Tin Ore
+			addNetherOreSpawn(ZollernBlocks.netherTinOre, world, random, x, z,
+					16, 16, 4 + random.nextInt(2), 24, 4, 128);
+			
+			// Nether Nickel Ore
+			addNetherOreSpawn(ZollernBlocks.netherNickleOre, world, random, x,
+					z, 16, 16, 4 + random.nextInt(2), 8, 4, 128);
+			
+			// Nether Quartz Ore
+			addNetherOreSpawn(Blocks.QUARTZ_ORE, world, random, x, z, 16, 16,
+					4 + random.nextInt(2), 8, 4, 128);
+		}
+		
+		(new WorldGenLakes(Blocks.LAVA)).generate(world, random, new BlockPos(
+				x, y, z));
 	}
 	
 	private void generateEnd(World world, Random random, int x, int z) {

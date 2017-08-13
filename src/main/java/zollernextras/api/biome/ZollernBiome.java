@@ -152,7 +152,7 @@ public abstract class ZollernBiome extends Biome {
 	}
 	
 	public static enum Type {
-		NORMAL, EXTRA_TREES, MUTATED;
+		NORMAL, EXTRA_TREES, MUTATED, HILLS;
 	}
 	
 }

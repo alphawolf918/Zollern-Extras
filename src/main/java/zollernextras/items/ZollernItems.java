@@ -2,7 +2,6 @@ package zollernextras.items;
 
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
-import zollernextras.blocks.ZollernBlocks;
 import zollernextras.items.armor.ZollernArmor;
 import zollernextras.items.armor.ZollernArmorMaterials;
 import zollernextras.items.tools.ZollernAxe;
@@ -214,14 +213,6 @@ public class ZollernItems {
 	
 	// Bricks
 	public static final Item brickMud = new ZollernItemBase("brickingot_mud");
-	
-	// Croppies
-	public static final Item garlic = new ZollernSeedFood(
-			ZollernBlocks.garlicCrop, "garlic", 0, 2, 0.2F);
-	public static final Item tomato = new ZollernItemFood("tomato", 1, 1.5F,
-			false);
-	public static final Item tomatoSeeds = new ZollernSeed(
-			ZollernBlocks.tomatoCrop, "tomatoseeds", ZollernItems.tomato, 0);
 	
 	// Power Swords
 	public static final Item DIABLO = new SwordDiablo();

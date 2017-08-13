@@ -1,6 +1,5 @@
 package zollernextras.biomes;
 
-import net.minecraft.entity.monster.EntityEnderman;
 import net.minecraft.entity.monster.EntityGhast;
 import net.minecraft.entity.monster.EntityMagmaCube;
 import net.minecraft.entity.monster.EntityPigZombie;
@@ -24,8 +23,6 @@ public class ZollernNetherBiome extends ZollernBiome {
 				EntityPigZombie.class, 100, 4, 4));
 		this.spawnableMonsterList.add(new Biome.SpawnListEntry(
 				EntityMagmaCube.class, 2, 4, 4));
-		this.spawnableMonsterList.add(new Biome.SpawnListEntry(
-				EntityEnderman.class, 1, 4, 4));
 		this.setBlocks(Blocks.NETHERRACK);
 		this.setTempCategory(TempCategory.WARM);
 		this.setNoRain(props);

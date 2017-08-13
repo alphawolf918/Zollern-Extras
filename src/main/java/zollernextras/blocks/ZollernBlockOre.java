@@ -49,7 +49,7 @@ public class ZollernBlockOre extends ZollernBlockBase {
 	public void onBlockDestroyedByPlayer(World worldIn, BlockPos pos,
 			IBlockState state) {
 		if (this.getShouldExplode()) {
-			if (rand.nextInt(10) <= 2) {
+			if (rand.nextInt(20) <= 2) {
 				worldIn.createExplosion(null, pos.getX(), pos.getY(),
 						pos.getZ(), 2.5F, true);
 			}

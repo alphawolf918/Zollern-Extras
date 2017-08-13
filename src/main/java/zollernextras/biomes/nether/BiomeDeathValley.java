@@ -1,7 +1,6 @@
 package zollernextras.biomes.nether;
 
 import net.minecraft.world.biome.Biome;
-import zollernextras.biomes.ZollernNetherBiome;
 import zollernextras.blocks.ZollernBlocks;
 import zollernextras.dimensions.HellRegistry;
 

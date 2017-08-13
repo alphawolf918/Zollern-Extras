@@ -119,12 +119,13 @@ public class ZollernEventManager {
 	public void onBlockBrokenEvent(BreakEvent event) {
 		IBlockState brokenBlock = event.getState();
 		World world = event.getWorld();
+		EntityPlayer player = event.getPlayer();
 		BlockPos blockPos = event.getPos();
 		if (brokenBlock == Blocks.SLIME_BLOCK.getDefaultState()) {
 			if (!world.isRemote) {
 				Random rand = new Random();
 				int randInt = rand.nextInt(10);
-				if (randInt <= 5) {
+				if (randInt <= 6) {
 					EntitySlime slime = new EntitySlime(world);
 					slime.setLocationAndAngles(blockPos.getX(),
 							blockPos.getY(), blockPos.getZ(), 0, 0);
@@ -137,8 +138,9 @@ public class ZollernEventManager {
 				int randInt = rand.nextInt(10);
 				if (randInt <= 5) {
 					EntityHellFish hellFish = new EntityHellFish(world);
-					hellFish.setLocationAndAngles(blockPos.getX(),
-							blockPos.getY(), blockPos.getZ(), 0, 0);
+					hellFish.setLocationAndAngles(player.posX, player.posY + 1,
+							player.posZ, player.rotationYaw,
+							player.rotationPitch);
 					world.spawnEntity(hellFish);
 				}
 			}

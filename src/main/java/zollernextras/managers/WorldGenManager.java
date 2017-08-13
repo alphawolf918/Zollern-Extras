@@ -8,7 +8,6 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.IChunkGenerator;
 import net.minecraft.world.chunk.IChunkProvider;
-import net.minecraft.world.gen.feature.WorldGenLakes;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.fml.common.IWorldGenerator;
@@ -279,7 +278,7 @@ public class WorldGenManager implements IWorldGenerator {
 		
 		// Nether Super Charged Coal Ore
 		addNetherOreSpawn(ZollernBlocks.netherSuperChargedCoalOre, world,
-				random, Xcoord, Zcoord, 16, 16, 4 + random.nextInt(10),
+				random, x, z, 16, 16, 4 + random.nextInt(10),
 				ZEConfig.oreSuperCoalSpawnRate + 10, 2, 128);
 		
 		// Nether Amaranth Ore
@@ -460,8 +459,6 @@ public class WorldGenManager implements IWorldGenerator {
 					4 + random.nextInt(2), 8, 4, 128);
 		}
 		
-		(new WorldGenLakes(Blocks.LAVA)).generate(world, random, new BlockPos(
-				x, y, z));
 	}
 	
 	private void generateEnd(World world, Random random, int x, int z) {

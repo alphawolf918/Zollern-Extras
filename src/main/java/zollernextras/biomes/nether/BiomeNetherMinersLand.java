@@ -2,7 +2,6 @@ package zollernextras.biomes.nether;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.world.biome.Biome;
-import zollernextras.biomes.ZollernNetherBiome;
 import zollernextras.dimensions.HellRegistry;
 
 public class BiomeNetherMinersLand extends ZollernNetherBiome {

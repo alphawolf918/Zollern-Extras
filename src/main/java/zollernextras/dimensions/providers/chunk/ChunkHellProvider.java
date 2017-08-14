@@ -38,7 +38,9 @@ import net.minecraftforge.event.terraingen.ChunkGeneratorEvent;
 import net.minecraftforge.event.terraingen.InitNoiseGensEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
 import net.minecraftforge.fml.common.eventhandler.Event.Result;
+import zanextras.worldgen.structures.WorldGenRedGlowStone;
 import zollernextras.lib.ZollernHelper;
+import zollernextras.lib.modhelper.ModHelperBase;
 import com.google.common.collect.Lists;
 
 public class ChunkHellProvider extends ChunkProviderHell {
@@ -483,6 +485,17 @@ public class ChunkHellProvider extends ChunkProviderHell {
 				this.hellPortalGen.generate(this.world, this.rand, blockpos
 						.add(this.rand.nextInt(16) + 8, this.rand.nextInt(128),
 								this.rand.nextInt(16) + 8));
+			}
+			
+			if (ModHelperBase.useZaneExtras) {
+				for (int k1 = 0; k1 < 10; ++k1) {
+					(new WorldGenRedGlowStone()).generate(
+							this.world,
+							this.rand,
+							blockpos.add(this.rand.nextInt(16) + 8,
+									this.rand.nextInt(128),
+									this.rand.nextInt(16) + 8));
+				}
 			}
 		}// Forge: End doGLowstone
 		

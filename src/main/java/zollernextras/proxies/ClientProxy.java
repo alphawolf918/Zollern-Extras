@@ -9,8 +9,10 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import zollernextras.gui.GuiBiomeType;
 import zollernextras.mobs.entities.EntityHellFish;
 import zollernextras.mobs.entities.EntityMegaCreeper;
+import zollernextras.mobs.entities.EntityScorpion;
 import zollernextras.mobs.renderers.RenderHellFish;
 import zollernextras.mobs.renderers.RenderMegaCreeper;
+import zollernextras.mobs.renderers.RenderScorpion;
 
 public class ClientProxy extends CommonProxy {
 	
@@ -23,6 +25,8 @@ public class ClientProxy extends CommonProxy {
 				RenderHellFish::new);
 		RenderingRegistry.registerEntityRenderingHandler(
 				EntityMegaCreeper.class, RenderMegaCreeper::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityScorpion.class,
+				RenderScorpion::new);
 	}
 	
 	@Override

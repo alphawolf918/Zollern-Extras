@@ -21,6 +21,7 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.ChunkProviderHell;
+import net.minecraft.world.gen.ChunkProviderSettings;
 import net.minecraft.world.gen.MapGenBase;
 import net.minecraft.world.gen.MapGenCavesHell;
 import net.minecraft.world.gen.NoiseGeneratorOctaves;
@@ -41,6 +42,7 @@ import net.minecraftforge.fml.common.eventhandler.Event.Result;
 import zanextras.worldgen.structures.WorldGenRedGlowStone;
 import zollernextras.lib.ZollernHelper;
 import zollernextras.lib.modhelper.ModHelperBase;
+import zollernextras.worldgen.WorldGenNetherDungeons;
 import com.google.common.collect.Lists;
 
 public class ChunkHellProvider extends ChunkProviderHell {
@@ -68,6 +70,7 @@ public class ChunkHellProvider extends ChunkProviderHell {
 	private double[] noiseData4;
 	private double[] noiseData5;
 	private final boolean generateStructures;
+	private ChunkProviderSettings settings;
 	
 	private final WorldGenFire fireFeature = new WorldGenFire();
 	private final WorldGenGlowStone1 lightGemGen = new WorldGenGlowStone1();
@@ -128,7 +131,6 @@ public class ChunkHellProvider extends ChunkProviderHell {
 				.getModdedMapGen(
 						genNetherCaves,
 						net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.NETHER_CAVE);
-		
 		worldIn.setSeaLevel(31);
 	}
 	
@@ -496,6 +498,14 @@ public class ChunkHellProvider extends ChunkProviderHell {
 									this.rand.nextInt(128),
 									this.rand.nextInt(16) + 8));
 				}
+			}
+			
+			for (int j2 = 0; j2 < 16; ++j2) {
+				int i3 = this.rand.nextInt(16) + 8;
+				int l3 = this.rand.nextInt(256);
+				int l1 = this.rand.nextInt(16) + 8;
+				(new WorldGenNetherDungeons()).generate(this.world, this.rand,
+						blockpos.add(i3, l3, l1));
 			}
 		}// Forge: End doGLowstone
 		

@@ -50,8 +50,8 @@ public class ZollernRegistry {
 				ZollernBlocks.netherRedstoneOre, ZollernBlocks.netherCopperOre,
 				ZollernBlocks.netherTinOre, ZollernBlocks.netherLeadOre,
 				ZollernBlocks.netherNickleOre, ZollernBlocks.netherSilverOre,
-				ZollernBlocks.netherrack, ZollernBlocks.asphaltBlack,
-				ZollernBlocks.asphaltGray, ZollernBlocks.asphaltStripeLeft,
+				ZollernBlocks.asphaltBlack, ZollernBlocks.asphaltGray,
+				ZollernBlocks.asphaltStripeLeft,
 				ZollernBlocks.asphaltStripeRight, ZollernBlocks.coldSand,
 				ZollernBlocks.coldSandSmooth, ZollernBlocks.chargiumBlock,
 				ZollernBlocks.shiniumBlock, ZollernBlocks.shinestone,
@@ -62,7 +62,9 @@ public class ZollernRegistry {
 				ZollernBlocks.upsideDownStone);
 		
 		// New Hell Blocks
-		registerBlocks(event, ZollernBlocks.blazeRock, ZollernBlocks.netherDirt);
+		registerBlocks(event, ZollernBlocks.blazeRock,
+				ZollernBlocks.netherDirt, ZollernBlocks.netherrack,
+				ZollernBlocks.redObsidian);
 		
 		// Upside-Down Blocks
 		registerBlocks(event, ZollernBlocks.upsideDownSurfaceRock,

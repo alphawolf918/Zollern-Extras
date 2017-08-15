@@ -1,0 +1,7 @@
+From: world\.setBlock\(
+
+To: this\.setBlock\(world, 
+
+From: i \+ (.+?), j \+ (.+?), k \+ (.+?),
+
+To: pos\.add\($1, $2, $3\),

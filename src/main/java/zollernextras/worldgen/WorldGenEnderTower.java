@@ -5,7 +5,6 @@ import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraft.world.gen.feature.WorldGenLakes;
 import zollernextras.blocks.ZollernBlocks;
 
 public class WorldGenEnderTower extends ZollernWorldGenMaster {
@@ -48,8 +47,8 @@ public class WorldGenEnderTower extends ZollernWorldGenMaster {
 			return false;
 		}
 		
-		new WorldGenLakes(Blocks.END_STONE).generate(world, rand, new BlockPos(
-				i, j + 1, k));
+		new WGLake(Blocks.END_STONE, Blocks.OBSIDIAN).generate(world, rand,
+				new BlockPos(i, j + 1, k));
 		
 		this.setBlock(world, pos.add(4, 2, 10), Blocks.PURPUR_BLOCK);
 		this.setBlock(world, pos.add(4, 2, 11), Blocks.PURPUR_BLOCK);

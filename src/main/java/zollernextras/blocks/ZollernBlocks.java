@@ -246,13 +246,15 @@ public class ZollernBlocks {
 	public static final Block swampClay = new BlockSwampClay();
 	
 	//
-	// Nether Biome Blocks
+	// Nether Blocks
 	//
 	public static final Block blazeRock = new ZollernBlockBase("blazerock",
 			2.5F);
 	public static final Block netherDirt = new ZollernDirt("netherdirt", 0.6F);
 	public static final Block netherrack = new ZollernBlockBase("netherrack",
 			1.5F);
+	public static final Block redObsidian = new ZollernBlockBase("redobsidian",
+			5.6F);
 	
 	/*
 	 * Upside-Down

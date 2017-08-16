@@ -26,7 +26,6 @@ import net.minecraft.world.gen.MapGenBase;
 import net.minecraft.world.gen.MapGenCavesHell;
 import net.minecraft.world.gen.NoiseGeneratorOctaves;
 import net.minecraft.world.gen.feature.WorldGenBush;
-import net.minecraft.world.gen.feature.WorldGenFire;
 import net.minecraft.world.gen.feature.WorldGenGlowStone1;
 import net.minecraft.world.gen.feature.WorldGenGlowStone2;
 import net.minecraft.world.gen.feature.WorldGenHellLava;
@@ -42,6 +41,7 @@ import net.minecraftforge.fml.common.eventhandler.Event.Result;
 import zanextras.worldgen.structures.WorldGenRedGlowStone;
 import zollernextras.lib.ZollernHelper;
 import zollernextras.lib.modhelper.ModHelperBase;
+import zollernextras.worldgen.WorldGenFire2;
 import zollernextras.worldgen.WorldGenNetherDungeons;
 import com.google.common.collect.Lists;
 
@@ -72,7 +72,7 @@ public class ChunkHellProvider extends ChunkProviderHell {
 	private final boolean generateStructures;
 	private ChunkProviderSettings settings;
 	
-	private final WorldGenFire fireFeature = new WorldGenFire();
+	private final WorldGenFire2 fireFeature = new WorldGenFire2();
 	private final WorldGenGlowStone1 lightGemGen = new WorldGenGlowStone1();
 	private final WorldGenGlowStone2 hellPortalGen = new WorldGenGlowStone2();
 	private final WorldGenerator quartzGen = new WorldGenMinable(

@@ -7,13 +7,16 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraftforge.common.config.Configuration;
-import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import zollernextras.config.ZEConfig;
 import zollernextras.creativetabs.ZollernTabs;
 
 public class ZollernHelper {
+	
+	private static final Logger LOGGER = LogManager.getLogger();
 	
 	public static boolean getRNGChance(int min, int max) {
 		if (min >= max) {
@@ -96,8 +99,9 @@ public class ZollernHelper {
 	}
 	
 	public static void log(Level level, String strMessage) {
-		FMLLog.log(ZollernModInfo.officialName, level,
-				String.valueOf(strMessage));
+		if (level == Level.INFO) {
+			LOGGER.info("[" + ZollernModInfo.officialName + "] " + strMessage);
+		}
 	}
 	
 	public static void logInfo(String str) {

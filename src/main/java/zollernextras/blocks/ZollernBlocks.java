@@ -249,12 +249,13 @@ public class ZollernBlocks {
 	// Nether Blocks
 	//
 	public static final Block blazeRock = new ZollernBlockBase("blazerock",
-			2.5F);
-	public static final Block netherDirt = new ZollernDirt("netherdirt", 0.6F);
+			2.5F).setShouldAlwaysBurn(true);
+	public static final Block netherDirt = new ZollernDirt("netherdirt", 0.6F)
+			.setShouldAlwaysBurn(true);
 	public static final Block netherrack = new ZollernBlockBase("netherrack",
-			1.5F);
-	public static final Block redObsidian = new ZollernBlockBase("redobsidian",
-			5.6F);
+			1.5F).setShouldAlwaysBurn(true);
+	public static final Block hellObsidian = new ZollernBlockBase(
+			"redobsidian", 5.6F).setShouldAlwaysBurn(true);
 	
 	/*
 	 * Upside-Down

@@ -64,7 +64,7 @@ public class ZollernRegistry {
 		// New Hell Blocks
 		registerBlocks(event, ZollernBlocks.blazeRock,
 				ZollernBlocks.netherDirt, ZollernBlocks.netherrack,
-				ZollernBlocks.redObsidian);
+				ZollernBlocks.hellObsidian);
 		
 		// Upside-Down Blocks
 		registerBlocks(event, ZollernBlocks.upsideDownSurfaceRock,

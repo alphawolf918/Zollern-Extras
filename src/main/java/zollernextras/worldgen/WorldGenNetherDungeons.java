@@ -2,12 +2,6 @@ package zollernextras.worldgen;
 
 import java.util.Random;
 import net.minecraft.block.material.Material;
-import net.minecraft.entity.EntityList;
-import net.minecraft.entity.monster.EntityBlaze;
-import net.minecraft.entity.monster.EntityMagmaCube;
-import net.minecraft.entity.monster.EntityPigZombie;
-import net.minecraft.entity.monster.EntitySkeleton;
-import net.minecraft.entity.monster.EntityWitherSkeleton;
 import net.minecraft.init.Blocks;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityChest;
@@ -17,24 +11,12 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.storage.loot.LootTableList;
-import net.minecraftforge.common.DungeonHooks;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import zollernextras.blocks.ZollernBlocks;
+import zollernextras.lib.ZEHooks;
 import zollernextras.lib.ZollernHelper;
 import zollernextras.lib.modhelper.ModHelperBase;
-import zollernextras.mobs.entities.EntityHellFish;
 
 public class WorldGenNetherDungeons extends ZollernWorldGenMaster {
-	
-	private static final Logger LOGGER = LogManager.getLogger();
-	private static final ResourceLocation[] SPAWNERTYPES = new ResourceLocation[] {
-			EntityList.getKey(EntitySkeleton.class),
-			EntityList.getKey(EntityWitherSkeleton.class),
-			EntityList.getKey(EntityPigZombie.class),
-			EntityList.getKey(EntityBlaze.class),
-			EntityList.getKey(EntityMagmaCube.class),
-			EntityList.getKey(EntityHellFish.class) };
 	
 	@Override
 	public boolean generate(World worldIn, Random rand, BlockPos position) {
@@ -94,11 +76,11 @@ public class WorldGenNetherDungeons extends ZollernWorldGenMaster {
 								&& worldIn.getBlockState(blockpos1).getBlock() != Blocks.CHEST) {
 							if (i4 == -1 && rand.nextInt(4) != 0) {
 								worldIn.setBlockState(blockpos1,
-										ZollernBlocks.redObsidian
+										ZollernBlocks.hellObsidian
 												.getDefaultState(), 2);
 							} else {
 								worldIn.setBlockState(blockpos1,
-										ZollernBlocks.redObsidian
+										ZollernBlocks.hellObsidian
 												.getDefaultState(), 2);
 							}
 						}
@@ -151,13 +133,10 @@ public class WorldGenNetherDungeons extends ZollernWorldGenMaster {
 				((TileEntityMobSpawner) tileentity).getSpawnerBaseLogic()
 						.setEntityId(this.pickMobSpawner(rand));
 			} else {
-				LOGGER.error(
-						"Failed to fetch mob spawner entity at ({}, {}, {})",
-						new Object[] { Integer.valueOf(position.getX()),
-								Integer.valueOf(position.getY()),
-								Integer.valueOf(position.getZ()) });
+				ZollernHelper.logInfo("Failed to fetch mob spawner entity at: "
+						+ position.getX() + " " + position.getY() + " "
+						+ position.getZ());
 			}
-			ZollernHelper.logInfo(this.getSpawnedAtString(position));
 			return true;
 		} else {
 			return false;
@@ -165,8 +144,7 @@ public class WorldGenNetherDungeons extends ZollernWorldGenMaster {
 	}
 	
 	public static void addNetherDungeonMob(String unlocalizedMobName, int weight) {
-		DungeonHooks.addDungeonMob(new ResourceLocation(unlocalizedMobName),
-				weight);
+		ZEHooks.addDungeonMob(new ResourceLocation(unlocalizedMobName), weight);
 	}
 	
 	private static void addDungeonMobs() {
@@ -177,12 +155,12 @@ public class WorldGenNetherDungeons extends ZollernWorldGenMaster {
 		addNetherDungeonMob("zombie_pigman", 100);
 		addNetherDungeonMob("zollernextras:hellfish", 100);
 		if (ModHelperBase.useZaneExtras) {
-			//
+			// addNetherDungeonMob("zanextras:hellsheep", 100);
 		}
 	}
 	
 	private ResourceLocation pickMobSpawner(Random rand) {
-		return net.minecraftforge.common.DungeonHooks.getRandomDungeonMob(rand);
+		return ZEHooks.getRandomDungeonMob(rand);
 	}
 	
 	static {

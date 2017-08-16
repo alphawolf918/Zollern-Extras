@@ -279,12 +279,12 @@ public class WorldGenManager implements IWorldGenerator {
 		// Nether Super Charged Coal Ore
 		addNetherOreSpawn(ZollernBlocks.netherSuperChargedCoalOre, world,
 				random, x, z, 16, 16, 4 + random.nextInt(10),
-				ZEConfig.oreSuperCoalSpawnRate + 10, 2, 128);
+				ZEConfig.oreSuperCoalSpawnRate + 20, 2, 128);
 		
 		// Nether Amaranth Ore
 		addNetherOreSpawn(ZollernBlocks.netherAmaranthOre, world, random, x, z,
 				16, 16, 4 + random.nextInt(2),
-				ZEConfig.oreAmaranthSpawnRate + 10, 2, 128);
+				ZEConfig.oreAmaranthSpawnRate + 20, 2, 128);
 		
 		// Obsidian (needed for Azurite Ore gen)
 		addNetherOreSpawn(Blocks.OBSIDIAN, world, random, x, z, 16, 16,
@@ -298,21 +298,21 @@ public class WorldGenManager implements IWorldGenerator {
 		// Nether Ender Shard Ore
 		addNetherOreSpawn(ZollernBlocks.netherEnderShardOre, world, random, x,
 				z, 16, 16, 2 + random.nextInt(4),
-				ZEConfig.oreEnderShardSpawnRate + 10, 4, 128);
+				ZEConfig.oreEnderShardSpawnRate + 20, 4, 128);
 		
 		// Nether Fueltonium Ore
 		addNetherOreSpawn(ZollernBlocks.netherFueltoniumOre, world, random, x,
 				z, 16, 16, 2 + random.nextInt(4),
-				ZEConfig.oreFueltoniumSpawnRate + 10, 4, 128);
+				ZEConfig.oreFueltoniumSpawnRate + 20, 4, 128);
 		
 		// Nether Zinc Ore
 		addNetherOreSpawn(ZollernBlocks.netherZincOre, world, random, x, z, 16,
-				16, 4 + random.nextInt(2), ZEConfig.oreZincSpawnRate + 10, 4,
+				16, 4 + random.nextInt(2), ZEConfig.oreZincSpawnRate + 20, 4,
 				128);
 		
 		// Nether Steel Ore
 		addNetherOreSpawn(ZollernBlocks.netherSteelOre, world, random, x, z,
-				16, 16, 4 + random.nextInt(2), ZEConfig.oreSteelSpawnRate + 10,
+				16, 16, 4 + random.nextInt(2), ZEConfig.oreSteelSpawnRate + 20,
 				4, 128);
 		
 		// Nether Iron Ore
@@ -362,7 +362,7 @@ public class WorldGenManager implements IWorldGenerator {
 		
 		// Nether Nickel Ore
 		addNetherOreSpawn(ZollernBlocks.netherNickleOre, world, random, x, z,
-				16, 16, 4 + random.nextInt(2), 8, 4, 128);
+				16, 16, 4 + random.nextInt(2), 16, 4, 128);
 		
 		// Fake Netherrack
 		addNetherOreSpawn(ZollernBlocks.netherrack, world, random, x, z, 16,
@@ -479,7 +479,7 @@ public class WorldGenManager implements IWorldGenerator {
 		
 		// Azurite Ore
 		addObsidianOreSpawn(ZollernBlocks.azuriteOre, world, random, x, z, 16,
-				16, 4 + random.nextInt(2), ZEConfig.oreAzuriteSpawnRate + 10,
+				16, 4 + random.nextInt(2), ZEConfig.oreAzuriteSpawnRate + 20,
 				1, 210);
 		
 		// Ender Fueltonium Ore

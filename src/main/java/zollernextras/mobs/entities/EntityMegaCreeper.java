@@ -17,6 +17,7 @@ import net.minecraft.entity.passive.EntityOcelot;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
+import zollernextras.config.ZEConfig;
 
 public class EntityMegaCreeper extends EntityCreeper {
 	
@@ -60,8 +61,8 @@ public class EntityMegaCreeper extends EntityCreeper {
 	
 	private void explode() {
 		if (!this.world.isRemote) {
-			boolean flag = this.world.getGameRules().getBoolean("mobGriefing");
-			float f = this.getPowered() ? 2.0F : 1.0F;
+			boolean flag = ZEConfig.enableMegaCreeperGriefing; // this.world.getGameRules().getBoolean("mobGriefing");
+			float f = 2.5F;
 			this.dead = true;
 			this.world.createExplosion(this, this.posX, this.posY, this.posZ,
 					this.explosionRadius * f, flag);

@@ -1,5 +1,6 @@
 package zollernextras.lib.recipes;
 
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import zollernextras.blocks.ZollernBlocks;
@@ -30,6 +31,7 @@ public class PulverizerRecipes {
 		ThermalExpansionHelper.addPulverizerRecipe(500, new ItemStack(
 				ZollernItems.amaranthIngot), new ItemStack(
 				ZollernItems.amaranthDust, 1));
+		
 		// Zinc Ore
 		// Overworld
 		ThermalExpansionHelper
@@ -169,5 +171,18 @@ public class PulverizerRecipes {
 		ThermalExpansionHelper.addPulverizerRecipe(1600, new ItemStack(
 				ZollernItems.shiniumIngot), new ItemStack(
 				ZollernItems.shiniumDust));
+		
+		// Lapis Ingot -> Lapis Dust
+		ThermalExpansionHelper.addPulverizerRecipe(600, new ItemStack(
+				Items.DYE, 1, 4), new ItemStack(ZollernItems.lapisIngot));
+		
+		// Obsidian Ingot -> Obsidian Dust
+		ThermalExpansionHelper.addPulverizerRecipe(800, new ItemStack(
+				ZollernItems.obsidianIngot), new ItemStack(
+				ZollernItems.obsidianDust));
+		
+		// Obsidian Block -> Obsidian Dust
+		ThermalExpansionHelper.addPulverizerRecipe(1200, new ItemStack(
+				Blocks.OBSIDIAN), new ItemStack(ZollernItems.obsidianDust, 8));
 	}
 }

@@ -53,7 +53,7 @@ public class ZollernNetherBiome extends ZollernBiome {
 	@Override
 	public void decorate(World worldIn, Random rand, BlockPos pos) {
 		super.decorate(worldIn, rand, pos);
-		if (rand.nextInt(100) <= 40) {
+		if (rand.nextInt(100) <= 90) {
 			int i = rand.nextInt(16) + 8;
 			int j = rand.nextInt(16) + 8;
 			BlockPos blockpos = worldIn.getHeight(pos.add(i, 0, j)).up();

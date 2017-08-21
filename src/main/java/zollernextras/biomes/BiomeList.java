@@ -11,7 +11,6 @@ public class BiomeList {
 	
 	public static int biomeColor = 1204859;
 	
-	//
 	public static Biome biomeMinersLand = new BiomeMinersLand(
 			new Biome.BiomeProperties("Miner's Land"));
 	public static Biome biomeSlimeLands = new BiomeSlimeLands(
@@ -30,15 +29,6 @@ public class BiomeList {
 			new Biome.BiomeProperties("Ice Mountains"));
 	public static Biome biomeMudSwamp = new BiomeMudSwamp(
 			new Biome.BiomeProperties("Mud Swamp"));
-	//
-	
-	// Dimension Biomes
-	//
-	// Upside-Down
-	public static Biome biomeUpsideDown = new BiomeUpsideDown(
-			new Biome.BiomeProperties("Upside-Down"));
-	
-	//
 	
 	public static void init() {
 		addBiome(biomeMinersLand, ZEConfig.biomeMinersLandID, "miners_land",
@@ -68,12 +58,6 @@ public class BiomeList {
 		addBiome(biomeMudSwamp, ZEConfig.biomeMudSwampID, "mud_swamp",
 				ZEConfig.biomeMudSwampSpawnRate, BiomeType.WARM,
 				BiomeDictionary.Type.SWAMP);
-		
-		// Dimension Biomes
-		//
-		// Upside-Down
-		addBiome(biomeUpsideDown, ZEConfig.biomeUpsideDownID, "upside_down", 0,
-				BiomeType.ICY, BiomeDictionary.Type.DEAD);
 	}
 	
 	public static void addBiome(Biome biome, int biomeID, String biomeName,

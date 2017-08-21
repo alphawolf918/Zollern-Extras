@@ -295,6 +295,10 @@ public class RecipeManager {
 			// Swamp Clay -> Mud Brick
 			RecipeHelper.addSmelting(ZollernItems.swampClayBall,
 					ZollernItems.brickMud, 0.2F);
+			
+			// Lapis Dust -> Lapis Ingot
+			RecipeHelper.addSmelting(new ItemStack(Items.DYE, 1, 4),
+					new ItemStack(ZollernItems.lapisIngot, 1), 1.0F);
 		}
 		
 	}

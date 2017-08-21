@@ -144,7 +144,7 @@ public class WorldGenNetherDungeons extends ZollernWorldGenMaster {
 	}
 	
 	public static void addNetherDungeonMob(String unlocalizedMobName, int weight) {
-		ZEHooks.addDungeonMob(new ResourceLocation(unlocalizedMobName), weight);
+		ZEHooks.addNetherDungeonMob(new ResourceLocation(unlocalizedMobName), weight);
 	}
 	
 	private static void addDungeonMobs() {
@@ -160,7 +160,7 @@ public class WorldGenNetherDungeons extends ZollernWorldGenMaster {
 	}
 	
 	private ResourceLocation pickMobSpawner(Random rand) {
-		return ZEHooks.getRandomDungeonMob(rand);
+		return ZEHooks.getRandomNetherDungeonMob(rand);
 	}
 	
 	static {

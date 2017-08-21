@@ -58,8 +58,7 @@ public class ZollernRegistry {
 				ZollernBlocks.caveMarble, ZollernBlocks.blackCaveMarble,
 				ZollernBlocks.canyonRock, ZollernBlocks.canyonRockBricks,
 				ZollernBlocks.swampClay, ZollernBlocks.bricksMud,
-				ZollernBlocks.witherrack, ZollernBlocks.upsideDownCobble,
-				ZollernBlocks.upsideDownStone);
+				ZollernBlocks.shineTorch);
 		
 		// New Hell Blocks
 		registerBlocks(event, ZollernBlocks.blazeRock,
@@ -68,7 +67,9 @@ public class ZollernRegistry {
 		
 		// Upside-Down Blocks
 		registerBlocks(event, ZollernBlocks.upsideDownSurfaceRock,
-				ZollernBlocks.upsideDownSubRock);
+				ZollernBlocks.upsideDownSubRock, ZollernBlocks.witherrack,
+				ZollernBlocks.upsideDownCobble, ZollernBlocks.upsideDownStone,
+				ZollernBlocks.upsideDownCobbleMossy, ZollernBlocks.endrock);
 		
 		// Croppies
 		// registerBlocks(event, ZollernBlocks.garlicCrop,
@@ -113,7 +114,8 @@ public class ZollernRegistry {
 				ZollernItems.sapphireShovel, ZollernItems.sapphireHoe,
 				ZollernItems.shinestoneIngot, ZollernItems.shinestoneDust,
 				ZollernItems.shiniumIngot, ZollernItems.shiniumDust,
-				ZollernItems.swampClayBall, ZollernItems.brickMud);
+				ZollernItems.swampClayBall, ZollernItems.brickMud,
+				ZollernItems.lapisIngot);
 		
 		// Croppies
 		// registerItems(event, ZollernItems.garlic, ZollernItems.tomato,

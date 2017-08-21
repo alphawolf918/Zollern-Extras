@@ -89,6 +89,7 @@ public class ZEConfig {
 	public static boolean biomeDisplaysOnHUD;
 	
 	// Mobs
+	public static boolean enableMegaCreeperGriefing;
 	public static int mobDuckSpawnRate;
 	public static int mobFishSpawnRate;
 	public static int mobSharkSpawnRate;
@@ -305,6 +306,8 @@ public class ZEConfig {
 				"The ID for the Enlightened Enchantment for weapons.").getInt();
 		
 		// Mobs
+		enableMegaCreeperGriefing = config.get(CATEGORY_MOBS,
+				"enableMegaCreeperGriefing", true).getBoolean();
 		mobFishSpawnRate = config.get(CATEGORY_MOBS, "mobFishSpawnRate", 70)
 				.getInt();
 		mobSharkSpawnRate = config.get(CATEGORY_MOBS, "mobSharkSpawnRate", 24)

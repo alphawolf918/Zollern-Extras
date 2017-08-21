@@ -211,6 +211,9 @@ public class ZollernItems {
 	public static final Item shiniumIngot = new ZollernItemBase("shiniumingot");
 	public static final Item shiniumDust = new ZollernItemBase("shiniumdust");
 	
+	// Lapis
+	public static final Item lapisIngot = new ZollernItemBase("lapisingot");
+	
 	// Bricks
 	public static final Item brickMud = new ZollernItemBase("brickingot_mud");
 	

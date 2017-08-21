@@ -271,6 +271,10 @@ public class ZollernBlocks {
 	public static final Block upsideDownStone = new UpsideDownStone();
 	public static final Block witherrack = new ZollernBlockBase("witherrack",
 			1.6F);
+	public static final Block upsideDownCobbleMossy = new ZollernBlockBase(
+			"ud_cobble_mossy", 1.4F);
+	public static final Block endrock = new ZollernBlockBase("endrock", 10.0F)
+			.setBlockUnbreakable();
 	
 	// Upside-Down Ores
 	// TODO
@@ -283,6 +287,9 @@ public class ZollernBlocks {
 	// Etrium
 	
 	// Zucrite
+	
+	// Shine Torch
+	public static final Block shineTorch = new ShineTorch();
 	
 	// Bricks
 	public static final Block bricksMud = new ZollernBlockBase("bricks_mud",

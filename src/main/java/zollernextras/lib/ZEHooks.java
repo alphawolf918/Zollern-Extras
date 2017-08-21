@@ -7,7 +7,7 @@ import net.minecraft.util.WeightedRandom;
 
 public class ZEHooks {
 	
-	private static ArrayList<DungeonMob> dungeonMobs = new ArrayList<DungeonMob>();
+	private static ArrayList<DungeonMob> netherDungeonMobs = new ArrayList<DungeonMob>();
 	
 	/**
 	 * Adds a mob to the possible list of creatures the spawner will create. If
@@ -24,19 +24,19 @@ public class ZEHooks {
 	 *            as spiders or skeletons.
 	 * @return The new rarity of the monster,
 	 */
-	public static float addDungeonMob(ResourceLocation name, int rarity) {
+	public static float addNetherDungeonMob(ResourceLocation name, int rarity) {
 		if (rarity <= 0) {
 			throw new IllegalArgumentException(
 					"Rarity must be greater then zero");
 		}
 		
-		for (DungeonMob mob : dungeonMobs) {
+		for (DungeonMob mob : netherDungeonMobs) {
 			if (name.equals(mob.type)) {
 				return mob.itemWeight += rarity;
 			}
 		}
 		
-		dungeonMobs.add(new DungeonMob(rarity, name));
+		netherDungeonMobs.add(new DungeonMob(rarity, name));
 		return rarity;
 	}
 	
@@ -48,9 +48,9 @@ public class ZEHooks {
 	 * @return The rarity of the removed mob, prior to being removed.
 	 */
 	public static int removeDungeonMob(ResourceLocation name) {
-		for (DungeonMob mob : dungeonMobs) {
+		for (DungeonMob mob : netherDungeonMobs) {
 			if (name.equals(mob.type)) {
-				dungeonMobs.remove(mob);
+				netherDungeonMobs.remove(mob);
 				return mob.itemWeight;
 			}
 		}
@@ -64,8 +64,8 @@ public class ZEHooks {
 	 *            World generation random number generator
 	 * @return The mob name
 	 */
-	public static ResourceLocation getRandomDungeonMob(Random rand) {
-		DungeonMob mob = WeightedRandom.getRandomItem(rand, dungeonMobs);
+	public static ResourceLocation getRandomNetherDungeonMob(Random rand) {
+		DungeonMob mob = WeightedRandom.getRandomItem(rand, netherDungeonMobs);
 		return mob.type;
 	}
 	

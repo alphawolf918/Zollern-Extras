@@ -1,0 +1,9 @@
+{
+    "variants": {
+        "facing=up": { "model": "zollernextras:shinetorch" },
+        "facing=east": { "model": "zollernextras:shinetorchwall" },
+        "facing=south": { "model": "zollernextras:shinetorchwall", "y": 90 },
+        "facing=west": { "model": "zollernextras:shinetorchwall", "y": 180 },
+        "facing=north": { "model": "zollernextras:shinetorchwall", "y": 270 }
+    }
+}

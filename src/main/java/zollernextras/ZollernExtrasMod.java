@@ -13,6 +13,8 @@ import zollernextras.config.ZEConfig;
 import zollernextras.creativetabs.ZollernTabs;
 import zollernextras.dimensions.HellRegistry;
 import zollernextras.handlers.Handlers;
+import zollernextras.lib.OreDictZo;
+import zollernextras.lib.StackChanges;
 import zollernextras.lib.ZollernModInfo;
 import zollernextras.lib.modhelper.ModHelperBase;
 import zollernextras.lib.recipes.RecipeManager;
@@ -48,8 +50,10 @@ public class ZollernExtrasMod {
 		ZEConfig.init(event);
 		ZollernRegistry.registerAll(event);
 		MobRegistry.init();
-		Handlers.init();
 		ZollernTabs.init();
+		if (ZEConfig.enableStackChanges) {
+			StackChanges.init();
+		}
 		instance().proxy.preInit(event);
 	}
 	
@@ -58,6 +62,8 @@ public class ZollernExtrasMod {
 		instance().proxy.init(event);
 		RecipeManager.init();
 		BiomeList.init();
+		Handlers.init();
+		OreDictZo.init();
 		NetworkRegistry.INSTANCE.registerGuiHandler(this, new CommonProxy());
 	}
 	

@@ -214,6 +214,10 @@ public class ZollernItems {
 	// Lapis
 	public static final Item lapisIngot = new ZollernItemBase("lapisingot");
 	
+	// Ender Glowstone
+	public static final Item enderGlowDust = new ZollernItemBase(
+			"enderglowstonedust");
+	
 	// Bricks
 	public static final Item brickMud = new ZollernItemBase("brickingot_mud");
 	

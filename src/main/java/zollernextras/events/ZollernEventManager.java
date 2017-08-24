@@ -22,12 +22,17 @@ import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.chunk.Chunk;
+import net.minecraft.world.chunk.storage.ExtendedBlockStorage;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent.NameFormat;
+import net.minecraftforge.event.terraingen.PopulateChunkEvent;
 import net.minecraftforge.event.world.BlockEvent.BreakEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import zollernextras.biomes.BiomeList;
 import zollernextras.blocks.ZollernBlocks;
 import zollernextras.items.ZollernItems;
 import zollernextras.items.armor.ZollernArmor;
@@ -198,32 +203,32 @@ public class ZollernEventManager {
 		// }
 	}
 	
-	// THIS DOES NOT DO A WORK.
-	// @SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
-	// public void onChunkPreLoadEvent(PopulateChunkEvent.Pre event) {
-	// World world = event.getWorld();
-	// int worldY = world.getHeight(event.getChunkX(), event.getChunkZ());
-	// Biome currentBiome = world.getBiome(new BlockPos(
-	// event.getChunkX() * 16, worldY, event.getChunkZ() * 16));
-	// Chunk chunk = event.getWorld().getChunkFromChunkCoords(
-	// event.getChunkX() * 16, event.getChunkZ() * 16);
-	// if (currentBiome == BiomeList.biomeIceDesert) {
-	// for (ExtendedBlockStorage storage : chunk.getBlockStorageArray()) {
-	// for (int x = 0; x < 16; x++) {
-	// for (int y = 0; y < 16; y++) {
-	// for (int z = 0; z < 16; z++) {
-	// IBlockState blockState = storage.get(x, y, z)
-	// .getActualState(world,
-	// new BlockPos(x, y, z));
-	// if (blockState == Blocks.WATER.getDefaultState()) {
-	// storage.set(x, y, z,
-	// Blocks.ICE.getDefaultState());
-	// }
-	// }
-	// }
-	// }
-	// }
-	// chunk.setModified(true);
-	// }
-	// }
+	@SubscribeEvent(priority = EventPriority.NORMAL)
+	public void onChunkPreLoadEvent(PopulateChunkEvent.Pre event) {
+		World world = event.getWorld();
+		int chunkX = event.getChunkX() * 16;
+		int chunkZ = event.getChunkZ() * 16;
+		int chunkY = world.getHeight(event.getChunkX(), event.getChunkZ());
+		BlockPos biomePos = new BlockPos(chunkX, chunkY, chunkZ);
+		Biome currentBiome = world.getBiome(biomePos);
+		Chunk chunk = world.getChunkFromChunkCoords(chunkX, chunkZ);
+		if (currentBiome == BiomeList.biomeIceDesert) {
+			for (ExtendedBlockStorage storage : chunk.getBlockStorageArray()) {
+				if (storage != Chunk.NULL_BLOCK_STORAGE) {
+					for (int x = 0; x < 16; ++x) {
+						for (int y = 0; y < 16; ++y) {
+							for (int z = 0; z < 16; ++z) {
+								if (storage.get(x, storage.getYLocation(), z)
+										.getBlock() == Blocks.WATER) {
+									storage.set(x, y, z,
+											Blocks.ICE.getDefaultState());
+								}
+							}
+						}
+					}
+				}
+			}
+			chunk.setModified(true);
+		}
+	}
 }

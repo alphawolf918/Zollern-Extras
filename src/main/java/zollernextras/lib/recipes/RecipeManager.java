@@ -119,6 +119,10 @@ public class RecipeManager {
 			RecipeHelper.addBricks(ZollernItems.shinestoneDust,
 					ZollernBlocks.shinestone);
 			
+			// Enderglow Dust -> Enderglow Block
+			RecipeHelper.addBricks(ZollernItems.enderGlowDust,
+					ZollernBlocks.enderGlow);
+			
 			// Canyon Rock -> Canyon Bricks
 			RecipeHelper.addBricks(ZollernBlocks.canyonRock,
 					ZollernBlocks.canyonRockBricks);
@@ -160,12 +164,12 @@ public class RecipeManager {
 			}
 			
 			// Torches
-			GameRegistry.addRecipe(new ItemStack(Blocks.TORCH, 8),
-					new Object[] { "G  ", "S  ", 'G',
-							ZollernItems.superChargedCoal, 'S', Items.STICK });
-			GameRegistry.addRecipe(new ItemStack(Blocks.TORCH, 8),
-					new Object[] { " G ", " S ", 'G',
-							ZollernItems.superChargedCoal, 'S', Items.STICK });
+			RecipeHelper.addTorch(ZollernItems.superChargedCoal, Blocks.TORCH,
+					8);
+			
+			// Shine Torch
+			RecipeHelper.addTorch(ZollernItems.shinestoneDust,
+					ZollernBlocks.shineTorch);
 			
 			// Black Cave Marble Block
 			GameRegistry.addRecipe(new ItemStack(ZollernBlocks.blackCaveMarble,

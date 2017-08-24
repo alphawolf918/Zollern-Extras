@@ -226,6 +226,9 @@ public class ZollernBlocks {
 			"blackmarble", 1.4F).setBlockHarvestLevel("pickaxe", 3)
 			.setLightLevel(0.5F);
 	
+	// Enderglow
+	public static final Block enderGlow = new BlockEnderGlow();
+	
 	//
 	/*
 	 * Biome & General Blocks

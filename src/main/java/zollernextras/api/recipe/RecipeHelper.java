@@ -344,8 +344,43 @@ public class RecipeHelper {
 	 * @param ingot
 	 * @param ingotStack
 	 */
-	private static void addIngotStack(Item ingot, Block ingotStack) {
+	public static void addIngotStack(Item ingot, Block ingotStack) {
 		GameRegistry.addRecipe(new ItemStack(ingotStack, 1), new Object[] {
 				" I ", "I I", "III", 'I', ingot });
 	}
+	
+	/**
+	 * Adds a torch crafting recipe.
+	 * 
+	 * @param itemCoalIn
+	 *            The item to use as coal.
+	 * @param blockTorchOut
+	 *            The torch block to craft.
+	 * @param numCrafted
+	 *            The number of torches crafted.
+	 */
+	public static void addTorch(Item itemCoalIn, Block blockTorchOut,
+			int numCrafted) {
+		GameRegistry
+				.addRecipe(new ItemStack(blockTorchOut, numCrafted),
+						new Object[] { "G  ", "S  ", 'G', itemCoalIn, 'S',
+								Items.STICK });
+		GameRegistry
+				.addRecipe(new ItemStack(blockTorchOut, numCrafted),
+						new Object[] { " G ", " S ", 'G', itemCoalIn, 'S',
+								Items.STICK });
+	}
+	
+	/**
+	 * Overloaded version of addTorch method. Crafts 4 by default.
+	 * 
+	 * @param itemCoalIn
+	 *            The item to use as coal.
+	 * @param blockTorchOut
+	 *            The torch block to craft.
+	 */
+	public static void addTorch(Item itemCoalIn, Block blockTorchOut) {
+		RecipeHelper.addTorch(itemCoalIn, blockTorchOut, 4);
+	}
+	
 }

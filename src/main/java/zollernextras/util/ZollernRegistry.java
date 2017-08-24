@@ -58,7 +58,7 @@ public class ZollernRegistry {
 				ZollernBlocks.caveMarble, ZollernBlocks.blackCaveMarble,
 				ZollernBlocks.canyonRock, ZollernBlocks.canyonRockBricks,
 				ZollernBlocks.swampClay, ZollernBlocks.bricksMud,
-				ZollernBlocks.shineTorch);
+				ZollernBlocks.shineTorch, ZollernBlocks.enderGlow);
 		
 		// New Hell Blocks
 		registerBlocks(event, ZollernBlocks.blazeRock,
@@ -70,11 +70,6 @@ public class ZollernRegistry {
 				ZollernBlocks.upsideDownSubRock, ZollernBlocks.witherrack,
 				ZollernBlocks.upsideDownCobble, ZollernBlocks.upsideDownStone,
 				ZollernBlocks.upsideDownCobbleMossy, ZollernBlocks.endrock);
-		
-		// Croppies
-		// registerBlocks(event, ZollernBlocks.garlicCrop,
-		// ZollernBlocks.tomatoCrop);
-		
 		// Items
 		registerItems(event, ZollernItems.superChargedCoal,
 				ZollernItems.amaranthIngot, ZollernItems.amaranthNugget,
@@ -115,11 +110,7 @@ public class ZollernRegistry {
 				ZollernItems.shinestoneIngot, ZollernItems.shinestoneDust,
 				ZollernItems.shiniumIngot, ZollernItems.shiniumDust,
 				ZollernItems.swampClayBall, ZollernItems.brickMud,
-				ZollernItems.lapisIngot);
-		
-		// Croppies
-		// registerItems(event, ZollernItems.garlic, ZollernItems.tomato,
-		// ZollernItems.tomatoSeeds);
+				ZollernItems.lapisIngot, ZollernItems.enderGlowDust);
 		
 		// Power Swords
 		registerItems(event, ZollernItems.DIABLO, ZollernItems.ENDER,

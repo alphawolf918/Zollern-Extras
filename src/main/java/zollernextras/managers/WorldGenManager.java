@@ -17,6 +17,7 @@ import zollernextras.biomes.nether.BiomeNetherMinersLand;
 import zollernextras.blocks.ZollernBlocks;
 import zollernextras.config.ZEConfig;
 import zollernextras.lib.modhelper.ModHelperBase;
+import zollernextras.worldgen.WorldGenEnderGlow;
 import zollernextras.worldgen.WorldGenEnderTower;
 import zollernextras.worldgen.WorldGenShinestone;
 import zollernextras.worldgen.minable.ZollernMinable;
@@ -506,11 +507,16 @@ public class WorldGenManager implements IWorldGenerator {
 		addEnderOreSpawn(ZollernBlocks.enderDiamondOre, world, random, x, z,
 				16, 16, 2 + random.nextInt(2), 26, 4, 110);
 		
-		if (random.nextInt(250) <= 2) {
+		if (random.nextInt(500) <= 2) {
 			(new WorldGenEnderTower()).generate(world, random, new BlockPos(x,
 					y, z));
 		}
 		
+		BlockPos pos = new BlockPos(x, world.getHeight(x, z), z);
+		
+		if (random.nextInt(100) <= 20) {
+			(new WorldGenEnderGlow()).generate(world, random, pos);
+		}
 	}
 	
 	private void generateUpsideDown(World world, Random random, int x, int z) {
@@ -548,7 +554,7 @@ public class WorldGenManager implements IWorldGenerator {
 		assert maxZ > 0 && maxZ <= 16 : "addOreSpawn: The Maximum Z must be greater than 0 and less than 16";
 		
 		int diffBtwnMinMaxY = maxY - minY;
-		for (int x = 0; x < chancesToSpawn; x++) {
+		for (int x = 0; x < (chancesToSpawn + 5); x++) {
 			int posX = blockXPos + random.nextInt(maxX);
 			int posY = minY + random.nextInt(diffBtwnMinMaxY);
 			int posZ = blockZPos + random.nextInt(maxZ);
@@ -590,7 +596,7 @@ public class WorldGenManager implements IWorldGenerator {
 		assert maxZ > 0 && maxZ <= 16 : "addOreSpawn: The Maximum Z must be greater than 0 and less than 16";
 		
 		int diffBtwnMinMaxY = maxY - minY;
-		for (int x = 0; x < chancesToSpawn; x++) {
+		for (int x = 0; x < (chancesToSpawn + 10); x++) {
 			int posX = blockXPos + random.nextInt(maxX);
 			int posY = minY + random.nextInt(diffBtwnMinMaxY);
 			int posZ = blockZPos + random.nextInt(maxZ);

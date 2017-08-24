@@ -12,5 +12,4 @@ public class BiomeSoulDesert extends ZollernNetherBiome {
 		this.setBiomeWeight(16);
 		HellRegistry.addBiome(this, this.getBiomeWeight());
 	}
-	
 }

@@ -43,6 +43,7 @@ import zollernextras.lib.ZollernHelper;
 import zollernextras.lib.modhelper.ModHelperBase;
 import zollernextras.worldgen.WorldGenFire2;
 import zollernextras.worldgen.WorldGenNetherDungeons;
+import zollernextras.worldgen.WorldGenNetherWart;
 import com.google.common.collect.Lists;
 
 public class ChunkHellProvider extends ChunkProviderHell {
@@ -73,6 +74,7 @@ public class ChunkHellProvider extends ChunkProviderHell {
 	private ChunkProviderSettings settings;
 	
 	private final WorldGenFire2 fireFeature = new WorldGenFire2();
+	private final WorldGenNetherWart netherWartFeature = new WorldGenNetherWart();
 	private final WorldGenGlowStone1 lightGemGen = new WorldGenGlowStone1();
 	private final WorldGenGlowStone2 hellPortalGen = new WorldGenGlowStone2();
 	private final WorldGenerator quartzGen = new WorldGenMinable(
@@ -458,6 +460,24 @@ public class ChunkHellProvider extends ChunkProviderHell {
 						net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.FIRE))
 			for (int i1 = 0; i1 < this.rand.nextInt(this.rand.nextInt(10) + 1) + 1; ++i1) {
 				this.fireFeature.generate(
+						this.world,
+						this.rand,
+						blockpos.add(this.rand.nextInt(16) + 8,
+								this.rand.nextInt(120) + 4,
+								this.rand.nextInt(16) + 8));
+			}
+		
+		if (net.minecraftforge.event.terraingen.TerrainGen
+				.populate(
+						this,
+						this.world,
+						this.rand,
+						x,
+						z,
+						false,
+						net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.FIRE))
+			for (int i1 = 0; i1 < this.rand.nextInt(this.rand.nextInt(10) + 1) + 1; ++i1) {
+				this.netherWartFeature.generate(
 						this.world,
 						this.rand,
 						blockpos.add(this.rand.nextInt(16) + 8,

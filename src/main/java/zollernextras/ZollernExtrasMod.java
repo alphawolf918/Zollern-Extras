@@ -12,6 +12,7 @@ import zollernextras.biomes.BiomeList;
 import zollernextras.config.ZEConfig;
 import zollernextras.creativetabs.ZollernTabs;
 import zollernextras.dimensions.HellRegistry;
+import zollernextras.events.ZollernSoundEvents;
 import zollernextras.handlers.Handlers;
 import zollernextras.lib.OreDictZo;
 import zollernextras.lib.StackChanges;
@@ -48,8 +49,9 @@ public class ZollernExtrasMod {
 		snw = NetworkRegistry.INSTANCE.newSimpleChannel(ZollernModInfo.channel);
 		ModHelperBase.detectMods();
 		ZEConfig.init(event);
-		ZollernRegistry.registerAll(event);
+		ZollernSoundEvents.init();
 		MobRegistry.init();
+		ZollernRegistry.registerAll(event);
 		ZollernTabs.init();
 		if (ZEConfig.enableStackChanges) {
 			StackChanges.init();

@@ -8,6 +8,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.block.state.pattern.BlockMatcher;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.entity.monster.EntityBlaze;
+import net.minecraft.entity.monster.EntityGhast;
 import net.minecraft.entity.monster.EntityMagmaCube;
 import net.minecraft.entity.monster.EntityPigZombie;
 import net.minecraft.entity.monster.EntitySkeleton;
@@ -45,6 +46,10 @@ import zollernextras.worldgen.WorldGenFire2;
 import zollernextras.worldgen.WorldGenNetherDungeons;
 import zollernextras.worldgen.WorldGenNetherWart;
 import com.google.common.collect.Lists;
+import com.progwml6.natura.entities.entity.monster.EntityBabyHeatscarSpider;
+import com.progwml6.natura.entities.entity.monster.EntityHeatscarSpider;
+import com.progwml6.natura.entities.entity.monster.EntityNitroCreeper;
+import com.progwml6.natura.entities.entity.passive.EntityImp;
 
 public class ChunkHellProvider extends ChunkProviderHell {
 	
@@ -213,6 +218,18 @@ public class ChunkHellProvider extends ChunkProviderHell {
 					2, 5, 5));
 			this.spawnList.add(new Biome.SpawnListEntry(EntityMagmaCube.class,
 					3, 4, 4));
+			this.spawnList.add(new Biome.SpawnListEntry(EntityGhast.class, 50,
+					4, 4));
+			if (ModHelperBase.useNatura) {
+				this.spawnList.add(new Biome.SpawnListEntry(
+						EntityHeatscarSpider.class, 2, 4, 4));
+				this.spawnList.add(new Biome.SpawnListEntry(
+						EntityBabyHeatscarSpider.class, 2, 4, 4));
+				this.spawnList.add(new Biome.SpawnListEntry(EntityImp.class, 2,
+						4, 4));
+				this.spawnList.add(new Biome.SpawnListEntry(
+						EntityNitroCreeper.class, 2, 4, 4));
+			}
 			return this.spawnList;
 		}
 		Biome biome = this.world.getBiome(pos);
@@ -296,7 +313,7 @@ public class ChunkHellProvider extends ChunkProviderHell {
 						} else {
 							i1 = -1;
 						}
-						if (y <= 15
+						if (y <= 25
 								&& y > 0
 								&& primer.getBlockState(x, y, z) != Blocks.AIR
 										.getDefaultState()) {

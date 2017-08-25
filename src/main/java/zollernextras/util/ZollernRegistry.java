@@ -110,7 +110,8 @@ public class ZollernRegistry {
 				ZollernItems.shinestoneIngot, ZollernItems.shinestoneDust,
 				ZollernItems.shiniumIngot, ZollernItems.shiniumDust,
 				ZollernItems.swampClayBall, ZollernItems.brickMud,
-				ZollernItems.lapisIngot, ZollernItems.enderGlowDust);
+				ZollernItems.lapisIngot, ZollernItems.enderGlowDust,
+				ZollernItems.duckFeather);
 		
 		// Power Swords
 		registerItems(event, ZollernItems.DIABLO, ZollernItems.ENDER,

@@ -8,7 +8,6 @@ import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.monster.EntityBlaze;
 import net.minecraft.entity.monster.EntityEnderman;
 import net.minecraft.entity.monster.EntityGhast;
-import net.minecraft.entity.monster.EntitySilverfish;
 import net.minecraft.entity.monster.EntitySkeleton;
 import net.minecraft.entity.monster.EntitySlime;
 import net.minecraft.entity.monster.EntityZombie;
@@ -22,17 +21,12 @@ import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
-import net.minecraft.world.biome.Biome;
-import net.minecraft.world.chunk.Chunk;
-import net.minecraft.world.chunk.storage.ExtendedBlockStorage;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent.NameFormat;
-import net.minecraftforge.event.terraingen.PopulateChunkEvent;
 import net.minecraftforge.event.world.BlockEvent.BreakEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import zollernextras.biomes.BiomeList;
 import zollernextras.blocks.ZollernBlocks;
 import zollernextras.items.ZollernItems;
 import zollernextras.items.armor.ZollernArmor;
@@ -178,12 +172,6 @@ public class ZollernEventManager {
 					theEntity.posY, theEntity.posZ,
 					new ItemStack(Items.BONE, 1));
 			worldObj.spawnEntity(item);
-		} else if (theEntity instanceof EntitySilverfish) {
-			// EntityItem item = new EntityItem(worldObj, theEntity.posX,
-			// theEntity.posY, theEntity.posZ, new ItemStack(
-			// ZollernItems.silverNugget, 1));
-			// worldObj.spawnEntityInWorld(item);
-			// TODO
 		} else if (theEntity instanceof EntityGhast) {
 			EntityItem item = new EntityItem(worldObj, theEntity.posX,
 					theEntity.posY, theEntity.posZ, new ItemStack(
@@ -203,32 +191,45 @@ public class ZollernEventManager {
 		// }
 	}
 	
-	@SubscribeEvent(priority = EventPriority.NORMAL)
-	public void onChunkPreLoadEvent(PopulateChunkEvent.Pre event) {
-		World world = event.getWorld();
-		int chunkX = event.getChunkX() * 16;
-		int chunkZ = event.getChunkZ() * 16;
-		int chunkY = world.getHeight(event.getChunkX(), event.getChunkZ());
-		BlockPos biomePos = new BlockPos(chunkX, chunkY, chunkZ);
-		Biome currentBiome = world.getBiome(biomePos);
-		Chunk chunk = world.getChunkFromChunkCoords(chunkX, chunkZ);
-		if (currentBiome == BiomeList.biomeIceDesert) {
-			for (ExtendedBlockStorage storage : chunk.getBlockStorageArray()) {
-				if (storage != Chunk.NULL_BLOCK_STORAGE) {
-					for (int x = 0; x < 16; ++x) {
-						for (int y = 0; y < 16; ++y) {
-							for (int z = 0; z < 16; ++z) {
-								if (storage.get(x, storage.getYLocation(), z)
-										.getBlock() == Blocks.WATER) {
-									storage.set(x, y, z,
-											Blocks.ICE.getDefaultState());
-								}
-							}
-						}
-					}
-				}
-			}
-			chunk.setModified(true);
-		}
-	}
+	// THIS DOES NOT DO A WORK.
+	// @SubscribeEvent(priority = EventPriority.NORMAL)
+	// public void onChunkPreLoadEvent(PopulateChunkEvent.Pre event) {
+	// World world = event.getWorld();
+	// int chunkX = event.getChunkX() * 16;
+	// int chunkZ = event.getChunkZ() * 16;
+	// int chunkY = world.getHeight(event.getChunkX(), event.getChunkZ());
+	// BlockPos biomePos = new BlockPos(chunkX, chunkY, chunkZ);
+	// Biome currentBiome = world.getBiomeForCoordsBody(biomePos);
+	// Chunk chunk = world.getChunkFromChunkCoords(chunkX, chunkZ);
+	// if (currentBiome.equals(BiomeList.biomeIceDesert)) {
+	// for (ExtendedBlockStorage storage : chunk.getBlockStorageArray()) {
+	// if (storage != Chunk.NULL_BLOCK_STORAGE) {
+	// // for (int x = 0; x < 16; ++x) {
+	// // for (int y = 0; y < 16; ++y) {
+	// // for (int z = 0; z < 16; ++z) {
+	// // if (storage.get(x, y, z).getBlock() == Blocks.STONE) {
+	// // storage.set(x, y, z,
+	// // Blocks.ICE.getDefaultState());
+	// // }
+	// // }
+	// // }
+	// // }
+	// world.theProfiler.startSection("getChunk");
+	// int updateLCG = (new Random()).nextInt();
+	// int j1 = updateLCG >> 2;
+	// int k1 = j1 & 15;
+	// int l1 = j1 >> 8 & 15;
+	// int i2 = j1 >> 16 & 15;
+	// IBlockState iblockstate = storage.get(k1, i2, l1);
+	// Block block = iblockstate.getBlock();
+	// if (block == Blocks.STONE) {
+	// storage.set(k1, i2, l1, Blocks.ICE.getDefaultState());
+	// chunk.setModified(true);
+	// event.setResult(Result.ALLOW);
+	// world.theProfiler.endSection();
+	// }
+	// }
+	// }
+	// }
+	// }
 }

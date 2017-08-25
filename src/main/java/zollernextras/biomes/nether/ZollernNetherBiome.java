@@ -13,7 +13,12 @@ import zollernextras.api.biome.ZollernBiome;
 import zollernextras.blocks.ZollernBlocks;
 import zollernextras.dimensions.providers.biome.BiomeDecoratorNether;
 import zollernextras.lib.ZollernModInfo;
+import zollernextras.lib.modhelper.ModHelperBase;
 import zollernextras.worldgen.WGLake;
+import com.progwml6.natura.entities.entity.monster.EntityBabyHeatscarSpider;
+import com.progwml6.natura.entities.entity.monster.EntityHeatscarSpider;
+import com.progwml6.natura.entities.entity.monster.EntityNitroCreeper;
+import com.progwml6.natura.entities.entity.passive.EntityImp;
 
 public class ZollernNetherBiome extends ZollernBiome {
 	
@@ -23,11 +28,21 @@ public class ZollernNetherBiome extends ZollernBiome {
 		super(props);
 		this.clearAllSpawning();
 		this.spawnableMonsterList.add(new Biome.SpawnListEntry(
-				EntityGhast.class, 50, 4, 4));
+				EntityGhast.class, 2, 4, 4));
 		this.spawnableMonsterList.add(new Biome.SpawnListEntry(
 				EntityPigZombie.class, 100, 4, 4));
 		this.spawnableMonsterList.add(new Biome.SpawnListEntry(
 				EntityMagmaCube.class, 2, 4, 4));
+		if (ModHelperBase.useNatura) {
+			this.spawnableMonsterList.add(new Biome.SpawnListEntry(
+					EntityHeatscarSpider.class, 2, 4, 4));
+			this.spawnableMonsterList.add(new Biome.SpawnListEntry(
+					EntityBabyHeatscarSpider.class, 2, 4, 4));
+			this.spawnableMonsterList.add(new Biome.SpawnListEntry(
+					EntityImp.class, 2, 4, 4));
+			this.spawnableMonsterList.add(new Biome.SpawnListEntry(
+					EntityNitroCreeper.class, 2, 4, 4));
+		}
 		this.setBlocks(Blocks.NETHERRACK);
 		this.setTempCategory(TempCategory.WARM);
 		this.setNoRain(props);

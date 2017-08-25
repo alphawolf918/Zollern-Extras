@@ -221,6 +221,9 @@ public class ZollernItems {
 	// Bricks
 	public static final Item brickMud = new ZollernItemBase("brickingot_mud");
 	
+	// Mob Items
+	public static final Item duckFeather = new ZollernItemBase("duckfeather");
+	
 	// Power Swords
 	public static final Item DIABLO = new SwordDiablo();
 	public static final Item ENDER = new SwordEnder();

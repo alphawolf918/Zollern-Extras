@@ -11,6 +11,7 @@ public class ModHelperBase {
 	public static boolean useThermalDynamics = false;
 	public static boolean useZaneExtras = false;
 	public static boolean useExtremeReactors = false;
+	public static boolean useNatura = false;
 	
 	public static void detectMods() {
 		useCofh = isModLoaded("cofhcore");
@@ -19,6 +20,7 @@ public class ModHelperBase {
 		useThermalDynamics = isModLoaded("thermaldynamics");
 		useZaneExtras = isModLoaded("zanextras");
 		useExtremeReactors = isModLoaded("bigreactors");
+		useNatura = isModLoaded("natura");
 	}
 	
 	public static boolean isModLoaded(String modId) {

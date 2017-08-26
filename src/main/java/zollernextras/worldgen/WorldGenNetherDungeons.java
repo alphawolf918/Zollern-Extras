@@ -144,7 +144,8 @@ public class WorldGenNetherDungeons extends ZollernWorldGenMaster {
 	}
 	
 	public static void addNetherDungeonMob(String unlocalizedMobName, int weight) {
-		ZEHooks.addNetherDungeonMob(new ResourceLocation(unlocalizedMobName), weight);
+		ZEHooks.addNetherDungeonMob(new ResourceLocation(unlocalizedMobName),
+				weight);
 	}
 	
 	private static void addDungeonMobs() {
@@ -154,6 +155,7 @@ public class WorldGenNetherDungeons extends ZollernWorldGenMaster {
 		addNetherDungeonMob("wither_skeleton", 100);
 		addNetherDungeonMob("zombie_pigman", 100);
 		addNetherDungeonMob("zollernextras:hellfish", 100);
+		addNetherDungeonMob("zollernextras:hellduck", 100);
 		if (ModHelperBase.useZaneExtras) {
 			// addNetherDungeonMob("zanextras:hellsheep", 100);
 		}

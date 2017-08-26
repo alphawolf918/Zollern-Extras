@@ -10,6 +10,7 @@ import zollernextras.biomes.BiomeList;
 import zollernextras.config.ZEConfig;
 import zollernextras.lib.ZollernModInfo;
 import zollernextras.mobs.entities.EntityDuck;
+import zollernextras.mobs.entities.EntityHellDuck;
 import zollernextras.mobs.entities.EntityHellFish;
 import zollernextras.mobs.entities.EntityMegaCreeper;
 import zollernextras.mobs.entities.EntityScorpion;
@@ -23,6 +24,10 @@ public class MobRegistry {
 		
 		// HellFish
 		registerEntity("hellfish", EntityHellFish.class, entityId++, 0x8b0000,
+				0x000000);
+		
+		// Hell Duck
+		registerEntity("hellduck", EntityHellDuck.class, entityId++, 0x8b0000,
 				0x000000);
 		
 		// Mega Creeper

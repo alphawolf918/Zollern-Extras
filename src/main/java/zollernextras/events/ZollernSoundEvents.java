@@ -12,6 +12,11 @@ public class ZollernSoundEvents {
 	public static SoundEvent ENTITY_DUCK_HURT = regSound("duck.hurt");
 	public static SoundEvent ENTITY_DUCK_DIE = regSound("duck.die");
 	
+	// Hell Duckly Wuckly
+	public static SoundEvent ENTITY_HELLDUCK_AMBIENT = regSound("hellduck.say");
+	public static SoundEvent ENTITY_HELLDUCK_HURT = regSound("hellduck.hurt");
+	public static SoundEvent ENTITY_HELLDUCK_DIE = regSound("hellduck.die");
+	
 	public static void init() {
 		// Duck
 		registerSound(ENTITY_DUCK_AMBIENT);
@@ -19,12 +24,13 @@ public class ZollernSoundEvents {
 		registerSound(ENTITY_DUCK_DIE);
 		
 		// Hell Duck
-		// TODO
+		registerSound(ENTITY_HELLDUCK_AMBIENT);
+		registerSound(ENTITY_HELLDUCK_HURT);
+		registerSound(ENTITY_HELLDUCK_DIE);
 	}
 	
-	private static SoundEvent registerSound(SoundEvent sound) {
+	private static void registerSound(SoundEvent sound) {
 		ForgeRegistries.SOUND_EVENTS.register(sound);
-		return sound;
 	}
 	
 	private static SoundEvent regSound(String strSound) {

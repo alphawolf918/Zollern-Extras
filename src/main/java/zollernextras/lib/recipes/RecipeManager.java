@@ -180,6 +180,17 @@ public class RecipeManager {
 			// Mud Brick Ingots -> Mud Brick Block
 			RecipeHelper.addOneWayBricks(ZollernItems.brickMud,
 					ZollernBlocks.bricksMud);
+			
+			// Another way to craft Red Nether Bricks.
+			GameRegistry.addRecipe(new ItemStack(Blocks.RED_NETHER_BRICK, 2),
+					new Object[] { "NB ", "BN ", "   ", 'B', Items.NETHERBRICK,
+							'N', Items.NETHER_WART });
+			
+			// Glowing Obsidian
+			GameRegistry.addRecipe(
+					new ItemStack(ZollernBlocks.hellObsidian, 2), new Object[] {
+							"BN ", "NB ", "   ", 'B', Blocks.NETHER_WART_BLOCK,
+							'N', Blocks.OBSIDIAN });
 		}
 	}
 	

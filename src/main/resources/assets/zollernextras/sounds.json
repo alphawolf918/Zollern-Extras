@@ -2,157 +2,161 @@
    "alarms.ironsiren":{
       "category":"master",
       "sounds":[
-         "alarms/ironsiren"
+         "zollernextras:alarms/ironsiren"
       ]
    },
    "alarms.goldsiren":{
       "category":"master",
       "sounds":[
-         "alarms/goldsiren"
+         "zollernextras:alarms/goldsiren"
       ]
    },
    "alarms.diamondsiren":{
       "category":"master",
       "sounds":[
-         "alarms/diamondsiren"
+         "zollernextras:alarms/diamondsiren"
       ]
    },
    "alarms.emeraldsiren":{
       "category":"master",
       "sounds":[
-         "alarms/emeraldsiren"
+         "zollernextras:alarms/emeraldsiren"
       ]
    },
    "duck.say":{
       "category":"master",
       "sounds":[
          {
-            "name":"duck/say1",
-            "name":"duck/say2",
-            "name":"duck/say3",
-            "name":"duck/say4"
+            "name":"zollernextras:duck/say1",
+            "name":"zollernextras:duck/say2",
+            "name":"zollernextras:duck/say3",
+            "name":"zollernextras:duck/say4"
          }
       ]
    },
    "duck.hurt":{
       "category":"master",
       "sounds":[
-         "duck/hurt1",
-         "duck/hurt2"
+         {
+            "name":"zollernextras:duck/hurt1",
+            "name":"zollernextras:duck/hurt2"
+         }
       ]
    },
    "duck.die":{
       "category":"master",
       "sounds":[
-         "duck/die"
+         "zollernextras:duck/die"
       ]
    },
    "hellduck.say":{
       "category":"master",
       "sounds":[
-         "hellduck/say1",
-         "hellduck/say2",
-         "hellduck/say3",
-         "hellduck/say4"
+         {
+            "name":"zollernextras:hellduck/say1",
+            "name":"zollernextras:hellduck/say2",
+            "name":"zollernextras:hellduck/say3",
+            "name":"zollernextras:hellduck/say4"
+         }
       ]
    },
    "hellduck.hurt":{
       "category":"master",
       "sounds":[
-         "hellduck/hurt1",
-         "hellduck/hurt2"
+         "zollernextras:hellduck/hurt1",
+         "zollernextras:hellduck/hurt2"
       ]
    },
    "hellduck.die":{
       "category":"master",
       "sounds":[
-         "hellduck/die"
+         "zollernextras:hellduck/die"
       ]
    },
    "mummy.say":{
       "category":"master",
       "sounds":[
-         "mummy/say1",
-         "mummy/say2",
-         "mummy/say3",
-         "mummy/say4"
+         "zollernextras:mummy/say1",
+         "zollernextras:mummy/say2",
+         "zollernextras:mummy/say3",
+         "zollernextras:mummy/say4"
       ]
    },
    "mummy.hurt":{
       "category":"master",
       "sounds":[
-         "mummy/hurt"
+         "zollernextras:mummy/hurt"
       ]
    },
    "mummy.die":{
       "category":"master",
       "sounds":[
-         "mummy/die"
+         "zollernextras:mummy/die"
       ]
    },
    "shadowalien.say":{
       "category":"master",
       "sounds":[
-         "shadowalien/say1",
-         "shadowalien/say2"
+         "zollernextras:shadowalien/say1",
+         "zollernextras:shadowalien/say2"
       ]
    },
    "shadowalien.hurt":{
       "category":"master",
       "sounds":[
-         "shadowalien/hurt"
+         "zollernextras:shadowalien/hurt"
       ]
    },
    "shadowalien.death":{
       "category":"master",
       "sounds":[
-         "shadowalien/death"
+         "zollernextras:shadowalien/death"
       ]
    },
    "spiderling.heartbeat":{
       "category":"master",
       "sounds":[
-         "spiderling/heartbeat"
+         "zollernextras:spiderling/heartbeat"
       ]
    },
    "krull.say":{
       "category":"master",
       "sounds":[
-         "krull/say1",
-         "krull/say2"
+         "zollernextras:krull/say1",
+         "zollernextras:krull/say2"
       ]
    },
    "krull.hurt":{
       "category":"master",
       "sounds":[
-         "krull/hurt1",
-         "krull/hurt2"
+         "zollernextras:krull/hurt1",
+         "zollernextras:krull/hurt2"
       ]
    },
    "krull.die":{
       "category":"master",
       "sounds":[
-         "krull/die"
+         "zollernextras:krull/die"
       ]
    },
    "shade.say":{
       "category":"master",
       "sounds":[
-         "shade/say1",
-         "shade/say2"
+         "zollernextras:shade/say1",
+         "zollernextras:shade/say2"
       ]
    },
    "shade.hurt":{
       "category":"master",
       "sounds":[
-         "shade/hurt1",
-         "shade/hurt2"
+         "zollernextras:shade/hurt1",
+         "zollernextras:shade/hurt2"
       ]
    },
    "shade.die":{
       "category":"master",
       "sounds":[
-         "shade/die"
+         "zollernextras:shade/die"
       ]
    }
 }

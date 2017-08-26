@@ -39,9 +39,13 @@ import net.minecraftforge.event.terraingen.ChunkGeneratorEvent;
 import net.minecraftforge.event.terraingen.InitNoiseGensEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
 import net.minecraftforge.fml.common.eventhandler.Event.Result;
+import zanextras.blocks.ZaneBlocks;
+import zanextras.config.ZaneConfig;
+import zanextras.worldgen.structures.WorldGenCrops;
 import zanextras.worldgen.structures.WorldGenRedGlowStone;
 import zollernextras.lib.ZollernHelper;
 import zollernextras.lib.modhelper.ModHelperBase;
+import zollernextras.mobs.entities.EntityHellDuck;
 import zollernextras.worldgen.WorldGenFire2;
 import zollernextras.worldgen.WorldGenNetherDungeons;
 import zollernextras.worldgen.WorldGenNetherWart;
@@ -230,6 +234,8 @@ public class ChunkHellProvider extends ChunkProviderHell {
 				this.spawnList.add(new Biome.SpawnListEntry(
 						EntityNitroCreeper.class, 2, 4, 4));
 			}
+			this.spawnList.add(new Biome.SpawnListEntry(EntityHellDuck.class,
+					2, 3, 5));
 			return this.spawnList;
 		}
 		Biome biome = this.world.getBiome(pos);
@@ -564,12 +570,24 @@ public class ChunkHellProvider extends ChunkProviderHell {
 								this.rand.nextInt(128),
 								this.rand.nextInt(16) + 8));
 			}
-			
-			if (this.rand.nextBoolean()) {
-				this.redMushroomFeature.generate(this.world, this.rand,
-						blockpos.add(this.rand.nextInt(16) + 8,
-								this.rand.nextInt(128),
-								this.rand.nextInt(16) + 8));
+		}
+		
+		if (ModHelperBase.useZaneExtras) {
+			if (net.minecraftforge.event.terraingen.TerrainGen
+					.decorate(
+							this.world,
+							this.rand,
+							blockpos,
+							net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.SHROOM)) {
+				if (this.rand.nextInt(100) <= ZaneConfig.cropSpawnRateNether) {
+					(new WorldGenCrops(ZaneBlocks.ghostCrops, Blocks.SOUL_SAND,
+							false)).generate(
+							this.world,
+							this.rand,
+							blockpos.add(this.rand.nextInt(16) + 8,
+									this.rand.nextInt(128),
+									this.rand.nextInt(16) + 8));
+				}
 			}
 		}
 		

@@ -111,7 +111,9 @@ public class ZollernRegistry {
 				ZollernItems.shiniumIngot, ZollernItems.shiniumDust,
 				ZollernItems.swampClayBall, ZollernItems.brickMud,
 				ZollernItems.lapisIngot, ZollernItems.enderGlowDust,
-				ZollernItems.duckFeather);
+				ZollernItems.duckFeather, ZollernItems.marbleStick,
+				ZollernItems.blackMarbleStick, ZollernItems.lapisStick,
+				ZollernItems.bedrockBreaker, ZollernItems.rokkite);
 		
 		// Power Swords
 		registerItems(event, ZollernItems.DIABLO, ZollernItems.ENDER,
@@ -122,9 +124,9 @@ public class ZollernRegistry {
 			Block... blocks) {
 		for (Block block : blocks) {
 			final ItemBlock itemBlock = new ItemBlock(block);
+			GameRegistry.register(block);
+			GameRegistry.register(itemBlock, block.getRegistryName());
 			if (event.getSide() == Side.CLIENT) {
-				GameRegistry.register(block);
-				GameRegistry.register(itemBlock, block.getRegistryName());
 				ModelLoader.setCustomModelResourceLocation(Item
 						.getItemFromBlock(block), 0, new ModelResourceLocation(
 						block.getRegistryName(), "normal"));
@@ -136,11 +138,11 @@ public class ZollernRegistry {
 			Item... items) {
 		for (Item item : items) {
 			if (event.getSide() == Side.CLIENT) {
-				GameRegistry.register(item);
 				ModelLoader.setCustomModelResourceLocation(item, 0,
 						new ModelResourceLocation(item.getRegistryName(),
 								"normal"));
 			}
+			GameRegistry.register(item);
 		}
 	}
 	

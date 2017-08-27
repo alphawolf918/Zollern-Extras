@@ -4,6 +4,7 @@ import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import zollernextras.items.armor.ZollernArmor;
 import zollernextras.items.armor.ZollernArmorMaterials;
+import zollernextras.items.tools.ItemBedrockBreaker;
 import zollernextras.items.tools.ZollernAxe;
 import zollernextras.items.tools.ZollernHoe;
 import zollernextras.items.tools.ZollernPickaxe;
@@ -223,6 +224,18 @@ public class ZollernItems {
 	
 	// Mob Items
 	public static final Item duckFeather = new ZollernItemBase("duckfeather");
+	
+	// Sticks
+	public static final Item marbleStick = new ZollernItemBase("marblestick");
+	public static final Item blackMarbleStick = new ZollernItemBase(
+			"blackmarblestick");
+	public static final Item lapisStick = new ZollernItemBase("lapisstick");
+	
+	// Bedrock Breaker
+	public static final Item bedrockBreaker = new ItemBedrockBreaker();
+	
+	// Rokkite
+	public static final Item rokkite = new ZollernItemBase("rokkite");
 	
 	// Power Swords
 	public static final Item DIABLO = new SwordDiablo();

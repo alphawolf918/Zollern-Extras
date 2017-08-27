@@ -383,4 +383,8 @@ public class RecipeHelper {
 		RecipeHelper.addTorch(itemCoalIn, blockTorchOut, 4);
 	}
 	
+	public static void addTorch(Block blockIn, Block blockTorchOut) {
+		RecipeHelper.addTorch(Item.getItemFromBlock(blockIn), blockTorchOut);
+	}
+	
 }

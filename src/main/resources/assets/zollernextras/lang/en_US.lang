@@ -529,6 +529,9 @@ item.zollernextras_jumppotion.name=Potion of Leaping
 item.zollernextras_etrium.name=Etrium
 item.zollernextras_crushedetrium.name=Crushed Etrium
 
+item.zollernextras_bedrockbreaker.name=Bedrock Breaker
+item.zollernextras_rokkite.name=Rokkite
+
 entity.zollernextras:fish.name=Fish
 entity.zollernextras:jellyfish.name=Jellyfish
 entity.zollernextras:megacreeper.name=Mega Creeper

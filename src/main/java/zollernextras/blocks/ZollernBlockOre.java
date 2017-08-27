@@ -48,10 +48,12 @@ public class ZollernBlockOre extends ZollernBlockBase {
 	@Override
 	public void onBlockDestroyedByPlayer(World worldIn, BlockPos pos,
 			IBlockState state) {
-		if (this.getShouldExplode()) {
-			if (rand.nextInt(20) <= 2) {
-				worldIn.createExplosion(null, pos.getX(), pos.getY(),
-						pos.getZ(), 2.5F, true);
+		if (!worldIn.isRemote) {
+			if (this.getShouldExplode()) {
+				if (rand.nextInt(20) <= 2) {
+					worldIn.createExplosion(null, pos.getX(), pos.getY(),
+							pos.getZ(), 2.5F, true);
+				}
 			}
 		}
 		if (this.getShouldGivePotionEffect()) {

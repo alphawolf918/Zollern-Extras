@@ -1,3 +1,12 @@
+[Zollern Extras - v1.0.1]
+
+* Added more stuff from the previous 1.7 versions.
+* 
+
+==== FIXES ====
+* Fixed ghost block issue when Nether Ores would explode.
+===============
+
 [Zollern Extras - Initial Migration - to 1.11.2 - v1.0.0]
 
 * Most things are being ported over. Some stuff may have to be left behind to make way for new things and new

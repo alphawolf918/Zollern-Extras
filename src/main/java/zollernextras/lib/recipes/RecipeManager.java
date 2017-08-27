@@ -171,6 +171,27 @@ public class RecipeManager {
 			RecipeHelper.addTorch(ZollernItems.shinestoneDust,
 					ZollernBlocks.shineTorch);
 			
+			// White Cave Marble Stick
+			GameRegistry.addRecipe(new ItemStack(ZollernItems.marbleStick, 2),
+					new Object[] { "B  ", "B  ", "   ", 'B',
+							ZollernBlocks.caveMarble });
+			
+			// Black Cave Marble Stick
+			GameRegistry.addRecipe(new ItemStack(ZollernItems.blackMarbleStick,
+					2), new Object[] { "B  ", "B  ", "   ", 'B',
+					ZollernBlocks.blackCaveMarble });
+			
+			// Lapis Stick
+			GameRegistry.addRecipe(new ItemStack(ZollernItems.lapisStick, 1),
+					new Object[] { " L ", " L ", "   ", 'L',
+							ZollernItems.lapisIngot });
+			
+			// Blaze Rod
+			GameRegistry.addRecipe(new ItemStack(Items.BLAZE_ROD, 1),
+					new Object[] { " B ", "BSB", " B ", 'B',
+							Items.BLAZE_POWDER, 'S',
+							ZollernItems.blackMarbleStick });
+			
 			// Black Cave Marble Block
 			GameRegistry.addRecipe(new ItemStack(ZollernBlocks.blackCaveMarble,
 					8), new Object[] { "III", "IMI", "III", 'I',
@@ -314,6 +335,10 @@ public class RecipeManager {
 			// Lapis Dust -> Lapis Ingot
 			RecipeHelper.addSmelting(new ItemStack(Items.DYE, 1, 4),
 					new ItemStack(ZollernItems.lapisIngot, 1), 1.0F);
+			
+			// Swamp Clay Ball -> Swamp Clay Block
+			RecipeHelper.addBricks(ZollernItems.swampClayBall,
+					ZollernBlocks.swampClay, 4);
 		}
 		
 	}

@@ -41,6 +41,7 @@ import net.minecraftforge.event.terraingen.TerrainGen;
 import net.minecraftforge.fml.common.eventhandler.Event.Result;
 import zanextras.blocks.ZaneBlocks;
 import zanextras.config.ZaneConfig;
+import zanextras.mobs.entity.EntityHellSheep;
 import zanextras.worldgen.structures.WorldGenCrops;
 import zanextras.worldgen.structures.WorldGenRedGlowStone;
 import zollernextras.lib.ZollernHelper;
@@ -233,6 +234,10 @@ public class ChunkHellProvider extends ChunkProviderHell {
 						4, 4));
 				this.spawnList.add(new Biome.SpawnListEntry(
 						EntityNitroCreeper.class, 2, 4, 4));
+			}
+			if (ModHelperBase.useZaneExtras) {
+				this.spawnList.add(new Biome.SpawnListEntry(
+						EntityHellSheep.class, 2, 3, 5));
 			}
 			this.spawnList.add(new Biome.SpawnListEntry(EntityHellDuck.class,
 					2, 3, 5));

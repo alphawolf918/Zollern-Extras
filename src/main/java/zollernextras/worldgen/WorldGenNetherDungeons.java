@@ -157,7 +157,7 @@ public class WorldGenNetherDungeons extends ZollernWorldGenMaster {
 		addNetherDungeonMob("zollernextras:hellfish", 100);
 		addNetherDungeonMob("zollernextras:hellduck", 100);
 		if (ModHelperBase.useZaneExtras) {
-			// addNetherDungeonMob("zanextras:hellsheep", 100);
+			addNetherDungeonMob("zanextras:hellsheep", 100);
 		}
 	}
 	

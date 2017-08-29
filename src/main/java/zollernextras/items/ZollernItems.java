@@ -234,6 +234,10 @@ public class ZollernItems {
 	// Bedrock Breaker
 	public static final Item bedrockBreaker = new ItemBedrockBreaker();
 	
+	// Ascendant Amaranth
+	public static final Item ascendantAmaranthIngot = new ZollernItemBase(
+			"ascendantamaranthingot");
+	
 	// Rokkite
 	public static final Item rokkite = new ZollernItemBase("rokkite");
 	

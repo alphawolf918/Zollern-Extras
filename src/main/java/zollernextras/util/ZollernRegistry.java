@@ -70,6 +70,7 @@ public class ZollernRegistry {
 				ZollernBlocks.upsideDownSubRock, ZollernBlocks.witherrack,
 				ZollernBlocks.upsideDownCobble, ZollernBlocks.upsideDownStone,
 				ZollernBlocks.upsideDownCobbleMossy, ZollernBlocks.endrock);
+		
 		// Items
 		registerItems(event, ZollernItems.superChargedCoal,
 				ZollernItems.amaranthIngot, ZollernItems.amaranthNugget,
@@ -113,7 +114,8 @@ public class ZollernRegistry {
 				ZollernItems.lapisIngot, ZollernItems.enderGlowDust,
 				ZollernItems.duckFeather, ZollernItems.marbleStick,
 				ZollernItems.blackMarbleStick, ZollernItems.lapisStick,
-				ZollernItems.bedrockBreaker, ZollernItems.rokkite);
+				ZollernItems.bedrockBreaker, ZollernItems.rokkite,
+				ZollernItems.ascendantAmaranthIngot);
 		
 		// Power Swords
 		registerItems(event, ZollernItems.DIABLO, ZollernItems.ENDER,

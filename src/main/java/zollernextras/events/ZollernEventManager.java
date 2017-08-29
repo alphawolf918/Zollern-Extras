@@ -12,11 +12,14 @@ import net.minecraft.entity.monster.EntitySkeleton;
 import net.minecraft.entity.monster.EntitySlime;
 import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.init.MobEffects;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
+import net.minecraft.util.EnumHand;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextFormatting;
@@ -83,6 +86,21 @@ public class ZollernEventManager {
 					player.stepHeight = 0.5F;
 					if (!player.capabilities.isCreativeMode) {
 						player.capabilities.allowFlying = false;
+					}
+				}
+			}
+			EnumHand currentHand = player.getActiveHand();
+			ItemStack heldItem = player.getHeldItem(currentHand);
+			if (heldItem != null) {
+				Item currentItem = heldItem.getItem();
+				if (currentItem == ZollernItems.bedrockBreaker) {
+					int toolDamage = heldItem.getItemDamage();
+					if (toolDamage <= 0) {
+						InventoryPlayer playerInventory = player.inventory;
+						if (playerInventory.hasItemStack(new ItemStack(
+								ZollernItems.ascendantAmaranthIngot))) {
+							heldItem.setItemDamage(heldItem.getMaxDamage());
+						}
 					}
 				}
 			}

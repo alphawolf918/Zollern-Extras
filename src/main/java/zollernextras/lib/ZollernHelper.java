@@ -4,7 +4,9 @@ import java.io.File;
 import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -113,4 +115,20 @@ public class ZollernHelper {
 			log(Level.DEBUG, str);
 		}
 	}
+	
+	public static void damageItemStack(Item item, float damageAmount,
+			EntityPlayer player) {
+		InventoryPlayer matrix = player.inventory;
+		for (int i = 0; i < matrix.getSizeInventory(); i++) {
+			if (matrix.getStackInSlot(i) != null) {
+				ItemStack stackNew = matrix.getStackInSlot(i);
+				if (stackNew != null && stackNew.getItem() == item) {
+					ItemStack k = new ItemStack(item);
+					k.setItemDamage(k.getItemDamage() + (int) damageAmount);
+					matrix.setInventorySlotContents(i, k);
+				}
+			}
+		}
+	}
+	
 }

@@ -21,12 +21,23 @@ import zollernextras.lib.ZollernHelper;
 
 public class ItemBedrockBreaker extends ZollernItemBase {
 	
+	private int maxUses = 5;
+	
 	public ItemBedrockBreaker() {
 		super("bedrockbreaker");
-		this.setMaxDamage(5);
+		this.setMaxDamage(this.maxUses);
 		this.setMaxStackSize(1);
 	}
 	
+	// First thing this does is it checks to make sure the world isn't remote,
+	// which basically just tells it not to do ghost things. Second, we get the
+	// Block that the Player is right-clicking on, and compare it to Bedrock. If
+	// it is a match, we retrieve the currently held item in their hand that
+	// they're currently using, and we check its durability damage. If its less
+	// than the max damage it can have, spawn between 1 and 2 Rokkite gems, and
+	// set the Bedrock Block to air. If the Player is not in Creative Mode,
+	// damage the tool one time. If it is not a match, play a sound event that
+	// lets the user know that it's broken.
 	@Override
 	public EnumActionResult onItemUse(EntityPlayer player, World worldIn,
 			BlockPos pos, EnumHand hand, EnumFacing facing, float hitX,
@@ -37,7 +48,7 @@ public class ItemBedrockBreaker extends ZollernItemBase {
 			if (block == Blocks.BEDROCK) {
 				ItemStack heldItem = player.getHeldItem(hand);
 				int toolDamage = this.getDamage(heldItem);
-				if (toolDamage > 0) {
+				if (toolDamage < this.getMaxDamage(heldItem)) {
 					EntityItem rokkiteItem = new EntityItem(worldIn,
 							pos.getX(), pos.getY(), pos.getZ(), new ItemStack(
 									ZollernItems.rokkite,
@@ -63,6 +74,9 @@ public class ItemBedrockBreaker extends ZollernItemBase {
 		if (KeyHelper.isCtrlKeyDown() || KeyHelper.isShiftKeyDown()) {
 			list.add("Provides the power to");
 			list.add("break Bedrock on right-click.");
+			list.add("Recharge it with Ascendant");
+			list.add("Amaranth Ingots, only works");
+			list.add("when it's used up.");
 		} else {
 			list.add("Hold SHIFT for");
 			list.add("more information.");

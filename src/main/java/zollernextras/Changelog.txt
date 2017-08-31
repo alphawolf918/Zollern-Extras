@@ -1,6 +1,8 @@
 [Zollern Extras - v1.0.1]
 
 * Added more stuff from the previous 1.7 versions.
+* Added the Bedrock Breaker.
+    * Recharges automatically using Ascendant Amaranth Ingots when it's fully broken.
 * 
 
 ==== FIXES ====

@@ -71,16 +71,16 @@ public class ZollernEventManager {
 			for (int i = 0; i < 4; ++i) {
 				if (amArmorCount == 4) {
 					player.addPotionEffect(new PotionEffect(
-							MobEffects.RESISTANCE, 20, 1));
+							MobEffects.RESISTANCE, 100, 1));
 				} else if (zArmorCount == 4) {
 					player.addPotionEffect(new PotionEffect(
-							MobEffects.FIRE_RESISTANCE, 20, 1));
+							MobEffects.FIRE_RESISTANCE, 100, 1));
 					player.stepHeight = 2F;
 				} else if (azArmorCount == 4) {
 					player.addPotionEffect(new PotionEffect(
-							MobEffects.STRENGTH, 20, 1));
+							MobEffects.STRENGTH, 100, 1));
 				} else if (rArmorCount == 4) {
-					// TODO
+					// TODO: Add Radiance
 					player.capabilities.allowFlying = true;
 				} else {
 					player.stepHeight = 0.5F;
@@ -89,17 +89,36 @@ public class ZollernEventManager {
 					}
 				}
 			}
+			
+			// Check what hand the Player is using, and check to see if it isn't
+			// null. Then, grab the item they're holding, and check to see if
+			// that's not equal to null. If it is the Bedrock Breaker, check the
+			// Player's inventory to see if they have any Ascendant Amaranth
+			// Ingots. If they do, then copy the original held item, set its
+			// damage to 0, and put it in the slot that the old one occupied.
+			// This also will decrease the stack size of the ingots. If none
+			// remain, then it will not be repaired.
 			EnumHand currentHand = player.getActiveHand();
-			ItemStack heldItem = player.getHeldItem(currentHand);
-			if (heldItem != null) {
-				Item currentItem = heldItem.getItem();
-				if (currentItem == ZollernItems.bedrockBreaker) {
-					int toolDamage = heldItem.getItemDamage();
-					if (toolDamage <= 0) {
-						InventoryPlayer playerInventory = player.inventory;
-						if (playerInventory.hasItemStack(new ItemStack(
-								ZollernItems.ascendantAmaranthIngot))) {
-							heldItem.setItemDamage(heldItem.getMaxDamage());
+			if (currentHand != null) {
+				ItemStack heldItem = player.getHeldItem(currentHand);
+				if (heldItem != null) {
+					Item currentItem = heldItem.getItem();
+					if (currentItem == ZollernItems.bedrockBreaker) {
+						int toolDamage = heldItem.getItemDamage();
+						if (toolDamage >= heldItem.getMaxDamage()) {
+							InventoryPlayer playerInventory = player.inventory;
+							ItemStack repairItemStack = new ItemStack(
+									ZollernItems.ascendantAmaranthIngot);
+							if (playerInventory.hasItemStack(repairItemStack)) {
+								ItemStack repairedItem = heldItem.copy();
+								repairedItem.setItemDamage(0);
+								int invSlot = player.inventory
+										.getSlotFor(heldItem);
+								playerInventory.setInventorySlotContents(
+										invSlot, repairedItem);
+								playerInventory.decrStackSize(playerInventory
+										.getSlotFor(repairItemStack), 1);
+							}
 						}
 					}
 				}

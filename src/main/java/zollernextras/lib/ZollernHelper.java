@@ -103,6 +103,11 @@ public class ZollernHelper {
 	public static void log(Level level, String strMessage) {
 		if (level == Level.INFO) {
 			LOGGER.info("[" + ZollernModInfo.officialName + "] " + strMessage);
+		} else if (level == Level.DEBUG) {
+			if (ZEConfig.enableDebugMode) {
+				LOGGER.debug("[DEB:" + ZollernModInfo.officialName + "] "
+						+ strMessage);
+			}
 		}
 	}
 	
@@ -129,6 +134,10 @@ public class ZollernHelper {
 				}
 			}
 		}
+	}
+	
+	public static void repairItemStack(ItemStack item) {
+		item.setItemDamage(item.getMaxDamage());
 	}
 	
 }

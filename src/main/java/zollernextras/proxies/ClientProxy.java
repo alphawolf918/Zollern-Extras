@@ -1,10 +1,13 @@
 package zollernextras.proxies;
 
+import java.util.ArrayList;
+import java.util.List;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import zollernextras.blocks.fluid.IZollernModelRegister;
 import zollernextras.gui.GuiBiomeType;
 import zollernextras.mobs.MobRenders;
 
@@ -12,10 +15,16 @@ public class ClientProxy extends CommonProxy {
 	
 	private final Minecraft mc = Minecraft.getMinecraft();
 	
+	private static List<IZollernModelRegister> modelRegisters = new ArrayList();
+	
 	@Override
 	public void preInit(FMLPreInitializationEvent event) {
 		super.preInit(event);
 		MobRenders.init();
+		
+		for (IZollernModelRegister model : modelRegisters) {
+			model.registerModels();
+		}
 	}
 	
 	@Override
@@ -39,4 +48,8 @@ public class ClientProxy extends CommonProxy {
 		return this.mc;
 	}
 	
+	@Override
+	public boolean addIModelRegister(IZollernModelRegister register) {
+		return modelRegisters.add(register);
+	}
 }

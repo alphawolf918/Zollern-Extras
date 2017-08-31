@@ -3,6 +3,7 @@ package zollernextras.proxies;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import zollernextras.blocks.fluid.IZollernModelRegister;
 
 public interface IProxy {
 	
@@ -13,4 +14,6 @@ public interface IProxy {
 	public void postInit(FMLPostInitializationEvent event);
 	
 	public void initGUI();
+	
+	public boolean addIModelRegister(IZollernModelRegister register);
 }

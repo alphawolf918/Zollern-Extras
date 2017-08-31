@@ -8,6 +8,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.IGuiHandler;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
+import zollernextras.blocks.fluid.IZollernModelRegister;
 
 public class CommonProxy implements IProxy, IGuiHandler {
 	
@@ -59,5 +60,10 @@ public class CommonProxy implements IProxy, IGuiHandler {
 			int x, int y, int z) {
 		
 		return null;
+	}
+	
+	@Override
+	public boolean addIModelRegister(IZollernModelRegister register) {
+		return false;
 	}
 }

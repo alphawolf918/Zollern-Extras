@@ -301,9 +301,9 @@ tile.zollernextras_chocolate.name=Melted Chocolate
 fluid.zollernextras_chocolate=Melted Chocolate
 zollernextras_chocolate=Melted Chocolate
 
-tile.zollernextras_fuel.name=Molten Fueltonium
-fluid.zollernextras_fuel=Molten Fueltonium
-zollernextras_fuel=Molten Fueltonium
+tile.fuel.name=Molten Fueltonium
+fluid.fuel=Molten Fueltonium
+fuel=Molten Fueltonium
 
 tile.zollernextras_chargiumfluid.name=Conductive Chargium
 fluid.zollernextras_chargium=Conductive Chargium

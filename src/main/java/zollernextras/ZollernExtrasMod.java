@@ -1,5 +1,6 @@
 package zollernextras;
 
+import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -58,6 +59,7 @@ public class ZollernExtrasMod {
 		if (ZEConfig.enableStackChanges) {
 			StackChanges.init();
 		}
+		FluidRegistry.enableUniversalBucket();
 		instance().proxy.preInit(event);
 	}
 	

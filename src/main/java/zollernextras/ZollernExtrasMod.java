@@ -13,7 +13,7 @@ import zollernextras.biomes.BiomeList;
 import zollernextras.blocks.fluid.ZollernFluids;
 import zollernextras.config.ZEConfig;
 import zollernextras.creativetabs.ZollernTabs;
-import zollernextras.dimensions.HellRegistry;
+import zollernextras.dimensions.DimensionRegistry;
 import zollernextras.events.ZollernSoundEvents;
 import zollernextras.handlers.Handlers;
 import zollernextras.lib.OreDictZo;
@@ -69,8 +69,8 @@ public class ZollernExtrasMod {
 		BiomeList.init();
 		Handlers.init();
 		OreDictZo.init();
-		NetworkRegistry.INSTANCE.registerGuiHandler(this, new CommonProxy());
 		instance().proxy.init(event);
+		NetworkRegistry.INSTANCE.registerGuiHandler(this, new CommonProxy());
 	}
 	
 	@EventHandler
@@ -78,7 +78,7 @@ public class ZollernExtrasMod {
 		if (ZEConfig.biomeDisplaysOnHUD) {
 			instance().proxy.initGUI();
 		}
-		HellRegistry.postInit();
+		DimensionRegistry.postInit();
 		instance().proxy.postInit(event);
 	}
 }

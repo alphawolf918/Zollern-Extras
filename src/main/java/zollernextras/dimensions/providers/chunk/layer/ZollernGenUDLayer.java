@@ -11,9 +11,9 @@ import net.minecraft.world.gen.layer.IntCache;
 import net.minecraftforge.common.BiomeManager;
 import zollernextras.dimensions.DimensionRegistry;
 
-public abstract class ZollernGenLayer extends GenLayer {
+public abstract class ZollernGenUDLayer extends GenLayer {
 	
-	public ZollernGenLayer(long seed) {
+	public ZollernGenUDLayer(long seed) {
 		super(seed);
 	}
 	
@@ -22,7 +22,7 @@ public abstract class ZollernGenLayer extends GenLayer {
 		int biomeSize = type == WorldType.LARGE_BIOMES ? 6 : 4;
 		biomeSize = getModdedBiomeSize(type, biomeSize);
 		
-		GenLayer genLayer = new ZollernGenNetherBiome(1L);
+		GenLayer genLayer = new ZollernGenUDBiome(1L);
 		genLayer = new GenLayerZoom(2001L, genLayer);
 		genLayer = new GenLayerZoom(2002L, genLayer);
 		genLayer = new GenLayerZoom(1000L, genLayer);
@@ -45,7 +45,7 @@ public abstract class ZollernGenLayer extends GenLayer {
 				initChunkSeed(j + areaX, i + areaY);
 				biomeIds[j + i * areaWidth] = Biome
 						.getIdForBiome(getWeightedBiomeEntry(DimensionRegistry
-								.getNetherBiomeEntries()).biome);
+								.getUpsideDownBiomeEntries()).biome);
 			}
 		}
 		

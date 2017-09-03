@@ -5,7 +5,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
-import zollernextras.dimensions.HellRegistry;
+import zollernextras.dimensions.DimensionRegistry;
 import zollernextras.worldgen.WorldGenNetherWart;
 
 public class BiomeSoulDesert extends ZollernNetherBiome {
@@ -14,7 +14,7 @@ public class BiomeSoulDesert extends ZollernNetherBiome {
 		super(new Biome.BiomeProperties("Desert of Souls"), "soul_desert");
 		this.setBlocks(Blocks.SOUL_SAND);
 		this.setBiomeWeight(16);
-		HellRegistry.addBiome(this, this.getBiomeWeight());
+		DimensionRegistry.addNetherBiome(this, this.getBiomeWeight());
 	}
 	
 	@Override

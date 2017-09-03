@@ -7,7 +7,8 @@ import net.minecraft.util.WeightedRandom;
 
 public class ZEHooks {
 	
-	private static ArrayList<DungeonMob> netherDungeonMobs = new ArrayList<DungeonMob>();
+	private static ArrayList<ZollernDungeonMob> netherDungeonMobs = new ArrayList<ZollernDungeonMob>();
+	private static ArrayList<ZollernDungeonMob> upsideDownDungeonMobs = new ArrayList<ZollernDungeonMob>();
 	
 	/**
 	 * Adds a mob to the possible list of creatures the spawner will create. If
@@ -27,30 +28,50 @@ public class ZEHooks {
 	public static float addNetherDungeonMob(ResourceLocation name, int rarity) {
 		if (rarity <= 0) {
 			throw new IllegalArgumentException(
-					"Rarity must be greater then zero");
+					"Rarity must be greater than zero");
 		}
 		
-		for (DungeonMob mob : netherDungeonMobs) {
+		for (ZollernDungeonMob mob : netherDungeonMobs) {
 			if (name.equals(mob.type)) {
 				return mob.itemWeight += rarity;
 			}
 		}
 		
-		netherDungeonMobs.add(new DungeonMob(rarity, name));
+		netherDungeonMobs.add(new ZollernDungeonMob(rarity, name));
 		return rarity;
 	}
 	
-	/**
-	 * Will completely remove a Mob from the dungeon spawn list.
-	 *
-	 * @param name
-	 *            The name of the mob to remove
-	 * @return The rarity of the removed mob, prior to being removed.
-	 */
-	public static int removeDungeonMob(ResourceLocation name) {
-		for (DungeonMob mob : netherDungeonMobs) {
+	public static float addUpsideDownDungeonMob(ResourceLocation name,
+			int rarity) {
+		if (rarity <= 0) {
+			throw new IllegalArgumentException(
+					"Rarity must be greater than zero");
+		}
+		
+		for (ZollernDungeonMob mob : upsideDownDungeonMobs) {
+			if (name.equals(mob.type)) {
+				return mob.itemWeight += rarity;
+			}
+		}
+		
+		upsideDownDungeonMobs.add(new ZollernDungeonMob(rarity, name));
+		return rarity;
+	}
+	
+	public static int removeNetherDungeonMob(ResourceLocation name) {
+		for (ZollernDungeonMob mob : netherDungeonMobs) {
 			if (name.equals(mob.type)) {
 				netherDungeonMobs.remove(mob);
+				return mob.itemWeight;
+			}
+		}
+		return 0;
+	}
+	
+	public static int removeUpsideDownDungeonMob(ResourceLocation name) {
+		for (ZollernDungeonMob mob : upsideDownDungeonMobs) {
+			if (name.equals(mob.type)) {
+				upsideDownDungeonMobs.remove(mob);
 				return mob.itemWeight;
 			}
 		}
@@ -65,22 +86,30 @@ public class ZEHooks {
 	 * @return The mob name
 	 */
 	public static ResourceLocation getRandomNetherDungeonMob(Random rand) {
-		DungeonMob mob = WeightedRandom.getRandomItem(rand, netherDungeonMobs);
+		ZollernDungeonMob mob = WeightedRandom.getRandomItem(rand,
+				netherDungeonMobs);
 		return mob.type;
 	}
 	
-	public static class DungeonMob extends WeightedRandom.Item {
+	public static ResourceLocation getRandomUpsideDownDungeonMob(Random rand) {
+		ZollernDungeonMob mob = WeightedRandom.getRandomItem(rand,
+				upsideDownDungeonMobs);
+		return mob.type;
+	}
+	
+	public static class ZollernDungeonMob extends WeightedRandom.Item {
+		
 		public ResourceLocation type;
 		
-		public DungeonMob(int weight, ResourceLocation type) {
+		public ZollernDungeonMob(int weight, ResourceLocation type) {
 			super(weight);
 			this.type = type;
 		}
 		
 		@Override
 		public boolean equals(Object target) {
-			return target instanceof DungeonMob
-					&& type.equals(((DungeonMob) target).type);
+			return target instanceof ZollernDungeonMob
+					&& type.equals(((ZollernDungeonMob) target).type);
 		}
 	}
 }

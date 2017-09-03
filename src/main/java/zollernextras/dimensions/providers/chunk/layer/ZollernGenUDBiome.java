@@ -7,9 +7,9 @@ import net.minecraft.world.gen.layer.IntCache;
 import net.minecraftforge.common.BiomeManager;
 import zollernextras.dimensions.DimensionRegistry;
 
-public class ZollernGenNetherBiome extends ZollernGenLayer {
+public class ZollernGenUDBiome extends ZollernGenUDLayer {
 	
-	public ZollernGenNetherBiome(long seed) {
+	public ZollernGenUDBiome(long seed) {
 		super(seed);
 	}
 	
@@ -23,7 +23,7 @@ public class ZollernGenNetherBiome extends ZollernGenLayer {
 				
 				outputs[x + z * areaWidth] = Biome
 						.getIdForBiome(getWeightedBiomeEntry(DimensionRegistry
-								.getNetherBiomeEntries()).biome);
+								.getUpsideDownBiomeEntries()).biome);
 			}
 		}
 		

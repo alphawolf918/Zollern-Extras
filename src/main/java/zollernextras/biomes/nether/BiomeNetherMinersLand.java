@@ -2,7 +2,7 @@ package zollernextras.biomes.nether;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.world.biome.Biome;
-import zollernextras.dimensions.HellRegistry;
+import zollernextras.dimensions.DimensionRegistry;
 
 public class BiomeNetherMinersLand extends ZollernNetherBiome {
 	
@@ -11,7 +11,7 @@ public class BiomeNetherMinersLand extends ZollernNetherBiome {
 				"nether_miners_land");
 		this.setBlocks(Blocks.NETHERRACK);
 		this.setBiomeWeight(8);
-		HellRegistry.addBiome(this, this.getBiomeWeight());
+		DimensionRegistry.addNetherBiome(this, this.getBiomeWeight());
 	}
 	
 }

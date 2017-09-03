@@ -1,0 +1,1 @@
+* Enchantment on a pickaxe to reduce explosion chance on Nether Ores.

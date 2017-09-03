@@ -8,6 +8,9 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.TextComponentString;
+import net.minecraft.world.DimensionType;
+import net.minecraft.world.WorldProvider;
+import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import org.apache.logging.log4j.Level;
@@ -138,6 +141,14 @@ public class ZollernHelper {
 	
 	public static void repairItemStack(ItemStack item) {
 		item.setItemDamage(item.getMaxDamage());
+	}
+	
+	public static void registerDimension(String dimName,
+			String dimUnlocalizedName, int dimID,
+			Class<? extends WorldProvider> worldProvider) {
+		DimensionType dim = DimensionType.register(dimName,
+				dimUnlocalizedName, dimID, worldProvider, false);
+		DimensionManager.registerDimension(dimID, dim);
 	}
 	
 }

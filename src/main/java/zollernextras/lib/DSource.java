@@ -10,6 +10,7 @@ public class DSource extends DamageSource {
 	public static DSource deathShadows = new DSource("shadows");
 	public static DSource deathInfection = new DSource("infection");
 	public static DSource deathLight = new DSource("light");
+	public static DSource deathCorruption = new DSource("corruption");
 	
 	public DSource(String par1) {
 		super(par1);

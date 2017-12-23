@@ -37,7 +37,6 @@ import zollernextras.mobs.entities.EntityKrull;
 import zollernextras.mobs.entities.EntityMummy;
 import zollernextras.mobs.entities.EntityScorpion;
 import zollernextras.mobs.entities.EntityShade;
-import zollernextras.mobs.entities.EntityShadowFish;
 import zollernextras.mobs.entities.EntityShadowSkeleton;
 import zollernextras.mobs.entities.EntitySpiderling;
 
@@ -119,8 +118,11 @@ public class ChunkProviderUpsideDown extends ChunkProviderGenerate {
 				
 				for (int y = 0; y < ChunkProviderUpsideDown.CHUNK_SIZE_Y; y++) {
 					if (y < ChunkProviderUpsideDown.MID_HEIGHT + yDev) {
-						idArray[this.getIndex(x, y, z)] = this.lowerBlockID;
-						metaArray[this.getIndex(x, y, z)] = this.lowerBlockMeta;
+						if (y >= (26 + rand.nextInt(5))) {
+							idArray[this.getIndex(x, y, z)] = this.lowerBlockID;
+						} else {
+							idArray[this.getIndex(x, y, z)] = ZollernBlocks.corruptStone;
+						}
 					}
 				}
 			}
@@ -146,7 +148,7 @@ public class ChunkProviderUpsideDown extends ChunkProviderGenerate {
 					final int index = this.getIndex(var8, var16, var9);
 					arrayOfMeta[index] = 0;
 					
-					if (var16 <= 0 + this.rand.nextInt(5)) {
+					if (var16 <= 0 + 1) {
 						arrayOfIDs[index] = Blocks.bedrock;
 					} else {
 						final Block var18 = arrayOfIDs[index];
@@ -348,7 +350,8 @@ public class ChunkProviderUpsideDown extends ChunkProviderGenerate {
 			monsters.add(new SpawnListEntry(EntityMummy.class, 8, 0, 2));
 			monsters.add(new SpawnListEntry(EntityKrull.class, 2, 0, 1));
 			monsters.add(new SpawnListEntry(EntitySpiderling.class, 2, 0, 1));
-			monsters.add(new SpawnListEntry(EntityShadowFish.class, 1, 0, 1));
+			// monsters.add(new SpawnListEntry(EntityShadowFish.class, 1, 0,
+			// 1));
 			return monsters;
 		} else {
 			// TODO

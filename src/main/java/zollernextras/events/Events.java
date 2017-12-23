@@ -284,11 +284,12 @@ public class Events {
 							Potion.damageBoost.id, 2, 1));
 				} else if (zArmorCount == 4) {
 					player.addPotionEffect(new PotionEffect(
-							Potion.fireResistance.id, 1, 1));
+							Potion.fireResistance.id, 1, 0));
 					player.stepHeight = 2F;
 				} else if (rArmorCount == 4) {
 					player.addPotionEffect(new PotionEffect(
-							ZollernPotion.radiance.id, 1, 1));
+							ZollernPotion.radiance.id,
+							ZollernPotion.radianceTime, 0));
 					player.capabilities.allowFlying = true;
 				} else {
 					player.stepHeight = 0.5F;
@@ -309,10 +310,13 @@ public class Events {
 			}
 		}
 		
-		if (entity instanceof EntityLiving && !(entity instanceof EntityPlayer)
-				&& !(entity instanceof IShadeEntity)) {
-			entity.attackEntityFrom(DSource.deathShadows,
-					ZollernPotion.shadowDamage);
+		if (entity.dimension == ZEConfig.dimensionUpsideDownID) {
+			if (entity instanceof EntityLiving
+					&& !(entity instanceof EntityPlayer)
+					&& !(entity instanceof IShadeEntity)) {
+				entity.attackEntityFrom(DSource.deathShadows,
+						ZollernPotion.shadowDamage);
+			}
 		}
 	}
 	
@@ -834,6 +838,11 @@ public class Events {
 									Block theBlock = toBlock;
 									storage.func_150818_a(x, y, z, toBlock);
 								}
+								if (storage.getBlockByExtId(x, y, z) == Blocks.planks
+										|| storage.getBlockByExtId(x, y, z) == Blocks.fence) {
+									Block theBlock = ZollernBlocks.shadePlanks;
+									storage.func_150818_a(x, y, z, theBlock);
+								}
 							}
 						}
 					}
@@ -846,16 +855,21 @@ public class Events {
 	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
 	public void onEntityStruckByLightningEvent(
 			EntityStruckByLightningEvent event) {
-		Entity theEntity = event.entity;
-		World worldObj = theEntity.worldObj;
-		if (theEntity instanceof EntityVillager) {
-			EntityVillager theVillager = (EntityVillager) theEntity;
-			theVillager.setDead();
-			EntityWitch theWitch = new EntityWitch(worldObj);
-			theWitch.setLocationAndAngles(theVillager.posX, theVillager.posY,
-					theVillager.posZ, theVillager.rotationYaw,
-					theVillager.rotationPitch);
-			worldObj.spawnEntityInWorld(theWitch);
+		if (ZEConfig.villagerToWitch) {
+			Entity theEntity = event.entity;
+			World worldObj = theEntity.worldObj;
+			if (theEntity instanceof EntityVillager) {
+				EntityVillager theVillager = (EntityVillager) theEntity;
+				theVillager.setDead();
+				EntityWitch theWitch = new EntityWitch(worldObj);
+				theWitch.setLocationAndAngles(theVillager.posX,
+						theVillager.posY, theVillager.posZ,
+						theVillager.rotationYaw, theVillager.rotationPitch);
+				worldObj.spawnEntityInWorld(theWitch);
+				ZollernHelper.Log("Villager turned into Witch! (at: "
+						+ theVillager.posX + " " + theVillager.posY + " "
+						+ theVillager.posZ);
+			}
 		}
 	}
 }

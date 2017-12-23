@@ -356,7 +356,7 @@ public class RecipeManager {
 					new Object[] { "BSB", "LXL", "VAV", 'B',
 							ZollernItems.shadowEssence, 'S',
 							ZollernItems.spcItem, 'V', ZollernItems.garnet,
-							'X', ZollernBlocks.witheriteBlock, 'V',
+							'X', ZollernItems.witherite, 'V',
 							Items.blaze_powder, 'A', ZollernItems.shadowBone });
 			
 			// Shinium
@@ -1002,6 +1002,14 @@ public class RecipeManager {
 			}
 			RecipeHelper.addSmelting(ZollernBlocks.upsideDownShiniumOre,
 					ZollernItems.shiniumDust, 0.5F);
+			
+			// Corrupt
+			RecipeHelper.addSmelting(ZollernBlocks.corruptChargiumOre,
+					ZollernItems.chargiumIngot, 4.0F);
+			RecipeHelper.addSmelting(ZollernBlocks.corruptEtriumOre,
+					ZollernItems.etrium, 4.0F);
+			RecipeHelper.addSmelting(ZollernItems.crushedEtrium,
+					ZollernItems.etrium, 2.0F);
 			
 		}
 	}

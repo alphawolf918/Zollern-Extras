@@ -15,6 +15,7 @@ import zollernextras.biomes.BiomeList;
 import zollernextras.blocks.ZollernBlocks;
 import zollernextras.config.ZEConfig;
 import zollernextras.dimension.DimensionLoader;
+import zollernextras.dimension.upsidedown.WorldGenCorruptMinable;
 import zollernextras.dimension.upsidedown.WorldGenUpsideDownMinable;
 import zollernextras.lib.modhelper.ModHelperBase;
 import zollernextras.mobs.entities.EntityEnderCreeper;
@@ -33,14 +34,19 @@ import zollernextras.worldgen.WorldGenMagmaRock;
 import zollernextras.worldgen.WorldGenMinableNether;
 import zollernextras.worldgen.WorldGenNetherOre;
 import zollernextras.worldgen.WorldGenSeaLamp;
+import zollernextras.worldgen.WorldGenSkull;
 import zollernextras.worldgen.WorldGenSugarCubes;
 import zollernextras.worldgen.WorldGenSwampClay;
 import zollernextras.worldgen.WorldGenTreasureChest;
-import zollernextras.worldgen.upsidedown.WorldGenCrater;
 import zollernextras.worldgen.upsidedown.WorldGenShadeMonument;
 import zollernextras.worldgen.upsidedown.WorldGenShadeTree;
+import zollernextras.worldgen.upsidedown.WorldGenShadowCrater;
 import zollernextras.worldgen.upsidedown.WorldGenShadowShrine;
 import zollernextras.worldgen.upsidedown.WorldGenSpiderEgg;
+import zollernextras.worldgen.upsidedown.corrupt.WorldGenCorruptBuilding;
+import appeng.api.AEApi;
+import appeng.api.definitions.IBlockDefinition;
+import appeng.api.definitions.IBlocks;
 import cofh.thermalfoundation.block.BlockOre;
 import cpw.mods.fml.common.IWorldGenerator;
 import erogenousbeef.bigreactors.common.BigReactors;
@@ -160,6 +166,25 @@ public class WorldGenManager implements IWorldGenerator {
 		
 		// Current Layer
 		int y = world.getHeightValue(x, z);
+		
+		// Skull Fossil
+		if (currentBiome.isEqualTo(BiomeGenBase.desert)
+				|| currentBiome.isEqualTo(BiomeGenBase.desertHills)
+				|| currentBiome.isEqualTo(BiomeGenBase.savanna)
+				|| currentBiome.isEqualTo(BiomeGenBase.savannaPlateau)
+				|| currentBiome.isEqualTo(BiomeGenBase.mesa)
+				|| currentBiome.isEqualTo(BiomeGenBase.mesaPlateau)
+				|| currentBiome.isEqualTo(BiomeGenBase.mesaPlateau_F)
+				|| currentBiome.isEqualTo(BiomeList.badLands)
+				|| currentBiome.isEqualTo(BiomeList.redRockMountains)
+				|| currentBiome.isEqualTo(BiomeList.grandCanyon)
+				|| currentBiome.isEqualTo(BiomeList.coalHills)
+				|| currentBiome.isEqualTo(BiomeList.minersLand)
+				|| currentBiome.isEqualTo(BiomeList.tropicalForest)) {
+			if (random.nextInt(1000) <= 2) {
+				new WorldGenSkull().generate(world, random, x, y, z);
+			}
+		}
 		
 		// Swamp Clay
 		if (currentBiome.isEqualTo(BiomeGenBase.swampland)) {
@@ -398,12 +423,17 @@ public class WorldGenManager implements IWorldGenerator {
 			// Intermod Ores
 			
 			// Certus Quartz (Applied Energistics)
-			// if (ModHelperBase.useAppliedEnergistics2) {
-			// addOreSpawn(, world, random, x, z, 16, 16,
-			// 4 + random.nextInt(8), 60, 2, 256);
-			// addOreSpawn(new OreQuartzCharged(), world, random, x, z, 16,
-			// 16, 4 + random.nextInt(8), 60, 2, 256);
-			// }
+			if (ModHelperBase.useAppliedEnergistics2) {
+				IBlocks blocks = AEApi.instance().definitions().blocks();
+				IBlockDefinition oreDefinition = blocks.quartzOre();
+				IBlockDefinition chargedDefinition = blocks.quartzOreCharged();
+				Block oreQuartz = oreDefinition.maybeBlock().orNull();
+				Block oreCharged = chargedDefinition.maybeBlock().orNull();
+				addOreSpawn(oreQuartz, world, random, x, z, 16, 16,
+						4 + random.nextInt(8), 60, 2, 256);
+				addOreSpawn(oreCharged, world, random, x, z, 16, 16,
+						4 + random.nextInt(8), 60, 2, 256);
+			}
 			
 			// Yellorite (Big Reactors)
 			if (ModHelperBase.useBigReactors) {
@@ -686,59 +716,59 @@ public class WorldGenManager implements IWorldGenerator {
 	private void generateUpsideDown(World world, Random random, int x, int z) {
 		// Iron Ore
 		addUpsideDownOreSpawn(ZollernBlocks.upsideDownIronOre, world, random,
-				x, z, 16, 16, 4 + random.nextInt(2), 10, 4, 55);
+				x, z, 16, 16, 4 + random.nextInt(2), 15, 4, 55);
 		
 		// Gold Ore
 		addUpsideDownOreSpawn(ZollernBlocks.upsideDownGoldOre, world, random,
-				x, z, 16, 16, 4 + random.nextInt(2), 8, 4, 45);
+				x, z, 16, 16, 4 + random.nextInt(2), 15, 4, 45);
 		
 		// Amaranth Ore
 		addUpsideDownOreSpawn(ZollernBlocks.upsideDownAmaranthOre, world,
-				random, x, z, 16, 16, 2 + random.nextInt(2), 7, 4, 35);
+				random, x, z, 16, 16, 2 + random.nextInt(2), 15, 4, 36);
 		
 		// Witherite Ore
 		addUpsideDownOreSpawn(ZollernBlocks.witheriteOre, world, random, x, z,
-				16, 16, 4 + random.nextInt(2), 7, 4, 35);
+				16, 16, 4 + random.nextInt(2), 15, 4, 35);
 		
 		// Diamond Ore
 		addUpsideDownOreSpawn(ZollernBlocks.upsideDownDiamondOre, world,
-				random, x, z, 16, 16, 2 + random.nextInt(2), 10, 8, 24);
+				random, x, z, 16, 16, 2 + random.nextInt(2), 15, 8, 36);
 		
 		// Emerald Ore
 		addUpsideDownOreSpawn(ZollernBlocks.upsideDownEmeraldOre, world,
-				random, x, z, 16, 16, 2 + random.nextInt(4), 10, 4, 24);
+				random, x, z, 16, 16, 2 + random.nextInt(4), 15, 4, 36);
 		
 		// Zollernium Ore
 		addUpsideDownOreSpawn(ZollernBlocks.zollerniumOre, world, random, x, z,
-				16, 16, 2 + random.nextInt(4), 8, 4, 24);
+				16, 16, 4 + random.nextInt(4), 15, 4, 36);
 		
 		// Zinc Ore
 		addUpsideDownOreSpawn(ZollernBlocks.upsideDownZincOre, world, random,
-				x, z, 16, 16, 2 + random.nextInt(2), 8, 4, 35);
+				x, z, 16, 16, 4 + random.nextInt(2), 15, 4, 36);
 		
 		// Ruby Ore
 		addUpsideDownOreSpawn(ZollernBlocks.upsideDownRubyOre, world, random,
-				x, z, 16, 16, 2 + random.nextInt(2), 8, 4, 35);
+				x, z, 16, 16, 4 + random.nextInt(2), 15, 4, 36);
 		
 		// Sapphire Ore
 		addUpsideDownOreSpawn(ZollernBlocks.upsideDownSapphireOre, world,
-				random, x, z, 16, 16, 2 + random.nextInt(2), 8, 4, 35);
+				random, x, z, 16, 16, 2 + random.nextInt(2), 15, 4, 36);
 		
 		// Super Charged Coal Ore
 		addUpsideDownOreSpawn(ZollernBlocks.upsideDownSpcOre, world, random, x,
-				z, 16, 16, 4 + random.nextInt(6), 10, 1, 30);
+				z, 16, 16, 8 + random.nextInt(8), 15, 1, 36);
 		
 		// Fueltonium Ore
 		addUpsideDownOreSpawn(ZollernBlocks.upsideDownFuelOre, world, random,
-				x, z, 16, 16, 4 + random.nextInt(4), 10, 1, 42);
+				x, z, 16, 16, 8 + random.nextInt(8), 15, 1, 42);
 		
 		// Lapis Lazuli Ore
 		addUpsideDownOreSpawn(ZollernBlocks.upsideDownLapisOre, world, random,
-				x, z, 16, 16, 2 + random.nextInt(2), 8, 10, 52);
+				x, z, 16, 16, 4 + random.nextInt(4), 15, 10, 52);
 		
 		// Redstone Ore
 		addUpsideDownOreSpawn(ZollernBlocks.upsideDownRedstoneOre, world,
-				random, x, z, 16, 16, 2 + random.nextInt(2), 10, 4, 14);
+				random, x, z, 16, 16, 8 + random.nextInt(2), 15, 4, 40);
 		
 		// Ender Shard Ore
 		addUpsideDownOreSpawn(ZollernBlocks.upsideDownEnderShardOre, world,
@@ -746,45 +776,45 @@ public class WorldGenManager implements IWorldGenerator {
 		
 		// Radiant Ore
 		addUpsideDownOreSpawn(ZollernBlocks.upsideDownRadianceOre, world,
-				random, x, z, 16, 16, 2 + random.nextInt(2), 6, 4, 16);
+				random, x, z, 16, 16, 2 + random.nextInt(2), 8, 4, 36);
 		
 		// Zanium Ore
 		if (ModHelperBase.useZaneExtras) {
 			addUpsideDownOreSpawn(zaneextras.blocks.BlockList.zaniumOre, world,
-					random, x, z, 16, 16, 2 + random.nextInt(2), 9, 10, 22);
+					random, x, z, 16, 16, 2 + random.nextInt(2), 15, 10, 36);
 		}
 		
 		// Azurite Ore
 		addUpsideDownOreSpawn(ZollernBlocks.azuriteOre, world, random, x, z,
-				16, 16, 6 + random.nextInt(8), 9, 8, 36);
+				16, 16, 6 + random.nextInt(8), 15, 8, 36);
 		
 		// Garnet Ore
 		addUpsideDownOreSpawn(ZollernBlocks.upsideDownGarnetOre, world, random,
-				x, z, 16, 16, 6 + random.nextInt(8), 8, 8, 36);
+				x, z, 16, 16, 6 + random.nextInt(8), 15, 8, 36);
 		
 		// Aquamarine Ore
 		addUpsideDownOreSpawn(ZollernBlocks.upsideDownAquaOre, world, random,
-				x, z, 16, 16, 6 + random.nextInt(8), 8, 8, 36);
+				x, z, 16, 16, 6 + random.nextInt(8), 15, 8, 36);
 		
 		// Topaz Ore
 		addUpsideDownOreSpawn(ZollernBlocks.upsideDownTopazOre, world, random,
-				x, z, 16, 16, 6 + random.nextInt(8), 8, 8, 36);
+				x, z, 16, 16, 6 + random.nextInt(8), 15, 8, 36);
 		
 		// Amber Ore
 		addUpsideDownOreSpawn(ZollernBlocks.upsideDownAmberOre, world, random,
-				x, z, 16, 16, 6 + random.nextInt(8), 8, 8, 36);
+				x, z, 16, 16, 6 + random.nextInt(8), 15, 8, 36);
 		
 		// Opal Ore
 		addUpsideDownOreSpawn(ZollernBlocks.upsideDownOpalOre, world, random,
-				x, z, 16, 16, 6 + random.nextInt(8), 8, 8, 36);
+				x, z, 16, 16, 6 + random.nextInt(8), 15, 8, 36);
 		
 		// Creepstone
 		addUpsideDownOreSpawn(ZollernBlocks.creepStone, world, random, x, z,
-				16, 16, 15 + random.nextInt(20), 20, 1, 32);
+				16, 16, 15 + random.nextInt(20), 15, 1, 36);
 		
 		// Creepdirt
 		addUpsideDownOreSpawn(ZollernBlocks.creepDirt, world, random, x, z, 16,
-				16, 15 + random.nextInt(15), 16, 1, 22);
+				16, 15 + random.nextInt(15), 15, 1, 34);
 		
 		if (ModHelperBase.useThermalExpansion) {
 			// Copper Ore
@@ -812,47 +842,71 @@ public class WorldGenManager implements IWorldGenerator {
 		addUpsideDownOreSpawn(ZollernBlocks.upsideDownShiniumOre, world,
 				random, x, z, 16, 16, 4 + random.nextInt(2), 6, 4, 55);
 		
+		// Corrupt Creepstone
+		addCorruptOreSpawn(ZollernBlocks.corruptCreepStone, world, random, x,
+				z, 16, 16, 15 + random.nextInt(20), 20, 1, 32);
+		
+		// Corrupt Chargium Ore
+		addCorruptOreSpawn(ZollernBlocks.corruptChargiumOre, world, random, x,
+				z, 16, 16, 4 + random.nextInt(2), 20, 1, 32);
+		
+		// Corrupt Etrium Ore
+		addCorruptOreSpawn(ZollernBlocks.corruptEtriumOre, world, random, x, z,
+				16, 16, 4 + random.nextInt(2), 20, 1, 32);
+		
 		int y = world.getHeightValue(x, z);
 		
 		// Shadow Shrine
-		if (random.nextInt(2000) <= 25 && random.nextInt(100) <= 10) {
-			this.spawnStructure(6, 10, world, random, x, y, z,
+		if (random.nextInt(2000) <= 10) {
+			this.spawnStructure(8, 10, world, random, x, y, z,
 					new WorldGenShadowShrine());
 		}
 		
 		// Crater
-		if (random.nextInt(1040) <= 25) {
-			this.spawnStructure(8, 10, world, random, x, y, z,
-					new WorldGenCrater());
+		if (random.nextInt(400) <= 25) {
+			// new WorldGenShadowCrater().generate(world, random, x, y, z);
+			// new WorldGenShadowCrater().generate(world, random, x, y - 5, z);
+			// new WorldGenShadowCrater().generate(world, random, x, y - 10, z);
+			// new WorldGenShadowCrater().generate(world, random, x, y - 15, z);
+			// new WorldGenShadowCrater().generate(world, random, x, y - 20, z);
+			// new WorldGenShadowCrater().generate(world, random, x, y - 25, z);
+			// new WorldGenShadowCrater().generate(world, random, x, y - 30, z);
+			// new WorldGenShadowCrater().generate(world, random, x, y - 35, z);
+			// new WorldGenShadowCrater().generate(world, random, x, y - 40, z);
+			for (int i = 0; i < 40; i += 5) {
+				new WorldGenShadowCrater().generate(world, random, x, y - i, z);
+			}
 		}
 		
 		// Dirt
-		if (random.nextInt(1200) <= 20) {
+		if (random.nextInt(600) <= 20) {
 			new WorldGenLakes(ZollernBlocks.upsideDownDirt).generate(world,
 					random, x, y, z);
 		}
 		
 		// Spiderling Egg
 		if (random.nextInt(800) <= 10) {
-			this.spawnStructure(6, 10, world, random, x, y, z,
-					new WorldGenSpiderEgg());
+			new WorldGenSpiderEgg().generate(world, random, x, y, z);
 		}
 		
 		// Spiderling Nest
-		if (random.nextInt(6000) <= 15) {
+		if (random.nextInt(4000) <= 15) {
 			new WorldGenSpiderEgg().generateNest(world, random, x, y, z);
 		}
 		
 		// Shade Tree
-		if (random.nextInt(1200) <= 10) {
-			this.spawnStructure(8, 10, world, random, x, y, z,
-					new WorldGenShadeTree());
+		if (random.nextInt(600) <= 20) {
+			new WorldGenShadeTree().generate(world, random, x, y, z);
 		}
 		
 		// Shade Monument
 		if (random.nextInt(6000) <= 10) {
-			this.spawnStructure(8, 10, world, random, x, y, z,
-					new WorldGenShadeMonument());
+			new WorldGenShadeMonument().generate(world, random, x, y, z);
+		}
+		
+		// Corrupt Building
+		if (random.nextInt(3000) <= 10) {
+			new WorldGenCorruptBuilding().generate(world, random, x, y, z);
 		}
 	}
 	
@@ -992,6 +1046,26 @@ public class WorldGenManager implements IWorldGenerator {
 			int posY = minY + random.nextInt(diffBtwnMinMaxY);
 			int posZ = blockZPos + random.nextInt(maxZ);
 			new WorldGenUpsideDownMinable(block, maxVeinSize).generate(world,
+					random, posX, posY, posZ);
+		}
+	}
+	
+	public void addCorruptOreSpawn(Block block, World world, Random random,
+			int blockXPos, int blockZPos, int maxX, int maxZ, int maxVeinSize,
+			int chancesToSpawn, int minY, int maxY) {
+		int maxPossY = minY + maxY - 1;
+		assert maxY > minY : "The maximum Y must be greater than the Minimum Y";
+		assert maxX > 0 && maxX <= 16 : "addOreSpawn: The Maximum X must be greater than 0 and less than 16";
+		assert minY > 0 : "addOreSpawn: The Minimum Y must be greater than 0";
+		assert maxY < 256 && maxY > 0 : "addOreSpawn: The Maximum Y must be less than 256 but greater than 0";
+		assert maxZ > 0 && maxZ <= 16 : "addOreSpawn: The Maximum Z must be greater than 0 and less than 16";
+		
+		int diffBtwnMinMaxY = maxY - minY;
+		for (int x = 0; x < chancesToSpawn; x++) {
+			int posX = blockXPos + random.nextInt(maxX);
+			int posY = minY + random.nextInt(diffBtwnMinMaxY);
+			int posZ = blockZPos + random.nextInt(maxZ);
+			new WorldGenCorruptMinable(block, maxVeinSize).generate(world,
 					random, posX, posY, posZ);
 		}
 	}

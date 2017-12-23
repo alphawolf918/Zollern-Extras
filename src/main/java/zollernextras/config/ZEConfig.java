@@ -20,6 +20,7 @@ public class ZEConfig {
 	public static String CATEGORY_ENCHANTMENTS = "Enchantments";
 	public static String CATEGORY_GUI = "GUI";
 	public static String CATEGORY_IMPROVEMENTS = "Improvements";
+	public static String CATEGORY_MECHANICS = "Mechanics";
 	public static String CATEGORY_MOBS = "Mobs";
 	public static String CATEGORY_ORES = "Ores";
 	public static String CATEGORY_POTIONS = "Potions";
@@ -87,6 +88,9 @@ public class ZEConfig {
 	
 	// GUI
 	public static boolean biomeDisplaysOnHUD;
+	
+	// Mechanics
+	public static boolean villagerToWitch;
 	
 	// Mobs
 	public static int mobDuckSpawnRate;
@@ -302,6 +306,13 @@ public class ZEConfig {
 		enchantmentEnlightenedID = config.get(CATEGORY_ENCHANTMENTS,
 				"Enchantment Enlightened ID", 81,
 				"The ID for the Enlightened Enchantment for weapons.").getInt();
+		
+		// Mechanics
+		villagerToWitch = config
+				.get(CATEGORY_MECHANICS,
+						"Lightning Turns Villagers Into Witches", true,
+						"Whether or not Villagers being struck by lightning turns them into Witches.")
+				.getBoolean();
 		
 		// Mobs
 		mobFishSpawnRate = config.get(CATEGORY_MOBS, "mobFishSpawnRate", 70)

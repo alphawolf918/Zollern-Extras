@@ -329,6 +329,9 @@ public class ZollernItems {
 	public static Item jumpPotion = new ZollernPotionItem("jumppotion",
 			Potion.jump);
 	
+	public static Item etrium = new GenericItem("etrium");
+	public static Item crushedEtrium = new GenericItem("crushedetrium");
+	
 	public static void init() {
 		addItem(spcItem, "Super Charged Coal");
 		addItem(shinedust, "Shinedust");
@@ -530,6 +533,9 @@ public class ZollernItems {
 		
 		addItem(radiancePotion, "radiance potion");
 		addItem(jumpPotion, "jump potion");
+		
+		addItem(etrium, "Etrium");
+		addItem(crushedEtrium, "Crushed Etrium");
 		
 		ZollernHelper.Log("Items loaded, " + totalItems + " entries.");
 	}

@@ -27,10 +27,10 @@ public final class Treasures {
 			new ItemStack(Items.gold_ingot), 35, 62, 10);
 	
 	public static final WeightedRandomChestContent[] CTChestContents = new WeightedRandomChestContent[] {
-		new WeightedRandomChestContent(
-					new ItemStack(ZollernItems.shiniumIngot), 5, 10, 15),
-				new WeightedRandomChestContent(new ItemStack(
-						ZollernItems.shinestoneIngot), 15, 20, 25) };
+			new WeightedRandomChestContent(new ItemStack(
+					ZollernItems.shiniumIngot), 5, 10, 15),
+			new WeightedRandomChestContent(new ItemStack(
+					ZollernItems.shinestoneIngot), 15, 20, 25) };
 	
 	public static void init() {
 		ZEChestGenHooks.init();
@@ -43,6 +43,7 @@ public final class Treasures {
 		addChestItem(item2);
 		addChestItem(item3);
 		addChestItem(item4);
+		addChestItem(item5);
 		for (WeightedRandomChestContent chestContent : CTChestContents) {
 			addChestItem(chestContent);
 		}
@@ -105,6 +106,7 @@ public final class Treasures {
 		chestTypes.add(ChestGenHooks.STRONGHOLD_LIBRARY);
 		chestTypes.add(ChestGenHooks.VILLAGE_BLACKSMITH);
 		chestTypes.add(ZEChestGenHooks.ENDER_TOWER);
+		chestTypes.add(ZEChestGenHooks.SHADE_TREE);
 	}
 	
 	public static String pickChestType() {

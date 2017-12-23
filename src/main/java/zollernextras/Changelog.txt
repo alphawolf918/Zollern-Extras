@@ -1,6 +1,29 @@
-[3.6 - Corruption Update]
+[4.0 - Corruption Update]
 
+* Changed Netheridium recipe to require 1 Witherium item instead of 1 Witherium block.
+* Added the "Corruption" layer to the Upside-Down.
+    * Spawns in layers 32 and below.
+    * Made up of purple "Corrupted" blocks.
+        * Walking on these blocks causes "Corruption" damage.
+* Removed Bloodfish from natural Upside-Down spawn.
+* All entities that are not IShadeEntities will be damaged by the shadows when in the Upside-Down.
+* Added the Corrupted Building structure to the Upside-Down.
+    * Composed of Corrupt Rock, Shadewood Planks and Bloodrock blocks.
+    * Has its own treasure loot.
+        * Could contain Radium, Etrium (new!), Super Charged Coal, Shadow Essence, Enchanted Books and more!
+    * Has 4 separate Bloodfish mob spawners.
+* Added a config option to toggle whether Villagers being struck by lightning turns them into Witches.
+    * A message now sends to the logs when this happens.
+* Replaced Bedrock in the Upside-Down with a special, unbreakable variant called Endrock.
+* Shinium Blocks now give off light.
+* Craters now spawn properly throughout the Upside-Down.
+* Added a new gem item called Etrium.
 * 
+
+---- FIXES ----
+* Fixed Radiance potion effect not applying correctly when wearing Radiant armor set.
+* Fixed entities being hurt by shadow damage even when not in the Upside-Down.
+---------------
 
 [ -- Hotfix 2 -- ]
 * Fixed the Upside-Down dimension for real this time (so sorry).

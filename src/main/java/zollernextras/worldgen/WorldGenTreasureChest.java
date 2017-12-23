@@ -5,6 +5,7 @@ import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
+import zollernextras.blocks.ZollernBlocks;
 import zollernextras.lib.Treasures;
 
 public class WorldGenTreasureChest extends WorldGenerator {
@@ -13,7 +14,8 @@ public class WorldGenTreasureChest extends WorldGenerator {
 	
 	protected Block[] GetValidSpawnBlocks() {
 		return new Block[] { Blocks.sand, Blocks.clay, Blocks.dirt,
-				Blocks.grass, Blocks.gravel, Blocks.water, Blocks.gravel };
+				Blocks.grass, Blocks.gravel, Blocks.water, Blocks.gravel,
+				Blocks.stone, ZollernBlocks.seaLamp };
 	}
 	
 	public boolean LocationIsValidSpawn(World world, int i, int j, int k) {

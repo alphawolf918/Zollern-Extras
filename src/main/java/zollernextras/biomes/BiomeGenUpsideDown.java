@@ -5,22 +5,23 @@ import zollernextras.blocks.ZollernBlocks;
 
 public class BiomeGenUpsideDown extends BiomeGenBase {
 	
-	private int biomeFoliageColor = 0x004400;
+	private int biomeFoliageColor = 0x009900;
 	
 	public BiomeGenUpsideDown(int par1) {
 		super(par1);
-		this.waterColorMultiplier = 0x000;
+		this.waterColorMultiplier = 0x0b0;
 		this.setColor(BiomeList.biomeColor);
 		this.theBiomeDecorator.generateLakes = false;
 		this.setDisableRain();
 		this.setBiomeName("Upside-Down");
-		this.setHeight(new Height(2.0F, 1.9F));
+		this.setHeight(this.height_HighPlateaus);
+		this.heightVariation = 2F;
 		this.temperature = 0.2F;
 		this.topBlock = ZollernBlocks.upsideDownSurfaceRock;
 		this.fillerBlock = ZollernBlocks.upsideDownRock;
 		this.spawnableCaveCreatureList.clear();
 		this.spawnableCreatureList.clear();
-		this.spawnableMonsterList.clear();
+		// this.spawnableMonsterList.clear();
 		this.spawnableWaterCreatureList.clear();
 	}
 	

@@ -61,8 +61,43 @@ public class ZEChestGenHooks extends ChestGenHooks {
 					ZollernItems.prismarineCrystal), 5, 10, 15),
 			new WeightedRandomChestContent(new ItemStack(
 					ZollernItems.prismarineShard), 5, 10, 15),
+			new WeightedRandomChestContent(
+					new ItemStack(ZollernItems.witherite), 5, 10, 15),
 			new WeightedRandomChestContent(new ItemStack(
 					ZollernItems.shadowEssence), 5, 20, 25) };
+	
+	public static final String CORRUPT_BUILDING = "corruptBuilding";
+	public static final WeightedRandomChestContent[] CBChestContents = new WeightedRandomChestContent[] {
+			new WeightedRandomChestContent(new ItemStack(ZollernItems.etrium),
+					5, 20, 25),
+			new WeightedRandomChestContent(
+					new ItemStack(ZollernItems.radiance), 5, 10, 5),
+			new WeightedRandomChestContent(new ItemStack(ZollernItems.etrium),
+					5, 10, 5),
+			new WeightedRandomChestContent(ZollernItems.spcItem, 4, 25, 50, 30) };
+	
+	public static final String SKULL = "skull";
+	public static final WeightedRandomChestContent[] skullChestContents = new WeightedRandomChestContent[] {
+			new WeightedRandomChestContent(new ItemStack(ZollernItems.spcItem),
+					5, 10, 15),
+			new WeightedRandomChestContent(new ItemStack(ZollernItems.amber),
+					5, 10, 15),
+			new WeightedRandomChestContent(new ItemStack(ZollernItems.garnet),
+					5, 10, 15),
+			new WeightedRandomChestContent(
+					new ItemStack(ZollernItems.sapphire), 5, 10, 15),
+			new WeightedRandomChestContent(new ItemStack(ZollernItems.ruby), 5,
+					10, 15),
+			new WeightedRandomChestContent(new ItemStack(
+					ZollernItems.aquamarine), 5, 10, 15),
+			new WeightedRandomChestContent(new ItemStack(ZollernItems.opal), 5,
+					10, 15),
+			new WeightedRandomChestContent(new ItemStack(ZollernItems.topaz),
+					5, 10, 15),
+			new WeightedRandomChestContent(new ItemStack(Items.emerald), 5, 10,
+					15),
+			new WeightedRandomChestContent(new ItemStack(Items.diamond), 5, 10,
+					15) };
 	
 	private static final HashMap<String, ZEChestGenHooks> chestInfo = new HashMap<String, ZEChestGenHooks>();
 	
@@ -82,6 +117,8 @@ public class ZEChestGenHooks extends ChestGenHooks {
 		addInfo(ENDER_TOWER, CTChestContents, 8, 16);
 		addInfo(SHADOW_SHRINE, SSChestContents, 4, 8);
 		addInfo(SHADE_TREE, STChestContents, 4, 6);
+		addInfo(CORRUPT_BUILDING, CBChestContents, 4, 8);
+		addInfo(SKULL, skullChestContents, 8, 16);
 		
 		ItemStack book = new ItemStack(Items.enchanted_book, 1, 0);
 		EnchantmentHelper.addRandomEnchantment(new Random(), book, 30);
@@ -89,10 +126,9 @@ public class ZEChestGenHooks extends ChestGenHooks {
 				5, 10, 4);
 		getInfo(ENDER_TOWER).addItem(tmp);
 		getInfo(SHADE_TREE).addItem(tmp);
-		
-		getInfo(ENDER_TOWER).addItem(
-				new WeightedRandomChestContent(ZollernItems.spcItem, 4, 25, 50,
-						30));
+		getInfo(SHADOW_SHRINE).addItem(tmp);
+		getInfo(CORRUPT_BUILDING).addItem(tmp);
+		getInfo(SKULL).addItem(tmp);
 		
 		for (WeightedRandomChestContent chestContent : CTChestContents) {
 			ItemStack item = chestContent.theItemId;
@@ -107,6 +143,17 @@ public class ZEChestGenHooks extends ChestGenHooks {
 		for (WeightedRandomChestContent chestContent : STChestContents) {
 			ItemStack item = chestContent.theItemId;
 			addDungeonLoot(new ZEChestGenHooks("shadeTree"), item, 25, 5, 10);
+		}
+		
+		for (WeightedRandomChestContent chestContent : CBChestContents) {
+			ItemStack item = chestContent.theItemId;
+			addDungeonLoot(new ZEChestGenHooks("corruptBuilding"), item, 50,
+					40, 80);
+		}
+		
+		for (WeightedRandomChestContent chestContent : skullChestContents) {
+			ItemStack item = chestContent.theItemId;
+			addDungeonLoot(new ZEChestGenHooks("skull"), item, 50, 40, 80);
 		}
 		
 		ItemStack witherSword = new ItemStack(ZollernItems.witherSword);

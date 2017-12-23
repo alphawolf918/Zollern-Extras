@@ -201,5 +201,15 @@ public class PulverizerRecipes {
 		ThermalExpansionHelper.addPulverizerRecipe(2500, new ItemStack(
 				Blocks.obsidian, 1),
 				new ItemStack(ZollernItems.obsidianDust, 8));
+		
+		// Corrupt Chargium Ore
+		ThermalExpansionHelper.addPulverizerRecipe(6000, new ItemStack(
+				ZollernBlocks.corruptChargiumOre, 1), new ItemStack(
+				ZollernItems.chargiumDust, 4));
+		
+		// Corrupt Etrium Ore
+		ThermalExpansionHelper.addPulverizerRecipe(6000, new ItemStack(
+				ZollernBlocks.corruptEtriumOre, 1), new ItemStack(
+				ZollernItems.crushedEtrium, 2));
 	}
 }

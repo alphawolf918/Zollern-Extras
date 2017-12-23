@@ -37,6 +37,7 @@ import zollernextras.blocks.ingotstacks.ShinestoneIngotStack;
 import zollernextras.blocks.ingotstacks.ShiniumIngotStack;
 import zollernextras.blocks.ingotstacks.ZincIngotStack;
 import zollernextras.blocks.ingotstacks.ZollerniumIngotStack;
+import zollernextras.blocks.ores.CorruptOre;
 import zollernextras.blocks.ores.GemOre;
 import zollernextras.blocks.ores.GenericBlockOre;
 import zollernextras.blocks.ores.GenericEnderOre;
@@ -94,6 +95,8 @@ import zollernextras.blocks.upsidedown.Bloodstone;
 import zollernextras.blocks.upsidedown.ShadowBossSpawner;
 import zollernextras.blocks.upsidedown.SpiderlingEgg;
 import zollernextras.blocks.upsidedown.UpsideDownStone;
+import zollernextras.blocks.upsidedown.corrupt.CorruptBlock;
+import zollernextras.blocks.upsidedown.corrupt.CorruptStone;
 import zollernextras.items.ZollernItems;
 import zollernextras.items.tools.ToolMaterials;
 import zollernextras.lib.ZollernHelper;
@@ -219,7 +222,8 @@ public class ZollernBlocks {
 	public static Block enderOpal = new GemBlock("enderopal");
 	public static Block topaz = new GemBlock("topaz");
 	public static Block azurite = new GemBlock("azurite").setLightLevel(1.0F);
-	public static Block shiniumBlock = new GemBlock("shinium");
+	public static Block shiniumBlock = new GemBlock("shinium")
+			.setLightLevel(1.0F);
 	public static Block witheriteBlock = new GemBlock("witheriteblock");
 	public static Block netheridiumBlock = new GemBlock("netheridiumblock");
 	public static Block rubyBlock = new GemBlock("rubyblock");
@@ -515,10 +519,24 @@ public class ZollernBlocks {
 	
 	public static Block diamondSkull = new BlockDiamondSkull();
 	
+	public static Block corruptCobblestone = new CorruptBlock("corruptcobble",
+			0.6F);
+	public static Block corruptStone = new CorruptStone();
+	public static Block corruptStoneBricks = new CorruptBlock(
+			"corruptstonebricks", 0.8F);
+	public static Block corruptCreepStone = new CorruptBlock(
+			"corruptcreepstone", 1.6F);
+	public static Block corruptRock = new CorruptBlock("corruptrock", 1.8F);
+	public static Block corruptChargiumOre = new CorruptOre(
+			"corruptchargiumore", 1.9F);
+	public static Block corruptEtriumOre = new CorruptOre("corruptetriumore",
+			1.8F);
+	public static Block endRock = new GenericBlock("endrock", 10.0F)
+			.setBlockUnbreakable();
+	
 	public static FluidChocolate fluidChocolate = new FluidChocolate(
 			ZollernModInfo.MODID + "_chocolate");
-	public static final Block blockChocolate = new BlockFChocolate(
-			fluidChocolate);
+	public static Block blockChocolate = new BlockFChocolate(fluidChocolate);
 	
 	public static FluidFueltonium fluidFuel = new FluidFueltonium(
 			"Molten Fueltonium");
@@ -793,6 +811,14 @@ public class ZollernBlocks {
 		addBlock(spiderlingEgg, "Spider Egg");
 		addBlock(shadowBossSpawner, "Shadow Spawner");
 		addBlock(diamondSkull, "Diamond Skull");
+		addBlock(corruptCobblestone, "Corrupt Cobblestone");
+		addBlock(corruptStone, "Corrupt Stone");
+		addBlock(corruptStoneBricks, "Corrupt Stone Bricks");
+		addBlock(corruptCreepStone, "Corrupt Creepstone");
+		addBlock(corruptRock, "Corrupt Rock");
+		addBlock(corruptChargiumOre, "Corrupt Chargium Ore");
+		addBlock(corruptEtriumOre, "Corrupt Etrium Ore");
+		addBlock(endRock, "Endrock");
 		
 		addBlock(blockChocolate, "Melted Chocolate");
 		addBlock(blockFuel, "Molten Fueltonium");

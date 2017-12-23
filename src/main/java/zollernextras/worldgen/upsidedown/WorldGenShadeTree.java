@@ -14,7 +14,9 @@ import zollernextras.mobs.entities.EntityKrull;
 public class WorldGenShadeTree extends WorldGenerator {
 	
 	protected Block[] GetValidSpawnBlockList() {
-		return new Block[] { ZollernBlocks.upsideDownDirt };
+		return new Block[] { ZollernBlocks.upsideDownStone,
+				ZollernBlocks.upsideDownSurfaceRock,
+				ZollernBlocks.upsideDownRock, ZollernBlocks.upsideDownDirt };
 	}
 	
 	public boolean LocationIsValidSpawn(World world, int i, int j, int k) {
@@ -205,7 +207,8 @@ public class WorldGenShadeTree extends WorldGenerator {
 		world.setBlock(x + 6, y + 5, z + 4, ZollernBlocks.shadeLeaves);
 		world.setBlock(x + 6, y + 5, z + 5, ZollernBlocks.shadeLeaves);
 		world.setBlock(x + 6, y + 5, z + 6, ZollernBlocks.shadeLeaves);
-		
+		ZollernHelper.Log("Spawned Shade Tree structure at: " + x + " " + y
+				+ " " + z);
 		return true;
 	}
 }

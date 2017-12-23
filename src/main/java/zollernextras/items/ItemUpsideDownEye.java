@@ -22,27 +22,11 @@ public class ItemUpsideDownEye extends GenericItem {
 		this.setMaxDamage(20);
 	}
 	
-	// @Override
-	// public ItemStack onItemRightClick(ItemStack par1ItemStack, World
-	// par2World,
-	// EntityPlayer par3EntityPlayer) {
-	// if (!par3EntityPlayer.capabilities.isCreativeMode) {
-	// par1ItemStack.damageItem(1, par3EntityPlayer);
-	// }
-	// int dimId = par3EntityPlayer.dimension == 0 ? dimensionId : 0;
-	// int entityId = par3EntityPlayer.getEntityId();
-	// PacketDispatcher.getSimpleNetworkWrapper().sendToServer(
-	// new MessageTeleportToDimension(dimId, entityId));
-	// return par1ItemStack;
-	// }
-	
 	@Override
 	public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World,
 			EntityPlayer Player) {
-		
 		ItemStack cStack = par1ItemStack.copy();
 		cStack.setItemDamage(cStack.getItemDamage() + 1);
-		
 		if (Player.dimension == 0) {
 			ZollernExtrasMod.snw.sendToServer(new MessageTeleportToDimension(
 					ZEConfig.dimensionUpsideDownID, Player.getEntityId()));

@@ -1,6 +1,7 @@
 package zollernextras.dimensions.providers.world;
 
 import javax.annotation.Nullable;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.DimensionType;
@@ -89,5 +90,10 @@ public class WorldProviderUpsideDown extends WorldProviderHell {
 	@Override
 	public double getMovementFactor() {
 		return 16.0D;
+	}
+	
+	@Override
+	public void onPlayerAdded(EntityPlayerMP player) {
+		
 	}
 }

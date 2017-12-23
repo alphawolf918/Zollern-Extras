@@ -19,6 +19,7 @@ import zollernextras.handlers.Handlers;
 import zollernextras.lib.OreDictZo;
 import zollernextras.lib.StackChanges;
 import zollernextras.lib.ZollernModInfo;
+import zollernextras.lib.modhelper.BRHelper;
 import zollernextras.lib.modhelper.ModHelperBase;
 import zollernextras.lib.recipes.RecipeManager;
 import zollernextras.mobs.MobRegistry;
@@ -50,6 +51,9 @@ public class ZollernExtrasMod {
 	public void preInit(FMLPreInitializationEvent event) {
 		snw = NetworkRegistry.INSTANCE.newSimpleChannel(ZollernModInfo.channel);
 		ModHelperBase.detectMods();
+		if (ModHelperBase.useExtremeReactors) {
+			BRHelper.init();
+		}
 		ZEConfig.init(event);
 		ZollernSoundEvents.init();
 		MobRegistry.init();

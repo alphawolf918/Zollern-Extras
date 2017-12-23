@@ -2,6 +2,7 @@ package zollernextras.lib.recipes;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.ItemStack;
 import zollernextras.blocks.ZollernBlocks;
 import zollernextras.items.ZollernItems;
@@ -12,6 +13,11 @@ import cofh.thermalfoundation.init.TFItems;
 public class PulverizerRecipes {
 	
 	public static void init() {
+		
+		// Shinestone Dust
+		ThermalExpansionHelper.addPulverizerRecipe(1200, new ItemStack(
+				ZollernItems.shinestoneIngot, 1), new ItemStack(
+				ZollernItems.shinestoneDust, 1));
 		
 		// Amaranth Ore
 		// Overworld
@@ -26,6 +32,10 @@ public class PulverizerRecipes {
 		ThermalExpansionHelper.addPulverizerRecipe(5200, new ItemStack(
 				ZollernBlocks.enderAmaranthOre), new ItemStack(
 				ZollernItems.amaranthDust, 6));
+		// Upside-Down
+		ThermalExpansionHelper.addPulverizerRecipe(6200, new ItemStack(
+				ZollernBlocks.upsideDownAmaranthOre), new ItemStack(
+				ZollernItems.amaranthDust, 8));
 		
 		// // Amaranth Ingot
 		ThermalExpansionHelper.addPulverizerRecipe(500, new ItemStack(
@@ -117,7 +127,9 @@ public class PulverizerRecipes {
 						69));
 		
 		// Platinum / Shinium
-		// TODO
+		ThermalExpansionHelper.addPulverizerRecipe(5400, new ItemStack(
+				ZollernBlocks.netherShiniumOre), new ItemStack(
+				ZollernItems.shiniumDust, 4));
 		
 		// Steel Ore
 		// Overworld
@@ -174,7 +186,8 @@ public class PulverizerRecipes {
 		
 		// Lapis Ingot -> Lapis Dust
 		ThermalExpansionHelper.addPulverizerRecipe(600, new ItemStack(
-				Items.DYE, 1, 4), new ItemStack(ZollernItems.lapisIngot));
+				ZollernItems.lapisIngot), new ItemStack(Items.DYE, 1,
+				EnumDyeColor.BLUE.getDyeDamage()));
 		
 		// Obsidian Ingot -> Obsidian Dust
 		ThermalExpansionHelper.addPulverizerRecipe(800, new ItemStack(

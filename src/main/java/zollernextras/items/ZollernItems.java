@@ -144,6 +144,9 @@ public class ZollernItems {
 			ZollernArmorMaterials.RADIUM, 1, EntityEquipmentSlot.HEAD,
 			"radiumhelmet");
 	
+	// Netheridium
+	public static final Item netheridium = new ZollernItemBase("netheridium");
+	
 	// Ender Shards
 	public static final Item enderShard = new ZollernItemBase("endershard");
 	
@@ -224,6 +227,9 @@ public class ZollernItems {
 	
 	// Mob Items
 	public static final Item duckFeather = new ZollernItemBase("duckfeather");
+	public static final Item shadowBone = new ZollernItemBase("shadowbone");
+	public static final Item shadowEssence = new ZollernItemBase(
+			"shadowessence");
 	
 	// Sticks
 	public static final Item marbleStick = new ZollernItemBase("marblestick");

@@ -9,12 +9,14 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import zollernextras.lib.EnumBlockVariant;
+import zollernextras.lib.EnumHarvestLevel;
 
 public class ZollernBlockOre extends ZollernBlockBase {
 	
 	protected EnumBlockVariant oreVariant = EnumBlockVariant.OVERWORLD;
 	protected static ZollernBlockOre instance;
 	protected boolean isExplosive = false;
+	protected int explosionChance = 40;
 	protected boolean hasPotionEffect = false;
 	protected Potion blockPotionEffect;
 	protected Random rand = new Random();
@@ -22,7 +24,8 @@ public class ZollernBlockOre extends ZollernBlockBase {
 	public ZollernBlockOre(String strName, float hardResist) {
 		super(strName, hardResist);
 		instance = this;
-		this.setHarvestLevel("pickaxe", 3);
+		this.setHarvestLevel("pickaxe",
+				EnumHarvestLevel.DIAMOND.getHarvestLevel());
 	}
 	
 	public Block setShouldGivePotionEffect(boolean shouldGivePotionEffect,
@@ -34,6 +37,35 @@ public class ZollernBlockOre extends ZollernBlockBase {
 	
 	public boolean getShouldGivePotionEffect() {
 		return this.hasPotionEffect;
+	}
+	
+	/**
+	 * Sets the chance for this block to go kablooey. Higher numbers mean a
+	 * lower chance.
+	 * 
+	 * @param par1ExplosionChance
+	 *            int
+	 * @return Block
+	 */
+	public Block setExplosionChance(int par1ExplosionChance) {
+		this.explosionChance = par1ExplosionChance;
+		return this;
+	}
+	
+	/**
+	 * Gets the chance this block has to explode. Higher numbers mean a lower
+	 * chance.
+	 * 
+	 * @return int
+	 */
+	public int getExplosionChance() {
+		return this.explosionChance;
+	}
+	
+	public Block setShouldExplode(boolean shouldExplode, int explodeChance) {
+		this.setShouldExplode(shouldExplode);
+		this.setExplosionChance(explodeChance);
+		return this;
 	}
 	
 	public Block setShouldExplode(boolean shouldExplode) {
@@ -50,7 +82,7 @@ public class ZollernBlockOre extends ZollernBlockBase {
 			IBlockState state) {
 		if (!worldIn.isRemote) {
 			if (this.getShouldExplode()) {
-				if (rand.nextInt(20) <= 2) {
+				if (rand.nextInt(this.getExplosionChance()) <= 2) {
 					worldIn.createExplosion(null, pos.getX(), pos.getY(),
 							pos.getZ(), 2.5F, true);
 				}

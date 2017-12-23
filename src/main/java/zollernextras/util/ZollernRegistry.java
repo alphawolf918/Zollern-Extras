@@ -50,15 +50,18 @@ public class ZollernRegistry {
 				ZollernBlocks.netherRedstoneOre, ZollernBlocks.netherCopperOre,
 				ZollernBlocks.netherTinOre, ZollernBlocks.netherLeadOre,
 				ZollernBlocks.netherNickleOre, ZollernBlocks.netherSilverOre,
-				ZollernBlocks.asphaltBlack, ZollernBlocks.asphaltGray,
-				ZollernBlocks.asphaltStripeLeft,
+				ZollernBlocks.netherShiniumOre, ZollernBlocks.netherCoalOre,
+				ZollernBlocks.netherLapisOre, ZollernBlocks.asphaltBlack,
+				ZollernBlocks.asphaltGray, ZollernBlocks.asphaltStripeLeft,
 				ZollernBlocks.asphaltStripeRight, ZollernBlocks.coldSand,
 				ZollernBlocks.coldSandSmooth, ZollernBlocks.chargiumBlock,
 				ZollernBlocks.shiniumBlock, ZollernBlocks.shinestone,
 				ZollernBlocks.caveMarble, ZollernBlocks.blackCaveMarble,
 				ZollernBlocks.canyonRock, ZollernBlocks.canyonRockBricks,
 				ZollernBlocks.swampClay, ZollernBlocks.bricksMud,
-				ZollernBlocks.shineTorch, ZollernBlocks.enderGlow);
+				ZollernBlocks.shineTorch, ZollernBlocks.enderGlow,
+				ZollernBlocks.upsideDownSuperChargedCoalOre,
+				ZollernBlocks.upsideDownAmaranthOre);
 		
 		// New Hell Blocks
 		registerBlocks(event, ZollernBlocks.blazeRock,
@@ -69,7 +72,9 @@ public class ZollernRegistry {
 		registerBlocks(event, ZollernBlocks.upsideDownSurfaceRock,
 				ZollernBlocks.upsideDownSubRock, ZollernBlocks.witherrack,
 				ZollernBlocks.upsideDownCobble, ZollernBlocks.upsideDownStone,
-				ZollernBlocks.upsideDownCobbleMossy, ZollernBlocks.endrock);
+				ZollernBlocks.upsideDownCobbleMossy, ZollernBlocks.endrock,
+				ZollernBlocks.netheridiumBlock,
+				ZollernBlocks.netherizedObsidian);
 		
 		// Items
 		registerItems(event, ZollernItems.superChargedCoal,
@@ -115,7 +120,8 @@ public class ZollernRegistry {
 				ZollernItems.duckFeather, ZollernItems.marbleStick,
 				ZollernItems.blackMarbleStick, ZollernItems.lapisStick,
 				ZollernItems.bedrockBreaker, ZollernItems.rokkite,
-				ZollernItems.ascendantAmaranthIngot);
+				ZollernItems.ascendantAmaranthIngot, ZollernItems.shadowBone,
+				ZollernItems.shadowEssence, ZollernItems.netheridium);
 		
 		// Power Swords
 		registerItems(event, ZollernItems.DIABLO, ZollernItems.ENDER,

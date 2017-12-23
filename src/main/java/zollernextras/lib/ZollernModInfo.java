@@ -4,8 +4,8 @@ public class ZollernModInfo {
 	
 	public static final String modId = "zollernextras";
 	public static final String majorVersion = "1";
-	public static final String minorVersion = "0";
-	public static final String buildVersion = "1";
+	public static final String minorVersion = "5";
+	public static final String buildVersion = "0";
 	public static final String modVersion = majorVersion + "." + minorVersion
 			+ "." + buildVersion;
 	public static final String minecraftVersion = "1.11.2";

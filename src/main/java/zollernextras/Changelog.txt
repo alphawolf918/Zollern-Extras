@@ -1,12 +1,25 @@
-[Zollern Extras - v1.0.1]
+[Zollern Extras - v1.5.0]
 
 * Added more stuff from the previous 1.7 versions.
 * Added the Bedrock Breaker.
     * Recharges automatically using Ascendant Amaranth Ingots when it's fully broken.
+* Added the Shadow Bone and Shadow Essence items.
+    * Dropped from Shadow Skeletons.
+* Upside-Down has been added.
+    * Shadow Skeletons, regular Skeletons and Scorpions will spawn here.
+* Added Shadow Skeletons.
+    * Drop Shadow Bones and Shadow Essence, necessary components for traveling to the Upside-Down.
+* Added Netheridium.
+    * Craftable material needed to travel to the Upside-Down.
+* Shinestone Ingots can now be pulverized back into their respective dust.
+* Implemented ExtremeReactors tie-in for fuel blocks.
+    * They are the exact same as the 1.7.10 version.
 * 
 
 ==== FIXES ====
 * Fixed ghost block issue when Nether Ores would explode.
+* Fixed Shadow Skeletons not spawning.
+    * Scorpions were spawning in their place instead.
 ===============
 
 [Zollern Extras - Initial Migration - to 1.11.2 - v1.0.0]

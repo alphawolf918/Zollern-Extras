@@ -28,6 +28,8 @@ import net.minecraftforge.event.terraingen.TerrainGen;
 import net.minecraftforge.fml.common.eventhandler.Event.Result;
 import zollernextras.blocks.ZollernBlocks;
 import zollernextras.lib.ZollernHelper;
+import zollernextras.mobs.entities.EntityScorpion;
+import zollernextras.mobs.entities.EntityShadowSkeleton;
 import zollernextras.worldgen.WGLake;
 import zollernextras.worldgen.WorldGenUpsideDownDungeons;
 import com.google.common.collect.Lists;
@@ -171,6 +173,10 @@ public class ChunkProviderUpsideDown extends ChunkProviderHell {
 		if (creatureType == EnumCreatureType.MONSTER) {
 			this.spawnList.add(new Biome.SpawnListEntry(EntitySkeleton.class,
 					10, 2, 3));
+			this.spawnList.add(new Biome.SpawnListEntry(
+					EntityShadowSkeleton.class, 10, 2, 3));
+			this.spawnList.add(new Biome.SpawnListEntry(EntityScorpion.class,
+					8, 2, 3));
 			return this.spawnList;
 		}
 		Biome biome = this.world.getBiome(pos);

@@ -115,6 +115,10 @@ public class RecipeManager {
 			RecipeHelper.fullBlockCraft(ZollernBlocks.shiniumBlock,
 					ZollernItems.shiniumIngot);
 			
+			// Netheridium Block
+			RecipeHelper.fullBlockCraft(ZollernBlocks.netheridiumBlock,
+					ZollernItems.netheridium);
+			
 			// Shinedust -> Shinestone Block
 			RecipeHelper.addBricks(ZollernItems.shinestoneDust,
 					ZollernBlocks.shinestone);
@@ -212,6 +216,24 @@ public class RecipeManager {
 					new ItemStack(ZollernBlocks.hellObsidian, 2), new Object[] {
 							"BN ", "NB ", "   ", 'B', Blocks.NETHER_WART_BLOCK,
 							'N', Blocks.OBSIDIAN });
+			
+			// Netheridium (Gem Form)
+			GameRegistry.addRecipe(new ItemStack(ZollernItems.netheridium, 1),
+					new Object[] { "BSB", "LXL", "VAV", 'B',
+							ZollernItems.shadowEssence, 'S',
+							ZollernItems.superChargedCoal, 'V',
+							ZollernItems.garnet, 'X',
+							ZollernBlocks.witheriteBlock, 'V',
+							Items.BLAZE_POWDER, 'A', ZollernItems.shadowBone });
+			
+			// Netherized Obsidian
+			GameRegistry.addRecipe(new ItemStack(
+					ZollernBlocks.netherizedObsidian, 1),
+					new Object[] { "WNW", "NON", "SNS", 'N',
+							ZollernBlocks.netheridiumBlock, 'W',
+							ZollernBlocks.witheriteBlock, 'O',
+							ZollernBlocks.hellObsidian, 'S',
+							ZollernItems.shadowEssence });
 		}
 	}
 	
@@ -232,6 +254,10 @@ public class RecipeManager {
 			// Ender Amaranth Ore -> Amaranth Ingot
 			RecipeHelper.addSmelting(ZollernBlocks.enderAmaranthOre,
 					new ItemStack(ZollernItems.amaranthIngot, 3), 2.0F);
+			
+			// Upside-Down Amaranth Ore -> Amaranth Ingot
+			RecipeHelper.addSmelting(ZollernBlocks.upsideDownAmaranthOre,
+					new ItemStack(ZollernItems.amaranthIngot, 4), 3.0F);
 			
 			// Amaranth Dust -> AmaranthIngot
 			RecipeHelper.addSmelting(ZollernItems.amaranthDust,
@@ -284,6 +310,10 @@ public class RecipeManager {
 			// Steel Dust -> Steel Ingot
 			RecipeHelper.addSmelting(ZollernItems.steelDust,
 					ZollernItems.steelIngot, 0.4F);
+			
+			// Nether Shinium Ore -> Shinium Ingot
+			RecipeHelper.addSmelting(ZollernBlocks.netherShiniumOre,
+					ZollernItems.shiniumIngot, 2.0F);
 			
 			// Enderite Ore -> Enderite Ingot
 			RecipeHelper.addSmelting(ZollernBlocks.enderiteOre,

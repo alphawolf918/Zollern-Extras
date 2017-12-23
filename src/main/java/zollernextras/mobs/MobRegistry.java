@@ -14,6 +14,7 @@ import zollernextras.mobs.entities.EntityHellDuck;
 import zollernextras.mobs.entities.EntityHellFish;
 import zollernextras.mobs.entities.EntityMegaCreeper;
 import zollernextras.mobs.entities.EntityScorpion;
+import zollernextras.mobs.entities.EntityShadowSkeleton;
 import com.google.common.base.CaseFormat;
 
 public class MobRegistry {
@@ -52,6 +53,24 @@ public class MobRegistry {
 		registerEntity("scorpion", EntityScorpion.class, entityId++, 0xf5eeb3,
 				0x8b9900);
 		EntityRegistry.addSpawn(EntityScorpion.class,
+				ZEConfig.mobScorpionSpawnRate, 2, 6, EnumCreatureType.MONSTER,
+				Biomes.PLAINS, Biomes.FOREST, Biomes.DESERT,
+				Biomes.EXTREME_HILLS, Biomes.JUNGLE, Biomes.SWAMPLAND,
+				Biomes.TAIGA, Biomes.OCEAN, Biomes.EXTREME_HILLS,
+				Biomes.EXTREME_HILLS_EDGE, Biomes.DESERT_HILLS, Biomes.RIVER,
+				Biomes.BEACH, Biomes.FOREST_HILLS, Biomes.FROZEN_OCEAN,
+				Biomes.FROZEN_RIVER, Biomes.ICE_MOUNTAINS, Biomes.ICE_PLAINS,
+				Biomes.JUNGLE_HILLS, Biomes.TAIGA_HILLS,
+				BiomeList.biomeIceDesert, BiomeList.biomeIceMountains,
+				BiomeList.biomeRedshroomField, BiomeList.biomeSlimeLands,
+				BiomeList.biomeMudSwamp, BiomeList.biomeGrandCanyon,
+				Biomes.SAVANNA, Biomes.BIRCH_FOREST,
+				Biomes.MUTATED_REDWOOD_TAIGA, Biomes.MESA);
+		
+		// Shadow Skeleton
+		registerEntity("shadowskeleton", EntityShadowSkeleton.class,
+				entityId++, 0xeeeeee, 0x00009e);
+		EntityRegistry.addSpawn(EntityShadowSkeleton.class,
 				ZEConfig.mobScorpionSpawnRate, 2, 6, EnumCreatureType.MONSTER,
 				Biomes.PLAINS, Biomes.FOREST, Biomes.DESERT,
 				Biomes.EXTREME_HILLS, Biomes.JUNGLE, Biomes.SWAMPLAND,

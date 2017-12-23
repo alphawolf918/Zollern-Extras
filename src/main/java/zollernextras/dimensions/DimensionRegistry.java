@@ -13,6 +13,7 @@ import zollernextras.biomes.nether.BiomeDeathValley;
 import zollernextras.biomes.nether.BiomeNetherMinersLand;
 import zollernextras.biomes.nether.BiomeNewHell;
 import zollernextras.biomes.nether.BiomeSoulDesert;
+import zollernextras.biomes.upsidedown.BiomeBlackLimbo;
 import zollernextras.biomes.upsidedown.BiomeUpsideDown;
 import zollernextras.config.ZEConfig;
 import zollernextras.dimensions.providers.world.WorldHellProvider;
@@ -46,7 +47,8 @@ public class DimensionRegistry {
 			// more sorted, so it doesn't hurt to separate them.
 			
 			// Upside-Down biomes
-			event.getRegistry().registerAll(new BiomeUpsideDown());
+			event.getRegistry().registerAll(new BiomeUpsideDown(),
+					new BiomeBlackLimbo());
 		}
 	}
 	

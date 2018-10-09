@@ -35,6 +35,7 @@ import zollernextras.items.ZollernItems;
 import zollernextras.items.armor.ZollernArmor;
 import zollernextras.items.armor.ZollernArmorMaterials;
 import zollernextras.mobs.entities.EntityHellFish;
+import zollernextras.mobs.entities.IShadeEntity;
 
 public class ZollernEventManager {
 	
@@ -214,18 +215,18 @@ public class ZollernEventManager {
 					theEntity.posY, theEntity.posZ, new ItemStack(
 							Items.GHAST_TEAR, 1));
 			worldObj.spawnEntity(item);
-		}// else if (theEntity instanceof IShadeEntity) {
-			// Random rand = new Random();
-		// int randInt = rand.nextInt(100);
-		// if (randInt <= 60) {
-		// ItemStack itemStack = new ItemStack(ZollernItems.shadowEssence,
-		// 1);
-		// EntityItem itemEntity = new EntityItem(worldObj,
-		// theEntity.posX, theEntity.posY, theEntity.posZ,
-		// itemStack);
-		// worldObj.spawnEntityInWorld(itemEntity);2
-		// }
-		// }
+		} else if (theEntity instanceof IShadeEntity) {
+			Random rand = new Random();
+			int randInt = rand.nextInt(100);
+			if (randInt <= 60) {
+				ItemStack itemStack = new ItemStack(ZollernItems.shadowEssence,
+						1);
+				EntityItem itemEntity = new EntityItem(worldObj,
+						theEntity.posX, theEntity.posY, theEntity.posZ,
+						itemStack);
+				worldObj.spawnEntity(itemEntity);
+			}
+		}
 	}
 	
 	// THIS DOES NOT DO A WORK.
@@ -241,30 +242,30 @@ public class ZollernEventManager {
 	// if (currentBiome.equals(BiomeList.biomeIceDesert)) {
 	// for (ExtendedBlockStorage storage : chunk.getBlockStorageArray()) {
 	// if (storage != Chunk.NULL_BLOCK_STORAGE) {
-	// // for (int x = 0; x < 16; ++x) {
-	// // for (int y = 0; y < 16; ++y) {
-	// // for (int z = 0; z < 16; ++z) {
-	// // if (storage.get(x, y, z).getBlock() == Blocks.STONE) {
-	// // storage.set(x, y, z,
-	// // Blocks.ICE.getDefaultState());
-	// // }
-	// // }
-	// // }
-	// // }
-	// world.theProfiler.startSection("getChunk");
-	// int updateLCG = (new Random()).nextInt();
-	// int j1 = updateLCG >> 2;
-	// int k1 = j1 & 15;
-	// int l1 = j1 >> 8 & 15;
-	// int i2 = j1 >> 16 & 15;
-	// IBlockState iblockstate = storage.get(k1, i2, l1);
-	// Block block = iblockstate.getBlock();
-	// if (block == Blocks.STONE) {
-	// storage.set(k1, i2, l1, Blocks.ICE.getDefaultState());
-	// chunk.setModified(true);
-	// event.setResult(Result.ALLOW);
-	// world.theProfiler.endSection();
+	// for (int x = 0; x < 16; ++x) {
+	// for (int y = 0; y < 16; ++y) {
+	// for (int z = 0; z < 16; ++z) {
+	// if (storage.get(x, y, z).getBlock() == Blocks.WATER) {
+	// storage.set(x, y, z,
+	// Blocks.ICE.getDefaultState());
 	// }
+	// }
+	// }
+	// }
+	// // world.theProfiler.startSection("getChunk");
+	// // int updateLCG = (new Random()).nextInt();
+	// // int j1 = updateLCG >> 2;
+	// // int k1 = j1 & 15;
+	// // int l1 = j1 >> 8 & 15;
+	// // int i2 = j1 >> 16 & 15;
+	// // IBlockState iblockstate = storage.get(k1, i2, l1);
+	// // Block block = iblockstate.getBlock();
+	// // if (block == Blocks.WATER) {
+	// // storage.set(k1, i2, l1, Blocks.ICE.getDefaultState());
+	// // chunk.setModified(true);
+	// // event.setResult(Result.ALLOW);
+	// // world.theProfiler.endSection();
+	// // }
 	// }
 	// }
 	// }

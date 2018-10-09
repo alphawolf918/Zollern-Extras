@@ -29,7 +29,7 @@ public class EntityShadowSkeleton extends AbstractSkeleton implements
 	
 	public EntityShadowSkeleton(World worldIn) {
 		super(worldIn);
-		this.setHealth(35.0F);
+		this.setHealth(40.0F);
 		this.setAIMoveSpeed(2.8F);
 		this.setCanPickUpLoot(true);
 		this.tasks.addTask(1, new EntityAISwimming(this));
@@ -69,7 +69,7 @@ public class EntityShadowSkeleton extends AbstractSkeleton implements
 	public void dropLoot(boolean wasRecentlyHit, int lootModifier,
 			DamageSource dmgSrc) {
 		Random rand = new Random();
-		if (rand.nextInt(100) <= 5) {
+		if (rand.nextInt(100) <= 15) {
 			this.dropItem(ZollernItems.shadowEssence, 1);
 		}
 	}
@@ -164,5 +164,10 @@ public class EntityShadowSkeleton extends AbstractSkeleton implements
 		}
 		
 		super.onLivingUpdate();
+	}
+	
+	@Override
+	public boolean isShadowBeing() {
+		return true;
 	}
 }

@@ -9,5 +9,4 @@ public class BRHelper {
 		TurbineCoil.registerBlock("blockZollernium", 2.9f, 1.02f, 2.9f);
 		TurbineCoil.registerBlock("blockChargium", 4.0f, 1.04f, 3.0f);
 	}
-	
 }

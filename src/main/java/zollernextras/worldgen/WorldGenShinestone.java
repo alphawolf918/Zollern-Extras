@@ -5,10 +5,9 @@ import net.minecraft.init.Blocks;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraft.world.gen.feature.WorldGenerator;
 import zollernextras.blocks.ZollernBlocks;
 
-public class WorldGenShinestone extends WorldGenerator {
+public class WorldGenShinestone extends ZollernWorldGenMaster {
 	
 	@Override
 	public boolean generate(World worldIn, Random rand, BlockPos position) {

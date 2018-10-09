@@ -2,6 +2,7 @@ package zollernextras.managers;
 
 import java.util.Random;
 import net.minecraft.block.Block;
+import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -244,6 +245,18 @@ public class WorldGenManager implements IWorldGenerator {
 						Block.getBlockFromItem(BlockOre.orePlatinum.getItem()),
 						world, random, x, z, 16, 16, 6 + random.nextInt(4), 30,
 						1, 256);
+				
+				// Iridium
+				addOreSpawn(
+						Block.getBlockFromItem(BlockOre.oreIridium.getItem()),
+						world, random, x, z, 16, 16, 6 + random.nextInt(4), 30,
+						1, 256);
+				
+				// Mithril
+				addOreSpawn(
+						Block.getBlockFromItem(BlockOre.oreMithril.getItem()),
+						world, random, x, z, 16, 16, 6 + random.nextInt(4), 30,
+						1, 256);
 			}
 			
 			// ZaneXtras Ores
@@ -277,6 +290,12 @@ public class WorldGenManager implements IWorldGenerator {
 			}
 		}
 		
+		if (currentBiome.equals(Biomes.RIVER)
+				|| currentBiome.equals(Biomes.OCEAN)
+				|| currentBiome.equals(Biomes.DEEP_OCEAN)) {
+			addWaterBlockSpawn(ZollernBlocks.seaLamp, world, random, x, z, 16,
+					16, 4 + random.nextInt(4), 35, 24, 42);
+		}
 	}
 	
 	private void generateNether(World world, Random random, int x, int z) {
@@ -523,7 +542,7 @@ public class WorldGenManager implements IWorldGenerator {
 		addEnderOreSpawn(ZollernBlocks.enderDiamondOre, world, random, x, z,
 				16, 16, 2 + random.nextInt(2), 26, 4, 110);
 		
-		if (random.nextInt(500) <= 2) {
+		if (random.nextInt(200) <= 2) {
 			(new WorldGenEnderTower()).generate(world, random, new BlockPos(x,
 					y, z));
 		}
@@ -536,34 +555,157 @@ public class WorldGenManager implements IWorldGenerator {
 	}
 	
 	private void generateUpsideDown(World world, Random random, int x, int z) {
-		int Xcoord = x;// + random.nextInt(16);
-		int Zcoord = z;// + random.nextInt(16);
+		int Xcoord = x;
+		int Zcoord = z;
+		
+		// Upside-Down Dirt
+		addUpsideDownOreSpawn(ZollernBlocks.upsideDownDirt, world, random,
+				Xcoord, Zcoord, 16, 16, 20 + random.nextInt(20), 62, 19, 128);
+		
+		// Creepstone
+		addUpsideDownOreSpawn(ZollernBlocks.creepStone, world, random, Xcoord,
+				Zcoord, 16, 16, 8 + random.nextInt(10), 52, 19, 128);
+		
+		// Creepdirt
+		addUpsideDownOreSpawn(ZollernBlocks.creepDirt, world, random, Xcoord,
+				Zcoord, 16, 16, 8 + random.nextInt(10), 62, 19, 128);
 		
 		// Witherite Ore
 		addUpsideDownOreSpawn(ZollernBlocks.witheriteOre, world, random,
-				Xcoord, Zcoord, 16, 16, 4 + random.nextInt(2), 42, 1, 128);
+				Xcoord, Zcoord, 16, 16, 4 + random.nextInt(2), 42, 19, 128);
 		
 		// Zollernium Ore
 		addUpsideDownOreSpawn(ZollernBlocks.zollerniumOre, world, random,
-				Xcoord, Zcoord, 16, 16, 4 + random.nextInt(2), 42, 1, 128);
+				Xcoord, Zcoord, 16, 16, 4 + random.nextInt(2), 42, 19, 128);
 		
 		// Amaranth Ore
 		addUpsideDownOreSpawn(ZollernBlocks.upsideDownAmaranthOre, world,
-				random, Xcoord, Zcoord, 16, 16, 4 + random.nextInt(2), 42, 1,
+				random, Xcoord, Zcoord, 16, 16, 4 + random.nextInt(2), 42, 19,
 				128);
 		
 		// Super Charged Coal Ore
 		addUpsideDownOreSpawn(ZollernBlocks.upsideDownSuperChargedCoalOre,
 				world, random, Xcoord, Zcoord, 16, 16, 4 + random.nextInt(2),
-				42, 1, 128);
+				42, 19, 128);
+		
+		// Amber Ore
+		addUpsideDownOreSpawn(ZollernBlocks.upsideDownAmberOre, world, random,
+				Xcoord, Zcoord, 16, 16, 4 + random.nextInt(2), 32, 19, 128);
+		
+		// Aquamarine Ore
+		addUpsideDownOreSpawn(ZollernBlocks.upsideDownAquamarineOre, world,
+				random, Xcoord, Zcoord, 16, 16, 4 + random.nextInt(2), 32, 19,
+				128);
+		
+		// Garnet Ore
+		addUpsideDownOreSpawn(ZollernBlocks.upsideDownGarnetOre, world, random,
+				Xcoord, Zcoord, 16, 16, 4 + random.nextInt(2), 32, 19, 128);
+		
+		// Fueltonium Ore
+		addUpsideDownOreSpawn(ZollernBlocks.upsideDownFueltoniumOre, world,
+				random, Xcoord, Zcoord, 16, 16, 6 + random.nextInt(4), 20, 19,
+				128);
+		
+		// Zinc Ore
+		addUpsideDownOreSpawn(ZollernBlocks.upsideDownZincOre, world, random,
+				Xcoord, Zcoord, 16, 16, 4 + random.nextInt(4), 25, 19, 128);
+		
+		// Topaz Ore
+		addUpsideDownOreSpawn(ZollernBlocks.upsideDownTopazOre, world, random,
+				Xcoord, Zcoord, 16, 16, 4 + random.nextInt(2), 32, 19, 128);
+		
+		// Ruby Ore
+		addUpsideDownOreSpawn(ZollernBlocks.upsideDownRubyOre, world, random,
+				Xcoord, Zcoord, 16, 16, 4 + random.nextInt(2), 36, 19, 128);
+		
+		// Sapphire Ore
+		addUpsideDownOreSpawn(ZollernBlocks.upsideDownSapphireOre, world,
+				random, Xcoord, Zcoord, 16, 16, 4 + random.nextInt(2), 36, 19,
+				128);
+		
+		// Opal Ore
+		addUpsideDownOreSpawn(ZollernBlocks.upsideDownOpalOre, world, random,
+				Xcoord, Zcoord, 16, 16, 4 + random.nextInt(2), 32, 19, 128);
+		
+		// Iron Ore
+		addUpsideDownOreSpawn(ZollernBlocks.upsideDownIronOre, world, random,
+				Xcoord, Zcoord, 16, 16, 6 + random.nextInt(8), 35, 19, 128);
+		
+		// Gold Ore
+		addUpsideDownOreSpawn(ZollernBlocks.upsideDownGoldOre, world, random,
+				Xcoord, Zcoord, 16, 16, 6 + random.nextInt(8), 25, 19, 128);
+		
+		// Diamond Ore
+		addUpsideDownOreSpawn(ZollernBlocks.upsideDownDiamondOre, world,
+				random, Xcoord, Zcoord, 16, 16, 4 + random.nextInt(2), 12, 19,
+				128);
+		
+		// Emerald Ore
+		addUpsideDownOreSpawn(ZollernBlocks.upsideDownEmeraldOre, world,
+				random, Xcoord, Zcoord, 16, 16, 4 + random.nextInt(2), 6, 19,
+				128);
+		
+		// Redstone Ore
+		addUpsideDownOreSpawn(ZollernBlocks.upsideDownRedstoneOre, world,
+				random, Xcoord, Zcoord, 16, 16, 8 + random.nextInt(6), 14, 19,
+				128);
+		
+		// Lapis Ore
+		addUpsideDownOreSpawn(ZollernBlocks.upsideDownLapisOre, world, random,
+				Xcoord, Zcoord, 16, 16, 4 + random.nextInt(2), 18, 19, 128);
+		
+		// Copper Ore
+		addUpsideDownOreSpawn(ZollernBlocks.upsideDownCopperOre, world, random,
+				Xcoord, Zcoord, 16, 16, 6 + random.nextInt(8), 25, 19, 128);
+		
+		// Lead Ore
+		addUpsideDownOreSpawn(ZollernBlocks.upsideDownLeadOre, world, random,
+				Xcoord, Zcoord, 16, 16, 4 + random.nextInt(4), 22, 19, 128);
+		
+		// Tin Ore
+		addUpsideDownOreSpawn(ZollernBlocks.upsideDownTinOre, world, random,
+				Xcoord, Zcoord, 16, 16, 4 + random.nextInt(4), 24, 19, 128);
+		
+		// Silver Ore
+		addUpsideDownOreSpawn(ZollernBlocks.upsideDownSilverOre, world, random,
+				Xcoord, Zcoord, 16, 16, 4 + random.nextInt(4), 20, 19, 128);
+		
+		// Nickle Ore
+		addUpsideDownOreSpawn(ZollernBlocks.upsideDownNickleOre, world, random,
+				Xcoord, Zcoord, 16, 16, 2 + random.nextInt(4), 16, 19, 128);
+		
+		// Radiance Ore
+		addUpsideDownOreSpawn(ZollernBlocks.upsideDownRadianceOre, world,
+				random, Xcoord, Zcoord, 16, 16, 4 + random.nextInt(6), 5, 19,
+				128);
 		
 		// Obsidian
 		addUpsideDownOreSpawn(Blocks.OBSIDIAN, world, random, Xcoord, Zcoord,
-				16, 16, 4 + random.nextInt(5), 32, 1, 128);
+				16, 16, 8 + random.nextInt(5), 42, 19, 128);
 		
 		// Azurite
 		addObsidianOreSpawn(ZollernBlocks.azuriteOre, world, random, Xcoord,
-				Zcoord, 16, 16, 5 + random.nextInt(5), 52, 1, 128);
+				Zcoord, 16, 16, 5 + random.nextInt(5), 52, 19, 128);
+		
+		// Etrium
+		addCorruptOreSpawn(ZollernBlocks.corruptEtriumOre, world, random,
+				Xcoord, Zcoord, 16, 16, 4 + random.nextInt(5), 32, 1, 128);
+		
+		// Ascendium
+		addCorruptOreSpawn(ZollernBlocks.corruptAscendiumOre, world, random,
+				Xcoord, Zcoord, 16, 16, 2 + random.nextInt(4), 24, 1, 128);
+		
+		// Chargium
+		addCorruptOreSpawn(ZollernBlocks.corruptChargiumOre, world, random,
+				Xcoord, Zcoord, 16, 16, 2 + random.nextInt(2), 8, 1, 128);
+		
+		// Corrupt Rock
+		addCorruptOreSpawn(ZollernBlocks.corruptRock, world, random, Xcoord,
+				Zcoord, 16, 16, 6 + random.nextInt(8), 45, 1, 128);
+		
+		// Corrupt Creepstone
+		addCorruptOreSpawn(ZollernBlocks.corruptCreepStone, world, random,
+				Xcoord, Zcoord, 16, 16, 8 + random.nextInt(10), 45, 1, 128);
 	}
 	
 	public void addOreSpawn(Block block, World world, Random random,
@@ -583,6 +725,27 @@ public class WorldGenManager implements IWorldGenerator {
 			int posZ = blockZPos + random.nextInt(maxZ);
 			new WorldGenMinable(block.getDefaultState(), maxVeinSize).generate(
 					world, random, new BlockPos(posX, posY, posZ));
+		}
+	}
+	
+	public void addWaterBlockSpawn(Block block, World world, Random random,
+			int blockXPos, int blockZPos, int maxX, int maxZ, int maxVeinSize,
+			int chancesToSpawn, int minY, int maxY) {
+		int maxPossY = minY + maxY - 1;
+		assert maxY > minY : "The maximum Y must be greater than the Minimum Y";
+		assert maxX > 0 && maxX <= 16 : "addOreSpawn: The Maximum X must be greater than 0 and less than 16";
+		assert minY > 0 : "addOreSpawn: The Minimum Y must be greater than 0";
+		assert maxY < 256 && maxY > 0 : "addOreSpawn: The Maximum Y must be less than 256 but greater than 0";
+		assert maxZ > 0 && maxZ <= 16 : "addOreSpawn: The Maximum Z must be greater than 0 and less than 16";
+		
+		int diffBtwnMinMaxY = maxY - minY;
+		for (int x = 0; x < chancesToSpawn; x++) {
+			int posX = blockXPos + random.nextInt(maxX);
+			int posY = minY + random.nextInt(diffBtwnMinMaxY);
+			int posZ = blockZPos + random.nextInt(maxZ);
+			new ZollernMinable(block.getDefaultState(), maxVeinSize,
+					Blocks.WATER).generate(world, random, new BlockPos(posX,
+					posY, posZ));
 		}
 	}
 	
@@ -670,6 +833,47 @@ public class WorldGenManager implements IWorldGenerator {
 		}
 	}
 	
+	public void addCorruptOreSpawn(Block block, World world, Random random,
+			int blockXPos, int blockZPos, int maxX, int maxZ, int maxVeinSize,
+			int chancesToSpawn, int minY, int maxY) {
+		int maxPossY = minY + maxY - 1;
+		assert maxY > minY : "The maximum Y must be greater than the Minimum Y";
+		assert maxX > 0 && maxX <= 16 : "addOreSpawn: The Maximum X must be greater than 0 and less than 16";
+		assert minY > 0 : "addOreSpawn: The Minimum Y must be greater than 0";
+		assert maxY < 256 && maxY > 0 : "addOreSpawn: The Maximum Y must be less than 256 but greater than 0";
+		assert maxZ > 0 && maxZ <= 16 : "addOreSpawn: The Maximum Z must be greater than 0 and less than 16";
+		
+		int diffBtwnMinMaxY = maxY - minY;
+		for (int x = 0; x < chancesToSpawn; x++) {
+			int posX = blockXPos + random.nextInt(maxX);
+			int posY = minY + random.nextInt(diffBtwnMinMaxY);
+			int posZ = blockZPos + random.nextInt(maxZ);
+			new ZollernMinable(block.getDefaultState(), maxVeinSize,
+					ZollernBlocks.corruptStone).generate(world, random,
+					new BlockPos(posX, posY, posZ));
+		}
+	}
+	
+	/**
+	 * Spawns a structure in the world
+	 *
+	 * @author Zollern Wolf
+	 * @param minChance
+	 *            The minimum chance that the structure has to spawn.
+	 * @param maxChance
+	 *            The maximum chance that the structure has to spawn.
+	 * @param world
+	 *            The world for the structure to spawn in.
+	 * @param random
+	 *            Needed for randomization and comparison.
+	 * @param x
+	 *            The X coordinate to spawn in at.
+	 * @param y
+	 *            The Y coordinate to spawn in at.
+	 * @param z
+	 * @param wg
+	 *            The structure.
+	 */
 	public static void spawnStructure(int minChance, int maxChance,
 			World world, Random random, int x, int y, int z, WorldGenerator wg) {
 		if (random.nextInt(maxChance) <= minChance) {

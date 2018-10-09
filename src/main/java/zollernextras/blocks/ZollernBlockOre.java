@@ -1,15 +1,20 @@
 package zollernextras.blocks;
 
+import java.util.List;
 import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import zollernextras.lib.EnumBlockVariant;
 import zollernextras.lib.EnumHarvestLevel;
+import zollernextras.lib.KeyHelper;
 
 public class ZollernBlockOre extends ZollernBlockBase {
 	
@@ -113,4 +118,17 @@ public class ZollernBlockOre extends ZollernBlockBase {
 		return this;
 	}
 	
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void addInformation(ItemStack stack, EntityPlayer player,
+			List<String> list, boolean advanced) {
+		if (KeyHelper.isCtrlKeyDown() || KeyHelper.isShiftKeyDown()) {
+			if (this.getShouldExplode()) {
+				list.add("Explosion Chance: " + explosionChance + "%");
+			}
+		} else {
+			list.add("Hold LSHIFT for");
+			list.add("more information.");
+		}
+	}
 }

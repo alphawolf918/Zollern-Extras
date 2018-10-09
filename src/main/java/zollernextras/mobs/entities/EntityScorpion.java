@@ -6,7 +6,7 @@ import net.minecraft.init.SoundEvents;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 
-public class EntityScorpion extends EntityCaveSpider {
+public class EntityScorpion extends EntityCaveSpider implements IShadeEntity {
 	
 	public EntityScorpion(World par1World) {
 		super(par1World);
@@ -40,6 +40,11 @@ public class EntityScorpion extends EntityCaveSpider {
 	@Override
 	protected SoundEvent getDeathSound() {
 		return SoundEvents.ENTITY_SPIDER_DEATH;
+	}
+	
+	@Override
+	public boolean isShadowBeing() {
+		return true;
 	}
 	
 }

@@ -1,3 +1,59 @@
+[Zollern Extras - v1.6.0]
+
+* Slightly increased damage dealt by hot blocks.
+* Explosive blocks now show their explosion percentage in inventory.
+* Increased chance for Shadow Skeletons to drop Shadow Bones.
+    * Increased their health by 5.
+* Increased chance for Ender Tower to spawn.
+* Added Mithril and Iridium (from Thermal Expansion) to Miner's Land biome ore spawn chances.
+* Hell Obsidian and Blaze Rock now emit a light value equal to Glowstone.
+* Added recipe to craft Radium.
+* Increased chance for Nether Shinium Ore to explode by 10.
+* Added the Radiant Block.
+    * Crafted from 9 pieces of Radium.
+    * Gives off a light value equal to Glowstone.
+* Ducks now periodically drop Duck Feathers.
+    * Can be used in place of Chicken feathers.
+* Sea Lanterns can be crafted in an additional way now.
+* Added Sea Lamp blocks.
+    * Have a light value equal to Glowstone.
+    * Can be crafted using Shinestone and Lapis Ingots.
+    * Generate naturally in rivers and oceans (including deep oceans).
+* Black Marble can now be mined using the same harvest level as White Marble.
+* Shadow Skeletons and Scorpions now drop Shadow Essence.
+* Removed regular Skeletons from Upside-Down spawns.
+* Added two corruption blocks and a Corruption biome to the Upside-Down.
+* Corruption layer now spawns in the Upside-Down at layers 20 and below.
+* Added Corrupt Etrium Ore to corruption blocks.
+    * Drops Etrium.
+        * Can be crushed.
+            * Crushed Etrium can be smelted back into regular Etrium.
+* Added Corrupt Ascendium Ore to corruption blocks.
+    * Drops Ascendium.
+        * Used in making Ascendant Amaranth Ingots.
+* Added Corrupt Stone Bricks.
+* Added Corrupt Chargium Ore.
+    * Can be smelted and pulverized into Chargium Dust.
+* Added Corrupt Rock and Corrupt Creep Stone to Corruption layer.
+* Increased chance for Grand Canyon biome to spawn.
+* Added Creepstone and Creepdirt.
+* Added Shadow Essence Block.
+    * Crafted from 9 pieces of Shadow Essence.
+* Added Upside-Down Stone Bricks.
+    * Crafted from 4 pieces of Upside-Down Stone.
+* Added a lot more ores to the Upside-Down.
+* Flour now cooks into 2 pieces of bread.
+* Added Shinestone Crystal, Polished Shinestone and Shinestone Crystal Bricks.
+    * Shinestone Crystal crafted from four pieces of Shinestone block.
+    * Polished Shinestone crafted from four pieces of Shinestone Crystal.
+    * Shinestone Crystal bricks crafted from four pieces of Polished Shinestone.
+* 
+
+==== FIXES ====
+* Fixed Shinium Ingots not having their 1.7.10 crafting recipe.
+* Fixed some Nether Ores being unable to be smelted.
+===============
+
 [Zollern Extras - v1.5.0]
 
 * Added more stuff from the previous 1.7 versions.
@@ -14,7 +70,8 @@
 * Shinestone Ingots can now be pulverized back into their respective dust.
 * Implemented ExtremeReactors tie-in for fuel blocks.
     * They are the exact same as the 1.7.10 version.
-* 
+* Added the Shadow Bone Block.
+    * 9 Shadow Bones convert into this and vice versa.
 
 ==== FIXES ====
 * Fixed ghost block issue when Nether Ores would explode.

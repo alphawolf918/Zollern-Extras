@@ -14,6 +14,7 @@ import zollernextras.biomes.nether.BiomeNetherMinersLand;
 import zollernextras.biomes.nether.BiomeNewHell;
 import zollernextras.biomes.nether.BiomeSoulDesert;
 import zollernextras.biomes.upsidedown.BiomeBlackLimbo;
+import zollernextras.biomes.upsidedown.BiomeCorruption;
 import zollernextras.biomes.upsidedown.BiomeUpsideDown;
 import zollernextras.config.ZEConfig;
 import zollernextras.dimensions.providers.world.WorldHellProvider;
@@ -48,7 +49,7 @@ public class DimensionRegistry {
 			
 			// Upside-Down biomes
 			event.getRegistry().registerAll(new BiomeUpsideDown(),
-					new BiomeBlackLimbo());
+					new BiomeBlackLimbo(), new BiomeCorruption());
 		}
 	}
 	

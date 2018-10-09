@@ -58,7 +58,6 @@ public class ZollernFluidBlock extends BlockFluidClassic implements
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerModels() {
-		
 		Item item = Item.getItemFromBlock(this);
 		ZollernMapper mapper = new ZollernMapper(ZollernModInfo.modId, "fluid",
 				name);

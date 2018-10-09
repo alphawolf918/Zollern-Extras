@@ -24,6 +24,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import zollernextras.events.ZollernSoundEvents;
+import zollernextras.items.ZollernItems;
 
 public class EntityDuck extends EntityAnimal {
 	
@@ -39,6 +40,7 @@ public class EntityDuck extends EntityAnimal {
 	public float wingRotDelta = 1.0F;
 	
 	public int timeUntilNextEgg;
+	public int timeUntilNextFeather;
 	
 	public boolean duckJockey;
 	
@@ -97,14 +99,21 @@ public class EntityDuck extends EntityAnimal {
 		
 		this.wingRotation += this.wingRotDelta * 2.0F;
 		
-		if (!this.world.isRemote && !this.isChild() && !this.isDuckJockey()
-				&& --this.timeUntilNextEgg <= 0) {
-			this.playSound(
-					SoundEvents.ENTITY_CHICKEN_EGG,
-					1.0F,
-					(this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
-			this.dropItem(Items.EGG, 1);
-			this.timeUntilNextEgg = this.rand.nextInt(6000) + 6000;
+		if (!this.world.isRemote) {
+			if (!this.isChild()) {
+				if (!this.isDuckJockey() && --this.timeUntilNextEgg <= 0) {
+					this.playSound(
+							SoundEvents.ENTITY_CHICKEN_EGG,
+							1.0F,
+							(this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
+					this.dropItem(Items.EGG, 1);
+					this.timeUntilNextEgg = this.rand.nextInt(6000) + 6000;
+				}
+				if (--this.timeUntilNextFeather <= 0) {
+					this.dropItem(ZollernItems.duckFeather, 1);
+					this.timeUntilNextFeather = this.rand.nextInt(6000) + 6000;
+				}
+			}
 		}
 	}
 	

@@ -6,7 +6,6 @@ import net.minecraft.block.BlockFalling;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EnumCreatureType;
-import net.minecraft.entity.monster.EntitySkeleton;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
@@ -171,12 +170,10 @@ public class ChunkProviderUpsideDown extends ChunkProviderHell {
 	public List<Biome.SpawnListEntry> getPossibleCreatures(
 			EnumCreatureType creatureType, BlockPos pos) {
 		if (creatureType == EnumCreatureType.MONSTER) {
-			this.spawnList.add(new Biome.SpawnListEntry(EntitySkeleton.class,
-					10, 2, 3));
 			this.spawnList.add(new Biome.SpawnListEntry(
-					EntityShadowSkeleton.class, 10, 2, 3));
+					EntityShadowSkeleton.class, 6, 2, 3));
 			this.spawnList.add(new Biome.SpawnListEntry(EntityScorpion.class,
-					8, 2, 3));
+					4, 2, 3));
 			return this.spawnList;
 		}
 		Biome biome = this.world.getBiome(pos);
@@ -231,44 +228,27 @@ public class ChunkProviderUpsideDown extends ChunkProviderHell {
 									} else if (y >= 62 && y <= 66) {
 										topBlock = biomeTopBlock;
 										fillerBlock = biomeFillerBlock;
-										
-										topBlock = ZollernBlocks.upsideDownSubRock
-												.getDefaultState();
-										fillerBlock = ZollernBlocks.upsideDownSubRock
-												.getDefaultState();
 									}
 									
 									i1 = l;
-									
-									if (topBlock == biomeTopBlock
-											&& fillerBlock == biomeFillerBlock) {
-										primer.setBlockState(x, y, z, topBlock);
-									} else {
-										if (y > 64) {
-											primer.setBlockState(x, y, z,
-													topBlock);
-										} else {
-											primer.setBlockState(x, y, z,
-													fillerBlock);
-										}
-									}
-								} else if (i1 > 0) {
-									i1--;
-									primer.setBlockState(x, y, z, fillerBlock);
 								}
+							} else {
+								i1 = -1;
 							}
-						} else {
-							i1 = -1;
-						}
-						if (y <= 60
-								&& y > 0
-								&& primer.getBlockState(x, y, z) != Blocks.AIR
+							if (y > 0) {
+								if (primer.getBlockState(x, y, z) != Blocks.AIR
 										.getDefaultState()) {
-							primer.setBlockState(x, y, z,
-									ZollernBlocks.upsideDownStone
-											.getDefaultState());
-						} else {
-							if (y == 0) {
+									if (y <= 60 && y > 20) {
+										primer.setBlockState(x, y, z,
+												ZollernBlocks.upsideDownStone
+														.getDefaultState());
+									} else if (y <= 20 && y > 1) {
+										primer.setBlockState(x, y, z,
+												ZollernBlocks.corruptStone
+														.getDefaultState());
+									}
+								}
+							} else if (y == 1) {
 								primer.setBlockState(x, y, z,
 										ZollernBlocks.endrock.getDefaultState());
 							}

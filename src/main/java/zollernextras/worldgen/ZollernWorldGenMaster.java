@@ -64,8 +64,13 @@ public abstract class ZollernWorldGenMaster extends WorldGenerator {
 	}
 	
 	/**
+	 * Prints where the structure spawned at. Useful for printing to the
+	 * console.
+	 * 
 	 * @param pos
-	 * @return
+	 *            The current block position of the structure (best used at the
+	 *            end).
+	 * @return The X, Y, Z coordinates of the structure.
 	 */
 	protected String getSpawnedAtString(BlockPos pos) {
 		return "Spawned at: " + pos.getX() + " " + pos.getY() + " "

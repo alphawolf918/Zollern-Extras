@@ -247,6 +247,14 @@ public class ZollernItems {
 	// Rokkite
 	public static final Item rokkite = new ZollernItemBase("rokkite");
 	
+	// Etrium
+	public static final Item etrium = new ZollernItemBase("etrium");
+	public static final Item crushedEtrium = new ZollernItemBase(
+			"crushedetrium");
+	
+	// Ascendium
+	public static final Item ascendium = new ZollernItemBase("ascendium");
+	
 	// Power Swords
 	public static final Item DIABLO = new SwordDiablo();
 	public static final Item ENDER = new SwordEnder();

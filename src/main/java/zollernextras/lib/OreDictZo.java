@@ -22,7 +22,7 @@ public class OreDictZo {
 		registerOre("oreNetherFueltonium", ZollernBlocks.netherFueltoniumOre);
 		registerOre("oreEnderFueltonium", ZollernBlocks.enderFueltoniumOre);
 		// registerOre("oreUpsideDownFueltonium",
-		// ZollernBlocks.upsideDownFuelOre);
+		// ZollernBlocks.upsideDownFueltoniumOre);
 		registerOre("dustFueltonium", ZollernItems.fuelonite);
 		registerOre("blockFueltonium", ZollernBlocks.fueltoniumBlock);
 		
@@ -51,8 +51,8 @@ public class OreDictZo {
 		registerOre("oreAmaranth", ZollernBlocks.amaranthOre);
 		registerOre("oreNetherAmaranth", ZollernBlocks.netherAmaranthOre);
 		registerOre("oreEnderAmaranth", ZollernBlocks.enderAmaranthOre);
-		// registerOre("oreUpsideDownAmaranth",
-		// ZollernBlocks.upsideDownAmaranthOre);
+		registerOre("oreUpsideDownAmaranth",
+				ZollernBlocks.upsideDownAmaranthOre);
 		registerOre("blockAmaranth", ZollernBlocks.amaranthBlock);
 		
 		// Super Charged Coal
@@ -62,8 +62,8 @@ public class OreDictZo {
 				ZollernBlocks.netherSuperChargedCoalOre);
 		registerOre("oreEnderSuperChargedCoal",
 				ZollernBlocks.enderSuperChargedCoalOre);
-		// registerOre("oreUpsideDownSuperChargedCoal",
-		// ZollernBlocks.upsideDownSpcOre);
+		registerOre("oreUpsideDownSuperChargedCoal",
+				ZollernBlocks.upsideDownSuperChargedCoalOre);
 		registerOre("blockSuperChargedCoal",
 				ZollernBlocks.superChargedCoalBlock);
 		
@@ -158,6 +158,14 @@ public class OreDictZo {
 		// Obsidian
 		registerOre("ingotObsidian", ZollernItems.obsidianIngot);
 		registerOre("dustObsidian", ZollernItems.obsidianDust);
+		
+		// Chargium
+		registerOre("ingotChargium", ZollernItems.chargiumIngot);
+		registerOre("blockChargium", ZollernBlocks.chargiumBlock);
+		registerOre("dustChargium", ZollernItems.chargiumDust);
+		
+		// Feather
+		registerOre("feather", ZollernItems.duckFeather);
 	}
 	
 	public static void registerOre(String strName, Item item) {

@@ -18,6 +18,12 @@ public class InductionSmelterRecipes {
 				ZollernItems.amaranthDust, 2), new ItemStack(
 				ZollernItems.zincDust, 1), new ItemStack(
 				ZollernItems.zollerniumDust));
+		
+		// 1 Shinium Dust + 2 Chargium Dust = 2 Chargium Ingots
+		ThermalExpansionHelper.addSmelterRecipe(5000, new ItemStack(
+				ZollernItems.shiniumDust, 1), new ItemStack(
+				ZollernItems.chargiumDust, 2), new ItemStack(
+				ZollernItems.chargiumIngot, 2));
 	}
 	
 }

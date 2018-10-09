@@ -56,6 +56,10 @@ public class PulverizerRecipes {
 		ThermalExpansionHelper.addPulverizerRecipe(6500, new ItemStack(
 				ZollernBlocks.enderZincOre), new ItemStack(
 				ZollernItems.zincDust, 6));
+		// Upside-Down
+		ThermalExpansionHelper.addPulverizerRecipe(7500, new ItemStack(
+				ZollernBlocks.upsideDownZincOre), new ItemStack(
+				ZollernItems.zincDust, 8));
 		
 		// Zinc Ingot
 		ThermalExpansionHelper.addPulverizerRecipe(600, new ItemStack(
@@ -71,6 +75,14 @@ public class PulverizerRecipes {
 								ItemHelper
 										.getItemFromStack(TFItems.itemMaterial.dustIron),
 								4, 0));
+		ThermalExpansionHelper
+				.addPulverizerRecipe(
+						5500,
+						new ItemStack(ZollernBlocks.upsideDownIronOre),
+						new ItemStack(
+								ItemHelper
+										.getItemFromStack(TFItems.itemMaterial.dustIron),
+								8, 0));
 		
 		// Gold
 		ThermalExpansionHelper
@@ -81,6 +93,14 @@ public class PulverizerRecipes {
 								ItemHelper
 										.getItemFromStack(TFItems.itemMaterial.dustGold),
 								4, 1));
+		ThermalExpansionHelper
+				.addPulverizerRecipe(
+						5500,
+						new ItemStack(ZollernBlocks.upsideDownGoldOre),
+						new ItemStack(
+								ItemHelper
+										.getItemFromStack(TFItems.itemMaterial.dustGold),
+								8, 1));
 		
 		// Copper
 		ThermalExpansionHelper.addPulverizerRecipe(
@@ -88,6 +108,12 @@ public class PulverizerRecipes {
 				new ItemStack(ZollernBlocks.netherCopperOre),
 				new ItemStack(ItemHelper
 						.getItemFromStack(TFItems.itemMaterial.dustCopper), 4,
+						64));
+		ThermalExpansionHelper.addPulverizerRecipe(
+				6400,
+				new ItemStack(ZollernBlocks.upsideDownCopperOre),
+				new ItemStack(ItemHelper
+						.getItemFromStack(TFItems.itemMaterial.dustCopper), 8,
 						64));
 		
 		// Lead
@@ -99,6 +125,14 @@ public class PulverizerRecipes {
 								ItemHelper
 										.getItemFromStack(TFItems.itemMaterial.dustLead),
 								4, 67));
+		ThermalExpansionHelper
+				.addPulverizerRecipe(
+						6400,
+						new ItemStack(ZollernBlocks.upsideDownLeadOre),
+						new ItemStack(
+								ItemHelper
+										.getItemFromStack(TFItems.itemMaterial.dustLead),
+								8, 67));
 		
 		// Tin
 		ThermalExpansionHelper
@@ -109,6 +143,14 @@ public class PulverizerRecipes {
 								ItemHelper
 										.getItemFromStack(TFItems.itemMaterial.dustTin),
 								4, 65));
+		ThermalExpansionHelper
+				.addPulverizerRecipe(
+						6400,
+						new ItemStack(ZollernBlocks.upsideDownTinOre),
+						new ItemStack(
+								ItemHelper
+										.getItemFromStack(TFItems.itemMaterial.dustTin),
+								8, 65));
 		
 		// Silver
 		ThermalExpansionHelper.addPulverizerRecipe(
@@ -116,6 +158,12 @@ public class PulverizerRecipes {
 				new ItemStack(ZollernBlocks.netherSilverOre),
 				new ItemStack(ItemHelper
 						.getItemFromStack(TFItems.itemMaterial.dustSilver), 4,
+						66));
+		ThermalExpansionHelper.addPulverizerRecipe(
+				6400,
+				new ItemStack(ZollernBlocks.upsideDownSilverOre),
+				new ItemStack(ItemHelper
+						.getItemFromStack(TFItems.itemMaterial.dustSilver), 8,
 						66));
 		
 		// Nickle
@@ -125,11 +173,20 @@ public class PulverizerRecipes {
 				new ItemStack(ItemHelper
 						.getItemFromStack(TFItems.itemMaterial.dustNickel), 4,
 						69));
+		ThermalExpansionHelper.addPulverizerRecipe(
+				6400,
+				new ItemStack(ZollernBlocks.upsideDownNickleOre),
+				new ItemStack(ItemHelper
+						.getItemFromStack(TFItems.itemMaterial.dustNickel), 8,
+						69));
 		
 		// Platinum / Shinium
 		ThermalExpansionHelper.addPulverizerRecipe(5400, new ItemStack(
 				ZollernBlocks.netherShiniumOre), new ItemStack(
 				ZollernItems.shiniumDust, 4));
+		ThermalExpansionHelper.addPulverizerRecipe(6400, new ItemStack(
+				ZollernBlocks.upsideDownShiniumOre), new ItemStack(
+				ZollernItems.shiniumDust, 8));
 		
 		// Steel Ore
 		// Overworld
@@ -197,5 +254,15 @@ public class PulverizerRecipes {
 		// Obsidian Block -> Obsidian Dust
 		ThermalExpansionHelper.addPulverizerRecipe(1200, new ItemStack(
 				Blocks.OBSIDIAN), new ItemStack(ZollernItems.obsidianDust, 8));
+		
+		// Etrium -> Crushed Etrium
+		ThermalExpansionHelper.addPulverizerRecipe(1200, new ItemStack(
+				ZollernItems.etrium), new ItemStack(ZollernItems.crushedEtrium,
+				8));
+		
+		// Corrupt Chargium Ore -> Chargium Dust
+		ThermalExpansionHelper.addPulverizerRecipe(2400, new ItemStack(
+				ZollernBlocks.corruptChargiumOre), new ItemStack(
+				ZollernItems.chargiumDust, 2));
 	}
 }

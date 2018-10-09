@@ -10,6 +10,7 @@ public class ZDamageSrc extends DamageSource {
 	public static ZDamageSrc deathShadows = new ZDamageSrc("shadows");
 	public static ZDamageSrc deathInfection = new ZDamageSrc("infection");
 	public static ZDamageSrc deathLight = new ZDamageSrc("light");
+	public static ZDamageSrc deathCorruption = new ZDamageSrc("corruption");
 	
 	public ZDamageSrc(String par1) {
 		super(par1);

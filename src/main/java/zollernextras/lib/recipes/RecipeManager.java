@@ -3,9 +3,13 @@ package zollernextras.lib.recipes;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.ForgeModContainer;
+import net.minecraftforge.fluids.UniversalBucket;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import zanextras.items.ZaneItems;
 import zollernextras.api.recipe.RecipeHelper;
 import zollernextras.blocks.ZollernBlocks;
+import zollernextras.blocks.fluid.ZollernFluids;
 import zollernextras.config.ZEConfig;
 import zollernextras.items.ZollernItems;
 import zollernextras.lib.modhelper.ModHelperBase;
@@ -131,6 +135,14 @@ public class RecipeManager {
 			RecipeHelper.addBricks(ZollernBlocks.canyonRock,
 					ZollernBlocks.canyonRockBricks);
 			
+			// Corrupt Stone -> Corrupt Stone Bricks
+			RecipeHelper.addBricks(ZollernBlocks.corruptStone,
+					ZollernBlocks.corruptStoneBricks);
+			
+			// Upside-Down Stone -> Upside-Down Stone Bricks
+			RecipeHelper.addBricks(ZollernBlocks.upsideDownStone,
+					ZollernBlocks.upsideDownStoneBricks);
+			
 			// Cold Smoothstone
 			ItemStack css = new ItemStack(ZollernBlocks.coldSandSmooth, 4);
 			GameRegistry.addRecipe(css, new Object[] { "CC ", "CC ", "   ",
@@ -196,6 +208,12 @@ public class RecipeManager {
 							Items.BLAZE_POWDER, 'S',
 							ZollernItems.blackMarbleStick });
 			
+			// Sea Lanterns
+			GameRegistry.addRecipe(new ItemStack(Blocks.SEA_LANTERN),
+					new Object[] { "L L", " S ", "L L", 'L',
+							ZollernItems.lapisIngot, 'S',
+							ZollernBlocks.shinestone });
+			
 			// Black Cave Marble Block
 			GameRegistry.addRecipe(new ItemStack(ZollernBlocks.blackCaveMarble,
 					8), new Object[] { "III", "IMI", "III", 'I',
@@ -234,6 +252,66 @@ public class RecipeManager {
 							ZollernBlocks.witheriteBlock, 'O',
 							ZollernBlocks.hellObsidian, 'S',
 							ZollernItems.shadowEssence });
+			
+			// Shinium
+			GameRegistry.addRecipe(new ItemStack(ZollernItems.shiniumIngot, 1),
+					new Object[] { "DLD", "DSD", "DLD", 'D', Items.DIAMOND,
+							'S', ZollernItems.shinestoneIngot, 'L',
+							ZollernItems.lapisIngot });
+			
+			// Sea Lamps
+			GameRegistry.addRecipe(new ItemStack(ZollernBlocks.seaLamp),
+					new Object[] { "L L", " S ", "L L", 'L',
+							ZollernItems.lapisIngot, 'S',
+							ZollernBlocks.shinestone });
+			
+			// Shinestone Crystal Bricks
+			RecipeHelper.addBricks(ZollernItems.shinestoneIngot,
+					ZollernBlocks.shinestoneCrystal);
+			RecipeHelper.addBricks(ZollernBlocks.shinestoneCrystal,
+					ZollernBlocks.shinestonePolished, 4);
+			RecipeHelper.addBricks(ZollernBlocks.shinestonePolished,
+					ZollernBlocks.shinestoneCrystalBricks, 4);
+			
+			// Chargium Fluid
+			ItemStack filledBucket = UniversalBucket.getFilledBucket(
+					ForgeModContainer.getInstance().universalBucket,
+					ZollernFluids.fluidChargium);
+			
+			// Chargium Dust
+			GameRegistry.addRecipe(new ItemStack(ZollernItems.chargiumDust, 8),
+					new Object[] { "SS ", "ZZ ", "F  ", 'S',
+							ZollernItems.shiniumDust, 'Z',
+							ZollernItems.zollerniumDust, 'F', filledBucket });
+			
+			// Shadow Bone -> Shadow Bone Block
+			RecipeHelper.fullBlockCraft(ZollernBlocks.shadowBoneBlock,
+					ZollernItems.shadowBone);
+			
+			// Swamp Clay Ball -> Swamp Clay Block
+			RecipeHelper.addBricks(ZollernItems.swampClayBall,
+					ZollernBlocks.swampClay, 4);
+			
+			// Radium (Item)
+			if (ModHelperBase.useZaneExtras) {
+				GameRegistry.addShapelessRecipe(new ItemStack(
+						ZollernItems.radium, 4), new Object[] {
+						ZollernItems.superChargedCoal, ZaneItems.staria });
+			} else {
+				GameRegistry.addRecipe(new ItemStack(ZollernItems.radium, 2),
+						new Object[] { "GSG", "GAG", "GSG", 'G',
+								Blocks.GOLD_BLOCK, 'S',
+								ZollernBlocks.superChargedCoalBlock, 'A',
+								ZollernBlocks.azuriteBlock });
+			}
+			
+			// Radium (Block)
+			RecipeHelper.fullBlockCraft(ZollernBlocks.radiumBlock,
+					ZollernItems.radium);
+			
+			// Shadow Essence
+			RecipeHelper.fullBlockCraft(ZollernBlocks.shadowEssenceBlock,
+					ZollernItems.shadowEssence);
 		}
 	}
 	
@@ -242,6 +320,22 @@ public class RecipeManager {
 		public static void init() {
 			// Rotten Flesh -> Leather
 			RecipeHelper.addSmelting(Items.ROTTEN_FLESH, Items.LEATHER, 0.5F);
+			
+			// Nether Iron Ore
+			RecipeHelper.addSmelting(ZollernBlocks.netherIronOre,
+					new ItemStack(Items.IRON_INGOT, 2), 1.4F);
+			
+			// Upside-Down Iron Ore
+			RecipeHelper.addSmelting(ZollernBlocks.upsideDownIronOre,
+					new ItemStack(Items.IRON_INGOT, 4), 1.6F);
+			
+			// Nether Gold Ore
+			RecipeHelper.addSmelting(ZollernBlocks.netherIronOre,
+					new ItemStack(Items.IRON_INGOT, 2), 1.4F);
+			
+			// Upside-Down Gold Ore
+			RecipeHelper.addSmelting(ZollernBlocks.upsideDownGoldOre,
+					new ItemStack(Items.GOLD_INGOT, 4), 1.6F);
 			
 			// Amaranth Ore -> Amaranth Ingot
 			RecipeHelper.addSmelting(ZollernBlocks.amaranthOre,
@@ -291,6 +385,10 @@ public class RecipeManager {
 			RecipeHelper.addSmelting(ZollernBlocks.enderZincOre, new ItemStack(
 					ZollernItems.zincIngot, 3), 1.6F);
 			
+			// Upside-Down Zinc Ore -> Zinc Ingot
+			RecipeHelper.addSmelting(ZollernBlocks.upsideDownZincOre,
+					new ItemStack(ZollernItems.zincIngot, 4), 1.8F);
+			
 			// Zinc Dust -> Zinc Ingot
 			RecipeHelper.addSmelting(ZollernItems.zincDust,
 					ZollernItems.zincIngot, 1.2F);
@@ -329,32 +427,64 @@ public class RecipeManager {
 						.addSmelting(ZollernBlocks.netherCopperOre,
 								new ItemStack(BlockOre.oreCopper.getItem(), 2,
 										0), 2.5F);
+				// Upside-Down Copper Ore -> Copper Ore
+				RecipeHelper
+						.addSmelting(ZollernBlocks.upsideDownCopperOre,
+								new ItemStack(BlockOre.oreCopper.getItem(), 4,
+										0), 2.5F);
 				
 				// Nether Tin Ore -> Tin Ore
 				RecipeHelper.addSmelting(ZollernBlocks.netherTinOre,
 						new ItemStack(BlockOre.oreTin.getItem(), 2, 1), 2.5F);
+				// Upside-Down Tin Ore -> Tin Ore
+				RecipeHelper.addSmelting(ZollernBlocks.upsideDownTinOre,
+						new ItemStack(BlockOre.oreTin.getItem(), 4, 1), 2.5F);
 				
 				// Nether Lead Ore -> Lead Ore
 				RecipeHelper.addSmelting(ZollernBlocks.netherLeadOre,
 						new ItemStack(BlockOre.oreLead.getItem(), 2, 3), 2.5F);
+				// Upside-Down Lead Ore -> Lead Ore
+				RecipeHelper.addSmelting(ZollernBlocks.upsideDownLeadOre,
+						new ItemStack(BlockOre.oreLead.getItem(), 4, 3), 2.5F);
 				
 				// Nether Silver Ore -> Silver Ore
 				RecipeHelper
 						.addSmelting(ZollernBlocks.netherSilverOre,
 								new ItemStack(BlockOre.oreSilver.getItem(), 2,
 										2), 2.5F);
+				// Upside-Down Silver Ore -> Silver Ore
+				RecipeHelper
+						.addSmelting(ZollernBlocks.upsideDownSilverOre,
+								new ItemStack(BlockOre.oreSilver.getItem(), 4,
+										2), 2.5F);
 				
-				// Nether Nickel Ore -> Nickel Ore
+				// Nether Nickle Ore -> Nickle Ore
 				RecipeHelper
 						.addSmelting(ZollernBlocks.netherNickleOre,
 								new ItemStack(BlockOre.oreNickel.getItem(), 2,
 										5), 2.5F);
+				// Upside-Down Nickel Ore -> Nickel Ore
+				RecipeHelper
+						.addSmelting(ZollernBlocks.upsideDownNickleOre,
+								new ItemStack(BlockOre.oreNickel.getItem(), 4,
+										5), 2.5F);
 			}
 			
 			// Flour -> Bread
-			RecipeHelper.addSmelting(ZollernItems.flour, Items.BREAD, 0.2F);
+			RecipeHelper.addSmelting(ZollernItems.flour, new ItemStack(
+					Items.BREAD, 2), 0.4F);
+			
+			// Shinium Ore
+			RecipeHelper.addSmelting(ZollernBlocks.netherShiniumOre,
+					new ItemStack(ZollernItems.shiniumIngot, 2), 1.6F);
+			RecipeHelper.addSmelting(ZollernBlocks.upsideDownShiniumOre,
+					new ItemStack(ZollernItems.shiniumIngot, 4), 1.8F);
 			
 			// Shinium (Dust -> Ingot)
+			RecipeHelper.addSmelting(ZollernItems.shiniumDust,
+					ZollernItems.shiniumIngot, 1.6F);
+			
+			// Shinestone (Dust -> Ingot)
 			RecipeHelper.addSmelting(ZollernItems.shinestoneDust,
 					ZollernItems.shinestoneIngot, 1.6F);
 			
@@ -366,9 +496,21 @@ public class RecipeManager {
 			RecipeHelper.addSmelting(new ItemStack(Items.DYE, 1, 4),
 					new ItemStack(ZollernItems.lapisIngot, 1), 1.0F);
 			
-			// Swamp Clay Ball -> Swamp Clay Block
-			RecipeHelper.addBricks(ZollernItems.swampClayBall,
-					ZollernBlocks.swampClay, 4);
+			// Upside-Down Cobble -> Upside-Down Stone
+			RecipeHelper.addSmelting(ZollernBlocks.upsideDownCobble,
+					ZollernBlocks.upsideDownStone, 1.5F);
+			
+			// Corrupt Cobble -> Corrupt Stone
+			RecipeHelper.addSmelting(ZollernBlocks.corruptCobble,
+					ZollernBlocks.corruptStone, 1.5F);
+			
+			// Corrupt Chargium Ore -> Chargium Dust
+			RecipeHelper.addSmelting(ZollernBlocks.corruptChargiumOre,
+					ZollernItems.chargiumDust, 4.5F);
+			
+			// Crushed Etrium -> Etrium
+			RecipeHelper.addSmelting(ZollernItems.crushedEtrium,
+					ZollernItems.etrium, 0.5F);
 		}
 		
 	}

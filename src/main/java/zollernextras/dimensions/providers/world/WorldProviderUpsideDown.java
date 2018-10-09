@@ -4,7 +4,6 @@ import javax.annotation.Nullable;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
-import net.minecraft.world.DimensionType;
 import net.minecraft.world.WorldProviderHell;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.IChunkGenerator;
@@ -34,10 +33,10 @@ public class WorldProviderUpsideDown extends WorldProviderHell {
 		return true;
 	}
 	
-	@Override
-	public DimensionType getDimensionType() {
-		return DimensionType.NETHER;
-	}
+	// @Override
+	// public DimensionType getDimensionType() {
+	// return DimensionType.NETHER;
+	// }
 	
 	@Override
 	public boolean isSurfaceWorld() {
@@ -69,12 +68,12 @@ public class WorldProviderUpsideDown extends WorldProviderHell {
 	@Override
 	@Nullable
 	public BlockPos getSpawnCoordinate() {
-		return new BlockPos(0, 128, 0);
+		return new BlockPos(0, 32, 0);
 	}
 	
 	@Override
 	public int getAverageGroundLevel() {
-		return 64;
+		return 31;
 	}
 	
 	@Override

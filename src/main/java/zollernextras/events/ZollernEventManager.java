@@ -1,6 +1,7 @@
 package zollernextras.events;
 
 import java.util.Random;
+import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -30,11 +31,14 @@ import net.minecraftforge.event.entity.player.PlayerEvent.NameFormat;
 import net.minecraftforge.event.world.BlockEvent.BreakEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import zollernextras.blocks.ICorruptBlock;
 import zollernextras.blocks.ZollernBlocks;
 import zollernextras.items.ZollernItems;
 import zollernextras.items.armor.ZollernArmor;
 import zollernextras.items.armor.ZollernArmorMaterials;
+import zollernextras.lib.ZDamageSrc;
 import zollernextras.mobs.entities.EntityHellFish;
+import zollernextras.mobs.entities.EntityShadowSkeleton;
 import zollernextras.mobs.entities.IShadeEntity;
 
 public class ZollernEventManager {
@@ -42,6 +46,7 @@ public class ZollernEventManager {
 	@SubscribeEvent(priority = EventPriority.HIGH, receiveCanceled = true)
 	public void onLivingUpdateEvent(LivingUpdateEvent event) {
 		EntityLivingBase entity = event.getEntityLiving();
+		Random rand = new Random();
 		if (entity instanceof EntityPlayer) {
 			EntityPlayer player = (EntityPlayer) entity;
 			NonNullList<ItemStack> armorInventory = player.inventory.armorInventory;
@@ -121,6 +126,23 @@ public class ZollernEventManager {
 										.getSlotFor(repairItemStack), 1);
 							}
 						}
+					}
+				}
+			}
+			
+			// Damage the player when they walk on Corrupt blocks.
+			// TODO: Add Anti-Corruption potion to prevent damage
+			BlockPos playerLocation = new BlockPos(player.posX,
+					(player.posY - 1), player.posZ);
+			World world = player.getEntityWorld();
+			IBlockState blockState = world.getBlockState(playerLocation);
+			Block block = blockState.getBlock();
+			if (block instanceof ICorruptBlock) {
+				ICorruptBlock corruptBlock = (ICorruptBlock) block;
+				if (corruptBlock.isCorrupt()) {
+					if (rand.nextInt(14) <= 4) {
+						player.attackEntityFrom(ZDamageSrc.deathCorruption,
+								5.0F);
 					}
 				}
 			}
@@ -215,10 +237,21 @@ public class ZollernEventManager {
 					theEntity.posY, theEntity.posZ, new ItemStack(
 							Items.GHAST_TEAR, 1));
 			worldObj.spawnEntity(item);
-		} else if (theEntity instanceof IShadeEntity) {
+		} else if (theEntity instanceof EntityShadowSkeleton) {
 			Random rand = new Random();
 			int randInt = rand.nextInt(100);
-			if (randInt <= 60) {
+			if (randInt <= 85) {
+				ItemStack itemStack = new ItemStack(ZollernItems.shadowBone, 1);
+				EntityItem itemEntity = new EntityItem(worldObj,
+						theEntity.posX, theEntity.posY, theEntity.posZ,
+						itemStack);
+				worldObj.spawnEntity(itemEntity);
+			}
+		}
+		if (theEntity instanceof IShadeEntity) {
+			Random rand = new Random();
+			int randInt = rand.nextInt(100);
+			if (randInt <= 65) {
 				ItemStack itemStack = new ItemStack(ZollernItems.shadowEssence,
 						1);
 				EntityItem itemEntity = new EntityItem(worldObj,

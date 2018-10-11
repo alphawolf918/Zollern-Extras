@@ -13,6 +13,7 @@ import zollernextras.mobs.entities.EntityDuck;
 import zollernextras.mobs.entities.EntityHellDuck;
 import zollernextras.mobs.entities.EntityHellFish;
 import zollernextras.mobs.entities.EntityMegaCreeper;
+import zollernextras.mobs.entities.EntityMummy;
 import zollernextras.mobs.entities.EntityScorpion;
 import zollernextras.mobs.entities.EntityShadowSkeleton;
 import com.google.common.base.CaseFormat;
@@ -84,6 +85,23 @@ public class MobRegistry {
 				BiomeList.biomeMudSwamp, BiomeList.biomeGrandCanyon,
 				Biomes.SAVANNA, Biomes.BIRCH_FOREST,
 				Biomes.MUTATED_REDWOOD_TAIGA, Biomes.MESA);
+		
+		// Mummy
+		registerEntity("mummy", EntityMummy.class, entityId++, 0x8b990,
+				0xf5eeb3);
+		EntityRegistry.addSpawn(EntityMummy.class, ZEConfig.mobMummySpawnRate,
+				2, 4, EnumCreatureType.MONSTER, Biomes.PLAINS, Biomes.FOREST,
+				Biomes.DESERT, Biomes.EXTREME_HILLS, Biomes.JUNGLE,
+				Biomes.SWAMPLAND, Biomes.TAIGA, Biomes.OCEAN,
+				Biomes.EXTREME_HILLS, Biomes.EXTREME_HILLS_EDGE,
+				Biomes.DESERT_HILLS, Biomes.RIVER, Biomes.BEACH,
+				Biomes.FOREST_HILLS, Biomes.FROZEN_OCEAN, Biomes.FROZEN_RIVER,
+				Biomes.ICE_MOUNTAINS, Biomes.ICE_PLAINS, Biomes.JUNGLE_HILLS,
+				Biomes.TAIGA_HILLS, BiomeList.biomeIceDesert,
+				BiomeList.biomeIceMountains, BiomeList.biomeRedshroomField,
+				BiomeList.biomeSlimeLands, BiomeList.biomeMudSwamp,
+				BiomeList.biomeGrandCanyon, Biomes.SAVANNA,
+				Biomes.BIRCH_FOREST, Biomes.MUTATED_REDWOOD_TAIGA, Biomes.MESA);
 		
 		// Duck
 		registerEntity("duck", EntityDuck.class, entityId++, 0x008b00, 0x8b2200);

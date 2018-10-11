@@ -1,14 +1,10 @@
 package zollernextras.blocks.upsidedown.corrupt;
 
 import java.util.Random;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
+import zollernextras.blocks.ICorruptBlock;
 import zollernextras.blocks.ZollernBlockBase;
-import zollernextras.lib.ZDamageSrc;
 
-public class CorruptBlock extends ZollernBlockBase {
+public class CorruptBlock extends ZollernBlockBase implements ICorruptBlock {
 	
 	private static CorruptBlock instance;
 	Random rand = new Random();
@@ -20,15 +16,8 @@ public class CorruptBlock extends ZollernBlockBase {
 	}
 	
 	@Override
-	public void onEntityWalk(World worldIn, BlockPos pos, Entity entityIn) {
-		if (!worldIn.isRemote) {
-			if (entityIn instanceof EntityPlayer) {
-				EntityPlayer player = (EntityPlayer) entityIn;
-				if (rand.nextInt(10) <= 4) {
-					player.attackEntityFrom(ZDamageSrc.deathCorruption, 8.0F);
-				}
-			}
-		}
+	public boolean isCorrupt() {
+		return true;
 	}
 	
 }

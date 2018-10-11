@@ -70,7 +70,7 @@ public class EntityShadowSkeleton extends AbstractSkeleton implements
 			DamageSource dmgSrc) {
 		Random rand = new Random();
 		if (rand.nextInt(100) <= 15) {
-			this.dropItem(ZollernItems.shadowEssence, 1);
+			this.dropItem(ZollernItems.shadowBone, 1);
 		}
 	}
 	

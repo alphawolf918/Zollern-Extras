@@ -2,7 +2,7 @@
 
 * Slightly increased damage dealt by hot blocks.
 * Explosive blocks now show their explosion percentage in inventory.
-* Increased chance for Shadow Skeletons to drop Shadow Bones.
+* Increased chance for Shadow Skeletons to drop Shadow Bones and Shadow Essence.
     * Increased their health by 5.
 * Increased chance for Ender Tower to spawn.
 * Added Mithril and Iridium (from Thermal Expansion) to Miner's Land biome ore spawn chances.
@@ -20,7 +20,7 @@
     * Can be crafted using Shinestone and Lapis Ingots.
     * Generate naturally in rivers and oceans (including deep oceans).
 * Black Marble can now be mined using the same harvest level as White Marble.
-* Shadow Skeletons and Scorpions now drop Shadow Essence.
+* Shadow Skeletons, Scorpions and Mummies now drop Shadow Essence.
 * Removed regular Skeletons from Upside-Down spawns.
 * Added two corruption blocks and a Corruption biome to the Upside-Down.
 * Corruption layer now spawns in the Upside-Down at layers 20 and below.
@@ -47,7 +47,7 @@
     * Shinestone Crystal crafted from four pieces of Shinestone block.
     * Polished Shinestone crafted from four pieces of Shinestone Crystal.
     * Shinestone Crystal bricks crafted from four pieces of Polished Shinestone.
-* 
+* Added Mummies.
 
 ==== FIXES ====
 * Fixed Shinium Ingots not having their 1.7.10 crafting recipe.

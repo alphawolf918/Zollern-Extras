@@ -9,6 +9,7 @@ public class BiomeCorruption extends ZollernUpsideDownBiome {
 	public BiomeCorruption() {
 		super(new Biome.BiomeProperties("Corruption"), "corruption");
 		this.setBlocks(ZollernBlocks.corruptStone);
+		this.setSkyColor(0xa020F0);
 		this.setBiomeWeight(4);
 		DimensionRegistry.addUpsideDownBiome(this, this.getBiomeWeight());
 	}

@@ -11,7 +11,7 @@ public class CorruptGemOre extends ZollernGemOre implements ICorruptBlock {
 	}
 	
 	@Override
-	public boolean isCorrupt() {
+	public boolean canCorrupt() {
 		return true;
 	}
 	

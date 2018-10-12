@@ -16,7 +16,7 @@ public class CorruptBlock extends ZollernBlockBase implements ICorruptBlock {
 	}
 	
 	@Override
-	public boolean isCorrupt() {
+	public boolean canCorrupt() {
 		return true;
 	}
 	

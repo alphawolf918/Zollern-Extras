@@ -4,14 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.potion.Potion;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import zollernextras.blocks.fluid.IZollernModelRegister;
 import zollernextras.gui.GuiBiomeType;
+import zollernextras.lib.ZDamageSrc;
 import zollernextras.lib.ZollernHelper;
 import zollernextras.mobs.MobRenders;
+import zollernextras.potions.ZollernPotion;
 
 public class ClientProxy extends CommonProxy {
 	
@@ -61,7 +64,17 @@ public class ClientProxy extends CommonProxy {
 	}
 	
 	@Override
-	public void doPotionEffect(EntityPlayer player, int potionId) {
-		
+	public void doPotionEffect(EntityPlayer player, Potion potionId) {
+		// Do NOT use an "else if" here! There is a possibility that the Player
+		// could have more than one effect, and if we did an "else if" clause,
+		// then they would only get one or the other - we want them to get both.
+		// An "else if" is used for infected and radiance because they can only
+		// have one or the other.
+		if (potionId == ZollernPotion.infected) {
+			player.attackEntityFrom(ZDamageSrc.deathInfection,
+					ZollernPotion.infectionDamage);
+		} else if (potionId == ZollernPotion.radiance) {
+			// TODO
+		}
 	}
 }

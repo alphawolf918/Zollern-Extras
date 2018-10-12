@@ -175,8 +175,8 @@ public class ChunkProviderUpsideDown extends ChunkProviderHell {
 					EntityShadowSkeleton.class, 6, 2, 3));
 			this.spawnList.add(new Biome.SpawnListEntry(EntityScorpion.class,
 					4, 2, 3));
-			this.spawnList.add(new Biome.SpawnListEntry(EntityMummy.class, 5,
-					2, 3));
+			this.spawnList.add(new Biome.SpawnListEntry(EntityMummy.class, 4,
+					1, 2));
 			return this.spawnList;
 		}
 		Biome biome = this.world.getBiome(pos);
@@ -238,24 +238,41 @@ public class ChunkProviderUpsideDown extends ChunkProviderHell {
 							} else {
 								i1 = -1;
 							}
-							if (y > 0) {
-								if (primer.getBlockState(x, y, z) != Blocks.AIR
-										.getDefaultState()) {
-									if (y <= 60 && y > 20) {
-										primer.setBlockState(x, y, z,
-												ZollernBlocks.upsideDownStone
-														.getDefaultState());
-									} else if (y <= 20 && y > 1) {
-										primer.setBlockState(x, y, z,
-												ZollernBlocks.corruptStone
-														.getDefaultState());
-									}
+							
+							i1 = l;
+							
+							if (topBlock == biomeTopBlock
+									&& fillerBlock == biomeFillerBlock) {
+								primer.setBlockState(x, y, z, topBlock);
+							} else {
+								if (y > 64) {
+									primer.setBlockState(x, y, z, topBlock);
+								} else {
+									primer.setBlockState(x, y, z, fillerBlock);
 								}
-							} else if (y == 1) {
+							}
+						} else if (i1 > 0) {
+							i1--;
+							primer.setBlockState(x, y, z, fillerBlock);
+						}
+					}
+					
+					if (y > 1) {
+						if (primer.getBlockState(x, y, z) != Blocks.AIR
+								.getDefaultState()) {
+							if (y <= 60 && y > 20) {
 								primer.setBlockState(x, y, z,
-										ZollernBlocks.endrock.getDefaultState());
+										ZollernBlocks.upsideDownStone
+												.getDefaultState());
+							} else if (y <= 20 && y > 1) {
+								primer.setBlockState(x, y, z,
+										ZollernBlocks.corruptStone
+												.getDefaultState());
 							}
 						}
+					} else if (y <= 1) {
+						primer.setBlockState(x, y, z,
+								ZollernBlocks.endrock.getDefaultState());
 					}
 				}
 			}
@@ -377,7 +394,7 @@ public class ChunkProviderUpsideDown extends ChunkProviderHell {
 		Biome biome = this.world.getBiome(blockpos.add(16, 0, 16));
 		ChunkPos chunkpos = new ChunkPos(x, z);
 		
-		if (ZollernHelper.getRNGChance(4, 200)) {
+		if (ZollernHelper.getRNGChance(50, 200)) {
 			for (int j2 = 0; j2 < 16; ++j2) {
 				int i3 = this.rand.nextInt(16) + 8;
 				int l3 = this.rand.nextInt(256);
@@ -391,10 +408,12 @@ public class ChunkProviderUpsideDown extends ChunkProviderHell {
 			int genX = this.rand.nextInt(16) + 8;
 			int genY = this.rand.nextInt(256);
 			int genZ = this.rand.nextInt(16) + 8;
-			if (genY >= 50 && genY <= 128) {
+			if (genY >= 50 && genY <= 130) {
 				(new WGLake(Blocks.AIR, ZollernBlocks.upsideDownSurfaceRock))
 						.generate(this.world, this.rand,
 								blockpos.add(genX, genY, genZ));
+				(new WGLake(Blocks.AIR, ZollernBlocks.witherrack)).generate(
+						this.world, this.rand, blockpos.add(genX, genY, genZ));
 			}
 		}
 		

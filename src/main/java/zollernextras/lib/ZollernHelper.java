@@ -36,9 +36,7 @@ public class ZollernHelper {
 	}
 	
 	public static int rngNumber(int min, int max) {
-		if (min >= max) {
-			return 0;
-		}
+		assert min >= max : " Min can't be lower than max!";
 		Random rand = new Random();
 		int randInt = rand.nextInt(max);
 		if (randInt < min) {
@@ -146,8 +144,8 @@ public class ZollernHelper {
 	public static void registerDimension(String dimName,
 			String dimUnlocalizedName, int dimID,
 			Class<? extends WorldProvider> worldProvider) {
-		DimensionType dim = DimensionType.register(dimName,
-				dimUnlocalizedName, dimID, worldProvider, false);
+		DimensionType dim = DimensionType.register(dimName, dimUnlocalizedName,
+				dimID, worldProvider, false);
 		DimensionManager.registerDimension(dimID, dim);
 	}
 	

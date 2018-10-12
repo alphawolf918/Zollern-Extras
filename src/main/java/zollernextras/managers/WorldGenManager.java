@@ -676,7 +676,7 @@ public class WorldGenManager implements IWorldGenerator {
 		
 		// Radiance Ore
 		addUpsideDownOreSpawn(ZollernBlocks.upsideDownRadianceOre, world,
-				random, Xcoord, Zcoord, 16, 16, 4 + random.nextInt(6), 5, 19,
+				random, Xcoord, Zcoord, 16, 16, 2 + random.nextInt(2), 10, 19,
 				128);
 		
 		// Obsidian
@@ -699,13 +699,17 @@ public class WorldGenManager implements IWorldGenerator {
 		addCorruptOreSpawn(ZollernBlocks.corruptChargiumOre, world, random,
 				Xcoord, Zcoord, 16, 16, 2 + random.nextInt(2), 8, 1, 128);
 		
+		// Zucrite
+		addCorruptOreSpawn(ZollernBlocks.corruptZucriteOre, world, random,
+				Xcoord, Zcoord, 16, 16, 2 + random.nextInt(2), 4, 1, 128);
+		
 		// Corrupt Rock
 		addCorruptOreSpawn(ZollernBlocks.corruptRock, world, random, Xcoord,
-				Zcoord, 16, 16, 6 + random.nextInt(8), 45, 1, 128);
+				Zcoord, 16, 16, 10 + random.nextInt(8), 45, 1, 128);
 		
 		// Corrupt Creepstone
 		addCorruptOreSpawn(ZollernBlocks.corruptCreepStone, world, random,
-				Xcoord, Zcoord, 16, 16, 8 + random.nextInt(10), 45, 1, 128);
+				Xcoord, Zcoord, 16, 16, 10 + random.nextInt(10), 45, 1, 128);
 	}
 	
 	public void addOreSpawn(Block block, World world, Random random,

@@ -23,6 +23,7 @@ import zollernextras.lib.modhelper.BRHelper;
 import zollernextras.lib.modhelper.ModHelperBase;
 import zollernextras.lib.recipes.RecipeManager;
 import zollernextras.mobs.MobRegistry;
+import zollernextras.potions.ZollernPotion;
 import zollernextras.proxies.CommonProxy;
 import zollernextras.proxies.IProxy;
 import zollernextras.util.ZollernRegistry;
@@ -58,6 +59,7 @@ public class ZollernExtrasMod {
 		ZollernSoundEvents.init();
 		MobRegistry.init();
 		ZollernFluids.init();
+		ZollernPotion.init();
 		ZollernRegistry.registerAll(event);
 		ZollernTabs.init();
 		if (ZEConfig.enableStackChanges) {

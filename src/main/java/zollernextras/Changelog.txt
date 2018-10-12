@@ -1,14 +1,17 @@
-[Zollern Extras - v1.6.0]
+[Zollern Extras - v1.6.0 - The Corrupt Shadows Update]
 
+* Massively revamped the Upside-Down dimension.
 * Slightly increased damage dealt by hot blocks.
 * Explosive blocks now show their explosion percentage in inventory.
 * Increased chance for Shadow Skeletons to drop Shadow Bones and Shadow Essence.
     * Increased their health by 5.
-* Increased chance for Ender Tower to spawn.
+* Increased chance for Ender Tower to spawn in The End.
 * Added Mithril and Iridium (from Thermal Expansion) to Miner's Land biome ore spawn chances.
 * Hell Obsidian and Blaze Rock now emit a light value equal to Glowstone.
 * Added recipe to craft Radium.
+    * Differs depending on if Zane Extras is present or not.
 * Increased chance for Nether Shinium Ore to explode by 10.
+* Increased spawn rate of Azurite.
 * Added the Radiant Block.
     * Crafted from 9 pieces of Radium.
     * Gives off a light value equal to Glowstone.
@@ -22,19 +25,20 @@
 * Black Marble can now be mined using the same harvest level as White Marble.
 * Shadow Skeletons, Scorpions and Mummies now drop Shadow Essence.
 * Removed regular Skeletons from Upside-Down spawns.
-* Added two corruption blocks and a Corruption biome to the Upside-Down.
+* Added Corruption Blocks and a Corruption biome to the Upside-Down.
+    * Walking on Corrupt Blocks will damage the Player unless the Anti-Corruption potion effect is active.
 * Corruption layer now spawns in the Upside-Down at layers 20 and below.
-* Added Corrupt Etrium Ore to corruption blocks.
+* Added Corrupt Etrium Ore to Corruption Blocks.
     * Drops Etrium.
         * Can be crushed.
             * Crushed Etrium can be smelted back into regular Etrium.
-* Added Corrupt Ascendium Ore to corruption blocks.
+* Added Corrupt Ascendium Ore to Corruption Blocks.
     * Drops Ascendium.
         * Used in making Ascendant Amaranth Ingots.
 * Added Corrupt Stone Bricks.
 * Added Corrupt Chargium Ore.
     * Can be smelted and pulverized into Chargium Dust.
-* Added Corrupt Rock and Corrupt Creep Stone to Corruption layer.
+* Added Corrupt Rock and Corrupt Creepstone to Corruption layer.
 * Increased chance for Grand Canyon biome to spawn.
 * Added Creepstone and Creepdirt.
 * Added Shadow Essence Block.
@@ -44,14 +48,43 @@
 * Added a lot more ores to the Upside-Down.
 * Flour now cooks into 2 pieces of bread.
 * Added Shinestone Crystal, Polished Shinestone and Shinestone Crystal Bricks.
-    * Shinestone Crystal crafted from four pieces of Shinestone block.
+    * Shinestone Crystal crafted from four pieces of Shinestone Ingots.
     * Polished Shinestone crafted from four pieces of Shinestone Crystal.
     * Shinestone Crystal bricks crafted from four pieces of Polished Shinestone.
 * Added Mummies.
+    * Stronger and faster than Zombies.
+    * Have a chance to drop paper.
+* Added the Radiance potion effect.
+    * Protects the Player from "shadow damage" in the Upside-Down.
+* Radium is now automatically consumed when in the Upside-Down.
+    * One piece of Radium is consumed at a time, providing 5 minutes worth of the Radiance potion effect.
+* Radium armor now sets the Radiance potion effect active for as long as the full set is worn.
+* Added Zucrite.
+    * Needed to make the Bedrock Breaker.
+* New Induction Smelter (Thermal Expansion) recipes:
+    * 2 Ascendium + 1 Amaranth Ingot = 1 Ascendant Amaranth Ingot
+    * 1 Crushed Etrium + 1 Ascendant Amaranth Ingot = 1 Zucrite Dust
+    * 1 Zucrite Dust + 1 Zollernium Ingot = 1 Zucrite Ingot
+* Radiance Ore now rarely generates in the Upside-Down.
+* Added the "Infected" potion effect.
+    * Acts like a virus, which damages the Player.
+        * While the Player is infected, any other Players within ~5(?) blocks of them will also become infected.
+* Caves now spawn in the Upside-Down, just like Nether caves.
+* Mob Spawner "Dungeons" now spawn in the Upside-Down, with various Shadow (IShadeEntity) mobs as possibilities.
+* Zucrite Ore now spawns extremely rarely in the Corrupt layer in the Upside-Down.
+* Villagers will now turn into Witches when struck by lightning.
+* Increased chance for Coal Hills biome to generate.
+* Added a crafting recipe for the Bedrock Breaker.
+* Added Fire Garnet, Static Amber, Icy Aqua and Ender Opal gems as items and blocks.
+* Added a crafting recipe for the End Portal Frame.
+* The swords Diablo, Thor, Glacies and Ender are all now craftable.
+* Added the Glacies sword.
+    * Places ice blocks on top of one another on right-click. Will do something less sucky in the future.
+* 
 
 ==== FIXES ====
 * Fixed Shinium Ingots not having their 1.7.10 crafting recipe.
-* Fixed some Nether Ores being unable to be smelted.
+* Fixed some Nether Ores being unable to be smelted (cooked).
 ===============
 
 [Zollern Extras - v1.5.0]

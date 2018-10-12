@@ -267,7 +267,7 @@ public class ZEConfig {
 		biomeIceMountainsSpawnRate = config.get(CATEGORY_BIOMES,
 				"biomeIceMountainsSpawnRate", 4).getInt();
 		biomeCoalHillsSpawnRate = config.get(CATEGORY_BIOMES,
-				"biomeCoalHillsSpawnRate", 8).getInt();
+				"biomeCoalHillsSpawnRate", 11).getInt();
 		biomeBadLandsSpawnRate = config.get(CATEGORY_BIOMES,
 				"biomeBadLandsSpawnRate", 14).getInt();
 		biomeMinersLandSpawnRate = config.get(CATEGORY_BIOMES,

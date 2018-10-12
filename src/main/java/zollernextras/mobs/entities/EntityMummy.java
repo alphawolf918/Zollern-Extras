@@ -45,7 +45,7 @@ public class EntityMummy extends EntityZombie implements IShadeEntity {
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE)
-				.setBaseValue(45.0D);
+				.setBaseValue(25.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED)
 				.setBaseValue(0.2D);
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE)

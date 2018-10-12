@@ -2,6 +2,7 @@ package zollernextras.proxies;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.potion.Potion;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -36,11 +37,13 @@ public class CommonProxy implements IProxy, IGuiHandler {
 		return null;
 	}
 	
+	@Override
 	public void sendChatMessage(EntityPlayer player, String message) {
 		
 	}
 	
-	public void doPotionEffect(EntityPlayer player, int potionId) {
+	@Override
+	public void doPotionEffect(EntityPlayer player, Potion potionId) {
 		
 	}
 	

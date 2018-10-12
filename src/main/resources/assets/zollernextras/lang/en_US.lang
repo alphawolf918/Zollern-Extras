@@ -58,10 +58,10 @@ tile.zollernextras_amberblock.name=Block of Amber
 tile.zollernextras_topazblock.name=Block of Topaz
 tile.zollernextras_opalblock.name=Block of Opal
 tile.zollernextras_enderiteblock.name=Block of Enderite
-tile.zollernextras_firegarnet.name=Block of Flame Garnet
-tile.zollernextras_icyaqua.name=Block of Icy Aquamarine
-tile.zollernextras_staticamber.name=Block of Static Amber
-tile.zollernextras_enderopal.name=Block of Ender Opal
+tile.zollernextras_firegarnetblock.name=Block of Flame Garnet
+tile.zollernextras_icyaquablock.name=Block of Icy Aquamarine
+tile.zollernextras_staticamberblock.name=Block of Static Amber
+tile.zollernextras_enderopalblock.name=Block of Ender Opal
 tile.zollernextras_azuriteblock.name=Block of Azurite
 tile.zollernextras_shiniumblock.name=Block of Shinium
 tile.zollernextras_witheriteblock.name=Block of Witherium
@@ -291,6 +291,8 @@ tile.zollernextras_corruptrock.name=Corrupt Rock
 tile.zollernextras_corruptchargiumore.name=Corrupt Chargium Ore
 tile.zollernextras_corruptetriumore.name=Corrupt Etrium Ore
 tile.zollernextras_corruptascendiumore.name=Corrupt Ascendium Ore
+tile.zollernextras_zucriteore.name=Corrupt Zucrite Ore
+tile.zollernextras_zucriteblock.name=Corrupt Zucrite Block
 
 tile.zollernextras_endrock.name=Endrock
 
@@ -533,11 +535,13 @@ item.zollernextras_whitelavabucket.name=White Lava Bucket
 
 item.zollernextras_radiancepotion.name=Potion of Radiance
 item.zollernextras_jumppotion.name=Potion of Leaping
+item.zollernextras_anticorruptpotion.name=Potion of Anti-Corruption
 
 item.zollernextras_etrium.name=Etrium
 item.zollernextras_crushedetrium.name=Crushed Etrium
-
 item.zollernextras_ascendium.name=Ascendium
+item.zollernextras_zucritedust.name=Zucrite Dust
+item.zollernextras_zucriteingot.name=Zucrite Ingot
 
 item.zollernextras_bedrockbreaker.name=Bedrock Breaker
 item.zollernextras_rokkite.name=Rokkite

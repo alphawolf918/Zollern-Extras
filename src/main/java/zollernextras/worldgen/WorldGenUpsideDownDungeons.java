@@ -149,13 +149,10 @@ public class WorldGenUpsideDownDungeons extends ZollernWorldGenMaster {
 	}
 	
 	private static void addDungeonMobs() {
-		addUpsideDownDungeonMob("blaze", 100);
-		addUpsideDownDungeonMob("magma_cube", 100);
-		addUpsideDownDungeonMob("skeleton", 100);
 		addUpsideDownDungeonMob("wither_skeleton", 100);
-		addUpsideDownDungeonMob("zombie_pigman", 100);
-		addUpsideDownDungeonMob("zollernextras:hellfish", 100);
-		addUpsideDownDungeonMob("zollernextras:hellduck", 100);
+		addUpsideDownDungeonMob("zollernextras:shadowskeleton", 100);
+		addUpsideDownDungeonMob("zollernextras:scorpion", 100);
+		addUpsideDownDungeonMob("zollernextras:mummy", 100);
 	}
 	
 	private ResourceLocation pickMobSpawner(Random rand) {

@@ -37,6 +37,10 @@ public class RecipeManager {
 			RecipeHelper.fullBlockCraft(ZollernBlocks.amaranthBlock,
 					ZollernItems.amaranthIngot);
 			
+			// Amaranth Ingot -> Amaranth Nuggets
+			RecipeHelper.fullItemCraft(ZollernItems.amaranthNugget,
+					ZollernItems.amaranthIngot);
+			
 			// Azurite Block
 			RecipeHelper.fullBlockCraft(ZollernBlocks.azuriteBlock,
 					ZollernItems.azurite);
@@ -75,13 +79,25 @@ public class RecipeManager {
 			RecipeHelper.fullBlockCraft(ZollernBlocks.garnetBlock,
 					ZollernItems.garnet);
 			
+			// Fire Garnet
+			RecipeHelper.fullBlockCraft(ZollernBlocks.fireGarnetBlock,
+					ZollernItems.fireGarnet);
+			
 			// Amber -> Amber Block
 			RecipeHelper.fullBlockCraft(ZollernBlocks.amberBlock,
 					ZollernItems.amber);
 			
+			// Static Amber
+			RecipeHelper.fullBlockCraft(ZollernBlocks.staticAmberBlock,
+					ZollernItems.staticAmber);
+			
 			// Aquamarine -> Aquamarine Block
 			RecipeHelper.fullBlockCraft(ZollernBlocks.aquamarineBlock,
 					ZollernItems.aquamarine);
+			
+			// Icy Aqua
+			RecipeHelper.fullBlockCraft(ZollernBlocks.icyAquaBlock,
+					ZollernItems.icyAqua);
 			
 			// Ruby -> Ruby Block
 			RecipeHelper.fullBlockCraft(ZollernBlocks.rubyBlock,
@@ -98,6 +114,10 @@ public class RecipeManager {
 			// Opal -> Opal Block
 			RecipeHelper.fullBlockCraft(ZollernBlocks.opalBlock,
 					ZollernItems.opal);
+			
+			// Ender Opal
+			RecipeHelper.fullBlockCraft(ZollernBlocks.enderOpalBlock,
+					ZollernItems.enderOpal);
 			
 			// Steel Ingot -> Steel Block
 			RecipeHelper.fullBlockCraft(ZollernBlocks.steelBlock,
@@ -235,6 +255,37 @@ public class RecipeManager {
 							"BN ", "NB ", "   ", 'B', Blocks.NETHER_WART_BLOCK,
 							'N', Blocks.OBSIDIAN });
 			
+			// Firey Garnet (Gem Form)
+			GameRegistry.addRecipe(new ItemStack(ZollernItems.fireGarnet, 1),
+					new Object[] { "BLB", "RGR", "BLB", 'B',
+							Items.BLAZE_POWDER, 'G', ZollernBlocks.garnetBlock,
+							'R', Items.REDSTONE, 'L', Items.BLAZE_ROD });
+			
+			// Icy Aqua (Gem Form)
+			GameRegistry
+					.addRecipe(new ItemStack(ZollernItems.icyAqua, 1),
+							new Object[] { "SDS", "ZAZ", "AAA", 'S',
+									ZollernItems.shiniumIngot, 'Z',
+									ZollernItems.shinestoneDust, 'A',
+									ZollernBlocks.aquamarineBlock, 'D',
+									Items.DIAMOND });
+			
+			// Static Amber (Gem Form)
+			GameRegistry
+					.addRecipe(new ItemStack(ZollernItems.staticAmber, 1),
+							new Object[] { "GTG", "UAU", "ZTZ", 'G',
+									Items.GOLD_INGOT, 'T', ZollernItems.topaz,
+									'A', ZollernBlocks.amberBlock, 'Z',
+									ZollernItems.zincIngot, 'U',
+									ZollernItems.azurite });
+			
+			// Ender Opal (Gem Form)
+			GameRegistry.addRecipe(new ItemStack(ZollernItems.enderOpal, 1),
+					new Object[] { "FPF", "EOE", "EME", 'F', Items.ENDER_EYE,
+							'P', ZollernItems.enderDiamond, 'E',
+							ZollernItems.enderiteIngot, 'O',
+							ZollernBlocks.opalBlock, 'M', Items.EMERALD });
+			
 			// Netheridium (Gem Form)
 			GameRegistry.addRecipe(new ItemStack(ZollernItems.netheridium, 1),
 					new Object[] { "BSB", "LXL", "VAV", 'B',
@@ -253,6 +304,35 @@ public class RecipeManager {
 							ZollernBlocks.hellObsidian, 'S',
 							ZollernItems.shadowEssence });
 			
+			// Diablo
+			GameRegistry
+					.addRecipe(new ItemStack(ZollernItems.DIABLO, 1),
+							new Object[] { " F ", " F ", "GPG", 'F',
+									ZollernBlocks.fireGarnetBlock, 'G',
+									ZollernItems.garnet, 'P',
+									ZollernItems.lapisStick });
+			
+			// Thor
+			GameRegistry.addRecipe(new ItemStack(ZollernItems.THOR, 1),
+					new Object[] { " S ", " S ", "APA", 'S',
+							ZollernBlocks.staticAmberBlock, 'A',
+							ZollernItems.amber, 'P', ZollernItems.lapisStick });
+			
+			// Ender
+			GameRegistry.addRecipe(new ItemStack(ZollernItems.ENDER, 1),
+					new Object[] { " E ", " E ", "OPM", 'E',
+							ZollernBlocks.enderOpalBlock, 'O',
+							ZollernBlocks.enderDiamondBlock, 'M',
+							ZollernItems.enderiteIngot, 'P',
+							ZollernItems.lapisStick });
+			
+			// Glacies
+			GameRegistry.addRecipe(new ItemStack(ZollernItems.GLACIES, 1),
+					new Object[] { " I ", " I ", "APA", 'I',
+							ZollernBlocks.icyAquaBlock, 'A',
+							ZollernItems.aquamarine, 'P',
+							ZollernItems.lapisStick });
+			
 			// Shinium
 			GameRegistry.addRecipe(new ItemStack(ZollernItems.shiniumIngot, 1),
 					new Object[] { "DLD", "DSD", "DLD", 'D', Items.DIAMOND,
@@ -264,6 +344,15 @@ public class RecipeManager {
 					new Object[] { "L L", " S ", "L L", 'L',
 							ZollernItems.lapisIngot, 'S',
 							ZollernBlocks.shinestone });
+			
+			// The End Portal Stone Thingy
+			GameRegistry.addRecipe(new ItemStack(Blocks.END_PORTAL_FRAME, 1),
+					new Object[] { "EOE", "RNR", "TAT", 'E',
+							ZollernBlocks.enderPearlBlock, 'O',
+							ZollernBlocks.opalBlock, 'R', Items.ENDER_EYE, 'N',
+							ZollernBlocks.netherizedObsidian, 'T',
+							Blocks.GLOWSTONE, 'A',
+							ZollernBlocks.staticAmberBlock });
 			
 			// Shinestone Crystal Bricks
 			RecipeHelper.addBricks(ZollernItems.shinestoneIngot,
@@ -312,6 +401,17 @@ public class RecipeManager {
 			// Shadow Essence
 			RecipeHelper.fullBlockCraft(ZollernBlocks.shadowEssenceBlock,
 					ZollernItems.shadowEssence);
+			
+			// Zucrite Block
+			RecipeHelper.fullBlockCraft(ZollernBlocks.corruptZucriteBlock,
+					ZollernItems.zucriteIngot);
+			
+			// Bedrock Breaker
+			GameRegistry.addRecipe(new ItemStack(ZollernItems.bedrockBreaker),
+					new Object[] { "ZAZ", " M ", " M ", 'Z',
+							ZollernItems.zucriteIngot, 'A',
+							ZollernItems.ascendium, 'M',
+							ZollernItems.ascendantAmaranthIngot });
 		}
 	}
 	

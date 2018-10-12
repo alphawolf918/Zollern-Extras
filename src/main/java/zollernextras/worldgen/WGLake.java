@@ -9,6 +9,7 @@ import net.minecraft.world.EnumSkyBlock;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.WorldGenerator;
+import zollernextras.blocks.ZollernBlocks;
 
 public class WGLake extends WorldGenerator {
 	
@@ -117,19 +118,16 @@ public class WGLake extends WorldGenerator {
 						if (aboolean[(i2 * 16 + j3) * 8 + j4]) {
 							BlockPos blockpos = position.add(i2, j4 - 1, j3);
 							
-							if (worldIn.getBlockState(blockpos).getBlock() == Blocks.DIRT
+							if (worldIn.getBlockState(blockpos).getBlock() == ZollernBlocks.upsideDownDirt
 									&& worldIn.getLightFor(EnumSkyBlock.SKY,
 											position.add(i2, j4, j3)) > 0) {
 								Biome biome = worldIn.getBiome(blockpos);
 								
-								if (biome.topBlock.getBlock() == Blocks.MYCELIUM) {
-									worldIn.setBlockState(blockpos,
-											Blocks.MYCELIUM.getDefaultState(),
-											2);
-								} else {
-									worldIn.setBlockState(blockpos,
-											Blocks.GRASS.getDefaultState(), 2);
-								}
+								// TODO: Add special blocks with biome check
+								
+								worldIn.setBlockState(blockpos,
+										ZollernBlocks.upsideDownSurfaceRock
+												.getDefaultState(), 2);
 							}
 						}
 					}
@@ -186,7 +184,6 @@ public class WGLake extends WorldGenerator {
 					}
 				}
 			}
-			
 			return true;
 		}
 	}

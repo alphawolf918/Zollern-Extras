@@ -7,6 +7,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.MapGenBase;
+import zollernextras.blocks.ZollernBlocks;
 
 public class MapGenCavesUD extends MapGenBase {
 	
@@ -136,26 +137,26 @@ public class MapGenCavesUD extends MapGenBase {
 					
 					boolean flag2 = false;
 					
-					for (int j1 = j2; !flag2 && j1 < k; ++j1) {
-						for (int k1 = l2; !flag2 && k1 < i1; ++k1) {
-							for (int l1 = l + 1; !flag2 && l1 >= k2 - 1; --l1) {
-								if (l1 >= 0 && l1 < 128) {
-									IBlockState iblockstate = p_180704_5_
-											.getBlockState(j1, l1, k1);
-									
-									if (iblockstate.getBlock() == Blocks.FLOWING_LAVA
-											|| iblockstate.getBlock() == Blocks.LAVA) {
-										flag2 = true;
-									}
-									
-									if (l1 != k2 - 1 && j1 != j2 && j1 != k - 1
-											&& k1 != l2 && k1 != i1 - 1) {
-										l1 = k2;
-									}
-								}
-							}
-						}
-					}
+					// for (int j1 = j2; !flag2 && j1 < k; ++j1) {
+					// for (int k1 = l2; !flag2 && k1 < i1; ++k1) {
+					// for (int l1 = l + 1; !flag2 && l1 >= k2 - 1; --l1) {
+					// if (l1 >= 0 && l1 < 128) {
+					// IBlockState iblockstate = p_180704_5_
+					// .getBlockState(j1, l1, k1);
+					//
+					// if (iblockstate.getBlock() == Blocks.FLOWING_LAVA
+					// || iblockstate.getBlock() == Blocks.LAVA) {
+					// flag2 = true;
+					// }
+					//
+					// if (l1 != k2 - 1 && j1 != j2 && j1 != k - 1
+					// && k1 != l2 && k1 != i1 - 1) {
+					// l1 = k2;
+					// }
+					// }
+					// }
+					// }
+					// }
 					
 					if (!flag2) {
 						for (int i3 = j2; i3 < k; ++i3) {
@@ -175,9 +176,11 @@ public class MapGenCavesUD extends MapGenBase {
 										IBlockState iblockstate1 = p_180704_5_
 												.getBlockState(i3, i2, j3);
 										
-										if (iblockstate1.getBlock() == Blocks.NETHERRACK
-												|| iblockstate1.getBlock() == Blocks.DIRT
-												|| iblockstate1.getBlock() == Blocks.GRASS) {
+										if (iblockstate1.getBlock() == ZollernBlocks.witherrack
+												|| iblockstate1.getBlock() == Blocks.OBSIDIAN
+												|| iblockstate1.getBlock() == ZollernBlocks.upsideDownStone
+												|| iblockstate1.getBlock() == ZollernBlocks.upsideDownDirt
+												|| iblockstate1.getBlock() == ZollernBlocks.corruptStone) {
 											p_180704_5_.setBlockState(i3, i2,
 													j3, AIR);
 										}

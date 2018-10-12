@@ -11,7 +11,7 @@ public class CorruptDirt extends ZollernDirt implements ICorruptBlock {
 	}
 	
 	@Override
-	public boolean isCorrupt() {
+	public boolean canCorrupt() {
 		return true;
 	}
 	

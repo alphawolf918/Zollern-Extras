@@ -10,7 +10,7 @@ public class CorruptOre extends ZollernBlockOre implements ICorruptBlock {
 	}
 	
 	@Override
-	public boolean isCorrupt() {
+	public boolean canCorrupt() {
 		return true;
 	}
 	

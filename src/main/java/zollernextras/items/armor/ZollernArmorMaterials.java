@@ -18,6 +18,6 @@ public class ZollernArmorMaterials {
 					7, 9, 8, 6 }, 61, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND,
 			4.2F);
 	public static ArmorMaterial RADIUM = EnumHelper.addArmorMaterial("Radium",
-			ZollernModInfo.modId + ":radium", 90, new int[] { 9, 9, 9, 8 }, 71,
+			ZollernModInfo.modId + ":radium", 90, new int[] { 9, 9, 9, 9 }, 71,
 			SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 4.6F);
 }

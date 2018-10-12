@@ -43,7 +43,9 @@ public class ZollernRegistry {
 				ZollernBlocks.steelOre, ZollernBlocks.netherSteelOre,
 				ZollernBlocks.enderSteelOre, ZollernBlocks.enderiteBlock,
 				ZollernBlocks.enderiteOre, ZollernBlocks.enderDiamondBlock,
-				ZollernBlocks.enderDiamondOre, ZollernBlocks.badStone,
+				ZollernBlocks.enderDiamondOre, ZollernBlocks.fireGarnetBlock,
+				ZollernBlocks.icyAquaBlock, ZollernBlocks.staticAmberBlock,
+				ZollernBlocks.enderOpalBlock, ZollernBlocks.badStone,
 				ZollernBlocks.redshroomBlock, ZollernBlocks.redshroomStem,
 				ZollernBlocks.shadowBoneBlock, ZollernBlocks.netherIronOre,
 				ZollernBlocks.netherGoldOre, ZollernBlocks.netherDiamondOre,
@@ -58,7 +60,8 @@ public class ZollernRegistry {
 				ZollernBlocks.coldSandSmooth, ZollernBlocks.chargiumBlock,
 				ZollernBlocks.shiniumBlock, ZollernBlocks.shinestone,
 				ZollernBlocks.shinestoneCrystal,
-				ZollernBlocks.shinestonePolished, ZollernBlocks.shinestoneCrystalBricks,
+				ZollernBlocks.shinestonePolished,
+				ZollernBlocks.shinestoneCrystalBricks,
 				ZollernBlocks.caveMarble, ZollernBlocks.blackCaveMarble,
 				ZollernBlocks.canyonRock, ZollernBlocks.canyonRockBricks,
 				ZollernBlocks.swampClay, ZollernBlocks.bricksMud,
@@ -103,7 +106,8 @@ public class ZollernRegistry {
 				ZollernBlocks.upsideDownLeadOre,
 				ZollernBlocks.upsideDownTinOre,
 				ZollernBlocks.upsideDownSilverOre,
-				ZollernBlocks.upsideDownNickleOre);
+				ZollernBlocks.upsideDownNickleOre,
+				ZollernBlocks.upsideDownRadianceOre);
 		
 		// Corrupt Blocks
 		registerBlocks(event, ZollernBlocks.corruptStone,
@@ -111,7 +115,9 @@ public class ZollernRegistry {
 				ZollernBlocks.corruptRock, ZollernBlocks.corruptCreepStone,
 				ZollernBlocks.corruptEtriumOre,
 				ZollernBlocks.corruptAscendiumOre,
-				ZollernBlocks.corruptChargiumOre);
+				ZollernBlocks.corruptChargiumOre,
+				ZollernBlocks.corruptZucriteOre,
+				ZollernBlocks.corruptZucriteBlock);
 		
 		// Items
 		registerItems(event, ZollernItems.superChargedCoal,
@@ -125,6 +131,8 @@ public class ZollernRegistry {
 				ZollernItems.garnet, ZollernItems.opal,
 				ZollernItems.aquamarine, ZollernItems.topaz, ZollernItems.ruby,
 				ZollernItems.sapphire, ZollernItems.amber,
+				ZollernItems.icyAqua, ZollernItems.fireGarnet,
+				ZollernItems.staticAmber, ZollernItems.enderOpal,
 				ZollernItems.steelIngot, ZollernItems.steelDust,
 				ZollernItems.enderiteIngot, ZollernItems.enderiteDust,
 				ZollernItems.enderDiamond, ZollernItems.flour,
@@ -160,11 +168,12 @@ public class ZollernRegistry {
 				ZollernItems.ascendantAmaranthIngot, ZollernItems.shadowBone,
 				ZollernItems.shadowEssence, ZollernItems.netheridium,
 				ZollernItems.etrium, ZollernItems.crushedEtrium,
-				ZollernItems.ascendium);
+				ZollernItems.ascendium, ZollernItems.zucriteDust,
+				ZollernItems.zucriteIngot);
 		
 		// Power Swords
 		registerItems(event, ZollernItems.DIABLO, ZollernItems.ENDER,
-				ZollernItems.THOR);
+				ZollernItems.THOR, ZollernItems.GLACIES);
 	}
 	
 	public static void registerBlocks(FMLPreInitializationEvent event,

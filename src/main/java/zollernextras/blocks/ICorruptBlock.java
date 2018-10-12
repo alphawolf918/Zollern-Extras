@@ -2,5 +2,5 @@ package zollernextras.blocks;
 
 public interface ICorruptBlock {
 	
-	public boolean isCorrupt();
+	public boolean canCorrupt();
 }

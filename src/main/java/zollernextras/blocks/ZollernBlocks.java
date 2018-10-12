@@ -99,6 +99,10 @@ public class ZollernBlocks {
 			.setBlockHarvestLevel("pickaxe",
 					EnumHarvestLevel.AMARANTH.getHarvestLevel());
 	
+	// Static Amber
+	public static final Block staticAmberBlock = new ZollernBlockMetal(
+			"staticamberblock").setLightLevel(1.0F);
+	
 	// Aquamarine
 	public static final Block aquamarineBlock = new ZollernBlockMetal(
 			"aquamarineblock");
@@ -112,6 +116,10 @@ public class ZollernBlocks {
 			.setBlockHarvestLevel("pickaxe",
 					EnumHarvestLevel.AMARANTH.getHarvestLevel());
 	
+	// Icy Aqua
+	public static final Block icyAquaBlock = new ZollernBlockMetal("icyaquablock")
+			.setLightLevel(1.0F);
+	
 	// Garnet
 	public static final Block garnetBlock = new ZollernBlockMetal("garnetblock");
 	public static final Block garnetOre = new ZollernGemOre("garnetore", 1.6F,
@@ -122,6 +130,10 @@ public class ZollernBlocks {
 			.setBlockVariant(EnumBlockVariant.UPSIDE_DOWN))
 			.setBlockHarvestLevel("pickaxe",
 					EnumHarvestLevel.AMARANTH.getHarvestLevel());
+	
+	// Fire Garnet
+	public static final Block fireGarnetBlock = new ZollernBlockMetal(
+			"firegarnetblock").setLightLevel(1.0F);
 	
 	// Fueltonium
 	public static final Block fueltoniumBlock = new ZollernBlockMetal(
@@ -214,6 +226,10 @@ public class ZollernBlocks {
 			.setBlockVariant(EnumBlockVariant.UPSIDE_DOWN))
 			.setBlockHarvestLevel("pickaxe",
 					EnumHarvestLevel.AMARANTH.getHarvestLevel());
+	
+	// Ender Opal
+	public static final Block enderOpalBlock = new ZollernBlockMetal(
+			"enderopalblock").setLightLevel(1.0F);
 	
 	// Witherite
 	public static final Block witheriteBlock = new ZollernBlockMetal(
@@ -520,7 +536,7 @@ public class ZollernBlocks {
 	
 	// Radium
 	public static final Block radiumBlock = new ZollernBlockBase(
-			"radiantblock", 8.5F).setLightLevel(1.0F);
+			"radiantblock", 3.5F).setLightLevel(1.0F);
 	
 	// Upside-Down (Specific) Ores
 	// Radium
@@ -541,6 +557,8 @@ public class ZollernBlocks {
 			1.9F);
 	public static final Block corruptCreepStone = new CorruptBlock(
 			"corruptcreepstone", 2.1F);
+	public static final Block corruptZucriteBlock = new CorruptBlock(
+			"zucriteblock", 1.6F);
 	
 	// Ores
 	public static final Block corruptEtriumOre = ((ZollernBlockBase) ((ZollernGemOre) new CorruptGemOre(
@@ -558,9 +576,10 @@ public class ZollernBlocks {
 			.setBlockVariant(EnumBlockVariant.UPSIDE_DOWN))
 			.setBlockHarvestLevel("pickaxe",
 					EnumHarvestLevel.AMARANTH.getHarvestLevel());
-	
-	// Zucrite
-	// TODO
+	public static final Block corruptZucriteOre = ((ZollernBlockBase) new CorruptOre(
+			"zucriteore", 2.6F).setBlockVariant(EnumBlockVariant.UPSIDE_DOWN))
+			.setBlockHarvestLevel("pickaxe",
+					EnumHarvestLevel.ZOLLERNIUM.getHarvestLevel());
 	
 	// Shine Torch
 	public static final Block shineTorch = new ShineTorch();

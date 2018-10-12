@@ -13,6 +13,7 @@ import zollernextras.items.tools.ZollernSword;
 import zollernextras.items.tools.ZollernToolMaterials;
 import zollernextras.items.tools.powerswords.SwordDiablo;
 import zollernextras.items.tools.powerswords.SwordEnder;
+import zollernextras.items.tools.powerswords.SwordGlacies;
 import zollernextras.items.tools.powerswords.SwordThor;
 
 public class ZollernItems {
@@ -170,14 +171,26 @@ public class ZollernItems {
 	// Aquamarine
 	public static final Item aquamarine = new ZollernItemBase("aquamarine");
 	
+	// Icy Aqua
+	public static final Item icyAqua = new ZollernItemBase("icyaqua");
+	
 	// Amber
 	public static final Item amber = new ZollernItemBase("amber");
+	
+	// Static Amber
+	public static final Item staticAmber = new ZollernItemBase("staticamber");
 	
 	// Opal
 	public static final Item opal = new ZollernItemBase("opal");
 	
+	// Ender Opal
+	public static final Item enderOpal = new ZollernItemBase("enderopal");
+	
 	// Garnet
 	public static final Item garnet = new ZollernItemBase("garnet");
+	
+	// Fire Garnet
+	public static final Item fireGarnet = new ZollernItemBase("firegarnet");
 	
 	// Topaz
 	public static final Item topaz = new ZollernItemBase("topaz");
@@ -255,11 +268,15 @@ public class ZollernItems {
 	// Ascendium
 	public static final Item ascendium = new ZollernItemBase("ascendium");
 	
+	// Zucrite
+	public static final Item zucriteDust = new ZollernItemBase("zucritedust");
+	public static final Item zucriteIngot = new ZollernItemBase("zucriteingot");
+	
 	// Power Swords
 	public static final Item DIABLO = new SwordDiablo();
 	public static final Item ENDER = new SwordEnder();
 	public static final Item THOR = new SwordThor();
-	// public static Item GLACIES;
+	public static Item GLACIES = new SwordGlacies();
 	// public static Item MORTEM;
 	// public static Item LUCENT;
 	

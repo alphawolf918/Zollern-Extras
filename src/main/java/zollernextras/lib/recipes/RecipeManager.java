@@ -29,6 +29,7 @@ public class RecipeManager {
 	static class Crafting {
 		
 		public static void init() {
+			
 			// Super Charged Coal Block
 			RecipeHelper.fullBlockCraft(ZollernBlocks.superChargedCoalBlock,
 					ZollernItems.superChargedCoal);
@@ -218,9 +219,22 @@ public class RecipeManager {
 					ZollernBlocks.blackCaveMarble });
 			
 			// Lapis Stick
-			GameRegistry.addRecipe(new ItemStack(ZollernItems.lapisStick, 1),
+			GameRegistry.addRecipe(new ItemStack(ZollernItems.lapisStick, 2),
 					new Object[] { " L ", " L ", "   ", 'L',
 							ZollernItems.lapisIngot });
+			
+			// Steel Stick
+			GameRegistry.addRecipe(new ItemStack(ZollernItems.steelStick, 2),
+					new Object[] { " S ", " S ", "   ", 'S',
+							ZollernItems.steelIngot });
+			
+			// Power Stick
+			GameRegistry.addRecipe(new ItemStack(ZollernItems.powerStick, 2),
+					new Object[] { "LBL", "ASA", "ABA", 'L',
+							ZollernItems.lapisIngot, 'B',
+							ZollernBlocks.blackCaveMarble, 'A',
+							ZollernItems.enderDiamond, 'S',
+							ZollernItems.lapisStick });
 			
 			// Blaze Rod
 			GameRegistry.addRecipe(new ItemStack(Items.BLAZE_ROD, 1),
@@ -310,13 +324,13 @@ public class RecipeManager {
 							new Object[] { " F ", " F ", "GPG", 'F',
 									ZollernBlocks.fireGarnetBlock, 'G',
 									ZollernItems.garnet, 'P',
-									ZollernItems.lapisStick });
+									ZollernItems.powerStick });
 			
 			// Thor
 			GameRegistry.addRecipe(new ItemStack(ZollernItems.THOR, 1),
 					new Object[] { " S ", " S ", "APA", 'S',
 							ZollernBlocks.staticAmberBlock, 'A',
-							ZollernItems.amber, 'P', ZollernItems.lapisStick });
+							ZollernItems.amber, 'P', ZollernItems.powerStick });
 			
 			// Ender
 			GameRegistry.addRecipe(new ItemStack(ZollernItems.ENDER, 1),
@@ -324,14 +338,22 @@ public class RecipeManager {
 							ZollernBlocks.enderOpalBlock, 'O',
 							ZollernBlocks.enderDiamondBlock, 'M',
 							ZollernItems.enderiteIngot, 'P',
-							ZollernItems.lapisStick });
+							ZollernItems.powerStick });
 			
 			// Glacies
 			GameRegistry.addRecipe(new ItemStack(ZollernItems.GLACIES, 1),
 					new Object[] { " I ", " I ", "APA", 'I',
 							ZollernBlocks.icyAquaBlock, 'A',
 							ZollernItems.aquamarine, 'P',
-							ZollernItems.lapisStick });
+							ZollernItems.powerStick });
+			
+			// Mortem
+			GameRegistry.addRecipe(new ItemStack(ZollernItems.MORTEM, 1),
+					new Object[] { " W ", " W ", "RAX", 'W',
+							ZollernBlocks.netheridiumBlock, 'R',
+							ZollernBlocks.witheriteBlock, 'A',
+							ZollernItems.lapisStick, 'X',
+							ZollernItems.shadowEssence });
 			
 			// Shinium
 			GameRegistry.addRecipe(new ItemStack(ZollernItems.shiniumIngot, 1),
@@ -611,6 +633,10 @@ public class RecipeManager {
 			// Crushed Etrium -> Etrium
 			RecipeHelper.addSmelting(ZollernItems.crushedEtrium,
 					ZollernItems.etrium, 0.5F);
+			
+			// Zucrite Ore -> Zucrite Dust
+			RecipeHelper.addSmelting(ZollernBlocks.corruptZucriteOre,
+					ZollernItems.zucriteDust, 5.6F);
 		}
 		
 	}

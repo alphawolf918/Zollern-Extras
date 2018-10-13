@@ -9,7 +9,7 @@ import zollernextras.ZollernExtrasMod;
 import zollernextras.lib.ZollernHelper;
 import zollernextras.lib.ZollernModInfo;
 
-public class ZollernPotion extends Potion {
+public class ZollernPotions extends Potion {
 	
 	/**
 	 * Protects the Player from Shadow damage. Also applied to an entity when
@@ -24,6 +24,11 @@ public class ZollernPotion extends Potion {
 	 */
 	public static Potion infected;
 	
+	/**
+	 * Protects the Player from Corruption damage.
+	 */
+	public static Potion antiCorruption;
+	
 	// Radiance variables.
 	public static final int radianceTime = 6000;
 	public static final float shadowDamage = 5.0f;
@@ -31,6 +36,9 @@ public class ZollernPotion extends Potion {
 	// Infection variables.
 	public static final int infectionTime = 200;
 	public static final float infectionDamage = 2.0F;
+	
+	// Anti-Corruption variables.
+	public static final int antiCorruptionTime = 6000;
 	
 	public static int totalEntries = 0;
 	
@@ -49,7 +57,7 @@ public class ZollernPotion extends Potion {
 	 * @param potionLiquidColor
 	 *            The color of the Potion's liquid.
 	 */
-	public ZollernPotion(String potionName, boolean potionIsBadEffect,
+	public ZollernPotions(String potionName, boolean potionIsBadEffect,
 			int potionEffectiveness, int potionLiquidColor) {
 		super(potionIsBadEffect, potionLiquidColor);
 		
@@ -74,8 +82,8 @@ public class ZollernPotion extends Potion {
 		ZollernHelper.logInfo("Initializing new Potion effects..");
 		
 		// Now let's actually initialize them.
-		radiance = new ZollernPotion("radiance", false, 13458603, 0xeeee00);
-		infected = new ZollernPotion("infected", true, 13615421, 0x000000);
+		radiance = new ZollernPotions("radiance", false, 13458603, 0xeeee00);
+		infected = new ZollernPotions("infected", true, 13615421, 0x000000);
 		
 		ZollernHelper.logInfo("Successfully loaded " + totalEntries
 				+ " new Potion effects.");

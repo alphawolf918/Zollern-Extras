@@ -15,6 +15,7 @@ import zollernextras.items.tools.powerswords.SwordDiablo;
 import zollernextras.items.tools.powerswords.SwordEnder;
 import zollernextras.items.tools.powerswords.SwordGlacies;
 import zollernextras.items.tools.powerswords.SwordThor;
+import zollernextras.items.tools.powerswords.SwordWither;
 
 public class ZollernItems {
 	
@@ -249,6 +250,8 @@ public class ZollernItems {
 	public static final Item blackMarbleStick = new ZollernItemBase(
 			"blackmarblestick");
 	public static final Item lapisStick = new ZollernItemBase("lapisstick");
+	public static final Item steelStick = new ZollernItemBase("steelstick");
+	public static final Item powerStick = new ZollernItemBase("powerstick");
 	
 	// Bedrock Breaker
 	public static final Item bedrockBreaker = new ItemBedrockBreaker();
@@ -277,7 +280,7 @@ public class ZollernItems {
 	public static final Item ENDER = new SwordEnder();
 	public static final Item THOR = new SwordThor();
 	public static Item GLACIES = new SwordGlacies();
-	// public static Item MORTEM;
+	public static Item MORTEM = new SwordWither();
 	// public static Item LUCENT;
 	
 }

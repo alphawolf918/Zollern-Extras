@@ -1,7 +1,6 @@
 package zollernextras.blocks.upsidedown.corrupt;
 
 import java.util.Random;
-import zollernextras.blocks.ICorruptBlock;
 import zollernextras.blocks.ZollernBlockBase;
 
 public class CorruptBlock extends ZollernBlockBase implements ICorruptBlock {

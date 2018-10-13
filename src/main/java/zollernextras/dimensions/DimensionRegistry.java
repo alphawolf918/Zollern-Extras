@@ -1,6 +1,7 @@
 package zollernextras.dimensions;
 
 import java.util.Set;
+import net.minecraft.world.DimensionType;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.DimensionManager;
@@ -31,6 +32,8 @@ public class DimensionRegistry {
 			.newHashSet();
 	private static Set<BiomeManager.BiomeEntry> biomeUpsideDownEntries = Sets
 			.newHashSet();
+	
+	public static DimensionType UPSIDE_DOWN;
 	
 	@Mod.EventBusSubscriber(modid = ZollernModInfo.modId)
 	public static class EventHandler {
@@ -122,8 +125,9 @@ public class DimensionRegistry {
 				WorldHellProvider.class);
 		
 		// Upside-Down
-		ZollernHelper.registerDimension("Upside-Down", "upside_down",
-				ZEConfig.dimensionUpsideDownID, WorldProviderUpsideDown.class);
+		UPSIDE_DOWN = ZollernHelper.registerDimension("Upside Down",
+				"upside_down", ZEConfig.dimensionUpsideDownID,
+				WorldProviderUpsideDown.class);
 	}
 	
 }

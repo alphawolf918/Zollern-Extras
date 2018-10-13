@@ -164,6 +164,7 @@ public class ZollernRegistry {
 				ZollernItems.lapisIngot, ZollernItems.enderGlowDust,
 				ZollernItems.duckFeather, ZollernItems.marbleStick,
 				ZollernItems.blackMarbleStick, ZollernItems.lapisStick,
+				ZollernItems.steelStick, ZollernItems.powerStick,
 				ZollernItems.bedrockBreaker, ZollernItems.rokkite,
 				ZollernItems.ascendantAmaranthIngot, ZollernItems.shadowBone,
 				ZollernItems.shadowEssence, ZollernItems.netheridium,
@@ -173,7 +174,7 @@ public class ZollernRegistry {
 		
 		// Power Swords
 		registerItems(event, ZollernItems.DIABLO, ZollernItems.ENDER,
-				ZollernItems.THOR, ZollernItems.GLACIES);
+				ZollernItems.THOR, ZollernItems.GLACIES, ZollernItems.MORTEM);
 	}
 	
 	public static void registerBlocks(FMLPreInitializationEvent event,

@@ -23,39 +23,21 @@
     * This will help players understand how to progress.
 * Store extended player data using JSON files.
     * Superpowers?
-* 
-
-==== CONFIG OPTIONS ====
-* Add a configurable option to turn off Mega Creeper explosions. [D/D]
-    * They could still hurt the Player, but not the terrain. [D/D]
-========================
 
 == ENDER STUFF ===================
 [Ideas for how to revamp The End.]
-==================================
-* Find a way to make The End terrain bigger.
-    * Perhaps use a structure gen for End Stone to increase its land.
-    * Find out if there is a way to "stretch" or otherwise "increase" The End size.
 * Fix the stupid Ender Creeper.
 * Fix the stupid Ender Spider.
-* 
 
 ====== UPSIDE-DOWN =======
 [Ideas for the dimension.]
 ==========================
-* Add a Corruption layer (layers 32 and below). [D]
-    * All "Corrupt" blocks would extend parent corrupt blocks. [D]
-    * Corrupt blocks would cause damage to the Player unless they have a specific item in their inventory.
+* Add a Corruption layer (layers 20 and below). [D]
+    * Corrupt blocks would cause damage to the Player unless they have a specific item (effect, enchantment?) in their inventory.
     * Corruption blocks would have the chance to corrupt other blocks around them, regardless of what they are.
         * Corrupt Stone would turn anything else into Corrupt Stone, same for Corrupt Grass, etc.
     * Special mobs would spawn on and only on this specific layer.
     * Liquid Corruption could take the place of lava.
     * Make an upgraded version of Radium that protects against Corruption.
         * Enchantment?
-        * Potion Effect? (Radiance 3+)
-            * Could be obtained from upgraded Radium.
-        * Etrium.
-* Maybe find a way to add multiple biomes into the Upside-Down. [X/D]
-* Replace Bedrock block with a special Upside-Down variant. [D/D]
-    * Flatten the Bedrock layer. [D/D]
-* 
+        * Potion Effect?

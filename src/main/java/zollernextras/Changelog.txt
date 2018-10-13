@@ -77,14 +77,25 @@
 * Added a crafting recipe for the Bedrock Breaker.
 * Added Fire Garnet, Static Amber, Icy Aqua and Ender Opal gems as items and blocks.
 * Added a crafting recipe for the End Portal Frame.
-* The swords Diablo, Thor, Glacies and Ender are all now craftable.
+* The swords Diablo, Thor, Glacies, Ender and Mortem swords are all now craftable.
 * Added the Glacies sword.
     * Places ice blocks on top of one another on right-click. Will do something less sucky in the future.
+* Added the Mortem sword.
+    * Shoots Wither Skulls on right-click.
+    * Causes Wither damage (and plays the Wither's ambient noise) on entity hit.
+* Upside-Down has been correctly re-registered.
+* Message now sends to the server and displays for all Players when a Player enters the Upside-Down.
+* Removed "Flame" particles from Shine Torches.
+* Added Steel Stick and Power Stick.
+    * Necessary crafting ingredients for the Power Swords.
+* Added White Lava liquid, though it doesn't have a purpose or occur naturally just yet.
 * 
 
 ==== FIXES ====
 * Fixed Shinium Ingots not having their 1.7.10 crafting recipe.
 * Fixed some Nether Ores being unable to be smelted (cooked).
+* Fixed Upside-Down registering as a second Nether.
+* Fixed Nether and Upside-Down Lapis Ores incorrectly dropping Ink Sacs.
 ===============
 
 [Zollern Extras - v1.5.0]

@@ -172,10 +172,10 @@ public class ChunkProviderUpsideDown extends ChunkProviderHell {
 			EnumCreatureType creatureType, BlockPos pos) {
 		if (creatureType == EnumCreatureType.MONSTER) {
 			this.spawnList.add(new Biome.SpawnListEntry(
-					EntityShadowSkeleton.class, 6, 2, 3));
+					EntityShadowSkeleton.class, 2, 2, 3));
 			this.spawnList.add(new Biome.SpawnListEntry(EntityScorpion.class,
-					4, 2, 3));
-			this.spawnList.add(new Biome.SpawnListEntry(EntityMummy.class, 4,
+					2, 2, 3));
+			this.spawnList.add(new Biome.SpawnListEntry(EntityMummy.class, 2,
 					1, 2));
 			return this.spawnList;
 		}
@@ -270,7 +270,7 @@ public class ChunkProviderUpsideDown extends ChunkProviderHell {
 												.getDefaultState());
 							}
 						}
-					} else if (y <= 1) {
+					} else if (y == 1) {
 						primer.setBlockState(x, y, z,
 								ZollernBlocks.endrock.getDefaultState());
 					}

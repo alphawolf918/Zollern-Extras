@@ -501,7 +501,7 @@ public class WorldGenManager implements IWorldGenerator {
 		int Xcoord = x + random.nextInt(16);
 		int Zcoord = z + random.nextInt(16);
 		
-		int y = world.getHeight(x, z);
+		int y = world.getHeight(Xcoord, Zcoord);
 		
 		// Ender Super Charged Coal Ore
 		addEnderOreSpawn(ZollernBlocks.enderSuperChargedCoalOre, world, random,
@@ -557,6 +557,7 @@ public class WorldGenManager implements IWorldGenerator {
 	private void generateUpsideDown(World world, Random random, int x, int z) {
 		int Xcoord = x;
 		int Zcoord = z;
+		int Ycoord = world.getHeight(Xcoord, Zcoord);
 		
 		// Upside-Down Dirt
 		addUpsideDownOreSpawn(ZollernBlocks.upsideDownDirt, world, random,
@@ -685,7 +686,13 @@ public class WorldGenManager implements IWorldGenerator {
 		
 		// Azurite
 		addObsidianOreSpawn(ZollernBlocks.azuriteOre, world, random, Xcoord,
-				Zcoord, 16, 16, 5 + random.nextInt(5), 52, 19, 128);
+				Zcoord, 16, 16, 5 + random.nextInt(5), 62, 19, 128);
+		
+		// if (random.nextInt(250) <= 50) {
+		// new WGLake(ZollernBlocks.upsideDownStone,
+		// ZollernFluids.blockWhiteLavaFluid).generate(world, random,
+		// new BlockPos(Xcoord, Ycoord, Zcoord));
+		// }
 		
 		// Etrium
 		addCorruptOreSpawn(ZollernBlocks.corruptEtriumOre, world, random,

@@ -2,6 +2,7 @@ package zollernextras.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.ItemStack;
@@ -117,8 +118,8 @@ public class ZollernBlocks {
 					EnumHarvestLevel.AMARANTH.getHarvestLevel());
 	
 	// Icy Aqua
-	public static final Block icyAquaBlock = new ZollernBlockMetal("icyaquablock")
-			.setLightLevel(1.0F);
+	public static final Block icyAquaBlock = new ZollernBlockMetal(
+			"icyaquablock").setLightLevel(1.0F);
 	
 	// Garnet
 	public static final Block garnetBlock = new ZollernBlockMetal("garnetblock");
@@ -346,16 +347,17 @@ public class ZollernBlocks {
 			.setShouldExplode(true, 15);
 	
 	// Lapis
-	public static final Block netherLapisOre = ((ZollernGemOre) ((ZollernGemOre) new ZollernGemOre(
-			"netherlapisore", 1.0F, new ItemStack(Items.DYE, 1, 4).getItem())
+	public static final Block netherLapisOre = ((ZollernGemOre) ((ZollernGemOre) ((ZollernGemOre) new ZollernGemOre(
+			"netherlapisore", 1.0F, new ItemStack(Blocks.AIR).getItem())
 			.setBlockVariant(EnumBlockVariant.NETHER)).setBlockHarvestLevel(
 			"pickaxe", EnumHarvestLevel.IRON.getHarvestLevel()))
-			.setShouldExplode(true, 42);
-	public static final Block upsideDownLapisOre = (((ZollernGemOre) new ZollernGemOre(
-			"ud_lapisore", 1.6F, new ItemStack(Items.DYE, 1, 4).getItem())
+			.setShouldExplode(true, 42)).setDroppedMetadata(4);
+	public static final Block upsideDownLapisOre = (((ZollernGemOre) ((ZollernGemOre) new ZollernGemOre(
+			"ud_lapisore", 1.6F, new ItemStack(Blocks.AIR).getItem())
 			.setBlockVariant(EnumBlockVariant.UPSIDE_DOWN))
 			.setBlockHarvestLevel("pickaxe",
-					EnumHarvestLevel.AMARANTH.getHarvestLevel()));
+					EnumHarvestLevel.AMARANTH.getHarvestLevel()))
+			.setDroppedMetadata(4));
 	
 	// Shinium
 	public static final Block netherShiniumOre = ((ZollernBlockOre) ((ZollernBlockOre) new ZollernBlockOre(

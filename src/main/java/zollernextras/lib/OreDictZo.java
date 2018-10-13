@@ -21,8 +21,8 @@ public class OreDictZo {
 		registerOre("oreFueltonium", ZollernBlocks.fueltoniumBlock);
 		registerOre("oreNetherFueltonium", ZollernBlocks.netherFueltoniumOre);
 		registerOre("oreEnderFueltonium", ZollernBlocks.enderFueltoniumOre);
-		// registerOre("oreUpsideDownFueltonium",
-		// ZollernBlocks.upsideDownFueltoniumOre);
+		registerOre("oreUpsideDownFueltonium",
+				ZollernBlocks.upsideDownFueltoniumOre);
 		registerOre("dustFueltonium", ZollernItems.fuelonite);
 		registerOre("blockFueltonium", ZollernBlocks.fueltoniumBlock);
 		
@@ -31,6 +31,7 @@ public class OreDictZo {
 			registerOre("ingotPlatinum", ZollernItems.shiniumIngot);
 			registerOre("dustPlatinum", ZollernItems.shiniumDust);
 			registerOre("blockPlatinum", ZollernBlocks.shiniumBlock);
+			registerOre("orePlatinum", ZollernBlocks.upsideDownShiniumOre);
 		}
 		registerOre("ingotShinium", ZollernItems.shiniumIngot);
 		registerOre("dustShinium", ZollernItems.shiniumDust);
@@ -42,7 +43,7 @@ public class OreDictZo {
 		registerOre("oreZinc", ZollernBlocks.zincOre);
 		registerOre("oreNetherZinc", ZollernBlocks.netherZincOre);
 		registerOre("oreEnderZinc", ZollernBlocks.enderZincOre);
-		// registerOre("oreUpsideDownZinc", ZollernBlocks.upsideDownZincOre);
+		registerOre("oreUpsideDownZinc", ZollernBlocks.upsideDownZincOre);
 		registerOre("blockZinc", ZollernBlocks.zincBlock);
 		
 		// Amaranth
@@ -86,33 +87,32 @@ public class OreDictZo {
 		// Amber
 		registerOre("gemAmber", ZollernItems.amber);
 		registerOre("oreAmber", ZollernBlocks.amberOre);
-		// registerOre("oreUpsideDownAmber", ZollernBlocks.upsideDownAmberOre);
+		registerOre("oreUpsideDownAmber", ZollernBlocks.upsideDownAmberOre);
 		registerOre("blockAmber", ZollernBlocks.amberBlock);
 		
 		// Topaz
 		registerOre("gemTopaz", ZollernItems.topaz);
 		registerOre("oreTopaz", ZollernBlocks.topazOre);
-		// registerOre("oreUpsideDownTopaz", ZollernBlocks.upsideDownTopazOre);
+		registerOre("oreUpsideDownTopaz", ZollernBlocks.upsideDownTopazOre);
 		registerOre("blockTopaz", ZollernBlocks.topazBlock);
 		
 		// Aquamarine
 		registerOre("gemAquamarine", ZollernItems.aquamarine);
 		registerOre("oreAquamarine", ZollernBlocks.aquamarineOre);
-		// registerOre("oreUpsideDownAquamarine",
-		// ZollernBlocks.upsideDownAquaOre);
+		registerOre("oreUpsideDownAquamarine",
+				ZollernBlocks.upsideDownAquamarineOre);
 		registerOre("blockAquamarine", ZollernBlocks.aquamarineBlock);
 		
 		// Garnet
 		registerOre("gemGarnet", ZollernItems.garnet);
 		registerOre("oreGarnet", ZollernBlocks.garnetOre);
-		// registerOre("oreUpsideDownGarnet",
-		// ZollernBlocks.upsideDownGarnetOre);
+		registerOre("oreUpsideDownGarnet", ZollernBlocks.upsideDownGarnetOre);
 		registerOre("blockGarnet", ZollernBlocks.garnetBlock);
 		
 		// Opal
 		registerOre("gemOpal", ZollernItems.opal);
 		registerOre("oreOpal", ZollernBlocks.opalOre);
-		// registerOre("oreUpsideDownOpal", ZollernBlocks.upsideDownOpalOre);
+		registerOre("oreUpsideDownOpal", ZollernBlocks.upsideDownOpalOre);
 		registerOre("blockOpal", ZollernBlocks.opalBlock);
 		
 		// Enderite
@@ -127,14 +127,14 @@ public class OreDictZo {
 		
 		// Ruby
 		registerOre("oreRuby", ZollernBlocks.rubyOre);
-		// registerOre("oreUpsideDownRuby", ZollernBlocks.upsideDownRubyOre);
+		registerOre("oreUpsideDownRuby", ZollernBlocks.upsideDownRubyOre);
 		registerOre("blockRuby", ZollernBlocks.rubyBlock);
 		registerOre("gemRuby", ZollernItems.ruby);
 		
 		// Sapphire
 		registerOre("oreSapphire", ZollernBlocks.sapphireOre);
-		// registerOre("oreUpsideDownSapphire",
-		// ZollernBlocks.upsideDownSapphireOre);
+		registerOre("oreUpsideDownSapphire",
+				ZollernBlocks.upsideDownSapphireOre);
 		registerOre("blockSapphire", ZollernBlocks.sapphireBlock);
 		registerOre("gemSapphire", ZollernItems.sapphire);
 		
@@ -142,11 +142,12 @@ public class OreDictZo {
 		registerOre("gemEnderShard", ZollernItems.enderShard);
 		registerOre("oreEnderShard", ZollernBlocks.enderShardOre);
 		registerOre("oreNetherEnderShard", ZollernBlocks.netherEnderShardOre);
-		// registerOre("oreUpsideDownEnderShard",
-		// ZollernBlocks.upsideDownEnderShardOre);
+		registerOre("oreUpsideDownEnderShard",
+				ZollernBlocks.upsideDownEnderShardOre);
 		
 		// Lapis
 		registerOre("ingotLapis", ZollernItems.lapisIngot);
+		registerOre("oreUpsideDownLapis", ZollernBlocks.upsideDownLapisOre);
 		registerOre("dustLapis", new ItemStack(Items.DYE, 1, 4).getItem());
 		
 		// Steel
@@ -154,6 +155,7 @@ public class OreDictZo {
 		registerOre("dustSteel", ZollernItems.steelDust);
 		registerOre("oreSteel", ZollernBlocks.steelOre);
 		registerOre("blockSteel", ZollernBlocks.steelBlock);
+		registerOre("stickSteel", ZollernItems.steelStick);
 		
 		// Obsidian
 		registerOre("ingotObsidian", ZollernItems.obsidianIngot);

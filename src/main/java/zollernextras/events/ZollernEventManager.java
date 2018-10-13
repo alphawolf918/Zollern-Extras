@@ -36,8 +36,8 @@ import net.minecraftforge.event.world.BlockEvent.BreakEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import zollernextras.ZollernExtrasMod;
-import zollernextras.blocks.ICorruptBlock;
 import zollernextras.blocks.ZollernBlocks;
+import zollernextras.blocks.upsidedown.corrupt.ICorruptBlock;
 import zollernextras.config.ZEConfig;
 import zollernextras.items.ZollernItems;
 import zollernextras.items.armor.ZollernArmor;
@@ -48,7 +48,7 @@ import zollernextras.mobs.entities.EntityHellFish;
 import zollernextras.mobs.entities.EntityMummy;
 import zollernextras.mobs.entities.EntityShadowSkeleton;
 import zollernextras.mobs.entities.IShadeEntity;
-import zollernextras.potions.ZollernPotion;
+import zollernextras.potions.ZollernPotions;
 
 public class ZollernEventManager {
 	
@@ -85,11 +85,11 @@ public class ZollernEventManager {
 				// apply).
 				if (playerInventory.hasItemStack(radiumStack)
 						&& !player.capabilities.isCreativeMode
-						&& !player.isPotionActive(ZollernPotion.radiance)) {
+						&& !player.isPotionActive(ZollernPotions.radiance)) {
 					
 					// (1 second = 20 ticks)
 					player.addPotionEffect(new PotionEffect(
-							ZollernPotion.radiance, ZollernPotion.radianceTime,
+							ZollernPotions.radiance, ZollernPotions.radianceTime,
 							1));
 					
 					// Check to see if the Radium item is in the Player's
@@ -109,20 +109,20 @@ public class ZollernEventManager {
 				// If the Player is not in Creative Mode, and does not have the
 				// Radiance potion effect, make the shadows attack them.
 				if (!player.capabilities.isCreativeMode
-						&& !player.isPotionActive(ZollernPotion.radiance)) {
+						&& !player.isPotionActive(ZollernPotions.radiance)) {
 					player.attackEntityFrom(ZDamageSrc.deathShadows,
-							ZollernPotion.shadowDamage);
+							ZollernPotions.shadowDamage);
 				}
 			}
 			
 			// This is where we handle the "spread" of the virus potion effect,
 			// called Infected. First, we check to see if the effect is active,
 			// which we can do with a simple player.isPotionActive check.
-			if (player.isPotionActive(ZollernPotion.infected)) {
+			if (player.isPotionActive(ZollernPotions.infected)) {
 				
 				// Cause pain! Remember the performEffect code is ran in the
 				// ClientProxy class.
-				ZollernPotion.infected.performEffect(player, 1);
+				ZollernPotions.infected.performEffect(player, 1);
 				
 				// Grab the world we're in by calling the world that the Player
 				// is in.
@@ -155,21 +155,21 @@ public class ZollernEventManager {
 					// Make sure they don't already have the effect, otherwise
 					// it's just redundant.. This is for OTHER players who are
 					// NOT yet infected!
-					if (!currentPlayer.isPotionActive(ZollernPotion.infected)) {
+					if (!currentPlayer.isPotionActive(ZollernPotions.infected)) {
 						
 						// Now just add the potion effect. Voila! This should
 						// infect any Players around the original infected
 						// Player. Pandemic!
 						currentPlayer.addPotionEffect(new PotionEffect(
-								ZollernPotion.infected,
-								ZollernPotion.infectionTime, 1));
+								ZollernPotions.infected,
+								ZollernPotions.infectionTime, 1));
 					}
 				}
 			}
 			
 			// Perform the Radiance potion effect.
-			if (player.isPotionActive(ZollernPotion.radiance)) {
-				ZollernPotion.radiance.performEffect(player, 1);
+			if (player.isPotionActive(ZollernPotions.radiance)) {
+				ZollernPotions.radiance.performEffect(player, 1);
 			}
 			
 			// Initialize the count for each armor type.
@@ -220,7 +220,7 @@ public class ZollernEventManager {
 				} else if (rArmorCount == 4) {
 					// Radium
 					player.addPotionEffect(new PotionEffect(
-							ZollernPotion.radiance, 100, 1));
+							ZollernPotions.radiance, 100, 1));
 					player.capabilities.allowFlying = true;
 				} else {
 					// Disable all "extra" potion capabilities that have nothing

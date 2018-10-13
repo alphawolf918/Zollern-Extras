@@ -126,8 +126,7 @@ public class WGLake extends WorldGenerator {
 								// TODO: Add special blocks with biome check
 								
 								worldIn.setBlockState(blockpos,
-										ZollernBlocks.upsideDownSurfaceRock
-												.getDefaultState(), 2);
+										outerBlock.getDefaultState(), 2);
 							}
 						}
 					}

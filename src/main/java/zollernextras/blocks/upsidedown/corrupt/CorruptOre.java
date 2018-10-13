@@ -1,6 +1,5 @@
 package zollernextras.blocks.upsidedown.corrupt;
 
-import zollernextras.blocks.ICorruptBlock;
 import zollernextras.blocks.ZollernBlockOre;
 
 public class CorruptOre extends ZollernBlockOre implements ICorruptBlock {

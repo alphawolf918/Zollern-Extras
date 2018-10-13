@@ -141,12 +141,12 @@ public class ZollernHelper {
 		item.setItemDamage(item.getMaxDamage());
 	}
 	
-	public static void registerDimension(String dimName,
+	public static DimensionType registerDimension(String dimName,
 			String dimUnlocalizedName, int dimID,
 			Class<? extends WorldProvider> worldProvider) {
 		DimensionType dim = DimensionType.register(dimName, dimUnlocalizedName,
 				dimID, worldProvider, false);
 		DimensionManager.registerDimension(dimID, dim);
+		return dim;
 	}
-	
 }

@@ -14,6 +14,9 @@ public class ZollernFluids {
 	public static Fluid fluidFueltonium;
 	public static FueltoniumLiquidBlock blockFueltoniumFluid;
 	
+	public static Fluid fluidWhiteLava;
+	public static WhiteLavaLiquidBlock blockWhiteLavaFluid;
+	
 	public static void init() {
 		registerFluids();
 		registerFluidBlocks();
@@ -22,6 +25,7 @@ public class ZollernFluids {
 		
 		blockChargiumFluid.init();
 		blockFueltoniumFluid.init();
+		blockWhiteLavaFluid.init();
 	}
 	
 	public static void registerFluids() {
@@ -32,26 +36,36 @@ public class ZollernFluids {
 		fluidFueltonium = new Fluid("fueltonium", new ResourceLocation(
 				ZollernModInfo.modId, "blocks/fuel"), new ResourceLocation(
 				ZollernModInfo.modId, "blocks/fuel"));
+		fluidWhiteLava = new Fluid("whitelava", new ResourceLocation(
+				ZollernModInfo.modId, "blocks/whitelava"),
+				new ResourceLocation(ZollernModInfo.modId, "blocks/whitelava"));
 		
 		FluidRegistry.registerFluid(fluidChargium);
 		FluidRegistry.registerFluid(fluidFueltonium);
+		FluidRegistry.registerFluid(fluidWhiteLava);
 	}
 	
 	public static void registerFluidBlocks() {
 		blockChargiumFluid = new ChargiumLiquidBlock(fluidChargium);
 		blockFueltoniumFluid = new FueltoniumLiquidBlock(fluidFueltonium);
+		blockWhiteLavaFluid = new WhiteLavaLiquidBlock(fluidWhiteLava);
+		
+		blockWhiteLavaFluid.setLightLevel(1.0F);
 		
 		ZollernExtrasMod.proxy.addIModelRegister(blockChargiumFluid);
 		ZollernExtrasMod.proxy.addIModelRegister(blockFueltoniumFluid);
+		ZollernExtrasMod.proxy.addIModelRegister(blockWhiteLavaFluid);
 	}
 	
 	public static void addBuckets() {
 		FluidRegistry.addBucketForFluid(fluidChargium);
 		FluidRegistry.addBucketForFluid(fluidFueltonium);
+		FluidRegistry.addBucketForFluid(fluidWhiteLava);
 	}
 	
 	public static void refreshReferences() {
 		fluidChargium = FluidRegistry.getFluid("chargium");
 		fluidFueltonium = FluidRegistry.getFluid("fueltonium");
+		fluidWhiteLava = FluidRegistry.getFluid("whitelava");
 	}
 }

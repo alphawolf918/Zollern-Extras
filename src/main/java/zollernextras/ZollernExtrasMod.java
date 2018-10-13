@@ -14,6 +14,7 @@ import zollernextras.blocks.fluid.ZollernFluids;
 import zollernextras.config.ZEConfig;
 import zollernextras.creativetabs.ZollernTabs;
 import zollernextras.dimensions.DimensionRegistry;
+import zollernextras.enchantments.ZollernEnchantments;
 import zollernextras.events.ZollernSoundEvents;
 import zollernextras.handlers.Handlers;
 import zollernextras.lib.OreDictZo;
@@ -23,7 +24,7 @@ import zollernextras.lib.modhelper.BRHelper;
 import zollernextras.lib.modhelper.ModHelperBase;
 import zollernextras.lib.recipes.RecipeManager;
 import zollernextras.mobs.MobRegistry;
-import zollernextras.potions.ZollernPotion;
+import zollernextras.potions.ZollernPotions;
 import zollernextras.proxies.CommonProxy;
 import zollernextras.proxies.IProxy;
 import zollernextras.util.ZollernRegistry;
@@ -59,7 +60,8 @@ public class ZollernExtrasMod {
 		ZollernSoundEvents.init();
 		MobRegistry.init();
 		ZollernFluids.init();
-		ZollernPotion.init();
+		ZollernPotions.init();
+		ZollernEnchantments.init();
 		ZollernRegistry.registerAll(event);
 		ZollernTabs.init();
 		if (ZEConfig.enableStackChanges) {

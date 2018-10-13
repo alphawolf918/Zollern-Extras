@@ -1,6 +1,5 @@
 package zollernextras.blocks.upsidedown.corrupt;
 
-import zollernextras.blocks.ICorruptBlock;
 import zollernextras.blocks.ZollernGemOre;
 import net.minecraft.item.Item;
 

@@ -14,7 +14,7 @@ import zollernextras.gui.GuiBiomeType;
 import zollernextras.lib.ZDamageSrc;
 import zollernextras.lib.ZollernHelper;
 import zollernextras.mobs.MobRenders;
-import zollernextras.potions.ZollernPotion;
+import zollernextras.potions.ZollernPotions;
 
 public class ClientProxy extends CommonProxy {
 	
@@ -68,12 +68,16 @@ public class ClientProxy extends CommonProxy {
 		// Do NOT use an "else if" here! There is a possibility that the Player
 		// could have more than one effect, and if we did an "else if" clause,
 		// then they would only get one or the other - we want them to get both.
-		// An "else if" is used for infected and radiance because they can only
-		// have one or the other.
-		if (potionId == ZollernPotion.infected) {
+		if (potionId == ZollernPotions.infected) {
 			player.attackEntityFrom(ZDamageSrc.deathInfection,
-					ZollernPotion.infectionDamage);
-		} else if (potionId == ZollernPotion.radiance) {
+					ZollernPotions.infectionDamage);
+		}
+		
+		if (potionId == ZollernPotions.radiance) {
+			// TODO
+		}
+		
+		if (potionId == ZollernPotions.antiCorruption) {
 			// TODO
 		}
 	}

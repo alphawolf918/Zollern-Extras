@@ -17,6 +17,13 @@
 					"fluid": "fueltonium"
 				}
 			}
+		],
+		"whitelava": [
+			{
+				"custom": {
+					"fluid": "whitelava"
+				}
+			}
 		]
 	}
 }

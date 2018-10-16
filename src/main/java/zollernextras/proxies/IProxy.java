@@ -5,6 +5,7 @@ import net.minecraft.potion.Potion;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 import zollernextras.blocks.fluid.IZollernModelRegister;
 
 public interface IProxy {
@@ -22,4 +23,6 @@ public interface IProxy {
 	public void doPotionEffect(EntityPlayer player, Potion potionId);
 	
 	public void sendChatMessage(EntityPlayer player, String message);
+	
+	public EntityPlayer getPlayerEntity(MessageContext ctx);
 }

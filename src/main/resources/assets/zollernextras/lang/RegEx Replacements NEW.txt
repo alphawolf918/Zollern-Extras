@@ -1,0 +1,11 @@
+e\(x(.+?), y(.+?), z(.+?),
+
+e\(new BlockPos\(x$1, y$2, z$3\),
+
+e\(x(.+?), y, z(.+?),
+
+e\(new BlockPos\(x$1, y, z$2\),
+
+e\(x(.+?), y, z,
+
+e\(new BlockPos\(x$1, y, z\),

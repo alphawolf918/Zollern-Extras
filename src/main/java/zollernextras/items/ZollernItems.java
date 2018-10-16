@@ -4,6 +4,7 @@ import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import zollernextras.items.armor.ZollernArmor;
 import zollernextras.items.armor.ZollernArmorMaterials;
+import zollernextras.items.teleporter.ItemUpsideDownEye;
 import zollernextras.items.tools.ItemBedrockBreaker;
 import zollernextras.items.tools.ZollernAxe;
 import zollernextras.items.tools.ZollernHoe;
@@ -274,6 +275,11 @@ public class ZollernItems {
 	// Zucrite
 	public static final Item zucriteDust = new ZollernItemBase("zucritedust");
 	public static final Item zucriteIngot = new ZollernItemBase("zucriteingot");
+	
+	// Teleporter Eyes
+	public static final Item upsideDownEye_uncharged = new ZollernItemBase(
+			"upsidedowneye_uncharged");
+	public static final Item upsideDownEye_charged = new ItemUpsideDownEye();
 	
 	// Power Swords
 	public static final Item DIABLO = new SwordDiablo();

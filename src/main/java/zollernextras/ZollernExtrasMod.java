@@ -9,6 +9,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
+import net.minecraftforge.fml.relauncher.Side;
 import zollernextras.biomes.BiomeList;
 import zollernextras.blocks.fluid.ZollernFluids;
 import zollernextras.config.ZEConfig;
@@ -17,6 +18,7 @@ import zollernextras.dimensions.DimensionRegistry;
 import zollernextras.enchantments.ZollernEnchantments;
 import zollernextras.events.ZollernSoundEvents;
 import zollernextras.handlers.Handlers;
+import zollernextras.items.teleporter.MessageTeleportToDimension;
 import zollernextras.lib.OreDictZo;
 import zollernextras.lib.StackChanges;
 import zollernextras.lib.ZollernModInfo;
@@ -52,6 +54,8 @@ public class ZollernExtrasMod {
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		snw = NetworkRegistry.INSTANCE.newSimpleChannel(ZollernModInfo.channel);
+		snw.registerMessage(MessageTeleportToDimension.TeleportHandler.class,
+				MessageTeleportToDimension.class, 1, Side.SERVER);
 		ModHelperBase.detectMods();
 		if (ModHelperBase.useExtremeReactors) {
 			BRHelper.init();

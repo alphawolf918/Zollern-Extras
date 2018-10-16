@@ -47,6 +47,7 @@ public class CommonProxy implements IProxy, IGuiHandler {
 		
 	}
 	
+	@Override
 	public EntityPlayer getPlayerEntity(MessageContext ctx) {
 		return ctx.getServerHandler().playerEntity;
 	}
@@ -54,14 +55,12 @@ public class CommonProxy implements IProxy, IGuiHandler {
 	@Override
 	public Object getServerGuiElement(int ID, EntityPlayer player, World world,
 			int x, int y, int z) {
-		
 		return null;
 	}
 	
 	@Override
 	public Object getClientGuiElement(int ID, EntityPlayer player, World world,
 			int x, int y, int z) {
-		
 		return null;
 	}
 	

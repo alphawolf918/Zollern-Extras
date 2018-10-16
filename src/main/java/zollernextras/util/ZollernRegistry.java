@@ -170,7 +170,9 @@ public class ZollernRegistry {
 				ZollernItems.shadowEssence, ZollernItems.netheridium,
 				ZollernItems.etrium, ZollernItems.crushedEtrium,
 				ZollernItems.ascendium, ZollernItems.zucriteDust,
-				ZollernItems.zucriteIngot);
+				ZollernItems.zucriteIngot,
+				ZollernItems.upsideDownEye_uncharged,
+				ZollernItems.upsideDownEye_charged);
 		
 		// Power Swords
 		registerItems(event, ZollernItems.DIABLO, ZollernItems.ENDER,

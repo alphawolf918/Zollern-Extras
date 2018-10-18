@@ -7,7 +7,6 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
 import net.minecraft.server.MinecraftServer;
-import net.minecraft.server.management.PlayerList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
@@ -61,18 +60,21 @@ public class MessageTeleportToDimension implements IMessage {
 					.getEntityByID(message.id);
 			if (ent instanceof EntityPlayerMP) {
 				EntityPlayerMP player = (EntityPlayerMP) ent;
-				MinecraftServer mcServer = player.mcServer;
-				PlayerList playerList = mcServer.getPlayerList();
-				int dim = message.dim;
-				WorldServer worldServ = mcServer.worldServerForDimension(dim);
-				CustomTeleporter custTel = new CustomTeleporter(worldServ);
-				playerList.transferPlayerToDimension(player, dim, custTel);
-				
-				// This part works fine, no issues here.
 				int x = (int) player.posX;
 				int y = (int) player.posY;
 				int z = (int) player.posZ;
+				MinecraftServer server = player.getEntityWorld()
+						.getMinecraftServer();
+				WorldServer worldServ = server
+						.worldServerForDimension(message.dim);
+				worldServ
+						.getMinecraftServer()
+						.getPlayerList()
+						.transferPlayerToDimension(player, message.dim,
+								new CustomTeleporter(worldServ));
+				player.addExperienceLevel(0);
 				
+				// This part works fine, no issues here.
 				World worldObj = player.world;
 				
 				Block blockAir = Blocks.AIR;

@@ -7,6 +7,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
 import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.management.PlayerList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
@@ -51,8 +52,7 @@ public class MessageTeleportToDimension implements IMessage {
 	// anything on this.
 	// AbstractMessage and PacketDispatcher live under the networks folder, and
 	// CustomTeleporter and MessageTeleportToDimension live in items.teleporter.
-	public static class TeleportHandler implements
-			IMessageHandler<MessageTeleportToDimension, IMessage> {
+	public class TeleportHandler implements IMessageHandler<MessageTeleportToDimension, IMessage> {
 		@Override
 		public IMessage onMessage(MessageTeleportToDimension message, MessageContext ctx) {
 			Entity ent = ctx.getServerHandler().playerEntity.getEntityWorld().getEntityByID(
@@ -66,11 +66,10 @@ public class MessageTeleportToDimension implements IMessage {
 				synchronized (this) {
 					MinecraftServer server = player.getEntityWorld().getMinecraftServer();
 					WorldServer worldServ = server.worldServerForDimension(dim);
-					worldServ
-							.getMinecraftServer()
-							.getPlayerList()
-							.transferPlayerToDimension(player, dim,
-									new CustomTeleporter(worldServ, x, y, z));
+					MinecraftServer serverWorld = worldServ.getMinecraftServer();
+					PlayerList playerList = serverWorld.getPlayerList();
+					CustomTeleporter custTel = new CustomTeleporter(worldServ, x, y, z);
+					playerList.transferPlayerToDimension(player, dim, custTel);
 				}
 				player.setPositionAndUpdate(x, y, z);
 				player.addExperienceLevel(0);

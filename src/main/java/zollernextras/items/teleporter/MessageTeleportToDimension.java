@@ -54,24 +54,23 @@ public class MessageTeleportToDimension implements IMessage {
 	public static class TeleportHandler implements
 			IMessageHandler<MessageTeleportToDimension, IMessage> {
 		@Override
-		public IMessage onMessage(MessageTeleportToDimension message,
-				MessageContext ctx) {
-			Entity ent = ctx.getServerHandler().playerEntity.world
-					.getEntityByID(message.id);
+		public IMessage onMessage(MessageTeleportToDimension message, MessageContext ctx) {
+			Entity ent = ctx.getServerHandler().playerEntity.getEntityWorld().getEntityByID(
+					message.id);
 			if (ent instanceof EntityPlayerMP) {
 				EntityPlayerMP player = (EntityPlayerMP) ent;
 				int x = (int) player.posX;
 				int y = (int) player.posY;
 				int z = (int) player.posZ;
-				MinecraftServer server = player.getEntityWorld()
-						.getMinecraftServer();
-				WorldServer worldServ = server
-						.worldServerForDimension(message.dim);
+				int dim = message.dim;
+				MinecraftServer server = player.getEntityWorld().getMinecraftServer();
+				WorldServer worldServ = server.worldServerForDimension(dim);
 				worldServ
 						.getMinecraftServer()
 						.getPlayerList()
-						.transferPlayerToDimension(player, message.dim,
-								new CustomTeleporter(worldServ));
+						.transferPlayerToDimension(player, dim,
+								new CustomTeleporter(worldServ, x, y, z));
+				player.setPositionAndUpdate(x, y, z);
 				player.addExperienceLevel(0);
 				
 				// This part works fine, no issues here.
@@ -84,44 +83,31 @@ public class MessageTeleportToDimension implements IMessage {
 				IBlockState stoneState = blockStone.getDefaultState();
 				
 				if (worldObj.getBlockState(new BlockPos(x, y - 1, z)) == blockAir) {
-					worldObj.setBlockState(new BlockPos(x, y - 1, z),
-							stoneState);
-					worldObj.setBlockState(new BlockPos(x + 1, y - 1, z + 1),
-							stoneState);
-					worldObj.setBlockState(new BlockPos(x - 1, y - 1, z - 1),
-							stoneState);
-					worldObj.setBlockState(new BlockPos(x + 1, y - 1, z - 1),
-							stoneState);
-					worldObj.setBlockState(new BlockPos(x - 1, y - 1, z + 1),
-							stoneState);
-					worldObj.setBlockState(new BlockPos(x - 1, y - 1, z),
-							stoneState);
-					worldObj.setBlockState(new BlockPos(x, y - 1, z - 1),
-							stoneState);
-					worldObj.setBlockState(new BlockPos(x + 1, y - 1, z),
-							stoneState);
-					worldObj.setBlockState(new BlockPos(x, y - 1, z + 1),
-							stoneState);
+					worldObj.setBlockState(new BlockPos(x, y - 1, z), stoneState);
+					worldObj.setBlockState(new BlockPos(x + 1, y - 1, z + 1), stoneState);
+					worldObj.setBlockState(new BlockPos(x - 1, y - 1, z - 1), stoneState);
+					worldObj.setBlockState(new BlockPos(x + 1, y - 1, z - 1), stoneState);
+					worldObj.setBlockState(new BlockPos(x - 1, y - 1, z + 1), stoneState);
+					worldObj.setBlockState(new BlockPos(x - 1, y - 1, z), stoneState);
+					worldObj.setBlockState(new BlockPos(x, y - 1, z - 1), stoneState);
+					worldObj.setBlockState(new BlockPos(x + 1, y - 1, z), stoneState);
+					worldObj.setBlockState(new BlockPos(x, y - 1, z + 1), stoneState);
 				}
 				
 				worldObj.setBlockState(new BlockPos(x, y, z), airState);
 				worldObj.setBlockState(new BlockPos(x, y + 1, z), airState);
 				
 				worldObj.setBlockState(new BlockPos(x + 1, y, z + 1), airState);
-				worldObj.setBlockState(new BlockPos(x + 1, y + 1, z + 1),
-						airState);
+				worldObj.setBlockState(new BlockPos(x + 1, y + 1, z + 1), airState);
 				
 				worldObj.setBlockState(new BlockPos(x - 1, y, z - 1), airState);
-				worldObj.setBlockState(new BlockPos(x - 1, y + 1, z - 1),
-						airState);
+				worldObj.setBlockState(new BlockPos(x - 1, y + 1, z - 1), airState);
 				
 				worldObj.setBlockState(new BlockPos(x + 1, y, z - 1), airState);
-				worldObj.setBlockState(new BlockPos(x + 1, y + 1, z - 1),
-						airState);
+				worldObj.setBlockState(new BlockPos(x + 1, y + 1, z - 1), airState);
 				
 				worldObj.setBlockState(new BlockPos(x - 1, y, z + 1), airState);
-				worldObj.setBlockState(new BlockPos(x - 1, y + 1, z + 1),
-						airState);
+				worldObj.setBlockState(new BlockPos(x - 1, y + 1, z + 1), airState);
 				
 				worldObj.setBlockState(new BlockPos(x - 1, y, z), airState);
 				worldObj.setBlockState(new BlockPos(x - 1, y + 1, z), airState);
@@ -135,7 +121,7 @@ public class MessageTeleportToDimension implements IMessage {
 				worldObj.setBlockState(new BlockPos(x, y, z + 1), airState);
 				worldObj.setBlockState(new BlockPos(x, y + 1, z + 1), airState);
 				
-				player.fallDistance = 0.0f;
+				// player.fallDistance = 0.0f;
 			}
 			return message;
 		}

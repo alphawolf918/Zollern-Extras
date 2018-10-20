@@ -54,8 +54,10 @@ public class MessageTeleportToDimension implements IMessage {
 	// CustomTeleporter and MessageTeleportToDimension live in items.teleporter.
 	public static class TeleportHandler implements
 			IMessageHandler<MessageTeleportToDimension, IMessage> {
+		
 		@Override
-		public IMessage onMessage(MessageTeleportToDimension message, MessageContext ctx) {
+		public synchronized IMessage onMessage(MessageTeleportToDimension message,
+				MessageContext ctx) {
 			Entity ent = ctx.getServerHandler().playerEntity.getEntityWorld().getEntityByID(
 					message.id);
 			if (ent instanceof EntityPlayerMP) {
@@ -64,15 +66,14 @@ public class MessageTeleportToDimension implements IMessage {
 				int y = (int) player.posY;
 				int z = (int) player.posZ;
 				int dim = message.dim;
-				synchronized (this) {
-					MinecraftServer server = player.getEntityWorld().getMinecraftServer();
-					WorldServer worldServ = server.worldServerForDimension(dim);
-					MinecraftServer serverWorld = worldServ.getMinecraftServer();
-					PlayerList playerList = serverWorld.getPlayerList();
-					CustomTeleporter custTel = new CustomTeleporter(worldServ, x, y, z);
-					playerList.transferPlayerToDimension(player, dim, custTel);
-				}
+				MinecraftServer server = player.getEntityWorld().getMinecraftServer();
+				WorldServer worldServ = server.worldServerForDimension(dim);
+				MinecraftServer serverWorld = worldServ.getMinecraftServer();
+				PlayerList playerList = serverWorld.getPlayerList();
+				CustomTeleporter custTel = new CustomTeleporter(worldServ, x, y, z);
 				player.setPositionAndUpdate(x, y, z);
+				playerList.transferPlayerToDimension(player, dim, custTel);
+				worldServ.updateEntityWithOptionalForce(player, false);
 				player.addExperienceLevel(0);
 				
 				// This part works fine, no issues here.

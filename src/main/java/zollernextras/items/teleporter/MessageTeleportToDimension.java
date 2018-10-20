@@ -52,7 +52,8 @@ public class MessageTeleportToDimension implements IMessage {
 	// anything on this.
 	// AbstractMessage and PacketDispatcher live under the networks folder, and
 	// CustomTeleporter and MessageTeleportToDimension live in items.teleporter.
-	public class TeleportHandler implements IMessageHandler<MessageTeleportToDimension, IMessage> {
+	public static class TeleportHandler implements
+			IMessageHandler<MessageTeleportToDimension, IMessage> {
 		@Override
 		public IMessage onMessage(MessageTeleportToDimension message, MessageContext ctx) {
 			Entity ent = ctx.getServerHandler().playerEntity.getEntityWorld().getEntityByID(

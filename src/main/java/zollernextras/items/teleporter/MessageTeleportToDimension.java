@@ -63,13 +63,15 @@ public class MessageTeleportToDimension implements IMessage {
 				int y = (int) player.posY;
 				int z = (int) player.posZ;
 				int dim = message.dim;
-				MinecraftServer server = player.getEntityWorld().getMinecraftServer();
-				WorldServer worldServ = server.worldServerForDimension(dim);
-				worldServ
-						.getMinecraftServer()
-						.getPlayerList()
-						.transferPlayerToDimension(player, dim,
-								new CustomTeleporter(worldServ, x, y, z));
+				synchronized (this) {
+					MinecraftServer server = player.getEntityWorld().getMinecraftServer();
+					WorldServer worldServ = server.worldServerForDimension(dim);
+					worldServ
+							.getMinecraftServer()
+							.getPlayerList()
+							.transferPlayerToDimension(player, dim,
+									new CustomTeleporter(worldServ, x, y, z));
+				}
 				player.setPositionAndUpdate(x, y, z);
 				player.addExperienceLevel(0);
 				

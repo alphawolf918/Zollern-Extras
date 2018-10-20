@@ -31,8 +31,8 @@ public class PacketDispatcher {
 		ZollernHelper.logInfo("Registering packets..");
 		
 		PacketDispatcher.dispatcher.registerMessage(
-				MessageTeleportToDimension.TeleportHandler.class,
-				MessageTeleportToDimension.class, 1, Side.SERVER);
+				MessageTeleportToDimension.TeleportHandler.class, MessageTeleportToDimension.class,
+				1, Side.SERVER);
 		
 		ZollernHelper.logInfo("Packets regsitered.");
 	}
@@ -47,17 +47,12 @@ public class PacketDispatcher {
 	private static final <T extends AbstractMessage<T> & IMessageHandler<T, IMessage>> void registerMessage(
 			Class<T> clazz) {
 		if (AbstractMessage.AbstractClientMessage.class.isAssignableFrom(clazz)) {
-			PacketDispatcher.dispatcher.registerMessage(clazz, clazz,
-					packetId++, Side.CLIENT);
-		} else if (AbstractMessage.AbstractServerMessage.class
-				.isAssignableFrom(clazz)) {
-			PacketDispatcher.dispatcher.registerMessage(clazz, clazz,
-					packetId++, Side.SERVER);
+			PacketDispatcher.dispatcher.registerMessage(clazz, clazz, packetId++, Side.CLIENT);
+		} else if (AbstractMessage.AbstractServerMessage.class.isAssignableFrom(clazz)) {
+			PacketDispatcher.dispatcher.registerMessage(clazz, clazz, packetId++, Side.SERVER);
 		} else {
-			PacketDispatcher.dispatcher.registerMessage(clazz, clazz, packetId,
-					Side.CLIENT);
-			PacketDispatcher.dispatcher.registerMessage(clazz, clazz,
-					packetId++, Side.SERVER);
+			PacketDispatcher.dispatcher.registerMessage(clazz, clazz, packetId, Side.CLIENT);
+			PacketDispatcher.dispatcher.registerMessage(clazz, clazz, packetId++, Side.SERVER);
 		}
 	}
 	
@@ -82,18 +77,17 @@ public class PacketDispatcher {
 	 * the same dimension. Shortcut to
 	 * {@link SimpleNetworkWrapper#sendToAllAround(IMessage, NetworkRegistry.TargetPoint)}
 	 */
-	public static final void sendToAllAround(IMessage message, int dimension,
-			double x, double y, double z, double range) {
-		PacketDispatcher.sendToAllAround(message,
-				new NetworkRegistry.TargetPoint(dimension, x, y, z, range));
+	public static final void sendToAllAround(IMessage message, int dimension, double x, double y,
+			double z, double range) {
+		PacketDispatcher.sendToAllAround(message, new NetworkRegistry.TargetPoint(dimension, x, y,
+				z, range));
 	}
 	
 	/**
 	 * Send this message to everyone within a certain range of a point. See
 	 * {@link SimpleNetworkWrapper#sendToAllAround(IMessage, NetworkRegistry.TargetPoint)}
 	 */
-	public static final void sendToAllAround(IMessage message,
-			NetworkRegistry.TargetPoint point) {
+	public static final void sendToAllAround(IMessage message, NetworkRegistry.TargetPoint point) {
 		PacketDispatcher.dispatcher.sendToAllAround(message, point);
 	}
 	
@@ -102,11 +96,9 @@ public class PacketDispatcher {
 	 * provided. Shortcut to
 	 * {@link SimpleNetworkWrapper#sendToAllAround(IMessage, NetworkRegistry.TargetPoint)}
 	 */
-	public static final void sendToAllAround(IMessage message,
-			EntityPlayer player, double range) {
-		PacketDispatcher.sendToAllAround(message,
-				player.world.provider.getDimension(), player.posX, player.posY,
-				player.posZ, range);
+	public static final void sendToAllAround(IMessage message, EntityPlayer player, double range) {
+		PacketDispatcher.sendToAllAround(message, player.world.provider.getDimension(),
+				player.posX, player.posY, player.posZ, range);
 	}
 	
 	/**

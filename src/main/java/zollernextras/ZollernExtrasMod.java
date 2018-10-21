@@ -31,12 +31,10 @@ import zollernextras.proxies.CommonProxy;
 import zollernextras.proxies.IProxy;
 import zollernextras.util.ZollernRegistry;
 
-@Mod(modid = ZollernModInfo.modId, version = ZollernModInfo.modVersion,
-		name = ZollernModInfo.name)
+@Mod(modid = ZollernModInfo.modId, version = ZollernModInfo.modVersion, name = ZollernModInfo.name)
 public class ZollernExtrasMod {
 	
-	@SidedProxy(clientSide = ZollernModInfo.proxyClient,
-			serverSide = ZollernModInfo.proxyServer)
+	@SidedProxy(clientSide = ZollernModInfo.proxyClient, serverSide = ZollernModInfo.proxyServer)
 	public static IProxy proxy;
 	
 	@Mod.Instance(ZollernModInfo.modId)

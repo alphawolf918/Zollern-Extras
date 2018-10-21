@@ -19,8 +19,7 @@ public class ItemUpsideDownEye extends ZollernItemBase {
 	}
 	
 	@Override
-	public ActionResult<ItemStack> onItemRightClick(World world,
-			EntityPlayer player, EnumHand hand) {
+	public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand) {
 		ItemStack itemStack = player.getHeldItem(hand);
 		if (!player.capabilities.isCreativeMode) {
 			itemStack.damageItem(1, player);
@@ -29,8 +28,8 @@ public class ItemUpsideDownEye extends ZollernItemBase {
 			ZollernExtrasMod.snw.sendToServer(new MessageTeleportToDimension(
 					ZEConfig.dimensionUpsideDownID, player.getEntityId()));
 		} else {
-			ZollernExtrasMod.snw.sendToServer(new MessageTeleportToDimension(0,
-					player.getEntityId()));
+			ZollernExtrasMod.snw.sendToServer(new MessageTeleportToDimension(0, player
+					.getEntityId()));
 		}
 		// player.swingArm(hand);
 		return new ActionResult(EnumActionResult.PASS, player.getHeldItem(hand));

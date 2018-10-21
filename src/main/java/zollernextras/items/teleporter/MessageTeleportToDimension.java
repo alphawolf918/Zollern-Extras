@@ -11,6 +11,7 @@ import net.minecraft.server.management.PlayerList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessageHandler;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
@@ -40,24 +41,18 @@ public class MessageTeleportToDimension implements IMessage {
 		buf.writeInt(this.id);
 	}
 	
-	// Used to be, we would do mcServer.getConfigurationManager(). That no
-	// longer exists. This is, as far as I know, the only way to call the
-	// transferPlayerToDimension method. There's the player.changeDimension, but
-	// that assumes that they're in a portal so it causes a crash. This
-	// teleports them there, then crashes with a ConcurrentModificationException
-	// in the tick() method in WorldServer when it tries to update. Even the
-	// blocks place properly. From what I understand about this Exception, it
-	// occurs when something is trying to access a thing that something else is
-	// already iterating over. I've scoured the web and can't seem to find
-	// anything on this.
-	// AbstractMessage and PacketDispatcher live under the networks folder, and
-	// CustomTeleporter and MessageTeleportToDimension live in items.teleporter.
 	public static class TeleportHandler implements
 			IMessageHandler<MessageTeleportToDimension, IMessage> {
 		
 		@Override
 		public synchronized IMessage onMessage(MessageTeleportToDimension message,
 				MessageContext ctx) {
+			FMLCommonHandler.instance().getWorldThread(ctx.netHandler)
+					.addScheduledTask(() -> this.teleportPlayer(message, ctx));
+			return message;
+		}
+		
+		public static void teleportPlayer(MessageTeleportToDimension message, MessageContext ctx) {
 			Entity ent = ctx.getServerHandler().playerEntity.getEntityWorld().getEntityByID(
 					message.id);
 			if (ent instanceof EntityPlayerMP) {
@@ -126,7 +121,6 @@ public class MessageTeleportToDimension implements IMessage {
 				
 				// player.fallDistance = 0.0f;
 			}
-			return message;
 		}
 	}
 }

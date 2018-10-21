@@ -71,7 +71,6 @@ public class MessageTeleportToDimension implements IMessage {
 				worldServ.updateEntityWithOptionalForce(player, false);
 				player.addExperienceLevel(0);
 				
-				// This part works fine, no issues here.
 				World worldObj = player.world;
 				
 				Block blockAir = Blocks.AIR;

@@ -54,17 +54,14 @@ public class ZollernGemOre extends ZollernBlockOre {
 	}
 	
 	@Override
-	public Item getItemDropped(IBlockState par1BlockState, Random rand,
-			int fortune) {
+	public Item getItemDropped(IBlockState par1BlockState, Random rand, int fortune) {
 		return this.itemToDrop;
 	}
 	
 	@Override
-	public List<ItemStack> getDrops(IBlockAccess world, BlockPos pos,
-			IBlockState state, int fortune) {
+	public List<ItemStack> getDrops(IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
 		List<ItemStack> dropped = super.getDrops(world, pos, state, fortune);
-		int j = ZollernHelper.rngNumber(this.getMinDropped(),
-				this.getMaxDropped());
+		int j = ZollernHelper.rngNumber(this.getMinDropped(), this.getMaxDropped());
 		for (int k = 0; k < j; ++k) {
 			dropped.add(new ItemStack(Items.DYE, 2, this.droppedMetadata));
 		}
@@ -109,13 +106,11 @@ public class ZollernGemOre extends ZollernBlockOre {
 			numDropped = ZollernHelper.rngNumber(maxDropped, maxDropped + 2);
 			break;
 		case END:
-			numDropped = ZollernHelper
-					.rngNumber(maxDropped + 2, maxDropped + 4);
+			numDropped = ZollernHelper.rngNumber(maxDropped + 2, maxDropped + 4);
 			break;
 		case UPSIDE_DOWN:
 		case PROMISED_LAND:
-			numDropped = ZollernHelper
-					.rngNumber(maxDropped + 4, maxDropped + 6);
+			numDropped = ZollernHelper.rngNumber(maxDropped + 4, maxDropped + 6);
 			break;
 		}
 		return numDropped;
@@ -124,9 +119,8 @@ public class ZollernGemOre extends ZollernBlockOre {
 	@Override
 	public int quantityDroppedWithBonus(int fortune, Random random) {
 		if (fortune > 0
-				&& Item.getItemFromBlock(this) != this.getItemDropped(this
-						.getBlockState().getValidStates().iterator().next(),
-						random, fortune)) {
+				&& Item.getItemFromBlock(this) != this.getItemDropped(this.getBlockState()
+						.getValidStates().iterator().next(), random, fortune)) {
 			int i = random.nextInt(fortune + 2) - 1;
 			
 			if (i < 0) {
@@ -140,10 +134,9 @@ public class ZollernGemOre extends ZollernBlockOre {
 	}
 	
 	@Override
-	public int getExpDrop(IBlockState state,
-			net.minecraft.world.IBlockAccess world, BlockPos pos, int fortune) {
-		Random rand = world instanceof World ? ((World) world).rand
-				: new Random();
+	public int getExpDrop(IBlockState state, net.minecraft.world.IBlockAccess world, BlockPos pos,
+			int fortune) {
+		Random rand = world instanceof World ? ((World) world).rand : new Random();
 		return MathHelper.getInt(rand, 3, 7);
 	}
 }

@@ -45,8 +45,7 @@ public abstract class ZollernWorldGenMaster extends WorldGenerator {
 	 * @param z
 	 * @param block
 	 */
-	protected void setBlock(World world, BlockPos pos, int x, int y, int z,
-			Block block) {
+	protected void setBlock(World world, BlockPos pos, int x, int y, int z, Block block) {
 		this.setBlock(world, pos.add(x, y, z), block);
 	}
 	
@@ -73,8 +72,7 @@ public abstract class ZollernWorldGenMaster extends WorldGenerator {
 	 * @return The X, Y, Z coordinates of the structure.
 	 */
 	protected String getSpawnedAtString(BlockPos pos) {
-		return "Spawned at: " + pos.getX() + " " + pos.getY() + " "
-				+ pos.getZ();
+		return "Spawned at: " + pos.getX() + " " + pos.getY() + " " + pos.getZ();
 	}
 	
 }

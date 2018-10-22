@@ -26,15 +26,15 @@ public class SwordDiablo extends ZollernSword {
 	}
 	
 	@Override
-	public ActionResult<ItemStack> onItemRightClick(World worldIn,
-			EntityPlayer playerIn, EnumHand handIn) {
+	public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn,
+			EnumHand handIn) {
 		super.onItemRightClick(worldIn, playerIn, handIn);
 		if (!worldIn.isRemote) {
 			ItemStack par1ItemStack = playerIn.getHeldItem(handIn);
 			Vec3d look = playerIn.getLookVec();
 			EntityLargeFireball fireball = new EntityLargeFireball(worldIn);
-			fireball.setPosition(playerIn.posX + look.xCoord * 5, playerIn.posY
-					+ 1 + look.yCoord * 5, playerIn.posZ + look.zCoord * 5);
+			fireball.setPosition(playerIn.posX + look.xCoord * 5, playerIn.posY + 1 + look.yCoord
+					* 5, playerIn.posZ + look.zCoord * 5);
 			fireball.accelerationX = look.xCoord * 0.1;
 			fireball.accelerationY = look.yCoord * 0.1;
 			fireball.accelerationZ = look.zCoord * 0.1;
@@ -44,8 +44,7 @@ public class SwordDiablo extends ZollernSword {
 			}
 		}
 		playerIn.swingArm(handIn);
-		return new ActionResult(EnumActionResult.PASS,
-				playerIn.getHeldItem(handIn));
+		return new ActionResult(EnumActionResult.PASS, playerIn.getHeldItem(handIn));
 	}
 	
 	@Override
@@ -59,8 +58,8 @@ public class SwordDiablo extends ZollernSword {
 	}
 	
 	@Override
-	public boolean onLeftClickEntity(ItemStack par1ItemStack,
-			EntityPlayer par2EntityPlayer, Entity entity) {
+	public boolean onLeftClickEntity(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer,
+			Entity entity) {
 		super.onLeftClickEntity(par1ItemStack, par2EntityPlayer, entity);
 		entity.setFire(60);
 		return false;
@@ -68,11 +67,10 @@ public class SwordDiablo extends ZollernSword {
 	
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void addInformation(ItemStack p_77624_1_, EntityPlayer p_77624_2_,
-			List list, boolean p_77624_4_) {
+	public void addInformation(ItemStack p_77624_1_, EntityPlayer p_77624_2_, List list,
+			boolean p_77624_4_) {
 		if (KeyHelper.isCtrlKeyDown() || KeyHelper.isShiftKeyDown()) {
-			list.add(TextFormatting.ITALIC
-					+ "A sword of fire, said to match the");
+			list.add(TextFormatting.ITALIC + "A sword of fire, said to match the");
 			list.add(TextFormatting.ITALIC + "power of the Nether itself.");
 		} else {
 			list.add("Hold SHIFT for");

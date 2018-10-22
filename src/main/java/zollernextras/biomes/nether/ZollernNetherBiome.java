@@ -27,21 +27,17 @@ public class ZollernNetherBiome extends ZollernBiome {
 	public ZollernNetherBiome(Biome.BiomeProperties props, String name) {
 		super(props);
 		this.clearAllSpawning();
-		this.spawnableMonsterList.add(new Biome.SpawnListEntry(
-				EntityGhast.class, 6, 2, 4));
-		this.spawnableMonsterList.add(new Biome.SpawnListEntry(
-				EntityPigZombie.class, 100, 4, 4));
-		this.spawnableMonsterList.add(new Biome.SpawnListEntry(
-				EntityMagmaCube.class, 2, 4, 4));
+		this.spawnableMonsterList.add(new Biome.SpawnListEntry(EntityGhast.class, 6, 2, 4));
+		this.spawnableMonsterList.add(new Biome.SpawnListEntry(EntityPigZombie.class, 100, 4, 4));
+		this.spawnableMonsterList.add(new Biome.SpawnListEntry(EntityMagmaCube.class, 2, 4, 4));
 		if (ModHelperBase.useNatura) {
-			this.spawnableMonsterList.add(new Biome.SpawnListEntry(
-					EntityHeatscarSpider.class, 6, 4, 4));
-			this.spawnableMonsterList.add(new Biome.SpawnListEntry(
-					EntityBabyHeatscarSpider.class, 6, 4, 4));
-			this.spawnableMonsterList.add(new Biome.SpawnListEntry(
-					EntityImp.class, 6, 4, 4));
-			this.spawnableMonsterList.add(new Biome.SpawnListEntry(
-					EntityNitroCreeper.class, 6, 4, 4));
+			this.spawnableMonsterList.add(new Biome.SpawnListEntry(EntityHeatscarSpider.class, 6,
+					4, 4));
+			this.spawnableMonsterList.add(new Biome.SpawnListEntry(EntityBabyHeatscarSpider.class,
+					6, 4, 4));
+			this.spawnableMonsterList.add(new Biome.SpawnListEntry(EntityImp.class, 6, 4, 4));
+			this.spawnableMonsterList.add(new Biome.SpawnListEntry(EntityNitroCreeper.class, 6, 4,
+					4));
 		}
 		this.setBlocks(Blocks.NETHERRACK);
 		this.setTempCategory(TempCategory.WARM);
@@ -72,8 +68,7 @@ public class ZollernNetherBiome extends ZollernBiome {
 			int i = rand.nextInt(16) + 8;
 			int j = rand.nextInt(16) + 8;
 			BlockPos blockpos = worldIn.getHeight(pos.add(i, 0, j)).up();
-			(new WGLake(Blocks.LAVA, ZollernBlocks.netherrack)).generate(
-					worldIn, rand, blockpos);
+			(new WGLake(Blocks.LAVA, ZollernBlocks.netherrack)).generate(worldIn, rand, blockpos);
 		}
 	}
 }

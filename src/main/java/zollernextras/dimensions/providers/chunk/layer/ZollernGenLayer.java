@@ -17,8 +17,7 @@ public abstract class ZollernGenLayer extends GenLayer {
 		super(seed);
 	}
 	
-	public static GenLayer[] initializeAllBiomeGenerators(long seed,
-			WorldType type) {
+	public static GenLayer[] initializeAllBiomeGenerators(long seed, WorldType type) {
 		int biomeSize = type == WorldType.LARGE_BIOMES ? 6 : 4;
 		biomeSize = getModdedBiomeSize(type, biomeSize);
 		
@@ -52,8 +51,7 @@ public abstract class ZollernGenLayer extends GenLayer {
 		return biomeIds;
 	}
 	
-	private BiomeManager.BiomeEntry getWeightedBiomeEntry(
-			List<BiomeManager.BiomeEntry> biomeEntries) {
+	private BiomeManager.BiomeEntry getWeightedBiomeEntry(List<BiomeManager.BiomeEntry> biomeEntries) {
 		return WeightedRandom.getRandomItem(biomeEntries,
 				nextInt(WeightedRandom.getTotalWeight(biomeEntries)));
 	}

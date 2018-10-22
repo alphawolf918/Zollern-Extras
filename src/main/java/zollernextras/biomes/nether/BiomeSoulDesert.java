@@ -20,13 +20,9 @@ public class BiomeSoulDesert extends ZollernNetherBiome {
 	@Override
 	public void decorate(World worldIn, Random rand, BlockPos pos) {
 		super.decorate(worldIn, rand, pos);
-		if (net.minecraftforge.event.terraingen.TerrainGen
-				.decorate(
-						worldIn,
-						rand,
-						pos,
-						net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.SHROOM))
-			if (rand.nextInt(1000) <= 25) {
+		if (net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, pos,
+				net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.SHROOM))
+			if (rand.nextInt(1000) <= 75) {
 				int i = rand.nextInt(16) + 8;
 				int j = rand.nextInt(16) + 8;
 				BlockPos blockpos = worldIn.getHeight(pos.add(i, 0, j)).up();

@@ -18,16 +18,14 @@ public class ShineTorch extends BlockTorch {
 	protected ShineTorch() {
 		super();
 		ZollernHelper.setName(this, "shinetorch");
-		this.setDefaultState(this.blockState.getBaseState().withProperty(
-				FACING, EnumFacing.UP));
+		this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.UP));
 		this.setTickRandomly(true);
 		this.setLightLevel(1.0F);
 	}
 	
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void randomDisplayTick(IBlockState stateIn, World worldIn,
-			BlockPos pos, Random rand) {
+	public void randomDisplayTick(IBlockState stateIn, World worldIn, BlockPos pos, Random rand) {
 		EnumFacing enumfacing = stateIn.getValue(FACING);
 		double d0 = pos.getX() + 0.5D;
 		double d1 = pos.getY() + 0.7D;
@@ -37,13 +35,12 @@ public class ShineTorch extends BlockTorch {
 		
 		if (enumfacing.getAxis().isHorizontal()) {
 			EnumFacing enumfacing1 = enumfacing.getOpposite();
-			worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0 + 0.27D
-					* enumfacing1.getFrontOffsetX(), d1 + 0.22D, d2 + 0.27D
-					* enumfacing1.getFrontOffsetZ(), 0.0D, 0.0D, 0.0D,
-					new int[0]);
+			worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL,
+					d0 + 0.27D * enumfacing1.getFrontOffsetX(), d1 + 0.22D, d2 + 0.27D
+							* enumfacing1.getFrontOffsetZ(), 0.0D, 0.0D, 0.0D, new int[0]);
 		} else {
-			worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0, d1, d2,
-					0.0D, 0.0D, 0.0D, new int[0]);
+			worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0, d1, d2, 0.0D, 0.0D, 0.0D,
+					new int[0]);
 		}
 	}
 	

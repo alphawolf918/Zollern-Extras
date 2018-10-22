@@ -26,10 +26,8 @@ public class BiomeMudSwamp extends ZollernBiome {
 		this.theBiomeDecorator.reedsPerChunk = 10;
 		this.theBiomeDecorator.clayPerChunk = 1;
 		this.theBiomeDecorator.waterlilyPerChunk = 4;
-		this.spawnableMonsterList.add(new SpawnListEntry(EntitySlime.class, 1,
-				1, 1));
-		this.spawnableMonsterList.add(new SpawnListEntry(EntityWitch.class, 1,
-				0, 1));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntitySlime.class, 1, 1, 1));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityWitch.class, 1, 0, 1));
 	}
 	
 }

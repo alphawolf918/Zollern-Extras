@@ -34,8 +34,7 @@ public class WorldGenUpsideDownDungeons extends ZollernWorldGenMaster {
 			for (int l2 = -1; l2 <= 4; ++l2) {
 				for (int i3 = l1; i3 <= i2; ++i3) {
 					BlockPos blockpos = position.add(k2, l2, i3);
-					Material material = worldIn.getBlockState(blockpos)
-							.getMaterial();
+					Material material = worldIn.getBlockState(blockpos).getMaterial();
 					boolean flag = material.isSolid();
 					
 					if (l2 == -1 && !flag) {
@@ -47,8 +46,7 @@ public class WorldGenUpsideDownDungeons extends ZollernWorldGenMaster {
 					}
 					
 					if ((k2 == k || k2 == l || i3 == l1 || i3 == i2) && l2 == 0
-							&& worldIn.isAirBlock(blockpos)
-							&& worldIn.isAirBlock(blockpos.up())) {
+							&& worldIn.isAirBlock(blockpos) && worldIn.isAirBlock(blockpos.up())) {
 						++j2;
 					}
 				}
@@ -61,26 +59,21 @@ public class WorldGenUpsideDownDungeons extends ZollernWorldGenMaster {
 					for (int k4 = l1; k4 <= i2; ++k4) {
 						BlockPos blockpos1 = position.add(k3, i4, k4);
 						
-						if (k3 != k && i4 != -1 && k4 != l1 && k3 != l
-								&& i4 != 4 && k4 != i2) {
+						if (k3 != k && i4 != -1 && k4 != l1 && k3 != l && i4 != 4 && k4 != i2) {
 							if (worldIn.getBlockState(blockpos1).getBlock() != Blocks.CHEST) {
 								worldIn.setBlockToAir(blockpos1);
 							}
 						} else if (blockpos1.getY() >= 0
-								&& !worldIn.getBlockState(blockpos1.down())
-										.getMaterial().isSolid()) {
+								&& !worldIn.getBlockState(blockpos1.down()).getMaterial().isSolid()) {
 							worldIn.setBlockToAir(blockpos1);
-						} else if (worldIn.getBlockState(blockpos1)
-								.getMaterial().isSolid()
+						} else if (worldIn.getBlockState(blockpos1).getMaterial().isSolid()
 								&& worldIn.getBlockState(blockpos1).getBlock() != Blocks.CHEST) {
 							if (i4 == -1 && rand.nextInt(4) != 0) {
 								worldIn.setBlockState(blockpos1,
-										ZollernBlocks.upsideDownCobble
-												.getDefaultState(), 2);
+										ZollernBlocks.upsideDownCobble.getDefaultState(), 2);
 							} else {
 								worldIn.setBlockState(blockpos1,
-										ZollernBlocks.upsideDownCobbleMossy
-												.getDefaultState(), 2);
+										ZollernBlocks.upsideDownCobbleMossy.getDefaultState(), 2);
 							}
 						}
 					}
@@ -98,24 +91,22 @@ public class WorldGenUpsideDownDungeons extends ZollernWorldGenMaster {
 						int j3 = 0;
 						
 						for (EnumFacing enumfacing : EnumFacing.Plane.HORIZONTAL) {
-							if (worldIn
-									.getBlockState(blockpos2.offset(enumfacing))
-									.getMaterial().isSolid()) {
+							if (worldIn.getBlockState(blockpos2.offset(enumfacing)).getMaterial()
+									.isSolid()) {
 								++j3;
 							}
 						}
 						
 						if (j3 == 1) {
-							worldIn.setBlockState(blockpos2, Blocks.CHEST
-									.correctFacing(worldIn, blockpos2,
+							worldIn.setBlockState(
+									blockpos2,
+									Blocks.CHEST.correctFacing(worldIn, blockpos2,
 											Blocks.CHEST.getDefaultState()), 2);
-							TileEntity tileentity1 = worldIn
-									.getTileEntity(blockpos2);
+							TileEntity tileentity1 = worldIn.getTileEntity(blockpos2);
 							
 							if (tileentity1 instanceof TileEntityChest) {
 								((TileEntityChest) tileentity1).setLootTable(
-										LootTableList.CHESTS_NETHER_BRIDGE,
-										rand.nextLong());
+										LootTableList.CHESTS_NETHER_BRIDGE, rand.nextLong());
 							}
 							
 							break;
@@ -124,17 +115,15 @@ public class WorldGenUpsideDownDungeons extends ZollernWorldGenMaster {
 				}
 			}
 			
-			worldIn.setBlockState(position,
-					Blocks.MOB_SPAWNER.getDefaultState(), 2);
+			worldIn.setBlockState(position, Blocks.MOB_SPAWNER.getDefaultState(), 2);
 			TileEntity tileentity = worldIn.getTileEntity(position);
 			
 			if (tileentity instanceof TileEntityMobSpawner) {
-				((TileEntityMobSpawner) tileentity).getSpawnerBaseLogic()
-						.setEntityId(this.pickMobSpawner(rand));
+				((TileEntityMobSpawner) tileentity).getSpawnerBaseLogic().setEntityId(
+						this.pickMobSpawner(rand));
 			} else {
-				ZollernHelper.logInfo("Failed to fetch mob spawner entity at: "
-						+ position.getX() + " " + position.getY() + " "
-						+ position.getZ());
+				ZollernHelper.logInfo("Failed to fetch mob spawner entity at: " + position.getX()
+						+ " " + position.getY() + " " + position.getZ());
 			}
 			return true;
 		} else {
@@ -142,10 +131,8 @@ public class WorldGenUpsideDownDungeons extends ZollernWorldGenMaster {
 		}
 	}
 	
-	public static void addUpsideDownDungeonMob(String unlocalizedMobName,
-			int weight) {
-		ZEHooks.addUpsideDownDungeonMob(
-				new ResourceLocation(unlocalizedMobName), weight);
+	public static void addUpsideDownDungeonMob(String unlocalizedMobName, int weight) {
+		ZEHooks.addUpsideDownDungeonMob(new ResourceLocation(unlocalizedMobName), weight);
 	}
 	
 	private static void addDungeonMobs() {

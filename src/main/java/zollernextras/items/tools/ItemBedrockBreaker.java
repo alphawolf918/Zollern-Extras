@@ -39,9 +39,8 @@ public class ItemBedrockBreaker extends ZollernItemBase {
 	// damage the tool one time. If it is not a match, play a sound event that
 	// lets the user know that it's broken.
 	@Override
-	public EnumActionResult onItemUse(EntityPlayer player, World worldIn,
-			BlockPos pos, EnumHand hand, EnumFacing facing, float hitX,
-			float hitY, float hitZ) {
+	public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos,
+			EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
 		if (!worldIn.isRemote) {
 			IBlockState blockState = worldIn.getBlockState(pos);
 			Block block = blockState.getBlock();
@@ -49,9 +48,8 @@ public class ItemBedrockBreaker extends ZollernItemBase {
 				ItemStack heldItem = player.getHeldItem(hand);
 				int toolDamage = this.getDamage(heldItem);
 				if (toolDamage < this.getMaxDamage(heldItem)) {
-					EntityItem rokkiteItem = new EntityItem(worldIn,
-							pos.getX(), pos.getY(), pos.getZ(), new ItemStack(
-									ZollernItems.rokkite,
+					EntityItem rokkiteItem = new EntityItem(worldIn, pos.getX(), pos.getY(),
+							pos.getZ(), new ItemStack(ZollernItems.rokkite,
 									ZollernHelper.rngNumber(1, 2)));
 					worldIn.spawnEntity(rokkiteItem);
 					worldIn.setBlockState(pos, Blocks.AIR.getDefaultState());
@@ -69,8 +67,8 @@ public class ItemBedrockBreaker extends ZollernItemBase {
 	
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void addInformation(ItemStack p_77624_1_, EntityPlayer p_77624_2_,
-			List list, boolean p_77624_4_) {
+	public void addInformation(ItemStack p_77624_1_, EntityPlayer p_77624_2_, List list,
+			boolean p_77624_4_) {
 		if (KeyHelper.isCtrlKeyDown() || KeyHelper.isShiftKeyDown()) {
 			list.add("Provides the power to");
 			list.add("break Bedrock on right-click.");

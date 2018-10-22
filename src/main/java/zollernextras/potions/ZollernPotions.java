@@ -57,8 +57,8 @@ public class ZollernPotions extends Potion {
 	 * @param potionLiquidColor
 	 *            The color of the Potion's liquid.
 	 */
-	public ZollernPotions(String potionName, boolean potionIsBadEffect,
-			int potionEffectiveness, int potionLiquidColor) {
+	public ZollernPotions(String potionName, boolean potionIsBadEffect, int potionEffectiveness,
+			int potionLiquidColor) {
 		super(potionIsBadEffect, potionLiquidColor);
 		
 		// Add our mod's ID on to the actual Potion name, to prevent any future
@@ -85,8 +85,7 @@ public class ZollernPotions extends Potion {
 		radiance = new ZollernPotions("radiance", false, 13458603, 0xeeee00);
 		infected = new ZollernPotions("infected", true, 13615421, 0x000000);
 		
-		ZollernHelper.logInfo("Successfully loaded " + totalEntries
-				+ " new Potion effects.");
+		ZollernHelper.logInfo("Successfully loaded " + totalEntries + " new Potion effects.");
 	}
 	
 	/**

@@ -23,8 +23,7 @@ public class RenderScorpion extends RenderLiving<EntityScorpion> {
 	}
 	
 	@Override
-	protected void preRenderCallback(EntityScorpion entitylivingbaseIn,
-			float partialTickTime) {
+	protected void preRenderCallback(EntityScorpion entitylivingbaseIn, float partialTickTime) {
 		this.scaleScorpion(entitylivingbaseIn, partialTickTime);
 	}
 	

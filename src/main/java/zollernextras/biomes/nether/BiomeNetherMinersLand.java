@@ -7,8 +7,7 @@ import zollernextras.dimensions.DimensionRegistry;
 public class BiomeNetherMinersLand extends ZollernNetherBiome {
 	
 	public BiomeNetherMinersLand() {
-		super(new Biome.BiomeProperties("Nether Miner's Land"),
-				"nether_miners_land");
+		super(new Biome.BiomeProperties("Nether Miner's Land"), "nether_miners_land");
 		this.setBlocks(Blocks.NETHERRACK);
 		this.setBiomeWeight(8);
 		DimensionRegistry.addNetherBiome(this, this.getBiomeWeight());

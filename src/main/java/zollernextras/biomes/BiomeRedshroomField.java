@@ -10,8 +10,7 @@ public class BiomeRedshroomField extends ZollernBiome {
 		super(props);
 		props.setTemperature(5.2F);
 		this.setTempCategory(TempCategory.MEDIUM);
-		this.setBlocks(ZollernBlocks.redshroomBlock,
-				ZollernBlocks.redshroomStem);
+		this.setBlocks(ZollernBlocks.redshroomBlock, ZollernBlocks.redshroomStem);
 	}
 	
 }

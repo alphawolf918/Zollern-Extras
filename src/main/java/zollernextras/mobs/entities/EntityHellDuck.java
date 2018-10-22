@@ -20,10 +20,10 @@ public class EntityHellDuck extends EntityDuck implements IMob {
 	@Override
 	public void initEntityAI() {
 		this.setSize(0.3F * 2.0F, 0.7F * 2.0F);
-		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this,
-				EntityPlayer.class, true));
-		this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this,
-				EntityVillager.class, false));
+		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class,
+				true));
+		this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityVillager.class,
+				false));
 		this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this,
 				EntityIronGolem.class, true));
 	}
@@ -31,10 +31,8 @@ public class EntityHellDuck extends EntityDuck implements IMob {
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED)
-				.setBaseValue(0.2D);
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH)
-				.setBaseValue(45.0F);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.2D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(45.0F);
 	}
 	
 	@Override

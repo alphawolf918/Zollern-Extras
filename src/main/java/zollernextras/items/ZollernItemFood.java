@@ -9,8 +9,7 @@ import zollernextras.lib.ZollernHelper;
 
 public class ZollernItemFood extends ItemFood {
 	
-	public ZollernItemFood(String itemName, int amount, float saturation,
-			boolean isWolfFood) {
+	public ZollernItemFood(String itemName, int amount, float saturation, boolean isWolfFood) {
 		super(amount, saturation, isWolfFood);
 		ZollernHelper.setName(this, itemName);
 	}

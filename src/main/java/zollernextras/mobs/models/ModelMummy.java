@@ -23,17 +23,15 @@ public class ModelMummy extends ModelBiped {
 	}
 	
 	@Override
-	public void setRotationAngles(float limbSwing, float limbSwingAmount,
-			float ageInTicks, float netHeadYaw, float headPitch,
-			float scaleFactor, Entity entityIn) {
-		super.setRotationAngles(limbSwing, limbSwingAmount, ageInTicks,
-				netHeadYaw, headPitch, scaleFactor, entityIn);
-		boolean flag = entityIn instanceof EntityZombie
-				&& ((EntityZombie) entityIn).isArmsRaised();
+	public void setRotationAngles(float limbSwing, float limbSwingAmount, float ageInTicks,
+			float netHeadYaw, float headPitch, float scaleFactor, Entity entityIn) {
+		super.setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch,
+				scaleFactor, entityIn);
+		boolean flag = entityIn instanceof EntityZombie && ((EntityZombie) entityIn).isArmsRaised();
 		float f = MathHelper.sin(this.swingProgress * (float) Math.PI);
-		float f1 = MathHelper.sin((1.0F - (1.0F - this.swingProgress)
-				* (1.0F - this.swingProgress))
-				* (float) Math.PI);
+		float f1 = MathHelper
+				.sin((1.0F - (1.0F - this.swingProgress) * (1.0F - this.swingProgress))
+						* (float) Math.PI);
 		this.bipedRightArm.rotateAngleZ = 0.0F;
 		this.bipedLeftArm.rotateAngleZ = 0.0F;
 		this.bipedRightArm.rotateAngleY = -(0.1F - f * 0.6F);

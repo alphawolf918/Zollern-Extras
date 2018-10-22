@@ -14,8 +14,7 @@ public class ZollernUpsideDownBiome extends ZollernBiome {
 	public ZollernUpsideDownBiome(Biome.BiomeProperties props, String name) {
 		super(props);
 		this.clearAllSpawning();
-		this.setBlocks(ZollernBlocks.upsideDownSurfaceRock,
-				ZollernBlocks.upsideDownSubRock);
+		this.setBlocks(ZollernBlocks.upsideDownSurfaceRock, ZollernBlocks.upsideDownSubRock);
 		this.setTempCategory(TempCategory.COLD);
 		this.setNoRain(props);
 		this.setSkyColor(0x008b00);

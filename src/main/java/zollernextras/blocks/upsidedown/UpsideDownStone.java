@@ -13,8 +13,7 @@ public class UpsideDownStone extends ZollernBlockBase {
 	}
 	
 	@Override
-	public Item getItemDropped(IBlockState par1BlockState, Random rand,
-			int fortune) {
+	public Item getItemDropped(IBlockState par1BlockState, Random rand, int fortune) {
 		return Item.getItemFromBlock(ZollernBlocks.upsideDownCobble);
 	}
 	

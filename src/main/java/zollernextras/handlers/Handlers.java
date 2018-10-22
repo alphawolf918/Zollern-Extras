@@ -9,8 +9,7 @@ import zollernextras.managers.WorldGenManager;
 public class Handlers {
 	
 	public static void init() {
-		GameRegistry.registerWorldGenerator(new WorldGenManager(),
-				ZEConfig.worldGenerationWeight);
+		GameRegistry.registerWorldGenerator(new WorldGenManager(), ZEConfig.worldGenerationWeight);
 		GameRegistry.registerFuelHandler(new FuelHandler());
 		MinecraftForge.EVENT_BUS.register(new ZollernEventManager());
 	}

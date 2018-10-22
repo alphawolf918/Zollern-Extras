@@ -35,13 +35,11 @@ public class RenderShadowSkeleton extends RenderLiving<EntityShadowSkeleton> {
 	}
 	
 	@Override
-	protected void preRenderCallback(EntityShadowSkeleton entitylivingbaseIn,
-			float partialTickTime) {
+	protected void preRenderCallback(EntityShadowSkeleton entitylivingbaseIn, float partialTickTime) {
 		this.scaleShadowSkeleton(entitylivingbaseIn, partialTickTime);
 	}
 	
-	protected void scaleShadowSkeleton(
-			EntityShadowSkeleton par1EntityCaveSpider, float par2) {
+	protected void scaleShadowSkeleton(EntityShadowSkeleton par1EntityCaveSpider, float par2) {
 		GL11.glScalef(f6, f6, f6);
 	}
 	

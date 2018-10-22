@@ -58,10 +58,8 @@ public class EntityDuck extends EntityAnimal {
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH)
-				.setBaseValue(8.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED)
-				.setBaseValue(0.45D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(8.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.45D);
 	}
 	
 	@Override
@@ -69,12 +67,10 @@ public class EntityDuck extends EntityAnimal {
 		this.tasks.addTask(0, new EntityAISwimming(this));
 		this.tasks.addTask(1, new EntityAIPanic(this, 1.4D));
 		this.tasks.addTask(2, new EntityAIMate(this, 1.0D));
-		this.tasks.addTask(3, new EntityAITempt(this, 1.0D,
-				Items.BEETROOT_SEEDS, false));
+		this.tasks.addTask(3, new EntityAITempt(this, 1.0D, Items.BEETROOT_SEEDS, false));
 		this.tasks.addTask(4, new EntityAIFollowParent(this, 1.1D));
 		this.tasks.addTask(5, new EntityAIWander(this, 1.0D));
-		this.tasks.addTask(6, new EntityAIWatchClosest(this,
-				EntityPlayer.class, 6.0F));
+		this.tasks.addTask(6, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
 		this.tasks.addTask(7, new EntityAILookIdle(this));
 		this.setPathPriority(PathNodeType.WATER, 0.0F);
 	}
@@ -102,9 +98,7 @@ public class EntityDuck extends EntityAnimal {
 		if (!this.world.isRemote) {
 			if (!this.isChild()) {
 				if (!this.isDuckJockey() && --this.timeUntilNextEgg <= 0) {
-					this.playSound(
-							SoundEvents.ENTITY_CHICKEN_EGG,
-							1.0F,
+					this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F,
 							(this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
 					this.dropItem(Items.EGG, 1);
 					this.timeUntilNextEgg = this.rand.nextInt(6000) + 6000;
@@ -190,8 +184,9 @@ public class EntityDuck extends EntityAnimal {
 		float f1 = MathHelper.cos(this.renderYawOffset * 0.017453292F);
 		float f2 = 0.1F;
 		float f3 = 0.0F;
-		passenger.setPosition(this.posX + 0.1F * f, this.posY + this.height
-				* 0.5F + passenger.getYOffset() + 0.0D, this.posZ - 0.1F * f1);
+		passenger.setPosition(this.posX + 0.1F * f,
+				this.posY + this.height * 0.5F + passenger.getYOffset() + 0.0D, this.posZ - 0.1F
+						* f1);
 		
 		if (passenger instanceof EntityLivingBase) {
 			((EntityLivingBase) passenger).renderYawOffset = this.renderYawOffset;

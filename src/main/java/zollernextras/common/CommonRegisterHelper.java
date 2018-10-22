@@ -21,8 +21,7 @@ public class CommonRegisterHelper {
 		FluidRegistry.registerFluid(fluid);
 	}
 	
-	public static void setFireBurn(Block block, int encouragement,
-			int flammibility) {
+	public static void setFireBurn(Block block, int encouragement, int flammibility) {
 		Blocks.FIRE.setFireInfo(block, encouragement, flammibility);
 	}
 	
@@ -46,8 +45,7 @@ public class CommonRegisterHelper {
 		MinecraftForge.EVENT_BUS.register(event);
 	}
 	
-	public static CreativeTabs createCreativeTabs(String name,
-			ItemStack itemStack) {
+	public static CreativeTabs createCreativeTabs(String name, ItemStack itemStack) {
 		return new CreativeTabsHelper(name, itemStack);
 	}
 	

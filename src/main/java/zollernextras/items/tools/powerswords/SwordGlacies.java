@@ -27,8 +27,8 @@ public class SwordGlacies extends ZollernSword {
 	}
 	
 	@Override
-	public ActionResult<ItemStack> onItemRightClick(World worldIn,
-			EntityPlayer playerIn, EnumHand handIn) {
+	public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn,
+			EnumHand handIn) {
 		super.onItemRightClick(worldIn, playerIn, handIn);
 		ItemStack itemstack = playerIn.getHeldItem(handIn);
 		
@@ -37,15 +37,13 @@ public class SwordGlacies extends ZollernSword {
 		}
 		
 		int length = 100;
-		Vec3d startPos = new Vec3d(playerIn.posX, playerIn.posY
-				+ playerIn.getEyeHeight(), playerIn.posZ);
-		Vec3d endPos = startPos.add(new Vec3d(playerIn.getLookVec().xCoord
-				* length, playerIn.getLookVec().yCoord * length, playerIn
-				.getLookVec().zCoord * length));
+		Vec3d startPos = new Vec3d(playerIn.posX, playerIn.posY + playerIn.getEyeHeight(),
+				playerIn.posZ);
+		Vec3d endPos = startPos.add(new Vec3d(playerIn.getLookVec().xCoord * length, playerIn
+				.getLookVec().yCoord * length, playerIn.getLookVec().zCoord * length));
 		RayTraceResult mop = worldIn.rayTraceBlocks(startPos, endPos);
 		if (mop == null) {
-			return new ActionResult(EnumActionResult.PASS,
-					playerIn.getHeldItem(handIn));
+			return new ActionResult(EnumActionResult.PASS, playerIn.getHeldItem(handIn));
 		}
 		BlockPos vecPos = new BlockPos(mop.getBlockPos());
 		
@@ -55,8 +53,7 @@ public class SwordGlacies extends ZollernSword {
 		
 		for (int l = 0; l < 8; l++) {
 			int j2 = j + l;
-			worldIn.setBlockState(new BlockPos(i, j2, k),
-					Blocks.PACKED_ICE.getDefaultState());
+			worldIn.setBlockState(new BlockPos(i, j2, k), Blocks.PACKED_ICE.getDefaultState());
 			if (j2 < 256) {
 				worldIn.setBlockState(new BlockPos(i, (j2 + 1), k),
 						Blocks.PACKED_ICE.getDefaultState());
@@ -64,8 +61,7 @@ public class SwordGlacies extends ZollernSword {
 		}
 		
 		playerIn.swingArm(handIn);
-		return new ActionResult(EnumActionResult.PASS,
-				playerIn.getHeldItem(handIn));
+		return new ActionResult(EnumActionResult.PASS, playerIn.getHeldItem(handIn));
 	}
 	
 	@Override
@@ -80,8 +76,8 @@ public class SwordGlacies extends ZollernSword {
 	
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void addInformation(ItemStack p_77624_1_, EntityPlayer p_77624_2_,
-			List list, boolean p_77624_4_) {
+	public void addInformation(ItemStack p_77624_1_, EntityPlayer p_77624_2_, List list,
+			boolean p_77624_4_) {
 		if (KeyHelper.isCtrlKeyDown() || KeyHelper.isShiftKeyDown()) {
 			list.add(TextFormatting.ITALIC + "A sword born from");
 			list.add(TextFormatting.ITALIC + " the land of ice.");

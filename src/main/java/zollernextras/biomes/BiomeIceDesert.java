@@ -8,7 +8,7 @@ public class BiomeIceDesert extends ZollernBiome {
 	
 	public BiomeIceDesert(Biome.BiomeProperties props) {
 		super(props);
-		props.setTemperature(1.1F);
+		props.setTemperature(0.1F);
 		this.setTempCategory(TempCategory.COLD);
 		this.setBlocks(ZollernBlocks.coldSand, ZollernBlocks.coldSandSmooth);
 		this.theBiomeDecorator.generateLakes = false;

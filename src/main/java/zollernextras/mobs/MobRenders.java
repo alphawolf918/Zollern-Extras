@@ -19,20 +19,15 @@ import zollernextras.mobs.renderers.RenderShadowSkeleton;
 public class MobRenders {
 	
 	public static void init() {
-		RenderingRegistry.registerEntityRenderingHandler(EntityHellFish.class,
-				RenderHellFish::new);
-		RenderingRegistry.registerEntityRenderingHandler(
-				EntityMegaCreeper.class, RenderMegaCreeper::new);
-		RenderingRegistry.registerEntityRenderingHandler(EntityScorpion.class,
-				RenderScorpion::new);
-		RenderingRegistry.registerEntityRenderingHandler(EntityDuck.class,
-				RenderDuck::new);
-		RenderingRegistry.registerEntityRenderingHandler(EntityHellDuck.class,
-				RenderHellDuck::new);
-		RenderingRegistry.registerEntityRenderingHandler(
-				EntityShadowSkeleton.class, RenderShadowSkeleton::new);
-		RenderingRegistry.registerEntityRenderingHandler(EntityMummy.class,
-				RenderMummy::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityHellFish.class, RenderHellFish::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityMegaCreeper.class,
+				RenderMegaCreeper::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityScorpion.class, RenderScorpion::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityDuck.class, RenderDuck::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityHellDuck.class, RenderHellDuck::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityShadowSkeleton.class,
+				RenderShadowSkeleton::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityMummy.class, RenderMummy::new);
 	}
 	
 }

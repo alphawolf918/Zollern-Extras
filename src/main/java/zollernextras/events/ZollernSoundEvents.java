@@ -44,8 +44,7 @@ public class ZollernSoundEvents {
 	}
 	
 	private static SoundEvent regSound(String strSound) {
-		SoundEvent s = new SoundEvent(new ResourceLocation(ZollernModInfo.modId
-				+ ":" + strSound));
+		SoundEvent s = new SoundEvent(new ResourceLocation(ZollernModInfo.modId + ":" + strSound));
 		s.setRegistryName(strSound);
 		return s;
 	}

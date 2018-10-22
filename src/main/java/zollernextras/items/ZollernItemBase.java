@@ -63,8 +63,8 @@ public class ZollernItemBase extends Item {
 	
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void addInformation(ItemStack p_77624_1_, EntityPlayer p_77624_2_,
-			List list, boolean p_77624_4_) {
+	public void addInformation(ItemStack p_77624_1_, EntityPlayer p_77624_2_, List list,
+			boolean p_77624_4_) {
 		if (this.getDetails() != "" && this.getDetails() != null) {
 			if (KeyHelper.isCtrlKeyDown() || KeyHelper.isShiftKeyDown()) {
 				list.add(ChatFormatting.ITALIC + this.getDetails());

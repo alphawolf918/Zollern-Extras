@@ -27,8 +27,7 @@ public class ZEHooks {
 	 */
 	public static float addNetherDungeonMob(ResourceLocation name, int rarity) {
 		if (rarity <= 0) {
-			throw new IllegalArgumentException(
-					"Rarity must be greater than zero");
+			throw new IllegalArgumentException("Rarity must be greater than zero");
 		}
 		
 		for (ZollernDungeonMob mob : netherDungeonMobs) {
@@ -41,11 +40,9 @@ public class ZEHooks {
 		return rarity;
 	}
 	
-	public static float addUpsideDownDungeonMob(ResourceLocation name,
-			int rarity) {
+	public static float addUpsideDownDungeonMob(ResourceLocation name, int rarity) {
 		if (rarity <= 0) {
-			throw new IllegalArgumentException(
-					"Rarity must be greater than zero");
+			throw new IllegalArgumentException("Rarity must be greater than zero");
 		}
 		
 		for (ZollernDungeonMob mob : upsideDownDungeonMobs) {
@@ -86,14 +83,12 @@ public class ZEHooks {
 	 * @return The mob name
 	 */
 	public static ResourceLocation getRandomNetherDungeonMob(Random rand) {
-		ZollernDungeonMob mob = WeightedRandom.getRandomItem(rand,
-				netherDungeonMobs);
+		ZollernDungeonMob mob = WeightedRandom.getRandomItem(rand, netherDungeonMobs);
 		return mob.type;
 	}
 	
 	public static ResourceLocation getRandomUpsideDownDungeonMob(Random rand) {
-		ZollernDungeonMob mob = WeightedRandom.getRandomItem(rand,
-				upsideDownDungeonMobs);
+		ZollernDungeonMob mob = WeightedRandom.getRandomItem(rand, upsideDownDungeonMobs);
 		return mob.type;
 	}
 	

@@ -6,14 +6,12 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.block.statemap.StateMapperBase;
 import net.minecraft.item.ItemStack;
 
-public class ZollernMapper extends StateMapperBase implements
-		ItemMeshDefinition {
+public class ZollernMapper extends StateMapperBase implements ItemMeshDefinition {
 	
 	public final ModelResourceLocation location;
 	
 	public ZollernMapper(String modName, String fileName, String modelName) {
-		this.location = new ModelResourceLocation(modName + ":" + fileName,
-				modelName);
+		this.location = new ModelResourceLocation(modName + ":" + fileName, modelName);
 	}
 	
 	@Override

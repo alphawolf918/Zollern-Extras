@@ -17,8 +17,7 @@ public class BlockEnderGlow extends ZollernBlockBase {
 	}
 	
 	@Override
-	public Item getItemDropped(IBlockState par1BlockState, Random rand,
-			int fortune) {
+	public Item getItemDropped(IBlockState par1BlockState, Random rand, int fortune) {
 		return ZollernItems.enderGlowDust;
 	}
 	

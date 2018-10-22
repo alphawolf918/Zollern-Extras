@@ -89,6 +89,10 @@
 * Added Steel Stick and Power Stick.
     * Necessary crafting ingredients for the Power Swords.
 * Added White Lava liquid, though it doesn't have a purpose or occur naturally just yet.
+* Added the Upside-Down Eye to teleport the Player to and from the dimension. Works for five uses.
+    * Crafting recipe is different if Thermal Foundation is present.
+* Drastically lowered temperature of Icy Desert biome.
+* Increased chance for Nether Wart to spawn in revitalized Nether's "Soul Desert" biome.
 * 
 
 ==== FIXES ====

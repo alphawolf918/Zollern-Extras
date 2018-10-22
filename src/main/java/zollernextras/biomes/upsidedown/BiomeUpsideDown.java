@@ -8,8 +8,7 @@ public class BiomeUpsideDown extends ZollernUpsideDownBiome {
 	
 	public BiomeUpsideDown() {
 		super(new Biome.BiomeProperties("Upside-Down"), "upside_down");
-		this.setBlocks(ZollernBlocks.upsideDownSurfaceRock,
-				ZollernBlocks.witherrack);
+		this.setBlocks(ZollernBlocks.upsideDownSurfaceRock, ZollernBlocks.witherrack);
 		this.setBiomeWeight(86);
 		DimensionRegistry.addUpsideDownBiome(this, this.getBiomeWeight());
 	}

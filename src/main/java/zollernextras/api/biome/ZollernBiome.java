@@ -34,8 +34,7 @@ public abstract class ZollernBiome extends Biome {
 		return this;
 	}
 	
-	public Biome setGrassAndFoliageColor(int par1FoliageColor,
-			int par2GrassColor) {
+	public Biome setGrassAndFoliageColor(int par1FoliageColor, int par2GrassColor) {
 		this.setFoliageColor(par1FoliageColor);
 		this.setGrassColor(par2GrassColor);
 		return this;

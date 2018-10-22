@@ -16,20 +16,17 @@ public class WorldGenShinestone extends ZollernWorldGenMaster {
 		} else if (worldIn.getBlockState(position.up()).getBlock() != Blocks.STONE) {
 			return false;
 		} else {
-			worldIn.setBlockState(position,
-					ZollernBlocks.shinestone.getDefaultState(), 2);
+			worldIn.setBlockState(position, ZollernBlocks.shinestone.getDefaultState(), 2);
 			
 			for (int i = 0; i < 1500; ++i) {
-				BlockPos blockpos = position.add(
-						rand.nextInt(8) - rand.nextInt(8), -rand.nextInt(12),
-						rand.nextInt(8) - rand.nextInt(8));
+				BlockPos blockpos = position.add(rand.nextInt(8) - rand.nextInt(8),
+						-rand.nextInt(12), rand.nextInt(8) - rand.nextInt(8));
 				
 				if (worldIn.isAirBlock(blockpos)) {
 					int j = 0;
 					
 					for (EnumFacing enumfacing : EnumFacing.values()) {
-						if (worldIn.getBlockState(blockpos.offset(enumfacing))
-								.getBlock() == ZollernBlocks.shinestone) {
+						if (worldIn.getBlockState(blockpos.offset(enumfacing)).getBlock() == ZollernBlocks.shinestone) {
 							++j;
 						}
 						
@@ -39,8 +36,8 @@ public class WorldGenShinestone extends ZollernWorldGenMaster {
 					}
 					
 					if (j == 1) {
-						worldIn.setBlockState(blockpos,
-								ZollernBlocks.shinestone.getDefaultState(), 2);
+						worldIn.setBlockState(blockpos, ZollernBlocks.shinestone.getDefaultState(),
+								2);
 					}
 				}
 			}

@@ -17,20 +17,17 @@ public class WorldGenEnderGlow extends WorldGenerator {
 		if (block != Blocks.END_STONE && block != Blocks.OBSIDIAN) {
 			return false;
 		} else {
-			worldIn.setBlockState(position,
-					ZollernBlocks.enderGlow.getDefaultState());
+			worldIn.setBlockState(position, ZollernBlocks.enderGlow.getDefaultState());
 			
 			for (int i = 0; i < 1500; ++i) {
-				BlockPos blockpos = position.add(
-						rand.nextInt(8) - rand.nextInt(8), -rand.nextInt(12),
-						rand.nextInt(8) - rand.nextInt(8));
+				BlockPos blockpos = position.add(rand.nextInt(8) - rand.nextInt(8),
+						-rand.nextInt(12), rand.nextInt(8) - rand.nextInt(8));
 				
 				if (worldIn.isAirBlock(blockpos)) {
 					int j = 0;
 					
 					for (EnumFacing enumfacing : EnumFacing.values()) {
-						if (worldIn.getBlockState(blockpos.offset(enumfacing))
-								.getBlock() == ZollernBlocks.enderGlow) {
+						if (worldIn.getBlockState(blockpos.offset(enumfacing)).getBlock() == ZollernBlocks.enderGlow) {
 							++j;
 						}
 						
@@ -40,8 +37,7 @@ public class WorldGenEnderGlow extends WorldGenerator {
 					}
 					
 					if (j == 1) {
-						worldIn.setBlockState(blockpos,
-								ZollernBlocks.enderGlow.getDefaultState());
+						worldIn.setBlockState(blockpos, ZollernBlocks.enderGlow.getDefaultState());
 					}
 				}
 			}

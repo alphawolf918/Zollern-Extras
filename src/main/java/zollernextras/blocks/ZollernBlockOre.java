@@ -29,12 +29,10 @@ public class ZollernBlockOre extends ZollernBlockBase {
 	public ZollernBlockOre(String strName, float hardResist) {
 		super(strName, hardResist);
 		instance = this;
-		this.setHarvestLevel("pickaxe",
-				EnumHarvestLevel.DIAMOND.getHarvestLevel());
+		this.setHarvestLevel("pickaxe", EnumHarvestLevel.DIAMOND.getHarvestLevel());
 	}
 	
-	public Block setShouldGivePotionEffect(boolean shouldGivePotionEffect,
-			Potion potionEffect) {
+	public Block setShouldGivePotionEffect(boolean shouldGivePotionEffect, Potion potionEffect) {
 		this.hasPotionEffect = shouldGivePotionEffect;
 		this.blockPotionEffect = potionEffect;
 		return this;
@@ -83,23 +81,20 @@ public class ZollernBlockOre extends ZollernBlockBase {
 	}
 	
 	@Override
-	public void onBlockDestroyedByPlayer(World worldIn, BlockPos pos,
-			IBlockState state) {
+	public void onBlockDestroyedByPlayer(World worldIn, BlockPos pos, IBlockState state) {
 		if (!worldIn.isRemote) {
 			if (this.getShouldExplode()) {
 				if (rand.nextInt(this.getExplosionChance()) <= 2) {
-					worldIn.createExplosion(null, pos.getX(), pos.getY(),
-							pos.getZ(), 2.5F, true);
+					worldIn.createExplosion(null, pos.getX(), pos.getY(), pos.getZ(), 2.5F, true);
 				}
 			}
 		}
 		if (this.getShouldGivePotionEffect()) {
 			if (rand.nextInt(10) <= 4) {
-				EntityPlayer player = worldIn.getClosestPlayer(pos.getX(),
-						pos.getY(), pos.getZ(), 2.5D, false);
+				EntityPlayer player = worldIn.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(),
+						2.5D, false);
 				if (player != null && this.blockPotionEffect != null) {
-					player.addPotionEffect(new PotionEffect(
-							this.blockPotionEffect, 200, 0));
+					player.addPotionEffect(new PotionEffect(this.blockPotionEffect, 200, 0));
 				}
 			}
 		}
@@ -120,8 +115,8 @@ public class ZollernBlockOre extends ZollernBlockBase {
 	
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void addInformation(ItemStack stack, EntityPlayer player,
-			List<String> list, boolean advanced) {
+	public void addInformation(ItemStack stack, EntityPlayer player, List<String> list,
+			boolean advanced) {
 		if (KeyHelper.isCtrlKeyDown() || KeyHelper.isShiftKeyDown()) {
 			if (this.getShouldExplode()) {
 				list.add("Explosion Chance: " + explosionChance + "%");

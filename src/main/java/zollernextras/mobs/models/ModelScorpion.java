@@ -162,8 +162,8 @@ public class ModelScorpion extends ModelBase {
 	}
 	
 	@Override
-	public void render(Entity par1Entity, float par2, float par3, float par4,
-			float par5, float par6, float par7) {
+	public void render(Entity par1Entity, float par2, float par3, float par4, float par5,
+			float par6, float par7) {
 		super.render(par1Entity, par2, par3, par4, par5, par6, par7);
 		setRotationAngles(par2, par3, par4, par5, par6, par7, par1Entity);
 		Head.render(par7);
@@ -196,8 +196,8 @@ public class ModelScorpion extends ModelBase {
 	}
 	
 	@Override
-	public void setRotationAngles(float par1, float par2, float par3,
-			float par4, float par5, float par6, Entity par7Entity) {
+	public void setRotationAngles(float par1, float par2, float par3, float par4, float par5,
+			float par6, Entity par7Entity) {
 		this.Head.rotateAngleY = par4 / (180F / (float) Math.PI);
 		this.Head.rotateAngleX = par5 / (180F / (float) Math.PI);
 		this.CC1.rotateAngleY = par4 / (180F / (float) Math.PI);
@@ -227,26 +227,15 @@ public class ModelScorpion extends ModelBase {
 		this.Leg8.rotateAngleY = f8 * 2.0F - f7;
 		this.Leg9.rotateAngleY = f8 * 2.0F - f7;
 		this.Leg10.rotateAngleY = f8 * 2.0F - f7;
-		float f9 = -(MathHelper.cos(par1 * 0.6662F * 2.0F + 0.0F) * 0.4F)
+		float f9 = -(MathHelper.cos(par1 * 0.6662F * 2.0F + 0.0F) * 0.4F) * par2;
+		float f10 = -(MathHelper.cos(par1 * 0.6662F * 2.0F + (float) Math.PI) * 0.4F) * par2;
+		float f11 = -(MathHelper.cos(par1 * 0.6662F * 2.0F + ((float) Math.PI / 2F)) * 0.4F) * par2;
+		float f12 = -(MathHelper.cos(par1 * 0.6662F * 2.0F + ((float) Math.PI * 3F / 2F)) * 0.4F)
 				* par2;
-		float f10 = -(MathHelper.cos(par1 * 0.6662F * 2.0F + (float) Math.PI) * 0.4F)
-				* par2;
-		float f11 = -(MathHelper.cos(par1 * 0.6662F * 2.0F
-				+ ((float) Math.PI / 2F)) * 0.4F)
-				* par2;
-		float f12 = -(MathHelper.cos(par1 * 0.6662F * 2.0F
-				+ ((float) Math.PI * 3F / 2F)) * 0.4F)
-				* par2;
-		float f13 = Math.abs(MathHelper.sin(par1 * 0.6662F + 0.0F) * 0.4F)
-				* par2;
-		float f14 = Math
-				.abs(MathHelper.sin(par1 * 0.6662F + (float) Math.PI) * 0.4F)
-				* par2;
-		float f15 = Math.abs(MathHelper.sin(par1 * 0.6662F
-				+ ((float) Math.PI / 2F)) * 0.4F)
-				* par2;
-		float f16 = Math.abs(MathHelper.sin(par1 * 0.6662F
-				+ ((float) Math.PI * 3F / 2F)) * 0.4F)
+		float f13 = Math.abs(MathHelper.sin(par1 * 0.6662F + 0.0F) * 0.4F) * par2;
+		float f14 = Math.abs(MathHelper.sin(par1 * 0.6662F + (float) Math.PI) * 0.4F) * par2;
+		float f15 = Math.abs(MathHelper.sin(par1 * 0.6662F + ((float) Math.PI / 2F)) * 0.4F) * par2;
+		float f16 = Math.abs(MathHelper.sin(par1 * 0.6662F + ((float) Math.PI * 3F / 2F)) * 0.4F)
 				* par2;
 		this.Leg1.rotateAngleY += f9;
 		this.Leg2.rotateAngleY += -f9;

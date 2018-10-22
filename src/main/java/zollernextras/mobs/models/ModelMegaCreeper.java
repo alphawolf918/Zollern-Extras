@@ -85,8 +85,8 @@ public class ModelMegaCreeper extends ModelBase {
 	}
 	
 	@Override
-	public void render(Entity par1Entity, float par2, float par3, float par4,
-			float par5, float par6, float par7) {
+	public void render(Entity par1Entity, float par2, float par3, float par4, float par5,
+			float par6, float par7) {
 		super.render(par1Entity, par2, par3, par4, par5, par6, par7);
 		setRotationAngles(par2, par3, par4, par5, par6, par7, par1Entity);
 		head.render(par7);
@@ -108,25 +108,20 @@ public class ModelMegaCreeper extends ModelBase {
 	}
 	
 	@Override
-	public void setRotationAngles(float limbSwing, float limbSwingAmount,
-			float ageInTicks, float netHeadYaw, float headPitch,
-			float scaleFactor, Entity entityIn) {
+	public void setRotationAngles(float limbSwing, float limbSwingAmount, float ageInTicks,
+			float netHeadYaw, float headPitch, float scaleFactor, Entity entityIn) {
 		this.head.rotateAngleY = netHeadYaw * 0.017453292F;
 		this.head.rotateAngleX = headPitch * 0.017453292F;
-		this.leg1.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F) * 1.4F
+		this.leg1.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount;
+		this.leg2.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F + (float) Math.PI) * 1.4F
 				* limbSwingAmount;
-		this.leg2.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F
-				+ (float) Math.PI)
-				* 1.4F * limbSwingAmount;
-		this.leg3.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F
-				+ (float) Math.PI)
-				* 1.4F * limbSwingAmount;
-		this.leg4.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F) * 1.4F
+		this.leg3.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F + (float) Math.PI) * 1.4F
 				* limbSwingAmount;
+		this.leg4.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount;
 		float f = MathHelper.sin(this.swingProgress * (float) Math.PI);
-		float f1 = MathHelper.sin((1.0F - (1.0F - this.swingProgress)
-				* (1.0F - this.swingProgress))
-				* (float) Math.PI);
+		float f1 = MathHelper
+				.sin((1.0F - (1.0F - this.swingProgress) * (1.0F - this.swingProgress))
+						* (float) Math.PI);
 		this.bipedRightArm.rotateAngleZ = 0.0F;
 		this.bipedLeftArm.rotateAngleZ = 0.0F;
 		this.bipedRightArm.rotateAngleY = -(0.1F - f * 0.6F);

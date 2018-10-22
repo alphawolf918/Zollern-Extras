@@ -23,8 +23,7 @@ public class RenderHellDuck extends RenderLiving<EntityHellDuck> {
 	}
 	
 	@Override
-	protected void preRenderCallback(EntityHellDuck entitylivingbaseIn,
-			float partialTickTime) {
+	protected void preRenderCallback(EntityHellDuck entitylivingbaseIn, float partialTickTime) {
 		this.scaleHellDuck(entitylivingbaseIn, partialTickTime);
 	}
 	

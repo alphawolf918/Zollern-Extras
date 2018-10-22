@@ -12,8 +12,7 @@ public class CorruptStone extends CorruptBlock {
 	}
 	
 	@Override
-	public Item getItemDropped(IBlockState par1BlockState, Random rand,
-			int fortune) {
+	public Item getItemDropped(IBlockState par1BlockState, Random rand, int fortune) {
 		return Item.getItemFromBlock(ZollernBlocks.corruptCobble);
 	}
 	

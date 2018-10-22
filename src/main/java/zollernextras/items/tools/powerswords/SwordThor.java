@@ -30,34 +30,30 @@ public class SwordThor extends ZollernSword {
 	}
 	
 	@Override
-	public ActionResult<ItemStack> onItemRightClick(World worldIn,
-			EntityPlayer playerIn, EnumHand handIn) {
+	public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn,
+			EnumHand handIn) {
 		super.onItemRightClick(worldIn, playerIn, handIn);
 		ItemStack itemstack = playerIn.getHeldItem(handIn);
 		int length = 100;
-		Vec3d startPos = new Vec3d(playerIn.posX, playerIn.posY
-				+ playerIn.getEyeHeight(), playerIn.posZ);
-		Vec3d endPos = startPos.add(new Vec3d(playerIn.getLookVec().xCoord
-				* length, playerIn.getLookVec().yCoord * length, playerIn
-				.getLookVec().zCoord * length));
+		Vec3d startPos = new Vec3d(playerIn.posX, playerIn.posY + playerIn.getEyeHeight(),
+				playerIn.posZ);
+		Vec3d endPos = startPos.add(new Vec3d(playerIn.getLookVec().xCoord * length, playerIn
+				.getLookVec().yCoord * length, playerIn.getLookVec().zCoord * length));
 		RayTraceResult mop = worldIn.rayTraceBlocks(startPos, endPos);
 		if (mop == null) {
-			return new ActionResult(EnumActionResult.PASS,
-					playerIn.getHeldItem(handIn));
+			return new ActionResult(EnumActionResult.PASS, playerIn.getHeldItem(handIn));
 		}
 		BlockPos vecPos = new BlockPos(mop.getBlockPos());
-		BlockPos spawnPos = new BlockPos(vecPos.getX(), vecPos.getY(),
-				vecPos.getZ());
+		BlockPos spawnPos = new BlockPos(vecPos.getX(), vecPos.getY(), vecPos.getZ());
 		for (int l = 0; l < 4; l += 4) {
-			worldIn.spawnEntity(new EntityLightningBolt(worldIn, vecPos.getX(),
-					vecPos.getY(), vecPos.getZ() + l, false));
+			worldIn.spawnEntity(new EntityLightningBolt(worldIn, vecPos.getX(), vecPos.getY(),
+					vecPos.getZ() + l, false));
 		}
 		if (!playerIn.capabilities.isCreativeMode) {
 			itemstack.damageItem(5, playerIn);
 		}
 		playerIn.swingArm(handIn);
-		return new ActionResult(EnumActionResult.PASS,
-				playerIn.getHeldItem(handIn));
+		return new ActionResult(EnumActionResult.PASS, playerIn.getHeldItem(handIn));
 	}
 	
 	@Override
@@ -72,8 +68,8 @@ public class SwordThor extends ZollernSword {
 	
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void addInformation(ItemStack p_77624_1_, EntityPlayer p_77624_2_,
-			List list, boolean p_77624_4_) {
+	public void addInformation(ItemStack p_77624_1_, EntityPlayer p_77624_2_, List list,
+			boolean p_77624_4_) {
 		if (KeyHelper.isCtrlKeyDown() || KeyHelper.isShiftKeyDown()) {
 			list.add(TextFormatting.ITALIC + "Whosoever holds this blade,");
 			list.add(TextFormatting.ITALIC + "should he be worthy,");

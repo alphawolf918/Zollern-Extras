@@ -63,8 +63,7 @@ public class ZollernHelper {
 		item.setUnlocalizedName(ZollernModInfo.modId + "_" + strName);
 	}
 	
-	public static void setHardResist(Block block, float hardness,
-			float resistance) {
+	public static void setHardResist(Block block, float hardness, float resistance) {
 		block.setHardness(hardness);
 		block.setResistance(resistance);
 	}
@@ -73,22 +72,19 @@ public class ZollernHelper {
 		ZollernHelper.setHardResist(block, hardResist, hardResist);
 	}
 	
-	public static boolean getConfig(Configuration config,
-			String configCategory, String configKey,
+	public static boolean getConfig(Configuration config, String configCategory, String configKey,
 			boolean configDefaultValue, String configComment) {
-		return config.get(configCategory, configKey, configDefaultValue,
-				configComment).getBoolean();
+		return config.get(configCategory, configKey, configDefaultValue, configComment)
+				.getBoolean();
 	}
 	
-	public static int getConfig(Configuration config, String configCategory,
-			String configKey, int configDefaultValue, String configComment) {
-		return config.get(configCategory, configKey, configDefaultValue,
-				configComment).getInt();
+	public static int getConfig(Configuration config, String configCategory, String configKey,
+			int configDefaultValue, String configComment) {
+		return config.get(configCategory, configKey, configDefaultValue, configComment).getInt();
 	}
 	
 	public static File getFilePath(FMLPreInitializationEvent event) {
-		return new File(event.getModConfigurationDirectory().getAbsolutePath()
-				+ "ZollernExtras/");
+		return new File(event.getModConfigurationDirectory().getAbsolutePath() + "ZollernExtras/");
 	}
 	
 	/**
@@ -106,8 +102,7 @@ public class ZollernHelper {
 			LOGGER.info("[" + ZollernModInfo.officialName + "] " + strMessage);
 		} else if (level == Level.DEBUG) {
 			if (ZEConfig.enableDebugMode) {
-				LOGGER.debug("[DEB:" + ZollernModInfo.officialName + "] "
-						+ strMessage);
+				LOGGER.debug("[DEB:" + ZollernModInfo.officialName + "] " + strMessage);
 			}
 		}
 	}
@@ -122,8 +117,7 @@ public class ZollernHelper {
 		}
 	}
 	
-	public static void damageItemStack(Item item, float damageAmount,
-			EntityPlayer player) {
+	public static void damageItemStack(Item item, float damageAmount, EntityPlayer player) {
 		InventoryPlayer matrix = player.inventory;
 		for (int i = 0; i < matrix.getSizeInventory(); i++) {
 			if (matrix.getStackInSlot(i) != null) {
@@ -141,11 +135,10 @@ public class ZollernHelper {
 		item.setItemDamage(item.getMaxDamage());
 	}
 	
-	public static DimensionType registerDimension(String dimName,
-			String dimUnlocalizedName, int dimID,
-			Class<? extends WorldProvider> worldProvider) {
-		DimensionType dim = DimensionType.register(dimName, dimUnlocalizedName,
-				dimID, worldProvider, false);
+	public static DimensionType registerDimension(String dimName, String dimUnlocalizedName,
+			int dimID, Class<? extends WorldProvider> worldProvider) {
+		DimensionType dim = DimensionType.register(dimName, dimUnlocalizedName, dimID,
+				worldProvider, false);
 		DimensionManager.registerDimension(dimID, dim);
 		return dim;
 	}

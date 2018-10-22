@@ -12,8 +12,8 @@ import zollernextras.mobs.models.ModelDuck;
 @SideOnly(Side.CLIENT)
 public class RenderDuck extends RenderLiving<EntityDuck> {
 	
-	private static final ResourceLocation DUCK_TEXTURES = new ResourceLocation(
-			ZollernModInfo.modId + ":textures/entity/duck.png");
+	private static final ResourceLocation DUCK_TEXTURES = new ResourceLocation(ZollernModInfo.modId
+			+ ":textures/entity/duck.png");
 	
 	public RenderDuck(RenderManager renderManagerIn) {
 		super(renderManagerIn, new ModelDuck(), 0.3F);

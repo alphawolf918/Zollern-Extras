@@ -28,10 +28,8 @@ import com.google.common.collect.Sets;
 @Mod.EventBusSubscriber(modid = ZollernModInfo.modId)
 public class DimensionRegistry {
 	
-	private static Set<BiomeManager.BiomeEntry> biomeNetherEntries = Sets
-			.newHashSet();
-	private static Set<BiomeManager.BiomeEntry> biomeUpsideDownEntries = Sets
-			.newHashSet();
+	private static Set<BiomeManager.BiomeEntry> biomeNetherEntries = Sets.newHashSet();
+	private static Set<BiomeManager.BiomeEntry> biomeUpsideDownEntries = Sets.newHashSet();
 	
 	public static DimensionType UPSIDE_DOWN;
 	
@@ -41,9 +39,8 @@ public class DimensionRegistry {
 		@SubscribeEvent
 		public static void onRegisterBiomes(RegistryEvent.Register<Biome> event) {
 			// Nether biomes
-			event.getRegistry().registerAll(new BiomeNewHell(),
-					new BiomeBlazerockMountain(), new BiomeDeathValley(),
-					new BiomeSoulDesert(), new BiomeBlackMountain(),
+			event.getRegistry().registerAll(new BiomeNewHell(), new BiomeBlazerockMountain(),
+					new BiomeDeathValley(), new BiomeSoulDesert(), new BiomeBlackMountain(),
 					new BiomeNetherMinersLand());
 			
 			// NOTE: It probably would not hurt to register all of these biomes
@@ -51,8 +48,8 @@ public class DimensionRegistry {
 			// more sorted, so it doesn't hurt to separate them.
 			
 			// Upside-Down biomes
-			event.getRegistry().registerAll(new BiomeUpsideDown(),
-					new BiomeBlackLimbo(), new BiomeCorruption());
+			event.getRegistry().registerAll(new BiomeUpsideDown(), new BiomeBlackLimbo(),
+					new BiomeCorruption());
 		}
 	}
 	
@@ -79,8 +76,7 @@ public class DimensionRegistry {
 			weight = 1;
 		}
 		
-		BiomeManager.BiomeEntry biomeEntry = new BiomeManager.BiomeEntry(biome,
-				weight);
+		BiomeManager.BiomeEntry biomeEntry = new BiomeManager.BiomeEntry(biome, weight);
 		
 		for (BiomeManager.BiomeEntry entry : biomeNetherEntries) {
 			if (biomeEntry.biome == entry.biome) {
@@ -97,8 +93,7 @@ public class DimensionRegistry {
 			weight = 1;
 		}
 		
-		BiomeManager.BiomeEntry biomeEntry = new BiomeManager.BiomeEntry(biome,
-				weight);
+		BiomeManager.BiomeEntry biomeEntry = new BiomeManager.BiomeEntry(biome, weight);
 		
 		for (BiomeManager.BiomeEntry entry : biomeUpsideDownEntries) {
 			if (biomeEntry.biome == entry.biome) {
@@ -121,13 +116,11 @@ public class DimensionRegistry {
 	public static void postInit() {
 		// New Nether
 		DimensionManager.unregisterDimension(-1);
-		ZollernHelper.registerDimension("Nether", "_nether", -1,
-				WorldHellProvider.class);
+		ZollernHelper.registerDimension("Nether", "_nether", -1, WorldHellProvider.class);
 		
 		// Upside-Down
-		UPSIDE_DOWN = ZollernHelper.registerDimension("Upside Down",
-				"upside_down", ZEConfig.dimensionUpsideDownID,
-				WorldProviderUpsideDown.class);
+		UPSIDE_DOWN = ZollernHelper.registerDimension("Upside Down", "upside_down",
+				ZEConfig.dimensionUpsideDownID, WorldProviderUpsideDown.class);
 	}
 	
 }

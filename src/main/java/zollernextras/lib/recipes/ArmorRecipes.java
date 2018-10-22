@@ -8,36 +8,27 @@ public class ArmorRecipes {
 	
 	public static void init() {
 		// Helmet
-		addArmorSet(ZollernItems.amaranthHelm, ZollernItems.amaranthIngot,
-				"helmet");
-		addArmorSet(ZollernItems.zollerniumHelm, ZollernItems.zollerniumIngot,
-				"helmet");
+		addArmorSet(ZollernItems.amaranthHelm, ZollernItems.amaranthIngot, "helmet");
+		addArmorSet(ZollernItems.zollerniumHelm, ZollernItems.zollerniumIngot, "helmet");
 		addArmorSet(ZollernItems.azuriteHelm, ZollernItems.azurite, "helmet");
 		addArmorSet(ZollernItems.radiantHelm, ZollernItems.radium, "helmet");
 		
 		// Chest
-		addArmorSet(ZollernItems.amaranthChest, ZollernItems.amaranthIngot,
-				"Chest");
-		addArmorSet(ZollernItems.zollerniumChest, ZollernItems.zollerniumIngot,
-				"Chest");
+		addArmorSet(ZollernItems.amaranthChest, ZollernItems.amaranthIngot, "Chest");
+		addArmorSet(ZollernItems.zollerniumChest, ZollernItems.zollerniumIngot, "Chest");
 		addArmorSet(ZollernItems.azuriteChest, ZollernItems.azurite, "Chest");
-		addArmorSet(ZollernItems.zollerniumLegs, ZollernItems.zollerniumIngot,
-				"Chest");
+		addArmorSet(ZollernItems.zollerniumLegs, ZollernItems.zollerniumIngot, "Chest");
 		addArmorSet(ZollernItems.radiantChest, ZollernItems.radium, "Chest");
 		
 		// Legs
-		addArmorSet(ZollernItems.amaranthLegs, ZollernItems.amaranthIngot,
-				"Legs");
-		addArmorSet(ZollernItems.zollerniumLegs, ZollernItems.zollerniumIngot,
-				"Legs");
+		addArmorSet(ZollernItems.amaranthLegs, ZollernItems.amaranthIngot, "Legs");
+		addArmorSet(ZollernItems.zollerniumLegs, ZollernItems.zollerniumIngot, "Legs");
 		addArmorSet(ZollernItems.azuriteLegs, ZollernItems.azurite, "Legs");
 		addArmorSet(ZollernItems.radiantLegs, ZollernItems.radium, "Legs");
 		
 		// Feets
-		addArmorSet(ZollernItems.amaranthBoots, ZollernItems.amaranthIngot,
-				"boots");
-		addArmorSet(ZollernItems.zollerniumBoots, ZollernItems.zollerniumIngot,
-				"boots");
+		addArmorSet(ZollernItems.amaranthBoots, ZollernItems.amaranthIngot, "boots");
+		addArmorSet(ZollernItems.zollerniumBoots, ZollernItems.zollerniumIngot, "boots");
 		addArmorSet(ZollernItems.azuriteBoots, ZollernItems.azurite, "boots");
 		addArmorSet(ZollernItems.radiantBoots, ZollernItems.radium, "boots");
 	}

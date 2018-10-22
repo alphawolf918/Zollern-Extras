@@ -18,8 +18,7 @@ public class WorldGenEnderTower extends ZollernWorldGenMaster {
 		int j = pos.getY();
 		int k = pos.getZ();
 		
-		Block blockBelow = world.getBlockState(new BlockPos(i, j - 1, k))
-				.getBlock();
+		Block blockBelow = world.getBlockState(new BlockPos(i, j - 1, k)).getBlock();
 		
 		if (blockBelow == Blocks.AIR) {
 			return false;
@@ -47,8 +46,8 @@ public class WorldGenEnderTower extends ZollernWorldGenMaster {
 			return false;
 		}
 		
-		new WGLake(Blocks.END_STONE, Blocks.OBSIDIAN).generate(world, rand,
-				new BlockPos(i, j + 1, k));
+		new WGLake(Blocks.END_STONE, Blocks.OBSIDIAN).generate(world, rand, new BlockPos(i, j + 1,
+				k));
 		
 		this.setBlock(world, pos.add(4, 2, 10), Blocks.PURPUR_BLOCK);
 		this.setBlock(world, pos.add(4, 2, 11), Blocks.PURPUR_BLOCK);

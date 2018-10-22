@@ -15,8 +15,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import zollernextras.lib.ZollernMapper;
 import zollernextras.lib.ZollernModInfo;
 
-public class ZollernFluidBlock extends BlockFluidClassic implements
-		IZollernModelRegister {
+public class ZollernFluidBlock extends BlockFluidClassic implements IZollernModelRegister {
 	
 	protected String name;
 	
@@ -28,8 +27,7 @@ public class ZollernFluidBlock extends BlockFluidClassic implements
 	}
 	
 	@Override
-	public boolean canCreatureSpawn(IBlockState state, IBlockAccess world,
-			BlockPos pos,
+	public boolean canCreatureSpawn(IBlockState state, IBlockAccess world, BlockPos pos,
 			net.minecraft.entity.EntityLiving.SpawnPlacementType type) {
 		
 		return false;
@@ -59,8 +57,7 @@ public class ZollernFluidBlock extends BlockFluidClassic implements
 	@SideOnly(Side.CLIENT)
 	public void registerModels() {
 		Item item = Item.getItemFromBlock(this);
-		ZollernMapper mapper = new ZollernMapper(ZollernModInfo.modId, "fluid",
-				name);
+		ZollernMapper mapper = new ZollernMapper(ZollernModInfo.modId, "fluid", name);
 		
 		// Item Model
 		ModelBakery.registerItemVariants(item);

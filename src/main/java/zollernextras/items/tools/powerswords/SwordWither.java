@@ -31,16 +31,15 @@ public class SwordWither extends ZollernSword {
 	}
 	
 	@Override
-	public ActionResult<ItemStack> onItemRightClick(World worldIn,
-			EntityPlayer playerIn, EnumHand handIn) {
+	public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn,
+			EnumHand handIn) {
 		super.onItemRightClick(worldIn, playerIn, handIn);
 		if (!worldIn.isRemote) {
 			ItemStack par1ItemStack = playerIn.getHeldItem(handIn);
 			Vec3d look = playerIn.getLookVec();
 			EntityWitherSkull witherskull = new EntityWitherSkull(worldIn);
-			witherskull.setPosition(playerIn.posX + look.xCoord * 5,
-					playerIn.posY + 1 + look.yCoord * 5, playerIn.posZ
-							+ look.zCoord * 5);
+			witherskull.setPosition(playerIn.posX + look.xCoord * 5, playerIn.posY + 1
+					+ look.yCoord * 5, playerIn.posZ + look.zCoord * 5);
 			witherskull.accelerationX = look.xCoord * 0.1;
 			witherskull.accelerationY = look.yCoord * 0.1;
 			witherskull.accelerationZ = look.zCoord * 0.1;
@@ -50,27 +49,24 @@ public class SwordWither extends ZollernSword {
 			}
 		}
 		playerIn.swingArm(handIn);
-		return new ActionResult(EnumActionResult.PASS,
-				playerIn.getHeldItem(handIn));
+		return new ActionResult(EnumActionResult.PASS, playerIn.getHeldItem(handIn));
 	}
 	
 	@Override
-	public boolean onLeftClickEntity(ItemStack par1ItemStack,
-			EntityPlayer par2EntityPlayer, Entity entity) {
+	public boolean onLeftClickEntity(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer,
+			Entity entity) {
 		super.onLeftClickEntity(par1ItemStack, par2EntityPlayer, entity);
 		if (entity instanceof EntityLivingBase) {
 			EntityLivingBase living = (EntityLivingBase) entity;
 			living.addPotionEffect(new PotionEffect(MobEffects.WITHER, 50, 2));
-			this.playWitherSound(living.getEntityWorld(), living.posX,
-					living.posY, living.posZ);
+			this.playWitherSound(living.getEntityWorld(), living.posX, living.posY, living.posZ);
 		}
 		return false;
 	}
 	
 	private void playWitherSound(World world, double i, double j, double k) {
-		world.playSound(i + 5.0D, j + 5.0D, k + 5.0D,
-				SoundEvents.ENTITY_WITHER_AMBIENT, SoundCategory.AMBIENT, 1.0F,
-				world.rand.nextFloat() * 0.1F + 0.9F, true);
+		world.playSound(i + 5.0D, j + 5.0D, k + 5.0D, SoundEvents.ENTITY_WITHER_AMBIENT,
+				SoundCategory.AMBIENT, 1.0F, world.rand.nextFloat() * 0.1F + 0.9F, true);
 	}
 	
 	@Override
@@ -85,8 +81,8 @@ public class SwordWither extends ZollernSword {
 	
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void addInformation(ItemStack p_77624_1_, EntityPlayer p_77624_2_,
-			List list, boolean p_77624_4_) {
+	public void addInformation(ItemStack p_77624_1_, EntityPlayer p_77624_2_, List list,
+			boolean p_77624_4_) {
 		if (KeyHelper.isCtrlKeyDown() || KeyHelper.isShiftKeyDown()) {
 			list.add(TextFormatting.ITALIC + "A withering");
 			list.add(TextFormatting.ITALIC + "blade, touched with death.");

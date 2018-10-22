@@ -24,8 +24,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import zollernextras.items.ZollernItems;
 
-public class EntityShadowSkeleton extends AbstractSkeleton implements
-		IShadeEntity {
+public class EntityShadowSkeleton extends AbstractSkeleton implements IShadeEntity {
 	
 	public EntityShadowSkeleton(World worldIn) {
 		super(worldIn);
@@ -34,12 +33,11 @@ public class EntityShadowSkeleton extends AbstractSkeleton implements
 		this.setCanPickUpLoot(true);
 		this.tasks.addTask(1, new EntityAISwimming(this));
 		this.tasks.addTask(2, new EntityAIWander(this, 1.0D));
-		this.tasks.addTask(3, new EntityAIWatchClosest(this,
-				EntityPlayer.class, 8.0F));
+		this.tasks.addTask(3, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
 		this.tasks.addTask(3, new EntityAILookIdle(this));
 		this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
-		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this,
-				EntityPlayer.class, true));
+		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class,
+				true));
 	}
 	
 	@Override
@@ -66,8 +64,7 @@ public class EntityShadowSkeleton extends AbstractSkeleton implements
 	}
 	
 	@Override
-	public void dropLoot(boolean wasRecentlyHit, int lootModifier,
-			DamageSource dmgSrc) {
+	public void dropLoot(boolean wasRecentlyHit, int lootModifier, DamageSource dmgSrc) {
 		Random rand = new Random();
 		if (rand.nextInt(100) <= 15) {
 			this.dropItem(ZollernItems.shadowBone, 1);
@@ -101,14 +98,11 @@ public class EntityShadowSkeleton extends AbstractSkeleton implements
 	
 	@Override
 	protected EntityArrow getArrow(float p_190726_1_) {
-		ItemStack itemstack = this
-				.getItemStackFromSlot(EntityEquipmentSlot.OFFHAND);
+		ItemStack itemstack = this.getItemStackFromSlot(EntityEquipmentSlot.OFFHAND);
 		
 		if (itemstack.getItem() == Items.SPECTRAL_ARROW) {
-			EntitySpectralArrow entityspectralarrow = new EntitySpectralArrow(
-					this.world, this);
-			entityspectralarrow.setEnchantmentEffectsFromEntity(this,
-					p_190726_1_);
+			EntitySpectralArrow entityspectralarrow = new EntitySpectralArrow(this.world, this);
+			entityspectralarrow.setEnchantmentEffectsFromEntity(this, p_190726_1_);
 			return entityspectralarrow;
 		} else {
 			EntityArrow entityarrow = super.getArrow(p_190726_1_);
@@ -132,25 +126,21 @@ public class EntityShadowSkeleton extends AbstractSkeleton implements
 		if (this.world.isDaytime() && !this.world.isRemote) {
 			float f = this.getBrightness(1.0F);
 			BlockPos blockpos = this.getRidingEntity() instanceof EntityBoat ? (new BlockPos(
-					this.posX, Math.round(this.posY), this.posZ)).up()
-					: new BlockPos(this.posX, Math.round(this.posY), this.posZ);
+					this.posX, Math.round(this.posY), this.posZ)).up() : new BlockPos(this.posX,
+					Math.round(this.posY), this.posZ);
 			
 			if (f > 0.5F && this.rand.nextFloat() * 30.0F < (f - 0.4F) * 2.0F
 					&& this.world.canSeeSky(blockpos)) {
 				boolean flag = true;
-				ItemStack itemstack = this
-						.getItemStackFromSlot(EntityEquipmentSlot.HEAD);
+				ItemStack itemstack = this.getItemStackFromSlot(EntityEquipmentSlot.HEAD);
 				
 				if (!itemstack.isEmpty()) {
 					if (itemstack.isItemStackDamageable()) {
-						itemstack.setItemDamage(itemstack.getItemDamage()
-								+ this.rand.nextInt(2));
+						itemstack.setItemDamage(itemstack.getItemDamage() + this.rand.nextInt(2));
 						
-						if (itemstack.getItemDamage() >= itemstack
-								.getMaxDamage()) {
+						if (itemstack.getItemDamage() >= itemstack.getMaxDamage()) {
 							this.renderBrokenItemStack(itemstack);
-							this.setItemStackToSlot(EntityEquipmentSlot.HEAD,
-									ItemStack.EMPTY);
+							this.setItemStackToSlot(EntityEquipmentSlot.HEAD, ItemStack.EMPTY);
 						}
 					}
 					

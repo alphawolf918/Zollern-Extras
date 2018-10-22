@@ -30,8 +30,7 @@ public class ZollernGenNetherBiome extends ZollernGenLayer {
 		return outputs;
 	}
 	
-	private BiomeManager.BiomeEntry getWeightedBiomeEntry(
-			List<BiomeManager.BiomeEntry> biomeEntries) {
+	private BiomeManager.BiomeEntry getWeightedBiomeEntry(List<BiomeManager.BiomeEntry> biomeEntries) {
 		return WeightedRandom.getRandomItem(biomeEntries,
 				nextInt(WeightedRandom.getTotalWeight(biomeEntries)));
 	}

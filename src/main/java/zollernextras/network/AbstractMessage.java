@@ -11,8 +11,8 @@ import net.minecraftforge.fml.relauncher.Side;
 import zollernextras.ZollernExtrasMod;
 import com.google.common.base.Throwables;
 
-public abstract class AbstractMessage<T extends AbstractMessage<T>> implements
-		IMessage, IMessageHandler<T, IMessage> {
+public abstract class AbstractMessage<T extends AbstractMessage<T>> implements IMessage,
+		IMessageHandler<T, IMessage> {
 	/**
 	 * Some PacketBuffer methods throw IOException - default handling propagates
 	 * the exception. if an IOException is expected but should not be fatal,
@@ -76,8 +76,8 @@ public abstract class AbstractMessage<T extends AbstractMessage<T>> implements
 	@Override
 	public final IMessage onMessage(T msg, MessageContext ctx) {
 		if (!msg.isValidOnSide(ctx.side)) {
-			throw new RuntimeException("Invalid side " + ctx.side.name()
-					+ " for " + msg.getClass().getSimpleName());
+			throw new RuntimeException("Invalid side " + ctx.side.name() + " for "
+					+ msg.getClass().getSimpleName());
 		}
 		msg.process(ZollernExtrasMod.proxy.getPlayerEntity(ctx), ctx.side);
 		return null;
@@ -87,8 +87,8 @@ public abstract class AbstractMessage<T extends AbstractMessage<T>> implements
 	 * Messages that can only be sent from the server to the client should use
 	 * this class
 	 */
-	public static abstract class AbstractClientMessage<T extends AbstractMessage<T>>
-			extends AbstractMessage<T> {
+	public static abstract class AbstractClientMessage<T extends AbstractMessage<T>> extends
+			AbstractMessage<T> {
 		@Override
 		protected final boolean isValidOnSide(Side side) {
 			return side.isClient();
@@ -99,8 +99,8 @@ public abstract class AbstractMessage<T extends AbstractMessage<T>> implements
 	 * Messages that can only be sent from the client to the server should use
 	 * this class
 	 */
-	public static abstract class AbstractServerMessage<T extends AbstractMessage<T>>
-			extends AbstractMessage<T> {
+	public static abstract class AbstractServerMessage<T extends AbstractMessage<T>> extends
+			AbstractMessage<T> {
 		@Override
 		protected final boolean isValidOnSide(Side side) {
 			return side.isServer();

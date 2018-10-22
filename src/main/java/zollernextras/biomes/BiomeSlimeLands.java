@@ -13,8 +13,7 @@ public class BiomeSlimeLands extends ZollernBiome {
 		props.setBaseHeight(1.0F);
 		props.setHeightVariation(0.05F);
 		this.clearAllSpawning();
-		this.spawnableMonsterList.add(new SpawnListEntry(EntitySlime.class, 15,
-				1, 3));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntitySlime.class, 15, 1, 3));
 		this.setTempCategory(TempCategory.WARM);
 		this.setBlocks(Blocks.SLIME_BLOCK);
 	}

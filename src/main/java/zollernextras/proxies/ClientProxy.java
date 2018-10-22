@@ -50,8 +50,7 @@ public class ClientProxy extends CommonProxy {
 	
 	@Override
 	public void initGUI() {
-		MinecraftForge.EVENT_BUS.register(new GuiBiomeType(Minecraft
-				.getMinecraft()));
+		MinecraftForge.EVENT_BUS.register(new GuiBiomeType(Minecraft.getMinecraft()));
 	}
 	
 	@Override
@@ -61,8 +60,7 @@ public class ClientProxy extends CommonProxy {
 	
 	@Override
 	public EntityPlayer getPlayerEntity(MessageContext ctx) {
-		return ctx.side.isClient() ? Minecraft.getMinecraft().player : super
-				.getPlayerEntity(ctx);
+		return ctx.side.isClient() ? Minecraft.getMinecraft().player : super.getPlayerEntity(ctx);
 	}
 	
 	@Override
@@ -76,8 +74,7 @@ public class ClientProxy extends CommonProxy {
 		// could have more than one effect, and if we did an "else if" clause,
 		// then they would only get one or the other - we want them to get both.
 		if (potionId == ZollernPotions.infected) {
-			player.attackEntityFrom(ZDamageSrc.deathInfection,
-					ZollernPotions.infectionDamage);
+			player.attackEntityFrom(ZDamageSrc.deathInfection, ZollernPotions.infectionDamage);
 		}
 		
 		if (potionId == ZollernPotions.radiance) {

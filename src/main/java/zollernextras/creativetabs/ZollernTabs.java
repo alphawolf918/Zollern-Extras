@@ -10,8 +10,8 @@ public class ZollernTabs {
 	public static CreativeTabs zTab;
 	
 	public static void init() {
-		zTab = CommonRegisterHelper.createCreativeTabs("Zollern Extras",
-				new ItemStack(ZollernItems.superChargedCoal));
+		zTab = CommonRegisterHelper.createCreativeTabs("Zollern Extras", new ItemStack(
+				ZollernItems.superChargedCoal));
 	}
 	
 }

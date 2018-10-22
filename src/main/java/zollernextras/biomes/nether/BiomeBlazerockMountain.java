@@ -7,8 +7,7 @@ import zollernextras.dimensions.DimensionRegistry;
 public class BiomeBlazerockMountain extends ZollernNetherBiome {
 	
 	public BiomeBlazerockMountain() {
-		super(new Biome.BiomeProperties("Blazerock Mountain"),
-				"blazerock_mountain");
+		super(new Biome.BiomeProperties("Blazerock Mountain"), "blazerock_mountain");
 		this.setBlocks(ZollernBlocks.blazeRock);
 		this.setBiomeWeight(22);
 		DimensionRegistry.addNetherBiome(this, this.getBiomeWeight());

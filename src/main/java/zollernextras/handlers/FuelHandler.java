@@ -12,8 +12,7 @@ public class FuelHandler implements IFuelHandler {
 	public int getBurnTime(ItemStack fuel) {
 		if (fuel.getItem() == ZollernItems.superChargedCoal) {
 			return 3200;
-		} else if (fuel.getItem() == Item
-				.getItemFromBlock(ZollernBlocks.superChargedCoalBlock)) {
+		} else if (fuel.getItem() == Item.getItemFromBlock(ZollernBlocks.superChargedCoalBlock)) {
 			return 28800;
 		} else {
 			return 0;

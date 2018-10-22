@@ -9,16 +9,16 @@ import zollernextras.dimensions.providers.chunk.layer.ZollernGenUDLayer;
 
 public class BiomeUpsideDownProvider extends BiomeProvider {
 	
-	private static final Field FIELD_GEN_BIOMES = ReflectionHelper.findField(
-			BiomeProvider.class, "field_76944_d", "genBiomes");
-	private static final Field FIELD_BIOME_INDEX_LAYER = ReflectionHelper
-			.findField(BiomeProvider.class, "field_76945_e", "biomeIndexLayer");
+	private static final Field FIELD_GEN_BIOMES = ReflectionHelper.findField(BiomeProvider.class,
+			"field_76944_d", "genBiomes");
+	private static final Field FIELD_BIOME_INDEX_LAYER = ReflectionHelper.findField(
+			BiomeProvider.class, "field_76945_e", "biomeIndexLayer");
 	
 	public BiomeUpsideDownProvider(World world) {
 		super();
 		
-		GenLayer[] genLayers = ZollernGenUDLayer.initializeAllBiomeGenerators(
-				world.getSeed(), world.getWorldType());
+		GenLayer[] genLayers = ZollernGenUDLayer.initializeAllBiomeGenerators(world.getSeed(),
+				world.getWorldType());
 		
 		try {
 			FIELD_GEN_BIOMES.set(this, genLayers[0]);

@@ -37,8 +37,7 @@ public class ZollernBlockBase extends Block {
 		instance = this;
 		ZollernHelper.setName(this, blockName);
 		this.setHardResist(hardResist);
-		this.setHarvestLevel("pickaxe",
-				EnumHarvestLevel.STONE.getHarvestLevel());
+		this.setHarvestLevel("pickaxe", EnumHarvestLevel.STONE.getHarvestLevel());
 		this.setSoundType(blockSound);
 	}
 	
@@ -87,10 +86,8 @@ public class ZollernBlockBase extends Block {
 	
 	@Override
 	public void onEntityWalk(World worldIn, BlockPos pos, Entity entityIn) {
-		if (!entityIn.isImmuneToFire()
-				&& entityIn instanceof EntityLivingBase
-				&& !EnchantmentHelper
-						.hasFrostWalkerEnchantment((EntityLivingBase) entityIn)
+		if (!entityIn.isImmuneToFire() && entityIn instanceof EntityLivingBase
+				&& !EnchantmentHelper.hasFrostWalkerEnchantment((EntityLivingBase) entityIn)
 				&& this.getIsHotBlock()) {
 			entityIn.attackEntityFrom(DamageSource.HOT_FLOOR, 1.5F);
 		}
@@ -136,8 +133,8 @@ public class ZollernBlockBase extends Block {
 	
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void addInformation(ItemStack stack, EntityPlayer player,
-			List<String> list, boolean advanced) {
+	public void addInformation(ItemStack stack, EntityPlayer player, List<String> list,
+			boolean advanced) {
 		if (KeyHelper.isCtrlKeyDown() || KeyHelper.isShiftKeyDown()) {
 			// list.add("");
 		} else {

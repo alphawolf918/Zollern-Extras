@@ -1,7 +1,7 @@
 package zollernextras.blocks.upsidedown.corrupt;
 
-import zollernextras.blocks.ZollernGemOre;
 import net.minecraft.item.Item;
+import zollernextras.blocks.ZollernGemOre;
 
 public class CorruptGemOre extends ZollernGemOre implements ICorruptBlock {
 	

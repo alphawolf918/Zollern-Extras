@@ -20,8 +20,8 @@ public class RecipeHelper {
 	 *            The metal to use.
 	 */
 	public static void addHorseArmor(Item horseArmor, Block armorMetal) {
-		GameRegistry.addRecipe(new ItemStack(horseArmor, 1), new Object[] {
-				"I I", " I ", "OOO", 'I', armorMetal, 'O', Blocks.OBSIDIAN });
+		GameRegistry.addRecipe(new ItemStack(horseArmor, 1), new Object[] { "I I", " I ", "OOO",
+				'I', armorMetal, 'O', Blocks.OBSIDIAN });
 	}
 	
 	/**
@@ -29,10 +29,9 @@ public class RecipeHelper {
 	 * @param itemOutput
 	 */
 	public static void fullItemCraft(Item itemInput, Item itemOutput) {
-		GameRegistry.addRecipe(new ItemStack(itemInput, 1), new Object[] {
-				"RRR", "RRR", "RRR", 'R', itemOutput });
-		GameRegistry.addShapelessRecipe(new ItemStack(itemOutput, 9),
-				new Object[] { itemInput });
+		GameRegistry.addRecipe(new ItemStack(itemInput, 1), new Object[] { "RRR", "RRR", "RRR",
+				'R', itemOutput });
+		GameRegistry.addShapelessRecipe(new ItemStack(itemOutput, 9), new Object[] { itemInput });
 	}
 	
 	/**
@@ -44,8 +43,7 @@ public class RecipeHelper {
 	 *            The seeds for the crop to turn into.
 	 */
 	public static void addSeeds(Item crop, Item seeds) {
-		GameRegistry.addShapelessRecipe(new ItemStack(seeds, 2),
-				new Object[] { crop });
+		GameRegistry.addShapelessRecipe(new ItemStack(seeds, 2), new Object[] { crop });
 	}
 	
 	/**
@@ -55,8 +53,8 @@ public class RecipeHelper {
 	 * @param blockOutput
 	 */
 	public static void addOneWayBricks(Item itemInput, Block blockOutput) {
-		GameRegistry.addRecipe(new ItemStack(blockOutput, 4), new Object[] {
-				"CC ", "CC ", "   ", 'C', itemInput });
+		GameRegistry.addRecipe(new ItemStack(blockOutput, 4), new Object[] { "CC ", "CC ", "   ",
+				'C', itemInput });
 	}
 	
 	/**
@@ -66,8 +64,8 @@ public class RecipeHelper {
 	 * @param coloredBlock
 	 */
 	public static void addBricks(Item coloredBrick, Block coloredBlock) {
-		GameRegistry.addRecipe(new ItemStack(coloredBlock, 1), new Object[] {
-				"CC ", "CC ", "   ", 'C', coloredBrick });
+		GameRegistry.addRecipe(new ItemStack(coloredBlock, 1), new Object[] { "CC ", "CC ", "   ",
+				'C', coloredBrick });
 		GameRegistry.addShapelessRecipe(new ItemStack(coloredBrick, 4),
 				new Object[] { coloredBlock });
 	}
@@ -79,8 +77,8 @@ public class RecipeHelper {
 	 * @param coloredBlock
 	 */
 	public static void addBricks(Block coloredBrick, Block coloredBlock) {
-		GameRegistry.addRecipe(new ItemStack(coloredBlock, 1), new Object[] {
-				"CC ", "CC ", "   ", 'C', coloredBrick });
+		GameRegistry.addRecipe(new ItemStack(coloredBlock, 1), new Object[] { "CC ", "CC ", "   ",
+				'C', coloredBrick });
 		GameRegistry.addShapelessRecipe(new ItemStack(coloredBrick, 4),
 				new Object[] { coloredBlock });
 	}
@@ -92,10 +90,9 @@ public class RecipeHelper {
 	 * @param coloredBlock
 	 * @param numOutput
 	 */
-	public static void addBricks(Item coloredBrick, Block coloredBlock,
-			int numOutput) {
-		GameRegistry.addRecipe(new ItemStack(coloredBlock, numOutput),
-				new Object[] { "CC ", "CC ", "   ", 'C', coloredBrick });
+	public static void addBricks(Item coloredBrick, Block coloredBlock, int numOutput) {
+		GameRegistry.addRecipe(new ItemStack(coloredBlock, numOutput), new Object[] { "CC ", "CC ",
+				"   ", 'C', coloredBrick });
 		GameRegistry.addShapelessRecipe(new ItemStack(coloredBrick, 4),
 				new Object[] { coloredBlock });
 	}
@@ -107,10 +104,9 @@ public class RecipeHelper {
 	 * @param coloredBlock
 	 * @param numOutput
 	 */
-	public static void addBricks(Block coloredBrick, Block coloredBlock,
-			int numOutput) {
-		GameRegistry.addRecipe(new ItemStack(coloredBlock, numOutput),
-				new Object[] { "CC ", "CC ", "   ", 'C', coloredBrick });
+	public static void addBricks(Block coloredBrick, Block coloredBlock, int numOutput) {
+		GameRegistry.addRecipe(new ItemStack(coloredBlock, numOutput), new Object[] { "CC ", "CC ",
+				"   ", 'C', coloredBrick });
 		GameRegistry.addShapelessRecipe(new ItemStack(coloredBrick, 4),
 				new Object[] { coloredBlock });
 	}
@@ -122,8 +118,8 @@ public class RecipeHelper {
 	 * @param blockOutput
 	 */
 	public static void addOneWayBricks(Block blockInput, Block blockOutput) {
-		GameRegistry.addRecipe(new ItemStack(blockOutput, 4), new Object[] {
-				"CC ", "CC ", "   ", 'C', blockInput });
+		GameRegistry.addRecipe(new ItemStack(blockOutput, 4), new Object[] { "CC ", "CC ", "   ",
+				'C', blockInput });
 	}
 	
 	/**
@@ -134,10 +130,9 @@ public class RecipeHelper {
 	 * @param numItem
 	 */
 	public static void fullBlockCraft(Block block, Item item, int numItem) {
-		GameRegistry.addRecipe(new ItemStack(block, 1), new Object[] { "SSS",
-				"SSS", "SSS", 'S', item });
-		GameRegistry.addShapelessRecipe(new ItemStack(item, numItem),
-				new Object[] { block });
+		GameRegistry.addRecipe(new ItemStack(block, 1), new Object[] { "SSS", "SSS", "SSS", 'S',
+				item });
+		GameRegistry.addShapelessRecipe(new ItemStack(item, numItem), new Object[] { block });
 	}
 	
 	/**
@@ -157,8 +152,7 @@ public class RecipeHelper {
 	 * @param planks
 	 */
 	public static void addLogPlanks(Block log, Block planks) {
-		GameRegistry.addShapelessRecipe(new ItemStack(planks, 4),
-				new Object[] { log });
+		GameRegistry.addShapelessRecipe(new ItemStack(planks, 4), new Object[] { log });
 	}
 	
 	/**
@@ -196,8 +190,7 @@ public class RecipeHelper {
 	public static void addSmelting(Item input, ItemStack output, float xp) {
 		GameRegistry.addSmelting(input, output, xp);
 		if (ModHelperBase.useThermalExpansion) {
-			ThermalExpansionHelper.addFurnaceRecipe(1500, new ItemStack(input,
-					1), output);
+			ThermalExpansionHelper.addFurnaceRecipe(1500, new ItemStack(input, 1), output);
 		}
 	}
 	
@@ -222,8 +215,7 @@ public class RecipeHelper {
 	public static void addSmelting(Block input, ItemStack output, float xp) {
 		GameRegistry.addSmelting(input, output, xp);
 		if (ModHelperBase.useThermalExpansion) {
-			ThermalExpansionHelper.addFurnaceRecipe(1500, new ItemStack(input,
-					1), output);
+			ThermalExpansionHelper.addFurnaceRecipe(1500, new ItemStack(input, 1), output);
 		}
 	}
 	
@@ -238,27 +230,26 @@ public class RecipeHelper {
 		addSmelting(input, new ItemStack(output, 1), xp);
 	}
 	
-	public static void addArmorSet(Item itemOutput, Block blockOutput,
-			String armorType) {
+	public static void addArmorSet(Item itemOutput, Block blockOutput, String armorType) {
 		armorType = armorType.toLowerCase();
 		// Helmet
 		if (armorType.equals("helmet")) {
-			GameRegistry.addRecipe(new ItemStack(itemOutput), new Object[] {
-					"ZZZ", "Z Z", "   ", 'Z', new ItemStack(blockOutput, 1) });
+			GameRegistry.addRecipe(new ItemStack(itemOutput), new Object[] { "ZZZ", "Z Z", "   ",
+					'Z', new ItemStack(blockOutput, 1) });
 			// Chestplate
 		} else if (armorType.equals("chest")) {
-			GameRegistry.addRecipe(new ItemStack(itemOutput), new Object[] {
-					"Z Z", "ZZZ", "ZZZ", 'Z', new ItemStack(blockOutput, 1) });
+			GameRegistry.addRecipe(new ItemStack(itemOutput), new Object[] { "Z Z", "ZZZ", "ZZZ",
+					'Z', new ItemStack(blockOutput, 1) });
 			// Leggings
 		} else if (armorType.equals("legs")) {
-			GameRegistry.addRecipe(new ItemStack(itemOutput), new Object[] {
-					"ZZZ", "Z Z", "Z Z", 'Z', new ItemStack(blockOutput, 1) });
+			GameRegistry.addRecipe(new ItemStack(itemOutput), new Object[] { "ZZZ", "Z Z", "Z Z",
+					'Z', new ItemStack(blockOutput, 1) });
 			// Boots
 		} else if (armorType.equals("boots")) {
-			GameRegistry.addRecipe(new ItemStack(itemOutput), new Object[] {
-					"   ", "Z Z", "Z Z", 'Z', new ItemStack(blockOutput, 1) });
-			GameRegistry.addRecipe(new ItemStack(itemOutput), new Object[] {
-					"Z Z", "Z Z", "   ", 'Z', new ItemStack(blockOutput, 1) });
+			GameRegistry.addRecipe(new ItemStack(itemOutput), new Object[] { "   ", "Z Z", "Z Z",
+					'Z', new ItemStack(blockOutput, 1) });
+			GameRegistry.addRecipe(new ItemStack(itemOutput), new Object[] { "Z Z", "Z Z", "   ",
+					'Z', new ItemStack(blockOutput, 1) });
 		}
 	}
 	
@@ -273,27 +264,26 @@ public class RecipeHelper {
 	 *            A string of what type of armor it is (helmet, chestplate,
 	 *            leggings or boots).
 	 */
-	public static void addArmorSet(Item itemOutput, Item itemIngot,
-			String armorType) {
+	public static void addArmorSet(Item itemOutput, Item itemIngot, String armorType) {
 		armorType = armorType.toLowerCase();
 		// Helmet
 		if (armorType.equals("helmet")) {
-			GameRegistry.addRecipe(new ItemStack(itemOutput), new Object[] {
-					"ZZZ", "Z Z", "   ", 'Z', itemIngot });
+			GameRegistry.addRecipe(new ItemStack(itemOutput), new Object[] { "ZZZ", "Z Z", "   ",
+					'Z', itemIngot });
 			// Chestplate
 		} else if (armorType.equals("chest")) {
-			GameRegistry.addRecipe(new ItemStack(itemOutput), new Object[] {
-					"Z Z", "ZZZ", "ZZZ", 'Z', itemIngot });
+			GameRegistry.addRecipe(new ItemStack(itemOutput), new Object[] { "Z Z", "ZZZ", "ZZZ",
+					'Z', itemIngot });
 			// Leggings
 		} else if (armorType.equals("legs")) {
-			GameRegistry.addRecipe(new ItemStack(itemOutput), new Object[] {
-					"ZZZ", "Z Z", "Z Z", 'Z', itemIngot });
+			GameRegistry.addRecipe(new ItemStack(itemOutput), new Object[] { "ZZZ", "Z Z", "Z Z",
+					'Z', itemIngot });
 			// Boots
 		} else if (armorType.equals("boots")) {
-			GameRegistry.addRecipe(new ItemStack(itemOutput), new Object[] {
-					"   ", "Z Z", "Z Z", 'Z', itemIngot });
-			GameRegistry.addRecipe(new ItemStack(itemOutput), new Object[] {
-					"Z Z", "Z Z", "   ", 'Z', itemIngot });
+			GameRegistry.addRecipe(new ItemStack(itemOutput), new Object[] { "   ", "Z Z", "Z Z",
+					'Z', itemIngot });
+			GameRegistry.addRecipe(new ItemStack(itemOutput), new Object[] { "Z Z", "Z Z", "   ",
+					'Z', itemIngot });
 		}
 	}
 	
@@ -308,33 +298,32 @@ public class RecipeHelper {
 	 *            The type of tool to be returned (accepts pickaxe, shovel, axe,
 	 *            hoe, and sword).
 	 */
-	public static void addToolSet(ItemStack itemOutput, Item itemIngot,
-			String toolType) {
+	public static void addToolSet(ItemStack itemOutput, Item itemIngot, String toolType) {
 		toolType = toolType.toLowerCase();
 		// Pickaxe
 		if (toolType.equals("pickaxe")) {
-			GameRegistry.addRecipe(itemOutput, new Object[] { "RRR", " S ",
-					" S ", 'R', itemIngot, 'S', Items.STICK });
+			GameRegistry.addRecipe(itemOutput, new Object[] { "RRR", " S ", " S ", 'R', itemIngot,
+					'S', Items.STICK });
 			// Shovel
 		} else if (toolType.equals("shovel")) {
-			GameRegistry.addRecipe(itemOutput, new Object[] { " R ", " S ",
-					" S ", 'R', itemIngot, 'S', Items.STICK });
+			GameRegistry.addRecipe(itemOutput, new Object[] { " R ", " S ", " S ", 'R', itemIngot,
+					'S', Items.STICK });
 			// Axe
 		} else if (toolType.equals("axe")) {
-			GameRegistry.addRecipe(itemOutput, new Object[] { " RR", " SR",
-					" S ", 'R', itemIngot, 'S', Items.STICK });
-			GameRegistry.addRecipe(itemOutput, new Object[] { "RR ", "RS ",
-					" S ", 'R', itemIngot, 'S', Items.STICK });
+			GameRegistry.addRecipe(itemOutput, new Object[] { " RR", " SR", " S ", 'R', itemIngot,
+					'S', Items.STICK });
+			GameRegistry.addRecipe(itemOutput, new Object[] { "RR ", "RS ", " S ", 'R', itemIngot,
+					'S', Items.STICK });
 			// Hoe
 		} else if (toolType.equals("hoe")) {
-			GameRegistry.addRecipe(itemOutput, new Object[] { "RR ", " S ",
-					" S ", 'R', itemIngot, 'S', Items.STICK });
-			GameRegistry.addRecipe(itemOutput, new Object[] { " RR", " S ",
-					" S ", 'R', itemIngot, 'S', Items.STICK });
+			GameRegistry.addRecipe(itemOutput, new Object[] { "RR ", " S ", " S ", 'R', itemIngot,
+					'S', Items.STICK });
+			GameRegistry.addRecipe(itemOutput, new Object[] { " RR", " S ", " S ", 'R', itemIngot,
+					'S', Items.STICK });
 			// Sword
 		} else if (toolType.equals("sword")) {
-			GameRegistry.addRecipe(itemOutput, new Object[] { " R ", " R ",
-					" S ", 'R', itemIngot, 'S', Items.STICK });
+			GameRegistry.addRecipe(itemOutput, new Object[] { " R ", " R ", " S ", 'R', itemIngot,
+					'S', Items.STICK });
 		}
 	}
 	
@@ -345,8 +334,8 @@ public class RecipeHelper {
 	 * @param ingotStack
 	 */
 	public static void addIngotStack(Item ingot, Block ingotStack) {
-		GameRegistry.addRecipe(new ItemStack(ingotStack, 1), new Object[] {
-				" I ", "I I", "III", 'I', ingot });
+		GameRegistry.addRecipe(new ItemStack(ingotStack, 1), new Object[] { " I ", "I I", "III",
+				'I', ingot });
 	}
 	
 	/**
@@ -359,16 +348,11 @@ public class RecipeHelper {
 	 * @param numCrafted
 	 *            The number of torches crafted.
 	 */
-	public static void addTorch(Item itemCoalIn, Block blockTorchOut,
-			int numCrafted) {
-		GameRegistry
-				.addRecipe(new ItemStack(blockTorchOut, numCrafted),
-						new Object[] { "G  ", "S  ", 'G', itemCoalIn, 'S',
-								Items.STICK });
-		GameRegistry
-				.addRecipe(new ItemStack(blockTorchOut, numCrafted),
-						new Object[] { " G ", " S ", 'G', itemCoalIn, 'S',
-								Items.STICK });
+	public static void addTorch(Item itemCoalIn, Block blockTorchOut, int numCrafted) {
+		GameRegistry.addRecipe(new ItemStack(blockTorchOut, numCrafted), new Object[] { "G  ",
+				"S  ", 'G', itemCoalIn, 'S', Items.STICK });
+		GameRegistry.addRecipe(new ItemStack(blockTorchOut, numCrafted), new Object[] { " G ",
+				" S ", 'G', itemCoalIn, 'S', Items.STICK });
 	}
 	
 	/**

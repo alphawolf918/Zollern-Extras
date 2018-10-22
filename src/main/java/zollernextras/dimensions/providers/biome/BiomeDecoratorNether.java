@@ -11,4 +11,5 @@ public class BiomeDecoratorNether extends BiomeDecorator {
 	@Override
 	public void decorate(World world, Random rand, Biome biome, BlockPos pos) {
 	}
+	
 }

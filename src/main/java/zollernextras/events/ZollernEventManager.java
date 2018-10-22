@@ -60,8 +60,7 @@ public class ZollernEventManager {
 			EntityPlayer player = (EntityPlayer) entity;
 			InventoryPlayer playerInventory = player.inventory;
 			NonNullList<ItemStack> armorInventory = playerInventory.armorInventory;
-			BlockPos playerLocation = new BlockPos(player.posX,
-					(player.posY - 1), player.posZ);
+			BlockPos playerLocation = new BlockPos(player.posX, (player.posY - 1), player.posZ);
 			World world = player.getEntityWorld();
 			IBlockState blockState = world.getBlockState(playerLocation);
 			Block block = blockState.getBlock();
@@ -88,15 +87,13 @@ public class ZollernEventManager {
 						&& !player.isPotionActive(ZollernPotions.radiance)) {
 					
 					// (1 second = 20 ticks)
-					player.addPotionEffect(new PotionEffect(
-							ZollernPotions.radiance, ZollernPotions.radianceTime,
-							1));
+					player.addPotionEffect(new PotionEffect(ZollernPotions.radiance,
+							ZollernPotions.radianceTime, 1));
 					
 					// Check to see if the Radium item is in the Player's
 					// inventory, and if it is, consume one.
 					if (playerInventory.hasItemStack(radiumStack)) {
-						playerInventory.decrStackSize(
-								playerInventory.getSlotFor(radiumStack), 1);
+						playerInventory.decrStackSize(playerInventory.getSlotFor(radiumStack), 1);
 					}
 					
 					// When sending a message to the Player, do it through your
@@ -110,8 +107,7 @@ public class ZollernEventManager {
 				// Radiance potion effect, make the shadows attack them.
 				if (!player.capabilities.isCreativeMode
 						&& !player.isPotionActive(ZollernPotions.radiance)) {
-					player.attackEntityFrom(ZDamageSrc.deathShadows,
-							ZollernPotions.shadowDamage);
+					player.attackEntityFrom(ZDamageSrc.deathShadows, ZollernPotions.shadowDamage);
 				}
 			}
 			
@@ -132,9 +128,8 @@ public class ZollernEventManager {
 				// method does is it searches for other Players within the
 				// infected Player's bounding box. They are then stored in our
 				// java.util.List. You can search for any entity class this way.
-				List playerList = worldObj.getEntitiesWithinAABB(
-						EntityPlayer.class, player.getEntityBoundingBox()
-								.expand(5.0D, 2.0D, 5.0D));
+				List playerList = worldObj.getEntitiesWithinAABB(EntityPlayer.class, player
+						.getEntityBoundingBox().expand(5.0D, 2.0D, 5.0D));
 				
 				// The Players are not returned as an instance of EntityPlayer,
 				// but rather an Object, which is the highest super-class of
@@ -160,8 +155,7 @@ public class ZollernEventManager {
 						// Now just add the potion effect. Voila! This should
 						// infect any Players around the original infected
 						// Player. Pandemic!
-						currentPlayer.addPotionEffect(new PotionEffect(
-								ZollernPotions.infected,
+						currentPlayer.addPotionEffect(new PotionEffect(ZollernPotions.infected,
 								ZollernPotions.infectionTime, 1));
 					}
 				}
@@ -186,8 +180,7 @@ public class ZollernEventManager {
 			for (ItemStack armorStack : armorInventory) {
 				if (armorStack != null) {
 					if (armorStack.getItem() instanceof ZollernArmor) {
-						ZollernArmor armorItem = (ZollernArmor) armorStack
-								.getItem();
+						ZollernArmor armorItem = (ZollernArmor) armorStack.getItem();
 						if (armorItem.getArmorMaterial() == ZollernArmorMaterials.AMARANTH) {
 							amArmorCount++;
 						} else if (armorItem.getArmorMaterial() == ZollernArmorMaterials.ZOLLERNIUM) {
@@ -206,21 +199,17 @@ public class ZollernEventManager {
 			for (int i = 0; i < 4; ++i) {
 				if (amArmorCount == 4) {
 					// Amaranth
-					player.addPotionEffect(new PotionEffect(
-							MobEffects.RESISTANCE, 100, 1));
+					player.addPotionEffect(new PotionEffect(MobEffects.RESISTANCE, 100, 1));
 				} else if (zArmorCount == 4) {
 					// Zollernium
-					player.addPotionEffect(new PotionEffect(
-							MobEffects.FIRE_RESISTANCE, 100, 1));
+					player.addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 100, 1));
 					player.stepHeight = 2F;
 				} else if (azArmorCount == 4) {
 					// Azurite
-					player.addPotionEffect(new PotionEffect(
-							MobEffects.STRENGTH, 100, 1));
+					player.addPotionEffect(new PotionEffect(MobEffects.STRENGTH, 100, 1));
 				} else if (rArmorCount == 4) {
 					// Radium
-					player.addPotionEffect(new PotionEffect(
-							ZollernPotions.radiance, 100, 1));
+					player.addPotionEffect(new PotionEffect(ZollernPotions.radiance, 100, 1));
 					player.capabilities.allowFlying = true;
 				} else {
 					// Disable all "extra" potion capabilities that have nothing
@@ -254,12 +243,10 @@ public class ZollernEventManager {
 							if (playerInventory.hasItemStack(repairItemStack)) {
 								ItemStack repairedItem = heldItem.copy();
 								repairedItem.setItemDamage(0);
-								int invSlot = player.inventory
-										.getSlotFor(heldItem);
-								playerInventory.setInventorySlotContents(
-										invSlot, repairedItem);
-								playerInventory.decrStackSize(playerInventory
-										.getSlotFor(repairItemStack), 1);
+								int invSlot = player.inventory.getSlotFor(heldItem);
+								playerInventory.setInventorySlotContents(invSlot, repairedItem);
+								playerInventory.decrStackSize(
+										playerInventory.getSlotFor(repairItemStack), 1);
 							}
 						}
 					}
@@ -272,8 +259,7 @@ public class ZollernEventManager {
 				ICorruptBlock corruptBlock = (ICorruptBlock) block;
 				if (corruptBlock.canCorrupt()) {
 					if (rand.nextInt(14) <= 4) {
-						player.attackEntityFrom(ZDamageSrc.deathCorruption,
-								5.0F);
+						player.attackEntityFrom(ZDamageSrc.deathCorruption, 5.0F);
 					}
 				}
 			}
@@ -285,23 +271,17 @@ public class ZollernEventManager {
 	public void onNameFormatEvent(NameFormat event) {
 		String username = event.getUsername();
 		if (username.toLowerCase().equals("alphawolf918")) {
-			event.setDisplayname(TextFormatting.GOLD + "Zollern Wolf"
-					+ TextFormatting.WHITE);
+			event.setDisplayname(TextFormatting.GOLD + "Zollern Wolf" + TextFormatting.WHITE);
 		} else if (username.toLowerCase().equals("nascarmpfan")) {
-			event.setDisplayname(TextFormatting.RED + "Mike"
-					+ TextFormatting.WHITE);
+			event.setDisplayname(TextFormatting.RED + "Mike" + TextFormatting.WHITE);
 		} else if (username.toLowerCase().equals("applepiec00kie")) {
-			event.setDisplayname(TextFormatting.LIGHT_PURPLE + "Queen Apple"
-					+ TextFormatting.WHITE);
+			event.setDisplayname(TextFormatting.LIGHT_PURPLE + "Queen Apple" + TextFormatting.WHITE);
 		} else if (username.toLowerCase().equals("lazy_logic")) {
-			event.setDisplayname(TextFormatting.AQUA + "Logic"
-					+ TextFormatting.WHITE);
+			event.setDisplayname(TextFormatting.AQUA + "Logic" + TextFormatting.WHITE);
 		} else if (username.toLowerCase().equals("master_zane")) {
-			event.setDisplayname(TextFormatting.GOLD + "Master Zane"
-					+ TextFormatting.WHITE);
+			event.setDisplayname(TextFormatting.GOLD + "Master Zane" + TextFormatting.WHITE);
 		} else if (username.toLowerCase().equals("chronoxshift")) {
-			event.setDisplayname(TextFormatting.BLACK + "ChronoxShift"
-					+ TextFormatting.WHITE);
+			event.setDisplayname(TextFormatting.BLACK + "ChronoxShift" + TextFormatting.WHITE);
 		}
 	}
 	
@@ -317,8 +297,8 @@ public class ZollernEventManager {
 				int randInt = rand.nextInt(10);
 				if (randInt <= 6) {
 					EntitySlime slime = new EntitySlime(world);
-					slime.setLocationAndAngles(blockPos.getX(),
-							blockPos.getY(), blockPos.getZ(), 0, 0);
+					slime.setLocationAndAngles(blockPos.getX(), blockPos.getY(), blockPos.getZ(),
+							0, 0);
 					world.spawnEntity(slime);
 				}
 			}
@@ -328,9 +308,8 @@ public class ZollernEventManager {
 				int randInt = rand.nextInt(10);
 				if (randInt <= 5) {
 					EntityHellFish hellFish = new EntityHellFish(world);
-					hellFish.setLocationAndAngles(player.posX, player.posY + 1,
-							player.posZ, player.rotationYaw,
-							player.rotationPitch);
+					hellFish.setLocationAndAngles(player.posX, player.posY + 1, player.posZ,
+							player.rotationYaw, player.rotationPitch);
 					world.spawnEntity(hellFish);
 				}
 			}
@@ -348,77 +327,64 @@ public class ZollernEventManager {
 		
 		if (theEntity instanceof EntityZombie) {
 			if (randInt <= 50) {
-				EntityItem item = new EntityItem(worldObj, theEntity.posX,
-						theEntity.posY, theEntity.posZ, new ItemStack(
-								ZollernItems.flour, 1));
+				EntityItem item = new EntityItem(worldObj, theEntity.posX, theEntity.posY,
+						theEntity.posZ, new ItemStack(ZollernItems.flour, 1));
 				worldObj.spawnEntity(theEntity);
 			}
 		} else if (theEntity instanceof EntityBlaze) {
-			EntityItem item = new EntityItem(worldObj, theEntity.posX,
-					theEntity.posY, theEntity.posZ, new ItemStack(
-							Items.BLAZE_ROD, 1));
+			EntityItem item = new EntityItem(worldObj, theEntity.posX, theEntity.posY,
+					theEntity.posZ, new ItemStack(Items.BLAZE_ROD, 1));
 			worldObj.spawnEntity(item);
 		} else if (theEntity instanceof EntityEnderman) {
-			EntityItem item = new EntityItem(worldObj, theEntity.posX,
-					theEntity.posY, theEntity.posZ, new ItemStack(
-							Items.ENDER_PEARL, 1));
+			EntityItem item = new EntityItem(worldObj, theEntity.posX, theEntity.posY,
+					theEntity.posZ, new ItemStack(Items.ENDER_PEARL, 1));
 			worldObj.spawnEntity(item);
 		} else if (theEntity.getClass() == EntitySkeleton.class) {
-			EntityItem item = new EntityItem(worldObj, theEntity.posX,
-					theEntity.posY, theEntity.posZ,
-					new ItemStack(Items.BONE, 1));
+			EntityItem item = new EntityItem(worldObj, theEntity.posX, theEntity.posY,
+					theEntity.posZ, new ItemStack(Items.BONE, 1));
 			worldObj.spawnEntity(item);
 		} else if (theEntity instanceof EntityGhast) {
-			EntityItem item = new EntityItem(worldObj, theEntity.posX,
-					theEntity.posY, theEntity.posZ, new ItemStack(
-							Items.GHAST_TEAR, 1));
+			EntityItem item = new EntityItem(worldObj, theEntity.posX, theEntity.posY,
+					theEntity.posZ, new ItemStack(Items.GHAST_TEAR, 1));
 			worldObj.spawnEntity(item);
 		} else if (theEntity instanceof EntityShadowSkeleton) {
 			if (randInt <= 85) {
 				ItemStack itemStack = new ItemStack(ZollernItems.shadowBone, 1);
-				EntityItem itemEntity = new EntityItem(worldObj,
-						theEntity.posX, theEntity.posY, theEntity.posZ,
-						itemStack);
+				EntityItem itemEntity = new EntityItem(worldObj, theEntity.posX, theEntity.posY,
+						theEntity.posZ, itemStack);
 				worldObj.spawnEntity(itemEntity);
 			}
 		} else if (theEntity instanceof EntityMummy) {
 			if (randInt <= 47) {
-				ItemStack itemStack = new ItemStack(Items.PAPER,
-						ZollernHelper.rngNumber(1, 2));
-				EntityItem itemEntity = new EntityItem(worldObj,
-						theEntity.posX, theEntity.posY, theEntity.posZ,
-						itemStack);
+				ItemStack itemStack = new ItemStack(Items.PAPER, ZollernHelper.rngNumber(1, 2));
+				EntityItem itemEntity = new EntityItem(worldObj, theEntity.posX, theEntity.posY,
+						theEntity.posZ, itemStack);
 				worldObj.spawnEntity(itemEntity);
 			}
 		}
 		if (theEntity instanceof IShadeEntity) {
 			if (randInt <= 65) {
-				ItemStack itemStack = new ItemStack(ZollernItems.shadowEssence,
-						1);
-				EntityItem itemEntity = new EntityItem(worldObj,
-						theEntity.posX, theEntity.posY, theEntity.posZ,
-						itemStack);
+				ItemStack itemStack = new ItemStack(ZollernItems.shadowEssence, 1);
+				EntityItem itemEntity = new EntityItem(worldObj, theEntity.posX, theEntity.posY,
+						theEntity.posZ, itemStack);
 				worldObj.spawnEntity(itemEntity);
 			}
 		}
 	}
 	
 	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
-	public void onEntityStruckByLightningEvent(
-			EntityStruckByLightningEvent event) {
+	public void onEntityStruckByLightningEvent(EntityStruckByLightningEvent event) {
 		Entity theEntity = event.getEntity();
 		World worldObj = theEntity.getEntityWorld();
 		if (theEntity instanceof EntityVillager) {
 			EntityVillager theVillager = (EntityVillager) theEntity;
 			theVillager.setDead();
 			EntityWitch theWitch = new EntityWitch(worldObj);
-			theWitch.setLocationAndAngles(theVillager.posX, theVillager.posY,
-					theVillager.posZ, theVillager.rotationYaw,
-					theVillager.rotationPitch);
+			theWitch.setLocationAndAngles(theVillager.posX, theVillager.posY, theVillager.posZ,
+					theVillager.rotationYaw, theVillager.rotationPitch);
 			worldObj.spawnEntity(theWitch);
-			ZollernHelper.logInfo("Villager turned into Witch! (at: "
-					+ theVillager.posX + " " + theVillager.posY + " "
-					+ theVillager.posZ);
+			ZollernHelper.logInfo("Villager turned into Witch! (at: " + theVillager.posX + " "
+					+ theVillager.posY + " " + theVillager.posZ);
 		}
 	}
 	

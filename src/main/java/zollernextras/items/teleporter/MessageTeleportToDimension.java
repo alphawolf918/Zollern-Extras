@@ -118,7 +118,7 @@ public class MessageTeleportToDimension implements IMessage {
 				worldObj.setBlockState(new BlockPos(x, y, z + 1), airState);
 				worldObj.setBlockState(new BlockPos(x, y + 1, z + 1), airState);
 				
-				// player.fallDistance = 0.0f;
+				player.fallDistance = 0.0f;
 			}
 		}
 	}

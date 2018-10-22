@@ -8,8 +8,7 @@ public class EntityAIMummyAttack extends EntityAIAttackMelee {
 	private final EntityMummy mummy;
 	private int raiseArmTicks;
 	
-	public EntityAIMummyAttack(EntityMummy mummyIn, double speedIn,
-			boolean longMemoryIn) {
+	public EntityAIMummyAttack(EntityMummy mummyIn, double speedIn, boolean longMemoryIn) {
 		super(mummyIn, speedIn, longMemoryIn);
 		this.mummy = mummyIn;
 	}

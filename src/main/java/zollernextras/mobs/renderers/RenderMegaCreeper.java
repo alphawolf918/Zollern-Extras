@@ -25,8 +25,7 @@ public class RenderMegaCreeper extends RenderLiving<EntityMegaCreeper> {
 	}
 	
 	@Override
-	protected void preRenderCallback(EntityMegaCreeper entitylivingbaseIn,
-			float partialTickTime) {
+	protected void preRenderCallback(EntityMegaCreeper entitylivingbaseIn, float partialTickTime) {
 		this.scaleMegaCreeper(entitylivingbaseIn, partialTickTime);
 		float f = entitylivingbaseIn.getCreeperFlashIntensity(partialTickTime);
 		float f1 = 1.0F + MathHelper.sin(f * 100.0F) * f * 0.01F;
@@ -38,8 +37,7 @@ public class RenderMegaCreeper extends RenderLiving<EntityMegaCreeper> {
 		GlStateManager.scale(f2, f3, f2);
 	}
 	
-	protected void scaleMegaCreeper(EntityMegaCreeper par1EntityCaveSpider,
-			float par2) {
+	protected void scaleMegaCreeper(EntityMegaCreeper par1EntityCaveSpider, float par2) {
 		GL11.glScalef(f6, f6, f6);
 	}
 	
@@ -47,8 +45,8 @@ public class RenderMegaCreeper extends RenderLiving<EntityMegaCreeper> {
 	 * Gets an RGBA int color multiplier to apply.
 	 */
 	@Override
-	protected int getColorMultiplier(EntityMegaCreeper entitylivingbaseIn,
-			float lightBrightness, float partialTickTime) {
+	protected int getColorMultiplier(EntityMegaCreeper entitylivingbaseIn, float lightBrightness,
+			float partialTickTime) {
 		float f = entitylivingbaseIn.getCreeperFlashIntensity(partialTickTime);
 		
 		if ((int) (f * 10.0F) % 2 == 0) {

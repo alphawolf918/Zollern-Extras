@@ -36,8 +36,8 @@ public class GuiBiomeType extends Gui {
 			return;
 		}
 		int i3 = 14737632;
-		BlockPos blockPos = new BlockPos(this.mc.getRenderViewEntity().posX,
-				this.mc.getRenderViewEntity().getEntityBoundingBox().minY,
+		BlockPos blockPos = new BlockPos(this.mc.getRenderViewEntity().posX, this.mc
+				.getRenderViewEntity().getEntityBoundingBox().minY,
 				this.mc.getRenderViewEntity().posZ);
 		ScaledResolution scaledresolution = new ScaledResolution(this.mc);
 		int k = scaledresolution.getScaledWidth();
@@ -51,8 +51,8 @@ public class GuiBiomeType extends Gui {
 			int yPos = 8;
 			GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 			GL11.glDisable(GL11.GL_LIGHTING);
-			String biomeName = chunk.getBiome(blockPos,
-					this.mc.world.getBiomeProvider()).getBiomeName();
+			String biomeName = chunk.getBiome(blockPos, this.mc.world.getBiomeProvider())
+					.getBiomeName();
 			String s = "Biome: " + biomeName;
 			fontRendererObj.drawString(s, 2, 96, i3);
 			fontRendererObj.drawString(s, 26, yPos - 90, i3);

@@ -21,6 +21,20 @@ public class EntityShade extends EntityZombie implements IShadeEntity {
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(10.0D);
 	}
 	
+	// @Override
+	// public void move(MoverType type, double x, double y, double z) {
+	// super.move(type, x, y, z);
+	// this.doBlockCollisions();
+	// }
+	
+	@Override
+	public void onUpdate() {
+		this.noClip = true;
+		super.onUpdate();
+		this.noClip = false;
+		this.setNoGravity(true);
+	}
+	
 	@Override
 	public int getTotalArmorValue() {
 		int i = super.getTotalArmorValue() + 2;

@@ -3,12 +3,15 @@ package zollernextras.lib;
 import java.io.File;
 import java.util.Random;
 import net.minecraft.block.Block;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.DimensionType;
+import net.minecraft.world.World;
 import net.minecraft.world.WorldProvider;
 import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.common.config.Configuration;
@@ -22,6 +25,13 @@ import zollernextras.creativetabs.ZollernTabs;
 public class ZollernHelper {
 	
 	private static final Logger LOGGER = LogManager.getLogger();
+	
+	public static void dropItem(Item droppedItem, World worldObj, Entity theEntity) {
+		ItemStack itemStack = new ItemStack(droppedItem, rngNumber(1, 2));
+		EntityItem itemEntity = new EntityItem(worldObj, theEntity.posX, theEntity.posY,
+				theEntity.posZ, itemStack);
+		worldObj.spawnEntity(itemEntity);
+	}
 	
 	public static boolean getRNGChance(int min, int max) {
 		if (min >= max) {

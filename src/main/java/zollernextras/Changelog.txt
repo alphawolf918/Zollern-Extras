@@ -23,7 +23,7 @@
     * Can be crafted using Shinestone and Lapis Ingots.
     * Generate naturally in rivers and oceans (including deep oceans).
 * Black Marble can now be mined using the same harvest level as White Marble.
-* Shadow Skeletons, Scorpions and Mummies now drop Shadow Essence.
+* Shadow Skeletons, Scorpions, Shades and Mummies now drop Shadow Essence.
 * Removed regular Skeletons from Upside-Down spawns.
 * Added Corruption Blocks and a Corruption biome to the Upside-Down.
     * Walking on Corrupt Blocks will damage the Player unless the Anti-Corruption potion effect is active.
@@ -91,8 +91,13 @@
 * Added White Lava liquid, though it doesn't have a purpose or occur naturally just yet.
 * Added the Upside-Down Eye to teleport the Player to and from the dimension. Works for five uses.
     * Crafting recipe is different if Thermal Foundation is present.
+    * Must be "charged" first.
 * Drastically lowered temperature of Icy Desert biome.
 * Increased chance for Nether Wart to spawn in revitalized Nether's "Soul Desert" biome.
+* Added Shades.
+    * Similar to Mummies, but can clip through blocks.
+    * Have a chance to drop Witherium and/or Netheridium.
+    * Currently a small bug where they fall through the floor...
 * 
 
 ==== FIXES ====

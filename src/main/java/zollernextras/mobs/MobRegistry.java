@@ -15,6 +15,7 @@ import zollernextras.mobs.entities.EntityHellFish;
 import zollernextras.mobs.entities.EntityMegaCreeper;
 import zollernextras.mobs.entities.EntityMummy;
 import zollernextras.mobs.entities.EntityScorpion;
+import zollernextras.mobs.entities.EntityShade;
 import zollernextras.mobs.entities.EntityShadowSkeleton;
 import com.google.common.base.CaseFormat;
 
@@ -94,6 +95,9 @@ public class MobRegistry {
 				BiomeList.biomeRedshroomField, BiomeList.biomeSlimeLands, BiomeList.biomeMudSwamp,
 				BiomeList.biomeGrandCanyon, Biomes.SAVANNA, Biomes.BIRCH_FOREST,
 				Biomes.MUTATED_REDWOOD_TAIGA, Biomes.MESA);
+		
+		// Shade
+		registerEntity("shade", EntityShade.class, entityId++, 0x000000, 0xffffff);
 	}
 	
 	private static void registerEntity(String name, Class<? extends Entity> cls, int id) {

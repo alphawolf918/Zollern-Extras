@@ -29,6 +29,7 @@ import zollernextras.blocks.ZollernBlocks;
 import zollernextras.lib.ZollernHelper;
 import zollernextras.mobs.entities.EntityMummy;
 import zollernextras.mobs.entities.EntityScorpion;
+import zollernextras.mobs.entities.EntityShade;
 import zollernextras.mobs.entities.EntityShadowSkeleton;
 import zollernextras.worldgen.WGLake;
 import zollernextras.worldgen.WorldGenUpsideDownDungeons;
@@ -171,6 +172,7 @@ public class ChunkProviderUpsideDown extends ChunkProviderHell {
 			this.spawnList.add(new Biome.SpawnListEntry(EntityShadowSkeleton.class, 2, 2, 3));
 			this.spawnList.add(new Biome.SpawnListEntry(EntityScorpion.class, 2, 2, 3));
 			this.spawnList.add(new Biome.SpawnListEntry(EntityMummy.class, 2, 1, 2));
+			this.spawnList.add(new Biome.SpawnListEntry(EntityShade.class, 2, 1, 2));
 			return this.spawnList;
 		}
 		Biome biome = this.world.getBiome(pos);

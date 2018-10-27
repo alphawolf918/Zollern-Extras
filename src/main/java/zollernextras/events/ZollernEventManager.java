@@ -6,7 +6,6 @@ import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.monster.EntityBlaze;
 import net.minecraft.entity.monster.EntityEnderman;
 import net.minecraft.entity.monster.EntityGhast;
@@ -46,6 +45,7 @@ import zollernextras.lib.ZDamageSrc;
 import zollernextras.lib.ZollernHelper;
 import zollernextras.mobs.entities.EntityHellFish;
 import zollernextras.mobs.entities.EntityMummy;
+import zollernextras.mobs.entities.EntityShade;
 import zollernextras.mobs.entities.EntityShadowSkeleton;
 import zollernextras.mobs.entities.IShadeEntity;
 import zollernextras.potions.ZollernPotions;
@@ -327,47 +327,35 @@ public class ZollernEventManager {
 		
 		if (theEntity instanceof EntityZombie) {
 			if (randInt <= 50) {
-				EntityItem item = new EntityItem(worldObj, theEntity.posX, theEntity.posY,
-						theEntity.posZ, new ItemStack(ZollernItems.flour, 1));
-				worldObj.spawnEntity(theEntity);
+				ZollernHelper.dropItem(ZollernItems.flour, worldObj, theEntity);
 			}
 		} else if (theEntity instanceof EntityBlaze) {
-			EntityItem item = new EntityItem(worldObj, theEntity.posX, theEntity.posY,
-					theEntity.posZ, new ItemStack(Items.BLAZE_ROD, 1));
-			worldObj.spawnEntity(item);
+			ZollernHelper.dropItem(Items.BLAZE_ROD, worldObj, theEntity);
 		} else if (theEntity instanceof EntityEnderman) {
-			EntityItem item = new EntityItem(worldObj, theEntity.posX, theEntity.posY,
-					theEntity.posZ, new ItemStack(Items.ENDER_PEARL, 1));
-			worldObj.spawnEntity(item);
+			ZollernHelper.dropItem(Items.ENDER_PEARL, worldObj, theEntity);
 		} else if (theEntity.getClass() == EntitySkeleton.class) {
-			EntityItem item = new EntityItem(worldObj, theEntity.posX, theEntity.posY,
-					theEntity.posZ, new ItemStack(Items.BONE, 1));
-			worldObj.spawnEntity(item);
+			ZollernHelper.dropItem(Items.BONE, worldObj, theEntity);
 		} else if (theEntity instanceof EntityGhast) {
-			EntityItem item = new EntityItem(worldObj, theEntity.posX, theEntity.posY,
-					theEntity.posZ, new ItemStack(Items.GHAST_TEAR, 1));
-			worldObj.spawnEntity(item);
+			ZollernHelper.dropItem(Items.GHAST_TEAR, worldObj, theEntity);
 		} else if (theEntity instanceof EntityShadowSkeleton) {
 			if (randInt <= 85) {
-				ItemStack itemStack = new ItemStack(ZollernItems.shadowBone, 1);
-				EntityItem itemEntity = new EntityItem(worldObj, theEntity.posX, theEntity.posY,
-						theEntity.posZ, itemStack);
-				worldObj.spawnEntity(itemEntity);
+				ZollernHelper.dropItem(ZollernItems.shadowBone, worldObj, theEntity);
 			}
 		} else if (theEntity instanceof EntityMummy) {
 			if (randInt <= 47) {
-				ItemStack itemStack = new ItemStack(Items.PAPER, ZollernHelper.rngNumber(1, 2));
-				EntityItem itemEntity = new EntityItem(worldObj, theEntity.posX, theEntity.posY,
-						theEntity.posZ, itemStack);
-				worldObj.spawnEntity(itemEntity);
+				ZollernHelper.dropItem(Items.PAPER, worldObj, theEntity);
+			}
+		} else if (theEntity instanceof EntityShade) {
+			if (randInt <= 32) {
+				ZollernHelper.dropItem(ZollernItems.netheridium, worldObj, theEntity);
+			}
+			if (randInt <= 56) {
+				ZollernHelper.dropItem(ZollernItems.witherite, worldObj, theEntity);
 			}
 		}
 		if (theEntity instanceof IShadeEntity) {
 			if (randInt <= 65) {
-				ItemStack itemStack = new ItemStack(ZollernItems.shadowEssence, 1);
-				EntityItem itemEntity = new EntityItem(worldObj, theEntity.posX, theEntity.posY,
-						theEntity.posZ, itemStack);
-				worldObj.spawnEntity(itemEntity);
+				ZollernHelper.dropItem(ZollernItems.shadowEssence, worldObj, theEntity);
 			}
 		}
 	}

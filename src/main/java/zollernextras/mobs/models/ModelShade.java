@@ -1,15 +1,12 @@
 package zollernextras.mobs.models;
 
-import net.minecraft.client.model.ModelBase;
+import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.util.math.MathHelper;
 
-/**
- * ModelShade - Either Mojang or a mod author Created using Tabula 4.1.1
- */
-public class ModelShade extends ModelBase {
+public class ModelShade extends ModelBiped {
 	
 	public ModelRenderer bipedRightArm;
 	public ModelRenderer bipedRightLeg;

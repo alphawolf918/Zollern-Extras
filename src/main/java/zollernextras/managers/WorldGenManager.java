@@ -634,6 +634,12 @@ public class WorldGenManager implements IWorldGenerator {
 		addUpsideDownOreSpawn(ZollernBlocks.upsideDownRadianceOre, world, random, Xcoord, Zcoord,
 				16, 16, 2 + random.nextInt(2), 10, 19, 128);
 		
+		// Zanium Ore
+		if (ModHelperBase.useZaneExtras) {
+			addUpsideDownOreSpawn(ZaneBlocks.zaniumOre, world, random, Xcoord, Zcoord, 16, 16,
+					4 + random.nextInt(2), 14, 19, 128);
+		}
+		
 		// Obsidian
 		addUpsideDownOreSpawn(Blocks.OBSIDIAN, world, random, Xcoord, Zcoord, 16, 16,
 				8 + random.nextInt(5), 42, 19, 128);

@@ -1,10 +1,16 @@
 package zollernextras.dimensions.providers.world;
 
 import javax.annotation.Nullable;
+import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.management.PlayerList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.DimensionType;
+import net.minecraft.world.World;
 import net.minecraft.world.WorldProvider;
 import net.minecraft.world.border.WorldBorder;
 import net.minecraft.world.chunk.Chunk;
@@ -132,13 +138,13 @@ public class WorldProviderUpsideDown extends WorldProvider {
 		return 16.0D;
 	}
 	
-	// @Override
-	// public void onPlayerAdded(EntityPlayerMP player) {
-	// World world = player.getEntityWorld();
-	// MinecraftServer mcServer = world.getMinecraftServer();
-	// ITextComponent strMessage = new TextComponentString(
-	// player.getDisplayNameString() + " has entered the Upside-Down.");
-	// PlayerList playerList = mcServer.getPlayerList();
-	// playerList.sendMessage(strMessage);
-	// }
+	@Override
+	public void onPlayerAdded(EntityPlayerMP player) {
+		World world = player.getEntityWorld();
+		MinecraftServer mcServer = world.getMinecraftServer();
+		ITextComponent strMessage = new TextComponentString(player.getDisplayNameString()
+				+ " has entered the Upside-Down.");
+		PlayerList playerList = mcServer.getPlayerList();
+		playerList.sendMessage(strMessage);
+	}
 }

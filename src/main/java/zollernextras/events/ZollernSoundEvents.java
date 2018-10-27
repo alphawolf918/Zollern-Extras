@@ -22,6 +22,11 @@ public class ZollernSoundEvents {
 	public static SoundEvent ENTITY_MUMMY_HURT = regSound("mummy.hurt");
 	public static SoundEvent ENTITY_MUMMY_DIE = regSound("mummy.die");
 	
+	// Shade
+	public static SoundEvent ENTITY_SHADE_AMBIENT = regSound("shade.say");
+	public static SoundEvent ENTITY_SHADE_HURT = regSound("shade.hurt");
+	public static SoundEvent ENTITY_SHADE_DIE = regSound("shade.die");
+	
 	public static void init() {
 		// Duck
 		registerSound(ENTITY_DUCK_AMBIENT);
@@ -37,6 +42,11 @@ public class ZollernSoundEvents {
 		registerSound(ENTITY_MUMMY_AMBIENT);
 		registerSound(ENTITY_MUMMY_HURT);
 		registerSound(ENTITY_MUMMY_DIE);
+		
+		// Shade
+		registerSound(ENTITY_SHADE_AMBIENT);
+		registerSound(ENTITY_SHADE_HURT);
+		registerSound(ENTITY_SHADE_DIE);
 	}
 	
 	private static void registerSound(SoundEvent sound) {

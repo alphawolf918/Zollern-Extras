@@ -79,7 +79,7 @@ public class MessageTeleportToDimension implements IMessage {
 				IBlockState airState = blockAir.getDefaultState();
 				IBlockState stoneState = blockStone.getDefaultState();
 				
-				if (worldObj.getBlockState(new BlockPos(x, y - 1, z)) == blockAir) {
+				if (worldObj.getBlockState(new BlockPos(x, y - 1, z)) == airState) {
 					worldObj.setBlockState(new BlockPos(x, y - 1, z), stoneState);
 					worldObj.setBlockState(new BlockPos(x + 1, y - 1, z + 1), stoneState);
 					worldObj.setBlockState(new BlockPos(x - 1, y - 1, z - 1), stoneState);

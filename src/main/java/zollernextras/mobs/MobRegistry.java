@@ -12,6 +12,7 @@ import zollernextras.lib.ZollernModInfo;
 import zollernextras.mobs.entities.EntityDuck;
 import zollernextras.mobs.entities.EntityHellDuck;
 import zollernextras.mobs.entities.EntityHellFish;
+import zollernextras.mobs.entities.EntityKrull;
 import zollernextras.mobs.entities.EntityMegaCreeper;
 import zollernextras.mobs.entities.EntityMummy;
 import zollernextras.mobs.entities.EntityScorpion;
@@ -98,6 +99,9 @@ public class MobRegistry {
 		
 		// Shade
 		registerEntity("shade", EntityShade.class, entityId++, 0x000000, 0xffffff);
+		
+		// Krull
+		registerEntity("krull", EntityKrull.class, entityId++, 0xf5eeb3, 0x444444);
 	}
 	
 	private static void registerEntity(String name, Class<? extends Entity> cls, int id) {

@@ -156,8 +156,4 @@ public class EntityShadowSkeleton extends AbstractSkeleton implements IShadeEnti
 		super.onLivingUpdate();
 	}
 	
-	@Override
-	public boolean isShadowBeing() {
-		return true;
-	}
 }

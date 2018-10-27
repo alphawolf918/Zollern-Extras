@@ -231,11 +231,6 @@ public class EntityMummy extends EntityZombie implements IShadeEntity {
 		return livingdata;
 	}
 	
-	@Override
-	public boolean isShadowBeing() {
-		return true;
-	}
-	
 	class GroupData implements IEntityLivingData {
 		public boolean isChild;
 		

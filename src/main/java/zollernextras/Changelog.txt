@@ -23,7 +23,7 @@
     * Can be crafted using Shinestone and Lapis Ingots.
     * Generate naturally in rivers and oceans (including deep oceans).
 * Black Marble can now be mined using the same harvest level as White Marble.
-* Shadow Skeletons, Scorpions, Shades and Mummies now drop Shadow Essence.
+* Shadow Skeletons, Scorpions, Shades, Krulls and Mummies now drop Shadow Essence.
 * Removed regular Skeletons from Upside-Down spawns.
 * Added Corruption Blocks and a Corruption biome to the Upside-Down.
     * Walking on Corrupt Blocks will damage the Player unless the Anti-Corruption potion effect is active.
@@ -97,13 +97,21 @@
 * Added Shades.
     * Similar to Mummies, but can clip through blocks.
     * Have a chance to drop Witherium and/or Netheridium.
-    * Currently a small bug where they fall through the floor...
+    * Currently a small bug (unintended feature?) where they fall through the floor...
+* Added Krulls.
+    * "Infects" nearby Players with a negative potion effect ("Infected") that lasts for six seconds.
+        * As long as the Player is infected, they will take damage.
+        * Infection will also spread to other nearby Players who are near the infected Player.
+    * Have creepy sound effects.
+        * Sayings include sound-modified "Gonna get you" and "You can't escape us"
+        * Laughs when hurt and laughs even harder on death.
+            * If a Player is killed by a Krull, a "Shadow <PlayerName>" Krull will spawn in their place.
 * 
 
 ==== FIXES ====
 * Fixed Shinium Ingots not having their 1.7.10 crafting recipe.
 * Fixed some Nether Ores being unable to be smelted (cooked).
-* Fixed Upside-Down registering as a second Nether.
+* Fixed Upside-Down incorrectly registering as a second Nether.
 * Fixed Nether and Upside-Down Lapis Ores incorrectly dropping Ink Sacs.
 ===============
 

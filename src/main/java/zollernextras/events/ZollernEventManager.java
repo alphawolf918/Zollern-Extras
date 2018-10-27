@@ -128,8 +128,8 @@ public class ZollernEventManager {
 				// method does is it searches for other Players within the
 				// infected Player's bounding box. They are then stored in our
 				// java.util.List. You can search for any entity class this way.
-				List playerList = worldObj.getEntitiesWithinAABB(EntityPlayer.class, player
-						.getEntityBoundingBox().expand(5.0D, 2.0D, 5.0D));
+				List<? extends Entity> playerList = worldObj.<Entity> getEntitiesWithinAABB(
+						EntityPlayer.class, player.getEntityBoundingBox().expand(5.0D, 2.0D, 5.0D));
 				
 				// The Players are not returned as an instance of EntityPlayer,
 				// but rather an Object, which is the highest super-class of
@@ -325,6 +325,8 @@ public class ZollernEventManager {
 		Random rand = new Random();
 		int randInt = rand.nextInt(100);
 		
+		// Since Mummies extend Zombies, they have a chance to drop flour as
+		// well.
 		if (theEntity instanceof EntityZombie) {
 			if (randInt <= 50) {
 				ZollernHelper.dropItem(ZollernItems.flour, worldObj, theEntity);

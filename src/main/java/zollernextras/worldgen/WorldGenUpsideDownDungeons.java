@@ -140,6 +140,8 @@ public class WorldGenUpsideDownDungeons extends ZollernWorldGenMaster {
 		addUpsideDownDungeonMob("zollernextras:shadowskeleton", 100);
 		addUpsideDownDungeonMob("zollernextras:scorpion", 100);
 		addUpsideDownDungeonMob("zollernextras:mummy", 100);
+		addUpsideDownDungeonMob("zollernextras:shade", 100);
+		addUpsideDownDungeonMob("zollernextras:krull", 100);
 	}
 	
 	private ResourceLocation pickMobSpawner(Random rand) {

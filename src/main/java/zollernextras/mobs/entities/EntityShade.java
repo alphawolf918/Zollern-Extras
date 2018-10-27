@@ -21,12 +21,6 @@ public class EntityShade extends EntityZombie implements IShadeEntity {
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(10.0D);
 	}
 	
-	// @Override
-	// public void move(MoverType type, double x, double y, double z) {
-	// super.move(type, x, y, z);
-	// this.doBlockCollisions();
-	// }
-	
 	@Override
 	public void onUpdate() {
 		this.noClip = true;
@@ -59,16 +53,6 @@ public class EntityShade extends EntityZombie implements IShadeEntity {
 	@Override
 	protected SoundEvent getDeathSound() {
 		return ZollernSoundEvents.ENTITY_SHADE_DIE;
-	}
-	
-	@Override
-	public void setFire(int par1) {
-		// nothing
-	}
-	
-	@Override
-	public boolean isShadowBeing() {
-		return true;
 	}
 	
 }

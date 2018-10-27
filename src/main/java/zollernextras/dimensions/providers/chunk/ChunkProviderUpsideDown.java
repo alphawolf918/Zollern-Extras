@@ -173,6 +173,7 @@ public class ChunkProviderUpsideDown extends ChunkProviderHell {
 			this.spawnList.add(new Biome.SpawnListEntry(EntityScorpion.class, 2, 2, 3));
 			this.spawnList.add(new Biome.SpawnListEntry(EntityMummy.class, 2, 1, 2));
 			this.spawnList.add(new Biome.SpawnListEntry(EntityShade.class, 2, 1, 2));
+			this.spawnList.add(new Biome.SpawnListEntry(EntityShade.class, 1, 1, 1));
 			return this.spawnList;
 		}
 		Biome biome = this.world.getBiome(pos);

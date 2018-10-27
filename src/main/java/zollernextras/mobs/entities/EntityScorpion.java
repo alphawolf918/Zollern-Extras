@@ -41,9 +41,4 @@ public class EntityScorpion extends EntityCaveSpider implements IShadeEntity {
 		return SoundEvents.ENTITY_SPIDER_DEATH;
 	}
 	
-	@Override
-	public boolean isShadowBeing() {
-		return true;
-	}
-	
 }
